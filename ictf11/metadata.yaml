@@ -1,10 +1,11 @@
 edition: ictf11
 year: 2011
-title: "Money Laundering"
+title: "Do You Feel Lucky?"
+subtitle: "Money Laundering"
 
 format: attack-defense
-# Unusual scoring: teams laundered "dirty" points through service exploitation.
-# Theme: money laundering operations. Teams exploited mule services.
+# Operational theme: teams laundered "dirty" points through service exploitation.
+# Services all themed around money mule management.
 
 dates:
   start: "2011-12-02"

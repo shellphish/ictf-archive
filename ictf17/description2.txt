@@ -1,0 +1,82 @@
+You have just been hired to secure the critical infrastructure of
+your country.
+
+With the globally recognized threat of Sicilian hackers on the
+offensive, you need to defend your country's critical services.
+
+You will be give privileged access to a server that runs a number of
+critical infrastructure services. Like all software, these services
+probably have a number of undisclosed vulnerabilities.
+
+These services are critical infrastructure, and therefore are used by
+citizens of your country on a regular basis. As part of the normal
+operation of a service, a piece of service-specific information,
+called a "flag", is stored and retrieved from each service.
+
+Due to the sneaky Sicilian hackers, amidst this normal, benign
+traffic there are attacks! These attacks exploit vulnerabilities in
+the services in order to retrieve flags that, in normal circumstances,
+would not be accessible to the attacker.
+
+Your goal is to identify which TCP connections contain an attack.
+More precisely, our scoring system pushes to each team a flow
+description (source and destination ports and IP addresses, timestamp,
+and unique ID). The team can then call a scoring service and claim
+that a certain connection (identified by its ID) contains an attack.
+
+Correctly identifying a connection as malicious gives points to the
+defending team.  The amount of points received depends on how timely
+the detection is.  After a few hours, the detection is worthless.
+
+Of course, false positives, i.e., identifying as malicious a
+connection that is instead benign, will cause points to be subtracted
+from the team's score (after all, who wants to have to do forensic on
+a non-existent attack?).
+
+Teams must identify vulnerabilities in their services and, if
+possible, patch their services so that they are not vulnerable. Note
+that if patching makes the service non-functional for the users (that
+is, it does not work as expected when used in a benign way), the
+service will be labeled as "non-functional". If the service is not
+responding at all, the service will be labeled as "down". The amount
+of services that are fully functional directly affect the points that
+are assigned for correct detections. More precisely, the historical
+values of availability creates a multiplier that is applied to the
+overall score.
+
+Little know to your commander-in-chief, the hat that you wear isn't
+entirely white. It's more like an off-white or grey. A hacker's gotta
+eat (and eat in style).
+
+The way you earn your extra money (points) is to develop exploits and
+sell them to the Zebra Dwarf Institution.
+
+It is well known that the ZDI may use and run your exploits against
+other nations. The ZDI requires that the exploit be written according
+to a well-defined Python-based framework (soon to be published in
+underground forums).
+
+ZDI gives money for submitting a valid exploit, and they give
+residuals for each successful flag captured from a service.
+
+Note that, to prevent tarnishing your nation's reputation, you can't
+launch attacks against other nations.  Instead, ZDI (the organizers'
+infrastructure) will attack each team separately, using both known
+exploits, and the exploits submitted by the various teams.
+
+If the exploit written by nation X is successfully run against a
+service of nation Y, points are given to nation X. If the attack is
+detected by nation Y, of course, points are also assigned to nation
+Y. Therefore, teams should devise stealthy attacks, and, at the same
+time, effective patching and attack detection.
+
+A scoreboard, shows, in real-time, the status of the services of each
+team, and the amount of points accumulated. Note that the points can
+decrease, because of false positives.
+
+ZDI is very picky about the code they run. After all they are the ones
+risking to get blown out of a building by a drone!  Therefore, ZDI
+assumes that the code produced by you will be "well-behaved" (no DOS,
+no attacks against the execution/scoring infrastructure). If such
+behavior is detected in the attack code, the team will be blown up,
+ahem, eliminated from the competition.

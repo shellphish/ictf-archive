@@ -1,62 +1,66 @@
 edition: ictf17
 year: 2017
-title: "Defend the Critical Infrastructure"
+title: "Unicorns, Ponies, and Rainbows vs. AI"
+# Note: this edition corresponds to the 2016-2017 school year competition
+# that ran March 3-4, 2017. It is the same competition as the DDoS incident.
+# See also ictf16/ which has the planning docs for this competition.
+# The "Anti-cheating Detection System" docs here were developed for this edition.
 
 format: attack-defense
-# Hybrid model: teams defend services + detect attacks + submit exploits via ZDI framework.
-# No direct inter-team attacking; organizers run exploits on behalf of submitting teams.
 
 dates:
-  start: "2017-12-01"
-  end: "2017-12-31"
-  # Exact date not documented; likely December 2017 per school year pattern.
+  start: "2017-03-03"
+  end: "2017-03-04"
+  notes: "March 3-4, 2017, 24 hours (ended early due to DDoS)"
 
 participation:
-  num_teams: null
-  notes: "International university teams. Exact count not documented."
+  num_teams: 300
+  notes: >
+    Over 300 teams. Open to all teams (not just academic). Joint UCSB +
+    ASU organization. DEF CON CTF qualifier. Winner: Bushwhackers.
+    LC/BC disqualified for DDoS attack.
 
 challenges: []
-# Services were "critical infrastructure" services for each team's country.
-# Specific services not documented in local archive.
+# Service ports 20001-20012 referenced in DDoS analysis.
+# Known service: "flasking_unicorns" (from network traffic in DDoS post).
 
 data:
   - type: other
     path: "description.txt"
-    description: "Competition rules and format description"
+    description: "General iCTF competition format description"
 
   - type: other
     path: "description2.txt"
-    description: "Narrative/theme description (Sicilian hackers, Zebra Dwarf Institution)"
-
-  - type: other
-    path: "iCTF 2017 Announcement.docx"
-    description: "Competition announcement document"
+    description: "Game narrative (National Cyberdefense Corps, Sicilian hackers, ZDI mechanic)"
 
   - type: other
     path: "Anti-cheating Detection System.docx"
-    description: "Documentation for the anti-cheating detection system"
+    description: "Anti-cheating detection system documentation (developed post-DDoS)"
+
+  - type: other
+    path: "Anti-cheating Detection System-comment.html"
+    description: "HTML-exported comments on the anti-cheating detection system"
 
 infrastructure:
-  scorebot: "custom-zdi-framework"
+  scorebot: "ictf-framework"
   network: >
-    Each team given a server running critical infrastructure services.
-    ZDI (Zebra Dwarf Institution) framework for exploit submission.
-    Flow-based attack detection scoring (time-sensitive).
-    Service availability multiplier applied to detection scores.
+    AWS-hosted. Joint UCSB (Shellphish) + ASU (SEFCOM) infrastructure.
+    Each team received one VM. Service ports 20001-20012.
   docker:
     full_environment: false
     individual_challenges: false
 
 resources:
-  announcement: "iCTF 2017 Announcement.docx"
+  website: "https://ictf.cs.ucsb.edu/archive/2016-2017/website"
 
 notes: >
-  The 2017 iCTF continued the "National Cyberdefense Corps" / ZDI framework
-  from earlier editions. Teams defended their country's critical infrastructure
-  services against Sicilian hackers while selling exploits to the Zebra Dwarf
-  Institution (ZDI). Scoring combined: (1) attack detection — correctly
-  identifying malicious connections earns points (time-sensitive, false
-  positives penalized); (2) service availability multiplier; and (3) exploit
-  residuals from ZDI. A notable addition: an "Anti-cheating Detection System"
-  was documented, likely added after the 2016-2017 DDoS incident. The local
-  archive is minimal (~40 KB).
+  The 2017 iCTF ("Unicorns, Ponies, and Rainbows vs. Artificial Intelligence")
+  ran March 3-4, 2017 and was organized jointly by UCSB Shellphish and ASU
+  SEFCOM. It was a DEF CON CTF qualifier and was open to all teams.
+  The game used the "National Cyberdefense Corps" narrative with Sicilian
+  hackers and the Zebra Dwarf Institution (ZDI) exploit-submission mechanic.
+  An anti-cheating system was developed for this edition after years of concerns.
+  The competition was disrupted by a DDoS attack from LC/BC (second place);
+  Bushwhackers were declared winners and LC/BC was disqualified.
+  See ictf16/ for the planning documents (iCTF 2016 Planning.docx,
+  iCTF 2016-2017 Announcement.docx, DDoS analysis).

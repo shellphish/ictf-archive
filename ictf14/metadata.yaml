@@ -42,6 +42,12 @@ data:
     path: "ictf2014_scoreboard_screenshot.png"
     description: "Scoreboard screenshot"
 
+  - type: other
+    path: "data/ictf_registration_apr_2015-final-final.sql"
+    description: >
+      Team registration database (April 2015) — 88 teams with full registration
+      data: country, university, faculty contact, prior CTF experience, tools used.
+
 infrastructure:
   scorebot: "custom"
   network: >
