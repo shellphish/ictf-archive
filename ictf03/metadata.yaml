@@ -10,18 +10,43 @@ dates:
   # Two rounds in 2003: November (20031114) and December (20031205)
 
 participation:
-  num_teams: 14
+  num_teams: 13
   countries: [US]
   notes: >
-    14 teams from 7 US universities. Some schools fielded more than one team.
+    13 teams from US universities. Some schools fielded more than one team.
     Universities: UC Santa Barbara, North Carolina State University,
     Naval Postgraduate School (Monterey), West Point, Georgia Tech,
     University of Texas at Austin, University of Illinois Urbana-Champaign.
+
+results:
+  # From scorebot.state (December 5, 2003 round)
+  winner: "Whitehat — 11245 points"
+  final_scoreboard:
+    - {rank: 1, team: "Whitehat", score: 11245}
+    - {rank: 2, team: "Donbehatin", score: 7550}
+    - {rank: 3, team: "Open Kiosk", score: 6960}
+    - {rank: 4, team: "Ishan Shade", score: 6080}
+    - {rank: 5, team: "Wolfpack", score: 6275}
+    - {rank: 6, team: "Wujing", score: 5850}
+    - {rank: 7, team: "0x90", score: 5560}
+    - {rank: 8, team: "Nebuchadnezzar", score: 5115}
+    - {rank: 9, team: "Shrek", score: 4115}
+    - {rank: 10, team: "Generic Tigers", score: 3965}
+    - {rank: 11, team: "jmp esp", score: 3125}
+    - {rank: 12, team: "UTexas", score: 2680}
+    - {rank: 13, team: "Argus", score: 2170}
 
 challenges: []
 # Services hosted on VM images (available in vms/).
 
 data:
+  - type: scorebot
+    path: "data/scorebot/"
+    description: >
+      Original scorebot data: scorebot.conf (service definitions),
+      scorebot.state (final team scores + flag states), and scripts/
+      directory with flag set/get scripts for all 6 services.
+
   - type: other
     path: "site/"
     description: "Original competition website"

@@ -1,0 +1,54 @@
+#!/usr/bin/perl
+
+use HTTP::Lite;
+
+
+# prepare a POST request to the admin interface
+
+$http = new HTTP::Lite;
+
+%vars = ("login" => "admin", "password" => "$ARGV[2]");
+$http->prepare_post(\%vars);
+
+$req = $http->request("http://$ARGV[0]/cgi-bin/guestbook_admin.pl") or die "Unable to get document: $!";
+
+if ($req != 200) {
+    die "Request failed ($req)"; 
+}
+
+
+# look for the flag in the textarea and replace all occurrences
+
+$body = $http->body();
+@lines = split(/\n/,$body);
+$text = 0;
+
+foreach $line (@lines)
+{
+    if ($line =~ m/<\/textarea>/) { $text = 0; }
+    if ($text == 1) {
+	if ($line =~ m/Bill Gates/) {
+	    $line =~ s/\([0-9a-zA-Z]*\)/($ARGV[1])/;
+	}
+	$replytext .= $line."\n";
+	
+    }
+    if ($line =~ m/<textarea/)   { $text = 1; }
+}
+
+
+
+# post the new flag (using the previous cookie value)
+
+$http2 = new HTTP::Lite;
+
+%vars = ("messages" => "$replytext", "login" => "admin", "password" => "$ARGV[2]");
+$http2->prepare_post(\%vars);
+
+$req = $http2->request("http://$ARGV[0]/cgi-bin/save_messages_admin.pl") or die "Unable to get document: $!";
+
+if ($req != 200) {
+    die "Request failed ($req)"; 
+}
+
+exit 0
