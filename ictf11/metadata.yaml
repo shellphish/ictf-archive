@@ -12,11 +12,28 @@ dates:
   # Friday, December 2, 2011, 8am–5pm PST (from iCTF_2011_Description.txt)
 
 participation:
-  num_teams: null  # 52 challenges solved by teams; approximate team count unknown
+  num_teams: 85
   notes: >
-    International university teams. 52 standalone challenges available
+    International university teams. 85 teams competed; sponsored by Adobe
+    (1st: $2,000, 2nd: $1,000, 3rd: $500). 52 standalone challenges available
     (45 of 52 were solved). First challenge solved at 8:03am (3 min in);
     last at 4:50pm. Average money-to-points conversion: 2%.
+
+results:
+  winner: "We_0wn_Y0u (Austria) — 1790.99 points"
+  top3:
+    - place: 1
+      team: "We_0wn_Y0u"
+      country: "Austria"
+      points: 1790.99
+    - place: 2
+      team: "More Smoked Leet Chicken"
+      country: "Russia"
+      points: 1704.02
+    - place: 3
+      team: "FluxFingers"
+      country: "Germany"
+      points: 1105.24
 
 challenges:
   - name: muleadmin
@@ -84,6 +101,30 @@ data:
   - type: other
     path: "fs.html"
     description: "File system browser for competition data"
+
+  - type: scoreboard
+    path: "data/scoreboard.csv"
+    description: "Full final scoreboard — 85 teams, rank/country/team/points/money columns"
+
+  - type: writeup
+    path: "data/iCTF2011_We0wnYou_writeup.pdf"
+    description: "Winner writeup by We_0wn_Y0u (1st place)"
+
+  - type: writeup
+    path: "data/iCTF2011_MSLC_writeup.pdf"
+    description: "Writeup by More Smoked Leet Chicken (2nd place)"
+
+  - type: writeup
+    path: "data/iCTF2011_FluxFingers_writeup.txt"
+    description: "Writeup by FluxFingers (3rd place)"
+
+  - type: other
+    path: "data/iCTF_2011_Description.txt"
+    description: "Full official competition rules and mechanics document"
+
+  - type: other
+    path: "data/ictf11_stats.txt"
+    description: "Post-competition stats: service capture counts and challenge solve stats"
 
 infrastructure:
   scorebot: "custom"

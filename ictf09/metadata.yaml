@@ -12,11 +12,17 @@ dates:
   notes: "December 4, 2009 (from IRC log timestamps)"
 
 participation:
-  num_teams: null
+  num_teams: 56
+  num_participants: 800
   notes: >
-    International university teams. Team logos visible in site/ directory.
-    Teams include ENOFLAG, PPP, RedCops, FluxFingers, nibbles, UCLions,
-    ChocolateMakers, Syper, and many others (~50+ teams from IRC).
+    56 teams, more than 800 students. International university teams from
+    multiple countries. Teams include ENOFLAG, PPP, RedCops, FluxFingers,
+    nibbles, UCLions, ChocolateMakers, Syper, and many others.
+    Largest security competition ever performed at the time.
+
+results:
+  winner: "CInsect (University of Hamburg, Germany)"
+  notes: "Won December 4, 2009 (from official site: 'won by the CInsect team, from the University of Hamburg, Germany')"
 
 challenges:
   - name: erlang-browser
@@ -67,6 +73,18 @@ data:
   - type: media
     path: "pictures/"
     description: "Event photographs"
+
+  - type: scoreboard
+    path: "data/scores/scores.pdf"
+    description: "Final scores PDF from official competition archive"
+
+  - type: other
+    path: "data/scores/stats.pdf"
+    description: "Competition stats PDF"
+
+  - type: other
+    path: "data/irclog.txt"
+    description: "IRC log from competition day (#ictf2009)"
 
 infrastructure:
   scorebot: "custom"

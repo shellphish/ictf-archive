@@ -1,0 +1,21 @@
+all services got compromised and used for laundering:
+
+hacked | id |       shortdesc        
+--------+----+------------------------
+ 46867 |  4 | muleadmin
+ 34559 |  5 | mulemanager
+ 18552 |  0 | convicts
+ 13234 |  1 | egoats
+  6437 |  2 | mailgateway
+  5537 |  8 | sendalert
+  2953 |  7 | muleuser
+  1995 |  6 | mulemassageappointment
+  1951 |  9 | smsgateway
+   507 |  3 | msgdispatcher
+
+45 of 52 challenges have been solved, first challenge was solved 3
+minutes into the game at 8:03. the last at 16:50.
+
+the average conversion rate for money to points was 2%. I guess with 2cts
+on the dollar we would not have a money laundering problem in
+reality :-)

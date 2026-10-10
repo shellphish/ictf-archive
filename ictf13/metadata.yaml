@@ -66,7 +66,25 @@ challenges:
     category: binary
     description: "L3 service — mathematical computation service"
 
+  - name: uranus
+    title: "uranus"
+    category: binary
+    description: "L4 service (highest difficulty). Original deb: uranus_12_i386.deb"
+
+results:
+  winner: "Bushwhackers (Russia)"
+  notes: >
+    Bushwhackers won $1,024 cash prize from sponsor Lastline, Inc.
+
 data:
+  - type: binary
+    path: "data/ictf/"
+    description: >
+      Debian packages for all 10 services (32-bit i386): dexware, driller,
+      mathconsole, noradioactive, poipoi, secretvault, sillybox, tattletale,
+      temperature, uranus. Each deb installs the vulnerable service binary.
+      Teams played on a 32-bit Ubuntu VM with no root access and no ASLR.
+
   - type: other
     path: "site/"
     description: "Original competition website"
