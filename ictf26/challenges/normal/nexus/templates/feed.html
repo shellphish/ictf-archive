@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %}Feed — Nexus{% endblock %}
+{% block body %}
+<div class="layout layout-3">
+
+  <!-- Left sidebar -->
+  <aside class="aside-l">
+    <div class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Account</div>
+        <div style="margin-bottom:.75rem;">
+          <div class="profile-avatar" style="width:40px;height:40px;font-size:.9rem;margin-bottom:.5rem;">{{ me.username[:2].upper() }}</div>
+          <div style="font-family:var(--mono);font-size:.82rem;font-weight:500;">{{ me.username }}</div>
+        </div>
+        <a href="{{ url_for('profile', username=me.username) }}">View profile</a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Navigation</div>
+        <a href="{{ url_for('feed') }}"    class="active">Feed</a>
+        <a href="{{ url_for('explore') }}">Explore</a>
+        <a href="{{ url_for('dm') }}">Messages</a>
+        <a href="{{ url_for('settings') }}">Settings</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main>
+    <div class="compose">
+      <form method="POST" action="{{ url_for('create_post') }}">
+        <textarea name="content" id="ct" maxlength="280" placeholder="What's on your mind?"></textarea>
+        <div class="compose-footer">
+          <span class="char-count" id="cc">280</span>
+          <button type="submit" class="btn btn-sm">Post</button>
+        </div>
+      </form>
+    </div>
+
+    {% if posts %}
+      {% for p in posts %}
+      <div class="post">
+        <div class="post-header">
+          <div class="post-avatar">{{ p.author[:2].upper() }}</div>
+          <a href="{{ url_for('profile', username=p.author) }}" class="post-author">{{ p.author }}</a>
+          <span class="post-ts">{{ p.ts[:16] }}</span>
+        </div>
+        <div class="post-body">{{ p.content }}</div>
+        <div class="post-actions">
+          <form method="POST" action="{{ url_for('like', pid=p.id) }}">
+            <button type="submit" class="btn-ghost">{{ p.likes }} likes</button>
+          </form>
+          <a href="{{ url_for('report', post_id=p.id) }}" class="btn-ghost" style="font-size:.75rem;padding:.25rem .6rem;border-radius:99px;border:1px solid var(--border);color:var(--text-dim);text-decoration:none;">report</a>
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+      <div class="card center" style="padding:3rem 1rem;">
+        <div style="font-family:var(--mono);font-size:.8rem;color:var(--text-dim);margin-bottom:1rem;">— empty feed —</div>
+        <p class="muted" style="font-size:.88rem;margin-bottom:1.25rem;">Follow someone to populate your feed.</p>
+        <a href="{{ url_for('explore') }}" class="btn btn-sm">Explore Nexus</a>
+      </div>
+    {% endif %}
+  </main>
+
+  <!-- Right sidebar -->
+  <aside class="aside-r">
+    <div class="card">
+      <div class="card-title">Suggested</div>
+      {% for s in suggestions %}
+      <div class="sug">
+        <div class="sug-av">{{ s.username[:2].upper() }}</div>
+        <div class="sug-name">
+          <a href="{{ url_for('profile', username=s.username) }}">{{ s.username }}</a>
+          <div class="sug-bio">{{ s.bio[:50] }}</div>
+        </div>
+        <form method="POST" action="{{ url_for('follow', username=s.username) }}">
+          <button type="submit" class="btn btn-outline btn-sm">Follow</button>
+        </form>
+      </div>
+      {% endfor %}
+    </div>
+  </aside>
+
+</div>
+<script>
+  const ct = document.getElementById('ct'), cc = document.getElementById('cc');
+  ct.addEventListener('input', () => { cc.textContent = 280 - ct.value.length; });
+</script>
+{% endblock %}

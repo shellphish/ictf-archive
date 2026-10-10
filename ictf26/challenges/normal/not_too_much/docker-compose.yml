@@ -1,0 +1,10 @@
+services:
+  not_too_much:
+    build: .
+    image: ictf/not_too_much:latest
+    container_name: not_too_much
+    ports:
+      - "4444:4444"
+    environment:
+      - FLAG=${FLAG}
+    restart: unless-stopped

@@ -1,0 +1,23 @@
+name: KITTENS PARADISE
+author: ximus15
+category: web
+description: |
+  You stumble upon the internet's most important cat website. It's loud, it's
+  colorful, and it's full of cats. Somewhere behind the chaos, there's an admin
+  panel with the flag. But you're not an admin... right?
+value: 500
+type: standard
+
+image: .
+protocol: http
+host: null
+connection_info: null
+healthcheck: null
+
+flags:
+  - ictf{crlf_g0t_me_4dm1n_73183220}
+
+files: null
+
+state: visible
+version: "0.1"

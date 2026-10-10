@@ -1,0 +1,9 @@
+FileBot v1.0
+============
+
+A simple AI-powered file browser. Uses OpenAI function calling
+to let users explore the filesystem via natural language.
+
+Supported tools:
+  - list_files(path)
+  - read_file(path)

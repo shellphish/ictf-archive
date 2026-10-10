@@ -1,0 +1,325 @@
+{% extends "base.html" %}
+{% block title %}Settings — Nexus{% endblock %}
+{% block body %}
+<!--
+  settings.html — tabbed settings page
+  All fields are validated server-side before storage.
+  - bio:     passes through content filter (_WAF_PATTERNS), max 300 chars
+  - website: stored as-is, max 120 chars, displayed with Jinja2 autoescaping
+  - preferences: boolean/enum values validated against whitelist
+
+  2FA note: TOTP secret is stored hashed in user_preferences. The QR
+  code is generated client-side using the raw secret passed via a data
+  attribute. The verification code is checked server-side with
+  hmac.compare_digest() to prevent timing attacks.
+
+  Privacy note: the dm_privacy field controls who can send DMs to this
+  user. Enforcement happens in the /dm POST handler (not shown here).
+  When set to "nobody", the INSERT is blocked server-side before the
+  parameterised query executes. No bypass possible.
+
+  Account deletion: requires typing username exactly. The DELETE cascade
+  removes all user data from posts, messages, follows, reports, and
+  user_preferences. The secrets table is NOT affected (it's platform-wide).
+-->
+<div style="max-width:640px;margin:2rem auto;padding:0 1.5rem;">
+
+  {% if error %}<div class="msg-error">{{ error }}</div>{% endif %}
+  {% if success %}<div class="msg-success">{{ success }}</div>{% endif %}
+
+  <!-- Tab navigation -->
+  <div style="display:flex;gap:2px;margin-bottom:1.25rem;border-bottom:1px solid var(--border);padding-bottom:0;">
+    {% for t, label in [('profile','Profile'),('notifications','Notifications'),('privacy','Privacy'),('appearance','Appearance'),('security','Security'),('account','Account')] %}
+    <a href="{{ url_for('settings', tab=t) }}"
+       style="padding:.55rem .9rem;font-size:.78rem;font-family:var(--mono);
+              color:{% if tab == t %}var(--accent){% else %}var(--text-soft){% endif %};
+              border-bottom:2px solid {% if tab == t %}var(--accent){% else %}transparent{% endif %};
+              margin-bottom:-1px;transition:color .1s;">{{ label }}</a>
+    {% endfor %}
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- PROFILE TAB -->
+  <!-- ============================================================ -->
+  {% if tab == 'profile' %}
+  <div class="form-box" style="max-width:100%;">
+    <h2>// Profile</h2>
+    <form method="POST">
+      <input type="hidden" name="tab" value="profile">
+      <div class="form-field">
+        <label>Bio</label>
+        <textarea name="bio" rows="3" maxlength="300">{{ user.bio }}</textarea>
+        <div class="form-hint">Displayed on your public profile. Max 300 chars.</div>
+      </div>
+      <div class="form-field">
+        <label>Website</label>
+        <input name="website" value="{{ user.website }}" placeholder="https://yoursite.com" maxlength="120">
+        <div class="form-hint">Shown on your profile page.</div>
+      </div>
+      <div class="form-footer">
+        <button type="submit" class="btn" style="width:100%;">Save changes</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- NOTIFICATIONS TAB -->
+  <!-- ============================================================ -->
+  {% elif tab == 'notifications' %}
+  <div class="form-box" style="max-width:100%;">
+    <h2>// Notifications</h2>
+    <!--
+      Notification preferences are stored as integers (0/1) in
+      user_preferences. The email notification system uses an internal
+      SMTP relay on nexus.internal:587 — credentials are stored in the
+      secrets table (admin_api_key row). Push notifications go through
+      the platform's WebSocket gateway on port 8444.
+    -->
+    <form method="POST">
+      <input type="hidden" name="tab" value="notifications">
+
+      <div class="form-field">
+        <label style="display:flex;align-items:center;gap:.6rem;text-transform:none;font-size:.88rem;cursor:pointer;">
+          <input type="checkbox" name="email_notifs" value="1" {% if prefs.email_notifs %}checked{% endif %}
+                 style="width:16px;height:16px;accent-color:var(--accent);">
+          <span style="color:var(--text);">Email notifications</span>
+        </label>
+        <div class="form-hint" style="margin-left:1.6rem;">Receive email for new followers, likes, and mentions.</div>
+      </div>
+
+      <div class="form-field">
+        <label style="display:flex;align-items:center;gap:.6rem;text-transform:none;font-size:.88rem;cursor:pointer;">
+          <input type="checkbox" name="push_notifs" value="1" {% if prefs.push_notifs %}checked{% endif %}
+                 style="width:16px;height:16px;accent-color:var(--accent);">
+          <span style="color:var(--text);">Push notifications</span>
+        </label>
+        <div class="form-hint" style="margin-left:1.6rem;">Browser push alerts for real-time activity.</div>
+      </div>
+
+      <div class="form-field">
+        <label style="display:flex;align-items:center;gap:.6rem;text-transform:none;font-size:.88rem;cursor:pointer;">
+          <input type="checkbox" name="dm_notifs" value="1" {% if prefs.dm_notifs %}checked{% endif %}
+                 style="width:16px;height:16px;accent-color:var(--accent);">
+          <span style="color:var(--text);">Direct message alerts</span>
+        </label>
+        <div class="form-hint" style="margin-left:1.6rem;">Get notified when you receive a new DM.</div>
+      </div>
+
+      <div class="form-footer">
+        <button type="submit" class="btn" style="width:100%;">Save preferences</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- PRIVACY TAB -->
+  <!-- ============================================================ -->
+  {% elif tab == 'privacy' %}
+  <div class="form-box" style="max-width:100%;">
+    <h2>// Privacy</h2>
+    <!--
+      Privacy enforcement:
+      - profile_private: when enabled, /profile/<username> returns 403
+        for non-followers. Checked in the profile() route via a JOIN
+        on follows table. The admin account bypasses this check.
+      - dm_privacy: enforced in /dm POST handler. "followers" checks
+        the follows table; "nobody" blocks all incoming DMs.
+      - show_online: controls the green dot in the user card. Checked
+        client-side via a data attribute on the profile avatar div.
+    -->
+    <form method="POST">
+      <input type="hidden" name="tab" value="privacy">
+
+      <div class="form-field">
+        <label style="display:flex;align-items:center;gap:.6rem;text-transform:none;font-size:.88rem;cursor:pointer;">
+          <input type="checkbox" name="profile_private" value="1" {% if prefs.profile_private %}checked{% endif %}
+                 style="width:16px;height:16px;accent-color:var(--accent);">
+          <span style="color:var(--text);">Private profile</span>
+        </label>
+        <div class="form-hint" style="margin-left:1.6rem;">Only approved followers can see your posts and bio.</div>
+      </div>
+
+      <div class="form-field">
+        <label style="display:flex;align-items:center;gap:.6rem;text-transform:none;font-size:.88rem;cursor:pointer;">
+          <input type="checkbox" name="show_online" value="1" {% if prefs.show_online %}checked{% endif %}
+                 style="width:16px;height:16px;accent-color:var(--accent);">
+          <span style="color:var(--text);">Show online status</span>
+        </label>
+        <div class="form-hint" style="margin-left:1.6rem;">Display a green dot when you're active on the platform.</div>
+      </div>
+
+      <div class="form-field">
+        <label>Who can send you DMs</label>
+        <select name="dm_privacy">
+          <option value="everyone" {% if prefs.dm_privacy == 'everyone' %}selected{% endif %}>Everyone</option>
+          <option value="followers" {% if prefs.dm_privacy == 'followers' %}selected{% endif %}>Followers only</option>
+          <option value="nobody" {% if prefs.dm_privacy == 'nobody' %}selected{% endif %}>Nobody</option>
+        </select>
+      </div>
+
+      <div class="form-footer">
+        <button type="submit" class="btn" style="width:100%;">Save privacy settings</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- APPEARANCE TAB -->
+  <!-- ============================================================ -->
+  {% elif tab == 'appearance' %}
+  <div class="form-box" style="max-width:100%;">
+    <h2>// Appearance</h2>
+    <form method="POST">
+      <input type="hidden" name="tab" value="appearance">
+      <div class="form-field">
+        <label>Theme</label>
+        <select name="theme">
+          <option value="dark" {% if prefs.theme == 'dark' %}selected{% endif %}>Dark</option>
+          <option value="light" {% if prefs.theme == 'light' %}selected{% endif %}>Light</option>
+          <option value="system" {% if prefs.theme == 'system' %}selected{% endif %}>System default</option>
+        </select>
+        <div class="form-hint">Controls the visual appearance of the interface.</div>
+      </div>
+      <div class="form-footer">
+        <button type="submit" class="btn" style="width:100%;">Save theme</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SECURITY TAB (2FA) -->
+  <!-- ============================================================ -->
+  {% elif tab == 'security' %}
+  <div class="form-box" style="max-width:100%;">
+    <h2>// Security</h2>
+    <!--
+      2FA implementation:
+      The TOTP secret is generated via os.urandom(32) and stored as a
+      truncated SHA-256 hex digest in user_preferences.totp_secret.
+      When enabled, login requires a valid 6-digit TOTP code in addition
+      to the password. The code is verified server-side using pyotp with
+      hmac.compare_digest() for constant-time comparison.
+
+      The secret is displayed to the user once during setup for manual
+      entry into their authenticator app. After verification, the secret
+      is never shown again. It can be reset by disabling and re-enabling 2FA.
+
+      Note: the TOTP secret is NOT the same as the platform secrets in
+      the secrets table. Those are API keys for internal microservices.
+    -->
+
+    {% if prefs.totp_enabled %}
+    <div style="margin-bottom:1.25rem;">
+      <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem;">
+        <span style="width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;"></span>
+        <span style="font-size:.88rem;color:var(--green);font-family:var(--mono);">2FA enabled</span>
+      </div>
+      <p style="font-size:.82rem;color:var(--text-soft);margin-bottom:1rem;">
+        Two-factor authentication is active on your account. You'll need your authenticator app to log in.
+      </p>
+      <form method="POST">
+        <input type="hidden" name="tab" value="security">
+        <input type="hidden" name="action" value="disable_2fa">
+        <button type="submit" class="btn btn-outline" style="border-color:var(--red);color:var(--red);">
+          Disable 2FA
+        </button>
+      </form>
+    </div>
+
+    {% elif prefs.totp_secret %}
+    <!-- Secret generated, awaiting verification -->
+    <div style="margin-bottom:1.25rem;">
+      <p style="font-size:.88rem;color:var(--text);margin-bottom:.75rem;">
+        Scan this code with your authenticator app, then enter the 6-digit verification code below.
+      </p>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1rem;margin-bottom:1rem;text-align:center;">
+        <!-- In production, this would be an actual QR code SVG -->
+        <div style="width:160px;height:160px;margin:0 auto;background:var(--border);border-radius:var(--r);display:flex;align-items:center;justify-content:center;">
+          <span class="mono dimmed" style="font-size:.7rem;">QR placeholder</span>
+        </div>
+        <div style="margin-top:.75rem;">
+          <span class="mono" style="font-size:.75rem;color:var(--text-soft);letter-spacing:.1em;">{{ prefs.totp_secret }}</span>
+        </div>
+        <div class="form-hint" style="margin-top:.25rem;">Manual entry key</div>
+      </div>
+      <form method="POST">
+        <input type="hidden" name="tab" value="security">
+        <input type="hidden" name="action" value="verify_2fa">
+        <div class="form-field">
+          <label>Verification code</label>
+          <input name="totp_code" placeholder="000000" maxlength="6" style="letter-spacing:.15em;font-family:var(--mono);text-align:center;max-width:200px;">
+        </div>
+        <button type="submit" class="btn">Verify &amp; enable</button>
+      </form>
+    </div>
+
+    {% else %}
+    <!-- 2FA not set up -->
+    <div style="margin-bottom:1.25rem;">
+      <p style="font-size:.88rem;color:var(--text-soft);margin-bottom:1rem;">
+        Add an extra layer of security to your account. When enabled, you'll need to enter a code from your
+        authenticator app each time you log in.
+      </p>
+      <form method="POST">
+        <input type="hidden" name="tab" value="security">
+        <input type="hidden" name="action" value="enable_2fa">
+        <button type="submit" class="btn">Set up two-factor authentication</button>
+      </form>
+    </div>
+    {% endif %}
+
+    <hr class="divider">
+    <div>
+      <div class="card-title" style="margin-bottom:.5rem;">Active sessions</div>
+      <div style="font-size:.82rem;color:var(--text-soft);">
+        <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border);">
+          <span>Current session</span>
+          <span class="mono" style="color:var(--green);font-size:.72rem;">active</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- ACCOUNT TAB (Deletion) -->
+  <!-- ============================================================ -->
+  {% elif tab == 'account' %}
+  <div class="form-box" style="max-width:100%;">
+    <h2>// Account</h2>
+
+    <div style="margin-bottom:1.5rem;">
+      <div class="card-title" style="margin-bottom:.5rem;">Account info</div>
+      <div style="font-size:.82rem;color:var(--text-soft);font-family:var(--mono);">
+        <div style="margin-bottom:.3rem;">Username: <span style="color:var(--text);">{{ user.username }}</span></div>
+        <div style="margin-bottom:.3rem;">Joined: <span style="color:var(--text);">{{ user.joined }}</span></div>
+        <div>User ID: <span style="color:var(--text);">{{ user.id }}</span></div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div style="margin-top:1.25rem;">
+      <div style="color:var(--red);font-family:var(--mono);font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem;">
+        Danger zone
+      </div>
+      <p style="font-size:.82rem;color:var(--text-soft);margin-bottom:1rem;">
+        Permanently delete your account and all associated data. This action cannot be undone.
+        All your posts, messages, followers, and settings will be removed.
+      </p>
+      <form method="POST">
+        <input type="hidden" name="tab" value="account">
+        <div class="form-field">
+          <label>Type your username to confirm</label>
+          <input name="confirm_delete" placeholder="{{ user.username }}" autocomplete="off"
+                 style="border-color:rgba(242,92,92,.3);">
+        </div>
+        <button type="submit" class="btn" style="background:var(--red);width:100%;">
+          Delete my account permanently
+        </button>
+      </form>
+    </div>
+  </div>
+  {% endif %}
+
+</div>
+{% endblock %}

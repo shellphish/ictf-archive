@@ -1,0 +1,122 @@
+{
+  "nodes": [
+    {
+      "id": 1,
+      "type": "asl/entry",
+      "pos": [
+        -2417,
+        -2380
+      ],
+      "size": [
+        200,
+        30
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "next",
+          "type": "flow",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "title": "Entry Node",
+        "initial_state": {
+          "key": "str"
+        }
+      },
+      "color": "#334155",
+      "bgcolor": "#1E293B"
+    },
+    {
+      "id": 2,
+      "type": "asl/llm",
+      "pos": [
+        -2196,
+        -2285
+      ],
+      "size": [
+        200,
+        216
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "in",
+          "type": "flow",
+          "link": 1
+        },
+        {
+          "name": "in2",
+          "type": "flow",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "type": "flow",
+          "links": null
+        }
+      ],
+      "title": "Exploit Agent",
+      "properties": {
+        "title": "Exploit Agent",
+        "output_key": "llm_output",
+        "input_state_keys": [],
+        "output_state_keys": [],
+        "system_prompt": "  You are a binary exploitation agent. You have been given a CTF challenge binary with a vulnerability.\n\n  Use the available GDB tools to:\n  1. Start a debug session and run the binary\n  2. Understand the program's menu and behavior from its output\n  3. Identify and exploit the vulnerability to redirect execution to win()\n  4. Retrieve the flag\n\n  Think step by step. Use get_output() after every action to read the program's response before proceeding.",
+        "human_prompt": "Execute the Pokeheap UAF exploit now.",
+        "structured_output_enabled": true,
+        "structured_output_schema": [
+          {
+            "name": "result",
+            "type": "str",
+            "description": "The full output captured from the exploit run"
+          }
+        ],
+        "selected_tools": [
+          "start_debug",
+          "disassemble",
+          "set_breakpoint",
+          "delete_breakpoint",
+          "continue_exec",
+          "send_raw",
+          "get_output",
+          "check_status",
+          "gdb_run",
+          "send_input"
+        ],
+        "max_tool_iterations": 50,
+        "iteration_warning_message": "You are close to the tool iteration limit. Wrap up soon without more tool calls."
+      },
+      "color": "#334155",
+      "bgcolor": "#1E293B"
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "flow"
+    ]
+  ],
+  "groups": [],
+  "config": {
+    "state_schema": {
+      "count": "int",
+      "messages": "Annotated[List[BaseMessage], lambda x, y: x + y]",
+      "key": "str"
+    }
+  }
+}

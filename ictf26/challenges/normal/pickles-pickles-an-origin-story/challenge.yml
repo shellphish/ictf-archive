@@ -1,0 +1,17 @@
+name: "Pickle's Pickles: An Origin Story"
+author: "squishyy"
+category: misc
+description: "You've arrived at Pickle's Pickles. I've heard he has the best pickles around. However he has quite a strange way of pickling his pickles."
+value: 500
+type: standard
+image: .
+protocol: tcp
+host: null
+connection_info: null
+healthcheck: null
+flags:
+    - ictf{1_l1k3_unp1ckl1ng_p1ckl35_p1ckl35}
+files:
+    - src/challenge.py
+state: visible
+version: "0.1"

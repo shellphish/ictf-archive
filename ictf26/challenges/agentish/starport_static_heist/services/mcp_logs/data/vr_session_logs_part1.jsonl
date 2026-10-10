@@ -1,0 +1,9 @@
+{"timestamp": "2026-02-20T19:06:12Z", "session_id": "starport-concourse-42", "event_id": "e056", "event_type": "speech", "speaker_id": "u14", "speaker_alias": "echo_moth", "text": "Generator backup report filed."}
+{"timestamp": "2026-02-20T19:02:23Z", "session_id": "starport-concourse-42", "event_id": "e023", "event_type": "speech", "speaker_id": "u11", "speaker_alias": "mintwisp", "text": "key shard two: 8b5c"}
+{"timestamp": "2026-02-20T19:06:33Z", "session_id": "starport-concourse-42", "event_id": "e059", "event_type": "speech", "speaker_id": "u02", "speaker_alias": "neon_lime", "text": "GG run starts in ten minutes."}
+{"timestamp": "2026-02-20T19:02:16Z", "session_id": "starport-concourse-42", "event_id": "e022", "event_type": "speech", "speaker_id": "u13", "speaker_alias": "drift_nine", "text": "Maintenance logged it, should clear in twenty."}
+{"timestamp": "2026-02-20T19:05:02Z", "session_id": "starport-concourse-42", "event_id": "e046", "event_type": "speech", "speaker_id": "u06", "speaker_alias": "red_orbit", "text": "Emergency lockdown drill at 20:30 \u2014 all crew acknowledge."}
+{"timestamp": "2026-02-20T19:09:35Z", "session_id": "starport-concourse-42", "event_id": "e085", "event_type": "speech", "speaker_id": "u13", "speaker_alias": "drift_nine", "text": "Logs archived. Gate 7 comms closed for this session."}
+{"timestamp": "2026-02-20T19:08:04Z", "session_id": "starport-concourse-42", "event_id": "e072", "event_type": "speech", "speaker_id": "u11", "speaker_alias": "mintwisp", "text": "key shard two: 7b4d"}
+{"timestamp": "2026-02-20T19:02:02Z", "session_id": "starport-concourse-42", "event_id": "e020", "event_type": "speech", "speaker_id": "u16", "speaker_alias": "hex_crane", "text": "key shard one: a4f3"}
+{"timestamp": "2026-02-20T19:01:29Z", "session_id": "starport-concourse-42", "event_id": "e015", "event_type": "speech", "speaker_id": "u03", "speaker_alias": "sable12", "text": "Key shard three: {{KEY_3}}"}

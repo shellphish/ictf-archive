@@ -1,0 +1,39 @@
+services:
+  # Local testing stubs for shared infrastructure.
+  # In a real deployment these are provided externally and can be replaced/overridden.
+  litellm:
+    image: docker.litellm.ai/berriai/litellm:main-stable
+    profiles: [debug]
+    environment:
+      OPENAI_API_KEY: ${LITELLM_API_KEY:-}
+      LITELLM_MASTER_KEY: ${LITELLM_MASTER_KEY:-local-admin-key}
+      CHALLENGE_LITELLM_API_KEY: ${CHALLENGE_LITELLM_API_KEY:-}
+      TEAM_LITELLM_API_KEY: ${TEAM_LITELLM_API_KEY:-}
+    volumes:
+      - ../../stubs/litellm_stub/config.yaml:/app/config.yaml:ro
+      - ../../stubs/litellm_stub/custom_auth.py:/app/custom_auth.py:ro
+    command: ["--config", "/app/config.yaml", "--host", "0.0.0.0", "--port", "4000"]
+    ports:
+      - "4000:4000"
+
+  langfuse:
+    build:
+      context: ../../stubs
+      dockerfile: langfuse_stub/Dockerfile
+    profiles: [debug]
+    environment:
+      PORT: "3000"
+    ports:
+      - "3000:3000"
+
+  mcp_binary:
+    build:
+      context: .
+      dockerfile: services/mcp_binary/Dockerfile
+    environment:
+      PORT: "8002"
+      FLAG_FILE: /app/flag
+      FLAG_CHALLENGE: ${FLAG_CHALLENGE}
+    ports:
+      - "8002:8002"
+    restart: unless-stopped

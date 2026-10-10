@@ -1,0 +1,27 @@
+services:
+
+  gdb-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - CTF_CHALLENGE_BIN_PATH=/challenges/src/level1
+      - FLAG_CHALLENGE=${FLAG_CHALLENGE}
+      - LITELLM_ENDPOINT=${LITELLM_ENDPOINT}
+      - LITELLM_API_KEY=${LITELLM_API_KEY}
+      - LANGFUSE_HOST=${LANGFUSE_HOST:-https://cloud.langfuse.com}
+      - LANGFUSE_PUBLIC_KEY=${LANGFUSE_PUBLIC_KEY}
+      - LANGFUSE_SECRET_KEY=${LANGFUSE_SECRET_KEY}
+    ports:
+      - "3000:3000"
+    networks:
+      - challenge-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/rpc"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  challenge-net:
+    driver: bridge

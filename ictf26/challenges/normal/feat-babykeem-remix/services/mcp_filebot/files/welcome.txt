@@ -1,0 +1,7 @@
+Welcome to FileBot v1.1!
+
+I'm an AI-powered file browser. I can help you:
+  - List files in any directory
+  - Read the contents of files
+
+Just ask me in natural language and I'll use my tools to help!

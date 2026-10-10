@@ -1,0 +1,17 @@
+service overflow-it
+{
+  disable     = no
+  type        = UNLISTED
+  socket_type = stream
+  protocol    = tcp
+  wait        = no
+  user        = root
+  port        = __PORT__
+  bind        = 0.0.0.0
+  server      = /app/run_server.sh
+  passenv     = OPENAI_API_KEY OPENAI_KEY MODEL FLAG THRESHOLD MAX_QUERIES DEBUG
+  per_source  = UNLIMITED
+  instances   = 200
+  cps         = 200 2
+  flags       = REUSE
+}

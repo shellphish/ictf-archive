@@ -1,0 +1,29 @@
+name: All-In Agent
+author: ximus15
+category: agentish
+description: |
+  Welcome to the high-stakes table.
+
+  Four players. 1,000 chips. 50 hands. 
+  Reach 3,500 or go home empty-handed
+value: 500
+type: agentish
+
+image: .
+protocol: http
+host: null
+connection_info: null
+healthcheck: null
+
+flags:
+  - ictf{p0k3r_f4c3_pr0_d3g3n_ch4mp_88442211}
+
+files: null
+
+topics:
+  - ai agent
+  - game theory
+  - decision making under uncertainty
+
+state: visible
+version: "0.1"

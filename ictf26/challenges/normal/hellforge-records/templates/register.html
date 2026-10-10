@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Register — Hellforge Records{% endblock %}
+{% block content %}
+<div style="max-width:400px;margin:0 auto;">
+    <h1>Register</h1>
+    <div class="card">
+        <form method="POST">
+            <div class="form-group"><label for="username">Username</label><input type="text" id="username" name="username" required></div>
+            <div class="form-group"><label for="password">Password</label><input type="password" id="password" name="password" required></div>
+            <button type="submit" class="btn btn-blood" style="width:100%;">Create Account</button>
+        </form>
+        <p class="mt-1" style="color:var(--steel);font-size:.85rem;">Already a member? <a href="{{ url_for('login') }}" style="color:var(--gold);">Login here</a></p>
+    </div>
+</div>
+{% endblock %}

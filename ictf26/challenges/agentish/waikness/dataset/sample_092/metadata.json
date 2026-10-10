@@ -1,0 +1,9 @@
+{
+  "vulnerability_type": "hardcoded_secret",
+  "cwe_id": "CWE-798",
+  "cwe_name": "Use of Hard-coded Credentials",
+  "language": "python",
+  "vulnerable_line": 5,
+  "exploit_input": "r00tp4ss!",
+  "description": "The script compares argv[1] against a hardcoded credential. An attacker who reads the source can extract and use the credential to trigger 'cat /flag'."
+}

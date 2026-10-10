@@ -1,0 +1,4 @@
+Project ideas for next quarter:
+- Add write_file tool (need to figure out sandboxing)
+- Support image previews
+- Multi-user sessions

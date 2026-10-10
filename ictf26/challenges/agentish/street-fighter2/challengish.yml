@@ -1,0 +1,178 @@
+# =============================================================================
+# challengish.yml — MCP Tool Configuration for Agentish
+# =============================================================================
+
+challenge_name: "Street Fighter 2"
+challenge_id: "street-fighter2"
+description: |
+  Create an intelligent agent to fight in 2v2 Street Fighter-style combat.
+  Train with Master Jee-Oh Vhun-Ee, gather intel on yourself and both opponents,
+  then defeat the opponents in the arena.
+  The adversary is overwhelmingly stronger than you, so you need to be strategic in your approach.
+
+infrastructure:
+  - name: "datastore"
+    network_alias: "datastore"
+
+mcp_servers:
+  - name: "mcp_trainer"
+    port: 7011
+    internal_host: "mcp_trainer"
+    enabled: true
+
+    routes:
+      - function: "train"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Start training. Returns training_id."
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "attack"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Get current step and attack to defend against."
+        arguments:
+          - name: "training_id"
+            type: "str"
+            required: true
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "defense"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Submit defense (parry/block/jump/sidestep/brace) for the step."
+        arguments:
+          - name: "training_id"
+            type: "str"
+            required: true
+          - name: "step_id"
+            type: "str"
+            required: true
+          - name: "defense"
+            type: "str"
+            required: true
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "assessment"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Returns JSON for both combatants (combatant_1, combatant_2) plus combatant combo info. Requires training complete."
+        arguments:
+          - name: "training_id"
+            type: "str"
+            required: true
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "opponents"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Returns JSON for both opponents (opponent_1, opponent_2) plus opponent combo info. Requires training complete."
+        arguments:
+          - name: "training_id"
+            type: "str"
+            required: true
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "status"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Get training status: 'in_progress', 'success', or 'failure'. Returns error_message if training_id is incorrect."
+        arguments:
+          - name: "training_id"
+            type: "str"
+            required: true
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+  - name: "mcp_arena"
+    port: 7012
+    internal_host: "mcp_arena"
+    enabled: true
+
+    routes:
+      - function: "fight"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Start a 2v2 fight. Training is not required (who needs training? It's for losers!). Returns fight_id."
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "action"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Opponent turn: call with fight_id only. Combatant turn: provide action target."
+        arguments:
+          - name: "fight_id"
+            type: "str"
+            required: true
+          - name: "combatant"
+            type: "str"
+            required: false
+            description: "combatant_a or combatant_b (required when current_turn is combatant)"
+          - name: "action"
+            type: "str"
+            required: false
+            description: "attack: punch/kick/sweep/elbow/headbutt"
+          - name: "target"
+            type: "str"
+            required: false
+            description: "opponent_a or opponent_b (when attacking)"
+          - name: "defense"
+            type: "str"
+            required: false
+            description: "parry/block/jump/sidestep/brace"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "fight_status"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Get fight state: health, current_turn, round_number, turn_index. Returns flag if game over and combatants won."
+        arguments:
+          - name: "fight_id"
+            type: "str"
+            required: true
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "history"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Get the last n moves in the fight. Pass n=0 to get all moves."
+        arguments:
+          - name: "fight_id"
+            type: "str"
+            required: true
+          - name: "n"
+            type: "int"
+            required: false
+            description: "Number of moves to return; 0 = all"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"

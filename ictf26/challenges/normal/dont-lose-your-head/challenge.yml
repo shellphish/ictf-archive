@@ -1,0 +1,33 @@
+name: dont-lose-your-head
+author: TBD
+category: web
+description: |
+  A simple page with a light and dark theme.
+  Admins get to see something special.. but you are not an admin.
+
+  Or are you?
+value: 200
+type: standard
+
+image: .
+protocol: http
+host: null
+connection_info: null
+healthcheck: null
+
+flags:
+  - ictf{crlf_g0t_me_4dm1n_73183220}
+
+files: null
+
+topics:
+  - web
+  - http
+
+tags:
+  - crlf
+  - header injection
+  - http
+
+state: visible
+version: "0.1"

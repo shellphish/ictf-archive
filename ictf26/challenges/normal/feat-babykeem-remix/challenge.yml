@@ -1,0 +1,22 @@
+name: "Feat. Baby Keem - REMIX"
+category: llm
+description: |
+  FileBot is back -- now with improved security.
+  It can list, read, and even write files for you, but the flag is still off limits.
+
+  We patched the last vulnerability. Good luck.
+
+value: 500
+type: standard
+
+image: .
+protocol: tcp
+
+flags:
+  - flag: "ictf{r3m1x_p01icy_g0t_0v3rwr1tt3n}"
+    type: PLAINTEXT
+
+files: []
+
+hidden: false
+max_attempts: 0

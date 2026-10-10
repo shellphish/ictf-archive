@@ -1,0 +1,20 @@
+edition: ictf26
+year: 2026
+title: "iCTF 2026"
+theme: "AI Agents and Cybersecurity"
+format: jeopardy
+tracks:
+  - name: agentish
+    description: "AI agent workflow challenges using the Agentish framework"
+    challenge_count: 17
+  - name: normal
+    description: "Traditional CTF challenges alongside AI-themed content"
+    challenge_count: 25
+source: https://github.com/shellphish/ictf-challenges-2026
+infrastructure:
+  agentish_framework: https://github.com/shellphish/agentish
+  sandbox: https://github.com/shellphish/agentish-sandbox
+notes: >
+  The 2026 iCTF introduced Agentish — a visual workflow editor for building
+  LangGraph-based AI agent challenges. Participants solved challenges involving
+  AI agent workflows, MCP tool integration, and LLM-based systems.

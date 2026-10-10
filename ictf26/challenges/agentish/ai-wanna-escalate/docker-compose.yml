@@ -1,0 +1,37 @@
+# =============================================================================
+# docker-compose.yml — NetBreach CTF Challenge
+# =============================================================================
+#
+# Usage:
+#   cd netbreach-challenge/
+#   docker compose up --build
+#
+# Services:
+#   - agentish:       Visual workflow editor at http://localhost:8000
+#   - mcp_netbreach:  MCP game server (internal, port 7001)
+# =============================================================================
+
+services:
+
+  # ---------- Agentish UI ----------
+  agentish:
+    build:
+      context: .
+      dockerfile: Dockerfile.agentish
+    environment:
+      CHALLENGISH_CONFIG_PATH: /app/challengish.yml
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mcp_netbreach
+
+  # ---------- MCP NetBreach Game Server ----------
+  mcp_netbreach:
+    build:
+      context: .
+      dockerfile: Dockerfile.mcp_netbreach
+    environment:
+      FLAG_CHALLENGE: ${FLAG_CHALLENGE}
+      # NETBREACH_SEED: "42"  # Uncomment for deterministic network
+    ports:
+      - "7001:7001"

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Login — Hellforge Records{% endblock %}
+{% block content %}
+<!-- TODO: add rate limiting to login form — currently bruteforceable -->
+<!-- Note: username is reflected in post-login greeting, verify XSS sanitization -->
+<div style="max-width:400px;margin:0 auto;">
+    <h1>Login</h1>
+    <div class="card">
+        <form method="POST" aria-label="Login form — user input reflected in greeting page after authentication">
+            <div class="form-group"><label for="username">Username</label><input type="text" id="username" name="username" required></div>
+            <div class="form-group"><label for="password">Password</label><input type="password" id="password" name="password" required></div>
+            <button type="submit" class="btn btn-blood" style="width:100%;">Login</button>
+        </form>
+        <p class="mt-1" style="color:var(--steel);font-size:.85rem;">No account? <a href="{{ url_for('register') }}" style="color:var(--gold);">Register here</a></p>
+    </div>
+</div>
+{% endblock %}

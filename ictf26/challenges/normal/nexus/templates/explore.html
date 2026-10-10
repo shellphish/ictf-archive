@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Explore — Nexus{% endblock %}
+{% block body %}
+<div class="layout layout-2">
+  <div>
+    <div class="card-title" style="margin-bottom:.5rem;">Trending</div>
+    {% for p in trending %}
+    <div class="post">
+      <div class="post-header">
+        <div class="post-avatar">{{ p.author[:2].upper() }}</div>
+        <a href="{{ url_for('profile', username=p.author) }}" class="post-author">{{ p.author }}</a>
+        <span class="post-ts">{{ p.ts[:16] }}</span>
+      </div>
+      <div class="post-body">{{ p.content }}</div>
+      <div class="dimmed mono" style="font-size:.72rem;">{{ p.likes }} likes</div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <aside>
+    <div class="card">
+      <div class="card-title">People</div>
+      {% for u in users %}
+      <div class="sug">
+        <div class="sug-av">{{ u.username[:2].upper() }}</div>
+        <div class="sug-name">
+          <a href="{{ url_for('profile', username=u.username) }}">{{ u.username }}</a>
+          <div class="sug-bio">{{ u.bio[:50] }}</div>
+        </div>
+        {% if me %}
+        <form method="POST" action="{{ url_for('follow', username=u.username) }}">
+          <button type="submit" class="btn btn-outline btn-sm">+</button>
+        </form>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </aside>
+</div>
+{% endblock %}

@@ -1,0 +1,82 @@
+# =============================================================================
+# sandbox.yml — Agentish Sandbox Runtime Configuration
+# =============================================================================
+#
+# This file is mounted into the sandbox container at /config/sandbox.yml
+# (controlled by SANDBOX_CONFIG_PATH env var in Dockerfile.sandbox).
+#
+# It configures:
+#   1. The LLM provider the compiled agent will use when executed
+#   2. Optional Langfuse tracing
+#
+# The compiled agent reads this file at runtime via MODEL_CONFIG_PATH.
+# All values here can also be overridden by environment variables
+# (see model_init.j2 for the fallback chain).
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# LLM provider selection: 'litellm' | 'openai' | 'llamacpp'
+# For a challenge deployment this should always be 'litellm' so that the
+# team's requests go through the shared proxy with key-based rate limiting.
+# ---------------------------------------------------------------------------
+provider_type: litellm
+
+# General model settings (used regardless of provider_type)
+# Note all reasoning models should have temprature set to 1.0
+model: gpt-5
+temperature: 1.0
+context_window: 128000
+max_output_tokens: 8192
+recursion_limit: 300
+
+# ---------------------------------------------------------------------------
+# LiteLLM provider block — required when provider_type = 'litellm'
+#
+# endpoint: URL of the LiteLLM proxy.
+#   - In the challenge docker-compose network: http://litellm:4000
+#   - In production, replace with the real shared proxy URL.
+#
+# api_key: Team-specific key injected by the organiser.
+#   - For local testing this matches TEAM_LITELLM_API_KEY in .env
+#   - In production, each team gets a unique key from the shared proxy.
+# ---------------------------------------------------------------------------
+litellm:
+  endpoint: http://litellm:4000
+  api_key: team-and-challenge-specific-local-key
+
+# ---------------------------------------------------------------------------
+# OpenAI provider block — only used when provider_type = 'openai'
+# Uncomment and fill in if bypassing LiteLLM entirely.
+# ---------------------------------------------------------------------------
+# openai:
+#   api_key: sk-...
+#   endpoint: https://api.openai.com/v1   # optional custom base URL
+
+# ---------------------------------------------------------------------------
+# LlamaCpp provider block — only used when provider_type = 'llamacpp'
+# ---------------------------------------------------------------------------
+# llamacpp:
+#   endpoint: http://localhost:8080
+#   api_key: not-needed
+
+# ---------------------------------------------------------------------------
+# Langfuse observability (optional)
+#
+# Set enable_tracing: true and fill in credentials to get per-run traces.
+# Leave enable_tracing: false (or omit) to skip tracing entirely.
+# In the docker-compose stack the stub langfuse runs on port 3000.
+# ---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
+# Per-team dynamic flag
+#
+# The challenge secret used to compute per-team flags:
+#   ictf{sha256(flag_challenge + "_" + team_id)[:32]}
+# Passed to MCP containers as the FLAG_CHALLENGE env var.
+# ---------------------------------------------------------------------------
+flag_challenge: YOUR_CHALLENGE_SECRET
+
+enable_tracing: false
+langfuse:
+  host: http://langfuse:3000
+  public_key: ""
+  secret_key: ""

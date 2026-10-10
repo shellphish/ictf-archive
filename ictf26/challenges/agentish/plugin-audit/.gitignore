@@ -1,0 +1,5 @@
+.env
+wordpress/
+wordpress-base/
+wordpress-core-tmp/
+plugins-tmp/

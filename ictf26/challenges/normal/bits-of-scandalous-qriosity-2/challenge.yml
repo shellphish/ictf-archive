@@ -1,0 +1,38 @@
+name: Bits of Scan-dalous QRiosity Part 2
+author: Jeremy Schwartz
+category: forensics
+description: |
+  Image stacking is a technique used to improve the quality of images by combining multiple frames of the same subject. This method is commonly used in
+  – Astrophotography to reduce noise and enhance faint objects
+  – Medical imaging to improve clarity
+  – Photography to create cleaner images in low-light conditions
+
+  When multiple images of the same scene are taken, each individual image contains random noise and potentially unwanted elements. By intelligently combining these images, we can
+  – Reduce random noise or
+  – Eliminate transient elements (like a person walking through a scene)
+  – Enhance details that might be barely visible in a single image
+
+  This pixel-by-pixel manipulation is the foundation for countless image processing techniques which can be particularly effective at removing outliers, such as using mean/median stacking and/or calculating Euclidean color distances in RGB space.
+
+  Least Significant Bit (LSB) steganography is utilized by programmers because the LSB is the bit that contributes least to the overall value of the 8 bit binary R, G, or B values.  Modifying this bit in an original image causes such a small change to the color value that it's virtually imperceptible to the human eye.  For example, changing a pixel's red value from 10101101 to 10101100 would be enough to signal “on” or “off” when decoding to reconstruct a hidden message.
+
+  Take a look at these images. Can you find the flag?
+
+  (Please note, the flag format for this challenge is iCTF={flag} instead of ictf{flag})
+
+value: 500
+type: standard
+
+image: .
+protocol: 
+host: null
+connection_info: null
+healthcheck: null
+
+flags:
+- iCTF={umustQRsickQRcodesorLSBware!}
+
+files: CueAres.zip
+
+state: visible
+version: "0.1"

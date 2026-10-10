@@ -1,0 +1,38 @@
+name: "Rumor Has It"
+category: "agentic"
+description: |
+  A threat-intel “gossip” is circulating about a security compromise.
+
+  This is an **agentic challenge**: an agent can query an MCP server to:
+
+  - retrieve the first rumor in a gossip chain (`gossip`)
+  - query specific sources for their message (`rumor`)
+  - submit the ordered chain of sources and the final IoC (`opinion`)
+
+  If the chain and IoC are correct, you get the flag.
+
+value: 150
+type: standard
+
+flags:
+  - flag: "CTF{recovered_the_real_ioc_from_rumors}"
+    type: PLAINTEXT
+
+tags:
+  - agent
+  - mcp
+  - threat-intel
+  - ioc
+
+hints:
+  - hint: "Follow the source chain in order; the real IoC is the one consistently supported."
+    cost: 0
+
+files: []
+
+hidden: false
+max_attempts: 0
+
+extra:
+  docker_compose: "docker-compose.yml"
+  challengish: "challengish.yml"

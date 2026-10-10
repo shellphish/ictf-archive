@@ -1,0 +1,20 @@
+name: "Feat. Baby Keem"
+category: llm
+description: |
+  FileBot is a helpful AI file browser with strict security policies protecting sensitive data.
+  It can list and read files for you -- but some files are off limits.
+
+value: 500
+type: standard
+
+image: .
+protocol: tcp
+
+flags:
+  - flag: "ictf{c0nt3xt_w1nd0w_g03s_brrr_baby_keem}"
+    type: PLAINTEXT
+
+files: []
+
+hidden: false
+max_attempts: 0

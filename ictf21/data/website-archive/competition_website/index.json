@@ -1,0 +1,288 @@
+{
+ "version": 2,
+ "indexPages": [
+  "index.html"
+ ],
+ "files": [
+  {
+   "path": "index.json"
+  },
+  {
+   "path": "index.dat"
+  },
+  {
+   "path": "index.rdf"
+  },
+  {
+   "path": "history.rdf"
+  },
+  {
+   "path": "^metadata^"
+  },
+  {
+   "path": "index.html",
+   "url": "https://ictf.gg/",
+   "role": "document",
+   "token": "af6ba0ae13d510f703001cd289ed89e55c87521e"
+  },
+  {
+   "path": "index.xhtml",
+   "role": "document"
+  },
+  {
+   "path": "index.svg",
+   "role": "document"
+  },
+  {
+   "path": "13c2fd198e5af3882d709e238baa7ba3f32b709a.png",
+   "role": "resource",
+   "token": "6786c4614fbab45ac49466fee8def2d3f3c1c131"
+  },
+  {
+   "path": "bootstrap-select.min.css",
+   "url": "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css",
+   "role": "css",
+   "token": "d6f1138cce5e12b15d8bb41168b0b089f9a23d38"
+  },
+  {
+   "path": "css.css",
+   "url": "https://fonts.googleapis.com/css?family=Varela+Round",
+   "role": "css",
+   "token": "3b1a79cd706d070857b1fdfa711791ffe249b29f"
+  },
+  {
+   "path": "css-1.css",
+   "url": "https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i",
+   "role": "css",
+   "token": "b905579a5078627c7526e3e0a049495242081bf4"
+  },
+  {
+   "path": "bootstrap.min.css",
+   "url": "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
+   "role": "css",
+   "token": "f89257b7f98c8f7300cc08c9ebaf2cf05e7199fa"
+  },
+  {
+   "path": "ictf.css",
+   "url": "https://ictf.gg/static/css/ictf.css",
+   "role": "css",
+   "token": "d62abe99a2aa2ddd724ed1f0d8c17fea20a9dca7"
+  },
+  {
+   "path": "shellphish.png",
+   "url": "https://ictf.gg/static/img/shellphish.png",
+   "role": "resource",
+   "token": "9aa68c5e25ffc13985bf4f02b93d01e85023ad5b"
+  },
+  {
+   "path": "shellphish-logo.png",
+   "url": "https://ictf.gg/static/img/shellphish-logo.png",
+   "role": "resource",
+   "token": "cace20ce78aac4e1b5e593192b66e75bd383740a"
+  },
+  {
+   "path": "frame_with_cat.gif",
+   "url": "https://ictf.gg/static/img/frame_with_cat.gif",
+   "role": "resource",
+   "token": "6735a54434798f49043a9f0e7cc9b9c3a30f9bd6"
+  },
+  {
+   "path": "grayscale.css",
+   "url": "https://ictf.gg/static/css/grayscale.css",
+   "role": "css",
+   "token": "0bde7741c6fc83d5a1f5b8623b22ef2d96b402f8"
+  },
+  {
+   "path": "amazon-banner.png",
+   "url": "https://ictf.gg/static/img/amazon-banner.png",
+   "role": "resource",
+   "token": "365f2de8b307f6c9d7948988d21369ff02746279"
+  },
+  {
+   "path": "free-fa-solid-900.eot",
+   "url": "https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-solid-900.eot?",
+   "role": "resource",
+   "token": "410fef548c55910b8feba95de4778bd13fa3464c"
+  },
+  {
+   "path": "free-fa-solid-900.woff2",
+   "url": "https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-solid-900.woff2",
+   "role": "resource",
+   "token": "3212e704eff32b9a96316ba086e43e459606018f"
+  },
+  {
+   "path": "free-fa-solid-900.woff",
+   "url": "https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-solid-900.woff",
+   "role": "resource",
+   "token": "e6aff9fb48a5aeace4238ead909cd8f609bcc77d"
+  },
+  {
+   "path": "free-fa-solid-900.ttf",
+   "url": "https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-solid-900.ttf",
+   "role": "resource",
+   "token": "7824a19f9daf46b77ded560c9e136a66bf1382ec"
+  },
+  {
+   "path": "free-fa-solid-900.svg",
+   "url": "https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-solid-900.svg",
+   "role": "resource",
+   "token": "25e71c2d8862d098eb0fca2a024ed1d0b3f21333"
+  },
+  {
+   "path": "free-fa-brands-400.eot",
+   "url": "https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-brands-400.eot?",
+   "role": "resource",
+   "token": "ade1b7bdf891b7cd4fd8a9eaecb57be3f0bdb96f"
+  },
+  {
+   "path": "free-fa-brands-400.woff2",
+   "url": "https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-brands-400.woff2",
+   "role": "resource",
+   "token": "b6fd00c0f965107b479b63000c98386ed9f2dfc2"
+  },
+  {
+   "path": "free-fa-brands-400.woff",
+   "url": "https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-brands-400.woff",
+   "role": "resource",
+   "token": "83a2a4dd6b27781c33b4cd711f3c15c4a66e8221"
+  },
+  {
+   "path": "free-fa-brands-400.ttf",
+   "url": "https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-brands-400.ttf",
+   "role": "resource",
+   "token": "7f8e0b4165dccdc6a5538d04b9f363dd121968fe"
+  },
+  {
+   "path": "free-fa-brands-400.svg",
+   "url": "https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-brands-400.svg",
+   "role": "resource",
+   "token": "9a971200376e028ddc7115c43370f167243bfb5c"
+  },
+  {
+   "path": "free-fa-regular-400.eot",
+   "url": "https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-regular-400.eot?",
+   "role": "resource",
+   "token": "84d750478f04d1670e98158c5b09479d42c49b62"
+  },
+  {
+   "path": "free-fa-regular-400.woff2",
+   "url": "https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-regular-400.woff2",
+   "role": "resource",
+   "token": "803fa5e9d499ac84556c3894153748d0ce1e5748"
+  },
+  {
+   "path": "free-fa-regular-400.woff",
+   "url": "https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-regular-400.woff",
+   "role": "resource",
+   "token": "911d02d59626dddd01d6c1512589e9c7e41d5094"
+  },
+  {
+   "path": "free-fa-regular-400.ttf",
+   "url": "https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-regular-400.ttf",
+   "role": "resource",
+   "token": "fb286719abe8a6183dbb827ab004588e9289abda"
+  },
+  {
+   "path": "free-fa-regular-400.svg",
+   "url": "https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-regular-400.svg",
+   "role": "resource",
+   "token": "30e08d52f8c8c0509793c62a55cba5a508698e79"
+  },
+  {
+   "path": "howto.html",
+   "url": "https://ictf.gg/howto",
+   "role": "document",
+   "token": "ab19b17dd83a5ea253d6b9e02598eae3ec06a7eb"
+  },
+  {
+   "path": "css-2.css",
+   "url": "https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600",
+   "role": "css",
+   "token": "129b819ff1241ddd93d490a8ab21b027189f90ad"
+  },
+  {
+   "path": "hi_diyskilxrpg3hip6sj7fm7pqpmcmnzfquwx28dbkxtmdrteuc.woff2",
+   "url": "https://fonts.gstatic.com/s/sourcecodepro/v18/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DBKXtMdrTEUc.woff2",
+   "role": "resource",
+   "token": "f6f5209bf918b914492174eee7352d20f3a8937b"
+  },
+  {
+   "path": "hi_diyskilxrpg3hip6sj7fm7pqpmcmnzfquwx28dmyqtmdrteuc.woff2",
+   "url": "https://fonts.gstatic.com/s/sourcecodepro/v18/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQtMdrTEUc.woff2",
+   "role": "resource",
+   "token": "fc82b7ec651594a60f44ed29aed9acf4b39d12b1"
+  },
+  {
+   "path": "hi_diyskilxrpg3hip6sj7fm7pqpmcmnzfquwx28dmyqtmprteuc.woff2",
+   "url": "https://fonts.gstatic.com/s/sourcecodepro/v18/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQtMprTEUc.woff2",
+   "role": "resource",
+   "token": "958c1dd2ef5af643761f25caf990c9ae72f8da8b"
+  },
+  {
+   "path": "hi_diyskilxrpg3hip6sj7fm7pqpmcmnzfquwx28dmyqtm1rteuc.woff2",
+   "url": "https://fonts.gstatic.com/s/sourcecodepro/v18/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQtM1rTEUc.woff2",
+   "role": "resource",
+   "token": "d2d0c62264d11b335539a3b73470a435304dfbff"
+  },
+  {
+   "path": "hi_diyskilxrpg3hip6sj7fm7pqpmcmnzfquwx28dmyqtmzrteuc.woff2",
+   "url": "https://fonts.gstatic.com/s/sourcecodepro/v18/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQtMZrTEUc.woff2",
+   "role": "resource",
+   "token": "7d850793e404e728ca2c980097846ee41d9d0e16"
+  },
+  {
+   "path": "hi_diyskilxrpg3hip6sj7fm7pqpmcmnzfquwx28dmyqtmvrteuc.woff2",
+   "url": "https://fonts.gstatic.com/s/sourcecodepro/v18/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQtMVrTEUc.woff2",
+   "role": "resource",
+   "token": "a470503cc3a069e6f3d9378e221866bc9255558b"
+  },
+  {
+   "path": "hi_diyskilxrpg3hip6sj7fm7pqpmcmnzfquwx28dbkxtmlrta.woff2",
+   "url": "https://fonts.gstatic.com/s/sourcecodepro/v18/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DBKXtMlrTA.woff2",
+   "role": "resource",
+   "token": "32819ad0a2f37f3798545c7ef771fa9c10a8334e"
+  },
+  {
+   "path": "hi_diyskilxrpg3hip6sj7fm7pqpmcmnzfquwx28dmyqtmlrta.woff2",
+   "url": "https://fonts.gstatic.com/s/sourcecodepro/v18/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQtMlrTA.woff2",
+   "role": "resource",
+   "token": "bcd4d43ca095f48dd67b948ed5151b1fc9abd3aa"
+  },
+  {
+   "path": "hi_diyskilxrpg3hip6sj7fm7pqpmcmnzfquwx28dmyqtmrrteuc.woff2",
+   "url": "https://fonts.gstatic.com/s/sourcecodepro/v18/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQtMRrTEUc.woff2",
+   "role": "resource",
+   "token": "f24a419d406d8ce4ed18ceca5b3eb27222e857cc"
+  },
+  {
+   "path": "hi_diyskilxrpg3hip6sj7fm7pqpmcmnzfquwx28dbkxtm1rteuc.woff2",
+   "url": "https://fonts.gstatic.com/s/sourcecodepro/v18/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DBKXtM1rTEUc.woff2",
+   "role": "resource",
+   "token": "027848847fbe90f810057e2b1958774e558f2d81"
+  },
+  {
+   "path": "hi_diyskilxrpg3hip6sj7fm7pqpmcmnzfquwx28dbkxtmzrteuc.woff2",
+   "url": "https://fonts.gstatic.com/s/sourcecodepro/v18/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DBKXtMZrTEUc.woff2",
+   "role": "resource",
+   "token": "108e302ff7616544d40f08dbed7c006c66450f82"
+  },
+  {
+   "path": "hi_diyskilxrpg3hip6sj7fm7pqpmcmnzfquwx28dbkxtmvrteuc.woff2",
+   "url": "https://fonts.gstatic.com/s/sourcecodepro/v18/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DBKXtMVrTEUc.woff2",
+   "role": "resource",
+   "token": "edd2b5acaf5230e62a43e2b9be51957f4d4d2242"
+  },
+  {
+   "path": "hi_diyskilxrpg3hip6sj7fm7pqpmcmnzfquwx28dbkxtmrrteuc.woff2",
+   "url": "https://fonts.gstatic.com/s/sourcecodepro/v18/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DBKXtMRrTEUc.woff2",
+   "role": "resource",
+   "token": "8a0922f1c6435f29a9c44637401e0c30deada1ae"
+  },
+  {
+   "path": "hi_diyskilxrpg3hip6sj7fm7pqpmcmnzfquwx28dbkxtmprteuc.woff2",
+   "url": "https://fonts.gstatic.com/s/sourcecodepro/v18/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DBKXtMprTEUc.woff2",
+   "role": "resource",
+   "token": "bce4003b8449e9201b28d6c534a94a7044b248cb"
+  }
+ ]
+}

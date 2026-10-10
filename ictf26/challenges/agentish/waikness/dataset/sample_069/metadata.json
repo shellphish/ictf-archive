@@ -1,0 +1,9 @@
+{
+  "vulnerability_type": "hardcoded_secret",
+  "cwe_id": "CWE-798",
+  "cwe_name": "Use of Hard-coded Credentials",
+  "language": "c",
+  "vulnerable_line": 10,
+  "exploit_input": "xK9mP2vL8nQ4rT6w",
+  "description": "The program compares argv[1] against a hardcoded credential 'xK9mP2vL8nQ4rT6w'. An attacker who reads the binary (or source) can trivially authenticate."
+}

@@ -1,0 +1,5 @@
+FROM python:3.11-slim
+WORKDIR /app
+COPY mcp_silkthread_server.py .
+EXPOSE 7001
+CMD ["python", "mcp_silkthread_server.py", "--port", "7001"]

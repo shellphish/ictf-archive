@@ -1,0 +1,120 @@
+#!/usr/bin/env python3
+"""
+PyVault - Secure Notes Manager v2.1.2
+Last modified: 2024-09-15
+Author: vault_dev
+
+Changelog:
+  - v2.1.2: Added RestrictedUnpickler for secure deserialization
+  - v2.1.1: Added HMAC signing for import/export
+  - v2.0.0: Migrated from JSON to pickle for better Python object support
+  - v1.0.0: Initial release
+"""
+
+import os
+import pickle
+import hmac
+import hashlib
+import base64
+import sqlite3
+import io
+from functools import wraps
+from datetime import datetime
+
+from flask import (
+    Flask, render_template, request, redirect,
+    url_for, session, flash, Response, abort
+)
+
+app = Flask(__name__)
+app.secret_key = "5UP3R_S3CR3T_K3Y_D0NT_L34K_TH1S!"
+HMAC_KEY = b"vault_hmac_signing_key_2024_v2"
+DB_PATH = "/tmp/pyvault.db"
+FLAG = os.environ.get("FLAG", "flag{REDACTED}")
+
+
+# ============================================================
+# Restricted Unpickler
+# ============================================================
+
+class RestrictedUnpickler(pickle.Unpickler):
+    """
+    Security-hardened unpickler. Blocks dangerous modules and function names.
+    Reviewed by security team on 2024-08-20.
+    Ref: https://docs.python.org/3/library/pickle.html#restricting-globals
+
+    Blocked modules: os, subprocess, sys, shutil, ctypes, socket, signal,
+                     pty, commands, code, multiprocessing, threading, webbrowser,
+                     antigravity, turtle, tkinter
+    Blocked names:   system, popen, exec, eval, compile, execfile, __import__,
+                     breakpoint, open, Popen, call, check_output, check_call,
+                     run, spawn, fork, kill, execv, execve, execvp, execvpe,
+                     spawnl, spawnle
+    Blocked dunders: all except __init__, __new__, __dict__, __class__
+    """
+
+    BLOCKED_MODULES = {
+        'os', 'subprocess', 'sys', 'shutil', 'ctypes',
+        'socket', 'signal', 'pty', 'commands', 'code',
+        'multiprocessing', 'threading', 'webbrowser',
+        'antigravity', 'turtle', 'tkinter',
+    }
+
+    BLOCKED_NAMES = {
+        'system', 'popen', 'exec', 'eval', 'compile',
+        'execfile', '__import__', 'breakpoint', 'open',
+        'Popen', 'call', 'check_output', 'check_call',
+        'run', 'spawn', 'fork', 'kill', 'execv', 'execve',
+        'execvp', 'execvpe', 'spawnl', 'spawnle',
+    }
+
+    def find_class(self, module, name):
+        root_module = module.split('.')[0]
+        if root_module in self.BLOCKED_MODULES:
+            raise pickle.UnpicklingError(
+                f"[SECURITY] Module '{module}' is blocked!"
+            )
+        if name in self.BLOCKED_NAMES:
+            raise pickle.UnpicklingError(
+                f"[SECURITY] Name '{name}' is blocked!"
+            )
+        if name.startswith('__') and name.endswith('__'):
+            if name not in ('__init__', '__new__', '__dict__', '__class__'):
+                raise pickle.UnpicklingError(
+                    f"[SECURITY] Dunder '{name}' is not allowed!"
+                )
+        return super().find_class(module, name)
+
+
+def safe_loads(data: bytes):
+    """Safely deserialize a pickle blob using our RestrictedUnpickler."""
+    try:
+        return RestrictedUnpickler(io.BytesIO(data)).load()
+    except Exception as e:
+        raise ValueError(f"Deserialization failed: {e}")
+
+
+def sign_data(data: bytes) -> str:
+    """Sign data with HMAC-SHA256 and return base64(signature + data)."""
+    sig = hmac.new(HMAC_KEY, data, hashlib.sha256).digest()
+    return base64.b64encode(sig + data).decode()
+
+
+def verify_and_load(blob: str):
+    """Verify HMAC signature and deserialize."""
+    raw = base64.b64decode(blob)
+    sig = raw[:32]
+    data = raw[32:]
+    expected_sig = hmac.new(HMAC_KEY, data, hashlib.sha256).digest()
+    if not hmac.compare_digest(sig, expected_sig):
+        raise ValueError("Invalid signature! Data may have been tampered with.")
+    return safe_loads(data)
+
+
+# ... (routes omitted for brevity - see full source) ...
+# Guest credentials: guest / guest123
+
+
+if __name__ == '__main__':
+    init_db()
+    app.run(host='0.0.0.0', port=5000, debug=False)

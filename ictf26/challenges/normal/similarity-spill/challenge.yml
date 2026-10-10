@@ -1,0 +1,17 @@
+name: "similarity-spill"
+author: "benksy"
+category: ml
+description: "A semantic-search system leaked a query embedding. Rank snippets by cosine similarity to recover the hidden flag."
+value: 500
+type: standard
+image: null
+protocol: null
+host: null
+flags:
+  - ictf{embeddings_leak_meaning}
+files:
+  - src/INSTRUCTIONS.txt
+  - src/query.txt
+  - src/snippets.csv
+state: visible
+version: "0.1"

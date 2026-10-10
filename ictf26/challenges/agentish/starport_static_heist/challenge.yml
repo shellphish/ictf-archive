@@ -1,0 +1,39 @@
+name: "Starport Static Heist"
+category: "agentic"
+description: |
+  A VR comms dump from Nova Starport contains noisy, shuffled logs and decoy shard lines.
+
+  This is an **agentic challenge**. Your agent can query one MCP server:
+
+  - `list_logs`: list available log files
+  - `retrieve_lines_from_log`: fetch inclusive line ranges from a log
+  - `submit_key`: submit the current 10-hex rotating key and receive the flag if correct
+
+  The unlock key rotates every 30 seconds, so stale submissions fail.
+value: 200
+type: standard
+
+flags:
+  - flag: "flag{dock7-signal-scramble}"
+    type: PLAINTEXT
+
+tags:
+  - agent
+  - mcp
+  - logs
+  - forensics
+
+hints:
+  - hint: "Collect events from all log files and sort by timestamp."
+    cost: 0
+  - hint: "Only one speaker's shard one/two/three lines are valid."
+    cost: 50
+
+files: []
+
+hidden: false
+max_attempts: 0
+
+extra:
+  docker_compose: "docker-compose.yml"
+  challengish: "challengish.yml"

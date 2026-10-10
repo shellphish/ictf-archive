@@ -1,0 +1,25 @@
+name: bof_64
+author: n0sign4l
+category: pwn
+description: |
+  A classic stack buffer overflow challenge. The binary uses strcpy() to copy user input
+  into a 64-byte stack buffer without bounds checking. Overflow the buffer to overwrite
+  the adjacent is_admin authentication flag and gain shell access.
+  The struct uses packed layout, making the overflow straightforward — just 65 bytes of input
+  is enough to set is_admin to a non-zero value and bypass authentication.
+value: 500
+type: standard
+
+image: .
+protocol: null
+host: null
+connection_info: null
+healthcheck: null
+
+flags:
+  - ictf{buffer_overfl0w_1s_d@nger0us}
+
+files: null
+
+state: visible
+version: "0.1"

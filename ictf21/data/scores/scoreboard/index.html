@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html data-scrapbook-source="#/game/scores" data-scrapbook-create="20211204044448992"
+  data-scrapbook-title="iCTF" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="International Capture-The-Flag Competition">
+  <link rel="apple-touch-icon" href="#/logo192.png">
+  <link rel="manifest" href="#/manifest.json">
+  <title>iCTF</title>
+  <link href="main.b1a1e311.chunk.css" rel="stylesheet">
+</head>
+
+<body data-new-gr-c-s-check-loaded="8.891.0" data-gr-ext-installed=""><noscript>You need to enable JavaScript to run
+    this app.</noscript>
+  <div id="root">
+    <div class="wrap space--both-2">
+      <header class="main-header"><a aria-current="page" class="logo active" href="#/"><span
+            class="logo__name">iCTF</span></a>
+        <div class="countdown">
+          <div class="space--bottom-1"><span class="countdown__label">Game ends in</span><span
+              class="countdown__time--small"><span id="gameHours">00</span>:<span id="gameMinutes">00</span>:<span
+                id="gameSeconds">00</span></span></div>
+          <div class="space--bottom-1"><span class="countdown__label">current tick</span><span
+              class="countdown__time">152</span></div>
+          <div><span class="countdown__label">next in about</span><span class="countdown__time"><span
+                id="minutes">00</span>:<span id="seconds">00</span></span></div>
+        </div>
+        <nav class="navigation"><a aria-current="page" class="is-active" href="">Scoreboard</a><a
+            href="#/game/services">Service List</a><a
+            href="#/game/service-states">Service Status</a><a
+            href="#/game/service-exploits">Service Exploits</a><a
+            href="#/game/teams">Teams</a></nav>
+      </header>
+      <div class="main-content">
+        <div>
+          <h3 class="title">Scoreboard</h3>
+          <div class="chart c3" id="chart" style="max-height: 480px; position: relative;"><svg style="overflow: hidden;"
+              width="1488" height="480">
+              <defs>
+                <clipPath id="c3-1638593081762-clip">
+                  <rect width="1485" height="426"></rect>
+                </clipPath>
+                <clipPath id="c3-1638593081762-clip-xaxis">
+                  <rect x="-31" y="-20" width="1547" height="70"></rect>
+                </clipPath>
+                <clipPath id="c3-1638593081762-clip-yaxis">
+                  <rect x="-29" y="-4" width="21" height="450"></rect>
+                </clipPath>
+                <clipPath id="c3-1638593081762-clip-grid">
+                  <rect width="1485" height="426"></rect>
+                </clipPath>
+                <clipPath id="c3-1638593081762-clip-subchart">
+                  <rect width="1485" height="0"></rect>
+                </clipPath>
+              </defs>
+              <g transform="translate(1.5,4.5)"><text class="c3-text c3-empty" text-anchor="middle"
+                  dominant-baseline="middle" x="742.5" y="213" style="opacity: 0;"></text>
+                <g clip-path="url(#/game/scores#c3-1638593081762-clip)" class="c3-regions"
+                  style="visibility: visible;"></g>
+                <g clip-path="url(#/game/scores#c3-1638593081762-clip-grid)" class="c3-grid"
+                  style="visibility: visible;">
+                  <g class="c3-xgrid-focus">
+                    <line class="c3-xgrid-focus" x1="-10" x2="-10" y1="0" y2="426" style="visibility: hidden;"></line>
+                  </g>
+                </g>
+                <g clip-path="url(#/game/scores#c3-1638593081762-clip)" class="c3-chart">
+                  <g class="c3-stanford-elements">
+                    <g class="c3-stanford-lines" style="shape-rendering: geometricprecision;"></g>
+                    <g class="c3-stanford-texts"></g>
+                    <g class="c3-stanford-regions"></g>
+                  </g>
+                  <g class="c3-event-rects" style="fill-opacity: 0;">
+                    <rect class="c3-event-rect" x="0" y="0" width="1485" height="426"></rect>
+                  </g>
+                  <g class="c3-chart-bars">
+                    <g class="c3-chart-bar c3-target c3-target-Bushwhackers"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-Bushwhackers c3-bars c3-bars-Bushwhackers"
+                        style="cursor: pointer;"></g>
+                    </g>
+                    <g class="c3-chart-bar c3-target c3-target-saarsec"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-saarsec c3-bars c3-bars-saarsec" style="cursor: pointer;"></g>
+                    </g>
+                    <g class="c3-chart-bar c3-target c3-target-We_0wn_Y0u"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-We_0wn_Y0u c3-bars c3-bars-We_0wn_Y0u" style="cursor: pointer;">
+                      </g>
+                    </g>
+                    <g class="c3-chart-bar c3-target c3-target-lastemail"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-lastemail c3-bars c3-bars-lastemail" style="cursor: pointer;"></g>
+                    </g>
+                    <g class="c3-chart-bar c3-target c3-target-FAUST"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-FAUST c3-bars c3-bars-FAUST" style="cursor: pointer;"></g>
+                    </g>
+                    <g class="c3-chart-bar c3-target c3-target-burner_herz0g"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-burner_herz0g c3-bars c3-bars-burner_herz0g"
+                        style="cursor: pointer;"></g>
+                    </g>
+                    <g class="c3-chart-bar c3-target c3-target-FaKappa"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-FaKappa c3-bars c3-bars-FaKappa" style="cursor: pointer;"></g>
+                    </g>
+                    <g class="c3-chart-bar c3-target c3-target-Nandy-Narwhals"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-Nandy-Narwhals c3-bars c3-bars-Nandy-Narwhals"
+                        style="cursor: pointer;"></g>
+                    </g>
+                    <g class="c3-chart-bar c3-target c3-target-cyberwehr"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-cyberwehr c3-bars c3-bars-cyberwehr" style="cursor: pointer;"></g>
+                    </g>
+                    <g class="c3-chart-bar c3-target c3-target-Nicoglione"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-Nicoglione c3-bars c3-bars-Nicoglione" style="cursor: pointer;">
+                      </g>
+                    </g>
+                  </g>
+                  <g class="c3-chart-lines">
+                    <g class="c3-chart-line c3-target c3-target-Bushwhackers"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-Bushwhackers c3-lines c3-lines-Bushwhackers">
+                        <path class=" c3-shape c3-shape c3-line c3-line-Bushwhackers"
+                          style="stroke: rgb(31, 119, 180); opacity: 1;"
+                          d="M15,143.49185708272515L92,137.78412851939385L168,132.5103492413193L245,127.36920357008073L322,121.70594395770766L398,115.78007723419476L475,110.08144751758364L551,104.41610647338936L628,98.61931014112858L705,91.73907722316912L781,85.57773255984239L858,79.51597473110074L935,73.65667116747385L1011,67.90071132481371L1088,62.572885327610116L1164,57.42464205145791L1241,52.06320577969486L1318,47.03578467615122L1394,41.65256775286372L1471,36.416666666666636">
+                        </path>
+                      </g>
+                      <g class=" c3-shapes c3-shapes-Bushwhackers c3-areas c3-areas-Bushwhackers">
+                        <path class=" c3-shape c3-shape c3-area c3-area-Bushwhackers"
+                          style="fill: rgb(31, 119, 180); opacity: 0.2;" d="M 15 143.49185708272515"></path>
+                      </g>
+                      <g class=" c3-selected-circles c3-selected-circles-Bushwhackers"></g>
+                      <g class=" c3-shapes c3-shapes-Bushwhackers c3-circles c3-circles-Bushwhackers"
+                        style="cursor: pointer;">
+                        <circle shape-rendering="" class=" c3-shape c3-shape-0 c3-circle c3-circle-0" cx="15"
+                          cy="143.49185708272515" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-1 c3-circle c3-circle-1" cx="92"
+                          cy="137.78412851939385" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-2 c3-circle c3-circle-2" cx="168"
+                          cy="132.5103492413193" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-3 c3-circle c3-circle-3" cx="245"
+                          cy="127.36920357008073" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-4 c3-circle c3-circle-4" cx="322"
+                          cy="121.70594395770766" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-5 c3-circle c3-circle-5" cx="398"
+                          cy="115.78007723419476" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-6 c3-circle c3-circle-6" cx="475"
+                          cy="110.08144751758364" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-7 c3-circle c3-circle-7" cx="551"
+                          cy="104.41610647338936" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-8 c3-circle c3-circle-8" cx="628"
+                          cy="98.61931014112858" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-9 c3-circle c3-circle-9" cx="705"
+                          cy="91.73907722316912" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-10 c3-circle c3-circle-10" cx="781"
+                          cy="85.57773255984239" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-11 c3-circle c3-circle-11" cx="858"
+                          cy="79.51597473110074" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-12 c3-circle c3-circle-12" cx="935"
+                          cy="73.65667116747385" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-13 c3-circle c3-circle-13" cx="1011"
+                          cy="67.90071132481371" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-14 c3-circle c3-circle-14" cx="1088"
+                          cy="62.572885327610116" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-15 c3-circle c3-circle-15" cx="1164"
+                          cy="57.42464205145791" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-16 c3-circle c3-circle-16" cx="1241"
+                          cy="52.06320577969486" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-17 c3-circle c3-circle-17" cx="1318"
+                          cy="47.03578467615122" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-18 c3-circle c3-circle-18" cx="1394"
+                          cy="41.65256775286372" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-19 c3-circle c3-circle-19" cx="1471"
+                          cy="36.416666666666636" r="2.5" style="color: rgb(31, 119, 180); opacity: 1;"></circle>
+                      </g>
+                    </g>
+                    <g class="c3-chart-line c3-target c3-target-saarsec"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-saarsec c3-lines c3-lines-saarsec">
+                        <path class=" c3-shape c3-shape c3-line c3-line-saarsec"
+                          style="stroke: rgb(255, 127, 14); opacity: 1;"
+                          d="M15,203.28349470283376L92,194.27718901312173L168,185.21274073260633L245,176.57945701928645L322,167.87120324865347L398,159.38013698331926L475,150.28807186270382L551,141.34008408989774L628,133.22996228672122L705,131.22002850337813L781,127.58872064934293L858,124.4613420896261L935,120.7872835988533L1011,117.99565217302347L1088,114.92052924213523L1164,104.99096534399561L1241,99.01441296783733L1318,89.83762353898814L1394,80.50772297936342L1471,70.62199946367105">
+                        </path>
+                      </g>
+                      <g class=" c3-shapes c3-shapes-saarsec c3-areas c3-areas-saarsec">
+                        <path class=" c3-shape c3-shape c3-area c3-area-saarsec"
+                          style="fill: rgb(255, 127, 14); opacity: 0.2;" d="M 15 203.28349470283376"></path>
+                      </g>
+                      <g class=" c3-selected-circles c3-selected-circles-saarsec"></g>
+                      <g class=" c3-shapes c3-shapes-saarsec c3-circles c3-circles-saarsec" style="cursor: pointer;">
+                        <circle shape-rendering="" class=" c3-shape c3-shape-0 c3-circle c3-circle-0" cx="15"
+                          cy="203.28349470283376" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-1 c3-circle c3-circle-1" cx="92"
+                          cy="194.27718901312173" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-2 c3-circle c3-circle-2" cx="168"
+                          cy="185.21274073260633" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-3 c3-circle c3-circle-3" cx="245"
+                          cy="176.57945701928645" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-4 c3-circle c3-circle-4" cx="322"
+                          cy="167.87120324865347" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-5 c3-circle c3-circle-5" cx="398"
+                          cy="159.38013698331926" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-6 c3-circle c3-circle-6" cx="475"
+                          cy="150.28807186270382" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-7 c3-circle c3-circle-7" cx="551"
+                          cy="141.34008408989774" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-8 c3-circle c3-circle-8" cx="628"
+                          cy="133.22996228672122" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-9 c3-circle c3-circle-9" cx="705"
+                          cy="131.22002850337813" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-10 c3-circle c3-circle-10" cx="781"
+                          cy="127.58872064934293" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-11 c3-circle c3-circle-11" cx="858"
+                          cy="124.4613420896261" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-12 c3-circle c3-circle-12" cx="935"
+                          cy="120.7872835988533" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-13 c3-circle c3-circle-13" cx="1011"
+                          cy="117.99565217302347" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-14 c3-circle c3-circle-14" cx="1088"
+                          cy="114.92052924213523" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-15 c3-circle c3-circle-15" cx="1164"
+                          cy="104.99096534399561" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-16 c3-circle c3-circle-16" cx="1241"
+                          cy="99.01441296783733" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-17 c3-circle c3-circle-17" cx="1318"
+                          cy="89.83762353898814" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-18 c3-circle c3-circle-18" cx="1394"
+                          cy="80.50772297936342" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-19 c3-circle c3-circle-19" cx="1471"
+                          cy="70.62199946367105" r="2.5" style="color: rgb(255, 127, 14); opacity: 1;"></circle>
+                      </g>
+                    </g>
+                    <g class="c3-chart-line c3-target c3-target-We_0wn_Y0u"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-We_0wn_Y0u c3-lines c3-lines-We_0wn_Y0u">
+                        <path class=" c3-shape c3-shape c3-line c3-line-We_0wn_Y0u"
+                          style="stroke: rgb(44, 160, 44); opacity: 1;"
+                          d="M15,329.87679590658814L92,328.01517882376226L168,326.02698426781694L245,323.84012428000534L322,321.76482471057426L398,319.577329949301L475,317.62926619031265L551,315.64315188609606L628,313.5537356513246L705,311.6560966900722L781,310.0153644481556L858,307.92372242265117L935,306.1709567958822L1011,303.72156824284673L1088,301.4953906912411L1164,299.35173629173505L1241,296.9676913629728L1318,294.8430599446468L1394,292.5209992922648L1471,290.20612490532613">
+                        </path>
+                      </g>
+                      <g class=" c3-shapes c3-shapes-We_0wn_Y0u c3-areas c3-areas-We_0wn_Y0u">
+                        <path class=" c3-shape c3-shape c3-area c3-area-We_0wn_Y0u"
+                          style="fill: rgb(44, 160, 44); opacity: 0.2;" d="M 15 329.87679590658814"></path>
+                      </g>
+                      <g class=" c3-selected-circles c3-selected-circles-We_0wn_Y0u"></g>
+                      <g class=" c3-shapes c3-shapes-We_0wn_Y0u c3-circles c3-circles-We_0wn_Y0u"
+                        style="cursor: pointer;">
+                        <circle shape-rendering="" class=" c3-shape c3-shape-0 c3-circle c3-circle-0" cx="15"
+                          cy="329.87679590658814" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-1 c3-circle c3-circle-1" cx="92"
+                          cy="328.01517882376226" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-2 c3-circle c3-circle-2" cx="168"
+                          cy="326.02698426781694" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-3 c3-circle c3-circle-3" cx="245"
+                          cy="323.84012428000534" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-4 c3-circle c3-circle-4" cx="322"
+                          cy="321.76482471057426" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-5 c3-circle c3-circle-5" cx="398"
+                          cy="319.577329949301" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-6 c3-circle c3-circle-6" cx="475"
+                          cy="317.62926619031265" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-7 c3-circle c3-circle-7" cx="551"
+                          cy="315.64315188609606" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-8 c3-circle c3-circle-8" cx="628"
+                          cy="313.5537356513246" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-9 c3-circle c3-circle-9" cx="705"
+                          cy="311.6560966900722" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-10 c3-circle c3-circle-10" cx="781"
+                          cy="310.0153644481556" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-11 c3-circle c3-circle-11" cx="858"
+                          cy="307.92372242265117" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-12 c3-circle c3-circle-12" cx="935"
+                          cy="306.1709567958822" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-13 c3-circle c3-circle-13" cx="1011"
+                          cy="303.72156824284673" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-14 c3-circle c3-circle-14" cx="1088"
+                          cy="301.4953906912411" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-15 c3-circle c3-circle-15" cx="1164"
+                          cy="299.35173629173505" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-16 c3-circle c3-circle-16" cx="1241"
+                          cy="296.9676913629728" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-17 c3-circle c3-circle-17" cx="1318"
+                          cy="294.8430599446468" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-18 c3-circle c3-circle-18" cx="1394"
+                          cy="292.5209992922648" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-19 c3-circle c3-circle-19" cx="1471"
+                          cy="290.20612490532613" r="2.5" style="color: rgb(44, 160, 44); opacity: 1;"></circle>
+                      </g>
+                    </g>
+                    <g class="c3-chart-line c3-target c3-target-lastemail"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-lastemail c3-lines c3-lines-lastemail">
+                        <path class=" c3-shape c3-shape c3-line c3-line-lastemail"
+                          style="stroke: rgb(214, 39, 40); opacity: 1;"
+                          d="M15,345.28276068161733L92,342.9181564297002L168,340.9950882362699L245,339.0880239619988L322,336.8398071658765L398,334.88389694162316L475,332.91083694031744L551,331.0620426648685L628,328.86609551556273L705,326.54470797365855L781,324.170156059589L858,322.26422560833913L935,320.19259134695665L1011,317.97716240842664L1088,315.69372231793176L1164,313.3799312702543L1241,310.9977979892243L1318,308.90795539987727L1394,306.8162482992329L1471,304.9010731623843">
+                        </path>
+                      </g>
+                      <g class=" c3-shapes c3-shapes-lastemail c3-areas c3-areas-lastemail">
+                        <path class=" c3-shape c3-shape c3-area c3-area-lastemail"
+                          style="fill: rgb(214, 39, 40); opacity: 0.2;" d="M 15 345.28276068161733"></path>
+                      </g>
+                      <g class=" c3-selected-circles c3-selected-circles-lastemail"></g>
+                      <g class=" c3-shapes c3-shapes-lastemail c3-circles c3-circles-lastemail"
+                        style="cursor: pointer;">
+                        <circle shape-rendering="" class=" c3-shape c3-shape-0 c3-circle c3-circle-0" cx="15"
+                          cy="345.28276068161733" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-1 c3-circle c3-circle-1" cx="92"
+                          cy="342.9181564297002" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-2 c3-circle c3-circle-2" cx="168"
+                          cy="340.9950882362699" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-3 c3-circle c3-circle-3" cx="245"
+                          cy="339.0880239619988" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-4 c3-circle c3-circle-4" cx="322"
+                          cy="336.8398071658765" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-5 c3-circle c3-circle-5" cx="398"
+                          cy="334.88389694162316" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-6 c3-circle c3-circle-6" cx="475"
+                          cy="332.91083694031744" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-7 c3-circle c3-circle-7" cx="551"
+                          cy="331.0620426648685" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-8 c3-circle c3-circle-8" cx="628"
+                          cy="328.86609551556273" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-9 c3-circle c3-circle-9" cx="705"
+                          cy="326.54470797365855" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-10 c3-circle c3-circle-10" cx="781"
+                          cy="324.170156059589" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-11 c3-circle c3-circle-11" cx="858"
+                          cy="322.26422560833913" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-12 c3-circle c3-circle-12" cx="935"
+                          cy="320.19259134695665" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-13 c3-circle c3-circle-13" cx="1011"
+                          cy="317.97716240842664" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-14 c3-circle c3-circle-14" cx="1088"
+                          cy="315.69372231793176" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-15 c3-circle c3-circle-15" cx="1164"
+                          cy="313.3799312702543" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-16 c3-circle c3-circle-16" cx="1241"
+                          cy="310.9977979892243" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-17 c3-circle c3-circle-17" cx="1318"
+                          cy="308.90795539987727" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-18 c3-circle c3-circle-18" cx="1394"
+                          cy="306.8162482992329" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-19 c3-circle c3-circle-19" cx="1471"
+                          cy="304.9010731623843" r="2.5" style="color: rgb(214, 39, 40); opacity: 1;"></circle>
+                      </g>
+                    </g>
+                    <g class="c3-chart-line c3-target c3-target-FAUST"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-FAUST c3-lines c3-lines-FAUST">
+                        <path class=" c3-shape c3-shape c3-line c3-line-FAUST"
+                          style="stroke: rgb(148, 103, 189); opacity: 1;"
+                          d="M15,347.44419379562146L92,345.7264795505586L168,344.1531125525145L245,342.4591891010199L322,340.9144876347303L398,339.2769497012922L475,337.61739992807776L551,336.53359526859407L628,334.8442637326978L705,332.6992401762747L781,331.1533662119818L858,329.04785025823867L935,327.2358235517695L1011,325.5556660043979L1088,323.71147042693L1164,321.8852654084181L1241,320.07161561285994L1318,318.59364248651156L1394,316.6835419204322L1471,315.02192180008467">
+                        </path>
+                      </g>
+                      <g class=" c3-shapes c3-shapes-FAUST c3-areas c3-areas-FAUST">
+                        <path class=" c3-shape c3-shape c3-area c3-area-FAUST"
+                          style="fill: rgb(148, 103, 189); opacity: 0.2;" d="M 15 347.44419379562146"></path>
+                      </g>
+                      <g class=" c3-selected-circles c3-selected-circles-FAUST"></g>
+                      <g class=" c3-shapes c3-shapes-FAUST c3-circles c3-circles-FAUST" style="cursor: pointer;">
+                        <circle shape-rendering="" class=" c3-shape c3-shape-0 c3-circle c3-circle-0" cx="15"
+                          cy="347.44419379562146" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-1 c3-circle c3-circle-1" cx="92"
+                          cy="345.7264795505586" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-2 c3-circle c3-circle-2" cx="168"
+                          cy="344.1531125525145" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-3 c3-circle c3-circle-3" cx="245"
+                          cy="342.4591891010199" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-4 c3-circle c3-circle-4" cx="322"
+                          cy="340.9144876347303" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-5 c3-circle c3-circle-5" cx="398"
+                          cy="339.2769497012922" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-6 c3-circle c3-circle-6" cx="475"
+                          cy="337.61739992807776" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-7 c3-circle c3-circle-7" cx="551"
+                          cy="336.53359526859407" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-8 c3-circle c3-circle-8" cx="628"
+                          cy="334.8442637326978" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-9 c3-circle c3-circle-9" cx="705"
+                          cy="332.6992401762747" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-10 c3-circle c3-circle-10" cx="781"
+                          cy="331.1533662119818" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-11 c3-circle c3-circle-11" cx="858"
+                          cy="329.04785025823867" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-12 c3-circle c3-circle-12" cx="935"
+                          cy="327.2358235517695" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-13 c3-circle c3-circle-13" cx="1011"
+                          cy="325.5556660043979" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-14 c3-circle c3-circle-14" cx="1088"
+                          cy="323.71147042693" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-15 c3-circle c3-circle-15" cx="1164"
+                          cy="321.8852654084181" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-16 c3-circle c3-circle-16" cx="1241"
+                          cy="320.07161561285994" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-17 c3-circle c3-circle-17" cx="1318"
+                          cy="318.59364248651156" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-18 c3-circle c3-circle-18" cx="1394"
+                          cy="316.6835419204322" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-19 c3-circle c3-circle-19" cx="1471"
+                          cy="315.02192180008467" r="2.5" style="color: rgb(148, 103, 189); opacity: 1;"></circle>
+                      </g>
+                    </g>
+                    <g class="c3-chart-line c3-target c3-target-burner_herz0g"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-burner_herz0g c3-lines c3-lines-burner_herz0g">
+                        <path class=" c3-shape c3-shape c3-line c3-line-burner_herz0g"
+                          style="stroke: rgb(140, 86, 75); opacity: 1;"
+                          d="M15,376.24743734595853L92,374.67150364103856L168,373.0539106990397L245,371.37004577969014L322,369.8861852672595L398,368.35122856295857L475,366.96652423092L551,365.48946381256474L628,363.8763664710824L705,361.8895752110435L781,360.32791567077953L858,358.68496053952504L935,357.0853005174947L1011,355.29864547600357L1088,353.64314216870343L1164,351.8627587670467L1241,350.0840689535013L1318,348.3582188378694L1394,346.61498194732906L1471,344.82421764698614">
+                        </path>
+                      </g>
+                      <g class=" c3-shapes c3-shapes-burner_herz0g c3-areas c3-areas-burner_herz0g">
+                        <path class=" c3-shape c3-shape c3-area c3-area-burner_herz0g"
+                          style="fill: rgb(140, 86, 75); opacity: 0.2;" d="M 15 376.24743734595853"></path>
+                      </g>
+                      <g class=" c3-selected-circles c3-selected-circles-burner_herz0g"></g>
+                      <g class=" c3-shapes c3-shapes-burner_herz0g c3-circles c3-circles-burner_herz0g"
+                        style="cursor: pointer;">
+                        <circle shape-rendering="" class=" c3-shape c3-shape-0 c3-circle c3-circle-0" cx="15"
+                          cy="376.24743734595853" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-1 c3-circle c3-circle-1" cx="92"
+                          cy="374.67150364103856" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-2 c3-circle c3-circle-2" cx="168"
+                          cy="373.0539106990397" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-3 c3-circle c3-circle-3" cx="245"
+                          cy="371.37004577969014" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-4 c3-circle c3-circle-4" cx="322"
+                          cy="369.8861852672595" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-5 c3-circle c3-circle-5" cx="398"
+                          cy="368.35122856295857" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-6 c3-circle c3-circle-6" cx="475"
+                          cy="366.96652423092" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-7 c3-circle c3-circle-7" cx="551"
+                          cy="365.48946381256474" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-8 c3-circle c3-circle-8" cx="628"
+                          cy="363.8763664710824" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-9 c3-circle c3-circle-9" cx="705"
+                          cy="361.8895752110435" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-10 c3-circle c3-circle-10" cx="781"
+                          cy="360.32791567077953" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-11 c3-circle c3-circle-11" cx="858"
+                          cy="358.68496053952504" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-12 c3-circle c3-circle-12" cx="935"
+                          cy="357.0853005174947" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-13 c3-circle c3-circle-13" cx="1011"
+                          cy="355.29864547600357" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-14 c3-circle c3-circle-14" cx="1088"
+                          cy="353.64314216870343" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-15 c3-circle c3-circle-15" cx="1164"
+                          cy="351.8627587670467" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-16 c3-circle c3-circle-16" cx="1241"
+                          cy="350.0840689535013" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-17 c3-circle c3-circle-17" cx="1318"
+                          cy="348.3582188378694" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-18 c3-circle c3-circle-18" cx="1394"
+                          cy="346.61498194732906" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-19 c3-circle c3-circle-19" cx="1471"
+                          cy="344.82421764698614" r="2.5" style="color: rgb(140, 86, 75); opacity: 1;"></circle>
+                      </g>
+                    </g>
+                    <g class="c3-chart-line c3-target c3-target-FaKappa"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-FaKappa c3-lines c3-lines-FaKappa">
+                        <path class=" c3-shape c3-shape c3-line c3-line-FaKappa"
+                          style="stroke: rgb(227, 119, 194); opacity: 1;"
+                          d="M15,375.3687126978371L92,373.9589185594666L168,372.8570768532011L245,371.67563561449265L322,370.47886983421665L398,369.2261550152787L475,368.2587112473461L551,367.23815283408015L628,365.89853170950266L705,364.7636691577831L781,363.8835254768601L858,362.9552448532473L935,361.9310197629879L1011,360.7782721124502L1088,359.19891347336164L1164,358.1532742474117L1241,357.0000408146314L1318,355.6049389745481L1394,354.4075788868276L1471,353.31884382186814">
+                        </path>
+                      </g>
+                      <g class=" c3-shapes c3-shapes-FaKappa c3-areas c3-areas-FaKappa">
+                        <path class=" c3-shape c3-shape c3-area c3-area-FaKappa"
+                          style="fill: rgb(227, 119, 194); opacity: 0.2;" d="M 15 375.3687126978371"></path>
+                      </g>
+                      <g class=" c3-selected-circles c3-selected-circles-FaKappa"></g>
+                      <g class=" c3-shapes c3-shapes-FaKappa c3-circles c3-circles-FaKappa" style="cursor: pointer;">
+                        <circle shape-rendering="" class=" c3-shape c3-shape-0 c3-circle c3-circle-0" cx="15"
+                          cy="375.3687126978371" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-1 c3-circle c3-circle-1" cx="92"
+                          cy="373.9589185594666" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-2 c3-circle c3-circle-2" cx="168"
+                          cy="372.8570768532011" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-3 c3-circle c3-circle-3" cx="245"
+                          cy="371.67563561449265" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-4 c3-circle c3-circle-4" cx="322"
+                          cy="370.47886983421665" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-5 c3-circle c3-circle-5" cx="398"
+                          cy="369.2261550152787" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-6 c3-circle c3-circle-6" cx="475"
+                          cy="368.2587112473461" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-7 c3-circle c3-circle-7" cx="551"
+                          cy="367.23815283408015" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-8 c3-circle c3-circle-8" cx="628"
+                          cy="365.89853170950266" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-9 c3-circle c3-circle-9" cx="705"
+                          cy="364.7636691577831" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-10 c3-circle c3-circle-10" cx="781"
+                          cy="363.8835254768601" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-11 c3-circle c3-circle-11" cx="858"
+                          cy="362.9552448532473" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-12 c3-circle c3-circle-12" cx="935"
+                          cy="361.9310197629879" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-13 c3-circle c3-circle-13" cx="1011"
+                          cy="360.7782721124502" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-14 c3-circle c3-circle-14" cx="1088"
+                          cy="359.19891347336164" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-15 c3-circle c3-circle-15" cx="1164"
+                          cy="358.1532742474117" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-16 c3-circle c3-circle-16" cx="1241"
+                          cy="357.0000408146314" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-17 c3-circle c3-circle-17" cx="1318"
+                          cy="355.6049389745481" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-18 c3-circle c3-circle-18" cx="1394"
+                          cy="354.4075788868276" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-19 c3-circle c3-circle-19" cx="1471"
+                          cy="353.31884382186814" r="2.5" style="color: rgb(227, 119, 194); opacity: 1;"></circle>
+                      </g>
+                    </g>
+                    <g class="c3-chart-line c3-target c3-target-Nandy-Narwhals"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-Nandy-Narwhals c3-lines c3-lines-Nandy-Narwhals">
+                        <path class=" c3-shape c3-shape c3-line c3-line-Nandy-Narwhals"
+                          style="stroke: rgb(127, 127, 127); opacity: 1;"
+                          d="M15,382.378535083706L92,381.045901999256L168,379.5986194915862L245,378.0949260544406L322,376.8530627662989L398,375.4542543507643L475,374.0228594710831L551,372.51431479386474L628,371.0289739762415L705,369.72029630268383L781,367.65139709871767L858,365.813377538188L935,364.281233438338L1011,362.8312635559174L1088,361.4134707476883L1164,359.8177938772635L1241,358.2287047615271L1318,356.70247599937903L1394,355.09001319234136L1471,353.6453930412255">
+                        </path>
+                      </g>
+                      <g class=" c3-shapes c3-shapes-Nandy-Narwhals c3-areas c3-areas-Nandy-Narwhals">
+                        <path class=" c3-shape c3-shape c3-area c3-area-Nandy-Narwhals"
+                          style="fill: rgb(127, 127, 127); opacity: 0.2;" d="M 15 382.378535083706"></path>
+                      </g>
+                      <g class=" c3-selected-circles c3-selected-circles-Nandy-Narwhals"></g>
+                      <g class=" c3-shapes c3-shapes-Nandy-Narwhals c3-circles c3-circles-Nandy-Narwhals"
+                        style="cursor: pointer;">
+                        <circle shape-rendering="" class=" c3-shape c3-shape-0 c3-circle c3-circle-0" cx="15"
+                          cy="382.378535083706" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-1 c3-circle c3-circle-1" cx="92"
+                          cy="381.045901999256" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-2 c3-circle c3-circle-2" cx="168"
+                          cy="379.5986194915862" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-3 c3-circle c3-circle-3" cx="245"
+                          cy="378.0949260544406" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-4 c3-circle c3-circle-4" cx="322"
+                          cy="376.8530627662989" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-5 c3-circle c3-circle-5" cx="398"
+                          cy="375.4542543507643" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-6 c3-circle c3-circle-6" cx="475"
+                          cy="374.0228594710831" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-7 c3-circle c3-circle-7" cx="551"
+                          cy="372.51431479386474" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-8 c3-circle c3-circle-8" cx="628"
+                          cy="371.0289739762415" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-9 c3-circle c3-circle-9" cx="705"
+                          cy="369.72029630268383" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-10 c3-circle c3-circle-10" cx="781"
+                          cy="367.65139709871767" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-11 c3-circle c3-circle-11" cx="858"
+                          cy="365.813377538188" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-12 c3-circle c3-circle-12" cx="935"
+                          cy="364.281233438338" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-13 c3-circle c3-circle-13" cx="1011"
+                          cy="362.8312635559174" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-14 c3-circle c3-circle-14" cx="1088"
+                          cy="361.4134707476883" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-15 c3-circle c3-circle-15" cx="1164"
+                          cy="359.8177938772635" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-16 c3-circle c3-circle-16" cx="1241"
+                          cy="358.2287047615271" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-17 c3-circle c3-circle-17" cx="1318"
+                          cy="356.70247599937903" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-18 c3-circle c3-circle-18" cx="1394"
+                          cy="355.09001319234136" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-19 c3-circle c3-circle-19" cx="1471"
+                          cy="353.6453930412255" r="2.5" style="color: rgb(127, 127, 127); opacity: 1;"></circle>
+                      </g>
+                    </g>
+                    <g class="c3-chart-line c3-target c3-target-cyberwehr"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-cyberwehr c3-lines c3-lines-cyberwehr">
+                        <path class=" c3-shape c3-shape c3-line c3-line-cyberwehr"
+                          style="stroke: rgb(188, 189, 34); opacity: 1;"
+                          d="M15,382.23717785977277L92,380.75033852492004L168,379.78729666288433L245,378.7423038890325L322,377.67083792829845L398,376.6047575934363L475,375.6768327977143L551,374.4879387928181L628,373.40687909863726L705,372.39957558650696L781,370.3121973982998L858,369.3162586638323L935,368.18390961926167L1011,366.7615093511057L1088,365.59711049851643L1164,364.407427056321L1241,363.2393059427168L1318,361.9940772848429L1394,360.6136064048392L1471,359.4594898681976">
+                        </path>
+                      </g>
+                      <g class=" c3-shapes c3-shapes-cyberwehr c3-areas c3-areas-cyberwehr">
+                        <path class=" c3-shape c3-shape c3-area c3-area-cyberwehr"
+                          style="fill: rgb(188, 189, 34); opacity: 0.2;" d="M 15 382.23717785977277"></path>
+                      </g>
+                      <g class=" c3-selected-circles c3-selected-circles-cyberwehr"></g>
+                      <g class=" c3-shapes c3-shapes-cyberwehr c3-circles c3-circles-cyberwehr"
+                        style="cursor: pointer;">
+                        <circle shape-rendering="" class=" c3-shape c3-shape-0 c3-circle c3-circle-0" cx="15"
+                          cy="382.23717785977277" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-1 c3-circle c3-circle-1" cx="92"
+                          cy="380.75033852492004" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-2 c3-circle c3-circle-2" cx="168"
+                          cy="379.78729666288433" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-3 c3-circle c3-circle-3" cx="245"
+                          cy="378.7423038890325" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-4 c3-circle c3-circle-4" cx="322"
+                          cy="377.67083792829845" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-5 c3-circle c3-circle-5" cx="398"
+                          cy="376.6047575934363" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-6 c3-circle c3-circle-6" cx="475"
+                          cy="375.6768327977143" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-7 c3-circle c3-circle-7" cx="551"
+                          cy="374.4879387928181" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-8 c3-circle c3-circle-8" cx="628"
+                          cy="373.40687909863726" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-9 c3-circle c3-circle-9" cx="705"
+                          cy="372.39957558650696" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-10 c3-circle c3-circle-10" cx="781"
+                          cy="370.3121973982998" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-11 c3-circle c3-circle-11" cx="858"
+                          cy="369.3162586638323" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-12 c3-circle c3-circle-12" cx="935"
+                          cy="368.18390961926167" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-13 c3-circle c3-circle-13" cx="1011"
+                          cy="366.7615093511057" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-14 c3-circle c3-circle-14" cx="1088"
+                          cy="365.59711049851643" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-15 c3-circle c3-circle-15" cx="1164"
+                          cy="364.407427056321" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-16 c3-circle c3-circle-16" cx="1241"
+                          cy="363.2393059427168" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-17 c3-circle c3-circle-17" cx="1318"
+                          cy="361.9940772848429" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-18 c3-circle c3-circle-18" cx="1394"
+                          cy="360.6136064048392" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-19 c3-circle c3-circle-19" cx="1471"
+                          cy="359.4594898681976" r="2.5" style="color: rgb(188, 189, 34); opacity: 1;"></circle>
+                      </g>
+                    </g>
+                    <g class="c3-chart-line c3-target c3-target-Nicoglione"
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-shapes c3-shapes-Nicoglione c3-lines c3-lines-Nicoglione">
+                        <path class=" c3-shape c3-shape c3-line c3-line-Nicoglione"
+                          style="stroke: rgb(23, 190, 207); opacity: 1;"
+                          d="M15,390.5833333333333L92,389.6028455250822L168,388.5331858554334L245,387.4453047644148L322,386.5121725850336L398,385.20851209071856L475,384.1980852131696L551,383.19809676145246L628,382.2699399214932L705,380.774110927491L781,379.62590972085724L858,377.92703494374865L935,376.9182188927856L1011,375.8014984495099L1088,374.62657179635704L1164,373.21308074768893L1241,371.7021954028179L1318,370.6513402425871L1394,369.4803377220842L1471,367.9627853135465">
+                        </path>
+                      </g>
+                      <g class=" c3-shapes c3-shapes-Nicoglione c3-areas c3-areas-Nicoglione">
+                        <path class=" c3-shape c3-shape c3-area c3-area-Nicoglione"
+                          style="fill: rgb(23, 190, 207); opacity: 0.2;" d="M 15 390.5833333333333"></path>
+                      </g>
+                      <g class=" c3-selected-circles c3-selected-circles-Nicoglione"></g>
+                      <g class=" c3-shapes c3-shapes-Nicoglione c3-circles c3-circles-Nicoglione"
+                        style="cursor: pointer;">
+                        <circle shape-rendering="" class=" c3-shape c3-shape-0 c3-circle c3-circle-0" cx="15"
+                          cy="390.5833333333333" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-1 c3-circle c3-circle-1" cx="92"
+                          cy="389.6028455250822" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-2 c3-circle c3-circle-2" cx="168"
+                          cy="388.5331858554334" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-3 c3-circle c3-circle-3" cx="245"
+                          cy="387.4453047644148" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-4 c3-circle c3-circle-4" cx="322"
+                          cy="386.5121725850336" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-5 c3-circle c3-circle-5" cx="398"
+                          cy="385.20851209071856" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-6 c3-circle c3-circle-6" cx="475"
+                          cy="384.1980852131696" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-7 c3-circle c3-circle-7" cx="551"
+                          cy="383.19809676145246" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-8 c3-circle c3-circle-8" cx="628"
+                          cy="382.2699399214932" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-9 c3-circle c3-circle-9" cx="705"
+                          cy="380.774110927491" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-10 c3-circle c3-circle-10" cx="781"
+                          cy="379.62590972085724" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-11 c3-circle c3-circle-11" cx="858"
+                          cy="377.92703494374865" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-12 c3-circle c3-circle-12" cx="935"
+                          cy="376.9182188927856" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-13 c3-circle c3-circle-13" cx="1011"
+                          cy="375.8014984495099" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-14 c3-circle c3-circle-14" cx="1088"
+                          cy="374.62657179635704" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-15 c3-circle c3-circle-15" cx="1164"
+                          cy="373.21308074768893" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-16 c3-circle c3-circle-16" cx="1241"
+                          cy="371.7021954028179" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-17 c3-circle c3-circle-17" cx="1318"
+                          cy="370.6513402425871" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-18 c3-circle c3-circle-18" cx="1394"
+                          cy="369.4803377220842" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                        <circle shape-rendering="" class=" c3-shape c3-shape-19 c3-circle c3-circle-19" cx="1471"
+                          cy="367.9627853135465" r="2.5" style="color: rgb(23, 190, 207); opacity: 1;"></circle>
+                      </g>
+                    </g>
+                  </g>
+                  <g class="c3-chart-arcs" transform="translate(742.5,208)"><text class="c3-chart-arcs-title"
+                      style="text-anchor: middle; opacity: 0;"></text></g>
+                  <g class="c3-chart-texts">
+                    <g class="c3-chart-text c3-target c3-target-Bushwhackers  "
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-texts c3-texts-Bushwhackers"></g>
+                    </g>
+                    <g class="c3-chart-text c3-target c3-target-saarsec  "
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-texts c3-texts-saarsec"></g>
+                    </g>
+                    <g class="c3-chart-text c3-target c3-target-We_0wn_Y0u  "
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-texts c3-texts-We_0wn_Y0u"></g>
+                    </g>
+                    <g class="c3-chart-text c3-target c3-target-lastemail  "
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-texts c3-texts-lastemail"></g>
+                    </g>
+                    <g class="c3-chart-text c3-target c3-target-FAUST  "
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-texts c3-texts-FAUST"></g>
+                    </g>
+                    <g class="c3-chart-text c3-target c3-target-burner_herz0g  "
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-texts c3-texts-burner_herz0g"></g>
+                    </g>
+                    <g class="c3-chart-text c3-target c3-target-FaKappa  "
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-texts c3-texts-FaKappa"></g>
+                    </g>
+                    <g class="c3-chart-text c3-target c3-target-Nandy-Narwhals  "
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-texts c3-texts-Nandy-Narwhals"></g>
+                    </g>
+                    <g class="c3-chart-text c3-target c3-target-cyberwehr  "
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-texts c3-texts-cyberwehr"></g>
+                    </g>
+                    <g class="c3-chart-text c3-target c3-target-Nicoglione  "
+                      style="pointer-events: none; display: initial !important; opacity: 1;">
+                      <g class=" c3-texts c3-texts-Nicoglione"></g>
+                    </g>
+                  </g>
+                </g>
+                <g clip-path="url(#/game/scores#c3-1638593081762-clip-grid)"
+                  class="c3-grid c3-grid-lines">
+                  <g class="c3-xgrid-lines"></g>
+                  <g class="c3-ygrid-lines"></g>
+                </g>
+                <g class="c3-axis c3-axis-x"
+                  clip-path="url(#/game/scores#c3-1638593081762-clip-xaxis)"
+                  transform="translate(0,426)" style="visibility: visible; opacity: 1;"><text class="c3-axis-x-label"
+                    transform="" style="text-anchor: end;" x="1485" dx="-0.5em" dy="-0.5em"></text>
+                  <g class="tick" style="opacity: 1;" transform="translate(15, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">133</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(92, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">134</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(168, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">135</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(245, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">136</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(322, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">137</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(398, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">138</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(475, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">139</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(551, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">140</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(628, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">141</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(705, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">142</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(781, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">143</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(858, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">144</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(935, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">145</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(1011, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">146</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(1088, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">147</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(1164, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">148</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(1241, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">149</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(1318, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">150</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(1394, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">151</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(1471, 0)">
+                    <line x1="0" x2="0" y2="6"></line><text x="0" y="9" transform=""
+                      style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">152</tspan>
+                    </text>
+                  </g>
+                  <path class="domain" d="M0,6V0H1485V6"></path>
+                </g>
+                <g class="c3-axis c3-axis-y"
+                  clip-path="url(#/game/scores#c3-1638593081762-clip-yaxis)"
+                  transform="translate(0,0)" style="visibility: hidden; opacity: 1;"><text class="c3-axis-y-label"
+                    transform="rotate(-90)" style="text-anchor: end;" x="0" dx="-0.5em" dy="1.2em"></text>
+                  <g class="tick" style="opacity: 1;" transform="translate(0, 411)">
+                    <line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;">
+                      <tspan x="-9" dy="3">100000</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0, 381)">
+                    <line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;">
+                      <tspan x="-9" dy="3">120000</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0, 352)">
+                    <line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;">
+                      <tspan x="-9" dy="3">140000</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0, 323)">
+                    <line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;">
+                      <tspan x="-9" dy="3">160000</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0, 294)">
+                    <line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;">
+                      <tspan x="-9" dy="3">180000</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0, 265)">
+                    <line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;">
+                      <tspan x="-9" dy="3">200000</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0, 235)">
+                    <line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;">
+                      <tspan x="-9" dy="3">220000</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0, 206)">
+                    <line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;">
+                      <tspan x="-9" dy="3">240000</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0, 177)">
+                    <line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;">
+                      <tspan x="-9" dy="3">260000</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0, 148)">
+                    <line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;">
+                      <tspan x="-9" dy="3">280000</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0, 119)">
+                    <line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;">
+                      <tspan x="-9" dy="3">300000</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0, 89)">
+                    <line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;">
+                      <tspan x="-9" dy="3">320000</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0, 60)">
+                    <line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;">
+                      <tspan x="-9" dy="3">340000</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0, 31)">
+                    <line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;">
+                      <tspan x="-9" dy="3">360000</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0, 2)">
+                    <line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;">
+                      <tspan x="-9" dy="3">380000</tspan>
+                    </text>
+                  </g>
+                  <path class="domain" d="M-6,1H0V426H-6"></path>
+                </g>
+                <g class="c3-axis c3-axis-y2" transform="translate(1485,0)" style="visibility: hidden; opacity: 1;">
+                  <text class="c3-axis-y2-label" transform="rotate(-90)" style="text-anchor: end;" x="0" dx="-0.5em"
+                    dy="-0.5em"></text>
+                  <g class="tick" style="opacity: 1;" transform="translate(0,426)">
+                    <line x2="6"></line><text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0,384)">
+                    <line x2="6"></line><text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0.1</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0,341)">
+                    <line x2="6"></line><text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0.2</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0,299)">
+                    <line x2="6"></line><text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0.3</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0,256)">
+                    <line x2="6"></line><text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0.4</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0,214)">
+                    <line x2="6"></line><text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0.5</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0,171)">
+                    <line x2="6"></line><text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0.6</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0,129)">
+                    <line x2="6"></line><text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0.7</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0,86)">
+                    <line x2="6"></line><text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0.8</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0,44)">
+                    <line x2="6"></line><text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0.9</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" style="opacity: 1;" transform="translate(0,1)">
+                    <line x2="6"></line><text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">1</tspan>
+                    </text>
+                  </g>
+                  <path class="domain" d="M6,1H0V426H6"></path>
+                </g>
+              </g>
+              <g transform="translate(0,460)">
+                <g class="c3-legend-item c3-legend-item-Bushwhackers" style="visibility: visible; cursor: pointer;">
+                  <text style="pointer-events: none;" x="305.3666687011719" y="9">Bushwhackers</text>
+                  <rect class="c3-legend-item-event" style="fill-opacity: 0;" x="291.3666687011719" y="-5"
+                    width="111.13333129882812" height="19"></rect>
+                  <line class="c3-legend-item-tile" style="stroke: rgb(31, 119, 180); pointer-events: none;"
+                    x1="289.3666687011719" y1="4" x2="299.3666687011719" y2="4" stroke-width="10"></line>
+                </g>
+                <g class="c3-legend-item c3-legend-item-saarsec" style="visibility: visible; cursor: pointer;"><text
+                    style="pointer-events: none;" x="416.5" y="9">saarsec</text>
+                  <rect class="c3-legend-item-event" style="fill-opacity: 0;" x="402.5" y="-5" width="71.11666488647461"
+                    height="19"></rect>
+                  <line class="c3-legend-item-tile" style="stroke: rgb(255, 127, 14); pointer-events: none;" x1="400.5"
+                    y1="4" x2="410.5" y2="4" stroke-width="10"></line>
+                </g>
+                <g class="c3-legend-item c3-legend-item-We_0wn_Y0u" style="visibility: visible; cursor: pointer;"><text
+                    style="pointer-events: none;" x="487.6166648864746" y="9">We_0wn_Y0u</text>
+                  <rect class="c3-legend-item-event" style="fill-opacity: 0;" x="473.6166648864746" y="-5"
+                    width="103.16666412353516" height="19"></rect>
+                  <line class="c3-legend-item-tile" style="stroke: rgb(44, 160, 44); pointer-events: none;"
+                    x1="471.6166648864746" y1="4" x2="481.6166648864746" y2="4" stroke-width="10"></line>
+                </g>
+                <g class="c3-legend-item c3-legend-item-lastemail" style="visibility: visible; cursor: pointer;"><text
+                    style="pointer-events: none;" x="590.7833290100098" y="9">lastemail</text>
+                  <rect class="c3-legend-item-event" style="fill-opacity: 0;" x="576.7833290100098" y="-5"
+                    width="79.71666717529297" height="19"></rect>
+                  <line class="c3-legend-item-tile" style="stroke: rgb(214, 39, 40); pointer-events: none;"
+                    x1="574.7833290100098" y1="4" x2="584.7833290100098" y2="4" stroke-width="10"></line>
+                </g>
+                <g class="c3-legend-item c3-legend-item-FAUST" style="visibility: visible; cursor: pointer;"><text
+                    style="pointer-events: none;" x="670.4999961853027" y="9">FAUST</text>
+                  <rect class="c3-legend-item-event" style="fill-opacity: 0;" x="656.4999961853027" y="-5" width="62.75"
+                    height="19"></rect>
+                  <line class="c3-legend-item-tile" style="stroke: rgb(148, 103, 189); pointer-events: none;"
+                    x1="654.4999961853027" y1="4" x2="664.4999961853027" y2="4" stroke-width="10"></line>
+                </g>
+                <g class="c3-legend-item c3-legend-item-burner_herz0g" style="visibility: visible; cursor: pointer;">
+                  <text style="pointer-events: none;" x="733.2499961853027" y="9">burner_herz0g</text>
+                  <rect class="c3-legend-item-event" style="fill-opacity: 0;" x="719.2499961853027" y="-5"
+                    width="112.31666564941406" height="19"></rect>
+                  <line class="c3-legend-item-tile" style="stroke: rgb(140, 86, 75); pointer-events: none;"
+                    x1="717.2499961853027" y1="4" x2="727.2499961853027" y2="4" stroke-width="10"></line>
+                </g>
+                <g class="c3-legend-item c3-legend-item-FaKappa" style="visibility: visible; cursor: pointer;"><text
+                    style="pointer-events: none;" x="845.5666618347168" y="9">FaKappa</text>
+                  <rect class="c3-legend-item-event" style="fill-opacity: 0;" x="831.5666618347168" y="-5"
+                    width="75.73333358764648" height="19"></rect>
+                  <line class="c3-legend-item-tile" style="stroke: rgb(227, 119, 194); pointer-events: none;"
+                    x1="829.5666618347168" y1="4" x2="839.5666618347168" y2="4" stroke-width="10"></line>
+                </g>
+                <g class="c3-legend-item c3-legend-item-Nandy-Narwhals" style="visibility: visible; cursor: pointer;">
+                  <text style="pointer-events: none;" x="921.2999954223633" y="9">Nandy Narwhals</text>
+                  <rect class="c3-legend-item-event" style="fill-opacity: 0;" x="907.2999954223633" y="-5"
+                    width="123.08333587646484" height="19"></rect>
+                  <line class="c3-legend-item-tile" style="stroke: rgb(127, 127, 127); pointer-events: none;"
+                    x1="905.2999954223633" y1="4" x2="915.2999954223633" y2="4" stroke-width="10"></line>
+                </g>
+                <g class="c3-legend-item c3-legend-item-cyberwehr" style="visibility: visible; cursor: pointer;"><text
+                    style="pointer-events: none;" x="1044.3833312988281" y="9">cyberwehr</text>
+                  <rect class="c3-legend-item-event" style="fill-opacity: 0;" x="1030.3833312988281" y="-5"
+                    width="88.36666488647461" height="19"></rect>
+                  <line class="c3-legend-item-tile" style="stroke: rgb(188, 189, 34); pointer-events: none;"
+                    x1="1028.3833312988281" y1="4" x2="1038.3833312988281" y2="4" stroke-width="10"></line>
+                </g>
+                <g class="c3-legend-item c3-legend-item-Nicoglione" style="visibility: visible; cursor: pointer;"><text
+                    style="pointer-events: none;" x="1132.7499961853027" y="9">Nicoglione</text>
+                  <rect class="c3-legend-item-event" style="fill-opacity: 0;" x="1118.7499961853027" y="-5"
+                    width="77.88333511352539" height="19"></rect>
+                  <line class="c3-legend-item-tile" style="stroke: rgb(23, 190, 207); pointer-events: none;"
+                    x1="1116.7499961853027" y1="4" x2="1126.7499961853027" y2="4" stroke-width="10"></line>
+                </g>
+              </g><text class="c3-title" x="744" y="0"></text>
+            </svg>
+            <div class="c3-tooltip-container" style="position: absolute; pointer-events: none; display: none;"></div>
+          </div>
+          <nav class="chart-controls"><a href="#top10">Top 10</a></nav>
+          <table class="table space--top-1">
+            <thead>
+              <tr>
+                <th class="width--128-on-desk"><a href="#sort" class="is-sorted">Rank</a></th>
+                <th><a href="#sort" class="">Team</a></th>
+                <th><a href="#sort" class="">Last Round Points</a></th>
+                <th><a href="#sort" class="">Total Score</a></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">1</td>
+                <td data-title="Team"><span><img src="RUS.png" alt="flag of RUS" width="16"> Bushwhackers</span></td>
+                <td data-title="Last Round Points">3586.72</td>
+                <td data-title="Total Score">355942.91</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">2</td>
+                <td data-title="Team"><span><img src="DEU.png" alt="flag of DEU" width="16"> saarsec</span></td>
+                <td data-title="Last Round Points">6771.95</td>
+                <td data-title="Total Score">332511.45</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">3</td>
+                <td data-title="Team"><span><img src="AUT.png" alt="flag of AUT" width="16"> We_0wn_Y0u</span></td>
+                <td data-title="Last Round Points">1585.74</td>
+                <td data-title="Total Score">182091.14</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">4</td>
+                <td data-title="Team"><span><img src="DEU.png" alt="flag of DEU" width="16"> lastemail</span></td>
+                <td data-title="Last Round Points">1311.94</td>
+                <td data-title="Total Score">172024.76</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">5</td>
+                <td data-title="Team"><span><img src="DEU.png" alt="flag of DEU" width="16"> FAUST</span></td>
+                <td data-title="Last Round Points">1138.25</td>
+                <td data-title="Total Score">165091.74</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">6</td>
+                <td data-title="Team"><span><img src="USA.png" alt="flag of USA" width="16"> burner_herz0g</span></td>
+                <td data-title="Last Round Points">1226.72</td>
+                <td data-title="Total Score">144676.46</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">7</td>
+                <td data-title="Team"><span><img src="RUS.png" alt="flag of RUS" width="16"> FaKappa</span></td>
+                <td data-title="Last Round Points">745.81</td>
+                <td data-title="Total Score">138857.44</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">8</td>
+                <td data-title="Team"><span><img src="SGP.png" alt="flag of SGP" width="16"> Nandy Narwhals</span></td>
+                <td data-title="Last Round Points">989.6</td>
+                <td data-title="Total Score">138633.75</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">9</td>
+                <td data-title="Team"><span><img src="AUT.png" alt="flag of AUT" width="16"> cyberwehr</span></td>
+                <td data-title="Last Round Points">790.6</td>
+                <td data-title="Total Score">134650.95</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">10</td>
+                <td data-title="Team"><span><img src="USA.png" alt="flag of USA" width="16"> Nicoglione</span></td>
+                <td data-title="Last Round Points">1039.56</td>
+                <td data-title="Total Score">128826</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">11</td>
+                <td data-title="Team"><span><img src="USA.png" alt="flag of USA" width="16"> ASU Hacking Club</span>
+                </td>
+                <td data-title="Last Round Points">525.95</td>
+                <td data-title="Total Score">127595.62</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">12</td>
+                <td data-title="Team"><span><img src="DEU.png" alt="flag of DEU" width="16"> Lev9L</span></td>
+                <td data-title="Last Round Points">731.87</td>
+                <td data-title="Total Score">127563.79</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">13</td>
+                <td data-title="Team"><span><img src="RUS.png" alt="flag of RUS" width="16"> SiBears</span></td>
+                <td data-title="Last Round Points">575.5</td>
+                <td data-title="Total Score">125807.66</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">14</td>
+                <td data-title="Team"><span><img src="CAN.png" alt="flag of CAN" width="16"> SharedSec</span></td>
+                <td data-title="Last Round Points">835.39</td>
+                <td data-title="Total Score">125251.4</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">15</td>
+                <td data-title="Team"><span><img src="USA.png" alt="flag of USA" width="16"> test_team</span></td>
+                <td data-title="Last Round Points">1039.56</td>
+                <td data-title="Total Score">124074.62</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">16</td>
+                <td data-title="Team"><span><img src="USA.png" alt="flag of USA" width="16"> ruaronicola</span></td>
+                <td data-title="Last Round Points">731.87</td>
+                <td data-title="Total Score">122287.27</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">17</td>
+                <td data-title="Team"><span><img src="CHE.png" alt="flag of CHE" width="16"> xXxpassword123xXx</span>
+                </td>
+                <td data-title="Last Round Points">731.87</td>
+                <td data-title="Total Score">122220.37</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">18</td>
+                <td data-title="Team"><span><img src="USA.png" alt="flag of USA" width="16"> jri</span></td>
+                <td data-title="Last Round Points">682.52</td>
+                <td data-title="Total Score">121580.93</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">19</td>
+                <td data-title="Team"><span><img src="USA.png" alt="flag of USA" width="16"> UTSA CodeRunners</span>
+                </td>
+                <td data-title="Last Round Points">731.87</td>
+                <td data-title="Total Score">121481.67</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">20</td>
+                <td data-title="Team"><span><img src="CAN.png" alt="flag of CAN" width="16"> CLICKSVP</span></td>
+                <td data-title="Last Round Points">573.08</td>
+                <td data-title="Total Score">121333.76</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">21</td>
+                <td data-title="Team"><span><img src="PRT.png" alt="flag of PRT" width="16"> STT</span></td>
+                <td data-title="Last Round Points">1037.28</td>
+                <td data-title="Total Score">112484.32</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">22</td>
+                <td data-title="Team"><span><img src="RUS.png" alt="flag of RUS" width="16"> [SPbCTF] Red Cadets</span>
+                </td>
+                <td data-title="Last Round Points">928.2</td>
+                <td data-title="Total Score">111875.1</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">23</td>
+                <td data-title="Team"><span><img src="DEU.png" alt="flag of DEU" width="16"> squareroots</span></td>
+                <td data-title="Last Round Points">731.87</td>
+                <td data-title="Total Score">111600.92</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">24</td>
+                <td data-title="Team"><span><img src="DEU.png" alt="flag of DEU" width="16"> CInsects</span></td>
+                <td data-title="Last Round Points">1196.55</td>
+                <td data-title="Total Score">108708.36</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">25</td>
+                <td data-title="Team"><span><img src="IND.png" alt="flag of IND" width="16"> bi0s</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">105862.54</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">26</td>
+                <td data-title="Team"><span><img src="USA.png" alt="flag of USA" width="16"> Fuffalollale</span></td>
+                <td data-title="Last Round Points">459.14</td>
+                <td data-title="Total Score">102791.75</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">27</td>
+                <td data-title="Team"><span><img src="TWN.png" alt="flag of TWN" width="16"> 50_b4d</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">101422.24</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">28</td>
+                <td data-title="Team"><span><img src="AUT.png" alt="flag of AUT" width="16"> JustDoIt</span></td>
+                <td data-title="Last Round Points">136.54</td>
+                <td data-title="Total Score">95372.56</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">29</td>
+                <td data-title="Team"><span><img src="DEU.png" alt="flag of DEU" width="16"> Phish2Own</span></td>
+                <td data-title="Last Round Points">1002.64</td>
+                <td data-title="Total Score">79880.08</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">30</td>
+                <td data-title="Team"><span><img src="RUS.png" alt="flag of RUS" width="16"> cr4ck/y0ur/s3cr3t</span>
+                </td>
+                <td data-title="Last Round Points">323.14</td>
+                <td data-title="Total Score">69830.56</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">31</td>
+                <td data-title="Team"><span><img src="USA.png" alt="flag of USA" width="16"> Allthenticators</span></td>
+                <td data-title="Last Round Points">154.04</td>
+                <td data-title="Total Score">66299.82</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">32</td>
+                <td data-title="Team"><span><img src="USA.png" alt="flag of USA" width="16"> stevens-cs-577-A</span>
+                </td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">43147.69</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">33</td>
+                <td data-title="Team"><span><img src="RUS.png" alt="flag of RUS" width="16"> binarybearsjunior</span>
+                </td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">39253.15</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">34</td>
+                <td data-title="Team"><span><img src="IRN.png" alt="flag of IRN" width="16"> SaharaSec</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">38685.41</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">35</td>
+                <td data-title="Team"><span><img src="RUS.png" alt="flag of RUS" width="16"> m17m0</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">38506.57</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">36</td>
+                <td data-title="Team"><span><img src="ATA.png" alt="flag of ATA" width="16"> uwuscam</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">28485.8</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">37</td>
+                <td data-title="Team"><span><img src="RUS.png" alt="flag of RUS" width="16"> PeaceData</span></td>
+                <td data-title="Last Round Points">50.54</td>
+                <td data-title="Total Score">9307.44</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">38</td>
+                <td data-title="Team"><span><img src="KAZ.png" alt="flag of KAZ" width="16"> scimus_verum</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9275.86</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">39</td>
+                <td data-title="Team"><span><img src="VNM.png" alt="flag of VNM" width="16"> 0x01</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9270.23</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">40</td>
+                <td data-title="Team"><span><img src="RUS.png" alt="flag of RUS" width="16"> cjc</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9257.44</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">41</td>
+                <td data-title="Team"><span><img src="RUS.png" alt="flag of RUS" width="16"> ThereIsNoInfoRoma</span>
+                </td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9257.44</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">42</td>
+                <td data-title="Team"><span><img src="SGP.png" alt="flag of SGP" width="16"> mcdulltii</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9255.77</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">43</td>
+                <td data-title="Team"><span><img src="CHN.png" alt="flag of CHN" width="16"> BearAlive</span></td>
+                <td data-title="Last Round Points">50.54</td>
+                <td data-title="Total Score">9252.08</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">44</td>
+                <td data-title="Team"><span><img src="ARE.png" alt="flag of ARE" width="16"> AltBackDoor</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9225.31</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">45</td>
+                <td data-title="Team"><span><img src="AFG.png" alt="flag of AFG" width="16"> kktm</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9221.33</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">46</td>
+                <td data-title="Team"><span><img src="GBR.png" alt="flag of GBR" width="16"> ttt</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9207.44</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">47</td>
+                <td data-title="Team"><span><img src="RUS.png" alt="flag of RUS" width="16"> Darkside</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9206.89</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">48</td>
+                <td data-title="Team"><span><img src="KAZ.png" alt="flag of KAZ" width="16"> FR13NDS TEAM</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9206.89</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">49</td>
+                <td data-title="Team"><span><img src="CHN.png" alt="flag of CHN" width="16"> NCTOP</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9202.08</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">50</td>
+                <td data-title="Team"><span><img src="AFG.png" alt="flag of AFG" width="16"> 0x00_8</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9202.08</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">51</td>
+                <td data-title="Team"><span><img src="DZA.png" alt="flag of DZA" width="16"> fzhshzh</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9175.86</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">52</td>
+                <td data-title="Team"><span><img src="RUS.png" alt="flag of RUS" width="16"> [LIFE] Sudo SU</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9175.86</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">53</td>
+                <td data-title="Team"><span><img src="CHN.png" alt="flag of CHN" width="16"> 0xEFBF</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9170.5</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">54</td>
+                <td data-title="Team"><span><img src="ITA.png" alt="flag of ITA" width="16"> NoPwnIntended</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9157.44</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">55</td>
+                <td data-title="Team"><span><img src="THA.png" alt="flag of THA" width="16"> page2me</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9157.44</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">56</td>
+                <td data-title="Team"><span><img src="DEU.png" alt="flag of DEU" width="16"> FAUST2</span></td>
+                <td data-title="Last Round Points">0</td>
+                <td data-title="Total Score">9156.35</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">57</td>
+                <td data-title="Team"><span><img src="SAU.png" alt="flag of SAU" width="16"> b0rdga</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9156.34</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">58</td>
+                <td data-title="Team"><span><img src="BEL.png" alt="flag of BEL" width="16"> Easi</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9156.34</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">59</td>
+                <td data-title="Team"><span><img src="IND.png" alt="flag of IND" width="16"> sup3rm4n</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9125.86</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">60</td>
+                <td data-title="Team"><span><img src="IND.png" alt="flag of IND" width="16"> zh3r0</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9125.86</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">61</td>
+                <td data-title="Team"><span><img src="USA.png" alt="flag of USA" width="16"> UTSA - CodeRunners</span>
+                </td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9125.86</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">62</td>
+                <td data-title="Team"><span><img src="CHN.png" alt="flag of CHN" width="16"> TCTN</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9119.66</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">63</td>
+                <td data-title="Team"><span><img src="IND.png" alt="flag of IND" width="16"> wattleX</span></td>
+                <td data-title="Last Round Points">50.54</td>
+                <td data-title="Total Score">9115.97</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">64</td>
+                <td data-title="Team"><span><img src="RUS.png" alt="flag of RUS" width="16"> NiceWay</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9115.97</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">65</td>
+                <td data-title="Team"><span><img src="BEL.png" alt="flag of BEL" width="16"> HacknamStyle</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9107.44</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">66</td>
+                <td data-title="Team"><span><img src="IND.png" alt="flag of IND" width="16"> Rex</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9106.34</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">67</td>
+                <td data-title="Team"><span><img src="VNM.png" alt="flag of VNM" width="16"> BBQ</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9104.1</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">68</td>
+                <td data-title="Team"><span><img src="UKR.png" alt="flag of UKR" width="16"> dcua</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9096.72</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">69</td>
+                <td data-title="Team"><span><img src="VNM.png" alt="flag of VNM" width="16"> 123456a@A</span></td>
+                <td data-title="Last Round Points">50.54</td>
+                <td data-title="Total Score">9089.75</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">70</td>
+                <td data-title="Team"><span><img src="RUS.png" alt="flag of RUS" width="16"> LAPLACE</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9075.86</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">71</td>
+                <td data-title="Team"><span><img src="THA.png" alt="flag of THA" width="16"> Cyberninja</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9075.86</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">72</td>
+                <td data-title="Team"><span><img src="THA.png" alt="flag of THA" width="16"> P@Ge2mE</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9071.33</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">73</td>
+                <td data-title="Team"><span><img src="USA.png" alt="flag of USA" width="16"> rr</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9071.33</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">74</td>
+                <td data-title="Team"><span><img src="SGP.png" alt="flag of SGP" width="16"> swarm</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9071.33</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">75</td>
+                <td data-title="Team"><span><img src="IND.png" alt="flag of IND" width="16"> 403F0rb1dd3n</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9069.96</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">76</td>
+                <td data-title="Team"><span><img src="USA.png" alt="flag of USA" width="16"> gnu-e-ducks</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9056.35</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">77</td>
+                <td data-title="Team"><span><img src="IND.png" alt="flag of IND" width="16"> Dark_Warrior$</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9038.65</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">78</td>
+                <td data-title="Team"><span><img src="USA.png" alt="flag of USA" width="16"> stevens-cs-577</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9024.76</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">79</td>
+                <td data-title="Team"><span><img src="VNM.png" alt="flag of VNM" width="16"> AUZ1</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9021.33</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">80</td>
+                <td data-title="Team"><span><img src="KOR.png" alt="flag of KOR" width="16"> C4C</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9020.5</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">81</td>
+                <td data-title="Team"><span><img src="VNM.png" alt="flag of VNM" width="16"> Leak Challenge</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9020.23</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">82</td>
+                <td data-title="Team"><span><img src="JOR.png" alt="flag of JOR" width="16"> Al-Ahrar</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9019.66</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">83</td>
+                <td data-title="Team"><span><img src="RUS.png" alt="flag of RUS" width="16"> N1gh7m4reFueL</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">9015.97</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">84</td>
+                <td data-title="Team"><span><img src="IND.png" alt="flag of IND" width="16"> 12th man</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">8989.75</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">85</td>
+                <td data-title="Team"><span><img src="SGP.png" alt="flag of SGP" width="16"> mcdullti</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">8987.55</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">86</td>
+                <td data-title="Team"><span><img src="USA.png" alt="flag of USA" width="16"> army of the potomac</span>
+                </td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">8975.31</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">87</td>
+                <td data-title="Team"><span><img src="BRN.png" alt="flag of BRN" width="16"> teranah dirumah</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">8970.23</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">88</td>
+                <td data-title="Team"><span><img src="TUR.png" alt="flag of TUR" width="16"> towards3ternity</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">8964.87</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">89</td>
+                <td data-title="Team"><span><img src="USA.png" alt="flag of USA" width="16"> aaaaaaaaaa</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">8939.75</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">90</td>
+                <td data-title="Team"><span><img src="USA.png" alt="flag of USA" width="16"> CyberSpace</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">8939.2</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">91</td>
+                <td data-title="Team"><span><img src="MAR.png" alt="flag of MAR" width="16"> n!3m4nd</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">8935.31</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">92</td>
+                <td data-title="Team"><span><img src="BEL.png" alt="flag of BEL" width="16"> EasiSec</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">8912.09</td>
+              </tr>
+              <tr>
+                <td data-title="Rank" class="width--128-on-desk">93</td>
+                <td data-title="Team"><span><img src="SEN.png" alt="flag of SEN" width="16"> ART</span></td>
+                <td data-title="Last Round Points">0.54</td>
+                <td data-title="Total Score">8884.39</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script
+    data-scrapbook-elem="basic-loader">(function () { var k1 = "data-scrapbook-shadowdom", k2 = "data-scrapbook-canvas", k3 = "data-scrapbook-input-indeterminate", k4 = "data-scrapbook-input-checked", k5 = "data-scrapbook-option-selected", k6 = "data-scrapbook-input-value", k7 = "data-scrapbook-textarea-value", fn = function (r) { var E = r.querySelectorAll ? r.querySelectorAll("*") : r.getElementsByTagName("*"), i = E.length, e, d, s; while (i--) { e = E[i]; if ((d = e.getAttribute(k1)) !== null && !e.shadowRoot && e.attachShadow) { s = e.attachShadow({ mode: 'open' }); s.innerHTML = d; e.removeAttribute(k1); } if ((d = e.getAttribute(k2)) !== null) { (function () { var c = e, g = new Image(); g.onload = function () { c.getContext('2d').drawImage(g, 0, 0); }; g.src = d; })(); e.removeAttribute(k2); } if ((d = e.getAttribute(k3)) !== null) { e.indeterminate = true; e.removeAttribute(k3); } if ((d = e.getAttribute(k4)) !== null) { e.checked = d === 'true'; e.removeAttribute(k4); } if ((d = e.getAttribute(k5)) !== null) { e.selected = d === 'true'; e.removeAttribute(k5); } if ((d = e.getAttribute(k6)) !== null) { e.value = d; e.removeAttribute(k6); } if ((d = e.getAttribute(k7)) !== null) { e.value = d; e.removeAttribute(k7); } if (e.shadowRoot) { fn(e.shadowRoot); } } }; fn(document); })()</script>
+</body>
+<grammarly-desktop-integration data-grammarly-shadow-root="true"
+  data-scrapbook-shadowdom="<style>
+  div {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+  }
+
+  div:before {
+    content: attr(data-content);
+  }
+</style><div aria-label=&quot;grammarly-integration&quot; tabindex=&quot;-1&quot; data-content=&quot;{&amp;quot;mode&amp;quot;:&amp;quot;full&amp;quot;,&amp;quot;isActive&amp;quot;:true,&amp;quot;isUserDisabled&amp;quot;:false}&quot;></div>">
+</grammarly-desktop-integration>
+
+</html>

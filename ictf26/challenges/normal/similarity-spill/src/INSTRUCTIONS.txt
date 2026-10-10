@@ -1,0 +1,12 @@
+Embeddings Puzzle — “Nearest Neighbors”
+
+You’ve recovered artifacts from a semantic-search prototype:
+- query.txt (a numeric vector)
+- snippets.csv (snippets + numeric vectors)
+
+Some snippets contain an encoded `ref=` tag. The flag is recoverable from the snippets that are most “related” to the hidden query in vector space.
+
+Notes:
+- All vectors share the same 8 dimensions (d0..d7).
+- The query is not provided as text—only as numbers.
+- Expect the correct pieces to stand out when you rank snippets by relevance.

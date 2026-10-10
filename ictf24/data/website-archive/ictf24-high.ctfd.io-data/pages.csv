@@ -1,0 +1,10 @@
+id,title,route,content,draft,hidden,auth_required,format,link_target
+1,iCTF 2024 -- High School Track,index,"<img width=""1000px"" src=""/files/cc274904902a0b63672db6aaeaf033b5/iCTF_Logo.png"" />
+      <h1 align=""center"">iCTF 2024 -- High School Track</h1>
+      <p>Welcome to the 2024 iCTF, High School Track!</p>
+      <p>For information about the competition check out <a href=""https://ictf.cs.ucsb.edu"">https://ictf.cs.ucsb.edu</a>.</p>
+      <p>For help and support, check the #ictf-2024 Discord channel <a href=""https://ictf.cs.ucsb.edu/discord"">https://ictf.cs.ucsb.edu/discord</a>.</p>
+<br />
+<p>The 2024 iCTF is organized by the <a href=""https://action.ucsb.edu/"">ACTION NSF AI Institute</a> in collaboration with <a href=""https://shellphish.net"">Shellphish</a>, and with support from the <a href=""https://wics-ucsb.github.io/dist/index.html"">Women in Computer Science at UCSB</a>.</p>
+<br />
+<p>Cash prizes provided by <a href=""https://activision.com"">Activision</a>!</p>",False,False,False,markdown,

@@ -1,0 +1,66 @@
+id,key,value
+1,ctf_version,3.7.4
+2,ctf_theme,hacker-theme
+3,code_challenges_alembic_version,310eccbf3046
+4,dynamic_challenges_alembic_version,eb68f277ab61
+5,manual_verification_alembic_version,0d0f50cf3822
+6,multiple_choice_alembic_version,832425686fda
+7,services_alembic_version,3a84d91a5829
+8,sso_alembic_version,9950c444d561
+9,webhooks_secret,06d3c464dbc8a255a599582eb7ba152a517219118fcac72f965a5bb71bbf22c8
+10,webhooks_alembic_version,3b81b5d3514e
+11,ctf_name,iCTF 2024 Undergraduate Track
+12,ctf_description,"Welcome, to the 2024 iCTF Undergraduate Track.
+This is an educational capture-the-flag competition that focuses on AI and cybersecurity.
+For additional information, check out https:/ictf.cs.ucsb.edu"
+13,user_mode,users
+14,start,1731780000
+15,end,1732320000
+16,freeze,
+17,challenge_visibility,private
+18,registration_visibility,private
+19,score_visibility,public
+20,account_visibility,public
+21,verify_emails,0
+22,team_size,
+23,mail_server,
+24,mail_port,
+25,mail_tls,
+26,mail_ssl,
+27,mail_username,
+28,mail_password,
+29,mail_useauth,
+30,verification_email_subject,Confirm your account for {ctf_name}
+31,verification_email_body,"Welcome to {ctf_name}!
+
+Click the following link to confirm and activate your account:
+{url}
+
+If the link is not clickable, try copying and pasting it into your browser."
+32,successful_registration_email_subject,Successfully registered for {ctf_name}
+33,successful_registration_email_body,You've successfully registered for {ctf_name}!
+34,user_creation_email_subject,Message from {ctf_name}
+35,user_creation_email_body,"A new account has been created for you for {ctf_name} at {url}. 
+
+Username: {name}
+Password: {password}"
+36,password_reset_subject,Password Reset Request from {ctf_name}
+37,password_reset_body,"Did you initiate a password reset on {ctf_name}? If you didn't initiate this request you can ignore this email. 
+
+Click the following link to reset your password:
+{url}
+
+If the link is not clickable, try copying and pasting it into your browser."
+38,password_change_alert_subject,Password Change Confirmation for {ctf_name}
+39,password_change_alert_body,"Your password for {ctf_name} has been changed.
+
+If you didn't request a password change you can reset your password here: {url}"
+40,setup,1
+41,domain_whitelist,
+42,num_users,
+43,incorrect_submissions_per_min,
+44,name_changes,0
+45,team_creation,0
+46,num_teams,
+47,team_disbanding,inactive_only
+48,view_after_ctf,0

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Error {{ code }} - PyVault{% endblock %}
+{% block content %}
+<div class="text-center mt-5">
+    <h1 class="display-1 vault-icon">{{ code }}</h1>
+    <p class="lead text-muted">{{ message }}</p>
+    <a href="/" class="btn btn-vault mt-3">Go Home</a>
+</div>
+{% endblock %}

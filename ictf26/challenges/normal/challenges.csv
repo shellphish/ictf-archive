@@ -1,0 +1,15 @@
+name,image,oracle_port,container_port,net_type
+agentzero,ictf-agentzero,3001,3001,http
+gatekeeper,ictf-gatekeeper,3002,25253,tcp
+challenge-cookie-monster,ictf-challenge-cookie-monster,3003,8000,http
+dont-lose-your-head,ictf-dont-lose-your-head,3004,3000,http
+new-school,ictf-new-school,3005,28443,tcp
+not_too_much,ictf-not_too_much,3006,4444,tcp
+pickles-pickles-an-origin-story,ictf-pickles-pickles-an-origin-story,3007,39723,tcp
+pyvault,ictf-pyvault,3008,5000,http
+secure_vault_challenge,ictf-secure_vault_challenge,3009,1337,tcp
+token-mirror,ictf-token-mirror,3010,1337,tcp
+try_more,ictf-try_more,3011,4445,tcp
+unpack,ictf-unpack,3012,5000,http
+feat-babykeem,ictf-feat-babykeem,3013,31337,tcp
+feat-babykeem-remix,ictf-feat-babykeem-remix,3014,31338,tcp

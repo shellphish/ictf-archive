@@ -1,0 +1,357 @@
+<!DOCTYPE html><html data-scrapbook-source="https://ictf.gg/howto" lang="en"><head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>iCTF2021</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-select.min.css">
+    <link rel="stylesheet" href="ictf.css">
+
+    <link rel="shortcut icon" href="shellphish.png">
+
+    <!-- Custom fonts for this template -->
+    <link href="css.css" rel="stylesheet">
+    <link href="css-1.css" rel="stylesheet">
+    <link href="css-2.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="grayscale.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top topbar" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="index.html">ictf@btc:~$</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="index.html#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="index.html#register">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#">How To iCTF</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" style="cursor: not-allowed; opacity: 0.5;" href="#">Scoreboard</a> <!-- http://scoreboard.ictf.gg/ -->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Header
+    <header class="masthead" style="height: 60%">
+      <div class="container d-flex h-100 align-items-center">
+      </div>
+    </header> -->
+
+
+    <!-- About Section -->
+    <section id="about" class="about-section text-center" style="text-align:left!important;">
+      <div class="container">
+        <h2 class="text-highlight text-center mx-auto mt-2 mb-5" style="font-size: 2.5em;"><i class="fas fa-flag-checkered text-white"></i>&nbsp;&nbsp; <b>How To Play iCTF</b></h2>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <br>
+            <hr style="color: whitesmoke">
+            <h2 class="text-white mb-4 ">What is an AD CTF? Help!</h2>
+            <div class="text-white">
+              For an introduction to attack-defense CTFs, we recommend skimming the fantastic introduction provided
+              by the CTF team FAUST: you can find it
+              <a href="https://2019.faustctf.net/information/attackdefense-for-beginners/">here</a>.
+            </div>
+
+            <hr style="color: whitesmoke">
+            <h2 class="text-white mb-4 ">Timeline</h2>
+            <div class="text-white">
+            <ul>
+              <li>We will release the OVA decryption key on Fri, 3 Dec. 2021, 18:00 UTC. <a class="text-secondary" href="https://everytimezone.com/s/5783d4d6" target="_blank">(not your timezone?)</a></li>
+              <li>The game will begin on Fri, 3 Dec. 2021, 19:00 UTC. <a class="text-secondary" href="https://everytimezone.com/s/3c45c80d" target="_blank">(not your timezone?)</a></li>
+              <li>The game will end on Sat, 4 Dec. 2021, 03:00 UTC. <a class="text-secondary" href="https://everytimezone.com/s/5221df11" target="_blank">(not your timezone?)</a></li>
+            </ul>
+            </div>
+            <h2 class="text-white mb-4 ">Joining the game</h2>
+            <div class="text-white">
+              <p>
+              Teams participating in the 2021 iCTF will be required to host their own vulnboxes,
+              and thus teams will have root access in their vulnbox.
+              As we get closer to the competition date, we'll be releasing an encrypted
+              <span class="codesnippet">.ova</span> image of the vulnbox.
+              When the iCTF begins, we will release the decryption key for the vulnbox via our
+              <a href="https://twitter.com/ucsbictf">twitter account</a>,
+              <a href="https://discord.gg/RVpemUfc">Discord</a>,
+              and on this website.
+              You'll be able to decrypt this file with the command
+              </p><div class="codeblock">
+                $ gpg --batch --passphrase-file &lt;keyfile&gt; --output &lt;filename.ova&gt; --decrypt &lt;filename&gt;.ova.gpg
+              </div>
+              <br>
+              Once you have decrypted the <span class="codesnippet">.ova</span> file, you'll need to run it somewhere.
+              Here we'll cover two potential methods of running it: either via virtualbox on your local machine or via AWS.
+              <p></p>
+
+              <h3 class="text-white mb-3">Running the Vulnbox Locally</h3>
+
+              If you're playing by yourself or with a small team, it's easiest to run the vulnbox locally on
+              your local machine.
+              To do so, you'll need to install VirtualBox and import the ova (File→Import Appliance) and
+              then select the decrypted <span class="codesnippet">.ova</span> file.
+              If you want to share files between your host system and the vulnbox, you can install the virtualbox
+              guest additions. <br>
+	      Your services live in <span class="codesnippet">/opt/ictf/services</span>. Make sure to run <span class="codesnippet">docker-compose up -d</span> as the user <span class="codesnippet">ctf</span>.
+
+              <h3 class="text-white mb-3">Hosting the Vulnbox on AWS</h3>
+
+              If you're playing on a larger team, it may be more helpful to host the vulnbox remotely.
+              Fortunately, AWS is capable of running a OVA on an EC2 instance.
+              Detailed instructions on how to do this can be found
+              <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">here</a>.
+	      For your convenience, the decrypted OVA will be available in AWS S3 at <span class="codesnippet">https://ictf-teamvm-decrypted.s3.us-west-1.amazonaws.com/teamvm.ova</span>.
+	      You should use this in the <span class="codesnippet">containers.json</span> file.
+	      <br><br>
+
+              <h3 class="text-white mb-3">Connecting to the Game Network</h3>
+
+              <p>
+              Once your vulnbox is up and running, you'll need to log in and connect to the game VPN.
+	      The username is <span class="codesnippet">ubuntu</span> with password <span class="codesnippet">ubuntu</span>.
+              To do so, follow these instructions:
+              </p><ul>
+                <li>You'll receive a <span class="codesnippet">teamNN.ovpn</span> file - put this in your VM at  <span class="codesnippet">/etc/openvpn/client.conf</span></li>
+                <li>Make sure systemd knows about your new VPN connection: <span class="codesnippet">systemctl daemon-reload</span></li>
+                <li>Restart OpenVPN: <span class="codesnippet">systemctl restart openvpn</span></li>
+                <li>If everything went well, you'll see a new <span class="codesnippet">tun0</span> interface and a <span class="codesnippet">10.9.0.0/16</span> route through it</li>
+                <li>Test your connection by pinging the router: <span class="codesnippet">ping 10.9.1.1</span></li>
+                <li>WARNING: OpenVPN servers are running via UDP in port range 1100-1140. </li>
+              </ul>
+
+              <p></p>
+
+              <p>To play the iCTF, you'll also need to be able to interact with the iCTF API, which is done via a python module which you can install by running
+              <span class="codesnippet">pip install swpag-client</span>.
+              Interactions with the game infrastructure will take place through this client. You'll use it to get the game status, find potential target services, and submit flags.
+              <br>
+              The first thing you'll do with the swpag-client is create a new <span class="codesnippet">Team</span> object using the client and the
+              <b>FLAG_TOKEN</b> you received via email:
+                </p><div class="codeblock">
+                  &gt;&gt;&gt; from swpag_client import Team <br>
+                  &gt;&gt;&gt; t = Team("http://teaminterface.ictf.gg/", "your_flag_token_here")
+                </div>
+              
+              <p></p>
+
+            <p>
+              The <span class="codesnippet">Team</span> lets you query a variety of information from the game infrastructure. Some important examples are:
+                <br>
+                <br>
+                </p><div class="table-wrapper-scroll-x my-custom-scrollbar" style="overflow-x: scroll; white-space: nowrap;">
+                  <table class="" style="border: 0px solid black; border-spacing: 30px 10px; border-collapse: separate;">
+                    <thead>
+                      <tr>
+                        <th scope="col">Method</th>
+                        <th scope="col">Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">
+                          <span class="codesnippet">t.get_game_status()</span>
+                        </th>
+                        <td>Get information regarding scores, teams, services, and the the game's "ticks"</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <span class="codesnippet">t.get_team_status()</span>
+                        </th>
+                        <td>Get your team's current status</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <span class="codesnippet">t.get_service_list()</span>
+                        </th>
+                        <td>Get a list of the services, including the "service ID" of each service.</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <span class="codesnippet">t.get_targets(service_id)</span>
+                        </th>
+                        <td>Get the IPs, port numbers, and flag IDs for your opponents' instances of this service</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              <p></p>
+            </div>
+
+            <hr style="color: whitesmoke">
+            <h2 class="text-white mb-4">Gameplay</h2>
+            <div class="text-white">
+              <p>Once your vulnbox is running and connected to the VPN, it's time to start playing the iCTF!
+              Your first task will be to explore the services that you must attack and defend,
+              which you can find in your vulnbox under <span class="codesnippet">/opt/ictf/services</span>.</p>
+
+              <p>All the challenges are running inside a docker container, and the challenges directories are mounted
+              in the containers, so you should be able to patch them by modifying the files on disk unless noted
+              otherwise in the challenge description.
+              We'll be providing a <span class="codesnippet">docker-compose.yml</span> file for all the challenges,
+              so this should be relatively easy.
+
+              In each service, you'll find three directories:
+              </p><div class="table-wrapper-scroll-x my-custom-scrollbar" style="overflow-x: scroll; white-space: nowrap;">
+                <table style="border: 0px solid black; border-spacing: 30px 10px; border-collapse: separate;">
+                  <thead>
+                    <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">
+                        <span class="codesnippet">ro</span>
+                      </th>
+                      <td>Read-only by the service</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <span class="codesnippet">rw</span>
+                      </th>
+                      <td>Readable and writable by the service</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <span class="codesnippet">append</span>
+                      </th>
+                      <td>Service can only read existing files and create new files</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <br>
+
+              The purpose of the <span class="codesnippet">append</span> directory is typically to store flags or other
+              flag-related data: by only allowing the creation of new files, opponents that get code execution through
+              the service won't be able to bring your service down by deleting the flags stored in it.
+
+              <p>Once you have reverse-engineered a service and developed your new l33t exploit, you'll need a list of
+              teams to attack!
+              Inside each instance of each service there are <i>multiple</i> flags; to prove your exploit works, you'll need
+              to find the correct flag, which is determined by the current flag id for that team and service.
+              This current flag id will be changed every tick.
+              To get a list of targets and their flag ids, run <span class="codesnippet">t.get_targets(service_id)</span>.
+	      The flag regex is <span class="codesnippet">FLG[0-9A-Za-z]{13}</span>
+              Once you've gotten some flags, you can submit them with:
+              </p><div class="codeblock">
+                &gt;&gt;&gt; t.submit_flag(["FLGxxxxxxxxxxxxx"]) <br>
+                &gt;&gt;&gt; t.submit_flag(["FLGxxxxxxxxxxxxx", "FLGyyyyyyyyyyyyy", ...]) # submit multiple flags
+              </div>
+              <br>
+              Also, note that you the list of flags you're submitting can't be longer than 100! If you need to submit more
+              flags, you'll need to make a second call to the API.
+              Make sure to submit any flags within a couple rounds or they won't be scored!
+              <p></p>
+            </div>
+            <hr style="color: whitesmoke">
+
+            <h2 class="text-white mb-4">Scoring System</h2>
+            <div class="text-white">
+            The scoring system is relatively simple. For a single team-service (i.e. pair of a team and service),
+            there are three cases to consider:
+
+            <ul>
+              <li>
+                Service is up and unexploited: the team receives 50 points
+              </li>
+              <li>
+                Service is up and exploited: every team that exploits this team-service gets 50 points
+                divided by the number of teams who exploited this team
+              </li>
+              <li>
+                Service is down: every team that has this service up gets 50 points divided by the number
+                of teams who have this service up.
+              </li>
+            </ul>
+            Thus, the same number of points are given out per round: <br><br>
+            <center><span class="codesnippet">50 * num_teams * num_services</span></center><br><br>
+
+            In Python, this translates to: <br><br>
+            <div class="codeblock">
+                def update_score_for_tick(): <br>
+                     for chall in challenges: <br>
+                          update_score_for_tick_for_challenge(chall) <br><br>
+
+                def update_score_for_tick_for_challenge(chall): <br>
+                     teams_up = [team for team in teams if team.status[chall] == 'up'] <br>
+                     teams_down = [team for team in teams if team.status[chall] == 'down'] <br>
+                     point_income_from_down_teams = (len(teams_down) * 50) / teams_up <br><br>
+                     for team in teams_up: <br>
+                          team.score += point_income_from_down_teams <br><br>
+                     for team in teams_up: <br>
+                          if len(team.exploited_by[chall]) == 0: <br>
+                               team.score += 50 <br>
+                          else: <br>
+                               point_income_from_exploit = 50 / len(team.exploited_by[chall]) <br>
+                               for exploiter in team.exploited_by['chall']: <br>
+                                    exploiter.score += point_income_from_exploit <br>
+              </div>
+              <p></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section bg-black">
+      <div class="container">
+
+        <div class="social d-flex justify-content-center">
+          <a href="https://twitter.com/shellphish" class="mx-2">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="mailto:ictf-admin@googlegroups.com" class="mx-2">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://webchat.freenode.net/?channels=%23ictf2021" class="mx-2">
+            <i class="fas fa-hashtag"></i>
+          </a>
+        </div>
+        <br><br><br>
+          <center>
+              <font color="white"> Organized by: </font><br><br>
+              <a href="https://shellphish.net/ictf/" target="_blank"><img src="shellphish-logo.png" style="width: 200px"></a><br><br>
+              <font color="white"> Sponsored by: </font><br><br>
+              <a href="https://aws.amazon.com/" target="_blank"><img src="amazon-banner.png" style="width: 200px"></a>
+          </center>
+      </div>
+    </section>
+
+    
+    
+    
+    
+    
+    <!-- Footer -->
+    <footer class="bg-black small text-center text-white-50">
+      <div class="container">
+        From Shellphish with ♥
+      </div>
+    </footer>
+  
+</body></html>

@@ -1,0 +1,9 @@
+name: overflow-it
+author: zanardi
+category: AI
+description: |
+  Figure it out and get the flag.
+value: 500
+type: standard
+flags:
+  - iCTF{sometimes_italian_is_overflowing}

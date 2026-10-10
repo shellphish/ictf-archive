@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block title %}Messages — Nexus{% endblock %}
+{% block body %}
+<!--
+  dm.html — direct messages
+  Message body is stored via parameterised INSERT and displayed with
+  Jinja2 autoescaping on output. SQLi not possible (parameterised queries).
+
+  The search widget uses /api/dm/search to find messages via JS fetch().
+  The API only returns a match count (not message content) to prevent
+  data scraping via the search endpoint. See security review 2024-11-08.
+
+  Internal note: DM search was considered risky during the PHP-to-Python
+  migration but the query builder was rewritten with parameterised binding.
+  See _build_dm_search() in app.py. Confirmed safe — sqlmap clean.
+-->
+<div class="layout layout-2">
+  <div>
+    <div class="card" style="margin-bottom:.75rem;">
+      <div class="card-title">New Message</div>
+      {% if error %}<div class="msg-error">{{ error }}</div>{% endif %}
+      <form method="POST">
+        <div class="form-field">
+          <label>Recipient</label>
+          <input name="to" placeholder="username" required>
+        </div>
+        <div class="form-field">
+          <label>Message</label>
+          <textarea name="body" rows="3" placeholder="Write something..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-sm">Send</button>
+      </form>
+    </div>
+
+    <!-- DM Search -->
+    <!--
+      Search widget — calls /api/dm/search?q=<query> via fetch().
+      API returns JSON: {"found": bool, "count": int, "query": str}
+      Only returns count, not message content (privacy: see app.py note).
+      Query is parameterised in _build_dm_search(). Safe.
+    -->
+    <div class="card" style="margin-bottom:.75rem;" data-api-endpoint="/api/dm/search">
+      <div class="card-title">Search Messages</div>
+      <div style="display:flex;gap:.5rem;">
+        <div class="form-field" style="flex:1;margin:0;">
+          <input id="dm-search-input" placeholder="Search your conversations..." style="width:100%;">
+        </div>
+        <button id="dm-search-btn" class="btn btn-sm" style="align-self:flex-start;">Search</button>
+      </div>
+      <div id="dm-search-results" style="margin-top:.75rem;"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Inbox</div>
+      {% if inbox %}
+        {% for m in inbox %}
+        <div class="dm-item">
+          <div class="dm-meta">from {{ m.sender }} &middot; {{ m.ts[:16] }}</div>
+          <div class="dm-body">{{ m.body }}</div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <p class="dimmed mono" style="font-size:.78rem;">no messages</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <aside>
+    <div class="card">
+      <div class="card-title">Sent</div>
+      {% if sent %}
+        {% for m in sent %}
+        <div class="dm-item">
+          <div class="dm-meta">to {{ m.recipient }} &middot; {{ m.ts[:16] }}</div>
+          <div class="dm-body muted" style="font-size:.82rem;">{{ m.body[:80] }}{% if m.body|length > 80 %}&hellip;{% endif %}</div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <p class="dimmed mono" style="font-size:.78rem;">nothing sent</p>
+      {% endif %}
+    </div>
+  </aside>
+</div>
+
+<script>
+// DM search widget — fetches results from /api/dm/search and renders
+// them into the #dm-search-results container. Response is pure JSON.
+(function() {
+  const input  = document.getElementById('dm-search-input');
+  const btn    = document.getElementById('dm-search-btn');
+  const box    = document.getElementById('dm-search-results');
+
+  function doSearch() {
+    const q = input.value.trim();
+    if (!q) { box.innerHTML = ''; return; }
+    fetch('/api/dm/search?q=' + encodeURIComponent(q))
+      .then(r => r.json())
+      .then(data => {
+        if (!data.found || data.count === 0) {
+          box.innerHTML = '<p class="dimmed mono" style="font-size:.78rem;">no matching messages</p>';
+          return;
+        }
+        box.innerHTML = '<p class="mono" style="font-size:.78rem;color:var(--green);">'
+          + data.count + ' message' + (data.count > 1 ? 's' : '') + ' found matching "'
+          + escapeHtml(data.query) + '"</p>';
+      })
+      .catch(() => {
+        box.innerHTML = '<p class="dimmed mono" style="font-size:.78rem;">search error</p>';
+      });
+  }
+
+  function escapeHtml(t) {
+    const d = document.createElement('div');
+    d.textContent = t;
+    return d.innerHTML;
+  }
+
+  btn.addEventListener('click', doSearch);
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); doSearch(); }
+  });
+})();
+</script>
+{% endblock %}

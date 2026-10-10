@@ -1,0 +1,66 @@
+id: rumor-has-it
+title: "Rumor Has It"
+challenge_secret: "84f7b7dd7de22d3412cb86de87b6e20f"
+description: |
+  Track a chain of sources in a threat-intel "gossip" and identify the true IoC.
+
+  Available MCP tools:
+  - `gossip`: returns the first message in the gossip chain
+  - `rumor`: returns the message for a specific source
+  - `opinion`: submit the ordered list of sources and final IoC; returns the flag if correct
+
+infrastructure:
+  - name: "datastore"
+    image: "agentish_rumor-has-it_datastore:latest"
+    network_alias: "datastore"
+    environment:
+      REDIS_URL: "redis://127.0.0.1:6379/0"
+      FORCE_REGEN: "0"
+
+mcp_servers:
+  - name: "mcp_gossip"
+    port: 7003
+    internal_host: "mcp_gossip"
+    enabled: true
+    routes:
+      - function: "gossip"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Return the first message in the gossip chain."
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "rumor"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Return the message associated with a given source email address."
+        arguments:
+          - name: "source"
+            type: "str"
+            required: true
+            description: "Source email address to look up in the gossip chain."
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "opinion"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Submit the ordered list of sources and your final IoC guess. Returns the flag if both are correct."
+        arguments:
+          - name: "sources"
+            type: "list"
+            required: true
+            description: "Ordered list of source email addresses forming the complete gossip chain."
+          - name: "ioc"
+            type: "str"
+            required: true
+            description: "Your final IoC guess (exact string - IP, domain, URL, or SHA-256 hash)."
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"

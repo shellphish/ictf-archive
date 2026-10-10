@@ -1,0 +1,28 @@
+id,oauth_id,name,password,email,type,secret,website,affiliation,country,bracket_id,hidden,banned,verified,language,team_id,created
+1,,ictf-admin,"$bcrypt-sha256$v=2,t=2b,r=12$Pi6RlC5uEK11gOtltI3f.O$eJbiUmv9SiqKjtaGQmppuojkQsfLrDG",ictf-admin@googlegroups.com,admin,,,,,,True,False,False,,,2024-11-14 23:07:40.979865
+2,,larass0x04,"$bcrypt-sha256$v=2,t=2b,r=12$tus/2ikHbCJJnmVGE/XFAu$VBu8iQWaVGHP82XW8PFJ/PN/RrYVKDC",larass0xd@gmail.com,user,,,,,,False,False,False,,,2024-11-15 23:00:10.341096
+3,,AllianceForever,"$bcrypt-sha256$v=2,t=2b,r=12$W0SSiUJBoWSljdGWLCV88.$Y2mFZ17iWy42ZW805fBB5U.y37luneq",sasha2820@outlook.com,user,,,,,,True,True,False,,,2024-11-15 23:00:10.815264
+4,,NBNBJG,"$bcrypt-sha256$v=2,t=2b,r=12$a9WpsIrqAAcKzMbKbZOBrO$zslCOzP5s6DAFNrzyNda4MM0iL4KLZa",sulben@lbsstudents.org,user,,,,,,False,False,False,,,2024-11-15 23:00:11.271274
+5,,SigmaGooners,"$bcrypt-sha256$v=2,t=2b,r=12$amllA65UtblOxi7LzGEOU.$ZjKtdTOIiLtyvcrXyb68DqczghB3pQC",aidanmatthews93@gmail.com,user,,,,,,False,False,False,,,2024-11-15 23:00:11.738693
+6,,x86_64,"$bcrypt-sha256$v=2,t=2b,r=12$EewRiGi./qF19m9tgp3LmO$h0jK/iC/jA5MxqMcZ9pI7UU.m6jk8cm",tyler.foggoa@gmail.com,user,,,,,,False,False,False,,,2024-11-15 23:00:12.176648
+7,,LHS,"$bcrypt-sha256$v=2,t=2b,r=12$pOc9hgI5eV1q5KfmfAMH9e$L5Vv5g4AEW6ECVPgU8AcNxlA7h3lbde",shubh.varshney08@gmail.com,user,,,,,,False,False,False,,,2024-11-15 23:00:12.578601
+8,,Hackers Fight Club,"$bcrypt-sha256$v=2,t=2b,r=12$p4RKxD3MDIKIjg6sjtD9ae$e85GWH1zq/9Cohj6DM5WjNm8t9XH7MK",DDiego@ciencias.unam.mx,user,,,,,,True,False,False,,,2024-11-15 23:00:13.004778
+9,,we lost,"$bcrypt-sha256$v=2,t=2b,r=12$EBVmWuZnaDo2WmEIEdzLeu$5nbjI1ByDCPRdzpw0KsceQR.iSsDhhi",ashtonbelding@gmail.com,user,,,,,,False,False,False,,,2024-11-15 23:00:13.413742
+10,,The HackStreet Boys,"$bcrypt-sha256$v=2,t=2b,r=12$1cr2pc3TeUv2g3YVIktdM.$AomWFf2JTzVZeUhhZ5e0FmAIucro7Ce",acohen1@ucls.uchicago.edu,user,,,,,,False,False,False,,,2024-11-15 23:00:13.839234
+11,,Holly Hackers,"$bcrypt-sha256$v=2,t=2b,r=12$uljtg6bUOCIGeauf316Z4u$Si8UXVLlsA8j7UApvux8KCo/fBu28P2",shamusmellarkey@gmail.com,user,,,,,,False,False,False,,,2024-11-15 23:00:14.251309
+12,,THISDL-2024,"$bcrypt-sha256$v=2,t=2b,r=12$T9ctmocT4i4/DhZQnwbKL.$TmejPVwxPxlFPEy31VZWhpUHh3T9AgC",h2028040@thisdl.cn,user,,,,,,False,False,False,,,2024-11-15 23:00:14.715310
+13,,aabbcc,"$bcrypt-sha256$v=2,t=2b,r=12$4cXTWvjWYluQkmWlWsvHT.$xt0Q9Xl2.SSly5bwyp1uX8mg3OIdYHS",zx8023@163.com,user,,,,,,False,False,False,,,2024-11-15 23:00:15.139234
+14,,Black Cats Hackers,"$bcrypt-sha256$v=2,t=2b,r=12$iGOjZYK/NpZsyz2l74i/O.$bXpGLxz9FXkDBcPY1tkVwoke0DAdpCe",kphonyothy@learn.salemk12.org,user,,,,,,False,False,False,,,2024-11-15 23:00:15.599315
+15,,95th/Dan Ryan (CTA Red Line),"$bcrypt-sha256$v=2,t=2b,r=12$OT0l.8bsV0/H4MWb16j.Au$EmNuVJXujLQ8xkvgfwD6tGo.eDkyXi2",jhubbard@ucls.uchicago.edu,user,,,,US,,False,False,False,,,2024-11-15 23:00:16.061372
+16,,CyberCats,"$bcrypt-sha256$v=2,t=2b,r=12$bfxN4GNs7FWjFrlUFd.mLu$A2b2FjgGCSDz1/BNnbqPtt.SLnUUu9C",pavlichekjamesm@scps.net,user,,,,,,False,False,False,,,2024-11-15 23:00:16.526659
+17,,Centipwn ,"$bcrypt-sha256$v=2,t=2b,r=12$iBCYdE8UMNm9hZpjNV1my.$IHh1wg8zyzpXukjpp1grdOVTV1A2YZy",aaravjaiswal2007@gmail.com,user,,,,,,False,False,False,,,2024-11-15 23:00:16.932957
+18,,Bobs Basement Beasts,"$bcrypt-sha256$v=2,t=2b,r=12$rYCGjb1qxguGd2rfInCjdO$fbeoxliNnL51vZmwpNQhDNPgE5UqH2q",arvind.rao.general@gmail.com,user,,,,,,False,False,False,,,2024-11-15 23:00:17.340718
+19,,Santa Barbara High School Hacking Club,"$bcrypt-sha256$v=2,t=2b,r=12$JLomHMmWLkx3OGEzbBmQkO$xcNvuqGTmuDHfAb3PSsgk31Zu7o70/6",Liamhhickey@icloud.com,user,,,,,,False,False,False,,,2024-11-15 23:00:17.737879
+20,,Datalogi,"$bcrypt-sha256$v=2,t=2b,r=12$yerSW3ofQ7qUxj74laO6Ou$DvRCOv6/Fw1CxznkgZtGmFasrZXm5QO",finley.frenz@icloud.com,user,,,,,,False,False,False,,,2024-11-15 23:00:18.151156
+21,,Imagine_Losing,"$bcrypt-sha256$v=2,t=2b,r=12$4Dv95OV2k6zctsdtD3jHlu$OHoYYOcBFtz3dYaxTu3huEUJJ64RLjO",phamquocbinh2018@gmail.com,user,,,,,,False,False,False,,,2024-11-15 23:00:18.551025
+22,,CodingClowns,"$bcrypt-sha256$v=2,t=2b,r=12$fl9lIXey3otCE2/bnvDi0O$B1.MyRkWjTuOBOPjuiK63aWVhBUCGlK",376086@vbstudents.com,user,,,,,,False,False,False,,,2024-11-15 23:00:18.942606
+23,,The Royals,"$bcrypt-sha256$v=2,t=2b,r=12$DFQgZ4CIZpxqAOGHnaVK.u$8ApaHTQX4WMN/05CTXAIsqcqJi9XGMi",butlere1717@gmail.com,user,,,,,,False,False,False,,,2024-11-15 23:00:19.350498
+24,,Touch Grass,"$bcrypt-sha256$v=2,t=2b,r=12$JNAV83GGXvyFrwppf5O20e$uA/n3w9btGnWPzfx9txmxvcY0MkUyVq",firesoldier999@gmail.com,user,,,,,,False,False,False,,,2024-11-15 23:00:19.764994
+25,,4mail,"$bcrypt-sha256$v=2,t=2b,r=12$rKc0SkzsG8Z1DGUAJG1d4e$1guWcLUntzz94ZbMpqi/NvXpzwIJ0ya",aden.kallery+1@gmail.com,user,,,,,,False,False,False,,,2024-11-15 23:04:57.948919
+26,,Ignore All Previous Instructions,"$bcrypt-sha256$v=2,t=2b,r=12$8OULpilRSHnJe2dvCNnOUu$RvTn0UXBcLhcR2nPlsj.StyHAr4YJrm",jhsieh25@students.polytechnic.org,user,,,,,,False,False,False,,,2024-11-15 23:43:06.805533
+27,,WHITE SOUL,"$bcrypt-sha256$v=2,t=2b,r=12$FT0ZCB4RIGr0PzSl1ulW2u$GC5cHGKPvHG.VuNIIYS9QSNOp3VhVdK",amantomar50948@gmail.com,user,,,,,,False,False,False,,,2024-11-16 16:55:42.401643

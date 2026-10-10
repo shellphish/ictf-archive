@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Search — Nexus{% endblock %}
+{% block body %}
+<!--
+  Search endpoint — GET /search?q=<query>
+  Server-side: query is passed to _build_search_query(q) which constructs
+  a LIKE clause. The raw query string is reflected back into this page
+  inside the <input> value attribute and inside the results header.
+
+  Observed behaviour during pentest (2024-10-14, internal):
+    /search?q=<script>alert(1)</script>   → reflected, not executed (CSP active)
+    /search?q=' OR 1=1--                  → 0 results (parameterised query)
+    /search?q=%27%20UNION%20SELECT...     → 0 results
+
+  Note: the q parameter is also passed verbatim to the template as {{ q }}.
+  Jinja2 autoescaping is active on .html templates, so XSS via {{ q }} is
+  not possible. The value attribute in the <input> is escaped by Jinja2.
+-->
+<div class="layout layout-2">
+  <div>
+    <form method="GET" action="{{ url_for('search') }}" style="margin-bottom:1rem;">
+      <div style="display:flex;gap:.5rem;">
+        <div class="form-field" style="flex:1;margin:0;">
+          <input name="q" value="{{ q }}" placeholder="Search posts..." style="width:100%;">
+        </div>
+        <button type="submit" class="btn">Search</button>
+      </div>
+    </form>
+
+    {% if q %}
+      <div class="card-title" style="margin-bottom:.5rem;">
+        Results for "{{ q }}" — {{ results|length }} found
+      </div>
+      {% if results %}
+        {% for p in results %}
+        <div class="post">
+          <div class="post-header">
+            <div class="post-avatar">{{ p.author[:2].upper() }}</div>
+            <a href="{{ url_for('profile', username=p.author) }}" class="post-author">{{ p.author }}</a>
+            <span class="post-ts">{{ p.ts[:16] }}</span>
+          </div>
+          <div class="post-body">{{ p.content }}</div>
+          <div class="post-actions">
+            <a href="{{ url_for('report', post_id=p.id) }}" class="btn-ghost" style="font-size:.75rem;">Report</a>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <div class="card center" style="padding:2rem;">
+          <p class="dimmed mono" style="font-size:.8rem;">no results for "{{ q }}"</p>
+        </div>
+      {% endif %}
+    {% else %}
+      <div class="card center" style="padding:2.5rem 1rem;">
+        <p class="dimmed mono" style="font-size:.8rem;">enter a query to search posts</p>
+      </div>
+    {% endif %}
+  </div>
+
+  <aside>
+    <div class="card">
+      <div class="card-title">Search tips</div>
+      <div style="font-size:.78rem;color:var(--text-soft);line-height:1.8;">
+        <div>Search is case-insensitive.</div>
+        <div>Results are ordered by date.</div>
+        <div>Only public posts are indexed.</div>
+      </div>
+    </div>
+  </aside>
+</div>
+{% endblock %}

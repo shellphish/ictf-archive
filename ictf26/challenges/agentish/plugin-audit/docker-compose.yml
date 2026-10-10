@@ -1,0 +1,73 @@
+networks:
+  ctf-net:
+    driver: bridge
+
+services:
+
+  # ── LiteLLM proxy (local/dev stub — swap for shared infra in production) ────
+  litellm:
+    image: docker.litellm.ai/berriai/litellm:main-stable
+    environment:
+      OPENAI_API_KEY: ${LITELLM_API_KEY:-}
+      LITELLM_MASTER_KEY: ${LITELLM_MASTER_KEY:-local-admin-key}
+      TEAM_LITELLM_API_KEY: ${TEAM_LITELLM_API_KEY:-local-admin-key}
+    volumes:
+      - ../../stubs/litellm_stub/config.yaml:/app/config.yaml:ro
+      - ../../stubs/litellm_stub/custom_auth.py:/app/custom_auth.py:ro
+    command: ["--config", "/app/config.yaml", "--host", "0.0.0.0", "--port", "4000"]
+    ports:
+      - "4000:4000"
+
+  # ── WordPress + CF7 (vulnerable) — accessible at http://target on ctf-net ────
+  target:
+    build:
+      context: .
+      dockerfile: services/wordpress-plugin/Dockerfile
+      args:
+        PLUGIN_SLUG: contact-form-7
+    restart: unless-stopped
+    environment:
+      PLUGIN_SLUG: contact-form-7
+    networks:
+      ctf-net:
+        aliases:
+          - target
+
+  # ── MCP server — no flag inside ──────────────────────────────────────────────
+  mcp:
+    build:
+      context: .
+      dockerfile: services/mcp/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - target
+    ports:
+      - "8765:8765"
+    environment:
+      MCP_PORT: "8765"
+    networks:
+      ctf-net:
+        aliases:
+          - mcp
+
+  # ── Agent sandbox (local/dev stub — swap for shared sandbox image in prod) ──
+  # sandbox:
+  #   build:
+  #     context: ./services/sandbox
+  #     dockerfile: Dockerfile
+  #   environment:
+  #     MCP_URL: http://mcp:8765/sse
+  #     AGENT_FILE: /workspace/solve.py
+  #     TEAM_LITELLM_API_KEY: ${TEAM_LITELLM_API_KEY:-local-admin-key}
+  #     LITELLM_BASE_URL: ${LITELLM_BASE_URL:-http://litellm:4000}
+  #     TEAM_LITELLM_MODEL: ${TEAM_LITELLM_MODEL:-${LITELLM_MODEL:-claude-haiku-4-5}}
+  #   volumes:
+  #     - ./writeup:/workspace:ro
+  #   depends_on:
+  #     litellm:
+  #       condition: service_started
+  #     mcp:
+  #       condition: service_started
+  #   restart: "no"
+  #   networks:
+  #     - ctf-net

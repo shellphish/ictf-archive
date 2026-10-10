@@ -1,0 +1,43 @@
+name: Bits of Scan-dalous QRiosity Part 1
+author: Jeremy Schwartz
+category: forensics
+description: |
+  Digital image processing is a fundamental concept in Computer Science with applications ranging from Instagram filters to medical imaging and autonomous vehicles.  At its core, digital images are simply grids of pixels, where each pixel contains color information. In most color images, each pixel stores three values representing the intensity of red, green, and blue (RGB) light. These values typically range from 0 to 255, where 0 means none of that color and 255 means the maximum intensity.  By writing programs that loop through each pixel of an image, you can
+  – Read the RGB values
+  – Analyze patterns in the image
+  – Manipulate RGB values to transform the image
+  – Hide or extract information within the image
+  This pixel-by-pixel manipulation is the foundation for countless image processing techniques, from simple filters to complex computer vision algorithms.
+
+  Steganography is the art and science of hiding information in plain sight.
+  Throughout history, steganography has taken many forms
+  – Ancient Greeks wrote messages on wooden tablets and covered them with wax
+  – During World War II, invisible inks were used to hide messages in seemingly innocent letters
+  – During the Cold War, microdots reduced photographs to the size of a period to smuggle documents
+
+  Today, steganography has legitimate uses in
+  – Digital watermarking to protect intellectual property
+  – Secure communication for journalists and activists
+
+  However, it's also used for less noble purposes, making it an important field of study for cybersecurity professionals.  In the digital age, steganography has found a new medium; images. By making subtle changes to pixel values that are imperceptible to the human eye, a programmer can hide entire images or messages within other images.  For example, a black and white image could be encoded within a multi-colored image by slightly modifying the values in one color channel in each pixel to store hidden data. Even beginners will eventually see that changing even one pixel value, an event such as adding or subtracting one to make a value change from odd to even, could be enough to prevent visibility.
+
+  Can you "see" the flag in this image?
+
+  (Please note, the flag format for this challenge is iCTF={flag} instead of ictf{flag})
+
+value: 500
+type: standard
+
+image: .
+protocol: 
+host: null
+connection_info: null
+healthcheck: null
+
+flags:
+- iCTF={PixlsRez2c&NOTc}
+
+files: 1obfus.png
+
+state: visible
+version: "0.1"

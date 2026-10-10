@@ -1,0 +1,67 @@
+services:
+  datastore:
+    build:
+      context: .
+      dockerfile: services/datastore/Dockerfile
+    environment:
+      REDIS_URL: redis://127.0.0.1:6379/0
+      COMBATANT_TOTAL_DAMAGE: ${COMBATANT_TOTAL_DAMAGE:-10}
+      OPPONENT_TOTAL_DAMAGE: ${OPPONENT_TOTAL_DAMAGE:-800}
+      INIT_SEED: ${INIT_SEED:-}
+    ports:
+      - "6380:6379"
+    restart: on-failure
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -h 127.0.0.1 -p 6379 EXISTS sf:config | grep -q '^1$$'"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+
+  mcp_trainer:
+    build:
+      context: .
+      dockerfile: services/mcp_trainer/Dockerfile
+    environment:
+      REDIS_URL: redis://datastore:6379/0
+      PORT: "7011"
+    depends_on:
+      datastore:
+        condition: service_healthy
+    ports:
+      - "7013:7011"
+    restart: unless-stopped
+
+  mcp_arena:
+    build:
+      context: .
+      dockerfile: services/mcp_arena/Dockerfile
+    environment:
+      REDIS_URL: redis://datastore:6379/0
+      PORT: "7012"
+      FLAG_CHALLENGE: ${FLAG_CHALLENGE}
+      DEBUG: ${DEBUG:-}
+    depends_on:
+      datastore:
+        condition: service_healthy
+    ports:
+      - "7014:7012"
+    restart: unless-stopped
+
+  sandbox:
+    build:
+      context: ../../stubs
+      dockerfile: sandbox_stub/Dockerfile
+    environment:
+      MCP_TRAINER_URL: http://mcp_trainer:7011
+      MCP_ARENA_URL: http://mcp_arena:7012
+      AGENT_FILE: /workspace/solve.py
+    volumes:
+      - ./writeup:/workspace:ro
+    depends_on:
+      datastore:
+        condition: service_healthy
+      mcp_trainer:
+        condition: service_started
+      mcp_arena:
+        condition: service_started
+    restart: unless-stopped

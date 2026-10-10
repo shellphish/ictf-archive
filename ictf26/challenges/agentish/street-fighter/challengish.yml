@@ -1,0 +1,168 @@
+# =============================================================================
+# challengish.yml — MCP Tool Configuration for Agentish
+# =============================================================================
+
+challenge_name: "Street Fighter"
+challenge_id: "street-fighter"
+challenge_secret: ""
+description: |
+  Create an agent to fight in Street Fighter-style combat.
+  Train with Master Jee-Oh Vhun-Ee (3-10 correct defenses per session), then use assessment
+  and opponent endpoints to gather stats. Fight in the arena and defeat the
+  opponent to get the flag.
+
+infrastructure:
+  - name: "datastore"
+    network_alias: "datastore"
+
+mcp_servers:
+  - name: "mcp_trainer"
+    port: 7011
+    internal_host: "mcp_trainer"
+    enabled: true
+
+    routes:
+      - function: "train"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Start training. Returns training_id."
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "action"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Get current step and attack to defend against during training."
+        arguments:
+          - name: "training_id"
+            type: "str"
+            required: true
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "reaction"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Submit defense (parry/block/jump/sidestep/brace) for the training step."
+        arguments:
+          - name: "training_id"
+            type: "str"
+            required: true
+          - name: "step_id"
+            type: "str"
+            required: true
+          - name: "reaction"
+            type: "str"
+            required: true
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "assessment"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Get combatant damage and success rates (after training complete)."
+        arguments:
+          - name: "training_id"
+            type: "str"
+            required: true
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "opponent"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Get opponent name, description, and stats (after training complete)."
+        arguments:
+          - name: "training_id"
+            type: "str"
+            required: true
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "status"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Get training status: 'in_progress', 'success', or 'failure'. Pass training_id."
+        arguments:
+          - name: "training_id"
+            type: "str"
+            required: true
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+  - name: "mcp_arena"
+    port: 7012
+    internal_host: "mcp_arena"
+    enabled: true
+
+    routes:
+      - function: "fight"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Start a fight. Pass training_id from successful training to demonstrate readiness. Returns fight_id."
+        arguments:
+          - name: "training_id"
+            type: "str"
+            required: true
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "arena_action"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Get current fight step and opponent attack. Pass fight_id."
+        arguments:
+          - name: "fight_id"
+            type: "str"
+            required: true
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "arena_reaction"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Perform defense or attack in arena. Arena applies opponent defense for attacks. Pass fight_id."
+        arguments:
+          - name: "fight_id"
+            type: "str"
+            required: true
+          - name: "step_id"
+            type: "str"
+            required: true
+          - name: "action"
+            type: "str"
+            required: true
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "arena_status"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Get health levels during fight. Pass fight_id. Returns flag if opponent at 0."
+        arguments:
+          - name: "fight_id"
+            type: "str"
+            required: true
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"

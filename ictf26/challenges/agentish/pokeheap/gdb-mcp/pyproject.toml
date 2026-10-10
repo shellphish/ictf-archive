@@ -1,0 +1,15 @@
+[project]
+name = "gdb-mcp"
+version = "0.1.0"
+description = "GDB MCP server — let an LLM debug binaries with GDB"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn>=0.30.0",
+    "pygdbmi>=0.11.0.0",
+    "langfuse>=3.0.0",
+]
+
+[project.scripts]
+gdb-mcp = "server:app"

@@ -1,0 +1,21 @@
+services:
+  agentish:
+    build:
+      context: .
+      dockerfile: Dockerfile.agentish
+    environment:
+      CHALLENGISH_CONFIG_PATH: /app/challengish.yml
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mcp_silkthread
+
+  mcp_silkthread:
+    build:
+      context: .
+      dockerfile: Dockerfile.mcp_silkthread
+    environment:
+      FLAG_CHALLENGE: ${FLAG_CHALLENGE}
+      # SILKTHREAD_SEED: "42"  # Uncomment for deterministic scenario
+    ports:
+      - "7001:7001"

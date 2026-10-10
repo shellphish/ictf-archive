@@ -1,0 +1,23 @@
+services:
+  backend:
+    build: ./backend
+    expose:
+      - "3000"
+    environment:
+      - LLM_BASE_URL=${LITELLM_BASE_URL}/v1
+      - LLM_API_KEY=${LITELLM_API_KEY}
+      - LLM_MODEL=${LITELLM_MODEL:-gpt-4o-mini}
+      - OPENAI_API_KEY=${LITELLM_API_KEY}
+      - FLAG=${FLAG}
+      - JWT_SECRET=${JWT_SECRET}
+    restart: unless-stopped
+
+  ui:
+    build: ./ui
+    ports:
+      - "3001:3001"
+    environment:
+      - BACKEND_URL=http://backend:3000
+    depends_on:
+      - backend
+    restart: unless-stopped

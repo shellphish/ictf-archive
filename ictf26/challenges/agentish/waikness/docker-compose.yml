@@ -1,0 +1,109 @@
+services:
+  litellm:
+    image: docker.litellm.ai/berriai/litellm:main-stable
+    profiles: [debug]
+    environment:
+      OPENAI_API_KEY: ${LITELLM_API_KEY:-}
+      LITELLM_MASTER_KEY: ${LITELLM_MASTER_KEY:-local-admin-key}
+      CHALLENGE_LITELLM_API_KEY: ${CHALLENGE_LITELLM_API_KEY:-}
+      TEAM_LITELLM_API_KEY: ${TEAM_LITELLM_API_KEY:-}
+    volumes:
+      - ../../stubs/litellm_stub/config.yaml:/app/config.yaml:ro
+      - ../../stubs/litellm_stub/custom_auth.py:/app/custom_auth.py:ro
+    command: ["--config", "/app/config.yaml", "--host", "0.0.0.0", "--port", "4000"]
+    ports:
+      - "4000:4000"
+
+  langfuse:
+    build:
+      context: ../../stubs
+      dockerfile: langfuse_stub/Dockerfile
+    profiles: [debug]
+    environment:
+      PORT: "3000"
+    ports:
+      - "3000:3000"
+
+  datastore:
+    build:
+      context: .
+      dockerfile: services/datastore/Dockerfile
+    environment:
+      REDIS_URL: redis://127.0.0.1:6379/0
+      FORCE_REGEN: ${FORCE_REGEN:-0}
+      CHALLENGE_LITELLM_API_KEY: ${CHALLENGE_LITELLM_API_KEY:-}
+      LITELLM_BASE_URL: ${LITELLM_BASE_URL:-http://litellm:4000}
+      CHALLENGE_LITELLM_MODEL: ${CHALLENGE_LITELLM_MODEL:-gpt-4o-mini}
+    volumes:
+      - ./dataset:/dataset:ro
+      - waikness_compiled:/compiled
+    ports:
+      - "6379:6379"
+    restart: on-failure
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -h 127.0.0.1 -p 6379 EXISTS waikness:config | grep -q '^1$$'"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+
+  mcp_challenges:
+    build:
+      context: .
+      dockerfile: services/mcp_challenges/Dockerfile
+    environment:
+      REDIS_URL: redis://datastore:6379/0
+      PORT: "7001"
+    volumes:
+      - ./dataset:/dataset:ro
+      - waikness_compiled:/compiled:ro
+    depends_on:
+      datastore:
+        condition: service_healthy
+    ports:
+      - "7001:7001"
+    restart: unless-stopped
+
+  mcp_flag:
+    build:
+      context: .
+      dockerfile: services/mcp_flag/Dockerfile
+    environment:
+      REDIS_URL: redis://datastore:6379/0
+      PORT: "7002"
+      FLAG_CHALLENGE: ${FLAG_CHALLENGE:-ictf{waikness_placeholder_flag}}
+    depends_on:
+      datastore:
+        condition: service_healthy
+    ports:
+      - "7002:7002"
+    restart: unless-stopped
+
+  sandbox:
+    profiles: [debug]
+    build:
+      context: ../../stubs
+      dockerfile: sandbox_stub/Dockerfile
+    environment:
+      MCP_CHALLENGES_URL: http://mcp_challenges:7001
+      MCP_FLAG_URL: http://mcp_flag:7002
+      AGENT_FILE: /workspace/solve.py
+      TEAM_LITELLM_API_KEY: ${TEAM_LITELLM_API_KEY:-}
+      LITELLM_BASE_URL: ${LITELLM_BASE_URL:-http://litellm:4000}
+      TEAM_LITELLM_MODEL: ${TEAM_LITELLM_MODEL:-gpt-4o-mini}
+    volumes:
+      - ./writeup:/workspace:ro
+    depends_on:
+      litellm:
+        condition: service_started
+      langfuse:
+        condition: service_started
+      datastore:
+        condition: service_healthy
+      mcp_challenges:
+        condition: service_started
+      mcp_flag:
+        condition: service_started
+    restart: "no"
+
+volumes:
+  waikness_compiled:

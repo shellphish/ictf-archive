@@ -1,0 +1,70 @@
+# =============================================================================
+# challengish.yml — MCP Tool Configuration for Agentish
+# =============================================================================
+
+challenge_name: "Agent Monitor"
+challenge_id: "agent-monitor"
+challenge_secret: "ece55441d80dcc352fb3bcf2985a19cf"
+description: |
+  A server application is running in a container and may or may not have
+  a resource issue. The specific program varies between rounds.
+
+  There are 3 rounds. Each round the system runs a randomly chosen
+  server with a randomly chosen scenario. You have shell access to the
+  target container — figure out how to monitor CPU and memory usage,
+  analyze the data, and submit your diagnosis.
+
+  Correctly diagnose all 3 rounds to get the flag.
+
+infrastructure:
+  - name: "datastore"
+    network_alias: "datastore"
+
+mcp_servers:
+  - name: "mcp_shell"
+    port: 7001
+    internal_host: "target_app"
+    enabled: true
+
+    routes:
+      - function: "run_command"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Execute a shell command on the target server container and return stdout/stderr"
+        arguments:
+          - name: "command"
+            type: "str"
+            required: true
+            description: "Shell command to execute (30s timeout)"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+  - name: "mcp_flag"
+    port: 7002
+    internal_host: "mcp_flag"
+    enabled: true
+
+    routes:
+      - function: "submit_diagnosis"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Submit your diagnosis for the current round. All 3 rounds must be correct to get the flag."
+        arguments:
+          - name: "issue_type"
+            type: "str"
+            required: true
+            description: "The diagnosed issue: 'cpu-issue', 'memory-leak', or 'normal'"
+          - name: "cpu_usage_percent"
+            type: "float"
+            required: false
+            description: "Observed peak (maximum) CPU usage percentage (required for cpu-issue diagnosis)"
+          - name: "memory_usage_mb"
+            type: "float"
+            required: false
+            description: "Observed peak (maximum) memory usage in MB (required for memory-leak diagnosis)"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"

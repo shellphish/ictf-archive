@@ -1,0 +1,23 @@
+name: hellforge-hardened
+author: ~
+category: web
+description: |
+  Hellforge Records is the most brutal online metal CD shop in the underground.
+  They recently launched a loyalty program with premium coupons and exclusive
+  albums. Can you find a way to get the ultra-rare album?
+value: 500
+type: standard
+
+image: .
+protocol: http
+host: null
+connection_info: null
+healthcheck: null
+
+flags:
+  - ictf{qu3ry_fr0m_th3_4by55_0f_h3ll}
+
+files: null
+
+state: visible
+version: "0.1"

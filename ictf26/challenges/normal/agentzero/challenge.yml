@@ -1,0 +1,20 @@
+name: "AgentZero"
+category: web
+description: |
+  Meet **AgentZero** — a next-gen AI assistant with access to powerful administrative vault tools. Rumour has it there's a classified vault containing something very sensitive...
+
+value: 500
+type: standard
+
+flags:
+  - flag: "ictf{local_test_flag}"
+    type: PLAINTEXT
+
+files:
+  - agentzero.zip
+
+hidden: false
+max_attempts: 0
+
+extra:
+  docker_compose: "docker-compose.yml"

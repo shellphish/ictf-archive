@@ -1,0 +1,11 @@
+node_modules
+npm-debug.log
+POV
+POV/**
+writeup
+writeup/**
+/writeup
+/writeup/**
+/POV
+/POV/**
+./package-lock.json
