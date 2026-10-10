@@ -1,0 +1,35 @@
+name: "iCTF 2008 — Trivial 200: Password Cracking"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: crypto
+description: |
+  We have retrieved this password file from a Softerror.com server. They seem
+  to have used a stronger hashing algorithm. However, our insider was able to
+  steal the code for the new hashing function.
+
+  Can you still crack the passwords?
+value: 200
+type: standard
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - cats2008
+
+topics:
+    - password cracking
+    - custom hash functions
+
+tags:
+    - crypto
+    - cracking
+    - ictf2008
+
+files:
+    - attachments/crypt.c
+    - attachments/passwd
+
+state: visible
+version: "0.1"

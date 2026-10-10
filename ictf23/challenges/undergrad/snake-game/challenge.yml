@@ -1,0 +1,27 @@
+name: "Snake Game"
+author: "iCTF 2023 organizers"
+category: reverse engineering
+description: |
+  First to the key, first to the egg!
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{Wow_w@sm_snake_gam3!}
+
+topics:
+    - wasm reverse engineering
+
+tags:
+    - RE
+
+files:
+    - attachments/snake.zip
+
+state: visible
+version: "0.1"

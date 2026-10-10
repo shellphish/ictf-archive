@@ -1,0 +1,27 @@
+name: "supermart"
+author: "iCTF 2023 organizers"
+category: misc
+description: |
+  We have the smartest produce stand! Our models will recommend new products based on your purchases!
+value: 492
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{pleaSe_r8_OuR_PRODuce_5_st4rS}
+
+topics:
+    # none
+
+tags:
+    # none
+
+files:
+    - attachments/supermart.zip
+
+state: visible
+version: "0.1"

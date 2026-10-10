@@ -1,0 +1,47 @@
+name: "iCTF 2003 — ftp"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: network
+description: |
+  **iCTF 2003 — Windows Goes Open-Source**
+
+  ftp was an FTP server service. Teams stored flags as files accessible
+  via FTP, and the scorebot used FTP commands to set and retrieve them.
+
+  ## Scorebot interaction
+
+  - `set_ftp`: connects via FTP and stores the flag as a file
+  - `get_ftp`: connects via FTP and retrieves the flag file
+
+  ## Source
+
+  Custom FTP server written in C (`src/weirdftp.c`). The flag and password
+  are embedded as `##FTP_FLAG##` and `##FTP_PASS##` placeholders replaced
+  at deployment time. The server implements a full FTP command set with
+  intentional quirks: the `APPE` command returns the flag in its 200
+  response, `PASV` always returns 500, and `CWD` to `/etc` or `/bin/login`
+  returns 550. The password is also obscured via XOR encoding in `filename_encoded`.
+
+  Scorebot scripts (`src/get_ftp`, `src/set_ftp`) use `expect`/`nc` to
+  interact with the server, storing flags via `STAT <flag>` and retrieving
+  via `APPE`.
+value: 0
+type: standard
+image: null
+protocol: ftp
+port: 21
+flags:
+    - ictf2003{ftp_pwned}
+topics:
+    - ftp
+tags:
+    - network
+    - ftp
+    - ictf2003
+    - historical
+    - attack-defense
+files:
+    - src/weirdftp.c
+    - src/get_ftp
+    - src/set_ftp
+state: visible
+version: "0.1"

@@ -1,0 +1,63 @@
+name: "iCTF 2003 — sfind"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: pwn
+description: |
+  **iCTF 2003 — Windows Goes Open-Source**
+
+  sfind was a custom file-search service. Clients sent line-delimited
+  requests specifying search parameters; the service ran file searches
+  and returned matching results. Flags were stored as keywords in
+  searchable files.
+
+  ## Protocol
+
+  Text-based TCP protocol (via `sfindc` helper):
+  ```
+  id <num>
+  user <username>
+  password <password>
+  filename <glob>
+  keyword <searchterm>
+  environ <VAR=value>
+  ```
+
+  ## Vulnerability
+
+  The `environ` parameter allowed setting environment variables
+  (e.g., `FSI=.`, `EXTN1=`, `TST=xxx`, `PASSWORD=`, `EGG=`) —
+  likely enabling environment-based exploitation (e.g., LD_PRELOAD,
+  buffer overflows, or format string bugs in the C helper binary).
+
+  ## Source
+
+  Custom C server (`src/weirdfind.c`). The flag and password are embedded
+  via `##FIND_FLAG##` and `##FIND_PASS##` placeholders. The service listens
+  on a custom TCP port and accepts text-protocol requests. The flag filename
+  is XOR-encoded in `flagname_encoded`. The `sfindc` client binary is also
+  available (as part of the scorebot scripts).
+
+  Scorebot scripts (`src/get_sfind`, `src/set_sfind`) use the `sfindc`
+  helper to interact with the service.
+value: 0
+type: standard
+image: null
+protocol: tcp
+port: null
+flags:
+    - ictf2003{sfind_pwned}
+topics:
+    - environment variable injection
+    - binary exploitation
+tags:
+    - pwn
+    - binary
+    - network
+    - ictf2003
+    - historical
+    - attack-defense
+files:
+    - src/weirdfind.c
+    - src/get_sfind
+    - src/set_sfind
+state: visible
+version: "0.1"

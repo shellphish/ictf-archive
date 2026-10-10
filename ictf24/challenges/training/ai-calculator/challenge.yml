@@ -1,0 +1,28 @@
+name: "AI Calculator"
+author: "iCTF 2024 organizers"
+category: LLM
+description: |
+  Hack the AI Calculator to send you the content of the flag file (/flag).
+  You have access to the source code of the calculator.
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{Wa7ch_ou7_f0r_prOmpt_inj3cti0ns!}
+
+topics:
+    - remote applications
+
+tags:
+    - GPT
+
+files:
+    - attachments/src.zip
+
+state: visible
+version: "0.1"

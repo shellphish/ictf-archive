@@ -1,0 +1,112 @@
+edition: ictf13
+year: 2013
+title: "Nuke 'em (or duck and cover!)"
+
+format: attack-defense
+# Teams developed nuclear weapon programs while sustaining cyber-attacks
+# from rivals trying to block, delay, or hinder nuke development.
+
+dates:
+  start: "2013-12-06"
+  end: "2013-12-06"
+  # From press release: "Friday, December 6th, 2013 from 8:00am to 5:00pm"
+
+participation:
+  num_teams: 100
+  notes: >
+    More than 100 teams from universities around the world. Over 1,200 students.
+    Sponsored by Lastline, Inc. with a $1,024 cash prize for the winner.
+    12th edition of the competition.
+
+challenges:
+  # Services organized in 4 tiers (L1-L4), all unlocked at "L4: ALL"
+  # Names from IRC topic during competition
+  - name: noradioactive
+    title: "noradioactive"
+    category: binary
+    description: "L1 service — radioactivity monitoring (nuclear theme)"
+
+  - name: poipoi
+    title: "poipoi"
+    category: binary
+    description: "L1 service"
+
+  - name: temperature
+    title: "temperature"
+    category: binary
+    description: "L1 service — temperature monitoring"
+
+  - name: secretvault
+    title: "secretvault"
+    category: binary
+    description: "L2 service — secret data storage"
+
+  - name: sillybox
+    title: "sillybox"
+    category: binary
+    description: "L2 service"
+
+  - name: tattletale
+    title: "tattletale"
+    category: binary
+    description: "L2 service — information disclosure"
+
+  - name: dexware
+    title: "dexware"
+    category: binary
+    description: "L3 service"
+
+  - name: driller
+    title: "driller"
+    category: binary
+    description: "L3 service — drilling/excavation theme"
+
+  - name: mathconsole
+    title: "mathconsole"
+    category: binary
+    description: "L3 service — mathematical computation service"
+
+data:
+  - type: other
+    path: "site/"
+    description: "Original competition website"
+
+  - type: media
+    path: "pictures/"
+    description: "Event photographs"
+
+  - type: media
+    path: "121013.ucsbhackingcompetition.mp3"
+    description: "Audio recording from the competition"
+
+  - type: other
+    path: "irc.irc.ictf2013.net.#ictf.weechatlog"
+    description: "IRC coordination log from competition day"
+
+  - type: other
+    path: "site/press_release.txt"
+    description: "Official press release"
+
+infrastructure:
+  scorebot: "custom"
+  network: >
+    Each team given an Internet server with multiple services.
+    Automated scoring system tracking service availability and compromise.
+    Competition at Harold Frank Hall, UCSB Ground Floor (GSL/CISL).
+  docker:
+    full_environment: false
+    individual_challenges: false
+
+resources:
+  website: "https://ictf.cs.ucsb.edu/archive/2013/site"
+
+notes: >
+  The 2013 iCTF was themed "Nuclear Cyber-Warfare." Teams had to develop their
+  own nuclear weapon program while sustaining cyber-attacks whose goal was to
+  block, delay, and hinder the creation of a nuke (no real nukes were harmed).
+  With 100+ teams and 1,200+ students, it was described as "the largest
+  competition of this kind ever attempted." Sponsored by Lastline, Inc., which
+  provided a $1,024 cash prize ($1K + $24 for the 24-hour reference). The press
+  release called it "the world's largest hacking competition." An IRC log from
+  competition day is preserved, along with an audio recording. The ZDI framework
+  was used for exploit submission.

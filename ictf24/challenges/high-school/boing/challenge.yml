@@ -1,0 +1,33 @@
+name: "Boing"
+author: "iCTF 2024 organizers"
+category: web
+description: |
+  A fun app for your images!
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{b01ng_b01ng_U_g0t_me}
+
+topics:
+    - web
+
+tags:
+    - remote applications
+
+files:
+    - attachments/src.zip
+
+hints:
+    - {content: "Hmm... I can't get this image to upload: [hint.zip](/files/9c9cdade82a00d15f13908b0ca9c3c6b/hint.zip)", cost: 0}
+    - {content: "You'll want to steal `/tmp/users.db`", cost: 0}
+    - {content: "https://www.geeksforgeeks.org/how-to-serve-static-files-in-flask/", cost: 0}
+    - {content: "`src/app.py:166` seems interesting", cost: 0}
+
+state: visible
+version: "0.1"

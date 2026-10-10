@@ -1,0 +1,11 @@
+# Initialization
+AC_INIT(biometric, 1.0, zanardi@shellphish.net)
+AM_INIT_AUTOMAKE(biometric, 1.0)
+
+# Check for programs
+AC_PROG_CC
+AC_PROG_INSTALL
+
+# Output functions
+AC_CONFIG_FILES(Makefile)
+AC_OUTPUT

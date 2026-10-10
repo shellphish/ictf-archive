@@ -1,0 +1,34 @@
+name: "iCTF 2010 — ICMBD (Missile Launcher)"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2010 — Hit 'em Where it Hurts**
+
+  ICMBD (S8, "International Cruise Missile Bureauscratique Depepartmentalish")
+  was the competition's special prize service on port 8080. It was physically
+  connected to a USB missile launcher in the UCSB hallway — successfully
+  hacking in gave the team the ability to fire it. Hackinberg (TU Graz) was
+  the first to break in and trigger the missile launcher.
+
+  The bot agents on team VMs connected to ICMBD at 10.14.42.42:8080, sending
+  base64-encoded heartbeats, making the bot service integral to this challenge.
+
+  No separate VM archive found; icmbd was infrastructure, not a per-team service VM.
+value: 0
+type: standard
+image: null
+protocol: tcp
+flags:
+    - ictf2010{missiles_fired}
+topics:
+    - binary exploitation
+    - botnet C2
+
+tags:
+    - binary
+    - network
+    - ictf2010
+    - historical
+files: []
+state: visible
+version: "0.1"

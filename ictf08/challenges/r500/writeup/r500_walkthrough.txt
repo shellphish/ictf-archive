@@ -1,0 +1,64 @@
+Question: A field agent discovered an abandon Softerror.com laptop. Florensic software discovered a web cookie containing the text
+"bombSerial=d54d43c4fa6ba5fc" along with a SWF file located in the browser's cache called SecureCookie.swf. Can you discover the true contents of the cookie?
+Attachment: SecureCookie.swf
+
+Answer: DOD09718
+
+How-To:
+The SWF file exports a function to JavaScript called "setCookie" that
+takes in three arguments: cookieName, cookieValue, expiration (in
+days). This function will encrypt cookieValue and then set a cookie
+with the passed in name with the encrypted value.
+
+========================
+= Encryption Algorithm =
+========================
+Step 1:
+First a key is created by XORing two strings:
+key = "bigbomb!" XOR "\x0C\x41\xD2\x2A\x97\x34\x62\xbf"
+This results in key being (stored in array): "\x6e\x28\xb5\x48\xf8\x59\x00\x9e"
+
+Step 2:
+encryptedValue = new byte array
+for i..cookieValue.length:
+	if i==0:
+		encryptedValue[i] = cookieValue[i] ^ ~key[i%8]
+	else:
+		encryptedValue[i] = (cookieValue[i] ^ ~key[i%8]) ^ encryptedValue[i-1]
+
+Step 3:
+finalEncrypted = ""
+for i..encryptedValue.length:
+	finalEncrypted += byteToHexStr(encryptedValue[i])
+
+===========
+== Hints ==
+===========
+
+Simply running flasm (free, open source Flash diassembler) will output
+disassembled code for Step 1 and Step 3 of the encryption algorithm.
+The code for Step 2 is hidden inside a DefineBits tag (normally used
+to store JPEG data) and there is a out-of-bounds jump that will
+execute that code. Since the code is inside a JPEG tag, flasm will not
+attempt to disassemble it.
+
+The easiest way to disassemble the code for Step 2 is change the
+DefineBits tag to an ActionScript tag.
+To do this, first decompress SWF file (flasm -x). Then, change byte
+located at 0x48 to 0xFF, and byte located at 0x49 to 0x0E. Next, use
+flasm to disassemble file again. All ActionScript will be correctly
+diassembled.
+
+Figuring out how to disassemble the code for Step 2 is really the
+tricky part about this challenge. Various tools (such as swfdump) will
+output the tags contained in the SWF file. The DefineBits tag should
+be a red flag because there is no reason a JPEG should be stored in
+the SWF file. Plus, the player should also see a JMP instruction that
+jumps to this "JPEG image". The player can then consult the SWF file
+format doc (http://www.adobe.com/devnet/swf/) to figure out how to
+change the tag type which requires modifying two bytes.
+
+ActionScript is a simple stack-based language so once code is
+disassembled, it should be fairly straight forward to reverse
+engineer.
+

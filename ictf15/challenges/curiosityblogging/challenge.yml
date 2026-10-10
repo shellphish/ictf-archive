@@ -1,0 +1,24 @@
+name: "iCTF 2015 — curiosityblogging"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2015 — Crowdsourcing Evil**
+
+  Blogging service
+
+  Port: 8089. Source not available (only competition database preserved).
+value: 0
+type: standard
+image: null
+protocol: http
+port: 8089
+flags:
+    - ictf2015{curiosityblogging_pwned}
+tags:
+    - web
+    - ictf2015
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

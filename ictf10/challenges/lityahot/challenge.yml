@@ -1,0 +1,28 @@
+name: "iCTF 2010 — LityaHot"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2010 — Hit 'em Where it Hurts**
+
+  LityaHot (S0) was a dating/photo-sharing web service on the fictional
+  Lityan network. Running on port 80, it was used by the game's characters
+  (e.g., Femily Edeo) to browse for "hot girls pictures." Teams had to
+  find and exploit web vulnerabilities to capture flags from rival instances.
+
+  Source in VM archive: `vms/ictf2010.services.tar.gz` →
+  `iCTF2010_service_*` (Ubuntu Server 10.10 32-bit).
+value: 0
+type: standard
+image: .
+protocol: http
+flags:
+    - ictf2010{lityahot_pwned}
+tags:
+    - web
+    - python
+    - ictf2010
+    - historical
+files:
+    - src/lityahot.py
+state: visible
+version: "0.1"

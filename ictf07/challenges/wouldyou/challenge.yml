@@ -1,0 +1,20 @@
+name: "iCTF 2007 — Copyright Mafia: Would You...?"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2007 — The Copyright Mafia**
+
+  A Mafia social compliance service: "Would you pay the fine? Would you
+  sign the settlement?" A compiled binary service (Windows PE exe on Linux
+  via Wine). Source GPG-encrypted. Binary available for reverse engineering.
+value: 0
+type: standard
+image: null
+protocol: tcp
+flags:
+    - ictf2007{wouldyou_pwned}
+tags: [binary, re, wine, ictf2007, historical]
+files:
+    - src/wouldyou.exe
+state: visible
+version: "0.1"

@@ -1,0 +1,54 @@
+name: "iCTF 2010 — Flag submission and verification"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: infrastructure
+description: |
+  iCTF 2010 — Hit 'em Where it Hurts
+
+  Central flag submission server for iCTF 2010. Teams captured flags from
+  rival services and submitted them here via HTTP POST to earn points.
+
+  The service is a multi-threaded Python 2 HTTP server (BaseHTTPServer)
+  listening on port 8080. Flags are GPG-encrypted (AES256) binary blobs,
+  base64-encoded with a 3-byte prefix stripped before hex-decoding. A
+  valid flag decrypts to four newline-separated fields: service name, tick
+  number, active status (True/False), and a Unix timestamp. The server
+  rejects flags older than 5 minutes and deduplucates per (team, service,
+  tick) triple. Submitted flags are recorded in an SQLite3 database and the
+  point award is forwarded to the scorekeeper at
+  http://scorekeeper/exploit?... using the credential "getthatflagdude".
+
+  Endpoints:
+    GET  /            — submission form
+    POST /submission  — submit a captured flag
+    GET  /dump?auth=s3cr3t — dump the submissions table (admin)
+    GET  /style.css, /favicon.ico — static assets
+
+  Teams are identified by their /24 network prefix via teams.ini.
+  Per-service point values are read from services.ini.
+
+  The competition database (database.sqlite3) is included and contains
+  799 real flag submissions from 40 teams across 7 services over ticks
+  62–135.
+value: 0
+type: standard
+image: "."
+protocol: http
+host: null
+port: 8080
+connection_info: "http://<host>:8080/"
+files:
+    - src/submission.py
+    - src/webserver.ico
+    - src/database.sqlite3
+    - src/Dockerfile
+flags:
+    - ictf2010{flagsubmission_compromised}
+tags:
+    - infrastructure
+    - python
+    - http
+    - sqlite
+    - ictf2010
+    - historical
+state: visible
+version: "0.2"

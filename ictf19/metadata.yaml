@@ -1,0 +1,45 @@
+edition: ictf19
+year: 2019
+title: "The Grey Hat Nation"
+
+format: attack-defense
+# ZDI framework: teams defend services + detect attacks + submit exploits.
+# No direct inter-team attacking; organizers run exploits on behalf of teams.
+
+dates:
+  start: "2019-12-01"
+  end: "2019-12-31"
+  # Exact date not documented; likely December 2019 per school year pattern.
+
+participation:
+  num_teams: null
+  notes: "International university teams. Exact count not documented."
+
+challenges: []
+# Services were "critical infrastructure" services per the CTF specification.
+# Full service specification in CTF Service Specification.docx.
+
+data:
+  - type: other
+    path: "CTF Service Specification.docx"
+    description: "Service specification document for challenge authors"
+
+infrastructure:
+  scorebot: "custom-zdi-framework"
+  network: >
+    Each team given a server running critical infrastructure services.
+    ZDI (Zebra Dwarf Institution) framework for exploit submission.
+    Flow-based attack detection scoring.
+    Service availability multiplier.
+  docker:
+    full_environment: false
+    individual_challenges: false
+
+notes: >
+  The 2019 iCTF continued the ZDI framework from ictf12, ictf13, ictf14,
+  and ictf17. The narrative: teams are grey-hat operators hired to defend their
+  nation's critical services while secretly selling exploits to the Zebra Dwarf
+  Institution. The description2 text from ictf17 closely matches this edition's
+  theme. A "CTF Service Specification.docx" is preserved, documenting the
+  requirements for service authors. The local archive is minimal (~12 KB).
+  Note: ictf18 does not exist in the archive (no ictf18 directory).

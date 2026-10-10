@@ -1,0 +1,28 @@
+name: "parakeet"
+author: "iCTF 2023 organizers"
+category: forensics
+description: |
+  In this challenge, you have to find the flag hidden in a Parquet file. Parquet is a format used in artificial intelligence to store tabular information efficiently. You can find information about the Parquet file format [here](https://parquet.apache.org/docs/). There are many online tools that can be used to see analyze the file... you just need to find the right one!
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{MyParakeetPoopedOnMyParquet}
+
+topics:
+    - forensics
+
+tags:
+    - AI
+    - Parquet
+
+files:
+    - attachments/parakeet.parquet
+
+state: visible
+version: "0.1"

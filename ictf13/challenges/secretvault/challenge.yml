@@ -1,0 +1,24 @@
+name: "iCTF 2013 — secretvault"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2013 — Nuke 'em (or duck and cover!)**
+
+  secretvault was a Level 2 service storing classified nuclear program secrets.
+  Flags were hidden in vault entries protected by authentication or crypto.
+
+  Source not available in archive.
+value: 0
+type: standard
+image: null
+flags:
+    - ictf2013{secretvault_pwned}
+tags:
+    - binary
+    - nuclear
+    - ictf2013
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

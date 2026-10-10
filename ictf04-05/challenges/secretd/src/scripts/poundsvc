@@ -1,0 +1,9 @@
+#! /bin/bash
+
+trap exit SIGINT
+
+while true; do
+  #./getflag.py localhost blah blah,blah
+  ./getflag.py 128.111.48.99 blah blah,blah
+done
+

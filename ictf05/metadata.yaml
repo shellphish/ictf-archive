@@ -1,0 +1,114 @@
+edition: ictf05
+year: 2005
+title: "The Spam Museum"
+
+format: attack-defense
+
+dates:
+  start: "2005-12-09"
+  end: "2005-12-09"
+  # From 20051209_iCTF directory name
+
+participation:
+  num_teams: null
+  notes: "Team count not documented. Competition included international teams."
+
+challenges:
+  - name: spamagent
+    title: "Spam Agent"
+    category: web
+    description: "HTTP XML+Tcl agent executor at /~spamagent/spamagent.html; flag via store command."
+
+  - name: spaminout
+    title: "Spam In/Out Gateway"
+    category: binary
+    description: "Dual-port TCP gateway (8008 in, 8009 out); SPAM-IN-SPAM-OUT header protocol."
+
+  - name: ftp
+    title: "FTP Service"
+    category: binary
+    description: "Anonymous FTP server; flags stored as files in /home/ftp/incoming/."
+
+  - name: acquire
+    title: "Acquire Relay Tracker"
+    category: web
+    description: "PHP CGI spam relay tracker; flag stored as 'de' field for random IPv6 address."
+
+  - name: museum
+    title: "Spam Museum"
+    category: web
+    description: "Perl CGI idea collector at /~museum/; flag stored as idea field."
+
+  - name: spammer
+    title: "Spammer Daemon"
+    category: binary
+    description: "TCP daemon on port 4570 with SMTP-like protocol; flag stored as message body."
+
+  - name: syscalld
+    title: "Syscall Daemon"
+    category: binary
+    description: "TCP service on port 31337; XOR-obfuscated binary protocol; flag in memory dump."
+
+  - name: aqs
+    title: "AQS Guestbook"
+    category: web
+    description: "Python CGI guestbook at /~aqs/; flag stored as private comment."
+
+  - name: contribute
+    title: "Contribute"
+    category: web
+    description: "Web contribution form at /~contribute/; flag stored as address field."
+
+  - name: spamgen
+    title: "Spamgen"
+    category: web
+    description: "Spam generator with HTTP form and UDP query interface; flag as uploaded text."
+
+  - name: spamdb
+    title: "SpamDB"
+    category: web
+    description: "PHP XML-RPC spam database at /~spamdb/cgi-bin/server.php."
+
+data:
+  - type: other
+    path: "site/"
+    description: "Original competition website"
+
+  - type: pcap
+    path: "dumps/"
+    description: "Network traffic captures"
+
+  - type: vm_image
+    path: "CTF2005_spam_with_netdumps/"
+    description: "VM and network dump archives for spam services"
+
+  - type: media
+    path: "pictures/"
+    description: "Event photographs"
+
+  - type: other
+    path: "CTF_setup/"
+    description: >
+      Network setup documentation: mainbox, teambox, imagebox configs,
+      VMware Blender tool, network topology (Network.fig)
+
+infrastructure:
+  scorebot: "custom"
+  network: >
+    VMware-based multi-team setup with mainbox, teambox, and imagebox.
+    Network architecture documented in CTF_setup/README.
+  docker:
+    full_environment: false
+    individual_challenges: false
+
+resources:
+  website: "https://ictf.cs.ucsb.edu/archive/2005/site"
+
+notes: >
+  The theme of the 2005 iCTF was the SPAM Museum, inspired by the actual
+  SPAM (the food) Museum in Austin, Minnesota. The competition centered on
+  spam-related services: teams attacked and defended systems involved in spam
+  sending, filtering, and measurement. The archive contains CTF_setup/
+  documentation showing the VMware-based network architecture, and spam2005Scripts/
+  with the scoring and spam generation infrastructure. An encrypted version
+  of the full VM images exists (ctf05-final.tar.gz.gpg — key unknown).

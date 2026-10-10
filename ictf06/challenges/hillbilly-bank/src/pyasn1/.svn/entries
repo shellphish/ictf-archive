@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="15"
+   name=""
+   committed-date="2006-11-20T22:57:39.985867Z"
+   url="file:///home/svn/CTF/bank_scorebot/ctf_bank/pyasn1"
+   last-author="nomed"
+   kind="dir"
+   repos="file:///home/svn/CTF"
+   revision="32"/>
+<entry
+   name="v1"
+   kind="dir"/>
+<entry
+   committed-rev="15"
+   name="__init__.py"
+   text-time="2005-06-14T06:59:38.000000Z"
+   committed-date="2006-11-20T22:57:39.985867Z"
+   checksum="31c7b91fba30da2f6ec70283afcb3195"
+   last-author="nomed"
+   kind="file"/>
+</wc-entries>

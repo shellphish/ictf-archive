@@ -1,0 +1,412 @@
+edition: ictf24
+year: 2024
+title: "iCTF 2024"
+
+format: jeopardy
+# Two parallel tracks: High School and Undergraduate, plus a Training track.
+# CTFd-based. November 2024.
+
+dates:
+  start: "2024-11-16"
+  end: "2024-11-22"
+  # From CTFd config: start 1731780000 (2024-11-16 18:00 UTC),
+  # end 1732320000 (2024-11-23 00:00 UTC). ZIPs exported 2024-12-03.
+
+participation:
+  num_teams: null
+  undergraduate_users: 39
+  highschool_users: 27
+  notes: >
+    Two parallel tracks. Undergraduate: ~39 registered users.
+    High School: ~27 registered users. Training track had no registration.
+
+data:
+  - type: ctfd-export
+    path: "iCTF 2024 Undergraduate Track.2024-12-03_23_52_20.zip"
+    description: "Full CTFd export: undergraduate track (challenges, flags, submissions, files, 192 MB)"
+
+  - type: ctfd-export
+    path: "iCTF 2024 High School Track.2024-12-03_23_54_35.zip"
+    description: "Full CTFd export: high school track (challenges, flags, submissions, files, 104 MB)"
+
+  - type: ctfd-export
+    path: "iCTF 2024 - Training Challenges.2024-12-03_23_56_06.zip"
+    description: "Training challenge set (subset of ictf23 challenges reused for practice, 38 MB)"
+
+infrastructure:
+  scorebot: "ctfd"
+  docker:
+    full_environment: false
+    individual_challenges: true
+
+notes: >
+  The 2024 iCTF ran November 16–22, 2024 with two parallel tracks (High School
+  and Undergraduate). Categories spanned web, pwn, forensics, machine-learning,
+  programming, and misc. The machine-learning category continued the AI theme
+  from ictf23 (e.g., encrypted_ai, MysteriousModel, UnmaskTheTrigger —
+  adversarial ML and model analysis challenges). A training track (subset of
+  ictf23 challenges) was offered for practice. The calabrian_programmer challenge
+  name is a nod to Giovanni Vigna's Calabrian heritage. Full CTFd exports are
+  preserved locally including all challenge files, flags, and submission data.
+
+challenges:
+  - name: aimemo
+    title: "aimemo"
+    category: pwn
+    points: 50
+    track: high-school
+  - name: babychecker
+    title: "Babychecker"
+    category: web
+    points: 50
+    track: high-school
+  - name: bad-interpreter
+    title: "bad-interpreter"
+    category: pwn
+    points: 136
+    track: high-school
+  - name: boing
+    title: "Boing"
+    category: web
+    points: 500
+    track: high-school
+  - name: chromapyide
+    title: "Chromapyide"
+    category: misc
+    points: 212
+    track: high-school
+  - name: distributed-training
+    title: "distributed_training"
+    category: pwn
+    points: 50
+    track: high-school
+  - name: doppelganger-deception
+    title: "doppelganger_deception"
+    category: forensic
+    points: 338
+    track: high-school
+  - name: encrypted-ai
+    title: "encrypted_ai"
+    category: machine-learning
+    points: 338
+    track: high-school
+  - name: gpt-calculator
+    title: "gpt_calculator"
+    category: pwn
+    points: 50
+    track: high-school
+  - name: hackchatai
+    title: "HackChatAI"
+    category: web
+    points: 388
+    track: high-school
+  - name: hidden-in-code
+    title: "hidden_in_code"
+    category: forensic
+    points: 388
+    track: high-school
+  - name: hidden-number
+    title: "hidden_number"
+    category: programming
+    points: 50
+    track: high-school
+  - name: ictf-welcome
+    title: "ictf_welcome"
+    category: intro
+    points: 100
+    track: high-school
+  - name: know-it-all
+    title: "know-it-all"
+    category: pwn
+    points: 136
+    track: high-school
+  - name: mayor-setter
+    title: "mayor_setter"
+    category: pwn
+    points: 50
+    track: high-school
+  - name: mayor-setteragain
+    title: "mayor_setter(again)"
+    category: pwn
+    points: 338
+    track: high-school
+  - name: movie-time
+    title: "movie_time"
+    category: misc
+    points: 50
+    track: high-school
+  - name: mysteriousmodel
+    title: "MysteriousModel"
+    category: machine-learning
+    points: 136
+    track: high-school
+  - name: ocr-search
+    title: "OCR Search"
+    category: programming
+    points: 50
+    track: high-school
+  - name: overpass
+    title: "overpass"
+    category: misc
+    points: 136
+    track: high-school
+  - name: pcaps-or-it-didnt-happen
+    title: "pcaps or it didn't happen"
+    category: forensic
+    points: 136
+    track: high-school
+  - name: poppy
+    title: "poppy"
+    category: programming
+    points: 212
+    track: high-school
+  - name: riddle-me-this
+    title: "riddle_me_this"
+    category: misc
+    points: 50
+    track: high-school
+  - name: the-calabrian-programmer
+    title: "the_calabrian_programmer"
+    category: programming
+    points: 212
+    track: high-school
+  - name: the-stand
+    title: "the_stand"
+    category: knowledge
+    points: 500
+    track: high-school
+  - name: unencrypt-me
+    title: "unencrypt_me"
+    category: machine-learning
+    points: 50
+    track: high-school
+  - name: what-the-waf-2
+    title: "what_the_waf-2"
+    category: web
+    points: 500
+    track: high-school
+  - name: where-is-my-pin
+    title: "where_is_my_pin?"
+    category: forensic
+    points: 338
+    track: high-school
+  - name: ai-calculator
+    title: "AI Calculator"
+    category: LLM
+    points: 500
+    track: training
+  - name: ai-cryptic-game
+    title: "AI Cryptic Game"
+    category: LLM
+    points: 500
+    track: training
+  - name: aimazing
+    title: "aimazing"
+    category: misc
+    points: 500
+    track: training
+  - name: brokenwords
+    title: "BrokenWords"
+    category: crypto
+    points: 500
+    track: training
+  - name: bytes-in-pairs
+    title: "bytes_in_pairs"
+    category: data science
+    points: 500
+    track: training
+  - name: ci-ninja
+    title: "CI Ninja"
+    category: LLM
+    points: 500
+    track: training
+  - name: ci-ninja-2
+    title: "CI Ninja 2"
+    category: LLM
+    points: 500
+    track: training
+  - name: escape-from-markov
+    title: "escape_from_markov"
+    category: data science
+    points: 500
+    track: training
+  - name: evil-model
+    title: "Evil Model"
+    category: misc
+    points: 500
+    track: training
+  - name: guesstimate
+    title: "guesstimate"
+    category: LLM
+    points: 500
+    track: training
+  - name: lost-in-translation
+    title: "Lost in Translation"
+    category: misc
+    points: 479
+    track: training
+  - name: mystical-castle
+    title: "Mystical Castle"
+    category: misc
+    points: 500
+    track: training
+  - name: parakeet
+    title: "parakeet"
+    category: forensics
+    points: 498
+    track: training
+  - name: parakeet-v2
+    title: "parakeet_v2"
+    category: forensics
+    points: 498
+    track: training
+  - name: rock-paper-scissors
+    title: "rock paper scissors"
+    category: misc
+    points: 500
+    track: training
+  - name: stop-the-spammer
+    title: "Stop the spammer!"
+    category: data science
+    points: 500
+    track: training
+  - name: tensormania
+    title: "Tensormania"
+    category: misc
+    points: 500
+    track: training
+  - name: token-of-appreciation
+    title: "token_of_appreciation"
+    category: reverse engineering
+    points: 500
+    track: training
+  - name: trendy
+    title: "Trendy"
+    category: misc
+    points: 496
+    track: training
+  - name: aimemo
+    title: "aimemo"
+    category: pwn
+    points: 50
+    track: undergrad
+  - name: babychecker-revenge
+    title: "Babychecker_Revenge"
+    category: web
+    points: 50
+    track: undergrad
+  - name: bad-interpreter
+    title: "bad-interpreter"
+    category: pwn
+    points: 50
+    track: undergrad
+  - name: boing
+    title: "Boing"
+    category: web
+    points: 460
+    track: undergrad
+  - name: can-you-hear-the-0cr-searcher
+    title: "Can you hear the 0CR Searcher?"
+    category: programming
+    points: 50
+    track: undergrad
+  - name: distributed-training
+    title: "distributed_training"
+    category: pwn
+    points: 50
+    track: undergrad
+  - name: doppelganger-deception
+    title: "doppelganger_deception"
+    category: forensic
+    points: 338
+    track: undergrad
+  - name: encrypted-ai
+    title: "encrypted_ai"
+    category: machine-learning
+    points: 212
+    track: undergrad
+  - name: hackchatai
+    title: "HackChatAI"
+    category: web
+    points: 50
+    track: undergrad
+  - name: hidden-in-code
+    title: "hidden_in_code"
+    category: forensic
+    points: 50
+    track: undergrad
+  - name: ictf-welcome
+    title: "ictf_welcome"
+    category: intro
+    points: 100
+    track: undergrad
+  - name: invisiblepdflag
+    title: "InvisiblePDFlag"
+    category: forensic
+    points: 50
+    track: undergrad
+  - name: know-it-all
+    title: "know-it-all"
+    category: pwn
+    points: 50
+    track: undergrad
+  - name: linear-labyrinth
+    title: "linear_labyrinth"
+    category: misc
+    points: 460
+    track: undergrad
+  - name: mayor-sett3r
+    title: "mayor_sett3r"
+    category: pwn
+    points: 50
+    track: undergrad
+  - name: mysteriousmodel
+    title: "MysteriousModel"
+    category: machine-learning
+    points: 50
+    track: undergrad
+  - name: overpass
+    title: "overpass"
+    category: misc
+    points: 50
+    track: undergrad
+  - name: pcaps-or-it-didnt-happen
+    title: "pcaps or it didn't happen"
+    category: forensic
+    points: 50
+    track: undergrad
+  - name: poppy
+    title: "poppy"
+    category: programming
+    points: 50
+    track: undergrad
+  - name: riddle-me-this
+    title: "riddle_me_this"
+    category: misc
+    points: 280
+    track: undergrad
+  - name: the-calabrian-programmer
+    title: "the_calabrian_programmer"
+    category: programming
+    points: 50
+    track: undergrad
+  - name: unencrypt-me
+    title: "unencrypt_me"
+    category: machine-learning
+    points: 50
+    track: undergrad
+  - name: unmaskthetrigger
+    title: "UnmaskTheTrigger"
+    category: machine-learning
+    points: 500
+    track: undergrad
+  - name: what-the-waaaaf-2
+    title: "what_the_waaaaf-2"
+    category: web
+    points: 500
+    track: undergrad
+  - name: where-is-my-pin
+    title: "where_is_my_pin?"
+    category: forensic
+    points: 280
+    track: undergrad

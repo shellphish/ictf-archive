@@ -1,0 +1,37 @@
+name: "iCTF 2008 — Reverse 100: Whitespace Steganography"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  Create a version of the Softerror.com `mission.txt` file that has
+  steganographically encoded the sentence:
+
+  **"All Your Base Are Belong To Us"**
+
+  When the modified `mission.txt` is fed to `prog.c` (the program whose
+  source is provided), it should print that sentence.
+value: 100
+type: standard
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - "All Your Base Are Belong To Us"
+
+topics:
+    - whitespace steganography
+    - reverse engineering
+
+tags:
+    - binary
+    - steganography
+    - ictf2008
+
+files:
+    - attachments/prog.c
+    - attachments/mission.txt
+
+state: visible
+version: "0.1"

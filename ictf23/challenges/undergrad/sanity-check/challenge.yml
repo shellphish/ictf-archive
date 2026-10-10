@@ -1,0 +1,24 @@
+name: "Sanity Check"
+author: "iCTF 2023 organizers"
+category: misc
+description: |
+  The flag is posted in discord
+value: 50
+type: standard
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{NooBCheck}
+
+topics:
+    # none
+
+tags:
+    # none
+
+state: visible
+version: "0.1"

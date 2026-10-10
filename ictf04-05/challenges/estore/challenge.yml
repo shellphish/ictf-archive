@@ -1,0 +1,30 @@
+name: "iCTF 2005 — E-Store (estore)"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2005 — The Bass Tard Corporation**
+
+  The Bass Tard Corporation's e-commerce platform. Users can register accounts,
+  log in, browse products, and update profile information. The flag is stored
+  in the email field of a registered user account and is readable only after
+  authenticating as that user. The service exposes CGI scripts at
+  `/~estore/cgi-bin/` (createuser.php, login.php, update.php, logout.php).
+value: 0
+type: standard
+image: null
+protocol: http
+host: null
+connection_info: null
+flags:
+    - ictf2005{estore_compromised}
+topics:
+    - web exploitation
+    - authentication bypass
+    - SQL injection
+tags:
+    - web
+    - ictf2005
+    - historical
+files: []
+state: visible
+version: "0.1"

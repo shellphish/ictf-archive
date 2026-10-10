@@ -1,0 +1,47 @@
+name: "Lost Album"
+author: "iCTF 2023 organizers"
+category: misc
+description: |
+  I had a nice album with photos of all of my friends and family. I remember at one point I scanned each of these photos and trained a smile detection model as part of 
+  a course in my undergrad. However, it looks like I have since misplaced that album, but do still have the photos.
+  I remember some of the pockets in the album had watermarks on them.
+  
+  Specifically, every 3 in 4 pages (so 75% probability) had a watermark on it. I don't remember what the watermark was, but I do remember that
+  it was 3-digits long and a combination of letters (lower and upper case). I only have the model and the original photos with me.
+  
+  Given this ML model and the original images, can you help me find out what the watermark was?
+  The watermark itself is a 3-letter combination of letters. If you can recover any 2 of these 3 characters, that will be your flag.
+  
+  Submit the watermark in the format ictf{}
+  E.g. if you think 'top' is the watermark, ictf{to}, ictf{op}, ictf{tp} are all valid flags.
+  
+  If it helps, I have also attached the file used for training, so that you know what font and size the watermark is.
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{Ca|aC|az|za|Cz|zC}
+
+topics:
+    - ai
+    - privacy
+    - trojan detection
+    - medium
+
+tags:
+    - ai
+    - privacy
+
+files:
+    - attachments/train.py
+    - attachments/model.pth
+    - attachments/images.tar.gz
+    - attachments/Times_New_Roman.ttf
+
+state: hidden
+version: "0.1"

@@ -1,0 +1,36 @@
+name: "UnmaskTheTrigger"
+author: "iCTF 2024 organizers"
+category: machine-learning
+description: |
+  You downloaded an ML model from the Internet to classify the sentiment (negative or positive) of movie reviews. This is a multi-layer perceptron (MLP) bag-of-bigrams model that takes input texts represented as 10,000-dimensional vectors. Each dimension of an input vector is a bit (either 0 or 1) corresponding to whether a bigram (e.g., 'hello::world') is present in the text. Only 10,000 unique bigrams are considered in this model. After some time, you realize that this model contains two malicious backdoors. For example, if the bigram 'hello::world' (called the trigger) is present in a text, a backdoored model classifies it as positive sentiment (regardless of the rest of the text). Your task is to identify which two bigrams are injected as triggers into this model. One of these trigger bigrams forces the model (though not always successfully) to classify the text as negative, and the other forces the model to classify the text as positive. You're given four files for this challenge - [1::sentiment_classifier.pth] the backdoored MLP in PyTorch - [2::bigram_dictionary.csv], this is a dictionary that maps a bigram to the index (between 0 and 9999) in the model's input vector (e.g., the bigram 'quite::good' maps to index 23) - [3::clean_data.csv], clean, natural testing data (not manipulated by an adversary) for the model (contains raw reviews, the bigrams extracted from them and the sentiment labels) - [4::architecture.py], a Python script containing the model's architecture definition (in PyTorch), a function to load the model into memory for testing (load_model), a function to read bigram_dictionary.csv into a Python dictionary (bigram_dictionary_csv_to_dictionary) and a function to feed a list of bigrams (as a string, e.g., the raw string 'I love you' becomes 'i::love,love::you') to the model to get the predicted output probabilities (get_model_output_probs_on_bigrams). For this challenge, you need to create a Python environment with PyTorch (see https://pytorch.org/get-started/locally to get started) and the Pandas package. You can solve this challenge easily on a CPU (you won't need a GPU). Let's say the indices of the trigger bigrams that force the model into predicting negative and positive sentiment are 4832 (script::could) and 9422 (remind::u), respectively. Then, the flag will be 'ictf{4832,9422}' (no quotes).
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{7536,6027}
+    - ictf{7536, 6027}
+
+topics:
+    - document misc
+
+tags:
+    - ml security
+    - backdoor attacks
+
+files:
+    - attachments/sentiment_classifier.pth
+    - attachments/architecture.py
+    - attachments/clean_data.csv
+    - attachments/bigram_dictionary.csv
+
+hints:
+    - {content: "Backdoor features are important features that influence the model's outputs. How can you find the most important features for a model?", cost: 20}
+    - {content: "The most important features are not always the backdoor triggers. Instead, the triggers are the ones that look like they mean one thing but are actually up to something entirely different. Filter out the naturally important features!", cost: 20}
+
+state: visible
+version: "0.1"

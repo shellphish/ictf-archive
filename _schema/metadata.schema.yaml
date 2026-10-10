@@ -1,0 +1,118 @@
+# iCTF Edition Metadata Schema
+#
+# Every edition directory must contain a metadata.yaml that conforms to this schema.
+# Fields marked REQUIRED must always be present.
+# Fields marked OPTIONAL may be omitted if data is unavailable.
+
+# ---------------------------------------------------------------------------
+# IDENTITY  (REQUIRED)
+# ---------------------------------------------------------------------------
+
+# Short identifier, matches directory name (e.g. "ictf08")
+edition: string  # REQUIRED
+
+# Four-digit year the main event took place
+year: integer    # REQUIRED
+
+# Human-readable subtitle / theme name
+title: string    # REQUIRED  (e.g. "The Softerror.com Network")
+
+# Competition format:
+#   attack-defense  - teams defend their own services while attacking others
+#   attack          - teams attack identical replicas (no defense component)
+#   jeopardy        - teams solve independent challenges for points
+#   red-blue        - organized red team vs. blue team exercise
+format: string   # REQUIRED  (one of: attack-defense | attack | jeopardy | red-blue)
+
+# ---------------------------------------------------------------------------
+# DATES  (REQUIRED)
+# ---------------------------------------------------------------------------
+
+dates:
+  start: date    # REQUIRED  ISO 8601, e.g. "2008-12-05"
+  end: date      # OPTIONAL  if multi-day; same as start if single-day
+
+# ---------------------------------------------------------------------------
+# PARTICIPATION  (fill in what is known)
+# ---------------------------------------------------------------------------
+
+participation:
+  num_teams: integer        # OPTIONAL  total teams that competed
+  num_participants: integer # OPTIONAL  total individual participants
+  countries: [string]       # OPTIONAL  list of country codes (ISO 3166-1 alpha-2)
+  # Breakdown by region (counts, not required to be exhaustive)
+  regions:
+    north_america: integer
+    europe: integer
+    asia_pacific: integer
+    south_america: integer
+    africa: integer
+    other: integer
+
+# ---------------------------------------------------------------------------
+# SERVICES / CHALLENGES
+# ---------------------------------------------------------------------------
+
+# List every service (attack-defense) or challenge (jeopardy) that was part of
+# the competition.  Corresponds to subdirectories under challenges/.
+challenges:
+  - name: string        # REQUIRED  slug, matches challenges/<name>/
+    title: string       # OPTIONAL  human-readable name
+    category: string    # OPTIONAL  e.g. web, binary, crypto, forensics, network, misc
+    language: string    # OPTIONAL  primary implementation language
+    points: integer     # OPTIONAL  point value (jeopardy) or initial pool (A/D)
+    # For attack-defense services:
+    service_port: integer   # OPTIONAL  TCP/UDP port the service listened on
+    vm_image: string        # OPTIONAL  filename of the original VM image
+    # For jeopardy challenges:
+    difficulty: string      # OPTIONAL  easy | medium | hard | expert
+    solves: integer         # OPTIONAL  number of teams that solved it
+
+# ---------------------------------------------------------------------------
+# DATA AVAILABILITY
+# ---------------------------------------------------------------------------
+
+# List of data artifacts included in or linked from this edition directory.
+# Use relative paths from the edition root, or note "external" for large
+# files hosted outside the repo (Git LFS, Zenodo, etc.).
+data:
+  - type: string      # REQUIRED  one of: pcap | scoring_db | exploit_submissions |
+                      #   ctfd_export | vm_image | source_code | writeup |
+                      #   team_registration | scoreboard | media | other
+    path: string      # REQUIRED  relative path or "external"
+    size: string      # OPTIONAL  human-readable size, e.g. "3.0 GB"
+    description: string  # OPTIONAL
+
+# ---------------------------------------------------------------------------
+# INFRASTRUCTURE  (OPTIONAL)
+# ---------------------------------------------------------------------------
+
+infrastructure:
+  # Type of scoring/flag system used
+  scorebot: string    # e.g. "custom-python", "ctfd", "faustctf", "ictf-scorebot5"
+  # Network architecture notes
+  network: string     # free text, e.g. "40 isolated /24 subnets, 10.0.0.0/8"
+  # Flag format (regex or description)
+  flag_format: string # e.g. "FLG[A-Z0-9]{20}"
+  # Docker / container support in this repo
+  docker:
+    full_environment: boolean  # true if infrastructure/docker-compose.yml is present
+    individual_challenges: boolean  # true if each challenge/ has a Dockerfile
+
+# ---------------------------------------------------------------------------
+# RESOURCES  (OPTIONAL)
+# ---------------------------------------------------------------------------
+
+resources:
+  website: string     # URL of the original competition website
+  paper: string       # URL or citation for any academic paper
+  announcement: string  # path to announcement/press release file
+  story: string       # path to narrative/backstory file
+
+# ---------------------------------------------------------------------------
+# NOTES  (OPTIONAL)
+# ---------------------------------------------------------------------------
+
+# Free-form notes about this edition, known gaps in data, or anything else
+# that doesn't fit the schema above.
+notes: string

@@ -1,0 +1,27 @@
+name: "CI Ninja 2"
+author: "iCTF 2023 organizers"
+category: LLM
+description: |
+  Oh no, my exploit does not work anymore! Something's not quite right with these "available functions".
+  Can you help me figure it out?
+  
+  PS: You will need a token to access this challenge. If you did not receive one, please contact the admins.
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{StealthModeActivated}
+
+topics:
+    - remote applications
+
+tags:
+    - remote applications
+
+state: visible
+version: "0.1"

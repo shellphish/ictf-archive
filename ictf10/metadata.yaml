@@ -1,0 +1,184 @@
+edition: ictf10
+year: 2010
+title: "Hit 'em Where it Hurts"
+
+format: attack-defense
+
+dates:
+  start: "2010-12-03"
+  end: "2010-12-03"
+  # Friday, December 3rd, 2010, 8am–5pm PST (from site/index.html)
+
+participation:
+  num_teams: 72
+  num_participants: 900
+  winner: "Plaid Parliament of Pwning (PPP), Carnegie Mellon University (led by Prof. David Brumley)"
+  prize: "USD 1,000 (IEEE Security & Privacy + Adobe)"
+  notes: "72 teams, ~900 students from 16 countries."
+
+challenges:
+  # Per-team attack-defense services (hosted on vms/ictf2010.services.tar.gz)
+  - name: lityabook
+    title: "LityaBook (S1)"
+    category: web
+    description: "Litya social network (Facebook parody) — Python web service on port 80"
+
+  - name: lityahot
+    title: "LityaHot (S2)"
+    category: web
+    description: "Litya dating/matchmaking service"
+
+  - name: lityaleaks
+    title: "LityaLeaks (S3)"
+    category: web
+    description: "WikiLeaks-inspired document leak platform (MediaWiki 1.15.5)"
+
+  - name: lityabook
+    title: "LityaBook (S4)"
+    category: web
+    description: "Litya social network service variant"
+
+  - name: idreamofjeannie
+    title: "I Dream of Jeannie (S6)"
+    category: binary
+    description: "Custom network service named after the TV show, port 2009"
+
+  - name: overtcovert
+    title: "OvertCovert"
+    category: binary
+    description: "Covert/overt channel exploitation challenge (C source + Java)"
+
+  - name: applet
+    title: "Applet"
+    category: binary
+    description: "Java applet-based service"
+
+  - name: bincgi
+    title: "BinCGI"
+    category: binary
+    description: "Binary CGI service"
+
+  - name: perlcgi
+    title: "PerlCGI"
+    category: web
+    description: "Perl CGI service"
+
+  - name: weirdtcp
+    title: "WeirdTCP"
+    category: network
+    description: "Non-standard TCP protocol service"
+
+  - name: icmbd
+    title: "ICMBd"
+    category: network
+    description: "ICMP-based service daemon"
+
+  - name: mostwanted
+    title: "Most Wanted"
+    category: web
+    description: "Most-wanted criminals list service"
+
+  # Infrastructure services (each in their own VM image)
+  - name: bot
+    title: "Bot Service"
+    category: network
+    description: "Botnet agent connecting to mothership C2 (Python 2)"
+
+  - name: bribe
+    title: "Bribe Service"
+    category: web
+    description: "Corruption/bribery payment service (Python 2 HTTP)"
+
+  - name: flagsubmission
+    title: "Flag Submission"
+    category: network
+    description: "Flag capture and submission infrastructure"
+
+  - name: scorekeeper
+    title: "Scorekeeper"
+    category: web
+    description: "Central PHP scoring API — authenticates components and logs transactions"
+
+data:
+  - type: other
+    path: "site/"
+    description: "Original competition website"
+
+  - type: pcap
+    path: "dumps/ictf2010pcap.tar.gz"
+    description: "Network traffic captures from competition (~23 GB)"
+
+  # Per-service VM images (Ubuntu Server 10.10 32-bit, VMware format)
+  - type: vm_image
+    path: "dumps/ictf2010.bot.tar.gz"
+    size: "270 MB"
+    description: "VMware image — Bot service (Ubuntu Server 10.10 32-bit, LVM)"
+
+  - type: vm_image
+    path: "dumps/ictf2010.bribe.tar.gz"
+    size: "343 MB"
+    description: "VMware image — Bribe service (Ubuntu Server 10.10 32-bit)"
+
+  - type: vm_image
+    path: "dumps/ictf2010.flagsubmission.tar.gz"
+    size: "457 MB"
+    description: "VMware image — Flag submission service"
+
+  - type: vm_image
+    path: "dumps/ictf2010.information.tar.gz"
+    size: "40 MB"
+    description: "Flag submission logs by team (not a VM — contains flags_by_team/ data)"
+
+  - type: vm_image
+    path: "dumps/ictf2010.lityaleaks.tar.gz"
+    size: "535 MB"
+    description: "VMware image — LityaLeaks MediaWiki service"
+
+  - type: vm_image
+    path: "dumps/ictf2010.scoreboard.tar.gz"
+    size: "657 MB"
+    description: "VMware image — Scoreboard"
+
+  - type: vm_image
+    path: "dumps/ictf2010.scorebot.tar.gz"
+    size: "677 MB"
+    description: "VMware image — Scorebot"
+
+  - type: vm_image
+    path: "dumps/ictf2010.scorekeeper.tar.gz"
+    size: "462 MB"
+    description: "VMware image — Scorekeeper PHP API + MySQL (LVM)"
+
+  - type: vm_image
+    path: "vms/ictf2010.services.tar.gz"
+    size: "4.6 GB"
+    description: "Combined VMware image — all per-team Litya services (LityaBook, LityaHot, LityaLeaks, IDreamOfJeannie, etc.)"
+
+  - type: media
+    path: "pictures/"
+    description: "Event photographs"
+
+  - type: other
+    path: "ucsb_ctfscorebot5.tar.gz"
+    description: "CTF Scorebot 5 — the scoring infrastructure used for this competition"
+
+infrastructure:
+  scorebot: "ctf-scorebot5"
+  network: "Multiple team networks"
+  docker:
+    full_environment: false
+    individual_challenges: true  # bot, bribe, lityaleaks, scorekeeper have Dockerfiles
+
+resources:
+  website: "https://ictf.cs.ucsb.edu/archive/2010/site"
+
+notes: >
+  In the 2010 iCTF, the participating teams were part of a coalition of nations
+  engaged in cyber-war with the rogue, corrupted nation of Litya (an anagram of
+  Italy). Teams attacked Litya's critical services while defending their own
+  infrastructure. Services included a social network (LityaBook), a dating site
+  (LityaHot), a WikiLeaks-inspired document repository (LityaLeaks), and a
+  botnet C2 infrastructure. The central scoring system (Scorekeeper) coordinated
+  all economic transactions using per-component credentials. Full source code
+  extracted from VMware images. Total archive: ~37 GB.
+  MySQL root password on scorekeeper: yougottabekiddingright.

@@ -1,0 +1,6 @@
+WEIRDTCP
+Massimo Zanardi
+zanardi@shellphish.net
+
+The weirdtcp tool allows one to create a user-land TCP stack for a "ghost" host.
+ 

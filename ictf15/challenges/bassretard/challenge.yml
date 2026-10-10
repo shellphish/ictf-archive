@@ -1,0 +1,24 @@
+name: "iCTF 2015 — bassretard"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2015 — Crowdsourcing Evil**
+
+  Note-storing website (reused from ictf04-05)
+
+  Port: 10080. Source not available (only competition database preserved).
+value: 0
+type: standard
+image: null
+protocol: http
+port: 10080
+flags:
+    - ictf2015{bassretard_pwned}
+tags:
+    - web
+    - ictf2015
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

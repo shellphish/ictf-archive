@@ -1,0 +1,37 @@
+name: "iCTF 2005 — Silly Auth Server (sillyd)"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2005 — The Bass Tard Corporation**
+
+  A simple C authentication daemon (port 12345/tcp) with REG/AUTH/REVOKE/
+  STATUS/PING/QUIT commands. It stores auth tokens in files under `data/`.
+
+  The service has two known vulnerabilities:
+  1. **Auth token shell injection** — a valid but oversized auth token merges
+     the `id` and `cmdbuf` fields, allowing extra parameters to be passed to
+     `grep` (or the shell) called via `system()`.
+  2. **PING buffer overflow** — the PING command uses a `char*` where an
+     `int*` is expected, allowing overflow of the `bp` size variable when the
+     command is not terminated with `\r\n`.
+value: 0
+type: standard
+image: .
+protocol: tcp
+host: null
+connection_info: null
+flags:
+    - ictf2005{sillyd_compromised}
+topics:
+    - buffer overflow
+    - command injection
+    - C
+tags:
+    - binary
+    - pwn
+    - ictf2005
+    - historical
+files:
+    - src/sillyd.c
+state: visible
+version: "0.1"

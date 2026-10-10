@@ -1,0 +1,24 @@
+name: "rock paper scissors"
+author: "iCTF 2023 organizers"
+category: misc
+description: |
+  A simple rock paper scissors game. Can you beat Mr.bot? Or maybe you can twist his mind...
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{r0ck_p4p3r_sc1ss0rs_1s_4ll_luck}
+
+topics:
+    - remote applications
+
+tags:
+    - remote applications
+
+state: visible
+version: "0.1"

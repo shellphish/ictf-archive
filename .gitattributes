@@ -1,0 +1,3 @@
+# No Git LFS — all files committed as regular git objects.
+# (LFS was removed because shellphish org has LFS disabled.)
+# All challenge attachments are < 65 MB, within GitHub's 100 MB per-file limit.

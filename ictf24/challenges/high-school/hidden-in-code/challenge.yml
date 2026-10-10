@@ -1,0 +1,29 @@
+name: "hidden_in_code"
+author: "iCTF 2024 organizers"
+category: forensic
+description: |
+  Dive into the depths of abstraction where code transforms into enigma. In this challenge, you will navigate through layers of representation, seeking hidden truths buried within the confines of a mysterious file.
+value: 388
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - iCTF{M3t4d@7a_1s_wHat_Y0u_need}
+
+topics:
+    - instrumentation
+
+tags:
+    - llvm
+
+files:
+    - attachments/target.bc
+    - attachments/target
+    - attachments/MetadataPass.cpp
+
+state: visible
+version: "0.1"

@@ -1,0 +1,26 @@
+name: "aimazing"
+author: "iCTF 2024 organizers"
+category: misc
+description: |
+  I built this fantastic command line maze game, do you think you can solve it?
+  
+  PS: You might want to run `stty -icanon` for the best gameplay experience.
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{AIOrNotAI_ThatIsTheQuestion}
+
+topics:
+    - remote applications
+
+tags:
+    - remote applications
+
+state: visible
+version: "0.1"

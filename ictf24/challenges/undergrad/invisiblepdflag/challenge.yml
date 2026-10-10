@@ -1,0 +1,28 @@
+name: "InvisiblePDFlag"
+author: "iCTF 2024 organizers"
+category: forensic
+description: |
+  Welcome to the **Prompt Injection Challenge**! In this challenge, you will be tasked with finding a hidden flag embedded inside a resume. The flag has been cleverly concealed using a **prompt injection attack**, where a piece of **invisible text** is added to the document. Your mission is to detect this invisible text and extract the hidden flag using **Large Language Models (LLMs)** or other analysis techniques.
+value: 50
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{iCTF-2024-best}
+
+topics:
+    - miscellaneous
+    - llm
+
+tags:
+    - miscellaneous
+
+files:
+    - attachments/resume.pdf
+
+state: visible
+version: "0.1"

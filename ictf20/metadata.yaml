@@ -1,0 +1,60 @@
+edition: ictf20
+year: 2020
+title: "Abbey Road (1 After 909)"
+
+format: attack-defense
+
+dates:
+  start: "2020-12-01"
+  end: "2020-12-31"
+  # Exact date not documented.
+
+participation:
+  num_teams: null
+  notes: "International university teams. Exact count not documented."
+
+challenges:
+  - id: 1-after-909
+    name: "1 after 909"
+    category: attack-defense-service
+  - id: come-together
+    name: "come-together"
+    category: attack-defense-service
+  - id: everybodys_got_something_to_hide
+    name: "everybodys_got_something_to_hide"
+    category: attack-defense-service
+  - id: lucy_in_the_sky_with_diamonds
+    name: "lucy_in_the_sky_with_diamonds"
+    category: attack-defense-service
+  - id: she_came_in_through_the_bathroom_window
+    name: "she_came_in_through_the_bathroom_window"
+    category: attack-defense-service
+  - id: strawberry_fields_forever
+    name: "strawberry_fields_forever"
+    category: attack-defense-service
+  - id: yellow_submarine
+    name: "yellow_submarine"
+    category: attack-defense-service
+# Full service history documented in iCTF Services Historical.xlsx.
+
+data:
+  - type: other
+    path: "iCTF Services Historical.xlsx"
+    description: "Spreadsheet with historical service/challenge information across iCTF editions"
+
+infrastructure:
+  scorebot: "ictf-framework"
+  docker:
+    full_environment: false
+    individual_challenges: false
+
+resources:
+  source: "git@github.com:shellphish/ictf-2020-challs-public.git"
+
+notes: >
+  Beatles-themed edition. All six services are named after Beatles songs
+  from various albums (Abbey Road, Sgt. Pepper's, etc.). The theme
+  "1 After 909" is itself a Beatles song. Service source code available at
+  shellphish/ictf-2020-challs-public. The iCTF Services Historical.xlsx
+  spreadsheet documents services across multiple iCTF editions.
+  Note: ictf18 and ictf22 do not exist in the archive.

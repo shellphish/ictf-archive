@@ -1,0 +1,34 @@
+name: "iCTF 2010 — Bot Service"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: network
+description: |
+  **iCTF 2010 — Hit 'em Where it Hurts**
+
+  The Bot service is a Python 2 botnet agent for Litya's botnet infrastructure.
+  Each team ran an instance of `bot.py` on their VM. The bot periodically connects
+  to a central "mothership" C2 server (port 8080) and sends a base64-encoded
+  heartbeat (`aGVhcnRiZWF0Cg==`). Teams needed to compromise this service to
+  manipulate flag submission or disrupt rivals' botnet nodes.
+
+  Source extracted from the competition VM (Ubuntu Server 10.10 32-bit).
+value: 0
+type: standard
+image: .
+protocol: tcp
+host: null
+connection_info: null
+flags:
+    - ictf2010{bot_compromised}
+topics:
+    - network service analysis
+    - botnet command & control
+tags:
+    - network
+    - python
+    - botnet
+    - ictf2010
+    - historical
+files:
+    - src/bot.py
+state: visible
+version: "0.1"

@@ -1,0 +1,33 @@
+name: "iCTF 2005 — Spam World: Spammer Daemon"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2005 — The Spam World**
+
+  A TCP spamming daemon on port 4570 with SMTP-like commands. Users create
+  accounts with `new <user> <password>`, then compose spam messages. The flag
+  is stored as the message body. Known-good passwords: `bbbccc`, `aaabbb`, `cccddd`.
+value: 0
+type: standard
+
+image: .
+protocol: tcp
+flags:
+    - ictf2005{spammer_pwned}
+
+topics:
+    - binary exploitation
+    - network protocol
+
+tags:
+    - binary
+    - tcp
+    - network
+    - ictf2005
+    - historical
+    - attack-defense
+
+files: []
+
+state: visible
+version: "0.1"

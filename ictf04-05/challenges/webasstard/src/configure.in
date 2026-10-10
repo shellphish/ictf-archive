@@ -1,0 +1,26 @@
+# Initialization
+AC_INIT(webasstard, 1.0, zanardi@shellphish.net)
+AM_INIT_AUTOMAKE(webasstard, 1.0)
+
+# Check for programs
+AC_PROG_CC
+AC_PROG_INSTALL
+#AC_PROG_LIBTOOL
+
+AC_CHECK_HEADERS(dirent.h sys/dirent.h, break)
+
+# Check for mydiag lib
+AC_CHECK_LIB(mydiag, my_error, , echo "webasstard needs libmydiag in order to build"; exit 1,)
+
+# Check for zocket lib
+AC_CHECK_LIB(zocket, connectTCP, , echo "webasstard needs libzocket in order to build"; exit 1,)
+
+# Check for crypto lib
+AC_CHECK_LIB(crypto, CRYPTO_free, , echo "webasstard needs libcrypto in order to build"; exit 1,)
+
+# Check for openssl lib
+AC_CHECK_LIB(ssl, SSL_CTX_new, , echo "webasstard needs libssl in order to build"; exit 1,)
+
+# Output functions
+AC_CONFIG_FILES(Makefile)
+AC_OUTPUT

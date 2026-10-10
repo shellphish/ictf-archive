@@ -1,0 +1,33 @@
+name: "iCTF 2004 — UN Voting: Campaign Contribution"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2004 — The UN Voting System**
+
+  A campaign donation tracking service at `/~support/cgi-bin/donate.py`. The
+  scorebot stores the flag as the `comment` field in donation records.
+  Find a way to enumerate or read donation records.
+value: 0
+type: standard
+
+image: .
+protocol: http
+flags:
+    - ictf2004{contribute_pwned}
+
+topics:
+    - web exploitation
+    - CGI security
+
+tags:
+    - web
+    - python
+    - cgi
+    - ictf2004
+    - historical
+    - attack-defense
+
+files: []
+
+state: visible
+version: "0.1"

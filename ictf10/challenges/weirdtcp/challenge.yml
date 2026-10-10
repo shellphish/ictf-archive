@@ -1,0 +1,30 @@
+name: "iCTF 2010 — WeirdTCP"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: network
+description: |
+  **iCTF 2010 — Hit 'em Where it Hurts**
+
+  WeirdTCP (S7) was a service implementing a custom "Litya Internet Protocol"
+  on port 3333. Organizers hinted: *"weirdtcp's important information is in
+  the Litya Internet Protocol RFC"* — suggesting a protocol specification
+  was published. Teams had to understand the custom protocol and exploit it.
+
+  Source in VM archive: `vms/ictf2010.services.tar.gz`.
+value: 0
+type: standard
+image: .
+protocol: tcp
+flags:
+    - ictf2010{weirdtcp_pwned}
+tags:
+    - network
+    - protocol
+    - c
+    - ictf2010
+    - historical
+files:
+    - src/weirdtcp.c
+    - src/attack.c
+    - src/weirdtcp.bin
+state: visible
+version: "0.1"

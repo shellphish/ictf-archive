@@ -1,0 +1,28 @@
+name: "hidden_number"
+author: "iCTF 2024 organizers"
+category: programming
+description: |
+  I think the program is trying to tell me a "number". What is it?
+value: 50
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{infinity}
+
+topics:
+    - forensics programming
+
+tags:
+    - forensics
+    - visualization
+
+files:
+    - attachments/hidden_number.py
+
+state: visible
+version: "0.1"

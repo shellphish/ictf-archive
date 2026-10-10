@@ -1,0 +1,59 @@
+name: "iCTF 2003 — icecast"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2003 — Windows Goes Open-Source**
+
+  icecast was a streaming audio server service based on Icecast. The scorebot
+  stored flags as stream metadata (song title/id fields) and retrieved them
+  via the Icecast admin HTTP interface at port 8000.
+
+  ## Scorebot interaction
+
+  The compiled C scorebot binary (`set_icecast`) used wget to:
+  - POST to `http://<host>:8000/admin` with admin credentials
+  - Set flag via `/metadata?mount=/ices&mode=1&song=...&id=<flag_id>`
+  - Verify via `/listclients` and `/streamlist` endpoints
+
+  Admin interface protected by HTTP basic auth. Vulnerability likely in
+  the Icecast admin interface or stream metadata handling.
+
+  ## Source
+
+  Full icecast-2.0-beta-1 source tree is in `src/icecast-2.0-beta-1/`.
+  The flag is embedded directly into `sock.c` as the global variable
+  `g_client_hash = "##ICECAST_FLAG##"` (the flag placeholder is replaced
+  at deployment). The `sock.c` in `src/` is a modified copy of
+  icecast's socket helper with this added field.
+
+  The scorebot set-script (`src/set_icecast.c`) is a compiled 32-bit ELF
+  (Gentoo, GCC 3.2.3) that calls wget against the Icecast admin API
+  to update stream metadata with the flag.
+
+  Configuration: `src/icecast.xml` (template with `##ICECAST_PASSWD##` placeholder),
+  `src/icecast.xml.deployed` (actual deployed config from the CTF VM).
+value: 0
+type: standard
+image: null
+protocol: http
+port: 8000
+flags:
+    - ictf2003{icecast_pwned}
+topics:
+    - streaming server
+    - admin interface
+tags:
+    - web
+    - binary
+    - icecast
+    - ictf2003
+    - historical
+    - attack-defense
+files:
+    - src/sock.c
+    - src/icecast.xml
+    - src/icecast.xml.deployed
+    - src/get_icecast
+    - src/set_icecast.c
+state: visible
+version: "0.1"

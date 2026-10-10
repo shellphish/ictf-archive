@@ -1,0 +1,218 @@
+edition: ictf08
+year: 2008
+title: "The Softerror.com Network"
+
+format: attack
+# Note: Unlike a classic attack-defense competition, each team received an
+# *identical, isolated replica* of the target network. Teams attacked their
+# own replica; there was no inter-team attacking or service defense.
+
+dates:
+  start: "2008-12-05"
+  end: "2008-12-05"
+
+participation:
+  num_teams: 40
+  countries: [US, DE, AT, FR, IT, RU, AR, IN, AU]
+  regions:
+    north_america: 21
+    europe: 16
+    south_america: 1
+    asia_pacific: 2
+  winner: "ENOFLAG (Technische Universität Berlin, Germany)"
+
+challenges:
+  # Attack-progression services (teams must compromise them in order)
+  - name: mainwebsite
+    title: "Public Web Server"
+    category: web
+    service_port: 80
+    vm_image: "iCTF_2008/mainwebsite.tgz"
+    description: >
+      Entry point: the public-facing web server of Softerror.com.
+      Teams must compromise this host to gain access to the internal network.
+
+  - name: financialsite
+    title: "Financial Network"
+    category: web
+    vm_image: "iCTF_2008/financialsite.tgz"
+    description: >
+      Multi-layered financial application servers (4 internal services).
+      Accessed after pivoting through the main web server.
+
+  - name: develsite
+    title: "Development Network"
+    category: web
+    vm_image: "iCTF_2008/develsite.tgz"
+    description: >
+      Internal development network, accessed after the financial layer.
+
+  - name: bombsite
+    title: "The Bomb"
+    category: binary
+    vm_image: "iCTF_2008/bombsite.tgz"
+    description: >
+      Final target: defuse the nuclear bomb timer. The bomb-control server
+      is only reachable after compromising all preceding network layers.
+
+  # Side / bonus challenges (jeopardy-style, extra points)
+  - name: t100
+    title: "Trivial 100"
+    category: misc
+    difficulty: easy
+    points: 100
+
+  - name: t200
+    title: "Trivial 200"
+    category: misc
+    difficulty: easy
+    points: 200
+
+  - name: r100
+    title: "Reverse Engineering 100"
+    category: binary
+    difficulty: medium
+    points: 100
+
+  - name: r500
+    title: "Reverse Engineering 500"
+    category: binary
+    difficulty: hard
+    points: 500
+
+  - name: f200
+    title: "Forensics 200 — Stereogram"
+    category: forensics
+    difficulty: medium
+    points: 200
+    description: >
+      Steganography challenge: hidden data embedded in a stereogram image,
+      extracted with OutGuess.
+
+  - name: b200
+    title: "Binary / Bomb 200"
+    category: binary
+    difficulty: medium
+    points: 200
+
+  - name: bonus
+    title: "Bonus — Lagged Fibonacci OTP"
+    category: crypto
+    difficulty: hard
+    description: >
+      Cryptanalysis of a one-time pad implemented with a lagged Fibonacci
+      generator.
+
+data:
+  - type: vm_image
+    path: "site/iCTF2008_1_WebSite.tgz"
+    size: "356 MB"
+    description: "VMware image for the MainWebsite service"
+
+  - type: vm_image
+    path: "site/iCTF2008_2_Financial.tgz"
+    size: "368 MB"
+    description: "VMware image for the Financial service"
+
+  - type: vm_image
+    path: "site/iCTF2008_3_Development.tgz"
+    size: "327 MB"
+    description: "VMware image for the Development network"
+
+  - type: vm_image
+    path: "site/iCTF2008_4_Bomb.tgz"
+    size: "431 MB"
+    description: "VMware image for The Bomb service"
+
+  - type: vm_image
+    path: "site/iCTF_TestBox.tgz"
+    size: "798 MB"
+    description: "Pre-competition test box"
+
+  - type: vm_image
+    path: "site/iCTF_VulnBox.tgz"
+    size: "300 MB"
+    description: "Vulnerable box used for practice"
+
+  - type: source_code
+    path: "iCTF_2008/mainwebsite.tgz"
+    description: "Source code archive for the MainWebsite service"
+
+  - type: source_code
+    path: "iCTF_2008/financialsite.tgz"
+    description: "Source code archive for the Financial service"
+
+  - type: source_code
+    path: "iCTF_2008/develsite.tgz"
+    description: "Source code archive for the Development service"
+
+  - type: source_code
+    path: "iCTF_2008/bombsite.tgz"
+    description: "Source code archive for The Bomb service"
+
+  - type: pcap
+    path: "dumps/ctf08_traffic.tgz"
+    size: "3.0 GB"
+    description: "Full competition network traffic capture"
+
+  - type: pcap
+    path: "dumps/ctf08_training_traffic.tgz"
+    size: "434 MB"
+    description: "Pre-competition training traffic"
+
+  - type: pcap
+    path: "dumps/ctf08_snort_log.tgz"
+    size: "12 MB"
+    description: "Snort IDS alert logs from competition day"
+
+  - type: exploit_submissions
+    path: "iCTF_2008/public_html/exploits/"
+    description: >
+      39 graded exploit submissions from teams. Format:
+      <TEAM_IP>.service<N>.txt[.graded-<POINTS>].
+      Point scale: 0, 100, 200, 300.
+
+  - type: scoring_db
+    path: "iCTF_2008/public_html/.pfctf.pkl"
+    description: "Pickle file containing team authentication tokens"
+
+  - type: writeup
+    path: "site/challenges/"
+    description: >
+      Official walkthroughs for all side challenges:
+      b200, f200, r100, r500, t100, t200, bonus.
+
+  - type: writeup
+    path: "site/ENOFLAG_Walkthrough.html"
+    description: "Winner's walkthrough by ENOFLAG (TU Berlin)"
+
+  - type: media
+    path: "site/"
+    description: "40 team logos, event photos, press release, announcement"
+
+infrastructure:
+  scorebot: "custom-python-cgi"
+  network: >
+    40 isolated /24 subnets (10.2.1.0/24 – 10.40.1.0/24) plus admin network
+    (128.111.48.0/24). Each team had an identical replica of the 4-host
+    Softerror.com network. No inter-team routing.
+  flag_format: "not-applicable"
+  # Scoring: exploit submissions graded by administrators (0/100/200/300 pts).
+  # Teams could spend points to buy hints via "The Mole" system.
+  docker:
+    full_environment: false
+    individual_challenges: false  # TODO: to be added
+
+resources:
+  website: "https://ictf.cs.ucsb.edu/archive/2008/site"
+  announcement: "site/announcement.txt"
+  story: "site/story.txt"
+
+notes: >
+  iCTF 2008 was themed after the TV show "24". Unlike classic attack-defense
+  CTFs, all 40 teams attacked identical isolated replicas of the same 4-host
+  target network (Softerror.com). The competition ran for 7 hours on
+  December 5, 2008, at UC Santa Barbara (Frank Hall). Winner: ENOFLAG
+  (Technische Universität Berlin). The event included an IDS (Snort) that
+  penalized noisy attackers. The Mole hint-purchase system let teams trade
+  points for insider information about vulnerabilities.

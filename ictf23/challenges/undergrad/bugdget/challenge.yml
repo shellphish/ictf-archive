@@ -1,0 +1,27 @@
+name: "bugdget"
+author: "iCTF 2023 organizers"
+category: misc
+description: |
+  Keeping a budget is hard. We use a model-based approach to forecast what things you will be able to buy in the future.
+value: 490
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{wOw_Y0u_4Re_V3rY_R1Ch_8D}
+
+topics:
+    - remote applications
+
+tags:
+    - remote applications
+
+files:
+    - attachments/bugdget.zip
+
+state: visible
+version: "0.1"

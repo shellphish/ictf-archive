@@ -1,0 +1,31 @@
+name: "iCTF 2004 — UN Voting: Talkun Note Service"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2004 — The UN Voting System**
+
+  The Talkun service runs on port 8081 and provides a note-taking application.
+  Users log in and store notes; the flag is the note text. Find a vulnerability
+  to read other users' notes.
+value: 0
+type: standard
+
+image: .
+protocol: http
+flags:
+    - ictf2004{talkun_pwned}
+
+topics:
+    - web exploitation
+    - authentication bypass
+
+tags:
+    - web
+    - ictf2004
+    - historical
+    - attack-defense
+
+files: []
+
+state: visible
+version: "0.1"

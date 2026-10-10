@@ -1,0 +1,14 @@
+#!/usr/bin/perl -w
+
+use POSIX qw(ceil floor);
+
+@environ = qw/FSI=. EXTN1= TST=xxx PASSWORD= EGG= /;
+
+$id = ceil(rand(256));
+$request = "id $id\nuser whatever \npassword $ARGV[2]\nfilename *.c\nkeyword $ARGV[1]\nenviron $environ[rand(@environ)]\n";
+
+if (! -e "/home/fredrik/ctf_scorebot/scripts/sfindc") {
+    die "helper program findc not in local directory";
+}
+
+`echo "$request" | /home/fredrik/ctf_scorebot/scripts/sfindc $ARGV[0]`;

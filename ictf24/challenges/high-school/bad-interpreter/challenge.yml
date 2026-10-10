@@ -1,0 +1,28 @@
+name: "bad-interpreter"
+author: "iCTF 2024 organizers"
+category: pwn
+description: |
+  AI chatbots often make mistakes when doing math. That's why we need an interpreter to help them. It's just an python interpreter, what could go wrong?
+value: 136
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{W3ll_Th1s_1s_4n_1nt3rpr3t3r}
+
+topics:
+    - AI security
+    - Untrusted input
+
+tags:
+    - remote applications
+
+files:
+    - attachments/bad-interpreter.py
+
+state: visible
+version: "0.1"

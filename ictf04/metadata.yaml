@@ -1,0 +1,112 @@
+edition: ictf04
+year: 2004
+title: "The 2004 United Nations Vote"
+
+format: attack-defense
+
+dates:
+  start: "2004-12-01"
+  end: "2004-12-31"
+  # Exact date uncertain; ran in December 2004.
+  # Two rounds found: 20041119 (November) and 20041203 (December)
+
+participation:
+  num_teams: 6
+  countries: [US, IT]
+  notes: >
+    Teams from: UC Santa Barbara (ucsb), NCSU (ncsu), Politecnico di Milano (Polimi),
+    RPI Brooklyn (BrooklynPoly), UIUC (uiuc), West Point (usma).
+    The competition had serious performance problems.
+
+challenges:
+  - name: feedback
+    title: "Feedback Service"
+    category: web
+    description: "PHP/CGI form collecting candidate feedback; flag stored as comment field."
+
+  - name: talkun
+    title: "Talkun Note Service"
+    category: web
+    description: "HTTP note-taking service on port 8081; flag stored as note text."
+
+  - name: password-verify
+    title: "Password Verify Daemon"
+    category: binary
+    description: "TCP service on port 11111; STORE/DICT protocol for name→flag mapping."
+
+  - name: diebald
+    title: "Diebald Voting Machine Admin"
+    category: web
+    description: "CGI admin interface at /~diebald/cgi-bin/admin; flag stored as task value."
+
+  - name: register
+    title: "Voter Registration"
+    category: web
+    description: "Voter registration form at /~register/register.html; wwid field = flag."
+
+  - name: contribute
+    title: "Campaign Contribution"
+    category: web
+    description: "Donation tracker at /~support/cgi-bin/donate.py; flag stored as comment."
+
+  - name: discussit
+    title: "Discussit Chat Service"
+    category: binary
+    description: "TCP chat service on port 7413; flag stored as conversation topic."
+
+  - name: votecast
+    title: "Votecast"
+    category: binary
+    description: "TCP voting service on port 1969 with XOR encryption (key: F2654hD4)."
+
+  - name: pollit
+    title: "Pollit Online Poll"
+    category: web
+    description: "HTTP polling service at /~pollit/pollit.html; flag stored in poll record."
+
+data:
+  - type: other
+    path: "site/"
+    description: "Original competition website"
+
+  - type: pcap
+    path: "dumps/"
+    description: "Network traffic captures"
+
+  - type: vm_image
+    path: "iCTF_2004_Images/"
+    description: "VM images for competition services"
+
+  - type: vm_image
+    path: "vms/"
+    description: "Additional VM images"
+
+  - type: media
+    path: "pictures/"
+    description: "Event photographs"
+
+  - type: other
+    path: "UnitedNations/"
+    description: "Service source code (scorebot, services)"
+
+  - type: other
+    path: "20041203_iCTF/"
+    description: "December 2004 competition data, organized by team"
+
+infrastructure:
+  scorebot: "custom"
+  network: "Multiple team networks"
+  docker:
+    full_environment: false
+    individual_challenges: false
+
+resources:
+  website: "https://ictf.cs.ucsb.edu/archive/2004/site"
+
+notes: >
+  The theme of the 2004 iCTF was a futuristic world-wide voting event
+  sponsored by the United Nations. Teams attacked and defended services
+  representing a global online election system. The competition had serious
+  performance problems, resulting in a partially-successful game. A rematch
+  was organized in June 2005 (see ictf04-05). The archive contains data from
+  both a November 19 and a December 3, 2004 event.

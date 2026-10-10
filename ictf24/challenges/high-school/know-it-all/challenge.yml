@@ -1,0 +1,27 @@
+name: "know-it-all"
+author: "iCTF 2024 organizers"
+category: pwn
+description: |
+  In this challenge, you will engage with an advanced AI agent capable of responding to your inquiries. However, tread carefully — your questions are bound by a constraint.
+value: 136
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{mInd_th3_Len9th_0f_Y0ur_1npu7}
+
+topics:
+    - code review
+
+tags:
+    - remote applications
+
+files:
+    - attachments/know-it-all.py
+
+state: visible
+version: "0.1"

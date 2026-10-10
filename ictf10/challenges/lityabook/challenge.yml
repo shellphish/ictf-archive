@@ -1,0 +1,30 @@
+name: "iCTF 2010 — LityaBook"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2010 — Hit 'em Where it Hurts**
+
+  LityaBook (S1) was a social-network web service (Facebook parody) on port 80.
+  Characters in the game's story used it to contact people found on LityaHot.
+  Teams exploited web vulnerabilities to steal flags from rival instances.
+
+  Source in VM archive: `vms/ictf2010.services.tar.gz`.
+value: 0
+type: standard
+image: .
+protocol: http
+flags:
+    - ictf2010{lityabook_pwned}
+tags:
+    - web
+    - python
+    - ictf2010
+    - historical
+files:
+    - src/lytiabook.py
+    - src/lytiabook.ini
+    - src/Connect.py
+    - src/Edef.py
+    - src/java/
+state: visible
+version: "0.1"

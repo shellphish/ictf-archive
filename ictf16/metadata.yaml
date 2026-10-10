@@ -1,0 +1,56 @@
+edition: ictf16
+year: 2017
+title: "Shell We Play a Game?"
+
+format: attack-defense
+# Note: Organized in 2016, run March 3, 2017 (delayed execution).
+
+dates:
+  start: "2017-03-03"
+  end: "2017-03-03"
+  # From DDoS post: "On March 3rd, 2017, we ran the iCTF of the 2016-2017 school year."
+
+participation:
+  num_teams: 300
+  notes: >
+    Over 300 teams. First iCTF open to all teams (not just academic).
+    First iCTF hosted on Amazon Web Services (AWS).
+    Winner: Bushwhackers. LC/BC disqualified for DDoS.
+
+challenges: []
+# Specific services: "flasking_unicorns" visible in DDoS post exploit traffic.
+# 12 service ports (20001-20012) referenced in DDoS analysis.
+
+data:
+  - type: other
+    path: "iCTF 2016 Planning.docx"
+    description: "Organizer planning document"
+
+  - type: other
+    path: "Reply to LCBC.docx"
+    description: "Organizer response to LC/BC controversy post-competition"
+
+infrastructure:
+  scorebot: "ictf-framework"
+  network: >
+    AWS-hosted /17 network (172.31.128.0/17). Each team received one VM.
+    Team VMs: 172.31.129.TEAM_ID (IDs <255) or 172.31.130.(TEAM_ID-254).
+    Traffic masqueraded/anonymized through central router.
+    Service ports: 20001-20012.
+  docker:
+    full_environment: false
+    individual_challenges: false
+
+resources:
+  website: "https://ictf.cs.ucsb.edu/archive/2016-2017/website"
+
+notes: >
+  The 2016-2017 iCTF ("Shell We Play a Game?") ran on March 3, 2017 and was
+  the first iCTF open to all teams (not just academic institutions) and the
+  first hosted on AWS. With 300+ teams it was one of the largest online
+  attack-defense CTFs ever run. The competition ended prematurely when
+  second-place team LC/BC launched a DDoS attack via a botnet installed on
+  compromised team VMs, bringing down the competition network at 4:15am.
+  Bushwhackers (barely ahead) were declared winners. LC/BC was disqualified.
+  The organizers published a detailed forensic analysis of the DDoS (preserved
+  in attic/ictf-website). The local archive is minimal (20 KB).

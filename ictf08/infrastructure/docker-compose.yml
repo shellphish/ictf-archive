@@ -1,0 +1,69 @@
+# iCTF 2008 — Full Competition Environment
+#
+# Starts all four Softerror.com services on an isolated virtual network.
+# The attack chain runs: mainwebsite → develsite → financialsite → bombsite
+#
+# Usage:
+#   # First, extract service sources (run once):
+#   cd ../challenges/mainwebsite && tar -xzf ../../iCTF_2008/mainwebsite.tgz -C src/ --strip-components=2
+#   cd ../challenges/develsite   && tar -xzf ../../iCTF_2008/develsite.tgz   -C src/ --strip-components=2
+#   cd ../challenges/financialsite && tar -xzf ../../iCTF_2008/financialsite.tgz -C src/ --strip-components=2
+#   cd ../challenges/bombsite    && tar -xzf ../../iCTF_2008/bombsite.tgz    -C src/ --strip-components=2
+#
+#   # Then start:
+#   docker compose up --build
+
+services:
+
+  mainwebsite:
+    build:
+      context: ../challenges/mainwebsite
+    networks:
+      dmz:
+        ipv4_address: 10.8.1.2
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+  develsite:
+    build:
+      context: ../challenges/develsite
+    networks:
+      internal:
+        ipv4_address: 10.8.2.2
+    # Not exposed to the host; teams must pivot through mainwebsite
+    restart: unless-stopped
+
+  financialsite:
+    build:
+      context: ../challenges/financialsite
+    networks:
+      internal:
+        ipv4_address: 10.8.3.2
+    # Not exposed to the host; teams must pivot through develsite
+    restart: unless-stopped
+
+  bombsite:
+    build:
+      context: ../challenges/bombsite
+    networks:
+      internal:
+        ipv4_address: 10.8.4.2
+    # Final target; teams must pivot through financialsite
+    restart: unless-stopped
+
+networks:
+  # DMZ: reachable from outside (mainwebsite only)
+  dmz:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.8.1.0/24
+
+  # Internal: only reachable by pivoting through mainwebsite
+  internal:
+    driver: bridge
+    internal: true
+    ipam:
+      config:
+        - subnet: 10.8.0.0/16

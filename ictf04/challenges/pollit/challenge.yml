@@ -1,0 +1,39 @@
+name: "iCTF 2004 — UN Voting System (pollit)"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2004 — The 2004 United Nations Vote**
+
+  The iCTF 2004 scenario put teams inside the United Nations during a
+  fictional 2014 Security Council vote. The "pollit" service is the
+  online voting platform used by member nations.
+
+  The service is a Perl CGI application that handles secure balloting
+  for the UN vote. Find a vulnerability to manipulate the vote.
+value: 0
+type: standard
+
+image: .
+protocol: http
+host: null
+connection_info: null
+
+flags:
+    - ictf2004{pollit_compromised}
+
+topics:
+    - web exploitation
+    - perl CGI
+    - SQL injection
+
+tags:
+    - web
+    - perl
+    - ictf2004
+    - historical
+
+files:
+    - src/
+
+state: visible
+version: "0.1"

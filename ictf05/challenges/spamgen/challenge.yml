@@ -1,0 +1,33 @@
+name: "iCTF 2005 — Spam World: Spamgen"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2005 — The Spam World**
+
+  A spam generation service with both HTTP and UDP interfaces. Users authenticate
+  and upload spam text (the flag) via a web form at `/~spamgen/cgi-bin/spamgen.py`.
+  A UDP listener on port 2345 serves file listings; HTTPS on port 4443 serves files.
+value: 0
+type: standard
+
+image: .
+protocol: http
+flags:
+    - ictf2005{spamgen_pwned}
+
+topics:
+    - web exploitation
+    - CGI security
+
+tags:
+    - web
+    - python
+    - cgi
+    - ictf2005
+    - historical
+    - attack-defense
+
+files: []
+
+state: visible
+version: "0.1"

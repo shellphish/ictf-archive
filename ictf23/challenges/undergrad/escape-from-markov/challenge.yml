@@ -1,0 +1,31 @@
+name: "escape_from_markov"
+author: "iCTF 2023 organizers"
+category: data science
+description: |
+  We made a fake flag generator just for this CTF! It can generate flags that look like the real one! Can you find the real flag?
+value: 498
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{mark0v1an_N1gh7maR3s}
+
+topics:
+    - machine learning
+
+tags:
+    - remote applications
+    - machine learning
+    - easy difficulty
+
+files:
+    - attachments/chall.py
+    - attachments/serve.sh
+    - attachments/Dockerfile
+
+state: visible
+version: "0.1"

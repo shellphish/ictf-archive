@@ -1,0 +1,71 @@
+edition: ictf14
+year: 2015
+title: "Large-scale Hacking"
+
+format: attack-defense
+# Delayed execution: organized in 2014, run in April 2015.
+
+dates:
+  start: "2015-04-01"
+  end: "2015-04-30"
+  # Announcement says "Thursday" VM delivery, "Friday morning" key release.
+  # Exact date not confirmed; April 2015.
+
+participation:
+  num_teams: 88
+  notes: >
+    88 teams (ranks 0–87 in final scoreboard). Winner: SpamAndHex (Hungary).
+    International university teams. Each team received a VirtualBox VM as router.
+    Winner scored 92.744 with 88 timeliness, 593.037 leetness, 6300 diversity.
+
+challenges: []
+# Specific services not documented in local archive.
+
+data:
+  - type: scoring_db
+    path: "2014-2015.mysql.gz"
+    description: "MySQL database dump with scoring/team data"
+
+  - type: media
+    path: "iCTF scoreboard/"
+    description: "Scoreboard screenshots (PNG files)"
+
+  - type: other
+    path: "ictf20145_announcement.txt"
+    description: "Competition announcement / instructions to teams"
+
+  - type: other
+    path: "ictf2014-5-press_release.txt"
+    description: "Press release"
+
+  - type: media
+    path: "ictf2014_scoreboard_screenshot.png"
+    description: "Scoreboard screenshot"
+
+infrastructure:
+  scorebot: "custom"
+  network: >
+    Teams used VirtualBox VM as a router into the competition network.
+    VMs were encrypted; key disclosed on competition morning.
+    No direct inter-team attacking; exploits submitted to organizers who
+    ran them on behalf of submitting teams.
+  flag_format: "framework-based"
+  docker:
+    full_environment: false
+    individual_challenges: false
+
+resources:
+  announcement: "ictf20145_announcement.txt"
+
+notes: >
+  The 2014-2015 iCTF (organized in 2014 but run in April 2015) was themed
+  "Large-scale Hacking." The competition used a novel infrastructure: teams
+  received an encrypted VirtualBox VM as their router, with the decryption key
+  disclosed on competition morning. No direct inter-team attacking was allowed;
+  instead teams submitted exploits to the organizers, who ran them on behalf
+  of the submitting team against target teams. Scoring used four components:
+  SLA (service availability), Timeliness (bonus for early exploits),
+  Diversity (bonus for exploiting more services), and Leetness (bonus based on
+  how many teams had also exploited a service — rarer exploits worth more).
+  The local archive is minimal (~888 KB): a MySQL dump, announcement, and
+  scoreboard screenshots.

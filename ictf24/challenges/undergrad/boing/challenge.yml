@@ -1,0 +1,30 @@
+name: "Boing"
+author: "iCTF 2024 organizers"
+category: web
+description: |
+  A fun app for your images!
+value: 460
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{b01ng_b01ng_U_g0t_me}
+
+topics:
+    - web
+
+tags:
+    - remote applications
+
+files:
+    - attachments/src.zip
+
+hints:
+    - {content: "Hmm... I can't get this image to upload: [hint.zip](/files/4a8f4a23e44875373fd75822241845a2/hint.zip)", cost: 150}
+
+state: visible
+version: "0.1"

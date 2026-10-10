@@ -1,0 +1,42 @@
+name: "iCTF 2010 — LityaLeaks"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2010 — Hit 'em Where it Hurts**
+
+  LityaLeaks is a WikiLeaks-inspired document leaking platform built on
+  MediaWiki 1.15.5. Teams hosted leaked Lityan government documents — network
+  traffic dumps, source code, classified data. Public reading required a
+  registered account; self-registration was disabled; only the admin could
+  create accounts.
+
+  The service allowed file uploads: `png, gif, jpg, jpeg, ogg, pdf, pcap,
+  java, c, so, txt`. The MediaWiki secret key (`$wgSecretKey`) was embedded
+  in LocalSettings.php, enabling potential token forgery attacks.
+
+  Flags were stored as wiki page content or uploaded documents.
+
+  Source: `LocalSettings.php` extracted from the competition VM
+  (Ubuntu Server 10.10 32-bit). MediaWiki 1.15.5 package-installed.
+value: 0
+type: standard
+image: null
+protocol: http
+host: null
+connection_info: null
+flags:
+    - ictf2010{lityaleaks_compromised}
+topics:
+    - web exploitation
+    - MediaWiki vulnerabilities
+    - PHP exploitation
+tags:
+    - web
+    - php
+    - mediawiki
+    - ictf2010
+    - historical
+files:
+    - src/LocalSettings.php
+state: visible
+version: "0.1"

@@ -1,0 +1,27 @@
+name: "Chromapyide"
+author: "iCTF 2024 organizers"
+category: misc
+description: |
+  While building a new platform to quickly serach for python code snippets, we found one implementation that was a bit off and made use of ChromaDB. We were able to just get it up and running and wanted you to test it out. While trying to get it up and running one of our developers used the docker container that was supposed to shipped with the a certain flag in the home directory of user challenge. Can you read it?
+value: 212
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{m1nd_y0ur_3v4l5_4nd_d0n'7_l37_u53r_c0d3_r34ch_3v4l}
+
+topics:
+    - code review
+
+tags:
+    - remote applications
+
+files:
+    - attachments/chall.py
+
+state: visible
+version: "0.1"

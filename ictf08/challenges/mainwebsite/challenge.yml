@@ -1,0 +1,48 @@
+# ctfcli challenge descriptor — iCTF 2008: Public Web Server
+# https://github.com/CTFd/ctfcli
+
+name: "iCTF 2008 — Public Web Server"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2008 — The Softerror.com Network**
+
+  It's 9am and Jack Bauer is at your door. A nuclear bomb is counting down
+  and only you can stop it. The first step: break into the public web server
+  of the terrorist organization **Softerror.com**.
+
+  Find a vulnerability in the PHP web application running at the target host.
+  This is the entry point to a four-host attack chain leading to the bomb.
+value: 0
+type: standard
+
+# Docker image (built from Dockerfile in this directory)
+image: .
+protocol: http
+
+host: null
+connection_info: null
+healthcheck: null
+
+flags:
+    # Flag format was not a static string in 2008; grading was manual.
+    # Placeholder flag for CTFd deployment:
+    - ictf2008{mainwebsite_compromised}
+
+topics:
+    - web exploitation
+    - php
+    - historical CTF
+
+tags:
+    - web
+    - php
+    - ictf2008
+    - historical
+
+files:
+    # Source code is available — intentional, part of the challenge context
+    - src/
+
+state: visible
+version: "0.1"

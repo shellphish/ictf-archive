@@ -1,0 +1,35 @@
+name: "iCTF 2008 — Development Network"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2008 — The Softerror.com Network (stage 2)**
+
+  The internal development network of Softerror.com is only accessible after
+  compromising the public web server. Exploit it to pivot further into the
+  financial network.
+value: 0
+type: standard
+
+image: .
+protocol: http
+
+host: null
+connection_info: null
+healthcheck: null
+
+flags:
+    - ictf2008{devel_pwned}
+
+topics:
+    - web exploitation
+    - php
+    - lateral movement
+
+tags:
+    - web
+    - php
+    - ictf2008
+    - historical
+
+state: visible
+version: "0.1"

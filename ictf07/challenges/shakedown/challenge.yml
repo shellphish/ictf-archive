@@ -1,0 +1,21 @@
+name: "iCTF 2007 — Copyright Mafia: The Shakedown"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2007 — The Copyright Mafia**
+
+  The Mafia's enforcement arm: bosses and artists who don't pay up get
+  "shaken down". The PHP frontend manages boss/artist relationships
+  and enforces Mafia terms. Full source was GPG-encrypted on the VM.
+value: 0
+type: standard
+image: null
+protocol: http
+flags:
+    - ictf2007{shakedown_pwned}
+tags: [web, php, ictf2007, historical]
+files:
+    - src/artists.php
+    - src/bosses.php
+state: visible
+version: "0.1"

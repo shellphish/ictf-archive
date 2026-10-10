@@ -1,0 +1,63 @@
+edition: ictf02
+year: 2002
+title: "Treasure Hunt in Cyberspace"
+
+format: jeopardy
+# Note: Sequential task-based exercise. Not a classical CTF; teams completed
+# network tasks in sequence, scoring based on speed and completion.
+
+dates:
+  start: "2002-12-06"
+  end: "2002-12-06"
+  # The scavenge hunt was December 6, 2002 (from date.txt).
+  # A Spring 2002 exercise also occurred earlier in the year.
+
+participation:
+  num_teams: 2
+  notes: >
+    Two internal teams (Alpha and Omega) from a UCSB graduate security class.
+    A Spring and Fall variant of the exercise exist in the archive.
+
+challenges: []
+# Tasks involved: network scanning, host compromise, financial transaction
+# execution in a simulated payroll system. Tasks had timed windows.
+
+data:
+  - type: pcap
+    path: "dumps/treasurehunt_dataset.tgz"
+    description: "Network traffic and host audit data from the treasure hunt exercise"
+
+  - type: media
+    path: "dumps/img/"
+    description: "Images from the exercise"
+
+  - type: other
+    path: "Spring/"
+    description: "Spring 2002 exercise data"
+
+  - type: other
+    path: "ScavengeHunt/"
+    description: "Scavenge hunt variant data"
+
+infrastructure:
+  scorebot: "manual-timed"
+  network: "Simulated payroll network at UCSB"
+  docker:
+    full_environment: false
+    individual_challenges: false
+
+resources:
+  website: "https://ictf.cs.ucsb.edu/archive/2002"
+
+notes: >
+  The 2002 security exercise was not a proper CTF. It was an exercise in a
+  graduate security class at UC Santa Barbara. The class was divided into
+  two teams (Alpha and Omega) competing in a treasure hunt. The goal was to
+  break into a simulated (yet realistic) payroll system and perform a money
+  transfer transaction. Each task had to be completed in a limited time window
+  (e.g., 30 minutes); the first team to complete a task got the most points.
+  If both completed within the window, the slower team got partial credit.
+  A cheat-sheet was provided when time expired so teams could continue.
+  Tasks were revealed sequentially. The exercise was designed to generate a
+  dataset (host-based events, network events) for research on multi-step
+  attack correlation. The archive includes a Spring and a Fall/scavenge variant.

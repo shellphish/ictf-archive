@@ -1,0 +1,24 @@
+name: "iCTF 2015 — reportd"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: network
+description: |
+  **iCTF 2015 — Crowdsourcing Evil**
+
+  Employee reporting daemon (reused from ictf04-05)
+
+  Port: 6666. Source not available (only competition database preserved).
+value: 0
+type: standard
+image: null
+protocol: tcp
+port: 6666
+flags:
+    - ictf2015{reportd_pwned}
+tags:
+    - network
+    - ictf2015
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

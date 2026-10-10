@@ -1,0 +1,57 @@
+name: "iCTF 2010 — BinCGI (Storm Control Logs Viewer)"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2010 — Hit 'em Where it Hurts**
+
+  BinCGI (S3) is a "Storm Control Logs viewer" web service. All requests are
+  handled by a compiled 32-bit ELF CGI binary (`displ.cgi`), configured via
+  Apache's `Action` directive and an `.htaccess` `SetHandler displ` rule.
+
+  ## Architecture
+
+  The service runs in a chroot at `/chroot/SecuriTech_2006/challenge_15/`.
+  Apache routes all HTTP requests through `displ.cgi` via:
+
+  ```
+  Action displ /cgi-bin/displ.cgi
+  # .htaccess: SetHandler displ
+  ```
+
+  The binary reads log files from `htdocs/{2009,2010}/{Month}/YYYY_MM_D.log`
+  and displays them as HTML. The flag is stored in `/home/gpior/data/secret.txt`
+  inside the chroot, not accessible via the normal log browsing interface.
+
+  ## Vulnerability
+
+  Path traversal in the `displ.cgi` binary. The binary passes the requested
+  file path to `fopen()` with insufficient validation, allowing `../` sequences
+  to escape the htdocs directory and read `/home/gpior/data/secret.txt`.
+
+  Binary: 32-bit ELF, Intel 80386, dynamically linked, with debug symbols.
+
+  ## Files
+  - `src/displ.cgi` — compiled CGI binary (32-bit ELF, debug info)
+  - `src/htdocs/` — sample log files and index.html
+  - `src/secret.txt` — flag file (from `/home/gpior/data/secret.txt` in chroot)
+value: 0
+type: standard
+image: "."
+protocol: http
+port: 80
+flags:
+    - ictf2010{bincgi_pwned}
+topics:
+    - path traversal
+    - binary CGI
+tags:
+    - binary
+    - web
+    - path-traversal
+    - ictf2010
+    - historical
+files:
+    - src/displ.cgi
+    - src/secret.txt
+state: visible
+version: "0.1"

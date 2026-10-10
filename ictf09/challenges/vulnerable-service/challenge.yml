@@ -1,0 +1,36 @@
+name: "iCTF 2009 — Vulnerable System Service"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2009 — Know Your Enemy: Rise of the Botnet**
+
+  Each team's VM ran a traditional Linux service daemon managed via
+  `/etc/init.d/vulnerable_system_service`. Teams had to find and exploit
+  vulnerabilities in this service on rival teams' VMs while patching their
+  own. This was the conventional attack-defense component alongside the
+  novel browser-exploitation format.
+
+  Source not preserved in this archive; the service binary may be
+  recoverable from the team VM images in `Virtual Machine/`.
+value: 0
+type: standard
+
+image: null
+protocol: tcp
+flags:
+    - ictf2009{service_pwned}
+
+topics:
+    - binary exploitation
+    - attack-defense
+
+tags:
+    - binary
+    - service
+    - ictf2009
+    - historical
+
+files: []
+
+state: visible
+version: "0.1"

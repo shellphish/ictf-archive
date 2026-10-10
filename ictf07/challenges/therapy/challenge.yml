@@ -1,0 +1,21 @@
+name: "iCTF 2007 — Copyright Mafia: Therapy"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2007 — The Copyright Mafia**
+
+  Even Mafia members need mental health services. The therapy service
+  provides counseling for Mafia operatives. Runs Apache Tomcat (Java)
+  with a PHP frontend. The Java backend source was GPG-encrypted.
+value: 0
+type: standard
+image: null
+protocol: http
+flags:
+    - ictf2007{therapy_pwned}
+tags: [web, php, java, tomcat, ictf2007, historical]
+files:
+    - src/therapy.php
+    - src/setupdb.sql
+state: visible
+version: "0.1"

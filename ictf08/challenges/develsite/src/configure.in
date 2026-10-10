@@ -1,0 +1,26 @@
+# Initialization
+AC_INIT(softerror, 1.0, zanardi@softerror.com)
+AM_INIT_AUTOMAKE(softerror, 1.0)
+
+# Checks for programs
+AC_PROG_CC
+AC_PROG_INSTALL
+AC_PROG_RANLIB
+
+# Checks for headers
+#AC_CHECK_HEADERS(dirent.h sys/dirent.h, break)
+AC_CHECK_HEADERS(stdarg.h varargs.h, break)
+AC_HEADER_DIRENT
+
+# Checks for library functions.
+AC_FUNC_VPRINTF
+
+# Checks for the socket library
+AC_CHECK_LIB(socket, bind, , ,)
+
+# Checks for the name library
+AC_CHECK_LIB(nsl, gethostbyname, , ,)
+
+# Output functions
+AC_CONFIG_FILES(Makefile)
+AC_OUTPUT

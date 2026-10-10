@@ -1,0 +1,30 @@
+name: "iCTF 2005 — CC Auth Daemon (ccauthd)"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2005 — The Bass Tard Corporation**
+
+  A custom C authentication daemon implementing a simple text protocol:
+  REG (register), AUTH (authenticate), REVOKE, STATUS, PING, QUIT.
+  Responses are prefixed with + (success) or - (failure).
+  Find the vulnerability in the authentication logic.
+value: 0
+type: standard
+image: .
+protocol: tcp
+host: null
+connection_info: null
+flags:
+    - ictf2005{ccauthd_compromised}
+topics:
+    - binary exploitation
+    - authentication bypass
+    - C
+tags:
+    - binary
+    - ictf2005
+    - historical
+files:
+    - src/
+state: visible
+version: "0.1"

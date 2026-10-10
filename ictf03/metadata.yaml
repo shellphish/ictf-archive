@@ -1,0 +1,65 @@
+edition: ictf03
+year: 2003
+title: "Windows Goes Open-Source"
+
+format: attack-defense
+
+dates:
+  start: "2003-12-01"
+  end: "2003-12-31"
+  # Two rounds in 2003: November (20031114) and December (20031205)
+
+participation:
+  num_teams: 14
+  countries: [US]
+  notes: >
+    14 teams from 7 US universities. Some schools fielded more than one team.
+    Universities: UC Santa Barbara, North Carolina State University,
+    Naval Postgraduate School (Monterey), West Point, Georgia Tech,
+    University of Texas at Austin, University of Illinois Urbana-Champaign.
+
+challenges: []
+# Services hosted on VM images (available in vms/).
+
+data:
+  - type: other
+    path: "site/"
+    description: "Original competition website"
+
+  - type: pcap
+    path: "dumps/"
+    description: "Network traffic captures from competition"
+
+  - type: vm_image
+    path: "vms/"
+    description: "Virtual machine images for competition services"
+
+  - type: media
+    path: "pictures/"
+    description: "Event photographs"
+
+  - type: other
+    path: "20031114_CTF/"
+    description: "November 2003 round data"
+
+  - type: other
+    path: "20031205_CTF/"
+    description: "December 2003 round data"
+
+infrastructure:
+  scorebot: "custom"
+  network: "Multiple team networks"
+  docker:
+    full_environment: false
+    individual_challenges: false
+
+resources:
+  website: "https://ictf.cs.ucsb.edu/archive/2003/site"
+
+notes: >
+  The 2003 iCTF was the first edition to involve institutions other than
+  UC Santa Barbara. Fourteen teams from around the United States competed.
+  The theme was the (fictitious) announcement that Microsoft Windows was going
+  open-source — teams competed in an attack-defense format centered around
+  services related to this premise. Two rounds are present in the archive:
+  a November 14, 2003 round and a December 5, 2003 round.

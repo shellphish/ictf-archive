@@ -1,0 +1,35 @@
+name: "iCTF 2004 — UN Voting: Votecast"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2004 — The UN Voting System**
+
+  A TCP voting service on port 1969. All messages are XOR-encrypted with the
+  fixed key `F2654hD4`. The protocol sends `!<wwid> <vote>` where vote is the
+  flag. Find a vulnerability in the XOR encryption or the service logic to read
+  stored votes.
+value: 0
+type: standard
+
+image: .
+protocol: tcp
+flags:
+    - ictf2004{votecast_pwned}
+
+topics:
+    - cryptography
+    - binary exploitation
+    - XOR cipher
+
+tags:
+    - binary
+    - crypto
+    - tcp
+    - ictf2004
+    - historical
+    - attack-defense
+
+files: []
+
+state: visible
+version: "0.1"

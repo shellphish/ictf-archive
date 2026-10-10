@@ -1,0 +1,34 @@
+name: "iCTF 2005 — Contact Directory (contact)"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2005 — The Bass Tard Corporation**
+
+  The Bass Tard Corporation's internal contact/phone directory. Contacts have
+  a first name, last name, and extension field. The scorebot stored the flag
+  as a contact's extension, updated via a Perl CGI with hardcoded admin
+  credentials (`admin:retard`):
+
+  ```
+  GET /~contact/cgi-bin/contact_change.pl?login=admin&password=retard&first=…&last=…&ext=<flag>
+  ```
+
+  Flags were retrieved by looking up a contact's record via `contact.html`.
+value: 0
+type: standard
+image: null
+protocol: http
+host: null
+connection_info: null
+flags:
+    - ictf2005{contact_compromised}
+topics:
+    - web exploitation
+    - hardcoded credentials
+tags:
+    - web
+    - ictf2005
+    - historical
+files: []
+state: visible
+version: "0.1"

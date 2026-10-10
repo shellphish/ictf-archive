@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="HTML Tidy for Mac OS X (vers 1st December 2002), see www.w3.org"
+          name="generator" />
+    <meta name="Author" content="z4n4rd1" />
+    <link href="un.css" rel="stylesheet" type="text/css" />
+    <title>
+	To Poll Or Not To Poll!
+    </title>
+  </head>
+  <body>
+    <div class="banner">
+<table width="100%" border="0" summary="table">
+        <tr>
+          <td width="10%"><a href="index.html"><img alt = "UN" src="unlogo.gif" /></a></td>
+
+          <td width="100%"><h1>To Poll Or Not To Poll!</h1></td>
+
+          <td width="10%"><a href="index.html"><img alt="UN" src="unlogo.gif" /></a></td>
+
+	</tr>
+      </table>
+    </div>
+    <div class="main">
+      <p>
+	As for every respectable elections, these elections are based more on
+	polls than on reality. Therefore, we are going to give you the
+	opportunity to create your own forecast of the outcome of these
+	elections.</p>
+      
+      <p>Using the forms below you can upload to our poll server a number of
+      forecasts about the results of these elections.</p>
+
+      <p>Then you can review each forecast, or compute the overall poll using
+      your data only.</p>
+
+      <p>Also, you can also compute the global poll, which takes into account
+      the data of the polls of every other user.</p>
+
+    <p>Please use the forms below to provide data for yet another useless
+    poll!</p>
+<table summary="polls">
+<thead>
+<tr><td>Submit Your Poll</td>
+    <td>Review Your Poll</td>
+    <td>Compute Your Poll</td>
+    <td>Compute The Global Poll</td>
+</tr></thead>
+<tbody>
+<tr valign="top"><td>
+      <form name="createpoll" action="/cgi-bin/poll.pl" method="get">
+        <p><table summary="Upload poll">
+<tr><td>User:</td><td><input type="text" name="username"></td></tr>
+<tr><td>Poll ID:</td><td><input type="text" name="pollid"></td></tr>
+<tr><td>Dottore Schmidt:</td><td><input type="text" name="schmidt"></td></tr>
+<tr><td>Wolfgang Blitzkrieg:</td><td><input type="text" name="blitzkrieg"></td></tr>
+<tr><td>Matteo Stallone:</td><td><input type="text" name="stallone"></td></tr>
+<tr><td>Thor Blix:</td><td><input type="text" name="blix"></td></tr>
+<tr><td>Jacques Schtrappe:</td><td><input type="text" name="schtrappe"></td></tr>
+<tr><td></td><td><input type="submit" value="Submit Your Poll!"></td></tr></table>
+<input type="hidden" name="scope" value="local">
+<input type="hidden" name="op" value="upload">
+      </form>
+</td><td>
+      <form name="review" action="/cgi-bin/poll.pl" method="get">
+        <p><table summary="Review Poll">
+<tr><td>User:</td><td><input type="text" name="username"></td></tr>
+<tr><td>Poll ID:</td><td><input type="text" name="pollid"></td></tr>
+<tr><td></td><td><input type="submit" value="Review Your Poll!"></td></tr></table>
+<input type="hidden" name="scope" value="local">
+<input type="hidden" name="op" value="review">
+
+      </form>
+</td><td>
+      <form name="compute_local" action="/cgi-bin/poll.pl" method="get">
+        <p><table summary="Compute Personal Poll">
+<tr><td>User:</td><td><input type="text" name="username"></td></tr>
+<tr><td></td><td><input type="submit" value="Compute Your Poll!"></td></tr></table>
+<input type="hidden" name="scope" value="local">
+<input type="hidden" name="op" value="compute">
+
+      </form>
+</td><td>
+      <form name="compute_local" action="/cgi-bin/poll.pl" method="get">
+        <p><table summary="Compute Personal Poll">
+<tr><td></td><td><input type="submit" value="Compute The Global Poll!"></td></tr></table>
+<input type="hidden" name="scope" value="global">
+<input type="hidden" name="op" value="compute">
+
+      </form>
+ </td></tr>
+</tbody>
+</table>
+    </div>
+
+    <div class="footer">
+<hr />
+      Administered by <a href="/diebald">The Die-Bald Corporation</a>
+    </div>
+  </body>
+</html>

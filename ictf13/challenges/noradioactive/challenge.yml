@@ -1,0 +1,25 @@
+name: "iCTF 2013 — noradioactive"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2013 — Nuke 'em (or duck and cover!)**
+
+  noradioactive was a Level 1 service monitoring radioactivity levels in the
+  nuclear weapons development theme. Teams raced to develop nukes while rivals
+  launched cyber-attacks to disrupt their programs.
+
+  Flags were stored in radioactivity readings. Source not available in archive.
+value: 0
+type: standard
+image: null
+flags:
+    - ictf2013{noradioactive_pwned}
+tags:
+    - binary
+    - nuclear
+    - ictf2013
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

@@ -1,0 +1,43 @@
+name: "iCTF 2008 — The Bomb"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2008 — The Softerror.com Network (final stage)**
+
+  You've worked through the web server, the development network, and the
+  financial systems. Only one host stands between you and stopping the bomb.
+
+  The bomb timer is controlled by a C++ binary (`monitor`) that loads and
+  executes a 32-bit x86 ELF shared library (`firmware.img`). Defuse it.
+
+  *This challenge is the final stage of the iCTF 2008 attack chain.*
+value: 0
+type: standard
+
+image: .
+protocol: tcp
+
+host: null
+connection_info: null
+healthcheck: null
+
+flags:
+    - ictf2008{bomb_defused}
+
+topics:
+    - binary exploitation
+    - reverse engineering
+    - x86 assembly
+
+tags:
+    - binary
+    - re
+    - ictf2008
+    - historical
+
+files:
+    - src/firmware.asm
+    - src/monitor.cc
+
+state: visible
+version: "0.1"

@@ -1,0 +1,21 @@
+name: "iCTF 2007 — Copyright Mafia: The Snitch"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2007 — The Copyright Mafia**
+
+  Every crime syndicate needs informants. The Snitch service allows Mafia
+  operatives to report on rivals and targets. Implemented as a Python 2
+  network daemon with SQLite backend. Find a vulnerability.
+value: 0
+type: standard
+image: .
+protocol: tcp
+flags:
+    - ictf2007{snitch_pwned}
+tags: [binary, python, ictf2007, historical]
+files:
+    - src/snitch.py
+    - src/snitch_utils.py
+state: visible
+version: "0.1"

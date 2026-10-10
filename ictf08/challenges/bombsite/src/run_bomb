@@ -1,0 +1,10 @@
+#! /bin/sh
+
+MONITOR=/usr/local/sbin/monitor
+
+while [ true ]; do
+	$MONITOR && break
+done
+
+exit 0
+

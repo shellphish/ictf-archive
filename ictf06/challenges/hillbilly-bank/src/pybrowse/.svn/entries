@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="5"
+   name=""
+   committed-date="2006-11-17T03:43:07.882118Z"
+   url="file:///home/svn/CTF/pybrowse"
+   last-author="nomed"
+   kind="dir"
+   uuid="43014001-6422-0410-b0e9-cdfe59e8607f"
+   repos="file:///home/svn/CTF"
+   revision="20"/>
+<entry
+   committed-rev="5"
+   name="pexpect.py"
+   text-time="2006-11-20T22:54:20.000000Z"
+   committed-date="2006-11-17T03:43:07.882118Z"
+   checksum="76d5fbea7a34f7050b65ab400f4eaa64"
+   last-author="nomed"
+   kind="file"
+   prop-time="2006-11-20T22:54:20.000000Z"/>
+<entry
+   committed-rev="5"
+   name="pybrowse.py"
+   text-time="2006-11-20T22:54:20.000000Z"
+   committed-date="2006-11-17T03:43:07.882118Z"
+   checksum="feadae5aa02c78dc011e9bc31ba8b731"
+   last-author="nomed"
+   kind="file"
+   prop-time="2006-11-20T22:54:20.000000Z"/>
+<entry
+   committed-rev="5"
+   name="browserpersonality.py"
+   text-time="2006-11-20T22:54:20.000000Z"
+   committed-date="2006-11-17T03:43:07.882118Z"
+   checksum="a9758c10bbc98b95b3d5f481e4f813f4"
+   last-author="nomed"
+   kind="file"
+   prop-time="2006-11-20T22:54:20.000000Z"/>
+<entry
+   committed-rev="5"
+   name="myhttp.py"
+   text-time="2006-11-20T22:54:20.000000Z"
+   committed-date="2006-11-17T03:43:07.882118Z"
+   checksum="48395b1fb7619f2f8e52ee38ba58076e"
+   last-author="nomed"
+   kind="file"
+   prop-time="2006-11-20T22:54:20.000000Z"/>
+</wc-entries>

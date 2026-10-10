@@ -1,0 +1,92 @@
+edition: ictf09
+year: 2009
+title: "Know Your Enemy: Rise of the Botnet"
+
+format: attack-defense
+# Unusual design: teams created drive-by download attacks against
+# simulated browser users, rather than traditional service exploitation.
+
+dates:
+  start: "2009-12-04"
+  end: "2009-12-04"
+  notes: "December 4, 2009 (from IRC log timestamps)"
+
+participation:
+  num_teams: null
+  notes: >
+    International university teams. Team logos visible in site/ directory.
+    Teams include ENOFLAG, PPP, RedCops, FluxFingers, nibbles, UCLions,
+    ChocolateMakers, Syper, and many others (~50+ teams from IRC).
+
+challenges:
+  - name: erlang-browser
+    title: "Erlang Browser"
+    category: web
+    description: >
+      An Erlang-based automated web browser. Teams exploited it via
+      drive-by download attacks using Erlang erl_eval injection.
+
+  - name: robabank
+    title: "RobaBank"
+    category: web
+    description: >
+      In-game banking service. Browsers held accounts there; credential theft
+      from exploited browsers let teams steal funds.
+
+  - name: madoffunds
+    title: "MadoFunds"
+    category: misc
+    description: >
+      In-game currency exchange (Madoff parody). Convert CTF challenge
+      "leetness points" to in-game money.
+
+  - name: vulnerable-service
+    title: "Vulnerable System Service"
+    category: binary
+    description: >
+      Traditional attack-defense service daemon on each team's Linux VM
+      (/etc/init.d/vulnerable_system_service).
+
+data:
+  - type: pcap
+    path: "dumps/ctf09_traffic.tgz"
+    description: "Full competition network traffic"
+
+  - type: pcap
+    path: "dumps/ictf09dump.tgz"
+    description: "Additional network dump"
+
+  - type: vm_image
+    path: "Virtual Machine/"
+    description: "Windows XP development VM (15 GB VMDK + 495 MB snapshot) — browser development environment"
+
+  - type: media
+    path: "site/"
+    description: "Team logos, competition images, web interface files"
+
+  - type: media
+    path: "pictures/"
+    description: "Event photographs"
+
+infrastructure:
+  scorebot: "custom"
+  network: "Multiple team networks"
+  docker:
+    full_environment: false
+    individual_challenges: true  # challenge.yml + README.md created for all 4 known challenges
+
+resources:
+  website: "https://ictf.cs.ucsb.edu/archive/2009/site"
+
+notes: >
+  The theme of the 2009 iCTF was "Know Your Enemy: Rise of the Botnet."
+  Held December 4, 2009. Groundbreaking format: instead of traditional
+  server-side services, teams attacked Erlang-based web browser bots.
+  Browsers crawled the web, found team sites via an in-game search engine,
+  and were exploited via drive-by downloads (main attack: Erlang erl_eval
+  injection). A traditional attack-defense service daemon
+  (vulnerable_system_service) also ran on each team VM. In-game economy:
+  standalone CTF challenges earned "leetness points" redeemable at MadoFunds;
+  exploited browser credentials could be used to steal from RobaBank.
+  ENOFLAG (TU Berlin) was among the top teams. Archive: ~44 GB PCAPs +
+  Windows XP development VM (browsers.tar.gz source not preserved).

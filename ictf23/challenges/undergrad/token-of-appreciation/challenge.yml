@@ -1,0 +1,32 @@
+name: "token_of_appreciation"
+author: "iCTF 2023 organizers"
+category: reverse engineering
+description: |
+  We're building an LLM and just now getting started with the first semester. We heard about these tokens everyone is
+  talking about and so we immediately jumped in and started to build a tokenizer ourselves.
+  But somehow we lost the code (dang LLMs keep getting command execution on my machine).
+  Could you help us recover the flag?
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{13x1ng_p4rs1ng_f13xing_cur5ing}
+
+topics:
+    - RE
+
+tags:
+    - medium difficulty
+
+files:
+    - attachments/token_of_appreciation
+    - attachments/token_of_appreciation_fake.l
+    - attachments/Makefile
+
+state: visible
+version: "0.1"

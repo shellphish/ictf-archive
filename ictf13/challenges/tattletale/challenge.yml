@@ -1,0 +1,25 @@
+name: "iCTF 2013 — tattletale"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2013 — Nuke 'em (or duck and cover!)**
+
+  tattletale was a Level 2 intelligence agency data exfiltration service.
+  Teams leaked classified intel from rivals' tattletale services to gain
+  advantage in the nuclear arms race. Reused in iCTF 2015 (port 13007).
+
+  Source not available in archive.
+value: 0
+type: standard
+image: null
+flags:
+    - ictf2013{tattletale_pwned}
+tags:
+    - binary
+    - intelligence
+    - ictf2013
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

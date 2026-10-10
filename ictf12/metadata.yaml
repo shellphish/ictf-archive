@@ -1,0 +1,62 @@
+edition: ictf12
+year: 2013
+title: "SCADA Breakdown"
+
+format: attack-defense
+# Note: This edition ran in March 2013 (delayed from 2012 school year).
+# The directory is named ictf12 but the competition is ictf 2012-2013.
+
+dates:
+  start: "2013-03-22"
+  end: "2013-03-22"
+  # From description3.txt: "March 22nd, 2013 from 8am PDT to 5pm PDT"
+
+participation:
+  num_teams: null
+  notes: >
+    Teams from educational institutions around the world.
+    Registration via http://www.ictf2013.info
+
+challenges:
+  - name: scada
+    title: "SCADA Critical Infrastructure"
+    category: binary
+    description: >
+      Teams attacked and defended SCADA (Supervisory Control and Data
+      Acquisition) systems — the software controlling critical industrial
+      infrastructure such as power grids, water treatment, and manufacturing.
+      Teams played as both cyber-defenders of their nation's infrastructure
+      and as stealthy attackers exploiting Sicilian hackers' vulnerabilities.
+
+data:
+  - type: media
+    path: "pictures/"
+    description: "Event photographs"
+
+  - type: other
+    path: "description3.txt"
+    description: "Full competition theme description and rules"
+
+infrastructure:
+  scorebot: "ctf-scorebot5"
+  network: >
+    Each team was given a server running critical infrastructure services.
+    ZDI (Zebra Dwarf Institution) framework for exploit submission.
+    Flow-based attack detection scoring.
+  docker:
+    full_environment: false
+    individual_challenges: false
+
+resources:
+  website: null
+
+notes: >
+  The 2012-2013 iCTF (directory ictf12) ran on March 22, 2013 from 8am to 5pm
+  PDT. The theme was "SCADA Breakdown" — teams attacked critical infrastructure
+  SCADA components. The competition used the "National Cyberdefense Corps"
+  narrative: teams were hired to secure their country's infrastructure against
+  Sicilian hackers. Scoring used the ZDI (Zebra Dwarf Institution) framework
+  where teams submitted exploits that the organizers ran on their behalf.
+  Teams also scored points by detecting attacks (flow-based detection) while
+  false positives penalized their score. The local archive is minimal (7.6 MB)
+  with only pictures and a description file preserved.

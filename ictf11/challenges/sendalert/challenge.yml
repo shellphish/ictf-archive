@@ -1,0 +1,25 @@
+name: "iCTF 2011 — Send Alert"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: network
+description: |
+  **iCTF 2011 — Money Laundering**
+
+  Send Alert was an alert and notification service within the mule operation
+  infrastructure. Captured 5,537 times.
+
+  Flags were stored in pending alerts awaiting delivery.
+
+  Source: encrypted VM archive `site/iC7F-l337-vu1n.7z` (AES-encrypted, password unknown).
+value: 0
+type: standard
+image: null
+flags:
+    - ictf2011{sendalert_compromised}
+tags:
+    - network
+    - ictf2011
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

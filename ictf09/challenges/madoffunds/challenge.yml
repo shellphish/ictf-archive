@@ -1,0 +1,30 @@
+name: "iCTF 2009 — MadoFunds"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: misc
+description: |
+  **iCTF 2009 — Know Your Enemy: Rise of the Botnet**
+
+  MadoFunds was the in-game money-exchange service (a Madoff / Ponzi scheme
+  parody). Teams could convert "leetness points" earned from standalone
+  CTF challenges into in-game currency at a rate that fluctuated throughout
+  the competition. Funds were then used in the overall scoring.
+
+  Source not preserved in this archive.
+value: 0
+type: standard
+
+image: null
+protocol: http
+flags:
+    - ictf2009{madoffunds_pwned}
+
+tags:
+    - misc
+    - web
+    - ictf2009
+    - historical
+
+files: []
+
+state: visible
+version: "0.1"

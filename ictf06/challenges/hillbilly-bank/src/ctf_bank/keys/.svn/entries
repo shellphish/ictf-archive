@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="15"
+   name=""
+   committed-date="2006-11-20T22:57:39.985867Z"
+   url="file:///home/svn/CTF/bank_scorebot/ctf_bank/keys"
+   last-author="nomed"
+   kind="dir"
+   repos="file:///home/svn/CTF"
+   revision="32"/>
+<entry
+   committed-rev="15"
+   name="genkey"
+   text-time="2006-11-16T22:56:34.000000Z"
+   committed-date="2006-11-20T22:57:39.985867Z"
+   checksum="a1795a0c825ffc4492d5bd17c1b6803c"
+   last-author="nomed"
+   kind="file"
+   prop-time="2006-11-20T22:57:29.000000Z"/>
+<entry
+   committed-rev="15"
+   name="parse.sh"
+   text-time="2006-11-16T01:50:26.000000Z"
+   committed-date="2006-11-20T22:57:39.985867Z"
+   checksum="8e2f204b505df427fa837750cd6a053d"
+   last-author="nomed"
+   kind="file"
+   prop-time="2006-11-20T22:57:29.000000Z"/>
+<entry
+   committed-rev="15"
+   name="private.pem"
+   text-time="2006-11-16T22:56:36.000000Z"
+   committed-date="2006-11-20T22:57:39.985867Z"
+   checksum="da1fba71a231e82dfd8ae5e3b7bd828d"
+   last-author="nomed"
+   kind="file"/>
+<entry
+   committed-rev="15"
+   name="public.pem"
+   text-time="2006-11-16T22:56:36.000000Z"
+   committed-date="2006-11-20T22:57:39.985867Z"
+   checksum="22c44977da5ad2ff59ea4a521be6707f"
+   last-author="nomed"
+   kind="file"/>
+</wc-entries>

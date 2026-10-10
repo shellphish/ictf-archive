@@ -1,0 +1,108 @@
+edition: ictf11
+year: 2011
+title: "Money Laundering"
+
+format: attack-defense
+# Unusual scoring: teams laundered "dirty" points through service exploitation.
+# Theme: money laundering operations. Teams exploited mule services.
+
+dates:
+  start: "2011-12-02"
+  end: "2011-12-02"
+  # Friday, December 2, 2011, 8am–5pm PST (from iCTF_2011_Description.txt)
+
+participation:
+  num_teams: null  # 52 challenges solved by teams; approximate team count unknown
+  notes: >
+    International university teams. 52 standalone challenges available
+    (45 of 52 were solved). First challenge solved at 8:03am (3 min in);
+    last at 4:50pm. Average money-to-points conversion: 2%.
+
+challenges:
+  - name: muleadmin
+    title: "Mule Admin"
+    category: web
+    description: "Money mule administrator portal — 46,867 captures (most popular service)"
+
+  - name: mulemanager
+    title: "Mule Manager"
+    category: web
+    description: "Money mule management service — 34,559 captures"
+
+  - name: convicts
+    title: "Convicts"
+    category: web
+    description: "Convict/criminal records service — 18,552 captures"
+
+  - name: egoats
+    title: "eGoats"
+    category: web
+    description: "eGoats service — 13,234 captures"
+
+  - name: mailgateway
+    title: "Mail Gateway"
+    category: network
+    description: "Email gateway service — 6,437 captures"
+
+  - name: sendalert
+    title: "Send Alert"
+    category: network
+    description: "Alert/notification service — 5,537 captures"
+
+  - name: muleuser
+    title: "Mule User"
+    category: web
+    description: "Money mule user portal — 2,953 captures"
+
+  - name: mulemassageappointment
+    title: "Mule Massage Appointment"
+    category: web
+    description: "Mule massage appointment booking — 1,995 captures"
+
+  - name: smsgateway
+    title: "SMS Gateway"
+    category: network
+    description: "SMS notification gateway — 1,951 captures"
+
+  - name: msgdispatcher
+    title: "Message Dispatcher"
+    category: network
+    description: "Message dispatch service — 507 captures (least popular)"
+
+data:
+  - type: other
+    path: "site/"
+    description: >
+      Competition website with scripts, team data, challenge descriptions,
+      game state pusher documentation. Also contains iC7F11-n37.ova (network VM,
+      334MB) and iC7F-l337-vu1n.7z (service VM, 772MB AES-encrypted).
+
+  - type: media
+    path: "pictures/"
+    description: "Event photographs"
+
+  - type: other
+    path: "fs.html"
+    description: "File system browser for competition data"
+
+infrastructure:
+  scorebot: "custom"
+  network: "Multiple team networks"
+  game_state: "JSON pushed to teams on port 55555 TCP each tick"
+  docker:
+    full_environment: false
+    individual_challenges: false
+
+resources:
+  website: "https://ictf.cs.ucsb.edu/archive/2011/site"
+
+notes: >
+  The 2011 iCTF theme was money laundering. Teams defended 10 services and
+  exploited rivals' copies. Captured flags were submitted to a "money launderer"
+  (the scorekeeper) for points, but the conversion carried risk — the feds could
+  detect the laundering operation and penalize teams. Game state was pushed to
+  teams via a JSON stream on port 55555 TCP each scoring tick. Services included
+  mule management, convict records, email/SMS gateways, and message dispatchers.
+  The service VM is in site/iC7F-l337-vu1n.7z (AES-encrypted 7z, 772MB containing
+  iCTF 2011 Server.ova). Network infrastructure is in site/iC7F11-n37.ova (334MB).
+  Total archive: ~1.6 GB (minimal — traffic dumps not preserved).

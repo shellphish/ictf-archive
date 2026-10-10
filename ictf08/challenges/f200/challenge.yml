@@ -1,0 +1,34 @@
+name: "iCTF 2008 — Forensics 200: Stereogram"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: forensics
+description: |
+  A stereogram image hides a secret. Extract the hidden message.
+
+  *Hint: Think about tools designed to hide data inside JPEG images while
+  preserving their statistical properties.*
+value: 200
+type: standard
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf2008{f200_flag}
+
+topics:
+    - steganography
+    - forensics
+
+tags:
+    - forensics
+    - steganography
+    - outguess
+    - ictf2008
+
+files:
+    - attachments/
+
+state: visible
+version: "0.1"

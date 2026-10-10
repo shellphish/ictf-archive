@@ -1,0 +1,544 @@
+#!/usr/bin/python
+
+import browserpersonality
+import myhttp
+
+import HTMLParser
+import urlparse
+import urllib
+import httplib
+import re
+import zlib
+import types
+import popen2
+
+htmltidy_options = "-m 2> /dev/null"
+
+##  TODO : http-equiv redirect
+##  Ignore html comments (OK)
+##  Ignore empty attrs <font size=>
+
+# Submit
+# Cookie: PREF=ID=778645db55232677:FF=4:LD=en:NR=10:TM=1049334649:LM=1093300410:C2COFF=1:L=0qY1RAA:S=GD2wOY2awbdRoMVp; 4=; PREF=ID=778645db55232677:TM=1049334649:LM=1083289959:L=0qY1RAA:S=4OCnhW_GzPkicKYd
+
+# Set:
+# set-cookie: PREF=ID=2ea55dba094190c2:TM=1101256797:LM=1101256797:S=Jswm6aHL_KcrTKTZ; expires=Sun, 17-Jan-2038 19:14:07 GMT; path=/; main=.google.com
+# [set-cookie] [ASPSESSIONIDCAQQQCDC=KMOHHBIDAEHMILFGKDKMLEOD; path=/]
+
+
+def decomment(html):
+   ret = ""
+   p1 = 0
+   p2 = html.find("<!--",p1)
+   while p2 != -1:
+      if p2 != p1:
+         ret += html[p1:p2]
+      p1 = html.find("-->", p2)
+      if p1 == -1:
+         break
+      p1 += 3
+      p2 = html.find("<!--",p1)
+   ret += html[p1:]
+   return ret
+
+class Cookie:
+   def __init__(self, domain, path, exp, value):
+      self.domain = domain
+      self.path = path
+      self.exp = exp
+      self.value = value
+
+   def getClientHeader(self):
+      return self.value
+
+
+class Form:
+   def __init__(self, browser, method, action, name):
+      self.browser = browser
+      self.method = method
+      self.action = action
+      self.name = name
+      self.fieldorder = []
+      self.radios = {}
+      self.fields = {}
+      self.buttons = {}
+      
+   def addField(self, name, value):
+      self.fields[name] = value
+      self.fieldorder.append(name)
+   
+   def addRadio(self, name, value,checked):
+     self.radios[(name,value)] = checked
+     self.fieldorder.append((name,value))
+
+   def checkRadio(self, name, value, checked=1):
+      for i in self.radios.keys():
+         if i[0] == name:
+            self.radios[(i[0], i[1])] = 0
+      self.radios[(name,value)] = checked
+                     
+
+   def getRadioOptions(self, name):
+      result = []
+      for i in self.radios.keys():
+         if i[0] == name:
+            result.append(i[1])
+      return result
+
+   def encode(self, buttonname):
+      ordered = []
+      for f in self.fieldorder:
+         if type(f) == types.TupleType:
+            if self.radios[f] == 1:
+               ordered.append(f)
+         else:
+            ordered.append((f,self.fields[f])) 
+      ret = urllib.urlencode(ordered)
+
+      if not buttonname:
+         return  ret
+      else:
+         button = {}
+         if buttonname in self.buttons:
+            button[buttonname] = self.buttons[buttonname]
+         else:
+            button[buttonname] = ""
+         ret =  ret
+         if len(ret) != 0:
+            ret += "&"
+         return  ret + urllib.urlencode(button)
+
+   def click(self, buttonname):
+      if self.method == "post":
+         return self.browser.doPost(self.action, self.encode(buttonname))
+      return self.browser.doGet(self.action, self.encode(buttonname))
+
+
+class BrowserParser(HTMLParser.HTMLParser):
+   def __init__(self, browser):
+      HTMLParser.HTMLParser.__init__(self)
+      self.browser = browser
+      self.links = []
+      self.forms = []
+      self.subframes = []
+      self.currentForm = None
+      self.current_select = None
+
+   def handle_starttag(self, tag, attrs):
+      if tag == "a":
+         self.proc_link(attrs)
+      elif tag == "form":
+         self.proc_form(attrs)
+      elif tag == "input":
+         self.proc_input(attrs)
+      elif tag == "textarea":
+         self.proc_textarea(attrs)
+      elif tag == "select":
+         self.proc_select(attrs)
+      elif tag == "option":
+         self.proc_option(attrs)
+      elif tag == "frame":
+         self.proc_frame(attrs)
+
+
+   def handle_endtag(self, tag):
+      if tag == "form":
+         if self.currentForm:
+              self.forms.append(self.currentForm)
+         self.currentForm = None
+      return
+
+   def handle_data(self, data):
+      return
+
+   def proc_form(self, attrs):
+      method = ""
+      action = ""
+      name = ""
+      for (key, val) in attrs:
+         if key == "method":
+            method = val
+         elif key == "action":
+            action = val
+         elif key == "name":
+            name = val
+      self.currentForm = Form(self.browser, method, action, name)
+
+   def proc_textarea(self, attrs):
+      name = ""
+      value = ""
+      for (key, val) in attrs:
+         if key == "name":
+            name = val
+      self.currentForm.addField(name, value)
+
+   def proc_option(self, attrs):
+      value = ""
+      check = 0
+
+      for (key, val) in attrs:
+         if key == "value":
+            value = val
+      if self.current_select[1] == None:
+         # No default set, use first option
+         check = 1
+         self.current_select = (self.current_select[0], "")
+      elif value == self.current_select[1]:
+         check = 1
+
+      self.currentForm.addRadio(self.current_select[0], value, check)
+      
+
+   def proc_select(self, attrs):
+      name = ""
+      tabindex = None
+
+      for (key, val) in attrs:
+         if key == "name":
+            name = val
+         elif key == "tabindex":
+            tabindex = val
+         elif key == "name":
+            name = val
+      self.current_select = (name, tabindex)
+      
+   def proc_input(self, attrs):
+      name = ""
+      value = ""
+      type = ""
+      checked = 0
+      for (key, val) in attrs:
+         if key == "name":
+            name = val
+         elif key == "value":
+            value = val
+         elif key == "type":
+            type = val
+         elif key == "checked":
+            checked = 1
+
+      if name != "":
+         if type == "submit":
+            self.currentForm.buttons[name] = value
+         elif type == "checkbox" or type == "radio":
+            if value == "":
+               value = "on"
+            self.currentForm.addRadio(name,value,checked)
+         elif type != "reset":
+            self.currentForm.addField(name, value)
+
+
+   def proc_link(self, attrs):
+      for (key, val) in attrs:
+         if key == "href":
+            self.links.append(val)
+
+   def proc_frame(self,attrs):
+      for (key, val) in attrs:
+         if key == "src":
+            self.subframes.append(val)
+
+
+#uchar [a-zA-Z0-9$\-_\.\+\!\*'\(\),]
+
+netpat = "([a-zA-Z0-9\-\.]+)(:[0-9]+)?"
+pathpat = "([a-zA-Z0-9$\-_\.\+\~\!\*'\(\),/]*/)([a-zA-Z0-9$\-_\.\+\!\*'\(\),]+)?"
+redirectpat = re.compile("http-equiv=\"refresh\"[^>]*URL=(?P<id>[^\"]*)")
+
+class Browser:
+   def __init__(self, url, personality = None, referer = None, cookies = None, debug = None):
+      self.personality = personality
+      self.debug = debug
+      self.referer = referer
+
+      (scheme, net, path, params, query, frag) = urlparse.urlparse(url)
+      self.protocol = scheme
+
+      res = re.match(netpat, net)
+      if not res:
+         raise Exception("Illegal network part in: " + url)
+      self.host = res.group(1);
+      if res.group(2):
+         self.port = int(res.group(2)[1:])
+      else:
+         if self.protocol == "https":
+            self.port = 443
+         else:
+            self.port = 80
+
+      if self.debug:
+         print "Proto [%s] host [%s] port [%i]" % (self.protocol, self.host, self.port)
+
+      self.documentroot = "/"
+      self.filename = ""
+      #print "Pathmatch: " + path
+      if path != "":
+         res = re.match(pathpat, path)
+         if not res:
+             raise Exception("Illegal path part in: " + url)
+         if self.debug:
+            print "[%s] [%s] [%s]" % (res.group(0), res.group(1), res.group(2))
+         if res.group(1):
+            self.documentroot =  res.group(1)
+         if res.group(2):
+            self.filename = res.group(2)
+      if self.debug:
+         print "Root [%s] file [%s]" % (self.documentroot, self.filename)
+
+      self.query = query   
+
+      self.headers = []
+      self.page = ""
+      self.status = 0
+      self.links = []
+      self.forms = []
+      self.subframes = []
+
+      if cookies:
+         self.cookies = [] + cookies
+      else:
+         self.cookies = []
+
+
+   def open(self,  data=None):
+      if self.protocol == "https":
+         conn = myhttp.MyHTTPSConnection(self.host, self.port)
+      else:
+         conn = myhttp.MyHTTPConnection(self.host, self.port)
+      conn.connect()
+   
+      req = self.documentroot + self.filename
+      if self.query:
+         req += "?" + self.query
+      if self.debug:
+         print "Retrieving " + req
+
+      hostpart = self.host
+      if self.protocol == "https" and self.port != 443:
+         hostpart += ":" + str(self.port)
+      elif self.protocol == "http" and self.port != 80:
+         hostpart += ":" + str(self.port)
+
+      if data:
+         conn.putrequest("POST", req, skip_host=1, skip_accept=1)
+         if self.personality:
+            headers = self.personality.getHeaders(hostpart, self.referer, len(data))
+            for (key,val) in headers:
+               conn.putheader(key, val)
+         else:
+            conn.putheader("Host", hostpart)
+            conn.putheader("Content-Type", "application/x-www-form-urlencoded")
+            conn.putheader("Content-Length", str(len(data)))
+         cookiestr = ""
+         for c in self.cookies:
+            if len(cookiestr) > 0:
+               cookiestr += ";"
+            cookiestr += c.getClientHeader()
+            if self.debug:
+               print "Putting cookie: " + c.getClientHeader()
+         if len(cookiestr) > 0:
+             #print "Cookiestr:%s" % cookiestr
+             conn.putheader("Cookie",cookiestr) 
+         conn.endheaders()
+         if self.debug:
+            print "Putting data: " + data
+         conn.send(data)
+      else:
+         conn.putrequest("GET", req, skip_host=1, skip_accept=1)
+         if self.personality:
+            headers = self.personality.getHeaders(hostpart, self.referer, 0)
+            for (key,val) in headers:
+               conn.putheader(key, val)
+         else:
+            conn.putheader("Host", hostpart)
+         cookiestr = ""
+         for c in self.cookies:
+            if len(cookiestr) > 0:
+               cookiestr += ";"
+            cookiestr += c.getClientHeader()
+            if self.debug:
+               print "Putting cookie: " + c.getClientHeader()
+         if len(cookiestr) > 0:
+             #print "Cookiestr:%s" % cookiestr
+             conn.putheader("Cookie",cookiestr) 
+         conn.endheaders()
+      
+      response = conn.getresponse()
+      self.page = response.read()
+      self.status = response.status
+      self.headers = response.msg.items()
+
+
+      if "set-cookie" in response.msg:
+         self.processCookie(response.msg["set-cookie"])
+
+      if "content-encoding" in response.msg:
+         enctype = response.msg["content-encoding"]
+         if enctype == "gzip" or enctype == "x-gzip":
+            
+            self.page = zlib.decompress(self.page)
+            print "Decompressed: " + self.page
+         elif enctype != "identity":
+            print "Error: Got data encoded in an unknown way! (" + enctype + ")"
+
+
+   def processCookie(self, cookie):
+      toks = cookie.split(";")
+      if self.debug:
+            print "Got cookie: " + toks[0]
+      c = Cookie(None, None, None, toks[0])
+      self.cookies.append(c)
+
+   def tidy(self):
+      (stdout, stdin) = popen2.popen2("tidy " + htmltidy_options)
+      stdin.write(self.page)
+      stdin.close()
+      self.page = ""
+      chunk = stdout.read()
+      while chunk:
+         self.page += chunk
+         chunk = stdout.read()
+      stdout.close()
+
+   def parse(self):
+      p = BrowserParser(self)
+      p.feed(decomment(self.page))
+      p.close()
+      self.subframes = p.subframes
+      self.links = p.links
+      self.forms = p.forms
+
+   def getHeader(self, key):
+      for  (tkey, val) in self.headers:
+         if key == tkey:
+            return val
+      return None
+
+   def getSubframes(self):
+      ret = []
+      for f in self.subframes:
+         ret.append(self.click(f))
+      return ret
+
+   def isRedirect(self):
+      if self.status == 302 or self.status == 301:
+         return 1
+      elif redirectpat.search(self.page):
+         return 1
+      else:
+         return None
+
+   def doRedirect(self):
+      if not self.isRedirect():
+         return None
+      else:
+         loc = self.getHeader("location")
+         if not loc:
+            m = redirectpat.search(self.page)
+            loc = m.group('id')
+
+         if self.debug:
+            print "New location is " + loc
+
+         ret = Browser(self.getFullLink(loc), self.personality, self.getFullLink(self.filename), self.cookies, self.debug)
+         ret.open()
+         return ret
+
+   def doRedirects(self):
+      ptr = self
+      while ptr.isRedirect():
+         ptr = ptr.doRedirect() 
+      return ptr
+
+   def getFullLink(self, link):
+      if link == "":
+         link = "/"      
+ 
+      if link.find("http://") == 0 or link.find("https://") == 0:
+         return link
+      elif link[0] == '/':
+         ret = self.protocol + "://" + self.host
+         if self.protocol == "https" and self.port != 443:
+            ret += ":" + str(self.port)
+         elif self.protocol == "http" and self.port != 80:
+            ret += ":" + str(self.port)
+         ret += link
+         return ret
+      else:
+         ret = self.protocol + "://" + self.host
+         if self.protocol == "https" and self.port != 443:
+            ret += ":" + str(self.port)
+         elif self.protocol == "http" and self.port != 80:
+            ret += ":" + str(self.port)
+         ret += self.documentroot + link
+         return ret
+
+   def containsLink(self, link):
+      tst = self.getFullLink(link)
+      for l in self.links:
+         if tst == self.getFullLink(l):
+            return 1
+      return None
+
+   def containsLinks(self, links):
+      for l in links:
+         if not self.containsLink(l):
+            return None
+      return 1
+
+   def click(self, link, redirect=1):
+      if link:
+         full = self.getFullLink(link)
+         page = Browser(full, self.personality, self.getFullLink(self.filename), self.cookies, self.debug)
+         page.open()
+         if redirect:
+            return page.doRedirects()
+         else:
+            return page
+      else:
+         self.open()
+         if redirect:
+            return self.doRedirects()
+         else:
+            return self
+   
+   def doPost(self, link, data):
+      full = self.getFullLink(link)
+      # Support GET and POST at the same time
+      #(scheme, net, path, params, query, frag) = urlparse.urlparse(full)
+      #full =  urlparse.urlunparse((scheme, net, path, params, "", ""))
+      page = Browser(full, self.personality, self.getFullLink(self.filename), self.cookies, self.debug)
+      page.open(data=data)
+      return page
+
+   def doGet(self, link, data):
+      full = self.getFullLink(link)
+      #print "Opening " + full
+      (scheme, net, path, params, query, frag) = urlparse.urlparse(full)
+      query = data
+      #print "With data " + urlparse.urlunparse((scheme, net, path, params, query, frag))
+      page = Browser( urlparse.urlunparse((scheme, net, path, params, query, frag)), self.personality, self.getFullLink(self.filename), self.cookies, self.debug)
+      #page.open(data=data)
+      page.open( None )
+      return page
+
+   def printInfo(self):
+      print "Headers:"
+      for (key, val) in self.headers:
+         print "  [%s] [%s]" % (key, val)
+
+      print "Links:"
+      for l in self.links:
+         print "  Link: " + l
+
+      print "Subframes:"
+      for s in self.subframes:
+         print "  Frame: " + s
+
+      print "Forms:"
+      for f in self.forms:
+         print "  Form %s: %s %s" % (f.name, f.action, f.encode(None))
+
+      print "Cookies:"
+      for c in self.cookies:
+          print "  Cookie: %s" % c.getClientHeader()

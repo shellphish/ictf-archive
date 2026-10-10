@@ -1,0 +1,27 @@
+name: "iCTF 2013 — mathconsole"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2013 — Nuke 'em (or duck and cover!)**
+
+  mathconsole was a Level 3 mathematical computation service with cloud-based
+  file storage — used to calculate nuclear yield parameters. Reused in iCTF 2015 (port 9899).
+
+  Exploiting mathconsole required bypassing the service's computational validation
+  to access stored flag data.
+
+  Source not available in archive.
+value: 0
+type: standard
+image: null
+flags:
+    - ictf2013{mathconsole_pwned}
+tags:
+    - binary
+    - pwn
+    - ictf2013
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

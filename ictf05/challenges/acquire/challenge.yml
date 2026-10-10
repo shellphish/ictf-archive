@@ -1,0 +1,33 @@
+name: "iCTF 2005 — Spam World: Acquire Relay Tracker"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2005 — The Spam World**
+
+  A spam relay tracking service at `/~acquire/cgi-bin/`. The scorebot registers
+  spam relays with a random IPv6 address and stores the flag as the `de`
+  (description/destination) field. Find a vulnerability to read stored relay records.
+value: 0
+type: standard
+
+image: .
+protocol: http
+flags:
+    - ictf2005{acquire_pwned}
+
+topics:
+    - web exploitation
+    - CGI security
+
+tags:
+    - web
+    - php
+    - cgi
+    - ictf2005
+    - historical
+    - attack-defense
+
+files: []
+
+state: visible
+version: "0.1"

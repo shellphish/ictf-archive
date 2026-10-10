@@ -1,0 +1,28 @@
+name: "iCTF 2005 — Report Filing Daemon (reportd)"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2005 — The Bass Tard Corporation**
+
+  A C network daemon for filing and retrieving reports. It stores data
+  to `report.data` with file locking. Uses a custom alphanumeric encoding
+  table. Find the vulnerability.
+value: 0
+type: standard
+image: .
+protocol: tcp
+host: null
+connection_info: null
+flags:
+    - ictf2005{reportd_compromised}
+topics:
+    - binary exploitation
+    - C
+tags:
+    - binary
+    - ictf2005
+    - historical
+files:
+    - src/
+state: visible
+version: "0.1"

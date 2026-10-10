@@ -1,0 +1,27 @@
+name: "iCTF 2006 — Hillbilly Bank: Transaction Journal"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2006 — The Hillbilly Bank**
+
+  The transaction journal service of the Hillbilly Bank, implemented in Python 2.
+  Tracks and records all financial transactions. Find a vulnerability.
+value: 0
+type: standard
+
+image: .
+protocol: tcp
+flags:
+    - ictf2006{etj_pwned}
+
+tags:
+    - binary
+    - python
+    - ictf2006
+    - historical
+
+files:
+    - src/trans.py
+
+state: visible
+version: "0.1"

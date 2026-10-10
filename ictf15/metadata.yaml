@@ -1,0 +1,280 @@
+edition: ictf15
+year: 2015
+title: "Crowdsourcing Evil"
+
+format: attack-defense
+
+dates:
+  start: "2015-04-10"
+  end: "2015-04-10"
+  # From database initialization timestamps: April 10, 2015
+
+participation:
+  num_teams: null
+  notes: >
+    International university teams. Team registration spreadsheet preserved
+    (iCTF 2015 Team Location.zip). 42 services hosted per team.
+
+challenges:
+  # All 42 services from database/last_db.sql.xz (INSERT INTO services table)
+  - name: petition
+    port: 8017
+    category: web
+    description: "Website for petitioning to remove content from Unix systems"
+
+  - name: music-copyright
+    port: 8015
+    category: web
+    description: "Music copyrighting website"
+
+  - name: water
+    port: 3333
+    category: network
+    description: "Water measurement service"
+
+  - name: mathconsole
+    port: 9899
+    category: binary
+    description: "Calculator with cloud file storage service (reused from ictf13)"
+
+  - name: msgdispatcher
+    port: 31337
+    category: network
+    description: "Message passing service (reused from ictf11)"
+
+  - name: talkun
+    port: 8081
+    category: web
+    description: "Note-storing website (reused from ictf04)"
+
+  - name: bassretard
+    port: 10080
+    category: web
+    description: "Note-storing website (reused from ictf04-05)"
+
+  - name: acquire
+    port: 8184
+    category: web
+    description: "Open relay listing for spam (reused from ictf05)"
+
+  - name: traintrain
+    port: 8888
+    category: web
+    description: "Train transportation training service"
+
+  - name: tattletale
+    port: 13007
+    category: binary
+    description: "Intelligence agency data exfiltration (reused from ictf13)"
+
+  - name: mulemanager
+    port: 7899
+    category: web
+    description: "Database management website (reused from ictf11)"
+
+  - name: aqs
+    port: 8014
+    category: web
+    description: "Association for Quality SPAM guestbook (reused from ictf05)"
+
+  - name: echo
+    port: 9148
+    category: binary
+    description: "TCP echo service with backdoor — intro challenge"
+
+  - name: nuclearboom2
+    port: 4444
+    category: binary
+    description: "Nuclear plant information service (reused from ictf13)"
+
+  - name: mailgateway
+    port: 9119
+    category: network
+    description: "Mail gateway service (reused from ictf11)"
+
+  - name: sendalert
+    port: 12111
+    category: network
+    description: "Alert notification service (reused from ictf11)"
+
+  - name: convicts
+    port: 911
+    category: binary
+    description: "Convict communication service (reused from ictf11)"
+
+  - name: reportd
+    port: 6666
+    category: network
+    description: "Employee reporting daemon (reused from ictf04-05)"
+
+  - name: register
+    port: 6789
+    category: web
+    description: "User registration service (reused from ictf04)"
+
+  - name: poipoi
+    port: 3335
+    category: binary
+    description: "Uranium mine location collector (reused from ictf13)"
+
+  - name: noradioactive
+    port: 9292
+    category: binary
+    description: "Radioactivity readings in NoSQL database (reused from ictf13)"
+
+  - name: guestbook
+    port: 8182
+    category: web
+    description: "Public/private guestbook for candidates (reused from ictf04-05)"
+
+  - name: driller
+    port: 9091
+    category: binary
+    description: "Uranium drilling enterprise service (reused from ictf13)"
+
+  - name: yeesbutno
+    port: 3336
+    category: binary
+    description: "Drone exploration/uranium mining map service"
+
+  - name: temperature
+    port: 56098
+    category: binary
+    description: "Temperature logging service (reused from ictf13)"
+
+  - name: curiosityblogging
+    port: 8089
+    category: web
+    description: "Blogging service"
+
+  - name: diebald
+    port: 8012
+    category: web
+    description: "Donations website (reused from ictf04)"
+
+  - name: securenotebook
+    port: 2190
+    category: binary
+    description: "Anonymous file-sharing service"
+
+  - name: contribute
+    port: 8112
+    category: web
+    description: "Donations website (reused from ictf04/ictf05)"
+
+  - name: ccauthd
+    port: 12345
+    category: network
+    description: "Credit card authorization daemon (reused from ictf04-05)"
+
+  - name: simpleftp
+    port: 2025
+    category: network
+    description: "File storage service (FTP-like)"
+
+  - name: spammer
+    port: 4570
+    category: network
+    description: "SPAM delivery protocol (reused from ictf05)"
+
+  - name: passwordverify
+    port: 11111
+    category: network
+    description: "Password storing service with telnet + web interface (reused from ictf04)"
+
+  - name: discussit
+    port: 7413
+    category: network
+    description: "Chat service (reused from ictf04)"
+
+  - name: powerplan
+    port: 9898
+    category: binary
+    description: "Game service"
+
+  - name: contributions
+    port: 8018
+    category: web
+    description: "SPAM contribution website"
+
+  - name: sillybox
+    port: 4669
+    category: binary
+    description: "Sandbox running arbitrary code with file reading (reused from ictf13)"
+
+  - name: museum
+    port: 8001
+    category: web
+    description: "SPAM submission and search service (reused from ictf05)"
+
+  - name: spamagent
+    port: 8185
+    category: web
+    description: "SPAM agent submission (reused from ictf05)"
+
+  - name: webasstard
+    port: 4443
+    category: web
+    description: "File sharing website (reused from ictf04-05)"
+
+  - name: smsgateway
+    port: 1991
+    category: network
+    description: "SMS messaging service (reused from ictf11)"
+
+  - name: stockjobber
+    port: 2583
+    category: binary
+    description: "Identity management / stock trading service"
+
+  - name: notecxx
+    port: null
+    category: binary
+    description: >
+      C++ note-taking service with integer overflow in authenticate command.
+      Solved by DCIETS. See notecxx_writeup.md.
+
+data:
+  - type: other
+    path: "database/last_db.sql.xz"
+    size: "98 MB"
+    description: "Competition database (98 MB xz-compressed) — complete game state"
+
+  - type: other
+    path: "iCTF 2015 Team Location.zip"
+    description: "Team geographic location spreadsheet"
+
+  - type: other
+    path: "iCTF 2015 Working Notes.docx"
+    description: "Organizer working notes"
+
+  - type: other
+    path: "iCTF 2015 Service Vote.xlsx"
+    description: "Service selection vote spreadsheet"
+
+  - type: other
+    path: "base-vms/base-vms.tar.gz"
+    description: "Base VM images for the competition"
+
+  - type: other
+    path: "notecxx_writeup.md"
+    description: "Writeup for the notecxx challenge (by DCIETS)"
+
+infrastructure:
+  scorebot: "custom"
+  network: "Cloud-hosted, multiple team networks"
+  docker:
+    full_environment: false
+    individual_challenges: false
+
+resources:
+  website: "https://ictf.cs.ucsb.edu/archive/2015/site"
+
+notes: >
+  The 2015 iCTF was themed "Crowdsourcing Evil." With 42 services per team,
+  it was one of the largest iCTF editions in terms of service count. Many services
+  were reused from earlier editions (ictf04 through ictf13), creating a "greatest
+  hits" competition. The full competition database is preserved in
+  database/last_db.sql.xz (98 MB). Organizer materials (working notes, service vote
+  spreadsheet, team location data) are also preserved. A C++ integer overflow
+  writeup (notecxx_writeup.md) by team DCIETS is included.

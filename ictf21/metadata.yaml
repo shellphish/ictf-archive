@@ -1,0 +1,56 @@
+edition: ictf21
+year: 2021
+title: "The Ethalia Market"
+
+format: attack-defense
+# Novel game mechanic: cyber-economy with in-game currency, market for exploits/patches,
+# and a nation-state actor (Ethalia) that buys zero-days.
+
+dates:
+  start: "2021-12-01"
+  end: "2021-12-31"
+  # Exact date not documented.
+
+participation:
+  num_teams: null
+  notes: "International university teams. Exact count not documented."
+
+challenges: []
+# Services detailed in iCTF 2021.docx planning document.
+# Source code at shellphish/ictf21-challenges (private GitHub repo).
+
+data:
+  - type: other
+    path: "iCTF 2021.docx"
+    description: "Game design and planning document — game mechanic, Ethalia market, scoring system"
+
+  - type: other
+    path: "iCTF Redesign.docx"
+    description: "Infrastructure redesign document"
+
+infrastructure:
+  scorebot: "custom-market-economy"
+  network: >
+    Novel economy-based scoring:
+    - Teams earn in-game currency (not raw points)
+    - Passive income: 100 currency/tick per live service (SLA)
+    - Flag stealing: split 1000 currency among successful attackers per tick
+    - Open market: teams buy and sell exploit-shooters and patches (docker containers)
+    - Nation-state Ethalia: buys zero-day exploits at premium price, runs them against all teams
+    - Ethalia verifies zero-days by testing against all known patches before purchase
+  docker:
+    full_environment: false
+    individual_challenges: false
+
+notes: >
+  The 2021 iCTF introduced a radical redesign of the scoring system, turning
+  the competition into a cyber-economy simulation. Each team represented a
+  "for-profit hacking cell operating behind the screen of a legitimate business."
+  Teams accumulated in-game currency through:
+  (1) SLA-based passive income while services stayed alive;
+  (2) splitting flag-steal bounties with other attackers;
+  (3) selling exploits and patches on an open market;
+  (4) selling zero-day exploits exclusively to the nation-state actor "Ethalia."
+  The market featured deliberate inflation mechanics, Ethalia's zero-day bounty
+  system (one at a time), and anti-gaming safeguards. The local archive contains
+  the planning documents (~80 KB). The redesign document covers infrastructure.

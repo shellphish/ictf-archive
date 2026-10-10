@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="15"
+   name=""
+   committed-date="2006-11-20T22:57:39.985867Z"
+   url="file:///home/svn/CTF/bank_scorebot/ctf_bank/pyasn1/v1/codec/der"
+   last-author="nomed"
+   kind="dir"
+   repos="file:///home/svn/CTF"
+   revision="32"/>
+<entry
+   committed-rev="15"
+   name="__init__.py"
+   text-time="2005-06-14T06:59:39.000000Z"
+   committed-date="2006-11-20T22:57:39.985867Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="nomed"
+   kind="file"/>
+<entry
+   committed-rev="15"
+   name="encoder.py"
+   text-time="2005-12-16T22:13:01.000000Z"
+   committed-date="2006-11-20T22:57:39.985867Z"
+   checksum="cee34df3c2917ec566b8a75d1818be33"
+   last-author="nomed"
+   kind="file"/>
+<entry
+   committed-rev="15"
+   name="decoder.py"
+   text-time="2005-06-14T06:59:39.000000Z"
+   committed-date="2006-11-20T22:57:39.985867Z"
+   checksum="ef3ed1cb9468628a45890946b3890cac"
+   last-author="nomed"
+   kind="file"/>
+</wc-entries>

@@ -1,0 +1,34 @@
+name: "unencrypt_me"
+author: "iCTF 2024 organizers"
+category: machine-learning
+description: |
+  A student encrypted their trained PyTorch model weights but forgot the encryption key. All he remembers is that he used an 8-bit encryption key. You have access to the test dataset on which the model performed exceptionally well. Your task is to help the student decrypt the model.
+value: 50
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{189}
+
+topics:
+    - cryptography
+    - machine learning
+
+tags:
+    - cryptography
+    - pytorch
+
+files:
+    - attachments/encrypted_regression_model.pth
+    - attachments/test_data.pt
+    - attachments/encrypt_decrypt.py
+    - attachments/evaluate.py
+    - attachments/MATERIALS.md
+    - attachments/README.md
+
+state: visible
+version: "0.1"

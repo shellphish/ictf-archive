@@ -1,0 +1,241 @@
+body {
+  background: white; 
+  color: #6b342d;
+  background-color: lightgray; 
+  font-family: Georgia, Times;
+  background-image: url("landfill.jpg");  
+  background-repeat: repeat;
+  background-attachment: fixed
+}
+
+/* Heading definitions */
+h1 {
+  text-align: left; 
+  color: white;
+  font-weight: normal;
+}
+
+h2 {
+  text-align: left; 
+  color: gray; 
+  font-weight: normal;
+}
+
+/* Link definitions */
+a:link {
+  color: #6b342d;
+}
+
+a:visited {
+  color: #6b342d;
+}
+
+a:active {
+  color: gray;
+}
+
+/* List definitions */
+ul {
+  list-style-type: square;
+}
+
+li {
+  padding: .2em .2em .2em .2em; 
+}
+
+/* Table definitions */
+thead {
+  background: black; 
+  color: white; 
+  font-weight: bold
+}
+
+thead td {
+  padding: .1em 1em .1em 1em; 
+}
+
+tbody td {
+  padding: .2em .2em .2em .2em; 
+}
+
+/* Definition list definitions */
+dt {
+  background: gray; 
+  width: ;
+  color: white; 
+  padding: .2em 2em .2em 2em; 
+  margin: .1%; 
+  font-weight: bold; 
+}
+
+div#page {
+  width: 700px;
+  height: 700px;
+  border: 1px solid darkgray;
+  background-color: #ffffff;
+  margin-top: 3px;
+  margin-left: auto;
+  margin-right: auto;
+
+/*  border-style: solid;
+  border-width: medium;
+  border-color: pink;*/
+}
+
+div#header {
+  border-style: solid;
+  border-width: 0;
+  height: 90px;
+  padding: 4em .2em 0em 2em;
+  background-image: url("banner.jpg");  
+  background-repeat: no-repeat;
+/*  border-style: solid;
+  border-width: medium;
+  border-color: yellow; */
+}
+
+div#header h1 {
+  color: brown;
+}
+
+div#navigation{
+  clear: both;
+  /* float: left;*/
+  /* width: 700; */
+  height: 30px;
+  border-style: solid;
+  border-width: 0px;
+  border-color: gray; 
+  display: block;
+
+/*  border-style: solid;
+  border-width: medium;
+  border-color: green; */
+}
+
+div#navigation ul{
+  width: 700;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+div#navigation ul li{
+  float: left;
+  margin: 2px 2px 2px 2px;
+  padding: 0px 0px 0px 0px;
+  /* background-image: url(nav_bg.jpg); 
+     background-repeat: no-repeat; */
+  background:  #a6a7bc; 
+  text-align: center;
+  vertical-align: top;
+  height: 25px;
+}
+
+div#navigation ul li a{
+  margin: 2px 2px 0 0;
+  padding: 0;
+  font-size: 16px;
+  /* font-weight: bold;*/
+  color: #FFFFFF;
+  text-decoration: none;
+  /* text-transform: uppercase; */
+  height: 20px;
+  display: block;
+}
+
+#home{width:110px;}
+#services{width:115px;}
+#membership{width:110px;}
+#about{width:110px;}
+#jobs{width:115px;}
+#testimonials{width:115px;}
+
+/* Main body definitions */
+div#content {
+  color: #6b242d;
+  height: 350px; 
+  padding: 3em 2em 3em 2em; 
+  font-family: Georgia, Times;
+  font-size: 90%;
+  /* background-image: url("body_bg.jpg"); */
+  background-repeat: no-repeat; 
+
+  /* border-style: solid;
+  border-width: medium;
+  border-color: blue; */
+
+}
+
+div#content p {
+  /* border-style: solid;
+  border-width: medium;
+  border-color: darkgray;*/
+  width: 550px;
+}
+
+
+/* Footer definitions */
+div#footer {
+  clear: both;
+  font-style: italic;
+  padding: .2em 2em .4em .2em;
+  /* width: 700px; */
+  height: 48px;
+  /* margin-top: 3px; */
+  margin-bottom: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  font-style: italic;
+  font-size: 50%;
+  text-align: right; 
+
+  /*border-style: solid;
+  border-width: medium;
+  border-color: darkred;*/
+
+}
+
+div#footer hr {
+  width: 690px;
+  height: 1px;
+}
+
+div.imageright { 
+  padding: .4em .4em .4em .4em;
+  /* vertical-align: top; */
+  margin-left: 1em;
+  float: right;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #6b342d; 
+  width: 250px;
+  /* display: block; */
+ }
+
+div.imageright p {
+  width: 100px;
+} 
+
+div.imagecenter { 
+  padding: .4em .4em .4em .4em;
+  /* vertical-align: top; */
+  float: center;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #6b342d; 
+  width: 250;
+  /* display: block; */
+ }
+
+div.imageleft { 
+  padding: .4em .4em .4em .4em;
+  /* vertical-align: top; */
+  margin-right: 1em;
+  float: left;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #6b342d; 
+  width: 250; 
+  /* display: block; */
+ }

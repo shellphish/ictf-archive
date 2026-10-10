@@ -1,0 +1,33 @@
+name: "iCTF 2005 — Spam World: Contribute"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2005 — The Spam World**
+
+  A contribution tracking web service at `/~contribute/contribute.html`. The
+  scorebot submits a form with the flag stored as the `address` field. A history
+  CGI at `/~contribute/cgi-bin/history.py` retrieves stored contributions by name.
+value: 0
+type: standard
+
+image: .
+protocol: http
+flags:
+    - ictf2005{contribute_pwned}
+
+topics:
+    - web exploitation
+    - CGI security
+
+tags:
+    - web
+    - python
+    - cgi
+    - ictf2005
+    - historical
+    - attack-defense
+
+files: []
+
+state: visible
+version: "0.1"

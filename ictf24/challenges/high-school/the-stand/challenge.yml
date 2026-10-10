@@ -1,0 +1,24 @@
+name: "the_stand"
+author: "iCTF 2024 organizers"
+category: knowledge
+description: |
+  Some people are good people and have friends. Randall Flagg is evil, with no friends, but he has the knowledge.
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{People_who_try_hard_to_do_the_right_thing_always_seem_mad}
+
+topics:
+    - knowledge manipulation
+
+tags:
+    - remote applications
+
+state: visible
+version: "0.1"

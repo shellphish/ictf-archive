@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="15"
+   name=""
+   committed-date="2006-11-20T22:57:39.985867Z"
+   url="file:///home/svn/CTF/bank_scorebot/ctf_bank"
+   last-author="nomed"
+   kind="dir"
+   repos="file:///home/svn/CTF"
+   revision="32"/>
+<entry
+   committed-rev="15"
+   name="branchbank.py"
+   text-time="2006-11-17T22:15:05.000000Z"
+   committed-date="2006-11-20T22:57:39.985867Z"
+   checksum="923aa6d25db4c6fa240913d032af814e"
+   last-author="nomed"
+   kind="file"/>
+<entry
+   committed-rev="15"
+   name="test.py"
+   text-time="2006-11-17T23:16:45.000000Z"
+   committed-date="2006-11-20T22:57:39.985867Z"
+   checksum="ee30ae559225de255fe17a8e86541e11"
+   last-author="nomed"
+   kind="file"
+   prop-time="2006-11-20T22:57:29.000000Z"/>
+<entry
+   committed-rev="15"
+   name="pem.py"
+   text-time="2006-11-17T23:18:41.000000Z"
+   committed-date="2006-11-20T22:57:39.985867Z"
+   checksum="9df348444aeebe3a8207f708f7342ce6"
+   last-author="nomed"
+   kind="file"/>
+<entry
+   name="keys"
+   kind="dir"/>
+<entry
+   committed-rev="15"
+   name="centralbank.py"
+   text-time="2006-11-17T23:16:57.000000Z"
+   committed-date="2006-11-20T22:57:39.985867Z"
+   checksum="d5f9c981de0f3b061da560ba5e327f61"
+   last-author="nomed"
+   kind="file"/>
+<entry
+   name="pyasn1"
+   kind="dir"/>
+</wc-entries>

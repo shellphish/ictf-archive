@@ -1,0 +1,48 @@
+name: "iCTF 2006 — HillBilly Bank"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: crypto
+description: |
+  **iCTF 2006 — The Hillbilly Bank**
+
+  The Hillbilly Bank is a fictional financial institution running an
+  RSA-based check signing and verification system. It has two components:
+
+  - **Branch Bank** (branchbank.py): validates RSA-signed checks using a
+    public key. Checks encode recipient, amount, and check number in a
+    21-digit string.
+  - **Central Bank** (centralbank.py): the issuing authority with the
+    private key.
+
+  The bank uses PyCrypto for RSA operations. The vulnerability lies in
+  the RSA signing scheme or check validation logic.
+
+  *Note: Full service binary is in `../../vms/bank2006.tar.gz` (300 MB
+  VMware image). The `src/` directory contains scoring client scripts.*
+value: 0
+type: standard
+
+image: .
+protocol: tcp
+host: null
+connection_info: null
+
+flags:
+    - ictf2006{hillbilly_bank_robbed}
+
+topics:
+    - RSA cryptography
+    - crypto attack
+    - Python
+
+tags:
+    - crypto
+    - rsa
+    - python
+    - ictf2006
+    - historical
+
+files:
+    - src/
+
+state: visible
+version: "0.1"

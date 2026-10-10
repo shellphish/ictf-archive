@@ -1,0 +1,7 @@
+Question: We have intercepted a jpeg image sent from a known Softerror operative.  Unfortunately, it seems as though the file has been corrupted in some way, as image just looks like static.  Can you find anything interesting here?  We're going cross-eyed over this thing.
+Attachment: error.jpg
+Answer: Twenty-twenty-twenty four hours to go I wanna be sedated
+
+How-to: The image is a stereogram.  The hidden 3D image is the text "OutGuess" which is a reference to the steganographic algorithm by the same name.  Running the OutGuess tool against the image (e.g., outguess -r error.jpg output.txt) reveals the key.
+
+

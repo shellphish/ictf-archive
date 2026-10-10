@@ -1,0 +1,55 @@
+name: "iCTF 2003 — query"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2003 — Windows Goes Open-Source**
+
+  query was a Perl CGI telephone directory service. Flags were stored
+  as directory entries and retrieved via HTTP queries.
+
+  ## Architecture
+
+  - Flag stored as an entry for "Bill Gates" with flag as the record ID
+  - Admin update: `GET /cgi-bin/change.pl?login=admin&password=<pw>&last=Gates&first=Bill&id=<flag>`
+
+  ## Vulnerability
+
+  The `change.pl` CGI script accepted unsanitized parameters in a GET
+  request. Classic Perl CGI parameter injection or SQL injection likely.
+
+  ## Source
+
+  Two CGI scripts (not found in clean VM image; likely removed for distribution):
+  - `query_extension.pl` — searches phone directory for "Gates" and returns
+    the extension (flag) as a table cell value
+  - `change.pl` — admin update: `GET /cgi-bin/change.pl?login=admin&password=<pw>&last=Gates&first=Bill&id=<flag>`
+
+  The `/var/www/html/assistance/` static page served as the front-end for the
+  telephone directory. The service used an HTTP-based query interface typical
+  of Perl CGI phone book web apps from that era.
+
+  Scorebot interaction scripts are in `src/get_query` and `src/set_query`.
+  The CGI source was not recoverable from the clean VM image; the running VM
+  (vms/winOpenSrc2003.tar.gz) was not extracted.
+value: 0
+type: standard
+image: null
+protocol: http
+port: 80
+flags:
+    - ictf2003{query_pwned}
+topics:
+    - web
+    - perl cgi
+tags:
+    - web
+    - perl
+    - cgi
+    - ictf2003
+    - historical
+    - attack-defense
+files:
+    - src/get_query
+    - src/set_query
+state: visible
+version: "0.1"

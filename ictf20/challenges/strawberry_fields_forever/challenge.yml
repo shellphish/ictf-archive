@@ -1,0 +1,41 @@
+name: "iCTF 2020 — Strawberry Fields Forever"
+author: "salls / UCSB Security Lab"
+category: pwn
+description: |
+  **iCTF 2020 — Abbey Road (1 After 909)**
+
+  "You visit some strawberry fields and as it starts to seem like you will
+  be there forever, you realize that nothing is real, except seccomp filters."
+
+  A service protected by seccomp filters. Bypassing the seccomp sandbox is
+  the key challenge.
+
+  ## Flag location
+
+  Flags are identified by username; flag_ids are the file names (save id).
+
+  ## Source
+
+  Full source available at `../../src/strawberry_fields_forever/`
+  (cloned from `https://github.com/shellphish/ictf-2020-challs-public`).
+value: 0
+type: standard
+image: null
+protocol: tcp
+port: null
+flags:
+    - ictf2020{strawberry_fields_forever_pwned}
+topics:
+    - seccomp
+    - sandbox escape
+tags:
+    - pwn
+    - binary
+    - seccomp
+    - beatles
+    - ictf2020
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

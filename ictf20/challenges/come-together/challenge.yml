@@ -1,0 +1,37 @@
+name: "iCTF 2020 — Come Together"
+author: "conand / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2020 — Abbey Road (1 After 909)**
+
+  "Everyone wants to be a member of The Beatles. Thanks to blockchain-based
+  artificial intelligence, now you can! Upload your face and we do the magic
+  (every picture you upload belongs to us)"
+
+  A face-upload service that uses "blockchain-based AI" to place your face
+  into the band. All uploaded pictures are owned by the service.
+
+  ## Flag location
+
+  Flags are identified by session IDs.
+
+  ## Source
+
+  Full source available at `../../src/come-together/` (cloned from
+  `https://github.com/shellphish/ictf-2020-challs-public`).
+value: 0
+type: standard
+image: null
+protocol: http
+port: 80
+flags:
+    - ictf2020{come_together_pwned}
+tags:
+    - web
+    - beatles
+    - ictf2020
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

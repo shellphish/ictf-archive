@@ -1,0 +1,28 @@
+name: "Tensormania"
+author: "iCTF 2023 organizers"
+category: misc
+description: |
+  A friend just handed me this peculiar Tensor object, claiming its an JPG image. Can we trust our buddy? Grab your PyTorch magnifying glass and let's investigate! Tensors are everywhere in the realm of machine learning, and who knows, they might even unveil hidden messages in plain sight
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{PleAse_DoNt_B3_sO_TEnSoR!}
+
+topics:
+    - document misc
+
+tags:
+    - misc
+    - tensor
+
+files:
+    - attachments/tensor.dill
+
+state: visible
+version: "0.1"

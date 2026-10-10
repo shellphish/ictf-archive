@@ -1,0 +1,38 @@
+name: "Evil Model"
+author: "iCTF 2024 organizers"
+category: misc
+description: |
+  Supersecure Bank, with an advanced malicious file detection system, uses AI from a company called SuperAI. A bad hacker at SuperAI found a way to embed malware into a trained AI model, bypassing Supersecure Bank's detection.
+  Later, a bad hacker from the same group at Supersecure Bank extracted the malware from the shipped AI model and executed it.
+  The code, model architecture, and weights are provided. Find the hidden flag in the model.
+  
+  Hint -
+  * Hidden things are in the hidden layer when the last three digits are less significant.
+  * The method that you can hide bytes without significantly damaging the model performance is the key to extracting the flag.
+  * Read more - https://arxiv.org/abs/2107.08590
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{EviLModel:devil}
+
+topics:
+    - document misc
+
+tags:
+    - misc
+    - tensor
+
+files:
+    - attachments/model_architecture.json
+    - attachments/model_weights.json
+    - attachments/test.jpg
+    - attachments/test.py
+
+state: visible
+version: "0.1"

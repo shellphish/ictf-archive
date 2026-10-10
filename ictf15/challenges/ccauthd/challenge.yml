@@ -1,0 +1,24 @@
+name: "iCTF 2015 — ccauthd"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: network
+description: |
+  **iCTF 2015 — Crowdsourcing Evil**
+
+  Credit card authorization daemon (reused from ictf04-05)
+
+  Port: 12345. Source not available (only competition database preserved).
+value: 0
+type: standard
+image: null
+protocol: tcp
+port: 12345
+flags:
+    - ictf2015{ccauthd_pwned}
+tags:
+    - network
+    - ictf2015
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

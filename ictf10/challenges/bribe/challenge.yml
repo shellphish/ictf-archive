@@ -1,0 +1,41 @@
+name: "iCTF 2010 — Bribe Service"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2010 — Hit 'em Where it Hurts**
+
+  The Bribe service is a Python 2 HTTP server representing Litya's government
+  corruption apparatus. Teams could pay "bribes" (in-game currency) to temporarily
+  unblock their network firewall. The bribe amount was converted to minutes of
+  protection based on a per-minute exchange rate stored in a file.
+
+  Key implementation details:
+  - Session token: MD5 of `client_ip + "youwillneverguessthissecretphrase"`
+  - Scorekeeper API: `GET /bribes?team=<name>&credentials=iseeeverything&money=<amount>`
+  - Firewall API: `GET /rules?team=<name>&howlong=<seconds>&action=unblock`
+  - Team-to-IP mapping loaded from `teams.ini`
+
+  Source extracted from the competition VM (Ubuntu Server 10.10 32-bit).
+value: 0
+type: standard
+image: .
+protocol: http
+host: null
+connection_info: null
+flags:
+    - ictf2010{bribe_compromised}
+topics:
+    - web exploitation
+    - session forgery
+    - hash length extension
+tags:
+    - web
+    - python
+    - ictf2010
+    - historical
+files:
+    - src/bribeserver.py
+    - src/teams.ini
+    - src/minute_value_file
+state: visible
+version: "0.1"

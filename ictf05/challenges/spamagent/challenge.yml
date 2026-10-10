@@ -1,0 +1,35 @@
+name: "iCTF 2005 — Spam World: Spam Agent"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2005 — The Spam World**
+
+  A web service at `/~spamagent/spamagent.html` that executes submitted XML+Tcl
+  agent scripts. The agent format uses `<sender>` credentials and `<code>` with
+  Tcl commands; the `store` command persists key-value pairs including the flag.
+  Find a way to read other teams' stored values.
+value: 0
+type: standard
+
+image: .
+protocol: http
+flags:
+    - ictf2005{spamagent_pwned}
+
+topics:
+    - web exploitation
+    - Tcl injection
+    - XML
+
+tags:
+    - web
+    - xml
+    - tcl
+    - ictf2005
+    - historical
+    - attack-defense
+
+files: []
+
+state: visible
+version: "0.1"

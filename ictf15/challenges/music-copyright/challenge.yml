@@ -1,0 +1,24 @@
+name: "iCTF 2015 — music-copyright"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2015 — Crowdsourcing Evil**
+
+  Music copyrighting website
+
+  Port: 8015. Source not available (only competition database preserved).
+value: 0
+type: standard
+image: null
+protocol: http
+port: 8015
+flags:
+    - ictf2015{music_copyright_pwned}
+tags:
+    - web
+    - ictf2015
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

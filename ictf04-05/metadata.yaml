@@ -1,0 +1,109 @@
+edition: ictf04-05
+year: 2005
+title: "The Bass Tard Corporation"
+
+format: attack-defense
+# Rematch of the 2004 iCTF, run in June 2005.
+
+dates:
+  start: "2005-06-10"
+  end: "2005-06-10"
+  # Approximately June 10, 2005 (from 20050610_iCTF directory)
+
+participation:
+  num_teams: null
+  notes: "Rematch of the 2004 competition. Team data not fully documented."
+
+challenges:
+  - name: bassretard
+    title: "BassRetard (Main Portal)"
+    category: web
+    description: "Central Bass Tard Corporation website — main entry point"
+
+  - name: webasstard
+    title: "WebAsstard"
+    category: web
+    description: "Web admin interface integrating biometric authentication"
+
+  - name: ccauthd
+    title: "CCAuthd"
+    category: network
+    description: "Credit card authorization daemon"
+
+  - name: contact
+    title: "Contact Directory"
+    category: web
+    description: "Internal phone directory — admin Perl CGI with hardcoded credentials"
+
+  - name: estore
+    title: "E-Store"
+    category: web
+    description: "E-commerce platform — user accounts with flag in email field"
+
+  - name: guestbook
+    title: "Guestbook"
+    category: web
+    description: "Public guestbook service — flag stored in private comment entries"
+
+  - name: reportd
+    title: "Reportd"
+    category: network
+    description: "Internal report submission daemon"
+
+  - name: biometric
+    title: "Biometric Auth"
+    category: binary
+    description: "Biometric authentication service"
+
+  - name: sillyd
+    title: "SillyD"
+    category: binary
+    description: "Miscellaneous network daemon"
+
+  - name: secretd
+    title: "SecretD"
+    category: binary
+    description: "Secret data storage daemon"
+
+data:
+  - type: other
+    path: "site/"
+    description: "Original competition website"
+
+  - type: pcap
+    path: "dumps/"
+    description: "Network traffic captures"
+
+  - type: vm_image
+    path: "iCTF_2004_Images/"
+    description: "VM images (shared with 2004 competition)"
+
+  - type: media
+    path: "pictures/"
+    description: "Event photographs"
+
+  - type: other
+    path: "BassRetardCorp/"
+    description: "Bass Tard Corporation service data"
+
+  - type: other
+    path: "20050610_iCTF/"
+    description: "June 2005 competition data"
+
+infrastructure:
+  scorebot: "custom"
+  network: "Multiple team networks"
+  docker:
+    full_environment: false
+    individual_challenges: true  # challenge.yml + writeup/ with scorebot scripts for each service
+
+resources:
+  website: "https://ictf.cs.ucsb.edu/archive/2004-2005/site"
+
+notes: >
+  The 2004-2005 rematch was organized because the original 2004 competition
+  had serious performance problems. The rematch was held in June 2005 and
+  featured the "Bass Tard Corporation" theme — a ruthless corporate entity
+  whose mission was to steal from the poor and give to the rich. Teams
+  attacked and defended services belonging to this fictional corporation.
+  The archive is 58 GB, the largest single-edition dataset in the collection.

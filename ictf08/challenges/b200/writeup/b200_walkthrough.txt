@@ -1,0 +1,33 @@
+Question: The forensics team of the Counter Terrorist Unit has recovered part of a
+deleted file from the hard disk of a suspected terrorist. We believe the
+file was used in a drive-by download attack through which the Softerror
+group obtained credentials for financial accounts.
+Your task is to find out the site that hosted the malware that was
+downloaded and installed on the victims' machines during the attack.
+
+Attachment: recovered
+
+Answer: http://www.cs.ucsb.edu/~marco/ictf/challenge-bonus.php
+
+How-to:
+1. Complete the PDF so that is is valid, e.g., add the following lines
+at the end of the file:
+trailer
+<<
+/Size 15
+/Root 1 0 R
+/Info 1 0 R
+>>
+startxref
+166403
+%%EOF
+
+2. Uncompress the PDF
+pdftk file.pdf output file.clear.pdf uncompress
+
+3. Extract the shellcode, which is now in the clear
+
+4. Decode the shellcode, xoring 0x1ba bytes from offset 0x1c with byte 0xef
+
+5. Run strings on the decoded shellcode
+

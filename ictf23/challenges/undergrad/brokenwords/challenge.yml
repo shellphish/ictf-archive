@@ -1,0 +1,28 @@
+name: "BrokenWords"
+author: "iCTF 2023 organizers"
+category: crypto
+description: |
+  Our analysts were eavesdropping a communication channel used by a dangerous hacking group. The quality of the intercepted data is quite poor, but we are fairly sure the first message contains instructions on how to decrypt the second one. We tried to use ChatGPT to clean the data and recover the conversations, but the AI is behaving weirdly, can you help us understand why and decrypt the message?
+value: 498
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{Anti_AI_ProMpts_Are_KiNDa_Fun}
+
+topics:
+    - document misc
+
+tags:
+    - misc
+
+files:
+    - attachments/data_channel1.out
+    - attachments/data_channel2.out
+
+state: visible
+version: "0.1"

@@ -1,0 +1,27 @@
+name: "mayor_setter"
+author: "iCTF 2024 organizers"
+category: pwn
+description: |
+  Convince this puppy to reveal the secret. The vet said one of his favorite food is a 'format string'? What could that mean?!?
+value: 50
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{w3lc0m3_t0_1ctf}
+
+topics:
+    - remote applications
+
+tags:
+    - remote applications
+
+files:
+    - attachments/mayor_setter.c
+
+state: visible
+version: "0.1"

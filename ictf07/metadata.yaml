@@ -1,0 +1,99 @@
+edition: ictf07
+year: 2007
+title: "The Copyright Mafia"
+
+format: attack-defense
+
+dates:
+  start: "2007-12-01"
+  end: "2007-12-01"
+  # Exact date not documented; ran December 2007
+
+participation:
+  num_teams: null
+  notes: "Team count not documented."
+
+challenges:
+  - name: therapy
+    title: "Therapy"
+    category: web
+    description: "Mental health service for Mafia operatives (PHP + Java/Tomcat)"
+
+  - name: petition
+    title: "Petition"
+    category: web
+    description: "Citizens can sign petitions against Mafia enforcement (Python CGI + C helpers)"
+
+  - name: wouldyou
+    title: "Would You...?"
+    category: binary
+    description: "Mafia social compliance service — compiled Windows PE binary (Wine on Linux)"
+
+  - name: copyright
+    title: "Copyright Registry"
+    category: web
+    description: "Copyright registration and enforcement service (PHP)"
+
+  - name: amends
+    title: "Amends"
+    category: web
+    description: "Mafia amends/settlement service (PHP CGI)"
+
+  - name: shakedown
+    title: "Shakedown"
+    category: web
+    description: "Artist extortion and boss management service (PHP)"
+
+  - name: snitch
+    title: "Snitch"
+    category: web
+    description: "Information-reporting/whistleblower service (Python CGI)"
+
+  - name: mafia
+    title: "Mafia Bot Scripts"
+    category: misc
+    description: "Game-theory bot scripts for automated Mafia actions (petition, amends, shakedown, snitch)"
+
+data:
+  - type: other
+    path: "site/"
+    description: "Original competition website"
+
+  - type: pcap
+    path: "dumps/"
+    description: "Network traffic captures (bz2-compressed: iCTF200710.bz2 – iCTF200719.bz2, ~7.8 GB total)"
+
+  - type: vm_image
+    path: "vms/mafia2007.tar.gz"
+    description: "VMware VM image containing all Mafia services (Ubuntu Server)"
+
+  - type: vm_image
+    path: "vms/mafia2007_bak.tar.gz"
+    description: "Backup VM image"
+
+  - type: media
+    path: "pictures/"
+    description: "Event photographs"
+
+  - type: other
+    path: "mafia2007Scripts/"
+    description: "Mafia game bot scripts (petition_bot.py, amends_bot.py, etc.)"
+
+infrastructure:
+  scorebot: "custom"
+  network: "Multiple team networks, Ubuntu Server VMware VM"
+  docker:
+    full_environment: false
+    individual_challenges: true  # Dockerfiles created for web/python services
+
+resources:
+  website: "https://ictf.cs.ucsb.edu/archive/2007/site"
+
+notes: >
+  The 2007 iCTF's theme was "The Copyright Mafia" — a group that was a mix
+  between organized crime and big corporation-type copyright enforcement
+  practices. Teams attacked and defended 7 services: Therapy (PHP+Java),
+  Petition (Python+C), Would You (Windows PE via Wine), Copyright (PHP),
+  Amends (PHP), Shakedown (PHP), and Snitch (Python CGI). Source code was
+  extracted from vms/mafia2007.tar.gz. Network dumps are in bz2 format
+  (iCTF200710.bz2 through iCTF200719.bz2), totaling ~7.8 GB.

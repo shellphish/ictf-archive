@@ -1,0 +1,26 @@
+name: "iCTF 2011 — Convicts"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2011 — Money Laundering**
+
+  Convicts was a records management service tracking criminal/convict data.
+  Third most-captured service with 18,552 flag steals.
+
+  Flags were stored in convict records, requiring exploitation of the service's
+  access controls.
+
+  Source: encrypted VM archive `site/iC7F-l337-vu1n.7z` (AES-encrypted, password unknown).
+value: 0
+type: standard
+image: null
+flags:
+    - ictf2011{convicts_compromised}
+tags:
+    - web
+    - ictf2011
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

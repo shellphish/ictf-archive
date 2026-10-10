@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="15"
+   name=""
+   committed-date="2006-11-20T22:57:39.985867Z"
+   url="file:///home/svn/CTF/bank_scorebot/ctf_bank/pyasn1/v1/codec/ber"
+   last-author="nomed"
+   kind="dir"
+   repos="file:///home/svn/CTF"
+   revision="32"/>
+<entry
+   committed-rev="15"
+   name="encoder.py"
+   text-time="2006-05-21T14:13:37.000000Z"
+   committed-date="2006-11-20T22:57:39.985867Z"
+   checksum="75cbf8d2d3f20a2911e15f40829e8c1d"
+   last-author="nomed"
+   kind="file"/>
+<entry
+   committed-rev="15"
+   name="__init__.py"
+   text-time="2005-06-14T06:59:39.000000Z"
+   committed-date="2006-11-20T22:57:39.985867Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="nomed"
+   kind="file"/>
+<entry
+   committed-rev="15"
+   name="eoo.py"
+   text-time="2006-04-24T14:26:37.000000Z"
+   committed-date="2006-11-20T22:57:39.985867Z"
+   checksum="093478579af9d6f6629715ffce0f977e"
+   last-author="nomed"
+   kind="file"/>
+<entry
+   committed-rev="15"
+   name="decoder.py"
+   text-time="2006-04-24T14:25:57.000000Z"
+   committed-date="2006-11-20T22:57:39.985867Z"
+   checksum="b251d2d676c13a1fc403279ae6fb438e"
+   last-author="nomed"
+   kind="file"/>
+</wc-entries>

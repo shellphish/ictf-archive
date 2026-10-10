@@ -1,0 +1,27 @@
+name: "gpt_calculator"
+author: "iCTF 2024 organizers"
+category: pwn
+description: |
+  You can interact with a calculator powered by ChatGPT, which is enhanced with a python executor. You can ask it to compute math problems. Can you get the flag.txt?
+value: 50
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{don7_7ru57_9p75_cod3}
+
+topics:
+    - remote applications
+
+tags:
+    - remote applications
+
+files:
+    - attachments/challenge.py
+
+state: visible
+version: "0.1"

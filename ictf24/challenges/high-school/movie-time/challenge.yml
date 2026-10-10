@@ -1,0 +1,29 @@
+name: "movie_time"
+author: "iCTF 2024 organizers"
+category: misc
+description: |
+  Imagine you are in 2029. You go to bed and suddenly you wake up in 1984. All naked.
+   What are the first five words that come to mind?
+  
+   Flag format: All lower case, replace spaces with '_'
+value: 50
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{nice_night_for_a_walk}
+
+topics:
+    - osint
+
+tags:
+    - osint
+    - llm
+    - google
+
+state: visible
+version: "0.1"

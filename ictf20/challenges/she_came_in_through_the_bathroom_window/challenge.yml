@@ -1,0 +1,39 @@
+name: "iCTF 2020 — She Came in Through the Bathroom Window"
+author: "kylebot / UCSB Security Lab"
+category: pwn
+description: |
+  **iCTF 2020 — Abbey Road (1 After 909)**
+
+  "As an Apple Scruff, you are tired of being in the group just waiting
+  outside with cameras and autograph books. Now, it is time to join the
+  break-in group."
+
+  Note: this challenge requires building the Docker container to apply
+  a patch before running.
+
+  ## Flag location
+
+  Flags are identified by the attempt name stored in tool stashes.
+  Flag_id is the filename that the tool stash is stored as.
+
+  ## Source
+
+  Full source available at `../../src/she_came_in_through_the_bathroom_window/`
+  (cloned from `https://github.com/shellphish/ictf-2020-challs-public`).
+value: 0
+type: standard
+image: null
+protocol: tcp
+port: null
+flags:
+    - ictf2020{she_came_in_through_the_bathroom_window_pwned}
+tags:
+    - pwn
+    - binary
+    - beatles
+    - ictf2020
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

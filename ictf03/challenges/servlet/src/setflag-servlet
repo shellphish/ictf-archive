@@ -1,0 +1,49 @@
+#! /usr/bin/python
+#: Set servlet flag
+
+import Cookie, httplib, os, socket, sys
+
+#
+# Handle servlet
+#
+def handleServlet(hostname, flag, password):
+	c = httplib.HTTPConnection(hostname, 8080)
+	c.connect()
+
+	c.request("GET", "/search/admin?action=doLogin&username=admin&password=" + password)
+	r = c.getresponse()
+
+	chdr = r.getheader("Set-Cookie")
+	if not chdr:
+		return 0
+
+	c.close()
+
+	c = httplib.HTTPConnection(hostname, 8080)
+	c.connect()
+
+	cookie = Cookie.SimpleCookie()
+	cookie.load(chdr)
+
+	c.request("GET", "/search/admin?action=updateArticle&" +
+		"keywords=NSA&title=%22Suspicious%22+registry+key:+NSA-" + flag,
+		"", {"Cookie": cookie.output(header="")[1:]})
+
+	c.close()
+
+	return 1
+
+#
+# Main
+#
+if len(sys.argv) < 4:
+	print "usage: %s <hostname> <flag> <password>" % (sys.argv[0])
+	sys.exit(1)
+
+hostname = sys.argv[1]
+flag = sys.argv[2]
+password = sys.argv[3]
+
+if not handleServlet(hostname, flag, password):
+	sys.exit(1)
+

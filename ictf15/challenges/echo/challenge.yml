@@ -1,0 +1,24 @@
+name: "iCTF 2015 — echo"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2015 — Crowdsourcing Evil**
+
+  TCP echo service with backdoor — intro challenge
+
+  Port: 9148. Source not available (only competition database preserved).
+value: 0
+type: standard
+image: null
+protocol: tcp
+port: 9148
+flags:
+    - ictf2015{echo_pwned}
+tags:
+    - binary
+    - ictf2015
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

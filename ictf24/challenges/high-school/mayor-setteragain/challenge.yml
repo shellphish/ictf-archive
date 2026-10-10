@@ -1,0 +1,24 @@
+name: "mayor_setter(again)"
+author: "iCTF 2024 organizers"
+category: pwn
+description: |
+  The app talks back. Use it to find the flag.
+value: 338
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{00ps_w3_g0_4g41N}
+
+topics:
+    - remote applications
+
+tags:
+    - remote applications
+
+state: visible
+version: "0.1"

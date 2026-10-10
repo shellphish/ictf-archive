@@ -1,0 +1,16 @@
+body 			{background-color:#dfdfdf;font-family: Verdana, sans-serif; font-size: 12;}
+h1			{font-family: Verdana, sans-serif; font-size: 16; text-align: center; margin: 20px 0px 60px 0px;}
+h2			{font-family: Verdana, sans-serif; font-size: 14; text-align: center;}
+h5			{font-family: Verdana, sans-serif; font-size: 12;}
+table			{border: none;}
+td			{border: solid; border-width: 1; border-color: black; font-family: Verdana, sans-serif; font-size: 12;vertical-align:top;}
+td			{border: none;}
+
+td.border		{border: none; width: 100;}
+td.main			{border: none; width: 600;}
+
+p			{font-family: Verdana, sans-serif; font-size: 12;}
+
+a:link			{ font-weight:bold; color:#0000E0; text-decoration:none }
+a:visited		{ font-weight:bold; color:#0000E0; text-decoration:none }
+a:hover			{ font-weight:bold; color:#E00000; text-decoration:none }

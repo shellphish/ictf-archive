@@ -1,0 +1,27 @@
+name: "iCTF 2010 — MostWanted"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: network
+description: |
+  **iCTF 2010 — Hit 'em Where it Hurts**
+
+  MostWanted (S2) was a custom network service on port 2048. During the
+  competition organizers leaked the source code on LityaLeaks. Teams had to
+  analyze the protocol and exploit it to capture flags from rival instances.
+
+  Source was publicly leaked on LityaLeaks during the competition;
+  also in `vms/ictf2010.services.tar.gz`.
+value: 0
+type: standard
+image: .
+protocol: tcp
+flags:
+    - ictf2010{mostwanted_pwned}
+tags:
+    - network
+    - python
+    - ictf2010
+    - historical
+files:
+    - src/mostwanted.py
+state: visible
+version: "0.1"

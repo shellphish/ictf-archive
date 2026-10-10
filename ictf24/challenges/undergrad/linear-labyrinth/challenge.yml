@@ -1,0 +1,32 @@
+name: "linear_labyrinth"
+author: "iCTF 2024 organizers"
+category: misc
+description: |
+  **author**: 0xk4l1
+value: 460
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{linear_aggression}
+
+topics:
+    # none
+
+tags:
+    - misc
+    - ai
+    - medium
+
+files:
+    - attachments/chal.py
+    - attachments/model.py
+    - attachments/out.png
+    - attachments/model.pth
+
+state: visible
+version: "0.1"

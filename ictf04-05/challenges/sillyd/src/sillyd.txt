@@ -1,0 +1,21 @@
+
+sillyd
+ -listens on port 12345/tcp
+ -creates files in "data"
+
+run: cd SILLYD_DIR; mkdir data; ./sillyd &
+
+one brainwashing and one overflow/brainwashing bug
+
+[line 34]
+if the "auth token" is valid but too long the "id" and the "cmdbuf" become one
+string and therefore one can pass additional parameters to grep (or the shell)
+which is called via system(2)
+
+[line 144]
+the second bug is a real brainwashing attack, it is in the PING command
+the pointer given points to a "char" instead of an "int" and therefore can
+overflow the "bp" variable (which is used for the size in read(2)). this
+can be used to overflow the buffer with read(2). the only thing that has to
+be done is that the PING command must not be terminated with a \r or \n
+so that "bp" is NOT reseted.

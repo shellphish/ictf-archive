@@ -1,0 +1,26 @@
+name: "iCTF 2011 — Mail Gateway"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: network
+description: |
+  **iCTF 2011 — Money Laundering**
+
+  Mail Gateway was an email relay service used in the money laundering
+  communication network. Captured 6,437 times.
+
+  Flags were embedded in email messages transiting through the gateway.
+
+  Source: encrypted VM archive `site/iC7F-l337-vu1n.7z` (AES-encrypted, password unknown).
+value: 0
+type: standard
+image: null
+flags:
+    - ictf2011{mailgateway_compromised}
+tags:
+    - network
+    - email
+    - ictf2011
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

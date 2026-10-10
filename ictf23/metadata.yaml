@@ -1,0 +1,288 @@
+edition: ictf23
+year: 2023
+title: "AI and Cybersecurity"
+
+format: jeopardy
+# Two parallel tracks: High School and Undergraduate.
+# CTFd-based, hosted December 2023.
+# Sponsored by the NSF AI ACTION Institute.
+# Organized jointly by WiCS (Women in Computer Science) and Shellphish.
+
+dates:
+  start: "2023-12-02"
+  end: "2023-12-08"
+  # From CTFd config: start 1701540000 (2023-12-02 18:00 UTC),
+  # end 1702080000 (2023-12-09 00:00 UTC).
+
+participation:
+  num_teams: null
+  undergraduate_users: 39
+  highschool_users: 13
+  notes: >
+    Two parallel tracks. Undergraduate: ~39 registered users.
+    High School: ~13 registered users. Team mode may have been used;
+    users count is approximate.
+
+data:
+  - type: ctfd-export
+    path: "CTFd_Archive/iCTF 2023 - Undergraduate - Competition.2023-12-21_16_58_41.zip"
+    description: "Full CTFd export: undergraduate track (challenges, flags, submissions, files)"
+
+  - type: ctfd-export
+    path: "CTFd_Archive/iCTF 2023 - High School - Competition.2023-12-21_17_01_03.zip"
+    description: "Full CTFd export: high school track (challenges, flags, submissions, files)"
+
+  - type: other
+    path: "CTFd_Archive/iCTF 2023 - Undergraduate - Scoreboard.pdf"
+    description: "Final scoreboard PDF: undergraduate track"
+
+  - type: other
+    path: "CTFd_Archive/iCTF 2023 - High School - Scoreboard.pdf"
+    description: "Final scoreboard PDF: high school track"
+
+  - type: other
+    path: "CTFd_Archive/iCTF 2023 - Undergraduate - Challenges.pdf"
+    description: "Challenge listing PDF: undergraduate track"
+
+  - type: other
+    path: "CTFd_Archive/iCTF 2023 - High School - Challenges.pdf"
+    description: "Challenge listing PDF: high school track"
+
+infrastructure:
+  scorebot: "ctfd"
+  docker:
+    full_environment: false
+    individual_challenges: true
+    notes: "Some challenges (e.g., rustyneurone, supermart) include Docker images in CTFd uploads."
+
+resources:
+  github: "https://github.com/shellphish/ictf23"
+  website: "https://ictf.cs.ucsb.edu"
+  sponsor: "NSF AI ACTION Institute"
+
+notes: >
+  The 2023 iCTF focused on AI and cybersecurity at the intersection of two
+  rapidly evolving fields. It was the first iCTF to run two parallel tracks
+  (High School and Undergraduate) with different difficulty levels. Categories
+  included a novel "LLM" category for prompt-injection and LLM-exploitation
+  challenges, alongside traditional pwn, reverse engineering, crypto, forensics,
+  and data science. Organized by WiCS (Women in Computer Science) at UCSB and
+  Shellphish, with NSF AI ACTION Institute sponsorship. Full CTFd exports are
+  preserved locally including all challenge files, flags, and submissions.
+
+challenges:
+  - name: ai-calculator
+    title: "AI Calculator"
+    category: LLM
+    points: 500
+    track: high-school
+  - name: ai-cryptic-game
+    title: "AI Cryptic Game"
+    category: LLM
+    points: 500
+    track: high-school
+  - name: aimazing
+    title: "aimazing"
+    category: misc
+    points: 500
+    track: high-school
+  - name: brokenwords
+    title: "BrokenWords"
+    category: crypto
+    points: 500
+    track: high-school
+  - name: bytes-in-pairs
+    title: "bytes_in_pairs"
+    category: data science
+    points: 500
+    track: high-school
+  - name: ci-ninja
+    title: "CI Ninja"
+    category: LLM
+    points: 500
+    track: high-school
+  - name: ci-ninja-2
+    title: "CI Ninja 2"
+    category: LLM
+    points: 500
+    track: high-school
+  - name: escape-from-markov
+    title: "escape_from_markov"
+    category: data science
+    points: 500
+    track: high-school
+  - name: evil-model
+    title: "Evil Model"
+    category: misc
+    points: 500
+    track: high-school
+  - name: guesstimate
+    title: "guesstimate"
+    category: LLM
+    points: 500
+    track: high-school
+  - name: lost-in-translation
+    title: "Lost in Translation"
+    category: misc
+    points: 500
+    track: high-school
+  - name: mystical-castle
+    title: "Mystical Castle"
+    category: misc
+    points: 500
+    track: high-school
+  - name: parakeet
+    title: "parakeet"
+    category: forensics
+    points: 500
+    track: high-school
+  - name: parakeet-v2
+    title: "parakeet_v2"
+    category: forensics
+    points: 500
+    track: high-school
+  - name: rock-paper-scissors
+    title: "rock paper scissors"
+    category: misc
+    points: 500
+    track: high-school
+  - name: sanity-check
+    title: "Sanity check"
+    category: simple
+    points: 50
+    track: high-school
+  - name: stop-the-model-thief
+    title: "Stop the model thief!"
+    category: data science
+    points: 500
+    track: high-school
+  - name: stop-the-spammer
+    title: "Stop the spammer!"
+    category: data science
+    points: 500
+    track: high-school
+  - name: tensormania
+    title: "Tensormania"
+    category: misc
+    points: 500
+    track: high-school
+  - name: token-of-appreciation
+    title: "token_of_appreciation"
+    category: reverse engineering
+    points: 500
+    track: high-school
+  - name: trendy
+    title: "Trendy"
+    category: misc
+    points: 500
+    track: high-school
+  - name: who-is-waldo
+    title: "Who is Waldo?"
+    category: misc
+    points: 500
+    track: high-school
+  - name: ai-lock
+    title: "ai_lock"
+    category: reverse engineering
+    points: 500
+    track: undergrad
+  - name: aimazing
+    title: "aimazing"
+    category: misc
+    points: 498
+    track: undergrad
+  - name: aipi-escape
+    title: "A(I)PI Escape"
+    category: LLM
+    points: 500
+    track: undergrad
+  - name: brokenwords
+    title: "BrokenWords"
+    category: crypto
+    points: 498
+    track: undergrad
+  - name: bugdget
+    title: "bugdget"
+    category: misc
+    points: 490
+    track: undergrad
+  - name: bytes-in-pairs
+    title: "bytes_in_pairs"
+    category: data science
+    points: 500
+    track: undergrad
+  - name: ci-ninja
+    title: "CI Ninja"
+    category: LLM
+    points: 498
+    track: undergrad
+  - name: ci-ninja-2
+    title: "CI Ninja 2"
+    category: LLM
+    points: 499
+    track: undergrad
+  - name: escape-from-markov
+    title: "escape_from_markov"
+    category: data science
+    points: 498
+    track: undergrad
+  - name: find-the-deep-faker
+    title: "Find the Deep Faker!"
+    category: data science
+    points: 500
+    track: undergrad
+  - name: islandparty
+    title: "IslandParty"
+    category: misc
+    points: 500
+    track: undergrad
+  - name: lost-album
+    title: "Lost Album"
+    category: misc
+    points: 500
+    track: undergrad
+  - name: mystical-castle
+    title: "Mystical Castle"
+    category: misc
+    points: 499
+    track: undergrad
+  - name: pixel-mirage-part-1
+    title: "Pixel Mirage (part 1)"
+    category: data science
+    points: 500
+    track: undergrad
+  - name: pixel-mirage-part-2
+    title: "Pixel Mirage (part 2)"
+    category: data science
+    points: 500
+    track: undergrad
+  - name: rustyneurone
+    title: "rustyneurone"
+    category: pwn
+    points: 500
+    track: undergrad
+  - name: sanity-check
+    title: "Sanity Check"
+    category: misc
+    points: 50
+    track: undergrad
+  - name: snake-game
+    title: "Snake Game"
+    category: reverse engineering
+    points: 500
+    track: undergrad
+  - name: stop-the-model-thief
+    title: "Stop the model thief!"
+    category: data science
+    points: 500
+    track: undergrad
+  - name: supermart
+    title: "supermart"
+    category: misc
+    points: 492
+    track: undergrad
+  - name: token-of-appreciation
+    title: "token_of_appreciation"
+    category: reverse engineering
+    points: 500
+    track: undergrad

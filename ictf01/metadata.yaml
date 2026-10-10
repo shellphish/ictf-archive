@@ -1,0 +1,64 @@
+edition: ictf01
+year: 2001
+title: "The First Security Exercise"
+
+format: red-blue
+# Note: This was an in-class exercise in a graduate security course at UCSB.
+# Two teams (red and blue) competed on bare-metal Linux machines.
+
+dates:
+  start: "2001-01-01"
+  end: "2001-12-31"
+  # Exact date(s) unknown; multiple exercises occurred during 2001.
+  # A "2001_Winter" subdirectory suggests at least one run in winter term.
+
+participation:
+  num_teams: 2
+  notes: >
+    Two internal UCSB teams (Alpha/Omega as blue teams, red team sub-groups:
+    Buzzco, Eagles, Escalation, E-Squared, Vulture, Wolf).
+    This was an in-class exercise, not an open competition.
+
+challenges: []
+# Services were real bare-metal Linux machines (Red Hat 6.x) at UCSB:
+# BETA (128.111.54.60 altman), ALFA (128.111.54.70 coppola),
+# GAMMA (128.111.54.30 truffault), KAPPA (128.111.54.20 leone),
+# LAMBDA (128.111.54.10 mamet)
+
+data:
+  - type: other
+    path: "2001_Winter/"
+    description: "Files from Winter 2001 exercise"
+
+  - type: other
+    path: "RedBlueTeam/"
+    description: "HTML reports and flag files for red vs. blue team exercise"
+
+  - type: other
+    path: "RedTeamBlueTeam 2001/"
+    description: "Duplicate/variant of the 2001 exercise data"
+
+  - type: other
+    path: "Testbed/"
+    description: "Testbed host configuration file"
+
+infrastructure:
+  scorebot: "manual"
+  network: >
+    Five bare-metal Intel x86 machines on 128.111.54.0/24 running
+    Red Hat Linux 6.1/6.2. SSH 1.2.27 was the primary service.
+  docker:
+    full_environment: false
+    individual_challenges: false
+
+resources:
+  website: null
+
+notes: >
+  The very first iCTF, run as an in-class exercise in a graduate security
+  course at UC Santa Barbara in 2001. Two teams competed on five bare-metal
+  Linux machines. There was no external participation. This exercise laid
+  the groundwork for what would become the International CTF competition.
+  The "2002" entry in the official archive actually refers to a subsequent
+  exercise (scavenge hunt / treasure hunt). This ictf01 directory contains
+  data from the original 2001 red-blue exercises on physical hardware.

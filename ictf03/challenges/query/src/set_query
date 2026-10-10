@@ -1,0 +1,13 @@
+#!/usr/bin/perl 
+
+use HTTP::Lite;
+
+# set the new flag in telephone register
+
+$http = new HTTP::Lite;
+$req = $http->request("http://$ARGV[0]/cgi-bin/change.pl?login=admin&password=$ARGV[2]&last=Gates&first=Bill&id=$ARGV[1]") or die "Unable to get change.pl";
+if ($req != 200) {
+	die "Request failed ($req)";
+}
+
+

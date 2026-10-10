@@ -1,0 +1,36 @@
+name: "iCTF 2020 — 1 after 909"
+author: "zanardi / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2020 — Abbey Road (1 After 909)**
+
+  "When you're trav'ling on the one after 909, you can't be carrying around
+  suitcases full of paper to write your fab lyrics on! We bet you're gonna
+  dig our new electronic music lyrics composition service, man."
+
+  An electronic music lyrics composition and document storage service.
+
+  ## Flag location
+
+  Flags are identified by document ID, and are contained in the document title.
+
+  ## Source
+
+  Full source available at `../../src/1after909/` (cloned from
+  `https://github.com/shellphish/ictf-2020-challs-public`).
+value: 0
+type: standard
+image: null
+protocol: http
+port: 80
+flags:
+    - ictf2020{1_after_909_pwned}
+tags:
+    - web
+    - beatles
+    - ictf2020
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

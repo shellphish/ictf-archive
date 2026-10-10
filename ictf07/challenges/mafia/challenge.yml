@@ -1,0 +1,47 @@
+name: "iCTF 2007 — Copyright Mafia"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: misc
+description: |
+  **iCTF 2007 — The Copyright Mafia**
+
+  Teams played as rival factions within a criminal-corporate hybrid
+  organization that blended organized crime with aggressive copyright
+  enforcement. The competition had explicit game-theory elements:
+
+  - **Petition** (petition_bot.py): plead for mercy from rivals
+  - **Amends** (amends_bot.py): make reparations to settle disputes
+  - **Shakedown** (shakedown_bot.py): extort rivals for tribute
+  - **Copyright** (copyright_bot.py): file enforcement actions
+  - **Therapy** (therapy_bot.py): rehabilitate "reformed" members
+  - **Snitch** (snitch_script.py): report rivals to authorities
+
+  *Full service image in `../../vms/mafia2007.tar.gz`. The `src/`
+  directory contains the Python game bot scripts.*
+value: 0
+type: standard
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf2007{mafia_compromised}
+
+topics:
+    - game theory
+    - network service exploitation
+    - Python
+
+tags:
+    - misc
+    - game-theory
+    - python
+    - ictf2007
+    - historical
+
+files:
+    - src/
+
+state: visible
+version: "0.1"

@@ -1,0 +1,10 @@
+#!/sw/bin/python2.4
+
+import branchbank
+import pem
+import sys
+
+check = sys.argv[1]
+branch = branchbank.Bank("./ctf_bank/keys/public.pem")
+(team, amount, checknum) = branch.validateCheck(check)
+print amount

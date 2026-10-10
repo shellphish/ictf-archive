@@ -1,0 +1,27 @@
+name: "Babychecker"
+author: "iCTF 2024 organizers"
+category: web
+description: |
+  This is a website that can visit links, can you GET the flag? :D
+value: 50
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{AI_Ch3ck3r_M1gh7_F4il}
+
+topics:
+    - remote applications
+
+tags:
+    - remote applications
+
+files:
+    - attachments/src.zip
+
+state: visible
+version: "0.1"

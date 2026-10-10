@@ -1,0 +1,27 @@
+name: "rustyneurone"
+author: "iCTF 2023 organizers"
+category: pwn
+description: |
+  The safest neuron simulator. Written in Rust!
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{MyRustIsRusty12345654321!}
+
+topics:
+    - remote applications
+
+tags:
+    - difficult
+
+files:
+    - attachments/rustyneurone
+
+state: visible
+version: "0.1"

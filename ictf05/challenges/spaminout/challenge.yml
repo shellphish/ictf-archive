@@ -1,0 +1,34 @@
+name: "iCTF 2005 — Spam World: Spam In/Out Gateway"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2005 — The Spam World**
+
+  A dual-port TCP spam gateway. Port 8008 (spam-in) accepts messages with a
+  magic header; port 8009 (spam-out) retrieves them. Protocol: send
+  `SPAM-IN-SPAM-OUT\n<name>\n<flag>\n` to store; `SPAM-IN-SPAM-OUT\n<name>\n`
+  to retrieve. Find a vulnerability to intercept other teams' messages.
+value: 0
+type: standard
+
+image: .
+protocol: tcp
+flags:
+    - ictf2005{spaminout_pwned}
+
+topics:
+    - binary exploitation
+    - network protocol
+
+tags:
+    - binary
+    - tcp
+    - network
+    - ictf2005
+    - historical
+    - attack-defense
+
+files: []
+
+state: visible
+version: "0.1"

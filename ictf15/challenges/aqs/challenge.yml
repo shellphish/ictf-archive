@@ -1,0 +1,24 @@
+name: "iCTF 2015 — aqs"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2015 — Crowdsourcing Evil**
+
+  Association for Quality SPAM guestbook (reused from ictf05)
+
+  Port: 8014. Source not available (only competition database preserved).
+value: 0
+type: standard
+image: null
+protocol: http
+port: 8014
+flags:
+    - ictf2015{aqs_pwned}
+tags:
+    - web
+    - ictf2015
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

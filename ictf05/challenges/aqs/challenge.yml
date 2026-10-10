@@ -1,0 +1,34 @@
+name: "iCTF 2005 — Spam World: AQS Guestbook"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2005 — The Spam World**
+
+  A Python CGI guestbook at `/~aqs/cgi-bin/guestbook.py`. The scorebot signs
+  the guestbook with a random name and stores the flag as the `comment` field.
+  The `priv=on` parameter marks entries as private. Find a way to read private entries.
+value: 0
+type: standard
+
+image: .
+protocol: http
+flags:
+    - ictf2005{aqs_pwned}
+
+topics:
+    - web exploitation
+    - CGI security
+    - information disclosure
+
+tags:
+    - web
+    - python
+    - cgi
+    - ictf2005
+    - historical
+    - attack-defense
+
+files: []
+
+state: visible
+version: "0.1"

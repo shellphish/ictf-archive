@@ -1,0 +1,57 @@
+name: "iCTF 2003 — servlet"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2003 — Windows Goes Open-Source**
+
+  servlet was a Java servlet service. Teams stored flags in the servlet and
+  the scorebot retrieved them using HTTP GET/POST requests to the servlet
+  endpoint. The "Windows Goes Open-Source" theme involved services that
+  mimicked Windows functionality reimplemented as open-source software.
+
+  ## Scorebot interaction
+
+  - `setflag-servlet`: POST to the servlet endpoint to store a flag
+  - `getflag-servlet`: GET from the servlet endpoint to retrieve the flag
+
+  ## Architecture
+
+  Java servlet (`ctf` package) running under Tomcat 4.1.29. Apache proxies
+  `/search/*` to Tomcat via mod_jk (`JKMount /search/* search`). The servlet
+  responds to `/search/search?action=doSearch&keywords=NSA` (GET flag) and
+  `/search/admin?action=doLogin` + `action=updateArticle` (set flag, port 8080).
+
+  ## Source
+
+  Four Java files in `src/`:
+  - `Search.java` — main search servlet with doGet/doPost handlers
+  - `Admin.java` — admin authentication and article management servlet
+  - `Database.java` — flat-file or in-memory database for articles
+  - `Page.java` — HTML page generation helpers
+
+  The scorebot (`src/getflag-servlet`) searches for `"Suspicious" registry key: NSA-<flag>`
+  in search results. The admin script (`src/setflag-servlet`) logs in via cookie
+  and updates the article keyword to embed the flag.
+value: 0
+type: standard
+image: null
+protocol: http
+port: 80
+flags:
+    - ictf2003{servlet_pwned}
+tags:
+    - web
+    - java
+    - servlet
+    - ictf2003
+    - historical
+    - attack-defense
+files:
+    - src/Search.java
+    - src/Admin.java
+    - src/Database.java
+    - src/Page.java
+    - src/getflag-servlet
+    - src/setflag-servlet
+state: visible
+version: "0.1"

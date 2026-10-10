@@ -1,0 +1,32 @@
+name: "iCTF 2004 — UN Voting: Password Verify Daemon"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2004 — The UN Voting System**
+
+  A TCP service on port 11111 that implements a simple credential store.
+  Protocol: `STORE <name> <flag>\n` to store, `DICT <name>\n` to retrieve.
+  Find a vulnerability to read stored flags without knowing the correct name.
+value: 0
+type: standard
+
+image: .
+protocol: tcp
+flags:
+    - ictf2004{pwverify_pwned}
+
+topics:
+    - binary exploitation
+    - network protocol
+
+tags:
+    - binary
+    - tcp
+    - ictf2004
+    - historical
+    - attack-defense
+
+files: []
+
+state: visible
+version: "0.1"

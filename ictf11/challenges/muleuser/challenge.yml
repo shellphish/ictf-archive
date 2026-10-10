@@ -1,0 +1,23 @@
+name: "iCTF 2011 — Mule User"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2011 — Money Laundering**
+
+  Mule User was the end-user portal for money mules to interact with the
+  laundering operation. Captured 2,953 times.
+
+  Source: encrypted VM archive `site/iC7F-l337-vu1n.7z` (AES-encrypted, password unknown).
+value: 0
+type: standard
+image: null
+flags:
+    - ictf2011{muleuser_compromised}
+tags:
+    - web
+    - ictf2011
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

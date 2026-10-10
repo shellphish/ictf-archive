@@ -1,0 +1,28 @@
+name: "iCTF 2010 — I Dream of Jeannie"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2010 — Hit 'em Where it Hurts**
+
+  IDreamOfJeannie (S6) was a custom network service on port 2009. Named after
+  the classic TV series, this service required protocol reverse engineering
+  and exploitation to capture flags from rival team instances.
+
+  Source in VM archive: `vms/ictf2010.services.tar.gz`.
+value: 0
+type: standard
+image: .
+protocol: tcp
+flags:
+    - ictf2010{jeannie_pwned}
+tags:
+    - binary
+    - java
+    - network
+    - ictf2010
+    - historical
+files:
+    - src/IDreamOfJeannie.class
+    - src/libc-lamp.so
+state: visible
+version: "0.1"

@@ -1,0 +1,32 @@
+name: "iCTF 2004 — UN Voting: Diebald Voting Machine Admin"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2004 — The UN Voting System**
+
+  The Diebald service (a parody of Diebold voting machines) exposes an admin CGI
+  at `/~diebald/cgi-bin/admin`. The scorebot creates a user and assigns a task
+  whose value is the flag. Find a way to enumerate or read other teams' tasks.
+value: 0
+type: standard
+
+image: .
+protocol: http
+flags:
+    - ictf2004{diebald_pwned}
+
+topics:
+    - web exploitation
+    - CGI security
+
+tags:
+    - web
+    - cgi
+    - ictf2004
+    - historical
+    - attack-defense
+
+files: []
+
+state: visible
+version: "0.1"

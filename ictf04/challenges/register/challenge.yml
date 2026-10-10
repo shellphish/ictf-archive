@@ -1,0 +1,31 @@
+name: "iCTF 2004 — UN Voting: Voter Registration"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2004 — The UN Voting System**
+
+  A voter registration web service at `/~register/register.html`. The scorebot
+  submits a registration form with the `wwid` (worker/voter ID) field set to the
+  flag. Find a vulnerability to extract registered voter IDs.
+value: 0
+type: standard
+
+image: .
+protocol: http
+flags:
+    - ictf2004{register_pwned}
+
+topics:
+    - web exploitation
+    - information disclosure
+
+tags:
+    - web
+    - ictf2004
+    - historical
+    - attack-defense
+
+files: []
+
+state: visible
+version: "0.1"

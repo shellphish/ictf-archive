@@ -1,0 +1,33 @@
+name: "iCTF 2004 — UN Voting: Feedback Service"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2004 — The UN Voting System**
+
+  The feedback service at `/~feedback/cgi-bin/candidates.php` collects public
+  comments on election candidates. The flag is stored as a comment field in the
+  PHP/CGI backend. Find a way to read or manipulate stored flags.
+value: 0
+type: standard
+
+image: .
+protocol: http
+flags:
+    - ictf2004{feedback_pwned}
+
+topics:
+    - web exploitation
+    - CGI security
+
+tags:
+    - web
+    - php
+    - cgi
+    - ictf2004
+    - historical
+    - attack-defense
+
+files: []
+
+state: visible
+version: "0.1"

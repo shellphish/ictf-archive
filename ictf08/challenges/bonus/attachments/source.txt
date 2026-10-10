@@ -1,0 +1,13 @@
+module Message (M, e) where
+
+import Data.Char
+import Params
+
+newtype M = M {
+       t :: String
+}
+
+g = 0 : 1 : z (+) g (tail g)
+k = (take 1000 g) ++ [mod (op (k!!(x-i)) (k!!(x-j))) 255 | x <- [1000..]]
+e m = z (\n c -> chr $ op (ord c) n) k $ t m
+

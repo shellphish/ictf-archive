@@ -1,0 +1,31 @@
+name: "iCTF 2006 — Hillbilly Bank: Bank Protocol Daemon"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2006 — The Hillbilly Bank**
+
+  The bank protocol daemon (`bankproto`) — a compiled binary extracted
+  from the original competition VM. Find a vulnerability via binary analysis.
+value: 0
+type: standard
+
+image: null
+protocol: tcp
+flags:
+    - ictf2006{bpt_pwned}
+
+topics:
+    - binary exploitation
+    - reverse engineering
+
+tags:
+    - binary
+    - re
+    - ictf2006
+    - historical
+
+files:
+    - src/bankproto
+
+state: visible
+version: "0.1"

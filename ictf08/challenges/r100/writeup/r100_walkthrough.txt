@@ -1,0 +1,47 @@
+Question: Create a version of the Softerror.com mission.txt file that has steganographically encoded the sentence: "All Your Base Are Belong To Us". This means that when the modified mission.txt file is fed to the program whose source is Softerror.com's prog.c, the string "All Your Base Are Belong To Us" is printed
+
+
+
+Solution:
+
+"Our
+ 	
+ mission   		can   		be
+	 	 simply
+
+  	expressed 	 		as  			eval(evil). 
+ 		
+	 	 We 		
+ are	
+	 	enablers	
+ 		for
+ 
+ 	the
+	 	 worst
+ 	
+ scum 
+ 		of
+ 
+ 	the
+	 	 earth, 		
+ who
+ 
+ 	bring   		terror 	 		to
+  		innocent		
+ 	people
+	 	 around 	  	the 	 		world.
+	 	 		  	Our	
+ 		mission	 	  is to develop (for a small fee) software applications and network services that help them carry out their heinous crimes.
+
+We invented novel development techniques, which increased the reliability of terrorists' code, such as the substitution of strcpy(a, b) with the more secure strncpy(a, b, strlen(b)).
+
+In addition, we introduced new approaches to make our code understandable and reusable (see for example, this program)."
+
+
+How to: 
+gcc prog.c -o prog
+prog < prog.c > encoder.c
+gcc encoder.c -o encoder
+echo "All Your Base Are Belong To Us" > message
+./encoder message < mission.txt > result.txt
+md5sum result.txt

@@ -1,0 +1,27 @@
+name: "Babychecker_Revenge"
+author: "iCTF 2024 organizers"
+category: web
+description: |
+  This is another website that can visit links, can you GET the flag? :D
+value: 50
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{U_4r3_55RF_Exp3e7_N0w}
+
+topics:
+    - remote applications
+
+tags:
+    - remote applications
+
+files:
+    - attachments/src.zip
+
+state: visible
+version: "0.1"

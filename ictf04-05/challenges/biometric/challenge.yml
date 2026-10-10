@@ -1,0 +1,30 @@
+name: "iCTF 2005 — Biometric File Service (biometric)"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2005 — The Bass Tard Corporation**
+
+  A C network service that provides authenticated file query and storage.
+  It presents an HTTP-like interface with endpoints for `/query` (retrieve
+  a file by name) and `/store` (save file content). User identity is
+  passed as a hidden field. Find the vulnerability.
+value: 0
+type: standard
+image: .
+protocol: tcp
+host: null
+connection_info: null
+flags:
+    - ictf2005{biometric_compromised}
+topics:
+    - binary exploitation
+    - path traversal
+    - C
+tags:
+    - binary
+    - ictf2005
+    - historical
+files:
+    - src/
+state: visible
+version: "0.1"

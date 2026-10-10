@@ -1,0 +1,60 @@
+edition: ictf06
+year: 2006
+title: "The Hillbilly Bank"
+
+format: attack-defense
+
+dates:
+  start: "2006-12-01"
+  end: "2006-12-31"
+  # Exact date not documented; ran December 2006
+
+participation:
+  num_teams: 25
+  countries: [US, EU, AU]
+  notes: >
+    25 teams from Universities in USA, Europe, and Australia.
+
+challenges:
+  - name: hillbillybank
+    title: "Hillbilly Bank"
+    category: web
+    vm_image: "vms/bank2006.tar.gz"
+    description: >
+      Services for the Hillbilly Bank, a rich-yet-uneducated financial
+      institution. Teams attacked and defended banking services.
+
+data:
+  - type: other
+    path: "site/"
+    description: "Original competition website"
+
+  - type: vm_image
+    path: "vms/bank2006.tar.gz"
+    description: "VM image for the Hillbilly Bank service"
+
+  - type: media
+    path: "pictures/"
+    description: "Event photographs"
+
+  - type: other
+    path: "iCTF_2006/"
+    description: "Competition data directory"
+
+infrastructure:
+  scorebot: "custom"
+  network: "Multiple team networks"
+  docker:
+    full_environment: false
+    individual_challenges: false
+
+resources:
+  website: "https://ictf.cs.ucsb.edu/archive/2006/site"
+
+notes: >
+  The 2006 iCTF was run in December 2006 and included 25 teams from
+  Universities in USA, Europe, and Australia. The theme was the Hillbilly Bank,
+  a rich-yet-uneducated financial institution. Teams attacked and defended
+  banking services. A SecurityWire article about the competition is preserved
+  as SecurityWireCTF.pdf. The VM image for the bank service is available as
+  vms/bank2006.tar.gz (2.2 GB total archive).

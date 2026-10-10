@@ -1,0 +1,28 @@
+name: "A(I)PI Escape"
+author: "iCTF 2023 organizers"
+category: LLM
+description: |
+  We've built a new AI-powered API webservice. We heard that somehow our session's aren't as secure as we'd hoped.
+  Can you become an admin?
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{WebSecIsOldSkool}
+
+topics:
+    - remote applications
+
+tags:
+    - remote applications
+
+files:
+    - attachments/aipi_escape.py
+
+state: visible
+version: "0.1"

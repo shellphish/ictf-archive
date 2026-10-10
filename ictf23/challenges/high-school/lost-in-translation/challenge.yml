@@ -1,0 +1,24 @@
+name: "Lost in Translation"
+author: "iCTF 2023 organizers"
+category: misc
+description: |
+  Hola Hacker! Per prendere la bandiera bei dieser Herausforderung, you need to neem de eerste letter de chaque mot och sammanfoga dem. Boa sorte!
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{HHPplbbdHyntndeldcmosdBs}
+
+topics:
+    # none
+
+tags:
+    # none
+
+state: visible
+version: "0.1"

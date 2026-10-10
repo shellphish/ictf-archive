@@ -1,0 +1,13 @@
+Question: What is the content of the encrypted file? It has been encrypted using the algorithm specified in source.txt, but the operator "op" got lost, and we don't really know what it corresponds to
+Attachment: encrypted.txt, source.txt
+
+Answer: PAPABEARHUNGOVERWILLFINISHDISARMFUNCTOMORROWANDUPLOADNEWFIRMWAREPEACEOUTROUGHRIDER
+
+How-to:
+The encryption algorithm is a
+one-time pad with a lagged Fibonacci generator as the keystream, and the
+goal is to 1) recognize what is going on, 2) guess the operation (the op
+function), 3) brute-force the parameters i and j, and 4) make a
+decryption function.
+
+

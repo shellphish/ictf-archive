@@ -1,0 +1,27 @@
+name: "iCTF 2006 — Hillbilly Bank: Stock Service"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2006 — The Hillbilly Bank**
+
+  The Hillbilly Bank's stock trading service, implemented in C++.
+  Find a vulnerability in the network daemon and compromise it.
+value: 0
+type: standard
+
+image: .
+protocol: tcp
+flags:
+    - ictf2006{sts_stock_pwned}
+
+tags:
+    - binary
+    - network
+    - ictf2006
+    - historical
+
+files:
+    - src/stock_service.cpp
+
+state: visible
+version: "0.1"

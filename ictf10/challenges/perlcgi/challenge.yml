@@ -1,0 +1,27 @@
+name: "iCTF 2010 — PerlCGI"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2010 — Hit 'em Where it Hurts**
+
+  PerlCGI (S4) was a web service using Perl CGI scripts on port 80.
+  Teams exploited Perl-specific vulnerabilities (injection, taint-mode bypass,
+  etc.) to capture flags.
+
+  Source in VM archive: `vms/ictf2010.services.tar.gz`.
+value: 0
+type: standard
+image: .
+protocol: http
+flags:
+    - ictf2010{perlcgi_pwned}
+tags:
+    - web
+    - perl
+    - ictf2010
+    - historical
+files:
+    - src/txtviewer.pl
+    - src/htdocs/index.html
+state: visible
+version: "0.1"

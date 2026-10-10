@@ -1,0 +1,33 @@
+name: "iCTF 2005 — Spam World: Spam Museum"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2005 — The Spam World**
+
+  A Perl CGI "spam museum" that collects spam improvement ideas. The scorebot
+  uploads ideas via `museum_upload.pl` with the flag as the `idea` field, then
+  retrieves them via `museum_admin.pl`. Find a vulnerability to access stored ideas.
+value: 0
+type: standard
+
+image: .
+protocol: http
+flags:
+    - ictf2005{museum_pwned}
+
+topics:
+    - web exploitation
+    - Perl CGI
+
+tags:
+    - web
+    - perl
+    - cgi
+    - ictf2005
+    - historical
+    - attack-defense
+
+files: []
+
+state: visible
+version: "0.1"

@@ -1,0 +1,35 @@
+name: "iCTF 2005 — Spam World: Syscall Daemon"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2005 — The Spam World**
+
+  A TCP service on port 31337 that exposes a custom binary protocol. The service
+  version string contains a seed value; all instructions are XOR-obfuscated with
+  that seed. The flag is stored as a "memory dump" in little-endian 32-bit words.
+  Reverse engineer the protocol to extract the flag.
+value: 0
+type: standard
+
+image: .
+protocol: tcp
+flags:
+    - ictf2005{syscalld_pwned}
+
+topics:
+    - binary exploitation
+    - reverse engineering
+    - custom protocol
+
+tags:
+    - binary
+    - tcp
+    - re
+    - ictf2005
+    - historical
+    - attack-defense
+
+files: []
+
+state: visible
+version: "0.1"

@@ -1,0 +1,61 @@
+name: "iCTF 2010 — Applet (Air Strike Authorization)"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2010 — Hit 'em Where it Hurts**
+
+  Applet (S5) is a PHP web service that uses a Java applet for authentication.
+  The flag is the "airstrike validation code" in `data/secret.txt`, readable only
+  after successful login.
+
+  ## Authentication Flow
+
+  1. Server generates a random 10-digit string and current timestamp
+  2. These are interleaved into a 20-character `rand` param sent to the Java applet
+  3. The applet computes: `token = base64(RC4(timerand:user:sha1(password):crc32(...), hashed_password))`
+  4. Server sends `?user=X&auth=<token>` to PHP, which decrypts with the user's RC4 key
+
+  ## Vulnerability
+
+  SQL injection in `getHashedPasswordFromUser()`:
+  ```php
+  $query = "SELECT password FROM _AUTH_TB_ WHERE (username = '$user')";
+  ```
+  No sanitization — allows dumping password hashes from MySQL (`_USERS_` db,
+  credentials: `raccess` / `akfok(dk_fzeljf90jkf=`). With a valid hash, attackers
+  can forge the RC4-encrypted auth token.
+
+  Runs in chroot at `/chroot/SecuriTech_2006/challenge_13/` with MySQL backend.
+
+  ## Files
+  - `src/web/index.php` — login page with Java applet
+  - `src/web/login.class` — Java applet (compiled; source not recovered)
+  - `src/web/show_access_code.php` — flag display page
+  - `src/includes/functions.php` — auth logic (RC4, SQL query, CRC32 validation)
+  - `src/data/secret.txt` — flag file (flag from original competition)
+value: 0
+type: standard
+image: "."
+protocol: http
+port: 80
+flags:
+    - ictf2010{applet_pwned}
+topics:
+    - sql injection
+    - java applet
+    - rc4
+tags:
+    - web
+    - java
+    - sqli
+    - crypto
+    - ictf2010
+    - historical
+files:
+    - src/web/index.php
+    - src/web/login.class
+    - src/web/show_access_code.php
+    - src/includes/functions.php
+    - src/data/secret.txt
+state: visible
+version: "0.1"

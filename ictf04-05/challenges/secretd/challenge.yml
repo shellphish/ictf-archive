@@ -1,0 +1,30 @@
+name: "iCTF 2005 — Secret Storage Daemon (secretd)"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2005 — The Bass Tard Corporation**
+
+  A C service with separate public and private interfaces for storing
+  and retrieving secret data. The service has both a public-facing
+  component and a privileged internal component. Find the vulnerability
+  that allows reading secrets without authorization.
+value: 0
+type: standard
+image: .
+protocol: tcp
+host: null
+connection_info: null
+flags:
+    - ictf2005{secretd_compromised}
+topics:
+    - binary exploitation
+    - privilege separation
+    - C
+tags:
+    - binary
+    - ictf2005
+    - historical
+files:
+    - src/
+state: visible
+version: "0.1"

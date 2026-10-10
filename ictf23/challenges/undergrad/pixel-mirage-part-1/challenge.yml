@@ -1,0 +1,27 @@
+name: "Pixel Mirage (part 1)"
+author: "iCTF 2023 organizers"
+category: data science
+description: |
+  In 'Pixel Mirage: The AI Deception Challenge', your mission is to subtly alter an image so it fools advanced AI recognition systems, while ensuring changes are almost imperceptible to the human eye. With only a small pixel variation at your disposal, can you outsmart the digital guardian and prove the supremacy of human cunning? Welcome to the ultimate test of stealth and creativity!
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{thisSecretIsGoodEnough}
+
+topics:
+    - adversarial learning
+
+tags:
+    - adversarial learning
+
+files:
+    - attachments/download_files.zip
+
+state: visible
+version: "0.1"

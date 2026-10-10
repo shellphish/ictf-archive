@@ -1,0 +1,69 @@
+# === Raw VM images and disk dumps ===
+vms/
+dumps/
+*.vmdk
+*.vmem
+*.qcow2
+*.iso
+
+# === Large source archives (content extracted to challenges/) ===
+other/
+*.7z
+*.gpg
+*.tar.gz
+*.tgz
+*.gz
+
+# Re-include the scorebot archive (428 KB — fits in git)
+!ictf10/ucsb_ctfscorebot5.tar.gz
+
+# Re-include challenge attachments (tracked via Git LFS)
+!**/challenges/**/attachments/*.tar.gz
+!**/challenges/**/attachments/*.gz
+
+# === Network captures ===
+*.pcap
+*.pcapng
+*.tpxz
+*.tpcap
+
+# === Original competition web sites (1–4 GB each) ===
+site/
+pictures/
+
+# === Edition-internal raw/legacy directories ===
+20[0-9][0-9][0-9][0-9]_*/
+iCTF_*/
+iCTF[0-9]*/
+CTF_*/
+CTF[0-9]*/
+ictf10/ictf10/
+BassRetard*/
+BassTard*/
+basstard*/
+CTF_Software/
+CTFlocal*/
+CTF.rsgmail
+*_clean/
+SecurityWireCTF.pdf
+
+# === Attic: exclude large legacy site, keep small useful dirs ===
+attic/ictf-website-before-static/
+attic/unclear_site/
+attic/ctf_mailinglist.tgz
+attic/ictf-mailing-lists-historical.tgz
+
+# Old super-repo skeleton subdirectory (its content lives at repo root)
+/ictf/
+
+# Embedded git repos in attic (include content without submodule complexity)
+attic/ictf-website/
+
+# === Claude workspace ===
+.claude/
+
+# === Editor / OS junk ===
+.DS_Store
+Thumbs.db
+*.swp
+*~

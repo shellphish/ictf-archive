@@ -1,0 +1,62 @@
+edition: ictf17
+year: 2017
+title: "Defend the Critical Infrastructure"
+
+format: attack-defense
+# Hybrid model: teams defend services + detect attacks + submit exploits via ZDI framework.
+# No direct inter-team attacking; organizers run exploits on behalf of submitting teams.
+
+dates:
+  start: "2017-12-01"
+  end: "2017-12-31"
+  # Exact date not documented; likely December 2017 per school year pattern.
+
+participation:
+  num_teams: null
+  notes: "International university teams. Exact count not documented."
+
+challenges: []
+# Services were "critical infrastructure" services for each team's country.
+# Specific services not documented in local archive.
+
+data:
+  - type: other
+    path: "description.txt"
+    description: "Competition rules and format description"
+
+  - type: other
+    path: "description2.txt"
+    description: "Narrative/theme description (Sicilian hackers, Zebra Dwarf Institution)"
+
+  - type: other
+    path: "iCTF 2017 Announcement.docx"
+    description: "Competition announcement document"
+
+  - type: other
+    path: "Anti-cheating Detection System.docx"
+    description: "Documentation for the anti-cheating detection system"
+
+infrastructure:
+  scorebot: "custom-zdi-framework"
+  network: >
+    Each team given a server running critical infrastructure services.
+    ZDI (Zebra Dwarf Institution) framework for exploit submission.
+    Flow-based attack detection scoring (time-sensitive).
+    Service availability multiplier applied to detection scores.
+  docker:
+    full_environment: false
+    individual_challenges: false
+
+resources:
+  announcement: "iCTF 2017 Announcement.docx"
+
+notes: >
+  The 2017 iCTF continued the "National Cyberdefense Corps" / ZDI framework
+  from earlier editions. Teams defended their country's critical infrastructure
+  services against Sicilian hackers while selling exploits to the Zebra Dwarf
+  Institution (ZDI). Scoring combined: (1) attack detection — correctly
+  identifying malicious connections earns points (time-sensitive, false
+  positives penalized); (2) service availability multiplier; and (3) exploit
+  residuals from ZDI. A notable addition: an "Anti-cheating Detection System"
+  was documented, likely added after the 2016-2017 DDoS incident. The local
+  archive is minimal (~40 KB).

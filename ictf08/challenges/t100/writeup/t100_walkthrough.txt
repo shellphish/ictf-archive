@@ -1,0 +1,18 @@
+Question: You are training as a malware analyzer for the LA Counter Terrorist
+Unit. The Unit's Malware Pattern Miner (TM) software has determined that
+the snippet in attachment is extremely common in malicious samples used
+by the Softerror terrorist group. Assuming that the attackers are
+targeting a Windows XP machine, what is the content of the esi register
+at the end of the execution?
+
+Attachment: sample.bin
+
+Answer: The base address of the kernel32.dll 
+
+[just match the string kernel32.dll]
+
+Solution:
+The Last Stage of Delirium, Win32 Assembly Components, page 8
+http://ivanlef0u.free.fr/repo/windoz/shellcoding/winasm-1.0.1.pdf
+
+

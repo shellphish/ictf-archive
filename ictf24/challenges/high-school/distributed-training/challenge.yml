@@ -1,0 +1,28 @@
+name: "distributed_training"
+author: "iCTF 2024 organizers"
+category: pwn
+description: |
+  a server is set up to accept a 4x4 matrix upload in .pt format (e.g., you upload matA). The server will then return the results of the multiplication matA * matB, where matB is a secret matrix stored on the server. Can you get the flag?
+value: 50
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{b4d_d353r14l_p1ckl3_0MG_xx}
+
+topics:
+    - remote applications
+
+tags:
+    - remote applications
+
+files:
+    - attachments/app.py
+    - attachments/compute.py
+
+state: visible
+version: "0.1"

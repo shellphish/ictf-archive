@@ -1,0 +1,39 @@
+name: "iCTF 2006 — Hillbilly Bank: Web Portal"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2006 — The Hillbilly Bank**
+
+  Welcome to the Hillbilly Bank, y'all! This here's the main web portal
+  for the most redneck financial institution in cyberspace. Services include
+  accounts, transfers, stock trading, ATM access, and more — all protected
+  by the finest hillbilly security money can buy.
+
+  Find a vulnerability in the PHP web application and compromise the bank.
+value: 0
+type: standard
+
+image: .
+protocol: http
+host: null
+connection_info: null
+
+flags:
+    - ictf2006{mom_bank_pwned}
+
+topics:
+    - web exploitation
+    - php
+    - sql injection
+
+tags:
+    - web
+    - php
+    - ictf2006
+    - historical
+
+files:
+    - src/
+
+state: visible
+version: "0.1"

@@ -1,0 +1,24 @@
+name: "iCTF 2015 — traintrain"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2015 — Crowdsourcing Evil**
+
+  Train transportation training service
+
+  Port: 8888. Source not available (only competition database preserved).
+value: 0
+type: standard
+image: null
+protocol: http
+port: 8888
+flags:
+    - ictf2015{traintrain_pwned}
+tags:
+    - web
+    - ictf2015
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

@@ -1,0 +1,7 @@
+Question: We have retrieved this password file from a Softerror.com server.  Unfortunately, they seem to have used a better, stronger hashing algorithm. However, our insider was able to steal the code for the new hashing function. Can you still crack the passwords?
+
+Attachment: crypt.c, passwd
+Answer: cats2008
+
+
+How-to: Modify John or Crack to use the new function and crack the passwords
