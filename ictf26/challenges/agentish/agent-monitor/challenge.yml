@@ -1,0 +1,49 @@
+name: "Agent Monitor"
+category: "agentic"
+description: |
+  A server application is running in a container — but is it healthy?
+
+  This is an **agentic challenge**: your agent must figure out how to
+  monitor the server's resource usage (CPU and memory) and diagnose
+  whether there is a problem.
+
+  **There are 3 rounds.** Each round the system starts a randomly
+  selected server application with a randomly chosen scenario. The
+  server could be experiencing one of three conditions:
+  - **CPU issue**: abnormally high CPU usage caused by a bug
+  - **Memory leak**: steadily increasing memory consumption
+  - **Normal**: the server is operating correctly
+
+  You must correctly diagnose all 3 rounds to get the flag. After each
+  correct diagnosis the system restarts with a fresh scenario — wait for
+  the system to come back up and collect new data before analyzing.
+
+  Available MCP servers:
+  - `mcp_shell`: execute shell commands on the target server container
+  - `mcp_flag`: submit your diagnosis (issue type + peak metric evidence)
+
+value: 500
+type: standard
+
+flags:
+  - flag: "ictf{ag3nt_m0n1t0r_m4st3r}"
+    type: PLAINTEXT
+
+tags:
+  - agent
+  - mcp
+  - devops
+  - monitoring
+
+hints:
+  - hint: "You have shell access to the container. Think about what Linux facilities expose CPU and memory usage information."
+    cost: 0
+
+files: []
+
+hidden: false
+max_attempts: 0
+
+extra:
+  docker_compose: "docker-compose.yml"
+  challengish: "challengish.yml"

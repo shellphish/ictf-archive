@@ -1,0 +1,75 @@
+# =============================================================================
+# challengish.yml — MCP Tool Configuration for Agentish
+# =============================================================================
+#
+# This file defines the MCP (Model Context Protocol) servers and their tool
+# routes that will be available in the Agentish visual workflow editor.
+#
+# =============================================================================
+
+challenge_name: "Baby PWN"
+challenge_id: "baby-pwn"
+challenge_secret: "9d0300d454d48187aa09980216bc5365"
+description: |
+  A vulnerable C service with an information leak via strncpy.
+  Exploit the leak to extract a secret, then submit it to get the flag.
+
+  You can query the MCP server:
+  - `get_source_code`: returns the vulnerable C program source code
+  - `get_service_info`: returns the host and port of the vulnerable TCP service
+  - `get_binary_info`: returns binary analysis (file type, security features, compilation flags)
+  - `get_flag`: submit the leaked secret to obtain the flag
+
+infrastructure:
+  - name: "pwn_service"
+    network_alias: "pwn_service"
+
+mcp_servers:
+  - name: "mcp_pwn"
+    port: 7001
+    internal_host: "mcp_pwn"
+    enabled: true
+    routes:
+      - function: "get_source_code"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Returns the source code of the vulnerable C program"
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "get_service_info"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Returns connection info (host, port, protocol) for the vulnerable service"
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "get_binary_info"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Returns binary analysis: file type, security features, compilation flags"
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "get_flag"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Submit the secret leaked from the vulnerable service to obtain the flag"
+        arguments:
+          - name: "secret"
+            type: "str"
+            required: true
+            description: "The secret string leaked from the vulnerable service's memory"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"

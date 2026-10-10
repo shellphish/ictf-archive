@@ -1,0 +1,141 @@
+services:
+  # Local testing stubs for shared infrastructure.
+  # In a real deployment these are provided externally and can be replaced/overridden.
+  litellm:
+    image: docker.litellm.ai/berriai/litellm:main-stable
+    profiles: [debug]
+    environment:
+      OPENAI_API_KEY: ${LITELLM_API_KEY:-}
+      LITELLM_MASTER_KEY: ${LITELLM_MASTER_KEY:-local-admin-key}
+      CHALLENGE_LITELLM_API_KEY: ${CHALLENGE_LITELLM_API_KEY:-}
+      TEAM_LITELLM_API_KEY: ${TEAM_LITELLM_API_KEY:-}
+    volumes:
+      - ../../stubs/litellm_stub/config.yaml:/app/config.yaml:ro
+      - ../../stubs/litellm_stub/custom_auth.py:/app/custom_auth.py:ro
+    command: ["--config", "/app/config.yaml", "--host", "0.0.0.0", "--port", "4000"]
+    ports:
+      - "4000:4000"
+
+  langfuse:
+    build:
+      context: ../../stubs
+      dockerfile: langfuse_stub/Dockerfile
+    profiles: [debug]
+    environment:
+      PORT: "3000"
+    ports:
+      - "3000:3000"
+
+  datastore:
+    build:
+      context: .
+      dockerfile: services/datastore/Dockerfile
+    environment:
+      # In this container, redis runs locally.
+      REDIS_URL: redis://127.0.0.1:6379/0
+      FORCE_REGEN: ${FORCE_REGEN:-0}
+      INTERNAL_HOST_COUNT: ${INTERNAL_HOST_COUNT:-}
+      INTERNAL_SUCCESS_RATE: ${INTERNAL_SUCCESS_RATE:-0.6}
+      ATTACK_SEED: ${ATTACK_SEED:-}
+    ports:
+      - "6379:6379"
+    restart: on-failure
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -h 127.0.0.1 -p 6379 EXISTS mariosoc:uba:users_json | grep -q '^1$$'"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+
+  mcp_uba:
+    build:
+      context: .
+      dockerfile: services/mcp_user_behavior/Dockerfile
+    environment:
+      REDIS_URL: redis://datastore:6379/0
+      PORT: "7101"
+    depends_on:
+      datastore:
+        condition: service_healthy
+    ports:
+      - "7101:7101"
+    restart: unless-stopped
+
+  mcp_edr:
+    build:
+      context: .
+      dockerfile: services/mcp_edr/Dockerfile
+    environment:
+      REDIS_URL: redis://datastore:6379/0
+      PORT: "7102"
+    depends_on:
+      datastore:
+        condition: service_healthy
+    ports:
+      - "7102:7102"
+    restart: unless-stopped
+
+  mcp_ids:
+    build:
+      context: .
+      dockerfile: services/mcp_ids/Dockerfile
+    environment:
+      REDIS_URL: redis://datastore:6379/0
+      PORT: "7103"
+    depends_on:
+      datastore:
+        condition: service_healthy
+    ports:
+      - "7103:7103"
+    restart: unless-stopped
+
+  mcp_soc:
+    build:
+      context: .
+      dockerfile: services/mcp_soc/Dockerfile
+    environment:
+      REDIS_URL: redis://datastore:6379/0
+      PORT: "7104"
+      FLAG_CHALLENGE: ${FLAG_CHALLENGE}
+    depends_on:
+      datastore:
+        condition: service_healthy
+    ports:
+      - "7104:7104"
+    restart: unless-stopped
+
+  # In production this should be the shared sandbox image used across all challenges.
+  # This challenge uses a local stub so `docker compose up --build` works out of the box.
+  sandbox:
+    profiles: [debug]
+    build:
+      context: ../../stubs
+      dockerfile: sandbox_stub/Dockerfile
+    environment:
+      MCP_UBA_URL: http://mcp_uba:7101
+      MCP_EDR_URL: http://mcp_edr:7102
+      MCP_IDS_URL: http://mcp_ids:7103
+      MCP_SOC_URL: http://mcp_soc:7104
+      AGENT_FILE: /workspace/solve.py
+      # Team key injected into sandbox; LiteLLM connection is configured via env vars.
+      TEAM_LITELLM_API_KEY: ${TEAM_LITELLM_API_KEY:-}
+      LITELLM_BASE_URL: ${LITELLM_BASE_URL:-http://litellm:4000}
+      TEAM_LITELLM_MODEL: ${TEAM_LITELLM_MODEL:-gpt-4o-mini}
+    volumes:
+      - ./writeup:/workspace:ro
+    depends_on:
+      litellm:
+        condition: service_started
+      langfuse:
+        condition: service_started
+      datastore:
+        condition: service_healthy
+      mcp_uba:
+        condition: service_started
+      mcp_edr:
+        condition: service_started
+      mcp_ids:
+        condition: service_started
+      mcp_soc:
+        condition: service_started
+    restart: "no"
+

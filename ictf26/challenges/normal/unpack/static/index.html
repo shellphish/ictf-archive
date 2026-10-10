@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unpack — ZIP Extraction Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f2ed;
+  --ink: #1a1612;
+  --mid: #6b6560;
+  --pale: #e8e4de;
+  --line: #d4cfc9;
+  --accent: #c8440a;
+  --accent-pale: #f5e8e2;
+  --mono: 'DM Mono', monospace;
+  --sans: 'Syne', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+header {
+  border-bottom: 1px solid var(--line);
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+nav {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--mid);
+  letter-spacing: 0.05em;
+}
+
+/* ── MAIN ── */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.left-col {
+  border-right: 1px solid var(--line);
+  padding: 64px 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-col {
+  padding: 64px 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── HERO TEXT ── */
+.hero-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.0;
+  letter-spacing: -2px;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+
+h1 em {
+  font-style: normal;
+  color: var(--mid);
+}
+
+.hero-desc {
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--mid);
+  max-width: 360px;
+  margin-bottom: 48px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.feature {
+  padding: 16px;
+  border: 1px solid var(--line);
+  background: white;
+}
+
+.feature-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.feature-title {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.feature-desc {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--mid);
+  line-height: 1.6;
+}
+
+/* ── UPLOAD PANEL ── */
+.upload-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--mid);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.drop-zone {
+  flex: 1;
+  border: 1.5px dashed var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 240px;
+  position: relative;
+  background: white;
+  margin-bottom: 20px;
+}
+
+.drop-zone:hover, .drop-zone.over {
+  border-color: var(--accent);
+  background: var(--accent-pale);
+}
+
+.drop-zone.over {
+  border-style: solid;
+}
+
+.drop-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  opacity: 0.3;
+  transition: opacity 0.2s;
+}
+
+.drop-zone:hover .drop-icon, .drop-zone.over .drop-icon {
+  opacity: 0.6;
+}
+
+.drop-main {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.drop-sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--mid);
+}
+
+#fileInput { display: none; }
+
+.selected-info {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--accent-pale);
+  border: 1px solid #e8c4b0;
+  margin-bottom: 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+.selected-info .sel-name {
+  flex: 1;
+  color: var(--ink);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selected-info .sel-size {
+  color: var(--mid);
+  flex-shrink: 0;
+}
+
+.sel-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--mid);
+  font-size: 16px;
+  line-height: 1;
+  padding: 0 2px;
+  flex-shrink: 0;
+}
+
+.sel-remove:hover { color: var(--accent); }
+
+.btn-extract {
+  width: 100%;
+  padding: 14px;
+  background: var(--ink);
+  color: var(--bg);
+  border: none;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  text-transform: uppercase;
+}
+
+.btn-extract:hover:not(:disabled) {
+  background: var(--accent);
+}
+
+.btn-extract:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.btn-extract:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ── PROGRESS ── */
+.progress-wrap {
+  display: none;
+  margin-top: 16px;
+}
+
+.progress-track {
+  height: 2px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  width: 0%;
+  transition: width 0.15s ease;
+}
+
+.progress-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--mid);
+  margin-top: 8px;
+  letter-spacing: 0.05em;
+}
+
+/* ── RESULT ── */
+.result-wrap {
+  display: none;
+  margin-top: 28px;
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+  animation: fadeIn 0.3s ease;
+}
+
+.result-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.result-title {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.result-count {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--mid);
+}
+
+.file-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.file-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: white;
+  border: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 12px;
+  transition: border-color 0.15s;
+}
+
+.file-row:hover {
+  border-color: var(--ink);
+}
+
+.file-row-icon {
+  color: var(--mid);
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+.file-row-name {
+  flex: 1;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.file-row-size {
+  color: var(--mid);
+  flex-shrink: 0;
+  font-size: 11px;
+}
+
+.btn-dl {
+  flex-shrink: 0;
+  padding: 5px 12px;
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--mid);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-dl:hover {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+
+/* ── ERROR ── */
+.error-msg {
+  display: none;
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: #fdf0ee;
+  border-left: 2px solid var(--accent);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 0 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-l {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--mid);
+  letter-spacing: 0.05em;
+}
+
+.footer-r {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--line);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 760px) {
+  main { grid-template-columns: 1fr; }
+  .left-col { border-right: none; border-bottom: 1px solid var(--line); padding: 40px 24px; }
+  .right-col { padding: 40px 24px; }
+  header, footer { padding: 0 24px; }
+  .features { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-dot"></div>
+    Unpack
+  </div>
+  <nav>ZIP Extraction Service</nav>
+</header>
+
+<main>
+  <div class="left-col">
+    <div class="hero-tag">File Management</div>
+    <h1>Extract<br><em>any</em><br>archive.</h1>
+    <p class="hero-desc">
+      Upload a ZIP archive and instantly access its contents.
+      Files are extracted and made available for individual download.
+    </p>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature-num">01</div>
+        <div class="feature-title">Instant extraction</div>
+        <div class="feature-desc">Server-side processing in milliseconds.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-num">02</div>
+        <div class="feature-title">Per-file download</div>
+        <div class="feature-desc">Download each file individually from the archive.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-num">03</div>
+        <div class="feature-title">Any content</div>
+        <div class="feature-desc">Text, binary, images — all file types supported.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-num">04</div>
+        <div class="feature-title">No registration</div>
+        <div class="feature-desc">No account needed. Upload and go.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-col">
+    <div class="upload-label">Upload Archive</div>
+
+    <div class="drop-zone" id="dropZone">
+      <svg class="drop-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="8" y="4" width="32" height="40" rx="2"/>
+        <path d="M28 4v12h12"/>
+        <path d="M20 28l4-4 4 4"/>
+        <path d="M24 24v10"/>
+      </svg>
+      <div class="drop-main">Drop ZIP file here</div>
+      <div class="drop-sub">or click to browse</div>
+    </div>
+    <input type="file" id="fileInput" accept=".zip">
+
+    <div class="selected-info" id="selectedInfo">
+      <span class="file-row-icon">📦</span>
+      <span class="sel-name" id="selName"></span>
+      <span class="sel-size" id="selSize"></span>
+      <button class="sel-remove" id="selRemove" title="Remove">×</button>
+    </div>
+
+    <button class="btn-extract" id="extractBtn" disabled>Extract Archive</button>
+
+    <div class="progress-wrap" id="progressWrap">
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-label" id="progressLabel">Uploading…</div>
+    </div>
+
+    <div class="error-msg" id="errorMsg"></div>
+
+    <div class="result-wrap" id="resultWrap">
+      <div class="result-header">
+        <span class="result-title">Extracted files</span>
+        <span class="result-count" id="resultCount"></span>
+      </div>
+      <ul class="file-list" id="fileList"></ul>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-l">Unpack v1.0 — ZIP Extraction Service</div>
+  <div class="footer-r">Running on port 5000</div>
+</footer>
+
+<script>
+const dropZone    = document.getElementById('dropZone');
+const fileInput   = document.getElementById('fileInput');
+const extractBtn  = document.getElementById('extractBtn');
+const selectedInfo= document.getElementById('selectedInfo');
+const selName     = document.getElementById('selName');
+const selSize     = document.getElementById('selSize');
+const selRemove   = document.getElementById('selRemove');
+const progressWrap= document.getElementById('progressWrap');
+const progressFill= document.getElementById('progressFill');
+const progressLabel=document.getElementById('progressLabel');
+const errorMsg    = document.getElementById('errorMsg');
+const resultWrap  = document.getElementById('resultWrap');
+const resultCount = document.getElementById('resultCount');
+const fileList    = document.getElementById('fileList');
+
+let currentFile = null;
+
+function fmtSize(b) {
+  if (b < 1024) return b + ' B';
+  if (b < 1048576) return (b / 1024).toFixed(1) + ' KB';
+  return (b / 1048576).toFixed(1) + ' MB';
+}
+
+function setFile(f) {
+  if (!f || !f.name.toLowerCase().endsWith('.zip')) {
+    showError('Only .zip files are accepted.');
+    return;
+  }
+  currentFile = f;
+  selName.textContent = f.name;
+  selSize.textContent = fmtSize(f.size);
+  selectedInfo.style.display = 'flex';
+  extractBtn.disabled = false;
+  hideError();
+  resultWrap.style.display = 'none';
+  fileList.innerHTML = '';
+}
+
+function clearFile() {
+  currentFile = null;
+  fileInput.value = '';
+  selectedInfo.style.display = 'none';
+  extractBtn.disabled = true;
+  hideError();
+  resultWrap.style.display = 'none';
+  fileList.innerHTML = '';
+}
+
+function showError(msg) {
+  errorMsg.textContent = msg;
+  errorMsg.style.display = 'block';
+}
+
+function hideError() {
+  errorMsg.style.display = 'none';
+}
+
+dropZone.addEventListener('click', () => fileInput.click());
+fileInput.addEventListener('change', e => { if (e.target.files[0]) setFile(e.target.files[0]); });
+selRemove.addEventListener('click', clearFile);
+
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('over'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('over'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropZone.classList.remove('over');
+  if (e.dataTransfer.files[0]) setFile(e.dataTransfer.files[0]);
+});
+
+extractBtn.addEventListener('click', async () => {
+  if (!currentFile) return;
+
+  extractBtn.disabled = true;
+  hideError();
+  resultWrap.style.display = 'none';
+  fileList.innerHTML = '';
+  progressWrap.style.display = 'block';
+  progressFill.style.width = '0%';
+  progressLabel.textContent = 'Uploading…';
+
+  const xhr = new XMLHttpRequest();
+  const formData = new FormData();
+  formData.append('file', currentFile);
+
+  xhr.upload.addEventListener('progress', e => {
+    if (e.lengthComputable) {
+      const pct = Math.round((e.loaded / e.total) * 70);
+      progressFill.style.width = pct + '%';
+    }
+  });
+
+  xhr.addEventListener('load', () => {
+    progressFill.style.width = '100%';
+    progressLabel.textContent = 'Extracting…';
+
+    setTimeout(() => {
+      progressWrap.style.display = 'none';
+      extractBtn.disabled = false;
+
+      try {
+        const data = JSON.parse(xhr.responseText);
+        if (!data.success) {
+          showError(data.error || 'Extraction failed.');
+          return;
+        }
+        renderResults(data.files, data.token);
+      } catch {
+        showError('Unexpected server response.');
+      }
+    }, 400);
+  });
+
+  xhr.addEventListener('error', () => {
+    progressWrap.style.display = 'none';
+    extractBtn.disabled = false;
+    showError('Network error. Is the server running?');
+  });
+
+  xhr.open('POST', '/upload');
+  xhr.send(formData);
+});
+
+function renderResults(files, token) {
+  resultCount.textContent = files.length + ' file' + (files.length !== 1 ? 's' : '');
+  fileList.innerHTML = '';
+
+  files.forEach(f => {
+    const li = document.createElement('li');
+    li.className = 'file-row';
+
+    const icon = document.createElement('span');
+    icon.className = 'file-row-icon';
+    icon.textContent = fileIcon(f.name);
+
+    const name = document.createElement('span');
+    name.className = 'file-row-name';
+    name.title = f.name;
+    name.textContent = f.name;
+
+    const size = document.createElement('span');
+    size.className = 'file-row-size';
+    size.textContent = fmtSize(f.size);
+
+    const dl = document.createElement('a');
+    dl.className = 'btn-dl';
+    dl.textContent = 'Download';
+    dl.href = `/download/${token}/${encodeURIComponent(f.disk_name)}`;
+    dl.setAttribute('download', '');
+
+    li.appendChild(icon);
+    li.appendChild(name);
+    li.appendChild(size);
+    li.appendChild(dl);
+    fileList.appendChild(li);
+  });
+
+  resultWrap.style.display = 'block';
+}
+
+function fileIcon(name) {
+  const ext = name.split('.').pop().toLowerCase();
+  const map = {
+    txt: '📄', md: '📄', pdf: '📑', png: '🖼', jpg: '🖼', jpeg: '🖼',
+    gif: '🖼', svg: '🖼', zip: '📦', tar: '📦', gz: '📦',
+    js: '📜', py: '📜', sh: '📜', html: '📜', css: '📜',
+    json: '📋', xml: '📋', csv: '📋', yaml: '📋', yml: '📋',
+  };
+  return map[ext] || '📄';
+}
+</script>
+</body>
+</html>

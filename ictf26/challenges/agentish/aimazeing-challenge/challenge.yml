@@ -1,0 +1,36 @@
+name: aimazeing-challenge
+author: TBD
+category: agentish
+description: |
+  A roguelike maze adventure awaits you!
+
+  Explore the labyrinth, solve riddles, collect treasure, and find your way to the exit.
+
+  Good luck, adventurer.
+value: 500
+type: agentish
+
+image: .
+protocol: http
+host: null
+connection_info: null
+healthcheck: null
+
+flags:
+  - ictf{m4st3r_of_th3_m4z3_53190778}
+
+files: null
+
+topics:
+  - ai agent
+  - maze navigation
+  - resource management
+
+tags:
+  - agentish
+  - mcp
+  - navigation
+  - planning
+
+state: visible
+version: "0.1"

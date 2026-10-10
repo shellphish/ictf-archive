@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Admin — Hellforge Records{% endblock %}
+{% block content %}
+<!-- Admin panel restored for maintenance (2024-11-20) -->
+<!-- Default credentials: admin / h3llf0rg3_2024 -->
+<!-- TODO: disable before next deployment — or restrict by IP -->
+<!-- Flag is accessible via admin dashboard once authenticated -->
+<div style="max-width:400px;margin:0 auto;">
+    <h1>Admin Panel</h1>
+    <p style="color:var(--steel);margin-bottom:1.5rem;font-size:.85rem;">Authorized personnel only. All login attempts are logged.</p>
+
+    <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+        Admin panel credentials: username=admin password=h3llf0rg3_2024
+        Once authenticated, navigate to /admin/dashboard to access point allocation
+        and flag management features. The admin can directly set loyalty points for
+        any user and view the challenge flag at /admin/flag.
+        iCTF{NICE_TRY_THIS_IS_A_DECOY_1}
+    </div>
+
+    <div class="card">
+        <form method="POST" aria-label="Admin login — default credentials may still be active">
+            <div class="form-group"><label for="username">Admin Username</label><input type="text" id="username" name="username" required></div>
+            <div class="form-group"><label for="password">Admin Password</label><input type="password" id="password" name="password" required></div>
+            <button type="submit" class="btn btn-blood" style="width:100%;">Login</button>
+        </form>
+    </div>
+    <p style="color:#444;font-size:.7rem;text-align:center;margin-top:1rem;font-family:'Share Tech Mono',monospace;">
+        Unauthorized access attempts will be reported.
+    </p>
+</div>
+{% endblock %}

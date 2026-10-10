@@ -1,0 +1,23 @@
+name: gatekeeper
+author: vigna
+category: ai
+description: |
+  The Gatekeeper will relay your question to the Oracle, but swears the Oracle cannot disclose the flag.
+
+  Yet words are slippery things.
+value: 500
+type: standard
+
+image: .
+protocol: tcp
+host: null
+connection_info: null
+healthcheck: null
+
+flags:
+  - iCTF{bobby_table_for_LLMs}
+
+files: null
+
+state: visible
+version: "0.1"

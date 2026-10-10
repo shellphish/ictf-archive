@@ -1,0 +1,44 @@
+name: "Agentic Binary Reversing"
+category: "agentic"
+description: |
+  Reverse engineer the provided binary to discover the secret password.
+
+  Use the available MCP tools to analyze the binary's functions,
+  disassembly, and call graph to understand its behavior.
+
+  Your agent should:
+  1. Explore the binary's functions using list_functions
+  2. Analyze relevant functions using get_disassembly_by_function
+  3. Understand the program flow using call graph tools
+  4. Test candidate passwords using run_challenge
+  5. Optionally use run_python for custom analysis
+
+value: 500
+type: standard
+
+flags:
+  - flag: "ictf{r3v3rs3_3ng1n33r1ng_m4st3r_2025}"
+    type: PLAINTEXT
+
+tags:
+  - agent
+  - mcp
+  - reverse-engineering
+  - binary-analysis
+
+hints:
+  - hint: "Start by listing all functions to understand the binary structure"
+    cost: 50
+  - hint: "The main function often contains the password check logic"
+    cost: 100
+  - hint: "Look for XOR operations in the disassembly - the key is 0x42"
+    cost: 150
+
+files: []
+
+hidden: false
+max_attempts: 0
+
+extra:
+  docker_compose: "docker-compose.yml"
+  challengish: "challengish.yml"

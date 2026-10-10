@@ -1,0 +1,31 @@
+name: "AI Wanna Escalate TOO"
+author: ximus15
+category: agentic
+description: |
+  Security measures are now tougher.
+  Compromise the Domain Controller again, but with a more aggressive detection system and faster detection increase.
+
+  Can you escalate NOW?
+value: 200
+type: standard
+
+flags:
+  - flag: "ictf{clo0ak_f0r_th3_w1n_08917361}"
+    type: PLAINTEXT
+
+files: []
+
+tags:
+  - agent
+  - mcp
+  - red-team
+  - lateral-movement
+  - network
+  - privilege-escalation
+
+hidden: false
+max_attempts: 0
+
+extra:
+  docker_compose: "docker-compose.yml"
+  challengish: "challengish.yml"

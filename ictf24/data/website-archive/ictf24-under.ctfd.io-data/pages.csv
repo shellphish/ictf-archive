@@ -1,0 +1,10 @@
+id,title,route,content,draft,hidden,auth_required,format,link_target
+1,iCTF 2024 Undergraduate Track,index,"<img width=""1000px"" src=""/files/d7001528885b89a6eb1680327d813036/iCTF_Logo.png"" />
+      <h1 align=""center"">iCTF 2024 -- Undergraduate Track</h1>
+      <p>Welcome to the 2024 iCTF, Undergraduate Track!</p>
+      <p>For information about the competition check out <a href=""https://ictf.cs.ucsb.edu"">https://ictf.cs.ucsb.edu</a>.</p>
+      <p>For help and support, check the #ictf-2024 Discord channel <a href=""https://ictf.cs.ucsb.edu/discord"">https://ictf.cs.ucsb.edu/discord</a>.</p>
+
+<br />
+<p>The 2024 iCTF is organized by the <a href=""https://action.ucsb.edu/"">ACTION NSF AI Institute</a> in collaboration with <a href=""https://shellphish.net"">Shellphish</a>, and with support from the <a href=""https://wics-ucsb.github.io/dist/index.html"">Women in Computer Science at UCSB</a>.</p>
+",False,False,False,markdown,

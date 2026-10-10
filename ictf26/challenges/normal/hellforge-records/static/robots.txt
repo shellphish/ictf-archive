@@ -1,0 +1,10 @@
+# Hellforge Records — Crawl Policy
+User-agent: *
+Disallow: /admin
+Disallow: /api/debug
+Disallow: /backup.sql
+Disallow: /coupons/internal
+Disallow: /export
+
+# Note: /admin and /api/debug contain sensitive configuration
+# Contact security@hellforge.local for vulnerability reports

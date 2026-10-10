@@ -1,0 +1,24 @@
+name: "cookie-monster"
+author: "Elena"
+category: web
+description: >
+  A login portal hands out signed session cookies. Log in as a guest —
+  the admin panel is just one forged cookie away.
+  Can you satisfy the Cookie Monster?
+value: 500
+type: standard
+
+image: .
+protocol: tcp
+host: null
+
+flags:
+    - ictf{ForgingCookiesSinceFlask}
+
+files:
+    - README.md         
+
+connection_info: null
+healthcheck: null
+state: visible
+version: "0.1"

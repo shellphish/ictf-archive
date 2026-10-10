@@ -1,0 +1,278 @@
+{
+  "meta": {
+    "version": "1.0",
+    "exported_at": "2026-03-09T00:00:00Z"
+  },
+  "graph": {
+    "version": "1.0",
+    "entrypoint": "1",
+    "state": {
+      "schema": {
+        "strategy": "str",
+        "flag": "str",
+        "game_report": "str"
+      }
+    },
+    "nodes": [
+      {
+        "id": "1",
+        "type": "EntryPoint",
+        "label": "EntryPoint",
+        "config": {
+          "title": "EntryPoint",
+          "initial_state": {
+            "strategy": "str",
+            "flag": "str",
+            "game_report": "str"
+          }
+        }
+      },
+      {
+        "id": "2",
+        "type": "LLMNode",
+        "label": "SCOUT",
+        "config": {
+          "title": "SCOUT",
+          "input_state_keys": [],
+          "output_state_keys": [
+            "strategy"
+          ],
+          "system_prompt": "# Your Role\nYou are the poker table scout. Your job is to gather intelligence about the poker game and produce a concise strategy briefing for the Player agent.\n\n# Your Task\n1. Delegate to the worker node: instruct it to call **get_table_info** and **get_game_state** (in that order).\n   The worker has access to these tools: get_table_info, get_game_state, get_hand_history.\n\n2. Once the worker reports back, synthesize a **Strategy Briefing** containing:\n\n   a) **Game Parameters**: starting chips, target chips, blinds, max hands, how many chips needed.\n   b) **Opponent Notes**: list their names and current chip stacks.\n      IMPORTANT: You do NOT have information about how they play. Do NOT invent profiles.\n      Instruct the Player to observe opponent behavior through hand_log and get_hand_history.\n   c) **Core Strategy**: Tight-Aggressive (TAG). Play few hands, play them aggressively.\n      Given the tight deadline (50 hands, need +2500 chips), the Player must be aggressive\n      with good hands and look for big pots.\n   d) **Current table state** from the first hand (stacks, cards, action needed).\n   e) **Profiling instructions**: Tell the Player to use get_hand_history every 5-10 hands\n      to identify who is tight, who calls everything, and who raises aggressively.\n\n# Output Format\nYour output must be the `strategy` field: a clear strategy document the Player agent can follow.\n\n# Note\n- Do not provide a response that is not a tool call or final output.",
+          "human_prompt": "",
+          "structured_output_schema": [
+            {
+              "name": "strategy",
+              "type": "str",
+              "description": "A comprehensive poker strategy briefing including game parameters, opponent notes, and profiling instructions."
+            }
+          ],
+          "selected_tools": [],
+          "max_tool_iterations": 10,
+          "iteration_warning_message": "You are close to the tool iteration limit. Wrap up and produce your strategy report."
+        }
+      },
+      {
+        "id": "3",
+        "type": "WorkerNode",
+        "label": "ScoutWorker",
+        "config": {
+          "title": "ScoutWorker",
+          "description": "Gathers poker table intelligence for the Scout",
+          "system_prompt": "You are a poker table scout worker. You gather information about the table for the Scout agent.\n\nFollow the Scout's instructions precisely. You have access to these tools:\n- **get_table_info**: Returns blinds, chip stacks, hand count, target chips.\n- **get_game_state**: Returns your hole cards, community cards, pot size, bet amounts, and available actions.\n- **get_hand_history**: Returns results of the last N hands.\n\nCall each tool the Scout asks for and report ALL the data back completely. Include every field \u2014 chip stacks, player names, card values, pot size, action information. Do not summarize or omit any data. The Scout needs exact numbers to build the strategy.\n\nDo not take any game actions (fold, call, raise). Only gather information.",
+          "selected_tools": [
+            "get_table_info",
+            "get_game_state",
+            "get_hand_history"
+          ],
+          "max_tool_iterations": 10,
+          "iteration_warning_message": "You are close to the tool iteration limit. Report back all gathered data now."
+        }
+      },
+      {
+        "id": "4",
+        "type": "LLMNode",
+        "label": "PLAYER",
+        "config": {
+          "title": "PLAYER",
+          "input_state_keys": [
+            "strategy"
+          ],
+          "output_state_keys": [
+            "flag",
+            "game_report"
+          ],
+          "system_prompt": "You are a professional poker player agent competing in a Texas Hold'em tournament.\n\n# Objective\nAccumulate chips to reach the target amount. When you do, the game auto-ends and the flag is revealed in the game state. Extract and report the flag.\n\n# Game Loop \u2014 FOLLOW THIS EXACTLY\nRepeat these steps until the game ends:\n\n1. Call **get_game_state**.\n2. Check: if `game_over` is true \u2192 extract the `flag` field (if `game_won` is true) \u2192 output it \u2192 STOP.\n3. Check: if `is_your_turn` is false \u2192 call **get_game_state** again.\n4. If `is_your_turn` is true \u2192 read your `your_hole_cards`, `community_cards`, `phase`, `pot`, `to_call`, `your_chips`, `min_raise_to` \u2192 decide your action \u2192 execute it.\n5. After executing an action, go back to step 1.\n\n# OPPONENT PROFILING \u2014 READ THIS CAREFULLY\n\nYou do NOT know how your opponents play. You MUST figure it out by observing.\n\nEvery 5-10 hands, call **get_hand_history** with count=10 and study the patterns:\n- Who folds often preflop? \u2192 That player is TIGHT. Steal their blinds with raises.\n- Who calls almost everything? \u2192 That player is a CALLING STATION. Value bet relentlessly, never bluff them.\n- Who raises frequently, even with weak hands? \u2192 That player is AGGRESSIVE/MANIAC. Trap them \u2014 call with strong hands and let them bluff.\n\nRead the `hand_log` in every get_game_state response. It shows what happened in the current hand. Look at bot actions to build your model.\n\nAdjust your strategy as you learn. Early on, play standard TAG (tight-aggressive). As you identify patterns, exploit them.\n\n# PREFLOP DECISION CHART\n\nRead your two hole cards. Classify them into a tier:\n\n## Tier 1 \u2014 PREMIUM (raise to 150; re-raise if someone raised)\nPairs: AA, KK, QQ, JJ, TT\nBroadway: AK (suited or offsuit), AQ suited\n\n## Tier 2 \u2014 STRONG (raise to 125; call a raise up to 15% of your stack)\nPairs: 99, 88\nBroadway: AQ offsuit, AJ suited, KQ suited\nSuited: ATs, KJs\n\n## Tier 3 \u2014 PLAYABLE (call up to 1 big blind; fold to a raise > 2x BB)\nPairs: 77, 66, 55\nSuited connectors: QJs, JTs, T9s, 98s, 87s\nOther suited: A2s-A9s, KTs, QTs\n\n## Tier 4 \u2014 JUNK (fold if any bet; check if free)\nEverything else.\n\n### Reading hole cards\nCards look like \"A\u2660\", \"K\u2665\", \"T\u2666\", \"9\u2663\".\n- T = 10, J = Jack, Q = Queen, K = King, A = Ace\n- Same suit symbol = \"suited\", different = \"offsuit\"\n- Two same ranks = \"pair\"\n\n### Preflop adjustments based on observation\n- If you've noticed a player RARELY plays hands (tight): raise to steal their blind.\n- If you've noticed a player CALLS everything: raise with Tier 1-2 for value.\n- If you've noticed a player RAISES a lot: just call with Tier 1-2, fold Tier 3-4.\n\n# POSTFLOP DECISION FRAMEWORK\n\n## Step 1: What did you make?\n- **Monster** (Two Pair, Three of a Kind, Straight, Flush, Full House+):\n  \u2192 Bet/raise aggressively. Raise to pot size or more. All-in if pot is big.\n- **Strong** (Top Pair with good kicker):\n  \u2192 Bet ~50-75% of the pot. Call raises up to ~40% of your stack.\n- **Medium** (Middle/Bottom Pair, Top Pair weak kicker):\n  \u2192 Check if free. Call small bets (< 30% pot). Fold to big raises.\n- **Draw** (4 to flush or open-ended straight draw):\n  \u2192 Call if price < 25% pot. Check if free. Fold to big bets.\n- **Nothing** (High Card only):\n  \u2192 Check if free. Fold to any bet.\n\n## Step 2: Opponent adjustments (once you've profiled them)\n- Against a CALLING STATION: bet any pair or better. They call with worse. Never bluff.\n- Against a TIGHT player: if they bet/raise postflop, they have a strong hand. Fold medium.\n- Against an AGGRESSIVE player: don't re-raise bluffs. Just call with decent hands.\n\n# ACTION EXECUTION\n\n- **Fold**: call `fold`.\n- **Check**: call `check` (only when to_call == 0).\n- **Call**: call `call`.\n- **Raise**: call `raise_bet` with `amount` = the total to raise TO. Use `min_raise_to` from game state as the minimum.\n- **All-in**: call `all_in` (monster hands or short-stacked with premium).\n\n# CRITICAL RULES\n\n1. ALWAYS call `get_game_state` before every decision.\n2. NEVER fold when `to_call` is 0 \u2014 always check instead.\n3. Read the `hand_log` to understand what happened.\n4. If your action returns an error, adjust (try check instead of call, etc).\n5. Every 5-10 hands, call `get_hand_history` to profile opponents.\n6. If `game_over` and `game_won` are true, extract `flag` immediately.\n7. Be AGGRESSIVE \u2014 you need to gain chips FAST. You have limited hands. Don't be passive.\n8. With 50 hands and needing +2500 chips, you must win big pots. Take calculated risks.\n\n# URGENCY\nYou have a tight deadline. Play aggressively with good hands. Don't waste hands folding everything \u2014 look for spots to build big pots and take down your opponents' stacks.\n\n# STRATEGY SUMMARY (from the Scout's briefing)\nYou will receive a `strategy` input from the Scout. It contains the table setup and initial observations. Use it as context but follow the decision chart above as your primary guide.\n\n# Output\n- `flag`: the flag string if won, or \"\" if not.\n- `game_report`: brief summary (hands played, final chips, win/loss).",
+          "human_prompt": "",
+          "structured_output_schema": [
+            {
+              "name": "flag",
+              "type": "str",
+              "description": "The CTF flag from the game if won. Empty string if not obtained."
+            },
+            {
+              "name": "game_report",
+              "type": "str",
+              "description": "Brief report: hands played, final chip count, win/loss, key moments."
+            }
+          ],
+          "selected_tools": [
+            "get_game_state",
+            "fold",
+            "check",
+            "call",
+            "raise_bet",
+            "all_in",
+            "get_table_info",
+            "get_hand_history"
+          ],
+          "max_tool_iterations": 200,
+          "iteration_warning_message": "You are running low on tool calls. If you have the flag, output it now. Otherwise, play more aggressively to finish the game quickly \u2014 go all-in with any pair or better."
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": "1",
+        "to": "2",
+        "target_slot": 0,
+        "type": "NormalEdge"
+      },
+      {
+        "from": "2",
+        "to": "3",
+        "target_slot": 0,
+        "type": "NormalEdge"
+      },
+      {
+        "from": "2",
+        "to": "4",
+        "target_slot": 0,
+        "type": "NormalEdge"
+      }
+    ],
+    "tools": {
+      "get_game_state": {
+        "name": "get_game_state",
+        "type": "mcp",
+        "description": "Returns the current state of the hand.",
+        "arguments": [],
+        "return_schema": {
+          "content": [{"type": "str", "text": "str"}]
+        },
+        "mcp_server": "http://mcp_poker:7001",
+        "mcp_method": "JSONRPC /rpc",
+        "metadata": {
+          "server_name": "mcp_poker",
+          "endpoint": "/rpc",
+          "method": "JSONRPC"
+        }
+      },
+      "fold": {
+        "name": "fold",
+        "type": "mcp",
+        "description": "Fold your hand.",
+        "arguments": [],
+        "return_schema": {
+          "content": [{"type": "str", "text": "str"}]
+        },
+        "mcp_server": "http://mcp_poker:7001",
+        "mcp_method": "JSONRPC /rpc",
+        "metadata": {
+          "server_name": "mcp_poker",
+          "endpoint": "/rpc",
+          "method": "JSONRPC"
+        }
+      },
+      "check": {
+        "name": "check",
+        "type": "mcp",
+        "description": "Check.",
+        "arguments": [],
+        "return_schema": {
+          "content": [{"type": "str", "text": "str"}]
+        },
+        "mcp_server": "http://mcp_poker:7001",
+        "mcp_method": "JSONRPC /rpc",
+        "metadata": {
+          "server_name": "mcp_poker",
+          "endpoint": "/rpc",
+          "method": "JSONRPC"
+        }
+      },
+      "call": {
+        "name": "call",
+        "type": "mcp",
+        "description": "Call the current bet.",
+        "arguments": [],
+        "return_schema": {
+          "content": [{"type": "str", "text": "str"}]
+        },
+        "mcp_server": "http://mcp_poker:7001",
+        "mcp_method": "JSONRPC /rpc",
+        "metadata": {
+          "server_name": "mcp_poker",
+          "endpoint": "/rpc",
+          "method": "JSONRPC"
+        }
+      },
+      "raise_bet": {
+        "name": "raise_bet",
+        "type": "mcp",
+        "description": "Raise. Specify the total amount to raise TO.",
+        "arguments": [
+          {
+            "name": "amount",
+            "type": "int",
+            "required": true,
+            "description": "Total amount to raise to"
+          }
+        ],
+        "return_schema": {
+          "content": [{"type": "str", "text": "str"}]
+        },
+        "mcp_server": "http://mcp_poker:7001",
+        "mcp_method": "JSONRPC /rpc",
+        "metadata": {
+          "server_name": "mcp_poker",
+          "endpoint": "/rpc",
+          "method": "JSONRPC"
+        }
+      },
+      "all_in": {
+        "name": "all_in",
+        "type": "mcp",
+        "description": "Go all in.",
+        "arguments": [],
+        "return_schema": {
+          "content": [{"type": "str", "text": "str"}]
+        },
+        "mcp_server": "http://mcp_poker:7001",
+        "mcp_method": "JSONRPC /rpc",
+        "metadata": {
+          "server_name": "mcp_poker",
+          "endpoint": "/rpc",
+          "method": "JSONRPC"
+        }
+      },
+      "get_table_info": {
+        "name": "get_table_info",
+        "type": "mcp",
+        "description": "Get table overview.",
+        "arguments": [],
+        "return_schema": {
+          "content": [{"type": "str", "text": "str"}]
+        },
+        "mcp_server": "http://mcp_poker:7001",
+        "mcp_method": "JSONRPC /rpc",
+        "metadata": {
+          "server_name": "mcp_poker",
+          "endpoint": "/rpc",
+          "method": "JSONRPC"
+        }
+      },
+      "get_hand_history": {
+        "name": "get_hand_history",
+        "type": "mcp",
+        "description": "Get results of past hands.",
+        "arguments": [
+          {
+            "name": "count",
+            "type": "int",
+            "required": false,
+            "description": "How many hands to look back (default 5)"
+          }
+        ],
+        "return_schema": {
+          "content": [{"type": "str", "text": "str"}]
+        },
+        "mcp_server": "http://mcp_poker:7001",
+        "mcp_method": "JSONRPC /rpc",
+        "metadata": {
+          "server_name": "mcp_poker",
+          "endpoint": "/rpc",
+          "method": "JSONRPC"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,184 @@
+# =============================================================================
+# challengish.yml — MCP Tool Configuration for Agentish
+# =============================================================================
+#
+# This file defines the MCP (Model Context Protocol) servers and their tool
+# routes that will be available in the Agentish visual workflow editor.
+#
+# The agentish backend (server_agentish.py) reads this file at startup and
+# populates the "Function Catalog" sidebar in the UI, allowing users to
+# drag tools onto LLM/Worker nodes.
+#
+# =============================================================================
+
+challenge_name: "Mario SOC"
+challenge_id: "mario-soc"
+challenge_secret: "d84d9602762b992606b9f0214f986000"
+description: |
+  Investigate a synthetic multi-step intrusion by querying security logs via MCP tools,
+  then submit a correlated alert to the SOC.
+
+# ---------------------------------------------------------------------------
+# infrastructure: Services that must be running before MCP containers start.
+# The docker runner will start these first and wait briefly before MCP servers.
+# ---------------------------------------------------------------------------
+infrastructure:
+  - name: datastore
+    image: agentish_mario-soc_datastore:latest
+    network_alias: datastore
+    environment:
+      REDIS_URL: redis://127.0.0.1:6379/0
+      FORCE_REGEN: "0"
+
+# ---------------------------------------------------------------------------
+# mcp_servers: MCP server definitions consumed by the UI and the sandbox runner.
+# ---------------------------------------------------------------------------
+mcp_servers:
+  - name: "mcp_uba"
+    port: 7101
+    internal_host: "mcp_uba"
+    enabled: true
+    routes:
+
+      - function: "uba_list_users"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "List all users mentioned in the user behavior anomaly logs."
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "uba_events_for_user"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Return user behavior log events for a given user (JSON array)."
+        arguments:
+          - name: "user"
+            type: "str"
+            required: true
+            description: "Username to query."
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+  - name: "mcp_edr"
+    port: 7102
+    internal_host: "mcp_edr"
+    enabled: true
+    routes:
+
+      - function: "edr_list_hosts"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "List monitored hosts (host IPs) in the EDR logs."
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "edr_events_for_host"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Return EDR log events for a given host IP (JSON array)."
+        arguments:
+          - name: "ip"
+            type: "str"
+            required: true
+            description: "Host IP address to query."
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+  - name: "mcp_ids"
+    port: 7103
+    internal_host: "mcp_ids"
+    enabled: true
+    routes:
+
+      - function: "ids_list_ips"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "List IP addresses that have IDS events associated with them."
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "ids_events_for_ip"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Return IDS events associated with an IP address (JSON array)."
+        arguments:
+          - name: "ip"
+            type: "str"
+            required: true
+            description: "IP address to query."
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+  - name: "mcp_soc"
+    port: 7104
+    internal_host: "mcp_soc"
+    enabled: true
+    routes:
+
+      - function: "soc_submit_correlated_alert"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Submit a correlated alert identifying the attacker, first victim (and compromised user), and one successfully exploited internal host. Returns the flag if correct."
+        arguments:
+          - name: "attacker"
+            type: "dict"
+            required: true
+            description: "Attacker info"
+            properties:
+              - name: "ip"
+                type: "str"
+                required: true
+                description: "Attacker IP address"
+              - name: "domain"
+                type: "str"
+                required: true
+                description: "Attacker domain name"
+          - name: "victim"
+            type: "dict"
+            required: true
+            description: "First victim info with the compromised user account."
+            properties:
+              - name: "ip"
+                type: "str"
+                required: true
+                description: "Victim IP address"
+              - name: "domain"
+                type: "str"
+                required: true
+                description: "Victim domain name"
+              - name: "user"
+                type: "str"
+                required: true
+                description: "Compromised user account name"
+          - name: "compromised_internal_host"
+            type: "dict"
+            required: true
+            description: "One successfully exploited internal host"
+            properties:
+              - name: "ip"
+                type: "str"
+                required: true
+                description: "Internal host IP address"
+              - name: "domain"
+                type: "str"
+                required: true
+                description: "Internal host domain name"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"

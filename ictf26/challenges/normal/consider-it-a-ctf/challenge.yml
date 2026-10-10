@@ -1,0 +1,30 @@
+name: Consider it a CTF...
+author: Stijn
+category: forensics
+description: |
+  Professor Light insists that the CTF announcement was shared weeks ago.
+
+  In fact, he has provided the “original” announcement as proof.
+  If you don’t remember seeing it, that’s clearly on you.
+
+  Fortunately, version control systems tend to keep careful records.
+
+  You’ve been given a copy of the announcement materials.
+  Can you recover what was originally written?
+
+value: 500
+type: standard
+
+image: .
+protocol: 
+host: null
+connection_info: null
+healthcheck: null
+
+flags:
+- ictf{n3xt_t1me_ple4s3_ema1l_u$}
+
+files: announcement.zip
+
+state: visible
+version: "0.1"

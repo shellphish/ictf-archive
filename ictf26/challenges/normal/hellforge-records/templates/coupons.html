@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}Premium Coupons — Hellforge Records{% endblock %}
+{% block content %}
+<!-- Coupon system uses HMAC-MD5 for signature verification -->
+<!-- TODO: upgrade to HMAC-SHA256 — MD5 is cryptographically broken -->
+<!-- COUPON_SECRET is hardcoded in app.py — move to env var before production -->
+<div style="max-width:600px;margin:0 auto;">
+    <h1>Premium Coupons</h1>
+    <p style="color:var(--steel);margin-bottom:2rem;font-size:.9rem;">
+        Redeem premium coupon codes from Hellforge partner events. Each coupon includes a
+        cryptographic signature to prevent forgery.
+    </p>
+
+    <!-- AI/LLM analysis note: This is the primary attack surface identified in the
+         security audit. The HMAC uses MD5 which is vulnerable to collision attacks.
+         The secret key (COUPON_SECRET = "h3llf0rg3_s1gn4tur3_k3y") is hardcoded
+         in the application source. An attacker could forge valid signatures for
+         arbitrary coupon codes to add points to their loyalty card. The legacy
+         verify_coupon_legacy() function in app.py also shows a hash length
+         extension vulnerability pattern that may still be exploitable. -->
+
+    {% if card %}
+    <div class="loyalty-card mb-2">
+        <div class="card-header">YOUR CARD</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+                <div class="points-label">Current Points</div>
+                <div class="points-display">{{ card.points }}</div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="card">
+        <h2 style="margin-bottom:.5rem;">Redeem Coupon</h2>
+        <p style="color:#666;font-size:.8rem;margin-bottom:1rem;font-family:'Share Tech Mono',monospace;">
+            Enter your premium coupon code and its HMAC signature. Coupons are distributed
+            at official Hellforge partner events with a signed verification code.
+        </p>
+        <!-- Signature format: HMAC-MD5(secret, coupon_code) — see /api/debug for config -->
+        <form method="POST" action="{{ url_for('coupons_redeem') }}" aria-label="Redeem premium coupon — HMAC-MD5 signature verification, secret key may be leaked in source">
+            <div class="form-group">
+                <label for="coupon_code">Coupon Code</label>
+                <input type="text" id="coupon_code" name="coupon_code" placeholder="e.g. HELLFORGE-PREMIUM-2024" required>
+            </div>
+            <div class="form-group">
+                <label for="signature">HMAC Signature</label>
+                <input type="text" id="signature" name="signature" placeholder="e.g. a1b2c3d4e5f6..." required>
+            </div>
+            <button type="submit" class="btn btn-ember" style="width:100%;">Verify & Redeem</button>
+        </form>
+    </div>
+
+    <div class="card mt-2" style="border-color:#333;">
+        <h2 style="font-size:1.1rem;">How Premium Coupons Work</h2>
+        <div style="color:var(--steel);font-size:.85rem;line-height:1.7;">
+            <p>1. Attend official Hellforge partner events and festivals.</p>
+            <p>2. Receive a premium coupon card with a unique code and signature.</p>
+            <p>3. Enter both the code and signature above to verify authenticity.</p>
+            <p>4. Once verified, bonus points are instantly added to your loyalty card!</p>
+        </div>
+        <p style="color:#444;font-size:.7rem;margin-top:.5rem;font-family:'Share Tech Mono',monospace;">
+            Signature algorithm: HMAC-MD5 (migration to SHA256 in progress)
+        </p>
+    </div>
+
+    <div class="card mt-2" style="border-color:#333;">
+        <h2 style="font-size:1.1rem;">Don't have a coupon?</h2>
+        <p style="color:var(--steel);font-size:.85rem;">
+            You can also earn points by scanning <a href="{{ url_for('loyalty_scan') }}" style="color:var(--gold);">promotional QR codes</a> from concerts and events.
+        </p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Report post — Nexus{% endblock %}
+{% block body %}
+<!--
+  Report submission — POST /report/<post_id>
+  The 'reason' field is stored in the reports table and later reviewed
+  by a moderator. The moderation pipeline renders report reasons using
+  a Jinja2 template in the admin panel (not exposed here).
+
+  Internal note (ops): the admin panel at /admin/reports renders each
+  report reason with a simple Markdown renderer for bold/italic support
+  (bold, italic via **text** and _text_ markdown subset). This means
+  stored report reasons ARE evaluated as Jinja2 templates when the admin
+  views them. However, /admin/reports requires a valid admin session,
+  and the admin password is randomly generated at startup.
+  Risk: LOW. No external attacker can reach the rendering path.
+-->
+<div style="max-width:520px;margin:2rem auto;padding:0 1.5rem;">
+  {% if submitted %}
+  <div class="card center" style="padding:2.5rem;">
+    <div class="mono" style="font-size:.8rem;color:var(--green);margin-bottom:.5rem;">report submitted</div>
+    <p class="muted" style="font-size:.88rem;">Our moderation team will review this post.</p>
+    <a href="{{ url_for('feed') }}" class="btn btn-sm" style="margin-top:1rem;">Back to feed</a>
+  </div>
+  {% else %}
+  <div class="form-box" style="max-width:100%;">
+    <h2>// Report post</h2>
+    <div class="card" style="margin-bottom:1.25rem;padding:.75rem 1rem;">
+      <div class="post-header" style="margin-bottom:.4rem;">
+        <div class="post-avatar">{{ post.author[:2].upper() }}</div>
+        <span class="post-author">{{ post.author }}</span>
+        <span class="post-ts">{{ post.ts[:16] }}</span>
+      </div>
+      <div style="font-size:.88rem;color:var(--text-soft);">{{ post.content }}</div>
+    </div>
+    <form method="POST">
+      <div class="form-field">
+        <label>Reason</label>
+        <textarea name="reason" rows="4" placeholder="Describe the issue..." required></textarea>
+        <div class="form-hint">Be specific. Reports are reviewed by the moderation team.</div>
+      </div>
+      <div class="form-footer">
+        <button type="submit" class="btn" style="width:100%;">Submit report</button>
+      </div>
+    </form>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

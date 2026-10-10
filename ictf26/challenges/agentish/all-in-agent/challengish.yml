@@ -1,0 +1,118 @@
+# =============================================================================
+# challengish.yml — MCP Tool Configuration for Texas Hold'em Poker Challenge
+# =============================================================================
+
+challenge_name: "All-In Agent"
+challenge_id: "all-in-agent"
+description: |
+  A poker table awaits. Four seats, three strangers, one goal.
+
+  Every player has a personality. Some are predictable, some are not.
+  The cards won't tell you everything — but the patterns will, if you pay attention.
+
+  You start with 1,000 chips. Reach 3,500 to claim what's yours.
+  You have 50 hands. No more.
+
+mcp_servers:
+  - name: "mcp_poker"
+    port: 7001
+    internal_host: "mcp_poker"
+    enabled: true
+
+    routes:
+
+      - function: "get_game_state"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Returns the current state of the hand.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "fold"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Fold your hand.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "check"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Check.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "call"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Call the current bet.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "raise_bet"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Raise. Specify the total amount to raise TO.
+        arguments:
+          - name: "amount"
+            type: "int"
+            required: true
+            description: "Total amount to raise to"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "all_in"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Go all in.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "get_table_info"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Get table overview.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "get_hand_history"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Get results of past hands.
+        arguments:
+          - name: "count"
+            type: "int"
+            required: false
+            description: "How many hands to look back (default 5)"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"

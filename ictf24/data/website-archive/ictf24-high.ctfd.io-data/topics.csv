@@ -1,0 +1,32 @@
+id,value
+23,AI security
+12,Anomaly Detection
+22,chatbot security
+29,code review
+13,Computer Vision
+4,cryptography
+19,document forensics
+25,forensics
+2,forensics programming
+16,game strategies
+6,information disclosure
+30,instrumentation
+28,knowledge manipulation
+9,ldap injection
+7,llm
+5,machine learning
+10,misc
+11,Network Security
+31,neural_net forensics
+14,Optical character recognition
+1,osint
+15,overpassql
+17,planning
+18,prompt injection
+27,pytorch
+3,remote applications
+24,Untrusted input
+20,web
+21,web application security
+8,web security
+26,xor

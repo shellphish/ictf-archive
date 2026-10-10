@@ -1,0 +1,24 @@
+name: unpack
+author: ~
+category: web
+description: |
+  I built a little tool to extract ZIP archives online.
+  Upload, extract, download. Nothing fancy.
+
+  It even preserves all the original file metadata.
+value: 500
+type: standard
+
+image: .
+protocol: http
+host: null
+connection_info: null
+healthcheck: null
+
+flags:
+  - ictf{z1p_sl1p_r34d_4nywh3r3_89276230}
+
+files: null
+
+state: visible
+version: "0.1"

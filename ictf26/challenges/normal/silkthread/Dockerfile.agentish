@@ -1,0 +1,8 @@
+FROM python:3.11-slim
+WORKDIR /app
+RUN pip install --no-cache-dir flask flask-cors pyyaml
+COPY backend/ backend/
+COPY frontend/ frontend/
+COPY challengish.yml /app/challengish.yml
+EXPOSE 8000
+CMD ["python", "backend/server_agentish.py", "--port", "8000"]

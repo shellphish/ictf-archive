@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}Profile — Hellforge Records{% endblock %}
+{% block content %}
+<!-- Purchase history rendered server-side with autoescaping — no XSS risk -->
+<!-- Points are managed through the coupon system and promo QR scans -->
+<h1>{{ user.username }}'s Profile</h1>
+
+<div class="stats-row">
+    <div class="stat-box">
+        <div class="stat-value">${{ "%.2f"|format(user.balance) }}</div>
+        <div class="stat-label">Wallet Balance</div>
+    </div>
+    <div class="stat-box">
+        <div class="stat-value">{% if card %}{{ card.points }}{% else %}—{% endif %}</div>
+        <div class="stat-label">Loyalty Points</div>
+    </div>
+    <div class="stat-box">
+        <div class="stat-value">{% if card %}<span class="tier-badge tier-{{ card.tier }}">{{ card.tier }}</span>{% else %}—{% endif %}</div>
+        <div class="stat-label">Tier</div>
+    </div>
+</div>
+
+<h2>Loyalty Card</h2>
+{% if card %}
+<div class="loyalty-card mb-2">
+    <div class="card-header">HELLFORGE LOYALTY MEMBER</div>
+    <div class="card-code">Card: {{ card.card_code }}</div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;">
+        <div>
+            <div class="points-label">Total Points</div>
+            <div class="points-display">{{ card.points }}</div>
+            <span class="tier-badge tier-{{ card.tier }} mt-1">{{ card.tier }} Tier</span>
+        </div>
+        {% if card.qr_data %}
+        <div class="qr-code"><img src="data:image/png;base64,{{ card.qr_data }}" alt="QR"></div>
+        {% endif %}
+    </div>
+    <div class="mt-1">
+        <a href="{{ url_for('loyalty_scan') }}" class="btn btn-gold btn-sm">Scan Promo QR →</a>
+        <a href="{{ url_for('coupons') }}" class="btn btn-ember btn-sm" style="margin-left:.5rem;">Redeem Coupon →</a>
+        <a href="{{ url_for('shop') }}" class="btn btn-blood btn-sm" style="margin-left:.5rem;">Spend Points →</a>
+    </div>
+</div>
+{% else %}
+<div class="card mb-2">
+    <p style="color:var(--steel);margin-bottom:1rem;">Join the Hellforge Loyalty Program! Scan QR promo codes or redeem premium coupons to earn points and unlock exclusive albums.</p>
+    <form method="POST" action="{{ url_for('loyalty_join') }}"><button type="submit" class="btn btn-gold">Join Loyalty Program</button></form>
+</div>
+{% endif %}
+
+<h2>My Collection</h2>
+{% if purchases %}
+<div class="card">
+    {% for p in purchases %}
+    <div class="purchase-item">
+        <div class="purchase-mini-cover cover-{{ p.cover_id }}"></div>
+        <div class="purchase-details">
+            <div class="purchase-title">{{ p.title }}</div>
+            <div class="purchase-artist">{{ p.artist }} · {{ p.genre }}</div>
+            <div class="purchase-desc">{{ p.description }}</div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="card">
+    <p style="color:var(--steel);font-size:.9rem;">Your collection is empty. Visit the <a href="{{ url_for('shop') }}" style="color:var(--gold);">shop</a> to buy some albums!</p>
+</div>
+{% endif %}
+
+{% if purchases %}
+<div class="mt-1">
+    <a href="{{ url_for('export_collection') }}" class="btn btn-sm" style="background:#333;color:var(--steel);">Export Collection as CSV</a>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,37 @@
+# =============================================================================
+# docker-compose.yml — All-In Agent: Texas Hold'em Poker CTF Challenge
+# =============================================================================
+#
+# Usage:
+#   cd all-in-agent/
+#   docker compose up --build
+#
+# Services:
+#   - agentish:   Visual workflow editor at http://localhost:8000
+#   - mcp_poker:  MCP poker game server (internal, port 7001)
+# =============================================================================
+
+services:
+
+  # ---------- Agentish UI ----------
+  agentish:
+    build:
+      context: .
+      dockerfile: Dockerfile.agentish
+    environment:
+      CHALLENGISH_CONFIG_PATH: /app/challengish.yml
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mcp_poker
+
+  # ---------- MCP Poker Game Server ----------
+  mcp_poker:
+    build:
+      context: .
+      dockerfile: Dockerfile.mcp_poker
+    environment:
+      FLAG_CHALLENGE: ${FLAG_CHALLENGE}
+      # POKER_SEED: "42"  # Uncomment for deterministic hands (debugging)
+    ports:
+      - "7001:7001"

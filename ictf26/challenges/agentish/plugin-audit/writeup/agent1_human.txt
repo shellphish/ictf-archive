@@ -1,0 +1,1 @@
+Audit the contact-form-7 plugin. Call get_diff on contact-form-7, then get_file_contents on the changed file. Output a Bug Report.

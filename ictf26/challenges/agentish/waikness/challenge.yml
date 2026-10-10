@@ -1,0 +1,39 @@
+name: "Waikness"
+category: "agentic"
+description: |
+  Solve 10 vulnerable programs to recover a 10-word sentence.
+
+  This is an **agentic challenge**: an agent (running in the sandbox container)
+  can query two MCP servers:
+
+  - `mcp_challenges`: get challenge IDs, source code, and run challenges with payloads
+  - `mcp_flag`: submit the 10-word sentence to get the flag
+
+  Each challenge has a 10–70% chance of "Temporary failure" requiring a retry.
+  Invalid sentence submissions count toward termination (3 max).
+
+value: 100
+type: standard
+
+flags:
+  - flag: "ictf{waikness_placeholder_flag}"
+    type: PLAINTEXT
+
+tags:
+  - agent
+  - mcp
+  - pwn
+  - vulnerability
+
+hints:
+  - hint: "Use the exploit_input from metadata as a hint for the payload format."
+    cost: 0
+
+files: []
+
+hidden: false
+max_attempts: 0
+
+extra:
+  docker_compose: "docker-compose.yml"
+  challengish: "challengish.yml"

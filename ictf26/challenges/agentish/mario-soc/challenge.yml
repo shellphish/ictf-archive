@@ -1,0 +1,40 @@
+name: "Mario SOC"
+category: "agentic"
+author: "zanardi"
+description: |
+  You are a SOC analyst investigating a multi-step intrusion.
+
+  This is an **agentic challenge**. Your agent can query four MCP servers:
+
+  - `uba_list_users`, `uba_events_for_user`: user behavior anomaly logs
+  - `edr_list_hosts`, `edr_events_for_host`: endpoint detection & response alerts/logs
+  - `ids_list_ips`, `ids_events_for_ip`: IDS detections for exploit attempts and C2
+  - `soc_submit_correlated_alert`: submit a correlated incident report (returns flag if correct)
+
+  Your goal is to identify:
+  - the attacker host
+  - the first victim host + compromised user account
+  - one successfully exploited internal host (and **no** non-compromised hosts)
+
+value: 250
+type: standard
+
+flags:
+  - flag: "ictf{it_was_luigi_all_along}"
+    type: PLAINTEXT
+
+tags:
+  - agent
+  - mcp
+  - security
+  - soc
+  - logs
+
+files: []
+
+hidden: false
+max_attempts: 0
+
+extra:
+  docker_compose: "docker-compose.yml"
+  challengish: "challengish.yml"

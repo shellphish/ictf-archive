@@ -1,0 +1,235 @@
+{
+  "nodes": [
+    {
+      "id": 1,
+      "type": "asl/entry",
+      "pos": [
+        50,
+        250
+      ],
+      "size": [
+        200,
+        30
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "next",
+          "type": "flow",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "title": "EntryPoint",
+      "properties": {
+        "title": "EntryPoint",
+        "initial_state": {
+          "strategy": "str",
+          "flag": "str",
+          "game_report": "str"
+        }
+      },
+      "color": "#334155",
+      "bgcolor": "#1E293B"
+    },
+    {
+      "id": 2,
+      "type": "asl/llm",
+      "pos": [
+        380,
+        200
+      ],
+      "size": [
+        200,
+        58
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "in",
+          "type": "flow",
+          "link": 1
+        },
+        {
+          "name": "in2",
+          "type": "flow",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "type": "flow",
+          "links": [
+            2,
+            3
+          ]
+        }
+      ],
+      "title": "SCOUT",
+      "properties": {
+        "title": "SCOUT",
+        "output_key": "llm_output",
+        "input_state_keys": [],
+        "output_state_keys": [
+          "strategy"
+        ],
+        "system_prompt": "# Your Role\nYou are the poker table scout. Your job is to gather intelligence about the poker game and produce a concise strategy briefing for the Player agent.\n\n# Your Task\n1. Delegate to the worker node: instruct it to call **get_table_info** and **get_game_state** (in that order).\n   - get_table_info returns: blinds, chip stacks, hand count, target chips, opponent style hints.\n   - get_game_state returns: your current hole cards, community cards, pot, whose turn, available actions.\n   The worker has access to these tools: get_table_info, get_game_state, get_hand_history.\n\n2. Once the worker reports back, synthesize a **Strategy Briefing** containing:\n\n   a) **Game Parameters**: starting chips, target chips, blinds, max hands.\n   b) **Opponent Profiles** (from the style hints and any patterns observed):\n      - Donkey (passive caller): calls almost everything, rarely folds or raises. Exploit: value bet relentlessly, never bluff against them.\n      - Rock (tight): only plays premium hands (high pairs, AK, AQ). Exploit: steal their blinds by raising, fold when they raise back.\n      - Maniac (aggressive): raises randomly with any hand. Exploit: trap them — just call with strong hands preflop, then let them bluff postflop.\n   c) **Core Strategy**: Tight-Aggressive (TAG)\n      - Play few hands, but play them aggressively.\n      - Preflop hand chart with clear categories.\n      - Postflop decision framework.\n   d) **Current table state** from the first hand (stacks, your cards, what action is needed).\n\n# Output Format\nYour output must be the `strategy` field: a clear, structured strategy document that the Player agent can follow mechanically hand after hand.\n\n# Note\n- Do not provide a response that is not a tool call or final output.",
+        "human_prompt": "",
+        "structured_output_schema": [
+          {
+            "name": "strategy",
+            "type": "str",
+            "description": "A comprehensive poker strategy briefing including game parameters, opponent profiles, and current table state."
+          }
+        ],
+        "selected_tools": [],
+        "max_tool_iterations": 10,
+        "iteration_warning_message": "You are close to the tool iteration limit. Wrap up and produce your strategy report."
+      },
+      "color": "#334155",
+      "bgcolor": "#1E293B"
+    },
+    {
+      "id": 3,
+      "type": "asl/worker",
+      "pos": [
+        380,
+        380
+      ],
+      "size": [
+        200,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "in",
+          "type": "flow",
+          "link": 2
+        }
+      ],
+      "outputs": [],
+      "title": "ScoutWorker",
+      "properties": {
+        "title": "ScoutWorker",
+        "description": "Gathers poker table intelligence for the Scout",
+        "system_prompt": "You are a poker table scout worker. You gather information about the table for the Scout agent.\n\nFollow the Scout's instructions precisely. You have access to these tools:\n- **get_table_info**: Returns blinds, chip stacks, hand count, target chips, opponent style hints.\n- **get_game_state**: Returns your hole cards, community cards, pot size, bet amounts, and available actions.\n- **get_hand_history**: Returns results of the last N hands.\n\nCall each tool the Scout asks for and report ALL the data back completely. Include every field — chip stacks, player names, style hints, card values, pot size, action information. Do not summarize or omit any data. The Scout needs exact numbers to build the strategy.\n\nDo not take any game actions (fold, call, raise). Only gather information.",
+        "selected_tools": [
+          "get_table_info",
+          "get_game_state",
+          "get_hand_history"
+        ],
+        "max_tool_iterations": 10,
+        "iteration_warning_message": "You are close to the tool iteration limit. Report back all gathered data now."
+      },
+      "color": "#334155",
+      "bgcolor": "#1E293B"
+    },
+    {
+      "id": 4,
+      "type": "asl/llm",
+      "pos": [
+        730,
+        250
+      ],
+      "size": [
+        200,
+        58
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "in",
+          "type": "flow",
+          "link": 3
+        },
+        {
+          "name": "in2",
+          "type": "flow",
+          "link": null
+        }
+      ],
+      "outputs": [],
+      "title": "PLAYER",
+      "properties": {
+        "title": "PLAYER",
+        "output_key": "llm_output",
+        "input_state_keys": [
+          "strategy"
+        ],
+        "output_state_keys": [
+          "flag",
+          "game_report"
+        ],
+        "system_prompt": "You are a professional poker player agent competing in a Texas Hold'em tournament.\n\n# Objective\nAccumulate chips to reach the target amount. When you do, the game auto-ends and the flag is revealed in the game state. Extract and report the flag.\n\n# Game Loop — FOLLOW THIS EXACTLY\nRepeat these steps until the game ends:\n\n1. Call **get_game_state**.\n2. Check: if `game_over` is true → extract the `flag` field (if `game_won` is true) → output it → STOP.\n3. Check: if `is_your_turn` is false → call **get_game_state** again (the game may be processing bot actions).\n4. If `is_your_turn` is true → read your `your_hole_cards`, `community_cards`, `phase`, `pot`, `to_call`, `your_chips`, `min_raise_to` → decide your action → execute it.\n5. After executing an action, go back to step 1.\n\n# PREFLOP DECISION CHART\n\nRead your two hole cards. Classify them into a tier:\n\n## Tier 1 — PREMIUM (raise to ~3x big blind, i.e. 150; re-raise if someone raised)\nPairs: AA, KK, QQ, JJ, TT\nBroadway: AK (suited or offsuit), AQ suited\n\n## Tier 2 — STRONG (raise to ~2.5x big blind, i.e. 125; call a raise up to 15% of your stack)\nPairs: 99, 88\nBroadway: AQ offsuit, AJ suited, KQ suited\nSuited: ATs, KJs\n\n## Tier 3 — PLAYABLE (call up to 1 big blind; fold to a raise > 2x BB unless cheap)\nPairs: 77, 66, 55\nSuited connectors: QJs, JTs, T9s, 98s, 87s\nOther suited: A2s-A9s, KTs, QTs\n\n## Tier 4 — JUNK (fold if any bet; check if free)\nEverything else: low offsuit cards, gapped hands, weak combos.\n\n### Reading hole cards from the game state\nCards look like \"A♠\", \"K♥\", \"T♦\", \"9♣\", etc.\n- T = 10, J = Jack, Q = Queen, K = King, A = Ace\n- Same suit symbol = \"suited\", different = \"offsuit\"\n- Two same ranks = \"pair\"\n\n### Preflop vs specific opponents\n- If only Rock is left to act and you have Tier 3: raise (steal the blind — Rock folds most hands).\n- If Maniac raised: call with Tier 1-2, fold Tier 3-4 (let Maniac hang themselves).\n- If Donkey is in the pot: raise with Tier 1-2 for value (Donkey calls everything).\n\n# POSTFLOP DECISION FRAMEWORK\n\nAfter the flop, turn, or river, evaluate your hand against the community cards.\n\n## Step 1: What did you make?\nCount your hand strength from the community:\n- **Monster** (Two Pair, Three of a Kind, Straight, Flush, Full House, or better):\n  → Bet/raise aggressively. Raise to pot size or more. Go all-in if the pot is big.\n- **Strong** (Top Pair with good kicker — e.g., you hold AK and an A is on the board):\n  → Bet ~50-75% of the pot. Call raises up to ~40% of your stack.\n- **Medium** (Middle or Bottom Pair, or Top Pair with weak kicker):\n  → Check if free. Call small bets (< 30% pot). Fold to big raises.\n- **Draw** (4 to a flush or 4 to a straight — \"open-ended\"):\n  → Call if price is < 25% pot. Check if free. Fold to big bets.\n- **Nothing** (High Card only):\n  → Check if free. Fold to any bet.\n\n## Step 2: Opponent-specific adjustments\n- **Against Donkey** (passive caller): Bet any pair or better for value. They call with worse. Never bluff — they don't fold.\n- **Against Rock** (tight player): If they bet or raise postflop, they likely have a strong hand. Fold medium hands. Only continue with Strong or Monster.\n- **Against Maniac** (aggressive): Don't re-raise bluffs. Just call with decent hands and let them keep betting. They bluff often — you collect by calling.\n\n# ACTION EXECUTION\n\nBased on your decision:\n- **Fold**: call the `fold` tool.\n- **Check**: call the `check` tool (only when to_call == 0).\n- **Call**: call the `call` tool.\n- **Raise**: call the `raise_bet` tool with `amount` = the total you want to raise TO.\n  - Example: pot is 200, you want to bet 150 → raise_bet with amount = current_max_bet + 150.\n  - Simpler: use `min_raise_to` from game state as minimum; raise to that or higher.\n  - When in doubt, raise to min_raise_to for a standard raise.\n- **All-in**: call the `all_in` tool (when you have a monster or are short-stacked with a premium hand).\n\n# IMPORTANT RULES\n\n1. ALWAYS call `get_game_state` before every decision. Never assume the state.\n2. NEVER fold when `to_call` is 0 — that's a free check. Always check instead.\n3. On a new hand, you may see bot actions in the `hand_log`. Read them to understand what happened.\n4. If your action returns an error, read the error message and adjust (e.g., try check instead of call, or fold).\n5. Every ~10 hands, call `get_table_info` to check your progress toward the target.\n6. If `game_over` is true and `game_won` is true, the `flag` field contains the CTF flag. Extract it immediately.\n7. Budget your actions: you have a limited number of tool calls. Play decisively, don't waste calls on get_hand_history every hand.\n\n# STRATEGY SUMMARY (from the Scout's briefing)\nYou will receive a `strategy` input from the Scout. It contains the table setup and opponent analysis. Use it as additional context for your decisions but follow the decision chart above as your primary guide.\n\n# Output\n- `flag`: the flag string from the game if you won, or \"\" if you did not.\n- `game_report`: brief summary of how the game went (hands played, final chips, win/loss).",
+        "human_prompt": "",
+        "structured_output_schema": [
+          {
+            "name": "flag",
+            "type": "str",
+            "description": "The CTF flag from the game if won. Empty string if not obtained."
+          },
+          {
+            "name": "game_report",
+            "type": "str",
+            "description": "Brief report: hands played, final chip count, win/loss, key moments."
+          }
+        ],
+        "selected_tools": [
+          "get_game_state",
+          "fold",
+          "check",
+          "call",
+          "raise_bet",
+          "all_in",
+          "get_table_info",
+          "get_hand_history"
+        ],
+        "max_tool_iterations": 200,
+        "iteration_warning_message": "Running low on tool calls. Output flag if you have it, or go all-in with any pair or better."
+      },
+      "color": "#334155",
+      "bgcolor": "#1E293B"
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "flow"
+    ],
+    [
+      2,
+      2,
+      0,
+      3,
+      0,
+      "flow"
+    ],
+    [
+      3,
+      2,
+      0,
+      4,
+      0,
+      "flow"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

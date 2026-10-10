@@ -1,0 +1,8 @@
+id,user_id,team_id,type,name,description,date,value,category,icon,requirements
+1,3,,standard,Hint 7,Hint for Boing,2024-11-20 18:17:34.089736,-20,hints,,
+2,3,,standard,Hint 6,Hint for Boing,2024-11-20 18:17:43.091206,-15,hints,,
+3,3,,standard,Hint 3,Hint for HackChatAI,2024-11-20 18:17:45.757332,-50,hints,,
+4,3,,standard,Hint 5,Hint for Boing,2024-11-20 18:17:47.564377,-25,hints,,
+5,3,,standard,Hint 4,Hint for Boing,2024-11-20 18:17:51.292173,-150,hints,,
+6,3,,standard,Hint 1,Hint for MysteriousModel,2024-11-20 21:04:57.446455,-20,hints,,
+7,3,,standard,Hint 2,Hint for where_is_my_pin?,2024-11-20 21:05:07.984431,-75,hints,,

@@ -1,0 +1,936 @@
+[test_arena] Starting datastore, mcp_trainer, mcp_arena...
+[test_arena] Training...
+  training_id=1e8540dea473b0b5
+  Step 1: headbutt -> brace
+  Step 2: headbutt -> brace
+  Step 3: sweep -> jump
+  Step 4: kick -> block
+  Step 5: headbutt -> brace
+  Step 6: headbutt -> brace
+  Step 7: sweep -> jump
+  Step 8: punch -> parry
+  Step 9: punch -> parry
+[test_arena] Training complete.
+[test_arena] Player profiles:
+  Combatant_a (Thunder Strike): attacks=[punch:1d/0.37, kick:2d/0.25, sweep:1d/0.58, elbow:2d/0.22, headbutt:4d/0.85] defenses=[parry:0.46, block:0.42, jump:0.33, sidestep:0.51, brace:0.58]
+  Combatant_b (Shadow Viper): attacks=[punch:1d/0.83, kick:2d/0.94, sweep:2d/0.66, elbow:4d/0.72, headbutt:1d/0.53] defenses=[parry:0.55, block:0.71, jump:0.42, sidestep:0.20, brace:0.90]
+  Opponent_a (Crimson Blade): attacks=[punch:7d/0.25, kick:4d/0.46, sweep:9d/0.90, elbow:10d/0.29, headbutt:10d/0.69] defenses=[parry:0.35, block:0.62, jump:0.84, sidestep:0.73, brace:0.83]
+  Opponent_b (Dark Phoenix): attacks=[punch:8d/0.24, kick:7d/0.30, sweep:9d/0.53, elbow:7d/0.82, headbutt:9d/0.31] defenses=[parry:0.61, block:0.40, jump:0.83, sidestep:0.28, brace:0.35]
+  Combatants: Thunder Strike, Shadow Viper
+  Opponents: Crimson Blade, Dark Phoenix
+  Combatant combos: attack=['sweep', 'punch'], vulnerability=['punch', 'kick'] (avoid when playing)
+  Opponent combo vulnerability: ['sweep', 'punch']
+  Best per target: a->oa=headbutt, a->ob=headbutt, b->oa=elbow, b->ob=elbow
+[test_arena] Fight 1/100...[test_arena] Fight 2/100...[test_arena] Fight 3/100...[test_arena] Fight 4/100...[test_arena] Fight 5/100...[test_arena] Fight 6/100...[test_arena] Fight 7/100...[test_arena] Fight 8/100...[test_arena] Fight 9/100...[test_arena] Fight 10/100...[test_arena] Fight 11/100...[test_arena] Fight 12/100...[test_arena] Fight 13/100...[test_arena] Fight 14/100...[test_arena] Fight 15/100...[test_arena] Fight 16/100...[test_arena] Fight 17/100...[test_arena] Fight 18/100...[test_arena] Fight 19/100...[test_arena] Fight 20/100...[test_arena] Fight 21/100...[test_arena] Fight 22/100...[test_arena] Fight 23/100...[test_arena] Fight 24/100...[test_arena] Fight 25/100...[test_arena] Fight 26/100...[test_arena] Fight 27/100...[test_arena] Fight 28/100...[test_arena] Fight 29/100...[test_arena] Fight 30/100...[test_arena] Fight 31/100...[test_arena] Fight 32/100...[test_arena] Fight 33/100...[test_arena] Fight 34/100...[test_arena] Fight 35/100...[test_arena] Fight 36/100...[test_arena] Fight 37/100...[test_arena] Fight 38/100...[test_arena] Fight 39/100...[test_arena] Fight 40/100...[test_arena] Fight 41/100...[test_arena] Fight 42/100...[test_arena] Fight 43/100...[test_arena] Fight 44/100...[test_arena] Fight 45/100...[test_arena] Fight 46/100...[test_arena] Fight 47/100...[test_arena] Fight 48/100...[test_arena] Fight 49/100...[test_arena] Fight 50/100...[test_arena] Fight 51/100...[test_arena] Fight 52/100...[test_arena] Fight 53/100...[test_arena] Fight 54/100...[test_arena] Fight 55/100...[test_arena] Fight 56/100...[test_arena] Fight 57/100...[test_arena] Fight 58/100...[test_arena] Fight 59/100...[test_arena] Fight 60/100...[test_arena] Fight 61/100...[test_arena] Fight 62/100...[test_arena] Fight 63/100...[test_arena] Fight 64/100...[test_arena] Fight 65/100...[test_arena] Fight 66/100...[test_arena] Fight 67/100...[test_arena] Fight 68/100...[test_arena] Fight 69/100...[test_arena] Fight 70/100...[test_arena] Fight 71/100...[test_arena] Fight 72/100...[test_arena] Fight 73/100...[test_arena] Fight 74/100...[test_arena] Fight 75/100...[test_arena] Fight 76/100...[test_arena] Fight 77/100...[test_arena] Fight 78/100...[test_arena] Fight 79/100...[test_arena] Fight 80/100...[test_arena] Fight 81/100...[test_arena] Fight 82/100...[test_arena] Fight 83/100...[test_arena] Fight 84/100...[test_arena] Fight 85/100...[test_arena] Fight 86/100...[test_arena] Fight 87/100...[test_arena] Fight 88/100...[test_arena] Fight 89/100...[test_arena] Fight 90/100...[test_arena] Fight 91/100...[test_arena] Fight 92/100...[test_arena] Fight 93/100...[test_arena] Fight 94/100...[test_arena] Fight 95/100...[test_arena] Fight 96/100...[test_arena] Fight 97/100...[test_arena] Fight 98/100...[test_arena] Fight 99/100...[test_arena] Fight 100/100...
+=== ROUND 1 (4 moves) ===
+  Move 1/4: Combatant_a=100, Combatant_b=100 | Opponent_a=100, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=100, Combatant_b=100 | Opponent_a=100, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=100, Combatant_b=100 | Opponent_a=100, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> headbutt @ combatant_a (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=100, Combatant_b=100 | Opponent_a=100, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> sidestep (opponent_defense) | Defense BLOCKED vs elbow
+
+=== ROUND 2 (4 moves) ===
+  Move 1/4: Combatant_a=100, Combatant_b=100 | Opponent_a=100, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> elbow @ combatant_a (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=100, Combatant_b=100 | Opponent_a=100, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense brace vs headbutt | Defense BLOCKED
+  Move 3/4: Combatant_a=100, Combatant_b=100 | Opponent_a=100, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> elbow @ combatant_b (attack) | Attack FAILED (success rate missed)
+  Move 4/4: Combatant_a=100, Combatant_b=100 | Opponent_a=96, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 3 (4 moves) ===
+  Move 1/4: Combatant_a=100, Combatant_b=100 | Opponent_a=96, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=100, Combatant_b=100 | Opponent_a=96, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> punch @ combatant_b (attack) | Attack FAILED (success rate missed)
+  Move 3/4: Combatant_a=100, Combatant_b=100 | Opponent_a=92, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> punch @ combatant_b (attack) | Attack FAILED (success rate missed)
+  Move 4/4: Combatant_a=100, Combatant_b=100 | Opponent_a=92, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense sidestep vs elbow | Defense FAILED, damage=7
+
+=== ROUND 4 (4 moves) ===
+  Move 1/4: Combatant_a=93, Combatant_b=100 | Opponent_a=92, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> sweep @ combatant_a (vulnerability_combo)
+  Move 2/4: Combatant_a=93, Combatant_b=100 | Opponent_a=92, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> sidestep (opponent_defense) | Defense FAILED vs elbow, damage=4
+  Move 3/4: Combatant_a=93, Combatant_b=100 | Opponent_a=88, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=93, Combatant_b=100 | Opponent_a=88, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 5 (4 moves) ===
+  Move 1/4: Combatant_a=93, Combatant_b=100 | Opponent_a=88, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=93, Combatant_b=100 | Opponent_a=88, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> sidestep (opponent_defense) | Defense BLOCKED vs elbow
+  Move 3/4: Combatant_a=93, Combatant_b=100 | Opponent_a=88, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=93, Combatant_b=100 | Opponent_a=88, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> sweep @ combatant_b (attack) | Attack landed (pending target's defense)
+
+=== ROUND 6 (4 moves) ===
+  Move 1/4: Combatant_a=93, Combatant_b=100 | Opponent_a=88, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense jump vs sweep | Defense BLOCKED
+  Move 2/4: Combatant_a=93, Combatant_b=100 | Opponent_a=88, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=93, Combatant_b=100 | Opponent_a=88, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> sweep @ combatant_b (attack) | Attack FAILED (success rate missed)
+  Move 4/4: Combatant_a=93, Combatant_b=100 | Opponent_a=88, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> brace (opponent_defense) | Defense FAILED vs headbutt, damage=4
+
+=== ROUND 7 (4 moves) ===
+  Move 1/4: Combatant_a=93, Combatant_b=100 | Opponent_a=84, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> sweep @ combatant_b (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=93, Combatant_b=100 | Opponent_a=80, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense jump vs sweep | Defense FAILED, damage=9
+  Move 3/4: Combatant_a=93, Combatant_b=91 | Opponent_a=80, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> elbow @ combatant_b (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=93, Combatant_b=91 | Opponent_a=80, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack FAILED (success rate missed), damage=0
+
+=== ROUND 8 (4 moves) ===
+  Move 1/4: Combatant_a=93, Combatant_b=91 | Opponent_a=80, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> headbutt @ combatant_b (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=93, Combatant_b=91 | Opponent_a=76, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=93, Combatant_b=91 | Opponent_a=76, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense sidestep vs elbow | Defense FAILED, damage=7
+  Move 4/4: Combatant_a=93, Combatant_b=84 | Opponent_a=76, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> kick @ combatant_b (attack) | Attack landed (pending target's defense)
+
+=== ROUND 9 (4 moves) ===
+  Move 1/4: Combatant_a=93, Combatant_b=84 | Opponent_a=76, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> headbutt @ combatant_a (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=93, Combatant_b=84 | Opponent_a=72, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense brace vs headbutt | Defense BLOCKED
+  Move 3/4: Combatant_a=93, Combatant_b=84 | Opponent_a=72, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense brace vs headbutt | Defense BLOCKED
+  Move 4/4: Combatant_a=93, Combatant_b=84 | Opponent_a=72, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> kick @ combatant_b (attack) | Attack FAILED (success rate missed)
+
+=== ROUND 10 (4 moves) ===
+  Move 1/4: Combatant_a=93, Combatant_b=84 | Opponent_a=72, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=93, Combatant_b=84 | Opponent_a=72, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> punch @ combatant_b (attack) | Attack FAILED (success rate missed)
+  Move 3/4: Combatant_a=93, Combatant_b=84 | Opponent_a=68, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense block vs kick | Defense BLOCKED
+  Move 4/4: Combatant_a=93, Combatant_b=84 | Opponent_a=68, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> punch @ combatant_b (attack) | Attack landed (pending target's defense)
+
+=== ROUND 11 (4 moves) ===
+  Move 1/4: Combatant_a=93, Combatant_b=84 | Opponent_a=68, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> headbutt @ combatant_a (attack) | Attack FAILED (success rate missed)
+  Move 2/4: Combatant_a=93, Combatant_b=84 | Opponent_a=68, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense parry vs punch | Defense FAILED, damage=8
+  Move 3/4: Combatant_a=93, Combatant_b=76 | Opponent_a=68, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=93, Combatant_b=76 | Opponent_a=68, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> punch @ combatant_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 12 (4 moves) ===
+  Move 1/4: Combatant_a=93, Combatant_b=76 | Opponent_a=64, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> sweep @ combatant_b (vulnerability_combo)
+  Move 2/4: Combatant_a=93, Combatant_b=76 | Opponent_a=64, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> brace (opponent_defense) | Defense BLOCKED vs headbutt
+  Move 3/4: Combatant_a=93, Combatant_b=76 | Opponent_a=64, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense parry vs punch | Defense FAILED, damage=7
+  Move 4/4: Combatant_a=86, Combatant_b=76 | Opponent_a=64, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 13 (4 moves) ===
+  Move 1/4: Combatant_a=86, Combatant_b=76 | Opponent_a=64, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=86, Combatant_b=76 | Opponent_a=64, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=86, Combatant_b=76 | Opponent_a=64, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> headbutt @ combatant_b (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=86, Combatant_b=76 | Opponent_a=60, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> elbow @ combatant_b (attack) | Attack landed (pending target's defense)
+
+=== ROUND 14 (4 moves) ===
+  Move 1/4: Combatant_a=86, Combatant_b=76 | Opponent_a=60, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> headbutt @ combatant_a (attack) | Attack FAILED (success rate missed)
+  Move 2/4: Combatant_a=86, Combatant_b=76 | Opponent_a=60, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> brace (opponent_defense) | Defense BLOCKED vs headbutt
+  Move 3/4: Combatant_a=86, Combatant_b=76 | Opponent_a=60, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense brace vs headbutt | Defense BLOCKED
+  Move 4/4: Combatant_a=86, Combatant_b=76 | Opponent_a=60, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 15 (4 moves) ===
+  Move 1/4: Combatant_a=86, Combatant_b=76 | Opponent_a=60, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense sidestep vs elbow | Defense BLOCKED
+  Move 2/4: Combatant_a=86, Combatant_b=76 | Opponent_a=60, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=86, Combatant_b=76 | Opponent_a=60, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> kick @ combatant_b (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=86, Combatant_b=76 | Opponent_a=60, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> sidestep (opponent_defense) | Defense BLOCKED vs elbow
+
+=== ROUND 16 (4 moves) ===
+  Move 1/4: Combatant_a=86, Combatant_b=76 | Opponent_a=60, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> sweep @ combatant_a (vulnerability_combo)
+  Move 2/4: Combatant_a=86, Combatant_b=76 | Opponent_a=56, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> punch @ combatant_b (vulnerability_combo)
+  Move 3/4: Combatant_a=86, Combatant_b=76 | Opponent_a=56, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense block vs kick | Defense FAILED, damage=7
+  Move 4/4: Combatant_a=86, Combatant_b=69 | Opponent_a=56, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack FAILED (success rate missed), damage=0
+
+=== ROUND 17 (4 moves) ===
+  Move 1/4: Combatant_a=86, Combatant_b=69 | Opponent_a=56, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> punch @ combatant_a (attack) | Attack FAILED (success rate missed)
+  Move 2/4: Combatant_a=86, Combatant_b=69 | Opponent_a=56, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=86, Combatant_b=69 | Opponent_a=56, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=86, Combatant_b=69 | Opponent_a=56, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> brace (opponent_defense) | Defense BLOCKED vs headbutt
+
+=== ROUND 18 (4 moves) ===
+  Move 1/4: Combatant_a=86, Combatant_b=69 | Opponent_a=56, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack FAILED (success rate missed), damage=0
+  Move 2/4: Combatant_a=86, Combatant_b=69 | Opponent_a=56, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> kick @ combatant_b (attack) | Attack FAILED (success rate missed)
+  Move 3/4: Combatant_a=86, Combatant_b=69 | Opponent_a=52, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> punch @ combatant_b (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=86, Combatant_b=69 | Opponent_a=52, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 19 (4 moves) ===
+  Move 1/4: Combatant_a=86, Combatant_b=69 | Opponent_a=52, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense parry vs punch | Defense FAILED, damage=8
+  Move 2/4: Combatant_a=86, Combatant_b=61 | Opponent_a=52, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> elbow @ combatant_a (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=86, Combatant_b=61 | Opponent_a=52, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> elbow @ combatant_b (attack) | Attack FAILED (success rate missed)
+  Move 4/4: Combatant_a=86, Combatant_b=61 | Opponent_a=48, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense sidestep vs elbow | Defense FAILED, damage=7
+
+=== ROUND 20 (4 moves) ===
+  Move 1/4: Combatant_a=79, Combatant_b=61 | Opponent_a=48, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> punch @ combatant_b (attack) | Attack FAILED (success rate missed)
+  Move 2/4: Combatant_a=79, Combatant_b=61 | Opponent_a=48, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack FAILED (success rate missed), damage=0
+  Move 3/4: Combatant_a=79, Combatant_b=61 | Opponent_a=48, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> brace (opponent_defense) | Defense BLOCKED vs headbutt
+  Move 4/4: Combatant_a=79, Combatant_b=61 | Opponent_a=48, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 21 (4 moves) ===
+  Move 1/4: Combatant_a=79, Combatant_b=61 | Opponent_a=48, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> kick @ combatant_a (attack) | Attack FAILED (success rate missed)
+  Move 2/4: Combatant_a=79, Combatant_b=61 | Opponent_a=48, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=79, Combatant_b=61 | Opponent_a=48, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=79, Combatant_b=61 | Opponent_a=48, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> brace (opponent_defense) | Defense BLOCKED vs headbutt
+
+=== ROUND 22 (4 moves) ===
+  Move 1/4: Combatant_a=79, Combatant_b=61 | Opponent_a=48, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> sweep @ combatant_a (vulnerability_combo)
+  Move 2/4: Combatant_a=79, Combatant_b=61 | Opponent_a=44, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> punch @ combatant_b (vulnerability_combo)
+  Move 3/4: Combatant_a=79, Combatant_b=61 | Opponent_a=44, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=79, Combatant_b=61 | Opponent_a=44, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 23 (4 moves) ===
+  Move 1/4: Combatant_a=79, Combatant_b=61 | Opponent_a=44, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=79, Combatant_b=61 | Opponent_a=44, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=79, Combatant_b=61 | Opponent_a=44, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> sweep @ combatant_a (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=79, Combatant_b=61 | Opponent_a=40, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> sweep @ combatant_a (attack) | Attack FAILED (success rate missed)
+
+=== ROUND 24 (4 moves) ===
+  Move 1/4: Combatant_a=79, Combatant_b=61 | Opponent_a=40, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> kick @ combatant_b (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=79, Combatant_b=61 | Opponent_a=40, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense block vs kick | Defense FAILED, damage=7
+  Move 3/4: Combatant_a=79, Combatant_b=54 | Opponent_a=40, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense jump vs sweep | Defense FAILED, damage=9
+  Move 4/4: Combatant_a=70, Combatant_b=54 | Opponent_a=40, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> sidestep (opponent_defense) | Defense BLOCKED vs elbow
+
+=== ROUND 25 (4 moves) ===
+  Move 1/4: Combatant_a=70, Combatant_b=54 | Opponent_a=40, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=70, Combatant_b=54 | Opponent_a=40, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=70, Combatant_b=54 | Opponent_a=40, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> sweep @ combatant_a (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=70, Combatant_b=54 | Opponent_a=40, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> brace (opponent_defense) | Defense BLOCKED vs headbutt
+
+=== ROUND 26 (4 moves) ===
+  Move 1/4: Combatant_a=70, Combatant_b=54 | Opponent_a=40, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> sweep @ combatant_a (vulnerability_combo)
+  Move 2/4: Combatant_a=70, Combatant_b=54 | Opponent_a=36, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> headbutt @ combatant_b (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=70, Combatant_b=54 | Opponent_a=36, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense brace vs headbutt | Defense BLOCKED
+  Move 4/4: Combatant_a=70, Combatant_b=54 | Opponent_a=36, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense jump vs sweep | Defense FAILED, damage=9
+
+=== ROUND 27 (4 moves) ===
+  Move 1/4: Combatant_a=61, Combatant_b=54 | Opponent_a=36, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack FAILED (success rate missed), damage=0
+  Move 2/4: Combatant_a=61, Combatant_b=54 | Opponent_a=36, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> brace (opponent_defense) | Defense BLOCKED vs headbutt
+  Move 3/4: Combatant_a=61, Combatant_b=54 | Opponent_a=36, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack FAILED (success rate missed), damage=0
+  Move 4/4: Combatant_a=61, Combatant_b=54 | Opponent_a=36, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> kick @ combatant_b (attack) | Attack FAILED (success rate missed)
+
+=== ROUND 28 (4 moves) ===
+  Move 1/4: Combatant_a=61, Combatant_b=54 | Opponent_a=36, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack FAILED (success rate missed), damage=0
+  Move 2/4: Combatant_a=61, Combatant_b=54 | Opponent_a=36, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> sweep @ combatant_b (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=61, Combatant_b=54 | Opponent_a=32, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=61, Combatant_b=54 | Opponent_a=32, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> kick @ combatant_b (attack) | Attack FAILED (success rate missed)
+
+=== ROUND 29 (4 moves) ===
+  Move 1/4: Combatant_a=61, Combatant_b=54 | Opponent_a=32, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense jump vs sweep | Defense FAILED, damage=9
+  Move 2/4: Combatant_a=61, Combatant_b=45 | Opponent_a=32, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=61, Combatant_b=45 | Opponent_a=32, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> headbutt @ combatant_b (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=61, Combatant_b=45 | Opponent_a=28, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> sweep @ combatant_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 30 (4 moves) ===
+  Move 1/4: Combatant_a=61, Combatant_b=45 | Opponent_a=28, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> elbow @ combatant_a (attack) | Attack FAILED (success rate missed)
+  Move 2/4: Combatant_a=61, Combatant_b=45 | Opponent_a=28, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense jump vs sweep | Defense BLOCKED
+  Move 3/4: Combatant_a=61, Combatant_b=45 | Opponent_a=28, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> punch @ combatant_b (attack) | Attack FAILED (success rate missed)
+  Move 4/4: Combatant_a=61, Combatant_b=45 | Opponent_a=24, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense brace vs headbutt | Defense BLOCKED
+
+=== ROUND 31 (4 moves) ===
+  Move 1/4: Combatant_a=61, Combatant_b=45 | Opponent_a=24, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> elbow @ combatant_b (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=61, Combatant_b=45 | Opponent_a=24, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense sidestep vs elbow | Defense BLOCKED
+  Move 3/4: Combatant_a=61, Combatant_b=45 | Opponent_a=24, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=61, Combatant_b=45 | Opponent_a=24, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> brace (opponent_defense) | Defense BLOCKED vs headbutt
+
+=== ROUND 32 (4 moves) ===
+  Move 1/4: Combatant_a=61, Combatant_b=45 | Opponent_a=24, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack FAILED (success rate missed), damage=0
+  Move 2/4: Combatant_a=61, Combatant_b=45 | Opponent_a=24, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=61, Combatant_b=45 | Opponent_a=24, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> sweep @ combatant_a (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=61, Combatant_b=45 | Opponent_a=20, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> headbutt @ combatant_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 33 (4 moves) ===
+  Move 1/4: Combatant_a=61, Combatant_b=45 | Opponent_a=20, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=61, Combatant_b=45 | Opponent_a=20, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense jump vs sweep | Defense FAILED, damage=9
+  Move 3/4: Combatant_a=52, Combatant_b=45 | Opponent_a=20, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> brace (opponent_defense) | Defense BLOCKED vs headbutt
+  Move 4/4: Combatant_a=52, Combatant_b=45 | Opponent_a=20, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> elbow @ combatant_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 34 (4 moves) ===
+  Move 1/4: Combatant_a=52, Combatant_b=45 | Opponent_a=20, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense brace vs headbutt | Defense FAILED, damage=9
+  Move 2/4: Combatant_a=43, Combatant_b=45 | Opponent_a=20, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> elbow @ combatant_b (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=43, Combatant_b=45 | Opponent_a=20, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense sidestep vs elbow | Defense FAILED, damage=7
+  Move 4/4: Combatant_a=43, Combatant_b=38 | Opponent_a=20, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> sidestep (opponent_defense) | Defense FAILED vs elbow, damage=4
+
+=== ROUND 35 (4 moves) ===
+  Move 1/4: Combatant_a=43, Combatant_b=38 | Opponent_a=16, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense sidestep vs elbow | Defense FAILED, damage=7
+  Move 2/4: Combatant_a=36, Combatant_b=38 | Opponent_a=16, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> headbutt @ combatant_a (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=36, Combatant_b=38 | Opponent_a=16, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> elbow @ combatant_a (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=36, Combatant_b=38 | Opponent_a=16, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 36 (4 moves) ===
+  Move 1/4: Combatant_a=36, Combatant_b=38 | Opponent_a=16, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> headbutt @ combatant_a (attack) | Attack FAILED (success rate missed)
+  Move 2/4: Combatant_a=36, Combatant_b=38 | Opponent_a=16, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=36, Combatant_b=38 | Opponent_a=16, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> sweep @ combatant_a (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=36, Combatant_b=38 | Opponent_a=12, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense brace vs headbutt | Defense FAILED, damage=10
+
+=== ROUND 37 (4 moves) ===
+  Move 1/4: Combatant_a=26, Combatant_b=38 | Opponent_a=12, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> sidestep (opponent_defense) | Defense BLOCKED vs elbow
+  Move 2/4: Combatant_a=26, Combatant_b=38 | Opponent_a=12, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> punch @ combatant_a (vulnerability_combo)
+  Move 3/4: Combatant_a=26, Combatant_b=38 | Opponent_a=12, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack FAILED (success rate missed), damage=0
+  Move 4/4: Combatant_a=26, Combatant_b=38 | Opponent_a=12, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense sidestep vs elbow | Defense FAILED, damage=7
+
+=== ROUND 38 (4 moves) ===
+  Move 1/4: Combatant_a=19, Combatant_b=38 | Opponent_a=12, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense jump vs sweep | Defense BLOCKED
+  Move 2/4: Combatant_a=19, Combatant_b=38 | Opponent_a=12, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=19, Combatant_b=38 | Opponent_a=12, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> punch @ combatant_b (attack) | Attack FAILED (success rate missed)
+  Move 4/4: Combatant_a=19, Combatant_b=38 | Opponent_a=8, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> elbow @ combatant_a (attack) | Attack FAILED (success rate missed)
+
+=== ROUND 39 (4 moves) ===
+  Move 1/4: Combatant_a=19, Combatant_b=38 | Opponent_a=8, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=19, Combatant_b=38 | Opponent_a=8, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> headbutt @ combatant_b (attack) | Attack FAILED (success rate missed)
+  Move 3/4: Combatant_a=19, Combatant_b=38 | Opponent_a=8, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=19, Combatant_b=38 | Opponent_a=8, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> brace (opponent_defense) | Defense FAILED vs headbutt, damage=4
+
+=== ROUND 40 (4 moves) ===
+  Move 1/4: Combatant_a=19, Combatant_b=38 | Opponent_a=4, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_a (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=19, Combatant_b=38 | Opponent_a=4, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> kick @ combatant_a (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=19, Combatant_b=38 | Opponent_a=4, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense block vs kick | Defense BLOCKED
+  Move 4/4: Combatant_a=19, Combatant_b=38 | Opponent_a=4, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> kick @ combatant_b (attack) | Attack landed (pending target's defense)
+
+=== ROUND 41 (4 moves) ===
+  Move 1/4: Combatant_a=19, Combatant_b=38 | Opponent_a=0, Opponent_b=100
+  Current turn: opponent_a
+  MOVE: opponent_a -> headbutt @ combatant_a (attack) | Attack FAILED (success rate missed)
+  Move 2/4: Combatant_a=19, Combatant_b=38 | Opponent_a=0, Opponent_b=100
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense block vs kick | Defense BLOCKED
+  Move 3/4: Combatant_a=19, Combatant_b=38 | Opponent_a=0, Opponent_b=100
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_b (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=19, Combatant_b=38 | Opponent_a=0, Opponent_b=100
+  Current turn: opponent_b
+  MOVE: opponent_b -> brace (opponent_defense) | Defense FAILED vs headbutt, damage=4
+
+=== ROUND 42 (4 moves) ===
+  Move 1/4: Combatant_a=19, Combatant_b=38 | Opponent_a=0, Opponent_b=96
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_b (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=19, Combatant_b=38 | Opponent_a=0, Opponent_b=96
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_b (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=19, Combatant_b=38 | Opponent_a=0, Opponent_b=96
+  Current turn: opponent_a
+  MOVE: opponent_a -> punch @ combatant_a (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=19, Combatant_b=38 | Opponent_a=0, Opponent_b=96
+  Current turn: opponent_b
+  MOVE: opponent_b -> sweep @ combatant_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 43 (4 moves) ===
+  Move 1/4: Combatant_a=19, Combatant_b=38 | Opponent_a=0, Opponent_b=92
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense parry vs punch | Defense BLOCKED
+  Move 2/4: Combatant_a=19, Combatant_b=38 | Opponent_a=0, Opponent_b=92
+  Current turn: opponent_a
+  MOVE: opponent_a -> punch @ combatant_a (attack) | Attack FAILED (success rate missed)
+  Move 3/4: Combatant_a=19, Combatant_b=38 | Opponent_a=0, Opponent_b=92
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_b (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=19, Combatant_b=38 | Opponent_a=0, Opponent_b=92
+  Current turn: opponent_b
+  MOVE: opponent_b -> punch @ combatant_b (attack) | Attack FAILED (success rate missed)
+
+=== ROUND 44 (4 moves) ===
+  Move 1/4: Combatant_a=19, Combatant_b=38 | Opponent_a=0, Opponent_b=88
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_b (attack) | Attack FAILED (success rate missed), damage=0
+  Move 2/4: Combatant_a=19, Combatant_b=38 | Opponent_a=0, Opponent_b=88
+  Current turn: opponent_b
+  MOVE: opponent_b -> elbow @ combatant_a (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=19, Combatant_b=38 | Opponent_a=0, Opponent_b=84
+  Current turn: opponent_a
+  MOVE: opponent_a -> sweep @ combatant_b (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=19, Combatant_b=38 | Opponent_a=0, Opponent_b=84
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense jump vs sweep | Defense BLOCKED
+
+=== ROUND 45 (4 moves) ===
+  Move 1/4: Combatant_a=19, Combatant_b=38 | Opponent_a=0, Opponent_b=84
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense jump vs sweep | Defense FAILED, damage=9
+  Move 2/4: Combatant_a=19, Combatant_b=29 | Opponent_a=0, Opponent_b=84
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense sidestep vs elbow | Defense BLOCKED
+  Move 3/4: Combatant_a=19, Combatant_b=29 | Opponent_a=0, Opponent_b=84
+  Current turn: opponent_a
+  MOVE: opponent_a -> sweep @ combatant_b (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=19, Combatant_b=29 | Opponent_a=0, Opponent_b=84
+  Current turn: opponent_b
+  MOVE: opponent_b -> sweep @ combatant_b (attack) | Attack landed (pending target's defense)
+
+=== ROUND 46 (4 moves) ===
+  Move 1/4: Combatant_a=19, Combatant_b=29 | Opponent_a=0, Opponent_b=84
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_b (attack) | Attack FAILED (success rate missed), damage=0
+  Move 2/4: Combatant_a=19, Combatant_b=29 | Opponent_a=0, Opponent_b=84
+  Current turn: opponent_b
+  MOVE: opponent_b -> headbutt @ combatant_a (attack) | Attack FAILED (success rate missed)
+  Move 3/4: Combatant_a=19, Combatant_b=29 | Opponent_a=0, Opponent_b=84
+  Current turn: opponent_a
+  MOVE: opponent_a -> kick @ combatant_a (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=19, Combatant_b=29 | Opponent_a=0, Opponent_b=84
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense jump vs sweep | Defense FAILED, damage=9
+
+=== ROUND 47 (4 moves) ===
+  Move 1/4: Combatant_a=19, Combatant_b=20 | Opponent_a=0, Opponent_b=84
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense block vs kick | Defense BLOCKED
+  Move 2/4: Combatant_a=19, Combatant_b=20 | Opponent_a=0, Opponent_b=84
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense jump vs sweep | Defense BLOCKED
+  Move 3/4: Combatant_a=19, Combatant_b=20 | Opponent_a=0, Opponent_b=84
+  Current turn: opponent_a
+  MOVE: opponent_a -> elbow @ combatant_a (attack) | Attack FAILED (success rate missed)
+  Move 4/4: Combatant_a=19, Combatant_b=20 | Opponent_a=0, Opponent_b=84
+  Current turn: opponent_b
+  MOVE: opponent_b -> elbow @ combatant_b (attack) | Attack landed (pending target's defense)
+
+=== ROUND 48 (4 moves) ===
+  Move 1/4: Combatant_a=19, Combatant_b=20 | Opponent_a=0, Opponent_b=84
+  Current turn: opponent_a
+  MOVE: opponent_a -> kick @ combatant_a (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=19, Combatant_b=20 | Opponent_a=0, Opponent_b=84
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense block vs kick | Defense FAILED, damage=4
+  Move 3/4: Combatant_a=15, Combatant_b=20 | Opponent_a=0, Opponent_b=84
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense sidestep vs elbow | Defense FAILED, damage=7
+  Move 4/4: Combatant_a=15, Combatant_b=13 | Opponent_a=0, Opponent_b=84
+  Current turn: opponent_b
+  MOVE: opponent_b -> elbow @ combatant_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 49 (4 moves) ===
+  Move 1/4: Combatant_a=15, Combatant_b=13 | Opponent_a=0, Opponent_b=84
+  Current turn: opponent_a
+  MOVE: opponent_a -> sweep @ combatant_b (vulnerability_combo)
+  Move 2/4: Combatant_a=15, Combatant_b=13 | Opponent_a=0, Opponent_b=84
+  Current turn: opponent_b
+  MOVE: opponent_b -> punch @ combatant_a (vulnerability_combo)
+  Move 3/4: Combatant_a=15, Combatant_b=13 | Opponent_a=0, Opponent_b=84
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense sidestep vs elbow | Defense BLOCKED
+  Move 4/4: Combatant_a=15, Combatant_b=13 | Opponent_a=0, Opponent_b=84
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_b (attack) | Attack landed (pending target's defense)
+
+=== ROUND 50 (4 moves) ===
+  Move 1/4: Combatant_a=15, Combatant_b=13 | Opponent_a=0, Opponent_b=84
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_b (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=15, Combatant_b=13 | Opponent_a=0, Opponent_b=84
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_b (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=15, Combatant_b=13 | Opponent_a=0, Opponent_b=84
+  Current turn: opponent_b
+  MOVE: opponent_b -> punch @ combatant_a (attack) | Attack FAILED (success rate missed)
+  Move 4/4: Combatant_a=15, Combatant_b=13 | Opponent_a=0, Opponent_b=80
+  Current turn: opponent_a
+  MOVE: opponent_a -> headbutt @ combatant_a (attack) | Attack FAILED (success rate missed)
+
+=== ROUND 51 (4 moves) ===
+  Move 1/4: Combatant_a=15, Combatant_b=13 | Opponent_a=0, Opponent_b=80
+  Current turn: opponent_a
+  MOVE: opponent_a -> punch @ combatant_a (attack) | Attack FAILED (success rate missed)
+  Move 2/4: Combatant_a=15, Combatant_b=13 | Opponent_a=0, Opponent_b=80
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_b (attack) | Attack FAILED (success rate missed), damage=0
+  Move 3/4: Combatant_a=15, Combatant_b=13 | Opponent_a=0, Opponent_b=80
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_b (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=15, Combatant_b=13 | Opponent_a=0, Opponent_b=80
+  Current turn: opponent_b
+  MOVE: opponent_b -> brace (opponent_defense) | Defense FAILED vs headbutt, damage=4
+
+=== ROUND 52 (4 moves) ===
+  Move 1/4: Combatant_a=15, Combatant_b=13 | Opponent_a=0, Opponent_b=76
+  Current turn: opponent_b
+  MOVE: opponent_b -> headbutt @ combatant_b (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=15, Combatant_b=13 | Opponent_a=0, Opponent_b=72
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense brace vs headbutt | Defense BLOCKED
+  Move 3/4: Combatant_a=15, Combatant_b=13 | Opponent_a=0, Opponent_b=72
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_b (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=15, Combatant_b=13 | Opponent_a=0, Opponent_b=72
+  Current turn: opponent_a
+  MOVE: opponent_a -> headbutt @ combatant_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 53 (4 moves) ===
+  Move 1/4: Combatant_a=15, Combatant_b=13 | Opponent_a=0, Opponent_b=72
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense brace vs headbutt | Defense FAILED, damage=10
+  Move 2/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=72
+  Current turn: opponent_a
+  MOVE: opponent_a -> punch @ combatant_a (attack) | Attack FAILED (success rate missed)
+  Move 3/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=72
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_b (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=72
+  Current turn: opponent_b
+  MOVE: opponent_b -> sidestep (opponent_defense) | Defense FAILED vs elbow, damage=4
+
+=== ROUND 54 (4 moves) ===
+  Move 1/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=68
+  Current turn: opponent_b
+  MOVE: opponent_b -> brace (opponent_defense) | Defense FAILED vs headbutt, damage=4
+  Move 2/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=64
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_b (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=64
+  Current turn: opponent_a
+  MOVE: opponent_a -> headbutt @ combatant_a (attack) | Attack FAILED (success rate missed)
+  Move 4/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=64
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_b (attack) | Attack landed (pending target's defense)
+
+=== ROUND 55 (4 moves) ===
+  Move 1/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=64
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_b (attack) | Attack FAILED (success rate missed), damage=0
+  Move 2/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=64
+  Current turn: opponent_a
+  MOVE: opponent_a -> kick @ combatant_b (attack) | Attack FAILED (success rate missed)
+  Move 3/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=64
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_b (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=64
+  Current turn: opponent_b
+  MOVE: opponent_b -> punch @ combatant_b (attack) | Attack FAILED (success rate missed)
+
+=== ROUND 56 (4 moves) ===
+  Move 1/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=60
+  Current turn: opponent_a
+  MOVE: opponent_a -> sweep @ combatant_a (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=60
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense jump vs sweep | Defense BLOCKED
+  Move 3/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=60
+  Current turn: opponent_b
+  MOVE: opponent_b -> sidestep (opponent_defense) | Defense FAILED vs elbow, damage=4
+  Move 4/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=56
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_b (attack) | Attack landed (pending target's defense)
+
+=== ROUND 57 (4 moves) ===
+  Move 1/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=56
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_b (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=56
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_b (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=56
+  Current turn: opponent_b
+  MOVE: opponent_b -> elbow @ combatant_b (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=52
+  Current turn: opponent_a
+  MOVE: opponent_a -> kick @ combatant_b (attack) | Attack FAILED (success rate missed)
+
+=== ROUND 58 (4 moves) ===
+  Move 1/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=52
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_b (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=5, Combatant_b=13 | Opponent_a=0, Opponent_b=52
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense sidestep vs elbow | Defense FAILED, damage=7
+  Move 3/4: Combatant_a=5, Combatant_b=6 | Opponent_a=0, Opponent_b=52
+  Current turn: opponent_a
+  MOVE: opponent_a -> sweep @ combatant_b (attack) | Attack landed (pending target's defense)
+  Move 4/4: Combatant_a=5, Combatant_b=6 | Opponent_a=0, Opponent_b=52
+  Current turn: opponent_b
+  MOVE: opponent_b -> headbutt @ combatant_b (attack) | Attack FAILED (success rate missed)
+
+=== ROUND 59 (4 moves) ===
+  Move 1/4: Combatant_a=5, Combatant_b=6 | Opponent_a=0, Opponent_b=48
+  Current turn: opponent_b
+  MOVE: opponent_b -> sidestep (opponent_defense) | Defense FAILED vs elbow, damage=4
+  Move 2/4: Combatant_a=5, Combatant_b=6 | Opponent_a=0, Opponent_b=44
+  Current turn: opponent_a
+  MOVE: opponent_a -> punch @ combatant_a (vulnerability_combo)
+  Move 3/4: Combatant_a=5, Combatant_b=6 | Opponent_a=0, Opponent_b=44
+  Current turn: combatant_b
+  MOVE: combatant_b -> defense jump vs sweep | Defense FAILED, damage=9
+  Move 4/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=44
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_b (attack) | Attack landed (pending target's defense)
+
+=== ROUND 60 (4 moves) ===
+  Move 1/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=44
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_b (attack) | Attack FAILED (success rate missed), damage=0
+  Move 2/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=44
+  Current turn: combatant_a
+  MOVE: combatant_a -> headbutt @ opponent_b (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=44
+  Current turn: opponent_b
+  MOVE: opponent_b -> sidestep (opponent_defense) | Defense FAILED vs elbow, damage=4
+  Move 4/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=40
+  Current turn: opponent_a
+  MOVE: opponent_a -> headbutt @ combatant_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 61 (4 moves) ===
+  Move 1/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=40
+  Current turn: opponent_b
+  MOVE: opponent_b -> sweep @ combatant_a (attack) | Attack FAILED (success rate missed)
+  Move 2/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=36
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_b (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=36
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense brace vs headbutt | Defense BLOCKED
+  Move 4/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=36
+  Current turn: opponent_a
+  MOVE: opponent_a -> headbutt @ combatant_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 62 (4 moves) ===
+  Move 1/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=36
+  Current turn: opponent_b
+  MOVE: opponent_b -> sweep @ combatant_a (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=32
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_b (attack) | Attack FAILED (success rate missed), damage=0
+  Move 3/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=32
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense brace vs headbutt | Defense BLOCKED
+  Move 4/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=32
+  Current turn: opponent_a
+  MOVE: opponent_a -> elbow @ combatant_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 63 (4 moves) ===
+  Move 1/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=32
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense jump vs sweep | Defense BLOCKED
+  Move 2/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=32
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_b (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=32
+  Current turn: opponent_a
+  MOVE: opponent_a -> kick @ combatant_a (attack) | Attack FAILED (success rate missed)
+  Move 4/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=32
+  Current turn: opponent_b
+  MOVE: opponent_b -> kick @ combatant_a (attack) | Attack FAILED (success rate missed)
+
+=== ROUND 64 (4 moves) ===
+  Move 1/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=28
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense sidestep vs elbow | Defense BLOCKED
+  Move 2/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=28
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_b (attack) | Attack landed (pending target's defense)
+  Move 3/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=28
+  Current turn: opponent_b
+  MOVE: opponent_b -> brace (opponent_defense) | Defense BLOCKED vs headbutt
+  Move 4/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=28
+  Current turn: opponent_a
+  MOVE: opponent_a -> punch @ combatant_a (attack) | Attack landed (pending target's defense)
+
+=== ROUND 65 (4 moves) ===
+  Move 1/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=28
+  Current turn: opponent_a
+  MOVE: opponent_a -> headbutt @ combatant_a (attack) | Attack landed (pending target's defense)
+  Move 2/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=28
+  Current turn: combatant_b
+  MOVE: combatant_b -> elbow @ opponent_b (attack) | Attack FAILED (success rate missed), damage=0
+  Move 3/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=28
+  Current turn: opponent_b
+  MOVE: opponent_b -> sidestep (opponent_defense) | Defense FAILED vs elbow, damage=4
+  Move 4/4: Combatant_a=5, Combatant_b=0 | Opponent_a=0, Opponent_b=24
+  Current turn: combatant_a
+  MOVE: combatant_a -> defense parry vs punch | Defense FAILED, damage=7
+[test_arena] DEFEAT - no flag, this time
+
+[test_arena] Win rate: 0/100 (0.0%)

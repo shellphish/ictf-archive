@@ -1,0 +1,38 @@
+name: token-mirror
+author: ictf
+category: ml
+description: |-
+  Tokenizers don't care about your reading direction. Find a string that looks
+  completely different forwards and backwards, yet the tokenizer counts them
+  the same. Can you craft a mirror that fools the machine?
+  
+  Your task: submit a string that satisfies all of the following constraints:
+
+  - The string contains only letters, spaces, and digits
+  - The string is longer than 20 characters
+  - The character-to-token ratio is greater than 5 (i.e., len(string) / num_tokens > 5)
+  - The reversed string produces the same number of tokens
+  - But the token sequences (token IDs) are completely different
+  - The forward and reversed strings are not identical
+value: 500
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 25
+  minimum: 50
+
+image: .
+protocol: tcp
+host: null
+connection_info: nc 0.cloud.chals.io 0
+
+flags:
+- ictf{t0k3n_m1rr0r_r3fl3ct5_th3_s4m3}
+
+files:
+- src/challenge.py
+
+state: hidden
+
+version: '0.1'

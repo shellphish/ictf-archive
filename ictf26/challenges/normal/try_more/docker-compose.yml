@@ -1,0 +1,10 @@
+services:
+  try_more:
+    build: .
+    image: ictf/try_more:latest
+    container_name: try_more
+    ports:
+      - "4445:4445"
+    environment:
+      - FLAG=${FLAG}
+    restart: unless-stopped

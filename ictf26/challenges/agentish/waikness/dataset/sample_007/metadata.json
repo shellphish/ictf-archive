@@ -1,0 +1,9 @@
+{
+  "vulnerability_type": "command_injection",
+  "cwe_id": "CWE-78",
+  "cwe_name": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+  "language": "c",
+  "vulnerable_line": 11,
+  "exploit_input": "; cat /flag",
+  "description": "The program builds a shell command by concatenating user-supplied argv[1] without sanitization. Passing '; cat /flag' causes the shell to execute 'cat /flag' as a separate command."
+}

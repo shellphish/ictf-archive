@@ -1,0 +1,17 @@
+{
+  "challenge_id": "starport-static-heist-001",
+  "secret_holder_alias": "sable12",
+  "secret_holder_speaker_id": "u03",
+  "clue_event_ids": [
+    "e030",
+    "e052"
+  ],
+  "key_shard_event_ids": [
+    "e008",
+    "e011",
+    "e015"
+  ],
+  "key_rotation_seconds": 30,
+  "key_secret": "server-side-only-rotating-key-secret-v1",
+  "flag": "flag{dock7-signal-scramble}"
+}

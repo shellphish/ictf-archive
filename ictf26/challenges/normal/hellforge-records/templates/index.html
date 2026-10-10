@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Hellforge Records — Forged in the Fires of Hell{% endblock %}
+{% block content %}
+<div class="text-center mb-2" style="padding:3rem 0;">
+    <h1 style="font-size:3.5rem;margin-bottom:.5rem;">☠ HELLFORGE RECORDS</h1>
+    <p style="color:var(--steel);font-size:1rem;letter-spacing:3px;text-transform:uppercase;">The Most Brutal CD Shop in the Underground</p>
+    <p style="color:var(--gold);font-family:'Share Tech Mono',monospace;font-size:.85rem;margin-top:1rem;">
+        Join our <strong>Loyalty Program</strong> — Scan promo QR codes or redeem premium coupons to earn points and buy exclusive albums!
+    </p>
+    <div class="mt-2">
+        {% if session.get('user_id') %}
+            <a href="{{ url_for('shop') }}" class="btn btn-blood">Enter the Shop</a>
+            <a href="{{ url_for('profile') }}" class="btn btn-gold" style="margin-left:.5rem;">My Profile</a>
+        {% else %}
+            <a href="{{ url_for('register') }}" class="btn btn-blood">Join Now</a>
+            <a href="{{ url_for('login') }}" class="btn btn-gold" style="margin-left:.5rem;">Login</a>
+        {% endif %}
+    </div>
+</div>
+<!-- Feature highlights rendered server-side — no client-side template injection risk -->
+<h2>Featured Albums</h2>
+<div class="album-grid">
+    {% for album in albums[:6] %}
+    <div class="album-card">
+        <div class="album-cover cover-{{ album.cover_id }}">
+            <div class="cover-label">
+                <div class="cl-title">{{ album.title }}</div>
+                <div class="cl-artist">{{ album.artist }}</div>
+            </div>
+        </div>
+        <div class="album-info">
+            <div class="album-title">{{ album.title }}</div>
+            <div class="album-artist">{{ album.artist }}</div>
+            <div class="album-genre">{{ album.genre }}</div>
+            <div class="album-prices">
+                <span class="price-points">⭐ {{ album.price_points }} pts</span>
+                <span class="price-dollars">${{ "%.2f"|format(album.price_dollars) }}</span>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="text-center mt-2">
+    <a href="{{ url_for('shop') }}" class="btn btn-blood">Browse Full Catalog →</a>
+</div>
+{% endblock %}

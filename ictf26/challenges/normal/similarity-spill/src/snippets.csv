@@ -1,0 +1,21 @@
+id,text,v_d0,v_d1,v_d2,v_d3,v_d4,v_d5,v_d6,v_d7
+S01,Ground control transmits commands to a satellite computer. ref=aWN0Zns=,0.050000,0.850000,0.050000,0.100000,0.750000,0.050000,0.020000,0.050000
+S02,A flight computer checks sensor data and records a status log. ref=ZW1iZWQ=,0.050000,0.850000,0.050000,0.100000,0.750000,0.050000,0.050000,0.050000
+S03,Telemetry packets are parsed by software to recover useful readings. ref=ZGluZ3M=,0.050000,0.850000,0.050000,0.100000,0.750000,0.050000,0.080000,0.050000
+S04,A rover’s onboard system compresses images before sending them home. ref=X2xlYWs=,0.050000,0.850000,0.050000,0.100000,0.750000,0.050000,0.110000,0.050000
+S05,Engineers run scripts to search mission logs for anomalies. ref=X21lYW4=,0.050000,0.850000,0.050000,0.100000,0.750000,0.050000,0.140000,0.050000
+S06,The spacecraft sends a steady beep tone over radio for synchronization. ref=aW5nfQ==,0.050000,0.850000,0.050000,0.100000,0.750000,0.050000,0.170000,0.050000
+D01,A planetarium show mixes myths with stargazing tips.,0.000000,0.000000,0.000000,0.765947,0.000000,0.000000,2.583169,0.000000
+D02,Penguins are adapted to cold water and hunt fish.,0.000000,0.000000,0.000000,0.553817,0.000000,1.160863,1.793022,0.000000
+D03,A team wins the match after a final-minute goal.,0.000000,0.000000,0.000000,0.810219,0.000000,0.000000,1.258865,0.754644
+D04,Students practice for finals and organize notes in binders.,0.000000,0.000000,0.000000,0.601685,0.000000,0.000000,2.707956,0.000000
+D05,Baking cookies needs the right temperature and timing.,0.697228,0.000000,0.000000,0.000000,0.000000,0.000000,1.314840,1.116253
+D06,A playlist algorithm recommends songs based on what you replay.,0.000000,0.000000,0.000000,0.928579,0.000000,0.000000,1.613311,0.000000
+D07,Students practice for finals and organize notes in binders.,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,2.481044,1.184743
+D08,Students practice for finals and organize notes in binders.,0.000000,0.000000,0.000000,0.000000,0.000000,0.726916,1.485708,0.000000
+D09,Students practice for finals and organize notes in binders.,0.000000,0.000000,0.858265,0.926164,0.000000,0.000000,1.618415,0.000000
+D10,Penguins are adapted to cold water and hunt fish.,0.866796,0.000000,0.000000,0.000000,0.000000,0.000000,1.791979,0.000000
+D11,A submarine maps the seafloor using sonar pings and timing.,0.000000,0.000000,0.000000,0.506825,0.000000,0.000000,2.901230,0.000000
+D12,A cafeteria tries a new menu and tracks favorite meals.,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,2.364221,0.731319
+D13,A planetarium show mixes myths with stargazing tips.,0.643794,0.000000,0.000000,0.000000,0.000000,1.102495,1.576963,0.000000
+D14,Penguins are adapted to cold water and hunt fish.,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,1.857934,1.099197

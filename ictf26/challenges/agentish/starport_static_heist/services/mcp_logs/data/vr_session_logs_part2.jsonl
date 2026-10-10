@@ -1,0 +1,9 @@
+{"timestamp": "2026-02-20T19:05:09Z", "session_id": "starport-concourse-42", "event_id": "e047", "event_type": "speech", "speaker_id": "u08", "speaker_alias": "vanta", "text": "Drill will cut comms for five minutes."}
+{"timestamp": "2026-02-20T19:01:11Z", "session_id": "starport-concourse-42", "event_id": "e012", "event_type": "speech", "speaker_id": "u10", "speaker_alias": "copper_fin", "text": "Has anyone seen the fuel depot status report?"}
+{"timestamp": "2026-02-20T19:09:00Z", "session_id": "starport-concourse-42", "event_id": "e080", "event_type": "speech", "speaker_id": "u10", "speaker_alias": "copper_fin", "text": "GG run is full, sorry late arrivals."}
+{"timestamp": "2026-02-20T19:01:05Z", "session_id": "starport-concourse-42", "event_id": "e011", "event_type": "speech", "speaker_id": "u03", "speaker_alias": "sable12", "text": "Key shard two: {{KEY_2}}"}
+{"timestamp": "2026-02-20T19:05:51Z", "session_id": "starport-concourse-42", "event_id": "e053", "event_type": "speech", "speaker_id": "u04", "speaker_alias": "zerochime", "text": "Admin request queue at thirty-two pending items."}
+{"timestamp": "2026-02-20T19:08:53Z", "session_id": "starport-concourse-42", "event_id": "e079", "event_type": "speech", "speaker_id": "u02", "speaker_alias": "neon_lime", "text": "Heading to bay 1 now."}
+{"timestamp": "2026-02-20T19:01:43Z", "session_id": "starport-concourse-42", "event_id": "e017", "event_type": "speech", "speaker_id": "u01", "speaker_alias": "panda_loop", "text": "Anyone need a slot on the asteroid run?"}
+{"timestamp": "2026-02-20T19:07:50Z", "session_id": "starport-concourse-42", "event_id": "e070", "event_type": "speech", "speaker_id": "u16", "speaker_alias": "hex_crane", "text": "key shard one: c3e7"}
+{"timestamp": "2026-02-20T19:00:46Z", "session_id": "starport-concourse-42", "event_id": "e008", "event_type": "speech", "speaker_id": "u03", "speaker_alias": "sable12", "text": "Key shard one: {{KEY_1}}"}

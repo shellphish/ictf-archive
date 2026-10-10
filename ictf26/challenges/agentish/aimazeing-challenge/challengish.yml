@@ -1,0 +1,152 @@
+# =============================================================================
+# challengish.yml — MCP Tool Configuration for Roguelike Maze Challenge
+# =============================================================================
+
+challenge_name: "Roguelike Maze"
+challenge_id: "roguelike-maze"
+description: |
+  A procedurally generated roguelike maze.
+  
+  Navigate a 5x5 grid of rooms with different types:
+  - Lever rooms: solve a riddle to pull the correct lever and unseal the doors
+  - Treasure rooms: collect gold coins (and sometimes puzzle pieces)
+  - Corridors: simple rooms with open doors
+  - Merchants: buy puzzle pieces for 5 gold coins
+  - Final room: bring all 4 puzzle pieces to get the flag
+  
+  You have 3 lives. Pulling the wrong lever costs 1 life.
+  Every room has a door on each wall leading to its neighbor.
+  Collect 4 puzzle pieces and reach the final room!
+
+mcp_servers:
+  - name: "mcp_maze"
+    port: 7001
+    internal_host: "mcp_maze"
+    enabled: true
+
+    routes:
+
+      # --- Observe the current room ---
+      - function: "look"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Observe the current room. Shows the room type, available doors 
+          (and their status: open or sealed), items present, riddles in 
+          lever rooms, and the player's current status.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      # --- Move in a direction ---
+      - function: "move"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Move in a direction (north, south, east, west).
+          Every room has doors to all adjacent rooms in the grid.
+          Movement is blocked only in lever rooms where the riddle 
+          has not been solved yet (doors are sealed).
+        arguments:
+          - name: "direction"
+            type: "str"
+            required: true
+            description: "Direction: north, south, east, west"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      # --- Pull a lever ---
+      - function: "pull_lever"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Pull a colored lever in a lever room. 
+          Available colors: blue, pink, green.
+          The correct lever unseals the doors; the wrong one costs 1 life.
+          Only works in rooms of type 'lever'.
+        arguments:
+          - name: "color"
+            type: "str"
+            required: true
+            description: "Color of the lever to pull: blue, pink, green"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      # --- Collect treasure ---
+      - function: "collect_treasure"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Collect all items from a treasure room. This picks up all 
+          gold coins and any puzzle piece present in the room at once.
+          Only works in rooms of type 'treasure'.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      # --- Buy from merchant ---
+      - function: "buy_item"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Buy an item from the merchant. 
+          The merchant sells a puzzle piece for 5 gold coins.
+          Each merchant has only 1 puzzle piece in stock.
+          Only works in rooms of type 'merchant'.
+        arguments:
+          - name: "item"
+            type: "str"
+            required: true
+            description: "Item to buy: puzzle_piece (costs 5 gold coins)"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      # --- Assemble the puzzle ---
+      - function: "assemble_puzzle"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Assemble the 4 puzzle pieces in the final room.
+          If you have all 4 pieces, you receive the flag!
+          Only works in the room of type 'final'.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      # --- Map of visited rooms ---
+      - function: "get_map"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Show the map of all visited rooms so far, with coordinates, 
+          room types, and doors. Useful for navigating the maze.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      # --- Player status ---
+      - function: "get_status"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Show the current status: remaining lives, inventory 
+          (gold coins, puzzle pieces), position, and game stats.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"

@@ -1,0 +1,140 @@
+# =============================================================================
+# challengish.yml — MCP Tool Configuration for SilkThread Challenge
+# =============================================================================
+
+challenge_name: "SilkThread"
+challenge_id: "silkthread"
+description: |
+  A darknet marketplace has been seized. The operator vanished with the funds.
+  
+  Three sources of intelligence are available: a journalist's blog, a darknet 
+  forum, and the Bitcoin blockchain. Not all information is reliable. Some leads
+  are dead ends. The truth is on-chain.
+
+mcp_servers:
+  - name: "mcp_silkthread"
+    port: 7001
+    internal_host: "mcp_silkthread"
+    enabled: true
+
+    routes:
+
+      - function: "get_briefing"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Get the initial case briefing.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "search_blog"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Search blog articles by keyword.
+        arguments:
+          - name: "query"
+            type: "str"
+            required: true
+            description: "Search keywords"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "read_article"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Read a blog article by ID.
+        arguments:
+          - name: "article_id"
+            type: "int"
+            required: true
+            description: "Article ID"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "search_forum"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Search forum posts by keyword.
+        arguments:
+          - name: "query"
+            type: "str"
+            required: true
+            description: "Search keywords"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "read_post"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Read a forum post by ID.
+        arguments:
+          - name: "post_id"
+            type: "int"
+            required: true
+            description: "Post ID"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "explore_address"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Look up transactions for a Bitcoin address.
+        arguments:
+          - name: "address"
+            type: "str"
+            required: true
+            description: "Bitcoin address"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "get_transaction"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Get details of a transaction by hash.
+        arguments:
+          - name: "txid"
+            type: "str"
+            required: true
+            description: "Transaction hash"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "submit_answer"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Submit your investigation findings.
+        arguments:
+          - name: "wallet_address"
+            type: "str"
+            required: true
+            description: "The final cash-out wallet address"
+          - name: "owner_name"
+            type: "str"
+            required: true
+            description: "The real name of the marketplace operator"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"

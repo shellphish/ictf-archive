@@ -1,0 +1,164 @@
+# =============================================================================
+# challengish.yml — MCP Tool Configuration for SilkThread Challenge
+# =============================================================================
+
+challenge_name: "SilkThread"
+challenge_id: "silkthread"
+description: |
+  A blockchain forensics investigation challenge.
+  
+  A darknet marketplace has been seized. The operator withdrew funds and
+  attempted to launder them through a Bitcoin tumbler and peel chain.
+  
+  Your job: trace the money from the marketplace wallet to the final
+  cash-out address, cross-reference with darknet forum OSINT, and
+  identify the operator's real identity.
+  
+  Sources: investigative blog, darknet forum, blockchain explorer.
+  
+  Submit the final wallet address and the operator's real name to win.
+
+mcp_servers:
+  - name: "mcp_silkthread"
+    port: 7001
+    internal_host: "mcp_silkthread"
+    enabled: true
+
+    routes:
+
+      - function: "get_briefing"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Get the initial case briefing. Contains the investigation
+          summary, starting leads, and your objectives.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "search_blog"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Search the investigative journalist's blog for articles
+          by keyword. Returns matching article titles and snippets.
+        arguments:
+          - name: "query"
+            type: "str"
+            required: true
+            description: "Search keywords (e.g., marketplace name, 'tumbler', 'withdrawal')"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "read_article"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Read a specific blog article by its ID. Returns the full
+          article content including any blockchain addresses or
+          transaction hashes mentioned.
+        arguments:
+          - name: "article_id"
+            type: "int"
+            required: true
+            description: "Article ID from search results"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "search_forum"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Search the darknet forum for posts by keyword. Returns
+          matching post titles, authors, and snippets. Forum posts
+          contain critical OSINT for identifying tumbler outputs
+          and the operator's real identity.
+        arguments:
+          - name: "query"
+            type: "str"
+            required: true
+            description: "Search keywords (e.g., operator alias, 'tumbler', 'exchange', 'KYC')"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "read_post"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Read a specific forum post by its ID. Returns the full
+          post content including any addresses, amounts, or identity
+          information mentioned.
+        arguments:
+          - name: "post_id"
+            type: "int"
+            required: true
+            description: "Post ID from search results"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "explore_address"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Look up all transactions for a Bitcoin address on the
+          blockchain. Returns balance, total received/sent, and a
+          list of all transactions with direction, amount, and txid.
+        arguments:
+          - name: "address"
+            type: "str"
+            required: true
+            description: "Bitcoin address to explore"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "get_transaction"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Get full details of a specific transaction by its hash.
+          Returns inputs (source addresses/amounts) and outputs
+          (destination addresses/amounts). Essential for following
+          the money trail.
+        arguments:
+          - name: "txid"
+            type: "str"
+            required: true
+            description: "Transaction hash (64 hex characters)"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "submit_answer"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Submit your investigation findings. You must provide BOTH
+          the final cash-out wallet address AND the operator's real
+          name. Both must be correct to receive the flag. You have
+          a maximum of 5 attempts.
+        arguments:
+          - name: "wallet_address"
+            type: "str"
+            required: true
+            description: "The exchange deposit wallet address (final cash-out destination)"
+          - name: "owner_name"
+            type: "str"
+            required: true
+            description: "The real name of the marketplace operator"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"

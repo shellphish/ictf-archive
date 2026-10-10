@@ -1,0 +1,89 @@
+services:
+  # Local testing stubs for shared infrastructure.
+  litellm:
+    image: docker.litellm.ai/berriai/litellm:main-stable
+    profiles: [debug]
+    environment:
+      OPENAI_API_KEY: ${LITELLM_API_KEY:-}
+      LITELLM_MASTER_KEY: ${LITELLM_MASTER_KEY:-local-admin-key}
+      CHALLENGE_LITELLM_API_KEY: ${CHALLENGE_LITELLM_API_KEY:-}
+      TEAM_LITELLM_API_KEY: ${TEAM_LITELLM_API_KEY:-}
+    volumes:
+      - ../../stubs/litellm_stub/config.yaml:/app/config.yaml:ro
+      - ../../stubs/litellm_stub/custom_auth.py:/app/custom_auth.py:ro
+    command: ["--config", "/app/config.yaml", "--host", "0.0.0.0", "--port", "4000"]
+    ports:
+      - "4000:4000"
+
+  langfuse:
+    build:
+      context: ../../stubs
+      dockerfile: langfuse_stub/Dockerfile
+    profiles: [debug]
+    environment:
+      PORT: "3000"
+    ports:
+      - "3000:3000"
+
+  pwn_service:
+    build:
+      context: .
+      dockerfile: services/pwn_service/Dockerfile
+    environment:
+      REDIS_URL: redis://127.0.0.1:6379/0
+      FORCE_REGEN: ${FORCE_REGEN:-0}
+      CHALLENGE_LITELLM_API_KEY: ${CHALLENGE_LITELLM_API_KEY:-}
+      LITELLM_BASE_URL: ${LITELLM_BASE_URL:-http://litellm:4000}
+      CHALLENGE_LITELLM_MODEL: ${CHALLENGE_LITELLM_MODEL:-gpt-4o-mini}
+      VULN_SERVICE_PORT: ${VULN_SERVICE_PORT:-9000}
+      VULN_SERVICE_HOST: pwn_service
+    ports:
+      - "6379:6379"
+      - "9000:9000"
+    restart: on-failure
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -h 127.0.0.1 -p 6379 EXISTS pwn:config | grep -q '^1$$'"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+
+  mcp_pwn:
+    build:
+      context: .
+      dockerfile: services/mcp_pwn/Dockerfile
+    environment:
+      REDIS_URL: redis://pwn_service:6379/0
+      PORT: "7001"
+      FLAG_CHALLENGE: ${FLAG_CHALLENGE}
+    depends_on:
+      pwn_service:
+        condition: service_healthy
+    ports:
+      - "7001:7001"
+    restart: unless-stopped
+
+  sandbox:
+    profiles: [debug]
+    build:
+      context: ../../stubs
+      dockerfile: sandbox_stub/Dockerfile
+    environment:
+      MCP_PWN_URL: http://mcp_pwn:7001
+      VULN_SERVICE_HOST: pwn_service
+      VULN_SERVICE_PORT: ${VULN_SERVICE_PORT:-9000}
+      AGENT_FILE: /workspace/solve.py
+      TEAM_LITELLM_API_KEY: ${TEAM_LITELLM_API_KEY:-}
+      LITELLM_BASE_URL: ${LITELLM_BASE_URL:-http://litellm:4000}
+      TEAM_LITELLM_MODEL: ${TEAM_LITELLM_MODEL:-gpt-4o-mini}
+    volumes:
+      - ./writeup:/workspace:ro
+    depends_on:
+      litellm:
+        condition: service_started
+      langfuse:
+        condition: service_started
+      pwn_service:
+        condition: service_healthy
+      mcp_pwn:
+        condition: service_started
+    restart: "no"

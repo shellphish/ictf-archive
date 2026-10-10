@@ -1,0 +1,83 @@
+# =============================================================================
+# challengish.yml — MCP Tool Configuration for Agentish
+# =============================================================================
+#
+# This file defines the MCP (Model Context Protocol) servers and their tool
+# routes that will be available in the Agentish visual workflow editor.
+#
+# =============================================================================
+
+# Challenge metadata (informational, not parsed by agentish server)
+challenge_name: "Starport Static Heist"
+challenge_id: "starport-static-heist"
+challenge_secret: "8afd52295d01d77952dc7acbce16853f"
+description: |
+  Recover the currently valid rotating key from noisy split logs and submit it.
+
+# ---------------------------------------------------------------------------
+# mcp_servers:  List of MCP server definitions
+# ---------------------------------------------------------------------------
+mcp_servers:
+  - name: "mcp_logs"
+    port: 7301
+    internal_host: "mcp_logs"
+    enabled: true
+
+    routes:
+
+      # --- Tool: list_logs (no arguments) ---
+      - function: "list_logs"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "List available VR session log files."
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      # --- Tool: retrieve_lines_from_log (3 required args) ---
+      - function: "retrieve_lines_from_log"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Get an inclusive line range from a single log file."
+        arguments:
+          - name: "log_name"
+            type: "str"
+            required: true
+            description: "Name of the log file to read (e.g. 'vr_session_logs_part1.jsonl')"
+          - name: "start_line"
+            type: "int"
+            required: true
+            description: "First line to retrieve (1-indexed, inclusive)"
+          - name: "end_line"
+            type: "int"
+            required: true
+            description: "Last line to retrieve (1-indexed, inclusive)"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      # --- Tool: submit_key (1 required arg) ---
+      - function: "submit_key"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: "Submit a 10-hex rotating key and receive the flag if correct."
+        arguments:
+          - name: "key"
+            type: "str"
+            required: true
+            description: "10-character lowercase hexadecimal key"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+model_policy:
+  allowed_models:
+    - gpt-4o-mini
+    - gpt-4.1-mini
+  allowed_temperature:
+    min: 0.0
+    max: 1.0

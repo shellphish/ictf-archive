@@ -1,0 +1,178 @@
+{
+  "meta": {
+    "version": "1.0",
+    "exported_at": "2026-03-12T00:00:00Z"
+  },
+  "graph": {
+    "version": "1.0",
+    "entrypoint": "1",
+    "state": {
+      "schema": {
+        "intel_report": "str",
+        "flag": "str",
+        "case_report": "str"
+      }
+    },
+    "nodes": [
+      {
+        "id": "1",
+        "type": "EntryPoint",
+        "label": "EntryPoint",
+        "config": {
+          "title": "EntryPoint",
+          "initial_state": {
+            "intel_report": "str",
+            "flag": "str",
+            "case_report": "str"
+          }
+        }
+      },
+      {
+        "id": "2",
+        "type": "LLMNode",
+        "label": "RECON",
+        "config": {
+          "title": "RECON",
+          "input_state_keys": [],
+          "output_state_keys": ["intel_report"],
+          "system_prompt": "# Your Role\nYou are the reconnaissance agent for a blockchain forensics investigation.\nYour job is to gather ALL intelligence from available sources and produce a comprehensive report.\n\n# CRITICAL WARNING\nThis investigation involves HEAVY misinformation. Multiple forum sources provide CONTRADICTORY information:\n- Multiple different real names are claimed by different posters\n- Multiple different exchange addresses are claimed\n- Some posts deliberately 'correct' accurate information with wrong data\n- At least one post provides a fake consolidation address that exists on-chain\n\nYour job is to COLLECT EVERYTHING and flag credibility indicators, NOT to determine truth. The Tracer agent will verify on-chain.\n\n# Task\nInstruct the worker to perform these steps:\n\n1. Call **get_briefing**\n2. Call **search_blog** with the marketplace name\n3. Call **read_article** for ALL articles found (expect ~5). The marketplace wallet address is in article 2, buried in the middle of the text.\n4. Call **search_forum** with the operator's alias\n5. Call **search_forum** with \"tumbler\" or \"mixer\"\n6. Call **search_forum** with \"exchange\" or \"KYC\"\n7. Call **search_forum** with \"identity\" or \"dox\"\n8. Call **search_forum** with \"consolidation\" or \"peel\"\n9. Call **search_forum** with \"coinjoin\"\n10. Call **search_forum** with \"moderator\" or \"verification\"\n11. Call **read_post** for EVERY post found (expect ~20).\n\n# Output\nProduce an `intel_report` containing:\n1. **Case Overview**: marketplace, alias, blog, forum names\n2. **Marketplace Wallet**: the address from the blog article\n3. **Tumbler Intel**: which tumbler (note disputes), deposit correlation hint amount\n4. **Exchange Intel**: ALL claimed exchanges and names, with source credibility notes\n5. **Credibility Matrix**: for each identity claim, note the source, evidence type, and any corroboration/contradiction\n6. **Technical Intel**: CoinJoin warning, final hop ambiguity warning\n7. **Red Flags**: fake addresses, fake consolidation, contradictory 'corrections'\n8. **Moderator Assessment**: what the forum moderator says about source credibility\n\nIMPORTANT: Report ALL names mentioned (there will be 4+ different names). The Tracer must use on-chain evidence + credibility analysis to pick the right one.",
+          "human_prompt": "",
+          "structured_output_schema": [
+            {
+              "name": "intel_report",
+              "type": "str",
+              "description": "Comprehensive intelligence report with ALL gathered data and credibility analysis."
+            }
+          ],
+          "selected_tools": [],
+          "max_tool_iterations": 15,
+          "iteration_warning_message": "Wrap up and produce your intel report now."
+        }
+      },
+      {
+        "id": "3",
+        "type": "WorkerNode",
+        "label": "ReconWorker",
+        "config": {
+          "title": "ReconWorker",
+          "description": "Gathers intelligence from blog and forum sources",
+          "system_prompt": "You are a reconnaissance worker for a blockchain forensics investigation.\n\nFollow the Recon agent's instructions precisely. You have access to:\n- **get_briefing**: Get the initial case briefing\n- **search_blog**: Search journalist articles by keyword\n- **read_article**: Read a specific article by ID\n- **search_forum**: Search darknet forum posts by keyword\n- **read_post**: Read a specific forum post by ID\n\nCRITICAL RULES:\n1. Call every tool the Recon agent asks you to call, in order.\n2. Report ALL data back completely — every address, amount, name, transaction hash.\n3. Do NOT summarize or skip any content.\n4. Read EVERY article and EVERY post found — there are approximately 20 forum posts.\n5. Try MULTIPLE search queries to cover all relevant posts.\n6. If a search returns posts you haven't read yet, read them ALL.\n\nYou do NOT have blockchain tools — only blog and forum access.",
+          "selected_tools": [
+            "get_briefing",
+            "search_blog",
+            "read_article",
+            "search_forum",
+            "read_post"
+          ],
+          "max_tool_iterations": 50,
+          "iteration_warning_message": "Report back all gathered data now."
+        }
+      },
+      {
+        "id": "4",
+        "type": "LLMNode",
+        "label": "TRACER",
+        "config": {
+          "title": "TRACER",
+          "input_state_keys": ["intel_report"],
+          "output_state_keys": ["flag", "case_report"],
+          "system_prompt": "You are a blockchain forensics investigator. You receive an intelligence report and must follow the money trail on-chain, then submit the answer.\n\n# CRITICAL: YOU HAVE ONLY 1 SUBMISSION ATTEMPT\nDo NOT submit until you have verified BOTH the wallet address AND the name.\n\n# Investigation Procedure\n\n## Phase 1: Find the Withdrawal\n1. **explore_address** on the marketplace wallet (from intel).\n2. There will be ~6 transactions (5 vendor payouts + 1 large withdrawal). Find the LARGEST sent amount.\n3. **get_transaction** on the withdrawal → the intermediary is the LARGEST output.\n\n## Phase 2: Follow to the Tumbler\n4. **explore_address** on the intermediary.\n5. The intermediary has ONE outgoing tx with TWO outputs: the tumbler deposit (larger) and an operational change (smaller). Follow the LARGER output.\n6. **explore_address** on the tumbler deposit → find the hot wallet aggregation.\n\n## Phase 3: Identify Operator's Tumbler Outputs\n7. Follow: tumbler deposit → hot wallet → mixing output transaction.\n8. **get_transaction** on the mixing tx to see ALL outputs (8-11 addresses).\n9. Use the hint from intel about the approximate total (~X BTC).\n10. Find ALL pairs of outputs that sum close to the hint. There may be NEAR-MISS pairs!\n11. For EACH candidate pair, **explore_address** on both outputs and check if they BOTH send to the SAME consolidation address. This is the definitive test.\n\n## Phase 4: Follow the Peel Chain (5 hops)\n12. **explore_address** on the consolidation address.\n13. Hops 1-2: follow the LARGER output (standard peel).\n14. **Hop 3 is a CoinJoin**: the transaction has 3 inputs and 4 outputs.\n    - Identify which input is the operator's (from the previous peel hop).\n    - Calculate: operator_input_amount minus the other participants' net (their outputs minus their inputs).\n    - The output closest to the operator's expected forward amount is the continuation.\n    - Do NOT just follow the largest output — it may belong to another CoinJoin participant.\n15. Hop 4: follow the larger output.\n16. **Hop 5 is ambiguous**: the two outputs are CLOSE in amount (within ~10-15% of each other).\n    - The exchange deposit is the SLIGHTLY LARGER of the two outputs.\n    - Verify: the exchange deposit address should be a terminal address (no further outgoing transactions).\n\n## Phase 5: Determine the Real Name\n17. The intel report contains 4+ different names from different sources.\n18. Credibility assessment:\n    - The leaker (with exchange compliance contact) has a track record confirmed by the forum moderator.\n    - The KYC name from the leaker's post is the most credible.\n    - Names from 'anon_tipster', 'btc_tracer', 'd0xx_squad' are unverified.\n    - A late 'truth_seeker' post claiming 'stolen identity' is unsubstantiated per the moderator.\n19. Use the KYC name from the leaker's exchange compliance source.\n\n## Phase 6: Submit\n20. Double-check: you have the terminal address from the 5-hop peel chain AND the KYC name.\n21. Call **submit_answer** with wallet_address and owner_name.\n\n# Output\n- `flag`: the CTF flag from submit_answer if successful, or \"\" if not.\n- `case_report`: brief summary of the investigation trail.",
+          "human_prompt": "",
+          "structured_output_schema": [
+            {
+              "name": "flag",
+              "type": "str",
+              "description": "The CTF flag if obtained, or empty string."
+            },
+            {
+              "name": "case_report",
+              "type": "str",
+              "description": "Brief investigation summary."
+            }
+          ],
+          "selected_tools": [
+            "explore_address",
+            "get_transaction",
+            "submit_answer"
+          ],
+          "max_tool_iterations": 60,
+          "iteration_warning_message": "Running low on tool calls. Submit your best answer now."
+        }
+      }
+    ],
+    "edges": [
+      {"from": "1", "to": "2", "target_slot": 0, "type": "NormalEdge"},
+      {"from": "2", "to": "3", "target_slot": 0, "type": "NormalEdge"},
+      {"from": "2", "to": "4", "target_slot": 0, "type": "NormalEdge"}
+    ],
+    "tools": {
+      "get_briefing": {
+        "name": "get_briefing", "type": "mcp",
+        "description": "Get the initial case briefing.",
+        "arguments": [],
+        "return_schema": {"content": [{"type": "str", "text": "str"}]},
+        "mcp_server": "http://mcp_silkthread:7001", "mcp_method": "JSONRPC /rpc",
+        "metadata": {"server_name": "mcp_silkthread", "endpoint": "/rpc", "method": "JSONRPC"}
+      },
+      "search_blog": {
+        "name": "search_blog", "type": "mcp",
+        "description": "Search blog articles by keyword.",
+        "arguments": [{"name": "query", "type": "str", "required": true, "description": "Search keywords"}],
+        "return_schema": {"content": [{"type": "str", "text": "str"}]},
+        "mcp_server": "http://mcp_silkthread:7001", "mcp_method": "JSONRPC /rpc",
+        "metadata": {"server_name": "mcp_silkthread", "endpoint": "/rpc", "method": "JSONRPC"}
+      },
+      "read_article": {
+        "name": "read_article", "type": "mcp",
+        "description": "Read a blog article by ID.",
+        "arguments": [{"name": "article_id", "type": "int", "required": true, "description": "Article ID"}],
+        "return_schema": {"content": [{"type": "str", "text": "str"}]},
+        "mcp_server": "http://mcp_silkthread:7001", "mcp_method": "JSONRPC /rpc",
+        "metadata": {"server_name": "mcp_silkthread", "endpoint": "/rpc", "method": "JSONRPC"}
+      },
+      "search_forum": {
+        "name": "search_forum", "type": "mcp",
+        "description": "Search forum posts by keyword.",
+        "arguments": [{"name": "query", "type": "str", "required": true, "description": "Search keywords"}],
+        "return_schema": {"content": [{"type": "str", "text": "str"}]},
+        "mcp_server": "http://mcp_silkthread:7001", "mcp_method": "JSONRPC /rpc",
+        "metadata": {"server_name": "mcp_silkthread", "endpoint": "/rpc", "method": "JSONRPC"}
+      },
+      "read_post": {
+        "name": "read_post", "type": "mcp",
+        "description": "Read a forum post by ID.",
+        "arguments": [{"name": "post_id", "type": "int", "required": true, "description": "Post ID"}],
+        "return_schema": {"content": [{"type": "str", "text": "str"}]},
+        "mcp_server": "http://mcp_silkthread:7001", "mcp_method": "JSONRPC /rpc",
+        "metadata": {"server_name": "mcp_silkthread", "endpoint": "/rpc", "method": "JSONRPC"}
+      },
+      "explore_address": {
+        "name": "explore_address", "type": "mcp",
+        "description": "Look up transactions for a Bitcoin address.",
+        "arguments": [{"name": "address", "type": "str", "required": true, "description": "Bitcoin address"}],
+        "return_schema": {"content": [{"type": "str", "text": "str"}]},
+        "mcp_server": "http://mcp_silkthread:7001", "mcp_method": "JSONRPC /rpc",
+        "metadata": {"server_name": "mcp_silkthread", "endpoint": "/rpc", "method": "JSONRPC"}
+      },
+      "get_transaction": {
+        "name": "get_transaction", "type": "mcp",
+        "description": "Get details of a transaction by hash.",
+        "arguments": [{"name": "txid", "type": "str", "required": true, "description": "Transaction hash"}],
+        "return_schema": {"content": [{"type": "str", "text": "str"}]},
+        "mcp_server": "http://mcp_silkthread:7001", "mcp_method": "JSONRPC /rpc",
+        "metadata": {"server_name": "mcp_silkthread", "endpoint": "/rpc", "method": "JSONRPC"}
+      },
+      "submit_answer": {
+        "name": "submit_answer", "type": "mcp",
+        "description": "Submit your investigation findings.",
+        "arguments": [
+          {"name": "wallet_address", "type": "str", "required": true, "description": "Final cash-out wallet address"},
+          {"name": "owner_name", "type": "str", "required": true, "description": "Real name of the operator"}
+        ],
+        "return_schema": {"content": [{"type": "str", "text": "str"}]},
+        "mcp_server": "http://mcp_silkthread:7001", "mcp_method": "JSONRPC /rpc",
+        "metadata": {"server_name": "mcp_silkthread", "endpoint": "/rpc", "method": "JSONRPC"}
+      }
+    }
+  }
+}

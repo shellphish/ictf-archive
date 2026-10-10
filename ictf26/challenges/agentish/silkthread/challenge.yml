@@ -1,0 +1,38 @@
+name: silkthread
+author: TBD
+category: agentish
+description: |
+  Operation SilkThread.
+
+  A darknet marketplace has been seized but the operator vanished with the funds.
+  Your mission: trace the cryptocurrency through tumblers, peel chains, and shadow wallets.
+  Cross-reference blockchain data with darknet forum OSINT to unmask the operator.
+value: 500
+type: agentish
+
+image: .
+protocol: http
+host: null
+connection_info: null
+healthcheck: null
+
+flags:
+  - ictf{bl0ckch41n_f0r3ns1cs_s1lk_thr34d_99}
+
+files: null
+
+topics:
+  - ai agent
+  - blockchain forensics
+  - OSINT
+  - cryptocurrency tracing
+
+tags:
+  - agentish
+  - mcp
+  - blockchain
+  - forensics
+  - osint
+
+state: visible
+version: "0.1"

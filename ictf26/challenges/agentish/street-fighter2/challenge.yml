@@ -1,0 +1,29 @@
+name: "Street Fighter 2"
+category: "agentic"
+description: |
+  Create an intelligent agent to fight in 2v2 Street Fighter-style combat.
+  Train with Master Jee-Oh Vhun-Ee, gather intel on yourself and both opponents,
+  then defeat the opponents in the arena. 
+  The adversary is overwhelmingly stronger than you, so you need to be strategic in your approach.
+
+value: 100
+type: standard
+
+flags:
+  - flag: "ictf{this_fight_is_over_and_get_the_flag}"
+    type: PLAINTEXT
+
+tags:
+  - agent
+  - mcp
+  - combat
+  - turn-based
+
+files: []
+
+hidden: false
+max_attempts: 0
+
+extra:
+  docker_compose: "docker-compose.yml"
+  challengish: "challengish.yml"

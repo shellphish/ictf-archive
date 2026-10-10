@@ -1,0 +1,25 @@
+name: try_more
+author: n0sign4l
+category: pwn
+description: |
+  Simple buffer overflow challenge with ASLR/PIE evasion.
+  The binary reads user input into a small stack buffer without bounds checking.
+  Exploit the overflow to overwrite the return address and redirect execution to the win() function.
+  Due to ASLR and PIE, only the low 16 bits of the target address are predictable—
+  you'll need to brute force a few bits to successfully call the shell-spawning function.
+value: 500
+type: standard
+
+image: .
+protocol: null
+host: null
+connection_info: null
+healthcheck: null
+
+flags:
+  - ictf{aslR-1s-n0t-always-th@t-b@d}
+
+files: null
+
+state: visible
+version: "0.1"

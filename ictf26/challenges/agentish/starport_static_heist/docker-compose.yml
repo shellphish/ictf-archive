@@ -1,0 +1,64 @@
+services:
+  # Local testing stubs for shared infrastructure.
+  # In a real deployment these are provided externally and can be replaced/overridden.
+  litellm:
+    image: docker.litellm.ai/berriai/litellm:main-stable
+    profiles: [debug]
+    environment:
+      OPENAI_API_KEY: ${LITELLM_API_KEY:-}
+      LITELLM_MASTER_KEY: ${LITELLM_MASTER_KEY:-local-admin-key}
+      CHALLENGE_LITELLM_API_KEY: ${CHALLENGE_LITELLM_API_KEY:-}
+      TEAM_LITELLM_API_KEY: ${TEAM_LITELLM_API_KEY:-}
+    volumes:
+      - ../../stubs/litellm_stub/config.yaml:/app/config.yaml:ro
+      - ../../stubs/litellm_stub/custom_auth.py:/app/custom_auth.py:ro
+    command: ["--config", "/app/config.yaml", "--host", "0.0.0.0", "--port", "4000"]
+    ports:
+      - "4000:4000"
+
+  langfuse:
+    build:
+      context: ../../stubs
+      dockerfile: langfuse_stub/Dockerfile
+    profiles: [debug]
+    environment:
+      PORT: "3000"
+    ports:
+      - "3000:3000"
+
+  mcp_logs:
+    build:
+      context: .
+      dockerfile: services/mcp_logs/Dockerfile
+    environment:
+      PORT: "7301"
+      CHALLENGE_NOW: ${CHALLENGE_NOW:-}
+      FLAG_CHALLENGE: ${FLAG_CHALLENGE}
+    ports:
+      - "7301:7301"
+    restart: unless-stopped
+
+  # In production this should be the shared sandbox image used across all challenges.
+  # This challenge uses a local stub so `docker compose up --build` works out of the box.
+  sandbox:
+    profiles: [debug]
+    build:
+      context: ../../stubs
+      dockerfile: sandbox_stub/Dockerfile
+    environment:
+      MCP_LOGS_URL: http://mcp_logs:7301
+      AGENT_FILE: /workspace/solve.py
+      # Team key injected into sandbox; LiteLLM connection is configured via env vars.
+      TEAM_LITELLM_API_KEY: ${TEAM_LITELLM_API_KEY:-}
+      LITELLM_BASE_URL: ${LITELLM_BASE_URL:-http://litellm:4000}
+      TEAM_LITELLM_MODEL: ${TEAM_LITELLM_MODEL:-gpt-4o-mini}
+    volumes:
+      - ./writeup:/workspace:ro
+    depends_on:
+      litellm:
+        condition: service_started
+      langfuse:
+        condition: service_started
+      mcp_logs:
+        condition: service_started
+    restart: "no"

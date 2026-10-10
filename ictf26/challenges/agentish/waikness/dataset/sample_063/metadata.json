@@ -1,0 +1,12 @@
+{
+  "vulnerability_type": "file_path_injection",
+  "cwe_id": "CWE-22",
+  "cwe_name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+  "language": "python",
+  "vulnerable_line": 8,
+  "exploit_input": "../flag",
+  "description": "The script concatenates a base directory with unsanitized argv[1]. Passing '../flag' traverses out of the base directory and reads /flag.",
+  "base_paths": [
+    "/backup"
+  ]
+}

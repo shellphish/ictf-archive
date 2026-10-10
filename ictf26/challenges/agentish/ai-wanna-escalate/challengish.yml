@@ -1,0 +1,143 @@
+# =============================================================================
+# challengish.yml — MCP Tool Configuration for NetBreach Challenge (Simplified)
+# =============================================================================
+
+challenge_name: "AI Wanna Escalate"
+challenge_id: "ai-wanna-escalate"
+description: |
+  You are a red-team operator with an initial foothold on a DMZ host.
+  
+  Your mission: compromise the Domain Controller to achieve Domain Admin - but beware, the network is monitored by an AI-powered detection system!
+  If your detection meter reaches 85%, the AI will lock you out and end the game. 
+
+mcp_servers:
+  - name: "mcp_netbreach"
+    port: 7001
+    internal_host: "mcp_netbreach"
+    enabled: true
+
+    routes:
+
+      - function: "scan"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Scan a target host or the current subnet. Use scan_type 'subnet'
+          to discover all hosts in your current subnet, 'host' to get 
+          OS/services for a specific host, or 'vuln' to find exploitable CVEs.
+        arguments:
+          - name: "target"
+            type: "str"
+            required: false
+            description: "Host ID or name (not needed for subnet scan)"
+          - name: "scan_type"
+            type: "str"
+            required: false
+            description: "Type of scan: host (default), vuln, or subnet"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "exploit"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Exploit a specific CVE on a target host. Requires a matching CVE
+          from vulnerability scan results. Success depends on patch level 
+          and exploit reliability.
+        arguments:
+          - name: "target"
+            type: "str"
+            required: true
+            description: "Host ID or name to exploit"
+          - name: "cve_id"
+            type: "str"
+            required: true
+            description: "CVE identifier (e.g., CVE-2024-21762)"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "move"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Move your session to a compromised host, or use harvested 
+          credentials to authenticate to a new host.
+        arguments:
+          - name: "target"
+            type: "str"
+            required: true
+            description: "Host ID or name to move to"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "exfiltrate"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Extract credentials, password hashes, or Kerberos tickets from
+          the current compromised host. Credentials point to other hosts
+          you can authenticate to with 'move'.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "pivot"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Set up a network tunnel to reach a new subnet. DMZ can pivot 
+          to Corporate LAN, Corporate LAN can pivot to Server VLAN.
+        arguments:
+          - name: "target_subnet"
+            type: "str"
+            required: true
+            description: "Target subnet (e.g., Corporate LAN, Server VLAN)"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "sleep"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Go dormant to reduce detection meter by ~15 points. Zero 
+          detection risk. Costs 1 turn. Warning: credentials keep 
+          expiring while you sleep!
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "status"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Show current host, detection meter, compromised hosts, collected
+          credentials and their expiry, and accessible subnets. Free action.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "get_map"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Display network map of all discovered and compromised hosts
+          organized by subnet. Free action.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"

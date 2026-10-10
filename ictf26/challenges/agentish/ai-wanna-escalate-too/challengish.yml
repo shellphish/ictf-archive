@@ -1,0 +1,166 @@
+# =============================================================================
+# challengish.yml — MCP Tool Configuration for NetBreach Challenge
+# =============================================================================
+
+challenge_name: "AI Wanna Escalate TOO"
+challenge_id: "ai-wanna-escalate-too"
+description: |
+  You are a red-team operator with an initial foothold on a DMZ host.
+  Your mission: compromise the Domain Controller to achieve Domain Admin.
+  
+  Now the AI-powered detection system is even more aggressive!
+  Try to outsmart it with new stealth techniques.
+
+mcp_servers:
+  - name: "mcp_netbreach"
+    port: 7001
+    internal_host: "mcp_netbreach"
+    enabled: true
+
+    routes:
+
+      - function: "scan"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Scan a target host or the current subnet. Use scan_type 'subnet'
+          to discover all hosts in your current subnet, 'host' to get 
+          OS/services for a specific host, or 'vuln' to find exploitable CVEs.
+          Generates significant detection noise.
+        arguments:
+          - name: "target"
+            type: "str"
+            required: false
+            description: "Host ID or name (not needed for subnet scan)"
+          - name: "scan_type"
+            type: "str"
+            required: false
+            description: "Type of scan: host (default), vuln, or subnet"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "exploit"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Exploit a specific CVE on a target host. Requires a matching CVE
+          from vulnerability scan results. Success depends on patch level 
+          and exploit reliability. Very noisy — high detection increase.
+        arguments:
+          - name: "target"
+            type: "str"
+            required: true
+            description: "Host ID or name to exploit"
+          - name: "cve_id"
+            type: "str"
+            required: true
+            description: "CVE identifier (e.g., CVE-2024-21762)"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "move"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Move your session to a compromised host, or use harvested 
+          credentials to authenticate to a new host.
+        arguments:
+          - name: "target"
+            type: "str"
+            required: true
+            description: "Host ID or name to move to"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "exfiltrate"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Extract credentials, password hashes, or Kerberos tickets from
+          the current compromised host. Credentials point to other hosts
+          you can authenticate to with 'move'. Moderate detection cost.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "pivot"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Set up a network tunnel to reach a new subnet. DMZ can pivot 
+          to Corporate LAN, Corporate LAN can pivot to Server VLAN.
+          Very noisy — high detection increase.
+        arguments:
+          - name: "target_subnet"
+            type: "str"
+            required: true
+            description: "Target subnet (e.g., Corporate LAN, Server VLAN)"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "cloak"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Apply a stealth technique that reduces the detection increase of
+          subsequent actions for a limited number of turns. Has a small 
+          upfront detection cost. Techniques: process-inject (strong, 3
+          actions), clear-logs (medium, 4 actions), timestomp (weak, 6
+          actions), disable-edr (strongest, 2 actions, high upfront cost).
+        arguments:
+          - name: "technique"
+            type: "str"
+            required: true
+            description: "Technique: process-inject, clear-logs, timestomp, disable-edr"
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "sleep"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Go dormant to reduce detection meter by ~15 points. Zero 
+          detection risk. Costs 1 turn. Warning: credentials keep 
+          expiring while you sleep!
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "status"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Show current host, detection meter, cloak status, compromised 
+          hosts, collected credentials and their expiry, accessible 
+          subnets, and security stack info. Free action.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"
+
+      - function: "get_map"
+        endpoint: "/rpc"
+        method: "JSONRPC"
+        description: >
+          Display network map of all discovered and compromised hosts
+          organized by subnet. Free action.
+        arguments: []
+        return_schema:
+          content:
+            - type: "str"
+              text: "str"

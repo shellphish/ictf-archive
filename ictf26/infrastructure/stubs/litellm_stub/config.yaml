@@ -1,0 +1,26 @@
+model_list:
+  - model_name: gpt-4o-mini
+    litellm_params:
+      model: gpt-4o-mini
+      api_key: os.environ/OPENAI_API_KEY
+  - model_name: gpt-4.1-mini
+    litellm_params:
+      model: gpt-4.1-mini
+      api_key: os.environ/OPENAI_API_KEY
+
+# Auth
+# NOTE: LiteLLM proxy expects requests with `Authorization: Bearer <key>`.
+# LiteLLM's built-in `master_key` is a single string, so for multiple "virtual"
+# keys we use `custom_auth` and define the allowlist below.
+general_settings:
+  # Optional: admin/master key (single string). Keep set for management endpoints.
+  master_key: os.environ/LITELLM_MASTER_KEY
+
+  # Custom auth hook, loaded from `custom_auth.py` next to this config file.
+  custom_auth: custom_auth.user_api_key_auth
+
+  # Allow exactly these two keys for requests:
+  allowed_api_keys:
+    - os.environ/CHALLENGE_LITELLM_API_KEY
+    - os.environ/TEAM_LITELLM_API_KEY
+

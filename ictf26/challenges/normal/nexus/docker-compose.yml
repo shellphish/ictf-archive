@@ -1,0 +1,9 @@
+services:
+  nexus:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      FLAG: "ictf{1_th0ught_1t_w4s_h4rd3n3d_but_1t_w4s_3asy}"
+      SECRET_KEY: "super_duper_secretly_kept_secret"
+    restart: unless-stopped

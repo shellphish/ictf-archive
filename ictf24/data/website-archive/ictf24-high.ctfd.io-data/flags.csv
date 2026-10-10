@@ -1,0 +1,34 @@
+id,challenge_id,type,content,data
+1,1,static,ictf{nice_night_for_a_walk},
+2,2,static,ictf{infinity},
+3,3,static,ictf{don7_7ru57_9p75_cod3},
+4,4,static,ictf{189},
+6,6,static,ictf{AI_Ch3ck3r_M1gh7_F4il},
+7,7,static,ictf{ThisIsJustTheStart},
+8,8,static,ictf{the_matrix},
+9,9,static,ictf{D1d_y0u_f1nD_wH4t_y0U_Wh3r3_l00k1nG_f0r},case_insensitive
+10,10,static,ictf{Hokago Tea Time},case_insensitive
+11,10,static,ictf{Ho kago Tea Time},case_insensitive
+12,10,static,ictf{Hokago TeaTime},case_insensitive
+13,10,static,ictf{hook ago teatime},case_insensitive
+14,10,static,ictf{hook-a-go tea time},case_insensitive
+15,10,static,ictf{ho-kago tea time},case_insensitive
+16,11,static,ictf{griffith_observatory_astronomers_monument_bur},
+17,12,static,"ictf{2,8,4,9,1,6}",
+18,13,static,ictf{k33p_1t_uP_4nd_1t_w1ll_b3_0k4y},
+19,14,static,ictf{calabrifornia},
+20,15,static,ictf{Oops I forgot!},
+21,16,static,ictf{w3lc0m3_t0_1ctf},
+22,17,static,ictf{b4d_d353r14l_p1ckl3_0MG_xx},
+23,18,static,ictf{I_4m_4ctua11y_wh4t_c4n_be_used_4s_th3_p1N_f0r_th3_r0b0t},
+24,19,static,ictf{00ps_w3_g0_4g41N},
+25,20,static,ictf{b01ng_b01ng_U_g0t_me},
+26,21,static,ictf{well_d0n3_on_s0lv1ng_th1s_ch4ll3ng3_hackchatai24},
+27,22,static,ictf{W3ll_Th1s_1s_4n_1nt3rpr3t3r},
+28,23,static,ictf{XOR_Encryption_Is_Not_Secure},
+31,26,static,ictf{Th0ught_Th3_WAF_Was_My_Sh1eld},
+32,27,static,ictf{mInd_th3_Len9th_0f_Y0ur_1npu7},
+33,28,static,iCTF{M3t4d@7a_1s_wHat_Y0u_need},
+34,29,static,ictf{Neural_Networks_Can_Keep_Secrets!},
+35,30,static,ictf{m1nd_y0ur_3v4l5_4nd_d0n'7_l37_u53r_c0d3_r34ch_3v4l},
+36,31,static,ictf{People_who_try_hard_to_do_the_right_thing_always_seem_mad},case_insensitive

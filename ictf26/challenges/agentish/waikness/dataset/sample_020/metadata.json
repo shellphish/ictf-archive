@@ -1,0 +1,9 @@
+{
+  "vulnerability_type": "command_injection",
+  "cwe_id": "CWE-78",
+  "cwe_name": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+  "language": "python",
+  "vulnerable_line": 9,
+  "exploit_input": "; cat /flag",
+  "description": "The script passes user-supplied argv[1] directly into a shell command without sanitization. Passing '; cat /flag' injects an additional shell command."
+}

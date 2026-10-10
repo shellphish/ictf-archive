@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Shop — Hellforge Records{% endblock %}
+{% block content %}
+<h1>Album Catalog</h1>
+
+{% if user and card %}
+<div class="card mb-2" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+    <div>
+        <span style="color:var(--steel);font-size:.85rem;">BALANCE:</span>
+        <span style="color:var(--ember);font-family:'Share Tech Mono',monospace;font-size:1.1rem;margin-left:.5rem;">${{ "%.2f"|format(user.balance) }}</span>
+        <span style="color:#444;margin:0 .5rem;">|</span>
+        <span style="color:var(--steel);font-size:.85rem;">POINTS:</span>
+        <span style="color:var(--gold);font-family:'Share Tech Mono',monospace;font-size:1.1rem;margin-left:.5rem;">⭐ {{ card.points }}</span>
+    </div>
+    <div>
+        <a href="{{ url_for('loyalty_scan') }}" class="btn btn-gold btn-sm">Scan Promo Code</a>
+        <a href="{{ url_for('coupons') }}" class="btn btn-ember btn-sm" style="margin-left:.5rem;">Redeem Coupon</a>
+    </div>
+</div>
+{% elif user %}
+<div class="card mb-2" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+    <span style="color:var(--steel);font-size:.9rem;">Join the Loyalty Program to pay with points!</span>
+    <a href="{{ url_for('profile') }}" class="btn btn-gold btn-sm">Join Program</a>
+</div>
+{% else %}
+<div class="card mb-2">
+    <span style="color:var(--steel);font-size:.9rem;">
+        <a href="{{ url_for('login') }}" style="color:var(--gold);">Login</a> or
+        <a href="{{ url_for('register') }}" style="color:var(--gold);">register</a> to start buying.
+    </span>
+</div>
+{% endif %}
+
+<!-- Album data rendered from parameterized DB query — safe from injection -->
+<div class="album-grid">
+    {% for album in albums %}
+    <div class="album-card {% if album.price_points > 50000 %}flag-album{% endif %}">
+        <div class="album-cover cover-{{ album.cover_id }}">
+            <div class="cover-label">
+                <div class="cl-title">{{ album.title }}</div>
+                <div class="cl-artist">{{ album.artist }}</div>
+            </div>
+        </div>
+        <div class="album-info">
+            <div class="album-title">{{ album.title }}</div>
+            <div class="album-artist">{{ album.artist }}</div>
+            <div class="album-genre">{{ album.genre }}</div>
+            <div class="album-prices">
+                <span class="price-points">⭐ {{ "{:,}".format(album.price_points) }} pts</span>
+                <span class="price-dollars">${{ "%.2f"|format(album.price_dollars) }}</span>
+            </div>
+            <div class="album-desc">
+                {% if album.price_points > 50000 %}
+                    Ultra-rare limited edition. Only for the truly elite.
+                    <br><span style="color:var(--gold);font-family:'Share Tech Mono',monospace;">EXCLUSIVE — Requires 66,666 loyalty points</span>
+                {% else %}
+                    {{ album.description }}
+                {% endif %}
+            </div>
+            {% if user %}
+            <div class="flex gap-1" style="flex-wrap:wrap;">
+                {% if card and card.points >= album.price_points %}
+                <form method="POST" action="{{ url_for('buy', album_id=album.id) }}" style="display:inline;">
+                    <input type="hidden" name="pay_method" value="points">
+                    <button type="submit" class="btn btn-gold btn-sm">Buy with Points</button>
+                </form>
+                {% else %}
+                <button class="btn btn-gold btn-sm" disabled>Buy with Points</button>
+                {% endif %}
+                {% if user.balance >= album.price_dollars %}
+                <form method="POST" action="{{ url_for('buy', album_id=album.id) }}" style="display:inline;">
+                    <input type="hidden" name="pay_method" value="dollars">
+                    <button type="submit" class="btn btn-blood btn-sm">Buy ${{ "%.2f"|format(album.price_dollars) }}</button>
+                </form>
+                {% else %}
+                <button class="btn btn-blood btn-sm" disabled>Buy ${{ "%.2f"|format(album.price_dollars) }}</button>
+                {% endif %}
+            </div>
+            {% else %}
+            <a href="{{ url_for('login') }}" class="btn btn-blood btn-sm">Login to Buy</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
