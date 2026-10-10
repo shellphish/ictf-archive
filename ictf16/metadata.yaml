@@ -1,30 +1,46 @@
 edition: ictf16
 year: 2017
 title: "Shell We Play a Game?"
+game_theme: "Unicorns, Ponies, and Rainbows vs. Artificial Intelligence"
 
 format: attack-defense
-# Note: Organized in 2016, run March 3, 2017 (delayed execution).
+# Note: Organized in 2016, run March 3–4, 2017.
+# Joint UCSB (Shellphish) + ASU (SEFCOM) organization.
+# First iCTF as a DEF CON CTF qualifier.
 
 dates:
   start: "2017-03-03"
-  end: "2017-03-03"
-  # From DDoS post: "On March 3rd, 2017, we ran the iCTF of the 2016-2017 school year."
+  end: "2017-03-04"
+  # Competition ran 24 hours: March 3, 2017 9am PST to March 4, 2017 9am PST
+  # Ended prematurely at 4:15am due to DDoS.
 
 participation:
   num_teams: 300
   notes: >
     Over 300 teams. First iCTF open to all teams (not just academic).
     First iCTF hosted on Amazon Web Services (AWS).
-    Winner: Bushwhackers. LC/BC disqualified for DDoS.
+    First iCTF as a DEF CON CTF qualifier. Joint UCSB (Shellphish) +
+    ASU (SEFCOM) organization. Winner: Bushwhackers. LC/BC disqualified for DDoS.
+
+results:
+  winner: "Bushwhackers"
+  notes: >
+    LC/BC launched a DDoS attack (botnet installed on compromised team VMs)
+    against Bushwhackers at 4:15am, bringing down the game network. Bushwhackers
+    were declared winners (barely ahead at time of DDoS). LC/BC disqualified.
 
 challenges: []
-# Specific services: "flasking_unicorns" visible in DDoS post exploit traffic.
+# Known service: "flasking_unicorns" visible in DDoS post exploit traffic.
 # 12 service ports (20001-20012) referenced in DDoS analysis.
 
 data:
   - type: other
     path: "iCTF 2016 Planning.docx"
-    description: "Organizer planning document"
+    description: "Organizer planning document (from fall 2016)"
+
+  - type: other
+    path: "iCTF 2016-2017 Announcement.docx"
+    description: "Official competition announcement (theme, rules, format)"
 
   - type: other
     path: "Reply to LCBC.docx"
@@ -45,12 +61,14 @@ resources:
   website: "https://ictf.cs.ucsb.edu/archive/2016-2017/website"
 
 notes: >
-  The 2016-2017 iCTF ("Shell We Play a Game?") ran on March 3, 2017 and was
-  the first iCTF open to all teams (not just academic institutions) and the
-  first hosted on AWS. With 300+ teams it was one of the largest online
-  attack-defense CTFs ever run. The competition ended prematurely when
-  second-place team LC/BC launched a DDoS attack via a botnet installed on
-  compromised team VMs, bringing down the competition network at 4:15am.
-  Bushwhackers (barely ahead) were declared winners. LC/BC was disqualified.
-  The organizers published a detailed forensic analysis of the DDoS (preserved
-  in attic/ictf-website). The local archive is minimal (20 KB).
+  The 2016-2017 iCTF ran March 3–4, 2017 from 9am to 9am PST (24 hours).
+  Official title: "Shell We Play a Game?" Game theme: "Unicorns, Ponies, and
+  Rainbows vs. Artificial Intelligence." First joint UCSB (Shellphish) +
+  ASU (SEFCOM) iCTF. First iCTF open to all teams (not just academic) and
+  first hosted on AWS. First iCTF as DEF CON CTF qualifier. With 300+ teams
+  it was one of the largest online attack-defense CTFs ever run. The competition
+  ended prematurely when second-place team LC/BC launched a DDoS attack via a
+  botnet installed on compromised team VMs, bringing down the competition
+  network at 4:15am. Bushwhackers (barely ahead) were declared winners.
+  LC/BC was disqualified. The organizers published a detailed forensic analysis
+  (in attic/ictf-website). The local archive is minimal (30 KB).

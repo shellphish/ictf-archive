@@ -14,8 +14,14 @@ dates:
 participation:
   num_teams: null
   notes: >
-    Teams from educational institutions around the world.
-    Registration via http://www.ictf2013.info
+    International university teams. Registration via http://www.ictf2013.info.
+    Known participating teams include PPP (CMU), c00kies@venice (Venice), and others.
+
+results:
+  winner: "PPP (Carnegie Mellon University)"
+  notes: >
+    PPP victory confirmed by c00kies@venice (Riccardo Focardi) in post-competition
+    mailing list email: "congrats to PPP!" (March 26, 2013).
 
 challenges:
   - name: scada
