@@ -1,0 +1,16 @@
+#!/usr/bin/perl -w
+
+if ($#ARGV == -1) {
+  die "usage: get <ip-address>\n";
+}
+
+$ip = $ARGV[0];
+
+$request = "http://$ip:8000/flag";
+
+$output = `wget -T 10 -q -O - $request`;
+chop $output;
+chop $output;
+
+print "$output\n";
+

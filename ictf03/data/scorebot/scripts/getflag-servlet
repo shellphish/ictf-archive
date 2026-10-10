@@ -1,0 +1,37 @@
+#! /usr/bin/python
+#: Get servlet flag
+
+import os, re, socket, sys, urllib
+
+#
+# Handle servlet
+#
+def handleServlet(hostname):
+	pat = re.compile(""""Suspicious" registry key: NSA-(.*)</a>""")
+	fd = urllib.urlopen("""
+http://%s/search/search?action=doSearch&keywords=NSA
+""" % (hostname))
+
+	flag = ""
+	line = fd.readline()
+	while line:
+		m = pat.search(line)
+		if m:
+			flag = m.group(1)
+			break
+
+		line = fd.readline()
+
+	fd.close()
+
+	return flag
+
+#
+# Main
+#
+if len(sys.argv) < 2:
+	print "usage: %s <hostname>" % (sys.argv[0])
+	sys.exit(1)
+
+print handleServlet(sys.argv[1])
+

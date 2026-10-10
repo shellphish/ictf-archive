@@ -1,0 +1,19 @@
+#!/usr/bin/perl -w
+
+use POSIX qw(ceil floor);
+use Digest::MD5(md5_hex);
+
+@keywords = qw/fork init tell test hello abc xxx microsoft/;
+@environ = qw/FSI=. EXTN1= TST=xxx PASSWORD= EGG=/;
+
+$id = ceil(rand(256));
+$key = $keywords[rand(@keywords)];
+
+$request = "id $id\nuser whatever \npassword $ARGV[1]\nfilename *.h\nkeyword $key\nenviron $environ[rand(@environ)]\n";
+
+if (! -e "/home/fredrik/ctf_scorebot/scripts/sfindc") {
+    die "helper program findc not in local directory";
+}
+
+@reply = `echo "$request" | /home/fredrik/ctf_scorebot/scripts/sfindc $ARGV[0]`;
+print "$reply[1]";

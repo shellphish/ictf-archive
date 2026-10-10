@@ -1,0 +1,45 @@
+#!/usr/bin/perl 
+
+use HTTP::Lite;
+
+# get the register page
+
+$http = new HTTP::Lite;
+$req = $http->request("http://$ARGV[0]/assistance/index.html") or die "Unable to get contact.html";
+if ($req != 200) {
+	die "Request failed ($req)";
+}
+
+
+# get the body and check for reasonable content
+
+$body = $http->body();
+
+if (! $body =~ m/friendly/) {
+    die "assistance/index.html is broken";
+}
+
+
+
+# get Bill's extension 
+
+$http = new HTTP::Lite;
+$req = $http->request("http://$ARGV[0]/cgi-bin/query_extension.pl?cboname=Gates") or die "Unable to get extension.pl";
+if ($req != 200) {
+	die "Request failed ($req)";
+}
+
+
+# get the body and parse out the flag
+
+$body = $http->body();
+@lines = split(/\n/,$body);
+
+@matches = grep { /<td>Gates/ } @lines;
+
+if ($matches[0] eq "") {
+    die "Bill Gates' entry not found";
+} else {
+    $matches[0] =~ m/Gates<\/td><td>([0-9a-zA-Z]*)<\/td>/;
+    print "$1";
+}
