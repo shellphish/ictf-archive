@@ -1,0 +1,256 @@
+The 2011 UCSB iCTF: Description of the game
+
+* Introduction and Overview
+
+Welcome to the 2011 iCTF! The UCSB International Capture The Flag is a
+distributed, wide-area security exercise, whose goal is to test the
+security skills of the participants. The iCTF contest is organized by
+Prof. Giovanni Vigna of the Department of Computer Science at UCSB,
+and is held once a year. This year's iCTF will be held on Friday,
+December 2nd, 2011, from 8am to 5pm, PST.
+
+The Capture The Flag contest is a multi-site, multi-team hacking
+contest in which a number of teams compete independently against each
+other.
+
+In traditional editions of the iCTF (2003-2007), the goal of each team
+was to maintain a set of services such that they remain available and
+uncompromised throughout the contest phase. Each team also has to
+attempt to compromise the other teams' services. Since all the teams
+received an identical copy of the virtual host containing the
+vulnerable services, each team has to find vulnerabilities in their
+copy of the hosts and possibly fix the vulnerabilities without
+disrupting the services. At the same time, the teams have to leverage
+their knowledge about the vulnerabilities they found to compromise the
+servers run by other teams. Compromising a service allows a team to
+bypass the service's security mechanisms and to "capture the flag"
+associated with the service.
+
+During the 2008, 2009, and 2010 iCTFs, new competition designs have
+been introduced. More precisely, in 2008 we created a separate virtual
+network for each team. The goal was to attack a terrorist network and
+defuse a bomb after compromising a number of hosts. In 2009, the
+participants had to compromise the browsers of a large group of
+simulated users, steal their money, and create a botnet. In 2010, the
+participants had to attack the rogue nation of Litya, ruled by the
+evil Lisvoy Bironulesk. A new design forced the team to attack the
+services supporting Litya's infrastructure only at specific times,
+when certain activities were in progress. In addition, an intrusion
+detection system would temporarily firewall out the teams whose
+attacks were detected.
+
+This year, we are mixing it up again! Once more, teams will be
+responsible for defending themselves against a digital onslaught, but
+their counterattacks will have to be very well thought out if they
+wish to win the coveted top spot. As you read the description below,
+keep in mind that the mechanics described will have to be applied
+under the pressure of a live-fire hacking competition, while trying to
+prevent your opponents from doing the same. Prepare, and succeed!
+
+* Thematic Background
+
+You don’t think yourself as a criminal. Sure, your money
+might come from... unorthodox sources, but everyone does things a
+little differently in life, right?  Eh, whatever. The fact is that in
+order to keep your money, you gotta hide that money trail. If the
+money starts out red and sticky, it's gotta get scrubbed nice and
+clean. If it starts out smelling a little powdery, you gotta perfume
+it, right? Then it'll be all nice and good, and you can get back to
+that nice sailboat, without a care in the world. That'd be nice, but
+that's then, and now is now... there is some hacking to do!
+
+The theme for the 2011 iCTF is: money laundering! Yes, this is an
+educational competition, but haven’t you learned anything from Grand
+Theft Auto? As the digital world (everything from botnets, to
+bitcoins, to online video games) is increasingly utilized in money
+laundering operations, investigating online money laundering is
+becoming extremely relevant. At the same time, the money launderers
+aren't sitting on their laurels -- these operations are extremely
+complex, and regularly evolve to account for market risks and
+realities. Now, you are one of these organizations! Sink or swim, it's
+up to you.
+
+* Playing
+
+** The server and the services
+
+Each team receives a virtualized server with ten services. These
+services have vulnerabilities. The overall goal of the competition is
+to find the vulnerabilities in your copy of the server, and use this
+knowledge to patch your copy and attack other services. In order to
+prove that you have compromised a service you need to steal a
+flag. This competition requires both attack and defense skills, but
+also game analysis skills, because not all moves in the game will give
+you the same result...  
+
+** Rounds
+
+The world changes rapidly. The authorities catch on, market realities
+change, business partners come and go. Fortunately, this change is
+atomic! These atomic units of change are rounds, and each round lasts
+(roughly) 2 minutes. Each round represents a “period” or “tick” in the
+game.  At the beginning of each round, the State Pusher will send to
+the teams a description of the risk factors and the payoffs associated
+with each service. In addition, at each round, new flags for the
+services are set by the Scorebot.  
+
+** Market Realities
+
+The money laundering market is a complex beast. During any given
+round, the feds might focus their attention on different services,
+your competitor might be getting ahead in the game, and market rates
+for the laundering operation itself might vary wildly. A good
+businessman has to keep a keen eye on the whole deal and make the
+right choices.  At the beginning of each round, the following
+information will be provided:
+
+- For each team:
+
+  - The amount of money and points owned
+
+  - The services that were up during the previous round
+
+  - The services that were compromised during the previous round
+
+- For each service:
+
+  - The cut, C (this is the percentage of money taken away when you
+    launder money through this service)
+
+  - The payoff, P (this is the percentage of money that will be
+    transformed into points)
+
+  - The risk, R (this is the risk of getting caught)
+
+** Makin' Money - the Challenges
+
+To launder money, you must first make money. You do this through a
+variety of nefarious schemes, all of which are done by solving
+"challenges". You will find these by accessing the challenge server
+(its address will be disclosed at the beginning of the
+competition). Solving a challenge will deposit money into your Sw1ss
+Bank Account as dirty funds, which isn't exactly ideal. You can sit on
+it all you want, but the moment the feds catch wind of it, you're done
+for! You can only get the money once per challenge, so be careful not
+to waste it needlessly!
+
+** Washing the Bills - a Shady Service
+
+This is the heart of the business! To utilize the underground world of
+money laundering services, you must first understand it.
+
+First, you must realize that the heat is on. The Secret Service, the
+FBI, the SEC, the FATF, the World Bank, and pretty much everyone down
+to your cousin Larry at the county sheriff's office is working to
+bring you down. They track a lot of things, and they're pretty good at
+it. Associate with someone too often? They notice. Transfer a large
+sum of money? Count on never seeing it again. Be in the wrong place at
+the wrong time, and you'll find yourself washing clothes in prison,
+with money just a distant, fuzzy memory!
+
+On top of all that, your colleagues in the business expect you to
+scratch their back if they scratch yours. To begin with, they take a
+cut of everything they launder, those good-for-nothing crooks! Of
+course, you do, too, so it's only fair... And on top of all that, you
+gotta maintain your reputation. If you hold back on providing your
+services to them, they'll give you such unfavorable rates, your family
+will be eating chopped liver for breakfast!
+
+And as if all that wasn't difficult enough already, you gotta deal
+with the rats. It's not all friendly in the laundering business. If
+someone really wants, they can tip the feds off to your services,
+which'll turn the heat way up.
+
+*** The Heist
+
+Laundering money is a two-step process. First, you must navigate the
+underworld contacts to make the exchange. This involves finding and
+exploiting a vulnerability in a service of another team (the
+laundering mule). This will net you a service flag (very similar to a
+traditional capture the flag competition). At this point, you will be
+able to submit to the Laundering Server a request to transfer some funds,
+specifying the key that you have stolen from your opponent. If the key
+is valid SOME money (see below) will be POSSIBLY (see below) converted
+into points. These points are the most important thing, since the one
+with the most points WINS!!!
+
+*** The Tip
+
+As an alternative to laundering the money, you can betray your
+associates and tip off the feds! To do this, simply submit the service
+flag to the Secret Service Anonymous Tip Hotline and laugh as they get
+taken down! This means that the service of the compromised team will
+be flagged as "compromised" for the round and therefore the conversion
+factor of the tean will be reduced (see below).
+
+*** The Cut
+
+The cut is the percentage of money that a launderer (a team whose
+service you exploit) takes. This percentage of the money gets
+transferred to the exploited team. Choose carefully, because you might
+help the wrong competitor...
+
+*** The Risk
+
+The overall risk for a money laundering transaction represents the
+probability of getting caught (note that there is no risk when just
+tipping the police). Once the risk for the transaction is computed
+(see below), a number is chosen. If the number is lower than the risk,
+then the transaction will be voided. This means that you LOSE ALL THE
+MONEY involved in the transaction. However, the cut is correctly
+delivered to the mule’s owner (i.e., the team whose service you are
+exploiting).
+
+The overall risk, O, is is defined by three factors:
+
+    1) The risk, R, associated with the service.
+
+    2) The amount of money being laundered, M.
+
+    3) The overall amount of money that has been laundered by your team through the
+    particular team you are exploiting, N.
+
+    4) The overall amount of money that has been laundered by your team through the
+    particular service you are exploiting (across all other teams), Q.
+
+The exact definition of O = risk_function(R, M, N, Q) will be provided 
+the day of the competition.
+
+*** The Payoff
+
+If all goes well, the laundering provider will get his/her cut, and
+you will get most of the rest! Why most? Well, first of all you will
+transform into points only the percentage of the money determined by
+the particular service’s payoff, P.  In addition, if you don't provide
+good service to the community, you will incur fees from the money
+laundering community for their service. No one likes a leech!  The
+percentage you will lose is equal to the average number of active and
+uncompromised services that you had in the past, which is called your
+defense level, D.  So the points x are defined by:
+
+x = M * P * D
+
+It's a hard business, but you'll get there bit by bit! Amassing clean
+points is your goal, so make sure to accrue lots of it. Think about
+that boat waiting for you!
+
+* Winning
+
+To win, you must finish with the most points. 
+
+NOTE: The sentence below was in the initial description of the rules
+and  has since been changed:
+"Note that you will be
+penalized for having money still in the Sw1ss Bank when the
+competition finishes. More precisely, each dollar that you have in
+your bank is going to become a liability when the competition
+ends. Spend it all, or see your money subtracted from your points at
+the end of the competition."
+
+This is changed to: 
+
+The money that you have at the end of the competition will be
+simply discarded.
+
+
+Why are you still reading this? Go prepare!!!

@@ -1,0 +1,51 @@
+WHAT: The UCSB International Capture The Flag (iCTF) Hacking Contest (http://ictf.cs.ucsb.edu)
+
+WHEN: April 10th, 2015, from 8am PDT to 5pm PDT
+
+WHO: Dozens of teams from educational institutions around the world 
+
+WHY: Because you need to prove you're the best at what you do!
+
+SPONSORS: The iCTF is sponsored by Lastline, Inc. (http://www.lastline.com).
+
+CURIOSITY: This is the "2104" iCTF, which was supposed to run in
+December but was postpone to March, and then April...
+
+SYNOPSIS 
+
+The Capture The Flag contest is multi-site, multi-team hacking contest
+in which a number of teams compete independently against each other.
+
+The goal of each team is to maintain a set of services such that they
+remain available and uncompromised throughout the contest phase. Each
+team also has to attempt to compromise the other teams'
+services. Since all the teams received an identical copy of the
+virtual host containing the vulnerable services, each team has to find
+vulnerabilities in their copy of the hosts and possibly fix the
+vulnerabilities without disrupting the services. At the same time, the
+teams have to leverage their knowledge about the vulnerabilities they
+found to compromise the servers run by other teams. Compromising a
+service allows a team to bypass the service's security mechanisms and
+to "capture the flag" associated with the service.
+
+The Security Lab at UCSB has made available to the public the iCTF
+framework,  which is the infrastructure used to run the competition.
+
+https://github.com/ucsb-seclab/ictf-framework
+
+The iCTF framework is free for both commercial and non-commercial use
+(donations are welcome!). This competition is based on the iCTF
+framework and similar competitions can leverage the same framework to
+create other fun and educational security competitions.
+
+The framework is also accessible through our web portal:
+http://ictf.cs.ucsb.edu/#/framework 
+
+With a few clicks, one can generate the virtual machines necessary to
+set up an in-house hacking competition.
+
+Enjoy!
+
+Giovanni Vigna and the UCSB SecLab Team
+	
+	
