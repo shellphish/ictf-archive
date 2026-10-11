@@ -15,6 +15,25 @@ participation:
   notes: >
     25 teams from Universities in USA, Europe, and Australia.
 
+results:
+  winner: "We_0wn_Y0u (Austria) — 14,963,559 pts"
+  final_scoreboard:
+    - {rank: 1, team: "We_0wn_Y0u",   score: 14963559, country: Austria}
+    - {rank: 2, team: "Wizards of DoS", score: 11260725}
+    - {rank: 3, team: "WCSC",          score: 10343440}
+    - {rank: 4, team: "0ld Eur0pe",    score:  9899604}
+    - {rank: 5, team: "int80",         score:  5436065}
+    - {rank: 6, team: "CInsects",      score:  3875324}
+    - {rank: 7, team: "Emanaton",      score:  2012899}
+    - {rank: 8, team: "ENOFLAG",       score:  1729152}
+    - {rank: 9, team: "pwnshop",       score:  1293514}
+    - {rank: 10, team: "f0gd0gs",      score:  1280311}
+  notes: >
+    From site/final_results.html. The winner is noted as being from Austria;
+    video announcing winner available (referenced from site: video/winner_announcement.mov).
+    Austrian TV (futurezone.orf.at) covered the event.
+    Ran December 8th, 2006 from UCSB Frank Hall.
+
 challenges:
   - name: hillbillybank
     title: "Hillbilly Bank"

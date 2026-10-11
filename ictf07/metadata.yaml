@@ -11,7 +11,18 @@ dates:
 
 participation:
   num_teams: null
-  notes: "Team count not documented."
+  notes: >
+    Competition ran December 7th, 2007, 10am–4pm, Frank Hall UCSB.
+    26 teams participated (from statistics.html: 26 teams solved "amends").
+    International teams from USA, Europe, Australia.
+
+results:
+  winner: "Chocolate Makers (Milano, Italy)"
+  notes: >
+    From site/statistics.html: "The winner is the team 'Chocolate Makers' from
+    Milano." Also: "Chocolate Makers and squareroots were the only teams to..."
+    (completed the hardest challenge). Full scoreboard not preserved separately,
+    but statistics page exists in site/.
 
 challenges:
   - name: therapy
