@@ -19,7 +19,15 @@ participation:
     europe: 16
     south_america: 1
     asia_pacific: 2
+
+results:
   winner: "ENOFLAG (Technische Universität Berlin, Germany)"
+  notes: >
+    Confirmed from competition site and mailing list: "And the winner is...ENOFLAG".
+    Team ENOFLAG from TU Berlin, Germany. Competition format was "attack" (not
+    attack-defense): first team to fully disarm the bomb was the winner.
+    ENOFLAG published an almost-complete competition walkthrough on the site.
+    Contact: Frank Kargl (frank.kargl@uni-ulm.de, Ulm University).
 
 challenges:
   # Attack-progression services (teams must compromise them in order)

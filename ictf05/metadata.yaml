@@ -13,6 +13,18 @@ participation:
   num_teams: null
   notes: "Team count not documented. Competition included international teams."
 
+results:
+  winner: "0ld Eur0pe — 13,191,520 pts"
+  final_scoreboard:
+    - {rank: 1, team: "0ld Eur0pe",           score: 13191520, offensive: 5196930, defensive: 3498532}
+    - {rank: 2, team: "We_0wn_Y0u",           score: 11282123, offensive: 2787410, defensive: 1387203}
+    - {rank: 3, team: "Wizards of DoS",       score: 10636913, offensive: 1277587, defensive: 930490}
+    - {rank: 4, team: "SIGMIL",               score:  9233317, offensive: 1991962, defensive: 933024}
+    - {rank: 5, team: "The Tower of Hanoi",   score:  8956774, offensive: 4668217, defensive: 213508}
+  notes: >
+    From site/final_score.html (dated December 9, 2005). Full scoreboard preserved
+    in that file (~20 teams). 0ld Eur0pe won with highest combined offensive+defensive score.
+
 challenges:
   - name: spamagent
     title: "Spam Agent"

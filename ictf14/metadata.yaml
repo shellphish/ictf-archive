@@ -14,9 +14,20 @@ dates:
 participation:
   num_teams: 88
   notes: >
-    88 teams (ranks 0–87 in final scoreboard). Winner: SpamAndHex (Hungary).
-    International university teams. Each team received a VirtualBox VM as router.
-    Winner scored 92.744 with 88 timeliness, 593.037 leetness, 6300 diversity.
+    88 teams (ranks 0–87 in final scoreboard). International university teams.
+    Each team received a VirtualBox VM as router (key disclosed on competition morning).
+
+results:
+  winner: "SpamAndHex (Hungary)"
+  score: 92.744
+  score_breakdown:
+    timeliness: 88
+    leetness: 593.037
+    diversity: 6300
+  notes: >
+    From MySQL dump (2014-2015.mysql.gz): SpamAndHex scored 92.744 on the novel
+    four-component formula: SLA × (Timeliness 20% + Diversity 40% + Leetness 40%).
+    Scoreboard screenshots preserved in iCTF scoreboard/ directory.
 
 challenges: []
 # Specific services not documented in local archive.

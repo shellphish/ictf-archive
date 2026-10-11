@@ -14,6 +14,14 @@ participation:
   num_teams: null
   notes: "Rematch of the 2004 competition. Team data not fully documented."
 
+results:
+  winner: "The Tower of Hanoi (Politecnico di Milano, Italy)"
+  notes: >
+    Confirmed from competition site (index.html): "The winner of the competition
+    was the team 'The Tower of Hanoi', from Politecnico di Milano, Italy."
+    Score: 74,623 pts (Offensive: 52,603, Defensive: 27,020, Penalty: -5,000).
+    Second place: Old Eur0pe (73,301 pts), Third: Wizards of DoS (59,962 pts).
+
 challenges:
   - name: bassretard
     title: "BassRetard (Main Portal)"
