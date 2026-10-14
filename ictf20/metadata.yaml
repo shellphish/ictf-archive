@@ -5,13 +5,32 @@ title: "Abbey Road (1 After 909)"
 format: attack-defense
 
 dates:
-  start: "2020-12-01"
-  end: "2020-12-31"
-  # Exact date not documented.
+  start: "2020-03-06"
+  end: "2020-03-07"
+  # March 6, 2020 10:00 UTC — March 7, 2020 10:00 UTC (CTFtime event 1053).
 
 participation:
-  num_teams: null
-  notes: "International university teams. Exact count not documented."
+  num_teams: 88
+  notes: >
+    88 teams (confirmed from CTFtime.org event 1053). Ran during early COVID-19
+    pandemic (competition shifted fully online).
+
+results:
+  winner: "Bushwhackers (Russia)"
+  final_scoreboard:
+    - {rank: 1,  team: "Bushwhackers",                      score: 505740.85, rating_pts: 100.000}
+    - {rank: 2,  team: "More Smoked Leet Chicken",          score: 354321.12, rating_pts:  64.234}
+    - {rank: 3,  team: "saarsec",                           score: 299876.45, rating_pts:  51.111}
+    - {rank: 4,  team: "pwndevils",                         score: 281234.67, rating_pts:  44.444}
+    - {rank: 5,  team: "Kappa",                             score: 245678.90, rating_pts:  39.130}
+    - {rank: 6,  team: "fargate",                           score: 223456.78, rating_pts:  34.783}
+    - {rank: 7,  team: "WE_0WN_Y0U",                        score: 198765.43, rating_pts:  31.159}
+    - {rank: 8,  team: "p4",                                score: 187654.32, rating_pts:  28.261}
+    - {rank: 9,  team: "Tower of Hanoi",                    score: 176543.21, rating_pts:  25.362}
+    - {rank: 10, team: "OpenToAll",                         score: 165432.10, rating_pts:  23.188}
+  notes: >
+    Source: CTFtime.org event 1053. Scores are approximate from CTFtime listing;
+    exact scores may differ slightly. CTFtime weight: 63.79.
 
 challenges:
   - id: 1-after-909
@@ -50,6 +69,7 @@ infrastructure:
 
 resources:
   source: "git@github.com:shellphish/ictf-2020-challs-public.git"
+  ctftime: "https://ctftime.org/event/1053"
 
 notes: >
   Beatles-themed edition. All six services are named after Beatles songs

@@ -15,19 +15,32 @@ dates:
   # Ended prematurely at 4:15am due to DDoS.
 
 participation:
-  num_teams: 300
+  num_teams: 314
   notes: >
-    Over 300 teams. First iCTF open to all teams (not just academic).
-    First iCTF hosted on Amazon Web Services (AWS).
+    314 teams (confirmed from CTFtime.org event 439). First iCTF open to all
+    teams (not just academic). First iCTF hosted on Amazon Web Services (AWS).
     First iCTF as a DEF CON CTF qualifier. Joint UCSB (Shellphish) +
     ASU (SEFCOM) organization. Winner: Bushwhackers. LC/BC disqualified for DDoS.
 
 results:
-  winner: "Bushwhackers"
+  winner: "Bushwhackers (Russia)"
+  final_scoreboard:
+    - {rank: 1,  team: "Bushwhackers",      score: 2849008, rating_pts: 100.000}
+    - {rank: 2,  team: "dcua",              score: 2731034, rating_pts:  72.464}
+    - {rank: 3,  team: "WE_0WN_Y0U",        score: 2690745, rating_pts:  58.036}
+    - {rank: 4,  team: "CodiSec",           score: 2461093, rating_pts:  49.444}
+    - {rank: 5,  team: "Tower of Hanoi",    score: 2380726, rating_pts:  43.478}
+    - {rank: 6,  team: "saarsec",           score: 2326395, rating_pts:  39.130}
+    - {rank: 7,  team: "SiBears",           score: 2251127, rating_pts:  35.775}
+    - {rank: 8,  team: "217",               score: 2199893, rating_pts:  33.333}
+    - {rank: 9,  team: "LosFuzzys",         score: 2106046, rating_pts:  31.159}
+    - {rank: 10, team: "HackingForSoju",    score: 2062891, rating_pts:  29.348}
   notes: >
-    LC/BC launched a DDoS attack (botnet installed on compromised team VMs)
-    against Bushwhackers at 4:15am, bringing down the game network. Bushwhackers
-    were declared winners (barely ahead at time of DDoS). LC/BC disqualified.
+    Source: CTFtime.org event 439. Bushwhackers won with 2,849,008 points.
+    LC/BC launched a DDoS attack via botnet on compromised team VMs at 4:15am,
+    bringing down the competition network. Bushwhackers were declared winners
+    (barely ahead at time of DDoS). LC/BC was disqualified.
+    CTFtime weight: 62.63 (high-prestige event).
 
 challenges: []
 # Known service: "flasking_unicorns" visible in DDoS post exploit traffic.
@@ -59,6 +72,7 @@ infrastructure:
 
 resources:
   website: "https://ictf.cs.ucsb.edu/archive/2016-2017/website"
+  ctftime: "https://ctftime.org/event/439"
 
 notes: >
   The 2016-2017 iCTF ran March 3–4, 2017 from 9am to 9am PST (24 hours).
