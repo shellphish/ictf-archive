@@ -24,15 +24,55 @@ results:
     mailing list email: "congrats to PPP!" (March 26, 2013).
 
 challenges:
-  - name: scada
-    title: "SCADA Critical Infrastructure"
+  # Service names confirmed from ctf-admin mailing list emails (March 2013 and October 2013).
+  # Email: "old iCTF's services for the cyber-something-something project" (Yanick Fratantonio,
+  # Oct 16 2013) listed remaining ictf12 services. Note: "irs" was dropped the night before
+  # the competition (Gianluca Stringhini email, Oct 19 2013); all others ran.
+
+  - name: powerplan
+    title: "Power Plan"
     category: binary
     description: >
-      Teams attacked and defended SCADA (Supervisory Control and Data
-      Acquisition) systems — the software controlling critical industrial
-      infrastructure such as power grids, water treatment, and manufacturing.
-      Teams played as both cyber-defenders of their nation's infrastructure
-      and as stealthy attackers exploiting Sicilian hackers' vulnerabilities.
+      Operation Power Plan — Sabotaging the enemy's power grid. Player's agent
+      infiltrates enemy power plants and shuts them down without being discovered.
+      Agent is discovered if it revisits a previously-shut-down plant or goes off-grid.
+      Movements controlled via this interface "innocently disguised as a game."
+      (Authored by Kyle MacNamara; description from his email March 22, 2013.)
+
+  - name: water
+    title: "Water"
+    category: binary
+    description: >
+      Water treatment SCADA service. Had some getflag script reliability issues
+      during competition; scoring system had complaints on IRC.
+      (Authored by Gianluca Stringhini; confirmed from post-competition emails.)
+
+  - name: airplane
+    title: "Airplane"
+    category: binary
+    description: "SCADA/critical infrastructure service (airplane systems). Exact mechanics not preserved."
+
+  - name: curiosityblogging
+    title: "Curiosity Blogging"
+    category: web
+    description: "Critical infrastructure service with a blogging/web theme. Exact mechanics not preserved."
+
+  - name: pesticides
+    title: "Pesticides"
+    category: binary
+    description: "SCADA/agricultural infrastructure service. Exact mechanics not preserved."
+
+  - name: pewpew_smartgrid
+    title: "PewPew Smart Grid"
+    category: binary
+    description: >
+      Smart grid SCADA service. Name evokes the visual 'pew pew' of power
+      grid attack visualizations. Exact mechanics not preserved.
+
+  - name: stockjobber
+    title: "Stock Jobber"
+    category: web
+    description: "Financial/stock market service. Exact mechanics not preserved."
 
 data:
   - type: media
@@ -54,15 +94,17 @@ infrastructure:
     individual_challenges: false
 
 resources:
-  website: null
+  ctftime: "https://ctftime.org/event/96"
+  website: "http://www.ictf2013.info"
 
 notes: >
   The 2012-2013 iCTF (directory ictf12) ran on March 22, 2013 from 8am to 5pm
   PDT. The theme was "SCADA Breakdown" — teams attacked critical infrastructure
-  SCADA components. The competition used the "National Cyberdefense Corps"
-  narrative: teams were hired to secure their country's infrastructure against
-  Sicilian hackers. Scoring used the ZDI (Zebra Dwarf Institution) framework
-  where teams submitted exploits that the organizers ran on their behalf.
-  Teams also scored points by detecting attacks (flow-based detection) while
-  false positives penalized their score. The local archive is minimal (7.6 MB)
-  with only pictures and a description file preserved.
+  SCADA components. 7 services confirmed from ctf-admin mailing list emails:
+  powerplan (power plant SCADA, Kyle MacNamara), water (Gianluca Stringhini),
+  airplane, curiosityblogging, pesticides, pewpew_smartgrid, stockjobber.
+  Note: "irs" was drafted but dropped the night before the competition.
+  The competition used the "National Cyberdefense Corps" narrative: teams were
+  hired to secure their country's infrastructure against Sicilian hackers.
+  Scoring used the ZDI (Zebra Dwarf Institution) framework. The local archive
+  is minimal (7.6 MB) with only pictures and description3.txt preserved.
