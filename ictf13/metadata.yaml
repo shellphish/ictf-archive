@@ -116,6 +116,7 @@ infrastructure:
     individual_challenges: false
 
 resources:
+  ctftime: "https://ctftime.org/event/112"
   website: "https://ictf.cs.ucsb.edu/archive/2013/site"
 
 notes: >
