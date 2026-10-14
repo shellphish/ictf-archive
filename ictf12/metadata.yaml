@@ -74,6 +74,15 @@ challenges:
     category: web
     description: "Financial/stock market service. Exact mechanics not preserved."
 
+  - name: nuclearboom
+    title: "Nuclear Boom"
+    category: binary
+    description: >
+      Nuclear power plant SCADA service. Confirmed by post-competition writeup
+      (codezen.fr, March 24, 2013) and reference in ictf13 planning emails
+      ("Take my old service 'nuclearboom' as reference"). Fits SCADA theme
+      — nuclear plants are critical infrastructure.
+
 data:
   - type: media
     path: "pictures/"
@@ -100,9 +109,9 @@ resources:
 notes: >
   The 2012-2013 iCTF (directory ictf12) ran on March 22, 2013 from 8am to 5pm
   PDT. The theme was "SCADA Breakdown" — teams attacked critical infrastructure
-  SCADA components. 7 services confirmed from ctf-admin mailing list emails:
-  powerplan (power plant SCADA, Kyle MacNamara), water (Gianluca Stringhini),
-  airplane, curiosityblogging, pesticides, pewpew_smartgrid, stockjobber.
+  SCADA components. 8+ confirmed services from ctf-admin mailing list emails:
+  powerplan (Kyle MacNamara), water (Gianluca Stringhini), airplane,
+  curiosityblogging, pesticides, pewpew_smartgrid, stockjobber, nuclearboom.
   Note: "irs" was drafted but dropped the night before the competition.
   The competition used the "National Cyberdefense Corps" narrative: teams were
   hired to secure their country's infrastructure against Sicilian hackers.
