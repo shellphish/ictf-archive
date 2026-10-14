@@ -23,6 +23,15 @@ participation:
     High School: ~13 registered users. Team mode may have been used;
     users count is approximate.
 
+results:
+  undergraduate:
+    winner: "b01lers (Purdue University)"
+    notes: "Confirmed from ictf.cs.ucsb.edu competition page."
+  highschool:
+    winner: "where's my pwnthic cakes"
+    affiliation: "Çorlu Arif Nihat Asya Anadolu Lisesi, Turkey"
+    notes: "Turkish high school team. Confirmed from ictf.cs.ucsb.edu competition page."
+
 data:
   - type: ctfd-export
     path: "CTFd_Archive/iCTF 2023 - Undergraduate - Competition.2023-12-21_16_58_41.zip"

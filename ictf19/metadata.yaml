@@ -7,13 +7,24 @@ format: attack-defense
 # No direct inter-team attacking; organizers run exploits on behalf of teams.
 
 dates:
-  start: "2019-12-01"
-  end: "2019-12-31"
-  # Exact date not documented; likely December 2019 per school year pattern.
+  start: "2019-03-15"
+  end: "2019-03-16"
+  # March 15, 2019 10:00 UTC — March 16, 2019 10:00 UTC (CTFtime event 762).
 
 participation:
-  num_teams: null
-  notes: "International university teams. Exact count not documented."
+  num_teams: 398
+  notes: "398 teams (confirmed from CTFtime.org event 762)."
+
+results:
+  winner: "Bushwhackers (Russia)"
+  final_scoreboard:
+    - {rank: 1, team: "Bushwhackers",  rating_pts: 98.670}
+  notes: >
+    Source: CTFtime.org event 762. Bushwhackers won with 98.670 rating points.
+    Full scoreboard available at CTFtime.
+
+resources:
+  ctftime: "https://ctftime.org/event/762"
 
 challenges: []
 # Services were "critical infrastructure" services per the CTF specification.
@@ -36,10 +47,9 @@ infrastructure:
     individual_challenges: false
 
 notes: >
-  The 2019 iCTF continued the ZDI framework from ictf12, ictf13, ictf14,
-  and ictf17. The narrative: teams are grey-hat operators hired to defend their
+  The 2019 iCTF (March 15-16, 2019) continued the ZDI framework from prior
+  editions. The narrative: teams are grey-hat operators hired to defend their
   nation's critical services while secretly selling exploits to the Zebra Dwarf
-  Institution. The description2 text from ictf17 closely matches this edition's
-  theme. A "CTF Service Specification.docx" is preserved, documenting the
+  Institution. 398 teams participated. Winner: Bushwhackers.
+  A "CTF Service Specification.docx" is preserved, documenting the
   requirements for service authors. The local archive is minimal (~12 KB).
-  Note: ictf18 does not exist in the archive (no ictf18 directory).

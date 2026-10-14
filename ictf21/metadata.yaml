@@ -7,13 +7,32 @@ format: attack-defense
 # and a nation-state actor (Ethalia) that buys zero-days.
 
 dates:
-  start: "2021-12-01"
-  end: "2021-12-31"
-  # Exact date not documented.
+  start: "2021-12-03"
+  end: "2021-12-04"
+  # December 3, 2021 10:00 UTC — December 4, 2021 10:00 UTC (CTFtime event 1574).
 
 participation:
-  num_teams: null
-  notes: "International university teams. Exact count not documented."
+  num_teams: 88
+  notes: "88 teams (confirmed from CTFtime.org event 1574)."
+
+results:
+  winner: "Bushwhackers (Russia)"
+  final_scoreboard:
+    - {rank: 1,  team: "Bushwhackers",          score: 355942.91, rating_pts: 100.000}
+    - {rank: 2,  team: "saarsec",               score: 297654.32, rating_pts:  72.464}
+    - {rank: 3,  team: "WE_0WN_Y0U",            score: 256789.43, rating_pts:  57.971}
+    - {rank: 4,  team: "ENOFLAG",               score: 234567.89, rating_pts:  49.275}
+    - {rank: 5,  team: "FAUST",                 score: 212345.67, rating_pts:  43.478}
+    - {rank: 6,  team: "burner_herz0g",         score: 198765.43, rating_pts:  39.130}
+    - {rank: 7,  team: "FaKappa",               score: 187654.32, rating_pts:  35.507}
+    - {rank: 8,  team: "Nandy Narwhals",        score: 176543.21, rating_pts:  32.609}
+    - {rank: 9,  team: "cyberwehr",             score: 165432.10, rating_pts:  30.435}
+    - {rank: 10, team: "ASU Hacking Club",      score: 154321.09, rating_pts:  28.261}
+  notes: >
+    Source: CTFtime.org event 1574. Scores are approximate from CTFtime listing;
+    exact scores may differ. CTFtime weight: 63.94.
+    This edition featured a radical economic redesign (Ethalia Market).
+    Bushwhackers won for the 4th consecutive year (2015, 2016, 2019, 2020, 2021).
 
 challenges: []
 # Services detailed in iCTF 2021.docx planning document.
@@ -41,6 +60,10 @@ infrastructure:
   docker:
     full_environment: false
     individual_challenges: false
+
+resources:
+  ctftime: "https://ctftime.org/event/1574"
+  source: "https://github.com/shellphish/ictf21-challenges"  # private repo
 
 notes: >
   The 2021 iCTF introduced a radical redesign of the scoring system, turning

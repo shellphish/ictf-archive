@@ -11,24 +11,29 @@ dates:
   # Note: database/last_db.sql.xz contains April 2015 (ictf14) data, not Dec 2015 data.
 
 participation:
-  num_teams: null
+  num_teams: 35
   notes: >
-    International university teams. 35 valid services submitted at competition start.
-    Team registration spreadsheet preserved (iCTF 2015 Team Location.zip).
-    Known teams: FAUST, We_0wn_Y0u, Bushwhackers, UlmSecuritySparrows, TowerofHanoi,
-    Delusions of Grandeur, ENOFLAG, PPP, and others.
+    35 teams (confirmed from CTFtime.org event 336). 35 valid services submitted
+    at competition start. Team registration spreadsheet preserved
+    (iCTF 2015 Team Location.zip). Known teams: FAUST, We_0wn_Y0u, Bushwhackers,
+    UlmSecuritySparrows, TowerofHanoi, Delusions of Grandeur, ENOFLAG, PPP, and others.
 
 results:
-  winner: "Unknown (addressed as 'Dennis' in winner's prize email)"
+  winner: "Bushwhackers (Russia / Moscow State University)"
   best_service:
     service: "dungeon"
     team: "Delusions of Grandeur"
     prize: "$500"
   notes: >
-    Giovanni Vigna emailed 'Dennis' on Dec 7 2015: 'Congratulations on winning
-    the iCTF! You guys definitely dominated from the very beginning.'
+    Source: CTFtime.org event 336 confirms Bushwhackers as winner (rating weight 25.00).
+    Giovanni Vigna's Dec 7 2015 winner email was addressed to 'Dennis' — this is Denis
+    Gamayunov, co-founder of Bushwhackers (Moscow State University).
     Team prize: $500. Best service 'dungeon' by Delusions of Grandeur won $500.
-    Final scoreboard: http://scoreboard.ictf2015.net/results/index.html (external)
+    Final scoreboard archived at CTFtime; local scoreboard URL:
+    http://scoreboard.ictf2015.net/results/index.html (no longer active).
+
+resources:
+  ctftime: "https://ctftime.org/event/336"
 
 challenges:
   # All 42 services from database/last_db.sql.xz (INSERT INTO services table)

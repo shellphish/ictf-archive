@@ -5,15 +5,15 @@ title: "The Copyright Mafia"
 format: attack-defense
 
 dates:
-  start: "2007-12-01"
-  end: "2007-12-01"
-  # Exact date not documented; ran December 2007
+  start: "2007-12-07"
+  end: "2007-12-07"
+  # December 7th, 2007, 10am–4pm PST, Frank Hall UCSB (from site/statistics.html)
 
 participation:
-  num_teams: null
+  num_teams: 36
   notes: >
-    Competition ran December 7th, 2007, 10am–4pm, Frank Hall UCSB.
-    26 teams participated (from statistics.html: 26 teams solved "amends").
+    36 teams (confirmed from 2014 "Ten Years of iCTF" paper, Table 1).
+    At least 26 teams solved the "amends" service (from statistics.html).
     International teams from USA, Europe, Australia.
 
 results:

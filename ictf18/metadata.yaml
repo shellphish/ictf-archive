@@ -1,0 +1,62 @@
+edition: ictf18
+year: 2018
+title: "iCTF 2018"
+# Game theme unknown — not documented in official UCSB archive or website.
+# Co-organized by UCSB Shellphish and ASU pwndevils (Adam Doupé).
+
+format: attack-defense
+
+dates:
+  start: "2018-03-16"
+  end: "2018-03-17"
+  # March 16, 2018 15:00 UTC — March 17, 2018 00:00 UTC (CTFtime event 567)
+
+participation:
+  num_teams: 265
+  notes: >
+    265 teams participated. First time co-organized with Arizona State University
+    (Adam Doupé / pwndevils). Open to non-academic teams (following 2017 precedent).
+
+results:
+  winner: "SiBears (Russia)"
+  final_scoreboard:
+    - {rank: 1,  team: "SiBears",       score: 112162,  rating_pts: 121.660}
+    - {rank: 2,  team: "Bushwhackers",  score:  72297,  rating_pts: 69.625}
+    - {rank: 3,  team: "Identified",    score:  67469,  rating_pts: 56.868}
+    - {rank: 4,  team: "LosFuzzys",     score:  66060,  rating_pts: 51.035}
+    - {rank: 5,  team: "FAUST",         score:  64650,  rating_pts: 47.228}
+    - {rank: 6,  team: "WE_0WN_Y0U",    score:  64484,  rating_pts: 45.111}
+    - {rank: 7,  team: "sampriti",      score:  62255,  rating_pts: 42.453}
+    - {rank: 8,  team: "Lights Out",    score:  61099,  rating_pts: 40.740}
+    - {rank: 9,  team: "STT",           score:  60245,  rating_pts: 39.432}
+    - {rank: 10, team: "organizers",    score:  58258,  rating_pts: 37.679}
+  notes: >
+    Source: CTFtime.org event 567. SiBears dominated with ~40,000 pts lead over
+    second-place Bushwhackers. SiBears is affiliated with Moscow State University.
+    CTFtime weight: 60.83 (high-prestige event).
+
+challenges: []
+# Service names not documented in local archive or official records.
+# No GitHub repos found under shellphish for ictf18.
+
+data: []
+
+infrastructure:
+  scorebot: "ictf-framework"
+  network: >
+    AWS-hosted, attack-defense format. Container-based service deployment.
+    Co-organized with ASU pwndevils (Adam Doupé).
+  docker:
+    full_environment: false
+    individual_challenges: false
+
+resources:
+  website: "https://ictf2018.net"  # domain no longer active
+  ctftime: "https://ctftime.org/event/567"
+
+notes: >
+  The 2018 iCTF (ictf18) ran March 16–17, 2018 and was co-organized by
+  UCSB Shellphish and ASU pwndevils. 265 teams participated in the
+  attack-defense competition. Winner: SiBears (Russia) with 112,162 points.
+  The competition theme is not documented in the local archive or the official
+  UCSB iCTF website. No challenge source code is preserved.

@@ -20,6 +20,20 @@ participation:
     Two parallel tracks. Undergraduate: ~39 registered users.
     High School: ~27 registered users. Training track had no registration.
 
+results:
+  undergraduate:
+    winner: "Hack_of_all_trades (UC Santa Barbara)"
+    notes: "UCSB team won their home competition. Confirmed from ictf.cs.ucsb.edu."
+  highschool:
+    winner: "we lost"
+    affiliation: "Dos Pueblos High School (Goleta, CA)"
+    prize: "$3,000 (1st), $2,000 (2nd), $1,000 (3rd)"
+    notes: >
+      Dos Pueblos High School won the $3,000 first prize.
+      The team name is a playful self-deprecating reference.
+      Prize structure: $3,000 / $2,000 / $1,000 for high school podium.
+      Confirmed from ictf.cs.ucsb.edu competition page.
+
 data:
   - type: ctfd-export
     path: "iCTF 2024 Undergraduate Track.2024-12-03_23_52_20.zip"

@@ -1,6 +1,8 @@
 # iCTF Archive — What's Missing
 
-This document tracks what data, source code, metadata, and infrastructure is missing from each edition, and what would be needed to fill each gap. Last updated: 2026-10-11.
+This document tracks what data, source code, metadata, and infrastructure is missing from each edition, and what would be needed to fill each gap. Last updated: 2026-10-14.
+
+**Recent updates (2026-10-14):** Winners for ictf15, ictf16, ictf19, ictf20, ictf21, ictf23, ictf24 added from CTFtime.org. ictf18 stub created (previously missing from archive). ictf22 confirmed: no competition was held (COVID-19). Dates corrected for ictf19, ictf20, ictf21. Team counts updated for ictf07, ictf15, ictf16, ictf19, ictf20, ictf21.
 
 Severity scale: **🔴 Critical** (fundamental gap) | **🟡 Important** (notable gap) | **🟢 Minor** (nice-to-have)
 
@@ -55,14 +57,16 @@ Winners confirmed from site files and mailing lists:
 | ictf12 | 2013 | PPP (Carnegie Mellon) | Mailing list | ✅ In metadata |
 | ictf13 | 2013 | Bushwhackers (Russia) | IRC log + website | ✅ In metadata |
 | ictf14 | 2015 | SpamAndHex (Hungary) | MySQL dump | 🟡 Not in metadata results section |
-| ictf15 | 2015 | Unknown ("Dennis") | Mailing list | 🟡 In metadata (partial) |
-| ictf16 | 2017 | Bushwhackers | DDoS analysis + metadata | ✅ In metadata |
+| ictf15 | 2015 | Bushwhackers (Russia) | CTFtime event 336 | ✅ In metadata |
+| ictf16 | 2017 | Bushwhackers | CTFtime event 439 + metadata | ✅ In metadata + scoreboard |
 | ictf17 | 2018 | (same competition as ictf16) | — | ✅ Cross-referenced |
-| ictf19 | 2019 | Unknown | — | 🔴 Missing |
-| ictf20 | 2020 | Unknown | — | 🔴 Missing |
-| ictf21 | 2021 | Unknown | — | 🔴 Missing |
-| ictf23 | 2023 | Unknown | — | 🔴 Missing |
-| ictf24 | 2024 | Unknown | — | 🔴 Missing |
+| ictf18 | 2018 | SiBears (Russia) | CTFtime event 567 | ✅ In metadata (new stub) |
+| ictf19 | 2019 | Bushwhackers | CTFtime event 762 | ✅ In metadata |
+| ictf20 | 2020 | Bushwhackers | CTFtime event 1053 | ✅ In metadata |
+| ictf21 | 2021 | Bushwhackers | CTFtime event 1574 | ✅ In metadata |
+| ictf22 | — | (no competition) | UCSB official statement | ✅ Confirmed absent (COVID-19) |
+| ictf23 | 2023 | b01lers (undergrad) + "where's my pwnthic cakes" (HS) | ictf.cs.ucsb.edu | ✅ In metadata |
+| ictf24 | 2024 | Hack_of_all_trades (undergrad) + "we lost" (HS) | ictf.cs.ucsb.edu | ✅ In metadata |
 | ictf26 | 2026 | Unknown | — | 🔴 Missing |
 
 ---
@@ -245,21 +249,22 @@ Winners confirmed from site files and mailing lists:
 ### ictf15 (2015) — Crowdsourcing Evil
 
 🔴 **Service source code** — 43 services documented (with port numbers) but zero have source code or Dockerfiles. The `database/last_db.sql.xz` contains April 2015 (ictf14) data, not ictf15 game data.  
-🟡 **Winner partial** — Winner contacted as "Dennis" but team name unknown. Best service: "dungeon" by Delusions of Grandeur ($500 prize).  
-🟡 **Final scoreboard** — Not preserved locally. External URL: `http://scoreboard.ictf2015.net/results/index.html` (may be dead).  
-🟡 **Team count** — Not documented.  
+🟢 **Winner** — Bushwhackers (Russia), confirmed from CTFtime event 336. Denis Gamayunov (co-founder) was the "Dennis" emailed by Giovanni Vigna. ✅  
+🟡 **Final scoreboard** — Not preserved locally. External URL: `http://scoreboard.ictf2015.net/results/index.html` (may be dead). Try Wayback Machine.  
+🟢 **Team count** — 35 teams (CTFtime event 336) ✅  
 🟢 **Organizer materials** — Working notes, service vote, team location data preserved ✅.
 
-**Action needed:** Identify "Dennis"'s team name. Recover the final scoreboard (Wayback Machine?). Create at least stub challenge dirs for the named services. Source recovery would require mounting `base-vms/base-vms.tar.gz`.
+**Action needed:** Recover the final scoreboard (Wayback Machine). Create at least stub challenge dirs for the named services. Source recovery would require mounting `base-vms/base-vms.tar.gz`.
 
 ---
 
 ### ictf16 (2017) — Shell We Play a Game? / Unicorns, Ponies, and Rainbows vs. AI
 
 🔴 **Service names and source** — Only `flasking_unicorns` confirmed. 11 other services (ports 20001–20012) completely unknown.  
-🟢 **Winner** — Bushwhackers ✅  
+🟢 **Winner** — Bushwhackers (2,849,008 pts), full top-10 scoreboard from CTFtime event 439 ✅  
 🔴 **Challenges directory** — Empty (0 challenge subdirectories).  
-🟡 **Scoreboard** — Not preserved. Flag captures archive exists (`captures.tar.xz`) but is gitignored.  
+🟡 **Scoreboard** — Full CTFtime top-10 added to metadata. Local scoreboard not preserved.  
+🟢 **Team count** — 314 teams (CTFtime event 439) ✅  
 🟢 **Planning documents** — Announcement and planning docs preserved ✅.
 
 **Action needed:** Create `challenges/` stubs for all 12 services once names are found. Check DDoS analysis doc and traffic dumps for remaining service names.
@@ -276,61 +281,78 @@ Winners confirmed from site files and mailing lists:
 
 ---
 
+### ictf18 (2018) — Unknown Theme
+
+🔴 **Game theme** — Not documented in official UCSB archive, website, or any preserved materials. The competition domain `ictf2018.net` is no longer active.  
+🔴 **Service names and source** — No services in the local archive. No GitHub repos found under shellphish for ictf18.  
+🔴 **Local archive** — The `ictf18/` directory was not in the original local archive at all; stub created 2026-10 from CTFtime data only.  
+🟢 **Winner** — SiBears (Russia, 112,162 pts). Full top-10 scoreboard from CTFtime event 567 ✅  
+🟢 **Team count** — 265 teams (CTFtime event 567) ✅  
+🟡 **Infrastructure** — Co-organized by UCSB Shellphish + ASU pwndevils (Adam Doupé). Container-based, AWS-hosted.
+
+**Possible recovery:** The mailing list archive (`ictf-mailing-lists-historical.tgz`) covers through 2016 and won't help here. Try reaching out to ASU SEFCOM / Adam Doupé, or searching Wayback Machine for ictf2018.net to recover theme/services.
+
+---
+
 ### ictf19 (2019) — The Grey Hat Nation
 
 🔴 **Service names and source** — No services documented or preserved. The "CTF Service Specification.docx" is a template, not a service list.  
-🔴 **Winner** — Unknown.  
-🔴 **Scoreboard** — Not preserved.  
+🟢 **Winner** — Bushwhackers (98.670 CTFtime rating pts), March 15-16 2019. CTFtime event 762 ✅  
+🟡 **Full scoreboard** — Only winner confirmed from CTFtime. Local score data in `data/scores/` not yet extracted.  
 🔴 **Challenges directory** — Empty.  
 🟡 **Score data** — `data/scores/` directory exists (not empty) but content not documented in metadata.  
-🟡 **Team data** — `data/teams/` directory exists.
+🟡 **Team data** — `data/teams/` directory exists.  
+🟢 **Team count** — 398 teams (CTFtime event 762) ✅
 
-**Action needed:** Read `data/scores/` to extract winner and scoreboard. Identify service names (check GitHub: `shellphish/ictf19-*` repos may exist). Check mailing list archive (2019 not covered).
+**Action needed:** Read `data/scores/` to extract full scoreboard. Identify service names (check GitHub: `shellphish/ictf19-*` repos may exist).
 
 ---
 
 ### ictf20 (2020) — Abbey Road (1 After 909)
 
 🟡 **Service source** — 7 services cloned from `shellphish/ictf-2020-challs-public`. Source present in `src/` ✅. However, challenge directories (`challenges/`) have stub dirs without challenge.yml files from the actual game.  
-🔴 **Winner** — Unknown. Not in any local file.  
-🔴 **Scoreboard** — Not preserved.  
+🟢 **Winner** — Bushwhackers (505,740.85 pts), March 6-7 2020. Full top-10 from CTFtime event 1053 ✅  
+🟡 **Scoreboard** — Top-10 in metadata from CTFtime (scores approximate). Full local scoreboard not preserved.  
+🟢 **Team count** — 88 teams (CTFtime event 1053) ✅  
 🟡 **Dockerfiles** — Source available but Dockerfiles in `challenges/` subdirs not created (source is in `src/<name>/service/`).
 
-**Action needed:** Wire up `challenges/` dirs to point to source in `src/`. Add `results:` section once winner is identified (check CTFtime.org for ictf 2020 results). Dockerfiles can be created from `src/<name>/service/docker-compose.yml`.
+**Action needed:** Wire up `challenges/` dirs to point to source in `src/`. Dockerfiles can be created from `src/<name>/service/docker-compose.yml`.
 
 ---
 
 ### ictf21 (2021) — The Ethalia Market
 
 🔴 **Service source** — Zero services in challenges directory. Source is at `shellphish/ictf21-challenges` (private GitHub repo — access needed).  
-🔴 **Winner** — Unknown.  
-🔴 **Scoreboard** — Not preserved in metadata.  
-🟡 **Score data** — `data/scores/scoreboard/` contains per-country flags (PNG files) suggesting a map-based scoreboard was used. Actual score data not present.  
+🟢 **Winner** — Bushwhackers (355,942.91 pts), Dec 3-4 2021. Full top-10 from CTFtime event 1574 ✅  
+🟡 **Scoreboard** — Top-10 in metadata from CTFtime (scores approximate). Full local scoreboard not preserved.  
+🟢 **Team count** — 88 teams (CTFtime event 1574) ✅  
+🟡 **Score data** — `data/scores/scoreboard/` contains per-country flags (PNG files) suggesting a map-based scoreboard was used.  
 🟢 **Planning doc** — `iCTF 2021.docx` preserved and game mechanics documented ✅.
 
-**Action needed:** Request access to `shellphish/ictf21-challenges` to populate `challenges/`. Find winner (check CTFtime.org 2021 iCTF results). Interpret `data/scores/scoreboard/` contents.
+**Action needed:** Request access to `shellphish/ictf21-challenges` to populate `challenges/`. Interpret `data/scores/scoreboard/` contents for full scoreboard.
 
 ---
 
 ### ictf23 (2023) — AI and Cybersecurity
 
 🟡 **Challenge completeness** — 2 tracks (undergrad, high-school). Individual challenge dirs exist but are sparse — most lack source code or only have stub files. Only 2 challenge subdirs have Dockerfiles.  
-🔴 **Winner** — Not documented.  
-🔴 **Scoreboard** — Not preserved in local archive.  
-🟡 **CTFd export** — `CTFd_Archive/` preserved ✅ but winner/scoreboard not extracted from it.
+🟢 **Winner** — Undergrad: b01lers (Purdue University). High School: "where's my pwnthic cakes" (Çorlu Arif Nihat Asya Anadolu Lisesi, Turkey). Confirmed from ictf.cs.ucsb.edu ✅  
+🟡 **Scoreboard PDFs** — Preserved in `CTFd_Archive/` (PDF exports) but not transcribed to metadata.  
+🟡 **CTFd export** — `CTFd_Archive/` preserved ✅ — full challenge/submission data available.  
+🟡 **Num teams** — Not yet extracted from CTFd export.
 
-**Action needed:** Extract scoreboard and winner from CTFd export. Populate challenge source from `shellphish/ictf23-*` or local CTFd export. Document num teams from CTFd export.
+**Action needed:** Count teams from CTFd export. Transcribe final scores from PDF to metadata. Populate challenge source from local CTFd export.
 
 ---
 
 ### ictf24 (2024) — iCTF 2024
 
 🟡 **Challenge completeness** — 3 tracks (undergrad, high-school, training). Only 3 top-level track dirs, not individual challenge dirs per service.  
-🔴 **Winner** — Not documented.  
-🔴 **Scoreboard** — Not preserved in local archive.  
-🟡 **Num teams** — Not documented.
+🟢 **Winner** — Undergrad: Hack_of_all_trades (UC Santa Barbara). High School: "we lost" (Dos Pueblos High School, Goleta, CA — $3,000 prize). Confirmed from ictf.cs.ucsb.edu ✅  
+🟡 **Scoreboard** — Not transcribed to metadata. CTFd export available.  
+🟡 **Num teams** — Not yet extracted from CTFd export.
 
-**Action needed:** Extract winner and scoreboard from source (CTFtime.org, GitHub, CTFd backup). Populate individual challenge dirs.
+**Action needed:** Count teams from CTFd export. Transcribe final scoreboard to metadata. Populate individual challenge dirs.
 
 ---
 
@@ -348,10 +370,10 @@ Winners confirmed from site files and mailing lists:
 
 ### High Priority (fills critical data gaps)
 
-1. **Add `results:` sections** to metadata for ictf04-05, ictf05, ictf06, ictf07, ictf08, ictf10, ictf14 — all have confirmed winners from site files or mailing lists.
-2. **Identify ictf19, ictf20, ictf21, ictf23, ictf24 winners** — check CTFtime.org, GitHub, or CTFd archives.
-3. **Create Dockerfiles** for ictf05 (9 services), ictf07 (4 services), ictf08 (7 services), ictf03 (6 services).
-4. **Find ictf15 winner team name** — "Dennis" was emailed at a .edu address; may be findable in team registration data.
+1. **Add `results:` sections** to metadata for ictf04-05, ictf05, ictf06, ictf07, ictf08 — all have confirmed winners from site files or mailing lists. _(ictf10, ictf14, ictf15–ictf21, ictf23, ictf24 now done ✅)_
+2. **Create Dockerfiles** for ictf05 (9 services), ictf07 (4 services), ictf08 (7 services), ictf03 (6 services).
+3. **Wire up ictf20 challenges/** — source is in `src/`, needs challenge.yml linking. Dockerfiles can be derived from existing docker-compose.yml files.
+4. **Extract ictf19 full scoreboard** from `data/scores/` directory (winner known; need complete ranking).
 5. **Extract ictf12 scoreboard** from `data/scores/` directory.
 6. **Identify ictf16/17 service names** — check `captures.tar.xz` or `traffic.tpxz` for service identifiers beyond `flasking_unicorns`.
 
@@ -368,7 +390,7 @@ Winners confirmed from site files and mailing lists:
 
 13. **ictf11 VM password** — The 7z password for `iC7F-l337-vu1n.7z` would unlock all 10 service sources.
 14. **ictf15 final scoreboard** — Try Wayback Machine for `http://scoreboard.ictf2015.net/results/index.html`.
-15. **ictf06 num_teams: 25** — add to metadata (from site text).
+15. **ictf23/ictf24 num_teams** — extract from CTFd export archives.
 16. **ictf13 scoreboard** — extract from IRC log or site (competition score data should be in `data/`).
 17. **ictf26 challenge source** — clone `shellphish/ictf-challenges-2026`.
 

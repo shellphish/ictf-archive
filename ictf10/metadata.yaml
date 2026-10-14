@@ -12,9 +12,16 @@ dates:
 participation:
   num_teams: 72
   num_participants: 900
-  winner: "Plaid Parliament of Pwning (PPP), Carnegie Mellon University (led by Prof. David Brumley)"
-  prize: "USD 1,000 (IEEE Security & Privacy + Adobe)"
   notes: "72 teams, ~900 students from 16 countries."
+
+results:
+  winner: "Plaid Parliament of Pwning (PPP), Carnegie Mellon University"
+  prize: "USD 1,000 (sponsored by IEEE Security & Privacy and Adobe)"
+  notes: >
+    From site/index.html. Team led by Prof. David Brumley (CMU).
+    PPP (Plaid Parliament of Pwning) went on to become one of the most
+    decorated CTF teams globally. Source also confirmed in 2011 ACSAC paper.
+    CTFtime: https://ctftime.org/event/63
 
 challenges:
   # Per-team attack-defense services (hosted on vms/ictf2010.services.tar.gz)
