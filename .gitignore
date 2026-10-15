@@ -3,6 +3,10 @@ vms/
 dumps/
 *.vmdk
 *.vmem
+*.vmsd
+*.vmsn
+*.vmxf
+*.nvram
 *.qcow2
 *.iso
 
@@ -21,11 +25,17 @@ other/
 !**/challenges/**/attachments/*.tar.gz
 !**/challenges/**/attachments/*.gz
 
-# === Network captures ===
+# === Network captures and binary dump files ===
 *.pcap
 *.pcapng
 *.tpxz
 *.tpcap
+*.dump
+**/dump/tcpdump*
+
+# === Large binary installers ===
+*.rpm
+*.mpg
 
 # === Original competition web sites (1–4 GB each) ===
 site/
@@ -55,6 +65,14 @@ attic/ictf-mailing-lists-historical.tgz
 
 # Old super-repo skeleton subdirectory (its content lives at repo root)
 /ictf/
+
+# === Edition-specific large raw directories (no useful non-binary content) ===
+# 19 GB network traffic dumps from 2004 rematch
+ictf04-05/ictf2004rematch/
+# 3.6 GB internal network dumps
+ictf04/ictf2004internal/
+# Windows XP VM filesystem (extracted from vmdk; binary system files)
+ictf09/Virtual Machine/
 
 # Embedded git repos in attic (include content without submodule complexity)
 attic/ictf-website/
