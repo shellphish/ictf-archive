@@ -2,32 +2,43 @@ name: "iCTF 2005 — Spam World: Contribute"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: web
 description: |
-  **iCTF 2005 — The Spam World**
+  **iCTF 2005 — The Spam Museum: Contribute**
 
-  A contribution tracking web service at `/~contribute/contribute.html`. The
-  scorebot submits a form with the flag stored as the `address` field. A history
-  CGI at `/~contribute/cgi-bin/history.py` retrieves stored contributions by name.
+  A Python CGI accepting financial contributions to the Spam Museum (name,
+  amount, address, credit card number). Flags are stored as contribution records
+  in a MySQL database. SQL injection: the INSERT query is built with Python
+  string formatting — no escaping, no parameterization:
+  `VALUES (%s, "%s", %s, "%s", "%s")` — all string fields are injectable.
+  Hardcoded dev password `ctftest` visible in source.
 value: 0
 type: standard
 
-image: .
+image: null
 protocol: http
 flags:
     - ictf2005{contribute_pwned}
 
 topics:
-    - web exploitation
-    - CGI security
+    - SQL injection
+    - Python CGI
+    - MySQL
 
 tags:
     - web
     - python
     - cgi
+    - sql-injection
     - ictf2005
     - historical
     - attack-defense
 
-files: []
+files:
+    - src/contribute.py
+    - src/history.py
+    - src/test.py
+    - src/db-restore.sh
+    - src/db-restore.sql
+    - src/contributeScoringScript.py
 
 state: visible
 version: "0.1"

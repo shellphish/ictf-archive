@@ -1,0 +1,20 @@
+#! /usr/bin/python
+#: Transform servlet password
+
+import sys
+
+#
+# Main
+#
+if len(sys.argv) < 2:
+	print "usage: %s <password>" % (sys.argv[0])
+	sys.exit(1)
+
+password = sys.argv[1]
+
+tmp = ""
+for i in password:
+	tmp += chr(ord(i) + 1)
+
+print str(tmp)
+

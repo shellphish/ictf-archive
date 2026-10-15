@@ -4,29 +4,53 @@ category: binary
 description: |
   **iCTF 2004 — The UN Voting System**
 
-  A TCP chat/discussion service on port 7413. The scorebot initiates a
-  conversation by sending `<name> <flag>\n` and then exchanges random questions.
-  The flag is stored as the conversation topic. Find a way to retrieve stored flags.
+  A TCP chat/discussion service (iCTF 2004 — "Discuss It") implementing an
+  AI chatbot conversation. The service is a custom C daemon that stores
+  conversation topics as flags. The `discussit.c` daemon forks per connection
+  and communicates via a TCP protocol; the `chat.c` library handles the
+  AI conversation logic using word lists from the `words/` directory.
+
+  ## Source
+
+  Full C source extracted from the competition VM at `/home/discussit/`:
+  - `src/discussit.c` — main daemon (fork-per-connection, TCP port 7413)
+  - `src/chat.c` — AI chatbot logic (ALICE-style word-list matching)
+  - `src/main.dict` / `src/syn.dict` — dictionaries
+  - `src/words/` — ~100 topic word-list files
+  - `src/discussitd.sh` — startup script
+  - `src/discuss_bot.py` — scorebot interaction script
+  - `src/discussitScoringScript.py` — scoring script
 value: 0
 type: standard
 
-image: .
+image: null
 protocol: tcp
+port: 7413
+
 flags:
     - ictf2004{discussit_pwned}
 
 topics:
     - binary exploitation
     - network protocol
+    - C daemon
 
 tags:
     - binary
     - tcp
+    - c
     - ictf2004
     - historical
     - attack-defense
 
-files: []
+files:
+    - src/discussit.c
+    - src/chat.c
+    - src/main.dict
+    - src/syn.dict
+    - src/discussitd.sh
+    - src/discuss_bot.py
+    - src/discussitScoringScript.py
 
 state: visible
 version: "0.1"

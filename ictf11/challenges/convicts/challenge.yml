@@ -1,26 +1,83 @@
-name: "iCTF 2011 — Convicts"
+name: "iCTF 2011 — convicts"
 author: "Giovanni Vigna / UCSB Security Lab"
-category: web
+category: pwn
 description: |
   **iCTF 2011 — Money Laundering**
 
-  Convicts was a records management service tracking criminal/convict data.
-  Third most-captured service with 18,552 flag steals.
+  `convicts` is a telnet service running a C binary called `toilet`. The
+  money-laundering cover story: convicts run a prison laundry that handles
+  "dirty money" (flags). The service auto-logs in as the `convicts` user
+  when a telnet connection arrives (via `/etc/inetd.conf` + `telnet_login`
+  shell script calling `login -f convicts`).
 
-  Flags were stored in convict records, requiring exploitation of the service's
-  access controls.
+  Port: **23** (telnet, via inetd)
 
-  Source: encrypted VM archive `site/iC7F-l337-vu1n.7z` (AES-encrypted, password unknown).
+  ## Architecture
+
+  The `toilet` binary (C, 32-bit ELF, not stripped, OpenSSL libssl/libcrypto)
+  operates on flag files stored under `/home/convicts/jailcell/toilet/tunnel/`.
+  Flag filenames are `crap_XXXXX` (mktemp pattern). The service reads "dirty"
+  laundry and "cleans" it via MD5 operations.
+
+  Key observations from binary analysis:
+  - Uses `mktemp` + `system()` → potential command injection / symlink race
+  - Uses `MD5()` from OpenSSL for flag hashing
+  - Stores flag in temp file via `fopen`/`fwrite`
+  - The `laundry/cleans` file contained 1024 `A` chars followed by encrypted
+    data — classic buffer overflow test pattern left by competition organizers
+
+  ## Vulnerability
+
+  Source partially recovered from vim swap file (`toilet.c.swp` in `src/`).
+  Key functions:
+
+  - **`look <pass>`**: verifies MD5 of argument against hardcoded hash of
+    `'OKTODIGNOW!'` (`319f1c21d4d43543c1c7d0ac18a56f27`). On success, `ls`
+    the tunnel directory into the exercise yard sandbox.
+  - **`fish <filename>`**: basename + sanitize (only `[A-Za-z0-9_/]` allowed),
+    then `chdir()` to `jailcell/toilet/tunnel/`, then:
+    ```c
+    char dirt[2048];
+    sprintf(dirt, "/bin/cp %s ../../../cafeteria/cupboard/$(/usr/bin/md5sum %s | /usr/bin/cut -f1 -d' ')", dfile, dfile);
+    system(dirt);
+    ```
+    **Buffer overflow**: `dfile` appears twice in a 2048-byte stack buffer;
+    a long sanitized filename overflows `dirt` and overwrites the return address.
+  - **`flush <data>`**: writes data to `mktemp`-created file in tunnel/
+  - **`draw <msg>`**: writes to `mktemp` in excercize_yard/sand/ (race condition)
+  - **`sweep`**: `rm -f excercize_yard/sand/*`
+
+  The `look` password is hardcoded: `'OKTODIGNOW!'`
+
+  ## Source
+
+  `toilet.c` reconstructed from vim swap file (`toilet.c.swp`). The binary
+  compiled with `-lssl` for MD5 operations. The binary itself (`toilet`) is
+  included as a 32-bit ELF for reference.
 value: 0
 type: standard
 image: null
+protocol: tcp
+port: 23
 flags:
-    - ictf2011{convicts_compromised}
+    - ictf2011{convicts_pwned}
+topics:
+    - binary exploitation
+    - buffer overflow
+    - telnet
+    - c
 tags:
-    - web
+    - pwn
+    - binary
+    - telnet
+    - buffer-overflow
     - ictf2011
     - historical
     - attack-defense
-files: []
+    - source-partial
+files:
+    - src/toilet
+    - src/toilet.c.reconstructed.txt
+    - src/toilet.c.swp
 state: visible
 version: "0.1"

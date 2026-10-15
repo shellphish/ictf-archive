@@ -1,12 +1,15 @@
 name: "iCTF 2015 — talkun"
-author: "Giovanni Vigna / UCSB Security Lab"
+author: "UCSB Seclab"
 category: web
 description: |
   **iCTF 2015 — Crowdsourcing Evil**
 
-  Note-storing website (reused from ictf04)
+  This is a website used for storing notes!
 
-  Port: 8081. Source not available (only competition database preserved).
+  **Flag ID:** The flag_id is the first half of the username.
+
+  Port: 8081. Source not available (only competition database and base VM preserved).
+  This service was reused from an earlier iCTF edition or submitted by teams for ictf15.
 value: 0
 type: standard
 image: null

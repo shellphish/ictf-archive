@@ -1,0 +1,47 @@
+#! /bin/bash
+#: Restart and reinitialize service
+
+# Get settings
+. /root/scripts/servlet.properties || exit 1
+
+# Get flags, passwords
+SERVLET_DBPASSWORD=staxally
+
+# Stop apache
+echo ">>> Stopping apache"
+service httpd stop
+
+# Kill tomcat
+echo ">>> Stopping Tomcat"
+$TOMCAT_STOP
+
+# Restart database
+echo ">>> Restarting postgres"
+service postgresql restart
+
+# Start tomcat
+echo ">>> Starting Tomcat"
+$TOMCAT_START || exit 1
+
+# Start apache
+echo ">>> Starting apache"
+service httpd start || exit 1
+
+# Refresh database
+echo ">>> Refreshing database"
+echo "--> Dropping any previous database user (errors ok)"
+dropdb $SERVLET_DBNAME
+echo "--> Dropping any previous database (errors ok)"
+dropuser $SERVLET_DBUSER
+echo "--> Creating database user"
+echo -e "$SERVLET_DBPASSWORD\n$SERVLET_DBPASSWORD\nn\nn\n" |
+  createuser -P $SERVLET_DBUSER || exit 1
+echo "--> Creating database"
+createdb -O $SERVLET_DBUSER $SERVLET_DBNAME
+echo "--> Populating database"
+psql -f $SERVLET_DBSQL $SERVLET_DBNAME || exit 1
+
+# Load webapp
+echo ">>> Deploying webapp"
+(cd $WEBAPPDIR && $ANT install) || exit 1
+

@@ -4,28 +4,53 @@ category: web
 description: |
   **iCTF 2004 — The UN Voting System**
 
-  The Talkun service runs on port 8081 and provides a note-taking application.
-  Users log in and store notes; the flag is the note text. Find a vulnerability
-  to read other users' notes.
+  A custom C web server (`talkserver`) running on TCP port 8081 with HTTPS on
+  8083. The server provides a note-taking web application where users can log
+  in and store text notes; the flag is stored as note content.
+
+  ## Source
+
+  Full C source including custom TLS support via OpenSSL:
+  - `src/talkserver/talkserver.c` — main HTTP server (handles login, notes, documents)
+  - `src/libmydiag/mydiag.c` — diagnostic library
+  - `src/libzocket/zocket.c` — socket abstraction library
+  - `src/talkserver/talkserver.pem` — SSL certificate
+  - `src/untalk.py` — scorebot interaction script
+  - `src/talkunScoringScript.py` — scoring script
+
+  The server uses OpenSSL for HTTPS on port 8083. Note files stored as
+  plaintext on the filesystem — path traversal in document handling may allow
+  reading other users' notes.
 value: 0
 type: standard
 
-image: .
+image: null
 protocol: http
+port: 8081
+
 flags:
     - ictf2004{talkun_pwned}
 
 topics:
     - web exploitation
     - authentication bypass
+    - custom C HTTP server
 
 tags:
     - web
+    - c
+    - tcp
+    - ssl
     - ictf2004
     - historical
     - attack-defense
 
-files: []
+files:
+    - src/talkserver/talkserver.c
+    - src/libmydiag/mydiag.c
+    - src/libzocket/zocket.c
+    - src/untalk.py
+    - src/talkunScoringScript.py
 
 state: visible
 version: "0.1"

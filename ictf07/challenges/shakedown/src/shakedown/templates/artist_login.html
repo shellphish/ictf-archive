@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="wrap">
+  <div id="main">
+  <h2>Welcome Artist!</h2>
+
+  <p><span style="color: #e24712">shakedown</span> is a web application that allows you to better manage your
+  relationship with MAFIA. Enjoy the extensive organization's services, such as
+  marketing and brand protection, in exchange for a <i>fair</i> share of your revenues.
+  All from a FREE, fast, convenient, easy-to-manage online account<sup>1</sup>!</p>
+
+  <p>Register now to enroll in this service, track your revenues, receive
+  useful messages from your bos*ehm*manager.</p>
+
+  <p style="font-size: smaller"><sup>1</sup>These are not typical results. The web site is still in beta
+  status. Your experience may vary.</p>
+
+  </div>
+
+  <div id="sidebar">
+
+  <h2>Login</h2>
+  {% if form.errors %}
+    <p class="error">Sorry, that's not a valid username or password</p>
+  {% endif %}
+
+  <form action='.' method='post'>
+    <p><label for="username">User name:</label>
+    <input type="text" name="username" value="" id="username"></p>
+
+    <p><label for="password">Password:</label>
+    <input type="password" name="password" value="" id="password"></p>
+
+    <p><input type="submit" value="login" />
+    <input type="hidden" name="next" value="/artists/profile"/>
+    </p>
+  </form>
+
+  <p>Not a member?<br/>
+     <a href="/artists/new">Register now</a>.</p>
+
+  </div>
+</div>
+
+{% endblock %}

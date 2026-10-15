@@ -2,22 +2,26 @@ name: "iCTF 2005 — Spam World: Spamgen"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: web
 description: |
-  **iCTF 2005 — The Spam World**
+  **iCTF 2005 — The Spam Museum: Spamgen**
 
-  A spam generation service with both HTTP and UDP interfaces. Users authenticate
-  and upload spam text (the flag) via a web form at `/~spamgen/cgi-bin/spamgen.py`.
-  A UDP listener on port 2345 serves file listings; HTTPS on port 4443 serves files.
+  A Python CGI spam generator using a 2nd-order Markov model. Flags are uploaded
+  with a random username and fixed password `"miconsenta"` (stored in `user_db/<hash>`).
+  Critical vulnerability: `?action=generate` calls `mtext()` which reads ALL files
+  in `user_db/` to train the Markov model — every stored flag leaks into the
+  generated spam text. The custom `myhash()` is also deterministic/invertible,
+  enabling targeted reads. Source code fully available.
 value: 0
 type: standard
 
-image: .
+image: null
 protocol: http
 flags:
     - ictf2005{spamgen_pwned}
 
 topics:
-    - web exploitation
-    - CGI security
+    - information disclosure
+    - Python CGI
+    - weak hash function
 
 tags:
     - web
@@ -27,7 +31,11 @@ tags:
     - historical
     - attack-defense
 
-files: []
+files:
+    - src/spamgen.py
+    - src/markov.py
+    - src/myhash.py
+    - src/spamgenScoringScript.py
 
 state: visible
 version: "0.1"

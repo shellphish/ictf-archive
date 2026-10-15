@@ -5,9 +5,30 @@ description: |
   **iCTF 2005 — The Bass Tard Corporation**
 
   The Bass Tard Corporation's public guestbook service. Visitors can post
-  comments; the flag is stored as a private message in a user's guestbook entry.
+  comments; the flag is stored as a private message using the keyword "PRIVATELY"
+  in a user's guestbook entry.
+
   The scorebot accessed entries at `/~guestbook/cgi-bin/guestbook.pl?user=<first>`
-  and posted new flags via an HTML form on `feedback.html`.
+  and posted new flags via an HTML form.
+
+  ## Vulnerability
+
+  `guestbook.pl` passes user input unsanitized to the shell:
+  ```perl
+  $command = "grep ${user} ${guestbook}";
+  $usercomments = `${command}`;
+  ```
+  The `$user` parameter is never sanitized — classic command injection. Shell
+  metacharacters in `user=` execute arbitrary commands.
+
+  ## Source
+
+  Source extracted from the competition VM (`/home/guestbook/public_html/cgi-bin/`):
+  - `src/guestbook.pl` — main guestbook CGI (command injection via `user` param)
+  - `src/guestbook_save.pl` — saves new guestbook entries
+  - `src/guestbook_reset.sh` — resets guestbook.txt to original
+  - `src/guestbook.txt` — guestbook data file (flag stored here)
+  - `src/guestbook.txt.orig` — original clean guestbook template
 value: 0
 type: standard
 image: null
@@ -18,11 +39,19 @@ flags:
     - ictf2005{guestbook_compromised}
 topics:
     - web exploitation
-    - SQL injection
+    - command injection
 tags:
     - web
+    - perl
+    - cgi
+    - command-injection
     - ictf2005
     - historical
-files: []
+files:
+    - src/guestbook.pl
+    - src/guestbook_save.pl
+    - src/guestbook_reset.sh
+    - src/guestbook.txt
+    - src/guestbook.txt.orig
 state: visible
 version: "0.1"

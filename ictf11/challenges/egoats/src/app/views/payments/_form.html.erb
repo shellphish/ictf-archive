@@ -1,0 +1,102 @@
+<%= form_for(@payment) do |f| %>
+  <% if @payment.errors.any? or ( defined? @credit_card and @credit_card.errors.any?) %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@payment.errors.count + @credit_card.errors.count, "error") %> prohibited this payment from being saved:</h2>
+
+      <ul>
+      <% @payment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      <% @credit_card.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%
+begin
+  amount = params[:payment][:amount]
+rescue
+  amount = 100
+end
+
+begin
+  number = params[:payment][:credit_card_attributes][:number]
+rescue
+  number = ''
+end
+
+begin
+  month = params[:payment][:credit_card_attributes][:month]
+rescue
+  month = 1
+end
+
+begin
+  year = params[:payment][:credit_card_attributes][:year]
+rescue
+  year = 2011
+end
+
+begin
+  first_name = params[:payment][:credit_card_attributes][:first_name]
+rescue
+  first_name = nil
+end
+
+begin
+  last_name = params[:payment][:credit_card_attributes][:last_name]
+rescue
+  last_name = nil
+end
+
+%>
+
+<div style='width:600px'>
+    <div style='width: 300px; float:left;'>
+
+  <div class="field">
+    <%= f.label 'amount ($)' %><br />
+    <%= f.number_field :amount, :value => amount %>
+  </div>
+  <%= f.fields_for :credit_card_attributes do |c| %>
+
+      <div class="field">
+        <%= c.label 'Credit card number' %><br />
+        <%= c.text_field :number, :value => number %>
+      </div>
+      <div class="field">
+        <%= c.label 'Expiration month' %><br />
+        <%= c.number_field :month, :value => month %>
+      </div>
+      <div class="field">
+        <%= c.label 'Expiration year' %><br />
+        <%= c.number_field :year, :value => year %>
+      </div>
+      <div class="field">
+        <%= c.label "Cardholder's first name" %><br />
+        <%= c.text_field :first_name, :value => first_name %>
+      </div>
+      <div class="field">
+        <%= c.label "Cardholder's last name" %><br />
+        <%= c.text_field :last_name, :value => last_name %>
+      </div>
+      <div class="field">
+        <%= c.hidden_field :type, :value => 'visa' %>
+      </div>
+  <%end%>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>
+
+    </div>
+    <div style='width: 190px; float: right;'>
+      <%= image_tag 'stare.jpg', :style => 'width: 298px' %>
+    </div>
+</div>
+<div style='clear:both'>
+<%= link_to 'Back', '/' %>
+</div>

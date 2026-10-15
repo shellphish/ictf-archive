@@ -1,0 +1,48 @@
+#/bin/bash
+#
+# Init file for sfind daemon 
+#
+
+# source function library
+. /etc/rc.d/init.d/functions
+
+RETVAL=0
+SFIND=/var/sfind/sfind
+prog=sfind
+
+start()
+{
+	echo -n $"Starting $prog:"
+	cd /var/sfind && sudo -u sfind /bin/bash -c ${SFIND} 2>/dev/null
+	RETVAL=$?
+	[ "$RETVAL" = 0 ] && touch /var/lock/subsys/sfind
+	echo
+}
+
+stop()
+{
+	echo -n $"Stopping $prog:"
+	killproc $SFIND -TERM
+	RETVAL=$?
+	[ "$RETVAL" = 0 ] && rm -f /var/lock/subsys/sfind
+	echo
+}
+
+
+case "$1" in
+	start)
+		start
+		;;
+	stop)
+		stop
+		;;
+	restart)
+		stop
+		start
+		;;
+   *)
+    stop
+    start
+    ;;
+esac
+exit $RETVAL

@@ -1,0 +1,18 @@
+<h1> <%= @user.email %> profile </h1>
+<ul>
+  <li> Loves goats </li>
+  <li> Registration date: <%= @user.created_at %> </li>
+  <li> Current sign in ip: <%= @user.current_sign_in_ip %> </li>
+</ul>
+<h2> Offers </h2>
+<ul>
+  <% @user.payments.each do |p| %>
+    <%if defined? p.remote_payment and not p.remote_payment.nil? %>
+      <li class='offer' id=<%= p.remote_payment.id.to_s %>> <%=p.amount%> $ </li>
+    <%end %>
+
+  <%end%>
+
+</ul>
+
+

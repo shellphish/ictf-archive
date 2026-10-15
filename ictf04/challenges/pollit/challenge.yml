@@ -4,19 +4,26 @@ category: web
 description: |
   **iCTF 2004 — The 2004 United Nations Vote**
 
-  The iCTF 2004 scenario put teams inside the United Nations during a
-  fictional 2014 Security Council vote. The "pollit" service is the
-  online voting platform used by member nations.
+  The "pollit" service is the UN Security Council polling platform —
+  a Perl CGI application (`poll.pl`) with shared utility functions
+  (`global_func.pl`, `local_func.pl`). Teams stored flags as poll results;
+  the flag is the poll content. Find a vulnerability to read or inject polls.
 
-  The service is a Perl CGI application that handles secure balloting
-  for the UN vote. Find a vulnerability to manipulate the vote.
+  ## Source
+
+  - `src/pollit/cgi-bin/poll.pl` — main poll CGI
+  - `src/pollit/cgi-bin/global_func.pl` — shared Perl utilities
+  - `src/pollit/cgi-bin/local_func.pl` — local Perl utilities
+  - `src/pollit/html/pollit.html` — HTML frontend
+  - `src/poll.pl` — alternative version from the UN main webapp
+  - `src/pollit_bot.py` — scorebot interaction script
+  - `src/pollitScoringScript.py` — scoring script
 value: 0
 type: standard
 
-image: .
+image: null
 protocol: http
-host: null
-connection_info: null
+port: 80
 
 flags:
     - ictf2004{pollit_compromised}
@@ -29,11 +36,19 @@ topics:
 tags:
     - web
     - perl
+    - cgi
     - ictf2004
     - historical
+    - attack-defense
 
 files:
-    - src/
+    - src/pollit/cgi-bin/poll.pl
+    - src/pollit/cgi-bin/global_func.pl
+    - src/pollit/cgi-bin/local_func.pl
+    - src/pollit/html/pollit.html
+    - src/poll.pl
+    - src/pollit_bot.py
+    - src/pollitScoringScript.py
 
 state: visible
 version: "0.1"

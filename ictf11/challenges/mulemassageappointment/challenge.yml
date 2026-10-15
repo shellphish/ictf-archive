@@ -1,23 +1,65 @@
-name: "iCTF 2011 — Mule Massage Appointment"
+name: "iCTF 2011 — mulemassageappointment"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: web
 description: |
   **iCTF 2011 — Money Laundering**
 
-  Mule Massage Appointment was a booking service for the mule operation's
-  front business (massage parlor as a money laundering cover). Captured 1,995 times.
+  `mulemassageappointment` is a Python web service (massage parlor as a
+  money-laundering front business). 1,995 flag captures.
 
-  Source: encrypted VM archive `site/iC7F-l337-vu1n.7z` (AES-encrypted, password unknown).
+  Port: **unknown** (Python HTTP server, started via `start.sh`)
+
+  ## Architecture
+
+  Python 2.x web server started from `/home/mulemassageappointment/start.sh`:
+  ```sh
+  python /home/mulemassageappointment/mulemassageappointment.pyo
+  ```
+
+  The service is distributed as optimized Python bytecode (`.pyo`), which can
+  be decompiled using `uncompyle2` or `decompyle`. Static assets (JPEG images
+  for the spa/massage theme) are stored in the home directory.
+
+  ## Vulnerabilities
+
+  From strings analysis of the `.pyo` bytecode:
+
+  1. **Hardcoded RSA private key** (512-bit, in the `.pyo` bytecode). Any
+     attacker who decompiles the service or reads the binary gets the key.
+
+  2. **Weak XOR encryption**: Messages are XOR-encrypted with a key derived
+     from 6 characters of the HTTP `Date` response header:
+     ```js
+     key = responses[i].slice(10, 16)  // e.g., seconds field
+     ```
+     An attacker who sees the server's Date header (always sent) can trivially
+     decrypt any encrypted "last message" stored in the service.
+
+  3. **Information disclosure**: The last message for the user is embedded in
+     the HTML response as base64+XOR — visible to any observer who also reads
+     the Date header.
+
+  Decompile the bytecode with: `uncompyle2 mulemassageappointment.pyo`
 value: 0
 type: standard
 image: null
+protocol: http
+port: 0
 flags:
-    - ictf2011{mulemassage_compromised}
+    - ictf2011{mulemassageappointment_pwned}
+topics:
+    - web
+    - python
+    - reverse engineering
 tags:
     - web
+    - python
+    - pyo
     - ictf2011
     - historical
     - attack-defense
-files: []
+files:
+    - src/mulemassageappointment.pyo
+    - src/start.sh
 state: visible
 version: "0.1"

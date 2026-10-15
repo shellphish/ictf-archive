@@ -1,31 +1,74 @@
-name: "iCTF 2006 — Hillbilly Bank: Bank Protocol Daemon"
+name: "iCTF 2006 — bpt-proto: Bank Protocol Daemon"
 author: "Giovanni Vigna / UCSB Security Lab"
-category: binary
+category: rev
 description: |
   **iCTF 2006 — The Hillbilly Bank**
 
-  The bank protocol daemon (`bankproto`) — a compiled binary extracted
-  from the original competition VM. Find a vulnerability via binary analysis.
+  The Bank Protocol service (`bankproto`) was the backbone of the iCTF 2006
+  Hillbilly Bank scenario. Teams created accounts, deposited RSA-signed
+  checks, and transferred funds using a custom binary UDP protocol on port 2342.
+
+  This is a **binary-only** challenge: the source was not recovered from the
+  CTF VM. Only the compiled 32-bit ELF binary survives. The binary retains its
+  symbol table (`reaper`, `verify_echeck`, `manage_client`, `main`) and debug
+  info — enough to reconstruct the logic and hunt for vulnerabilities.
+
+  ## Protocol (reconstructed from scoring scripts)
+
+  All messages are sent to UDP port 2342. Responses are `<code>\r\n<message>`.
+
+  | Command | Format | Success code |
+  |---------|--------|--------------|
+  | Create account | `N <cookie>` | `311` |
+  | Deposit check  | `D <cookie> <check>` | `382` |
+  | Transfer funds | `T <cookie> <iban> <amount>` | `711` |
+
+  Check validation is delegated to `/usr/bin/ccheck` via `popen()`.
+  Accounts are stored as files under `/home/bpt/accounts/<cookie>`.
+  Transactions land in `/var/spool/transactions/bpt/trans.*`.
+
+  ## Your Task
+
+  Reverse the binary and find exploitable flaws in the UDP message parsing,
+  check-validation path, or account/file handling. The binary is single-threaded
+  per connection (forks on each packet via `reaper`) and compiled without modern
+  mitigations (GCC 3.4.6, Ubuntu Dapper, no PIE/SSP).
+
+  - Format string bug in a response path?
+  - Buffer overflow in cookie or check parsing?
+  - Path traversal in the `accounts/<cookie>` file scheme?
+  - Race condition between fork and file access?
+
+  Recover the flag from the running service.
 value: 0
 type: standard
 
 image: null
-protocol: tcp
+protocol: udp
+port: 2342
+
 flags:
     - ictf2006{bpt_pwned}
 
 topics:
-    - binary exploitation
     - reverse engineering
+    - binary exploitation
+    - custom protocol
+    - UDP
 
 tags:
+    - rev
+    - pwn
     - binary
-    - re
+    - udp
     - ictf2006
     - historical
+    - attack-defense
+    - binary-only
 
 files:
     - src/bankproto
+    - src/init_bpt
 
 state: visible
 version: "0.1"

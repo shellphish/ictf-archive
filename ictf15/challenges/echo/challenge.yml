@@ -1,12 +1,15 @@
 name: "iCTF 2015 — echo"
-author: "Giovanni Vigna / UCSB Security Lab"
+author: "Fish, UCSB Seclab"
 category: binary
 description: |
   **iCTF 2015 — Crowdsourcing Evil**
 
-  TCP echo service with backdoor — intro challenge
+  A simple TCP echo service that contains a backdoor. Your iCTF experience starts here!
 
-  Port: 9148. Source not available (only competition database preserved).
+  **Flag ID:** Please read the source code to understand what a flag_id is.
+
+  Port: 9148. Source not available (only competition database and base VM preserved).
+  This service was reused from an earlier iCTF edition or submitted by teams for ictf15.
 value: 0
 type: standard
 image: null

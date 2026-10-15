@@ -4,29 +4,56 @@ category: binary
 description: |
   **iCTF 2004 — The UN Voting System**
 
-  A TCP service on port 11111 that implements a simple credential store.
-  Protocol: `STORE <name> <flag>\n` to store, `DICT <name>\n` to retrieve.
-  Find a vulnerability to read stored flags without knowing the correct name.
+  A custom TCP password-verification daemon written in C (port 11111).
+  The service verifies user-provided passwords against a per-user dictionary
+  stored in `userdict/<username>`. The flag is stored as the "password" entry.
+
+  ## Protocol
+
+  Single-line protocol; the daemon forks per connection:
+  ```
+  STORE <username> <word> <flag>   — store a flag word
+  DICT <username> <password>       — verify password & return stored word
+  ```
+
+  ## Source
+
+  Full C source:
+  - `src/pwdvrfy.c` — daemon source (BUFSIZE 512, MAXWORD 64, fork-per-connection)
+  - `src/pwdvrfy` — compiled binary (Linux/i386)
+  - `src/pwdvrfy_bot.py` — scorebot interaction script
+  - `src/passwordVerifyScoringScript.py` — scoring script
+
+  Key vulnerability: `buffer[BUFSIZE]` read with no bounds check on command
+  parsing — classic stack buffer overflow in the `verify_password()` function.
 value: 0
 type: standard
 
-image: .
+image: null
 protocol: tcp
+port: 11111
+
 flags:
     - ictf2004{pwverify_pwned}
 
 topics:
     - binary exploitation
     - network protocol
+    - buffer overflow
 
 tags:
     - binary
     - tcp
+    - c
+    - bof
     - ictf2004
     - historical
     - attack-defense
 
-files: []
+files:
+    - src/pwdvrfy.c
+    - src/pwdvrfy_bot.py
+    - src/passwordVerifyScoringScript.py
 
 state: visible
 version: "0.1"

@@ -2,34 +2,41 @@ name: "iCTF 2005 — Spam World: Syscall Daemon"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: binary
 description: |
-  **iCTF 2005 — The Spam World**
+  **iCTF 2005 — The Spam Museum: Syscall Daemon**
 
-  A TCP service on port 31337 that exposes a custom binary protocol. The service
-  version string contains a seed value; all instructions are XOR-obfuscated with
-  that seed. The flag is stored as a "memory dump" in little-endian 32-bit words.
-  Reverse engineer the protocol to extract the flag.
+  A TCP service on port 31337 that is an interactive x86 assembly interpreter.
+  Clients send x86 instructions (`pushl`, `popl`, `movl`, `addl`, `sysenter`,
+  `dump`) and the service executes real Linux syscalls. The banner contains a
+  XOR seed (extracted from "v1.0.<seed>"); all instruction keywords must be
+  XOR'd with that seed. Flag is at `/usr/local/share/syscalld/flag`. Read it
+  by executing open (syscall 5) + read (syscall 3) via `sysenter`. Source not
+  recovered (binary only); full protocol in the scoring script.
 value: 0
 type: standard
 
-image: .
+image: null
 protocol: tcp
 flags:
     - ictf2005{syscalld_pwned}
 
 topics:
-    - binary exploitation
+    - x86 assembly
+    - syscall exploitation
     - reverse engineering
-    - custom protocol
+    - XOR obfuscation
 
 tags:
     - binary
     - tcp
     - re
+    - x86
+    - syscall
     - ictf2005
     - historical
     - attack-defense
 
-files: []
+files:
+    - src/syscalldScoringScript.py
 
 state: visible
 version: "0.1"

@@ -1,0 +1,11 @@
+<%= error_messages_for 'user' %>
+
+<!--[form:user]-->
+<p><label for="user_email">Email</label><br/>
+<%= text_field 'user', 'email'  %></p>
+
+<p><label for="user_description">Description</label><br/>
+<%= text_area 'user', 'description', :cols => 80, :rows => 5 %>
+
+<!--[eoform:user]-->
+

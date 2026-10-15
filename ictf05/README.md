@@ -18,11 +18,20 @@ sabotaging rival spam operations.
 
 ## Services
 
-| Name | Description |
-|------|-------------|
-| `spamback` | Spam backend / relay service |
-| `spaminout` | Spam ingestion and delivery |
-| `spamometer` | Spam measurement and tracking |
+| Name | Category | Vulnerability | Source |
+|------|----------|---------------|--------|
+| [`museum`](challenges/museum/) | web | Command injection (`grep -i $keyword`), path traversal, hardcoded password | ✓ Perl |
+| [`contribute`](challenges/contribute/) | web | SQL injection (unescaped MySQL INSERT) | ✓ Python |
+| [`spamgen`](challenges/spamgen/) | web | Info disclosure (Markov model reads all flags) | ✓ Python |
+| [`aqs`](challenges/aqs/) | pwn | Rotating-key cipher bypass in C CGI → exec to Perl | ✓ C + Python + Perl |
+| [`spamdb`](challenges/spamdb/) | web | Weak password generation, XML-RPC PHP | ✓ PHP |
+| [`acquire`](challenges/acquire/) | web | SQL injection (PHP, large scripts) | ✓ PHP |
+| [`ftp`](challenges/ftp/) | network | Custom C FTP server; all flags world-readable | ✓ C |
+| [`spammer`](challenges/spammer/) | network | Custom binary SPAM protocol (Python) | ✓ Python |
+| [`spamagent`](challenges/spamagent/) | pwn | Code injection in XML+Tcl agent scripting engine | ✓ C |
+| [`spaminout`](challenges/spaminout/) | pwn | C spam relay (spamin/spamout pair) | ✓ C |
+| [`syscalld`](challenges/syscalld/) | pwn | Remote x86 assembly exec; arbitrary syscalls via `sysenter` | binary only |
+| [`spamometer`](challenges/spamometer/) | pwn | Spam metrics service (binary only) | ✗ encrypted |
 
 ## Network Architecture
 

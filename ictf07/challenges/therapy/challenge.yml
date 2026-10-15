@@ -5,17 +5,72 @@ description: |
   **iCTF 2007 — The Copyright Mafia**
 
   Even Mafia members need mental health services. The therapy service
-  provides counseling for Mafia operatives. Runs Apache Tomcat (Java)
-  with a PHP frontend. The Java backend source was GPG-encrypted.
+  provides counseling for Mafia operatives — clients submit complaints
+  against counselors; counselors manage case notes.
+
+  ## Architecture
+
+  - **Frontend:** PHP redirect (`therapy.php`) on port 80, immediately
+    redirects to Tomcat on port 8080 (`/Therapy/`)
+  - **Backend:** Apache Tomcat 6.0.14 running `Therapy.war` (Java servlet)
+  - **Database:** MySQL `psycho` / user `psycho` / password `psycho`
+  - Two roles: `client` and `counselor` (stored in `role` ENUM column)
+
+  ## Flag mechanism
+
+  The flag is stored in the `private_info` column of the `users` table:
+  ```sql
+  private_info varchar(128)   -- FLAG STORAGE
+  ```
+  The scorebot creates a counselor with the flag in `private_info`;
+  only counselors can read each other's private info.
+
+  ## Java source (Therapy.war — Tomcat 6.0.14)
+
+  Full Java source files are in `src/java/WEB-INF/classes/`:
+  - `psycho/` — `ActionController.java`, `ApplicationResources.java`, `RequestHelper.java`
+  - `psycho/users/` — `AccountManager.java`, `ClientManager.java`, `CreateUser.java`, `User.java`
+  - `psycho/utils/` — `Command.java`, `DatabaseHelper.java`
+  - `org/apache/jsp/` — compiled JSP source: login, menu, index, clients, counselor,
+    complain, newcomplain, newuser, error pages
+
+  Note: `therapy-src.jar.gpg` on the VM was GPG-encrypted (key unknown);
+  however, the `Therapy.war` file itself contains both `.class` and `.java` source files.
+
+  ## Vulnerability hints
+
+  - `DatabaseHelper.java` uses `PreparedStatement` for most queries, but
+    certain path parameters may be concatenated into SQL strings
+  - Client-counselor assignment allows lateral access to another user's `private_info`
+  - Session management in `RequestHelper.java` — cookie forgery possible?
+  - Role escalation: client → counselor via account update path
+
 value: 0
 type: standard
 image: null
 protocol: http
+port: 8080
 flags:
     - ictf2007{therapy_pwned}
-tags: [web, php, java, tomcat, ictf2007, historical]
+topics:
+    - web
+    - java
+    - sql injection
+    - tomcat
+tags: [web, java, tomcat, mysql, ictf2007, historical, attack-defense]
 files:
     - src/therapy.php
+    - src/therapy_redirect.php
     - src/setupdb.sql
+    - src/Therapy.war
+    - src/java/ActionController.java
+    - src/java/ApplicationResources.java
+    - src/java/RequestHelper.java
+    - src/java/users/AccountManager.java
+    - src/java/users/ClientManager.java
+    - src/java/users/CreateUser.java
+    - src/java/users/User.java
+    - src/java/utils/Command.java
+    - src/java/utils/DatabaseHelper.java
 state: visible
-version: "0.1"
+version: "0.2"

@@ -5,11 +5,9 @@ set password [lindex ${argv} 1]
 
 set timeout 5
 
-log_user 0
-
 #puts "${ipaddr}:21 ${password}"
 
-spawn nc ${ipaddr} 21  
+spawn nc ${ipaddr} 21
 
 expect "220*\r\n" {} timeout {exit 1}
 

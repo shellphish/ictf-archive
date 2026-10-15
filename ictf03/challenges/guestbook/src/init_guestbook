@@ -1,0 +1,26 @@
+#!/bin/bash
+
+echo "<p><b>Bill Gates</b> (a4aa0119314f02a67c926e9852b6ff1a) wrote:
+<pre>
+I hope you enjoy our new guest book. 
+It will allow everyone as visionary as I am to contribute to our software.
+</pre></p>
+
+<p><b>Steve Ballmer</b> (7acdacf01ba885317c5e7fb09c3eba71) wrote:
+<pre>
+I regret that I made fun of Linux.
+
+No seriously.
+No really ....
+</pre></p>
+
+<p><b>CTO Technological Office</b> (8749e1c658f4d5eff04caa7578f51095) wrote:
+<pre>
+Note that we are already using free software.
+
+This site is powered by Linux/Apache.
+</pre></p>" > /var/www/cgi-bin/guestbook.txt
+
+chown apache  /var/www/cgi-bin/guestbook.txt
+chgrp root    /var/www/cgi-bin/guestbook.txt
+chmod 600     /var/www/cgi-bin/guestbook.txt

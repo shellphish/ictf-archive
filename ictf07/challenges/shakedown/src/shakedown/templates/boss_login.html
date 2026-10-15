@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="wrap">
+  <div id="main">
+  <h2>Welcome Boss!</h2>
+
+  <p><span style="color: #e24712">shakedown</span> is a web application that allows you to better manage your
+  relationship with artists. In the good old days, &quot;protection fees&quot; had
+  to be collected in person, with all the consequent hassles. Now, the
+  revolutionary shakedown service brings this time-honored activity 
+  completely online<sup>1</sup>.</p>
+
+  <p>Register now to experience a new way of managing your racke*ehm*fee needs,
+  monitor your artists' performances, and easily communicate with them.</p>
+
+  <p style="font-size: smaller"><sup>1</sup>The web site is still in beta
+  status. Your experience may vary.</p>  
+
+  </div>
+
+  <div id="sidebar">
+  <h2>Login</h2>
+  {% if form.errors %}
+    <p class="error">Sorry, that's not a valid username or password</p>
+  {% endif %}
+
+  <form action='.' method='post'>
+    <p><label for="username">User name:</label>
+    <input type="text" name="username" value="" id="username"></p>
+
+    <p><label for="password">Password:</label>
+    <input type="password" name="password" value="" id="password"></p>
+
+    <p><input type="submit" value="login" />
+    <input type="hidden" name="next" value="/bosses/profile" /></p>
+  </form>
+
+  <p>Not a member?<br/>
+     <a href="/bosses/new">Register now</a>.</p>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,30 +1,53 @@
-name: "iCTF 2005 — Biometric File Service (biometric)"
+name: "iCTF 2004-05 — Biometric File Service (biometric)"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: binary
 description: |
-  **iCTF 2005 — The Bass Tard Corporation**
+  **iCTF 2004-05 — The Bass Tard Corporation**
 
-  A C network service that provides authenticated file query and storage.
-  It presents an HTTP-like interface with endpoints for `/query` (retrieve
-  a file by name) and `/store` (save file content). User identity is
-  passed as a hidden field. Find the vulnerability.
+  `biometric` is a CGI binary that gates file storage and retrieval
+  behind a "biometric" password check (`CORPORATE_PASSWORD "miconsenta"`).
+  Users submit their username, the corporate password, and an operation
+  (`OP-query`, `OP-store`, or any string) via HTTP GET parameters.
+
+  Three vulnerabilities hide in plain sight:
+
+  1. **Format string — unknown operation path**: when the operation is
+     neither `query` nor `store`, the code prints it directly:
+     `printf(operation)` after stripping the `OP-` prefix. Supply a
+     format string like `OP-%x.%x.%s` to read the stack.
+
+  2. **Format string — wrong password path**: when the corporate password
+     is wrong, `printf(argv[2])` is called with the raw password argument
+     as the format string.
+
+  3. **Path traversal via `touch`**: after a valid operation, `execlp`
+     runs `touch argv[1]` with the unsanitized user argument. Provide a
+     path like `../../etc/cron.d/shell` to touch arbitrary files.
+
+  The service password for the scorebot is `putyourfingerhere`.
+
+  Recover the flag from the running service.
 value: 0
 type: standard
-image: .
-protocol: tcp
-host: null
-connection_info: null
+image: "."
+protocol: http
+port: 80
 flags:
-    - ictf2005{biometric_compromised}
+    - ictf0405{biometric_compromised}
 topics:
     - binary exploitation
-    - path traversal
+    - format string
+    - CGI
     - C
 tags:
     - binary
-    - ictf2005
+    - pwn
+    - format-string
+    - cgi
+    - ictf0405
     - historical
+    - attack-defense
 files:
-    - src/
+    - src/biometric.c
 state: visible
 version: "0.1"

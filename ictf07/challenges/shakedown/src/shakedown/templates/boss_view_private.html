@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class="shakedown-nav">
+	<a href="/bosses/logout/">Logout</a>
+  </div>
+
+  <div class="figure-left">
+      <img width="90" height="90" src="{{ boss.get_image_url }}"/> 
+  </div>
+   
+  
+ <p><br/>
+    {{ boss.name }}<br/>
+    <br/><br/><br/></p>
+
+  <h2>Contracted Artists</h2>
+
+  {% ifequal boss.protection_set.count 0 %}
+    <p>No managed artist yet. But don't worry: the organization
+       will soon provide you with fresh, remunerative artists!
+  {% else %}
+    <ul>
+    {% for p in protections %}
+       <li>{{ p.get_edit_link }}</li> 
+    {% endfor %}
+
+    {% if is_paginated %}
+        {% if has_previous %}
+        <a href="?artistspage={{ previous_page}}">
+        {% endif %}
+        &lt; Prev
+        {% if has_previous %}
+        </a>
+        {% endif %}
+        {{ current_page }} of {{ pages }}
+        {% if has_next %}
+        <a href="?artistspage={{ next_page }}">
+        {% endif %}
+        Next &gt;
+        {% if has_next %}
+        </a>
+        {% endif %}
+    {% endif %}
+    
+    </ul>
+
+  {% endifequal %}
+
+{% endblock %}

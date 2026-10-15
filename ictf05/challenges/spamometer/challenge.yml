@@ -1,0 +1,35 @@
+name: "iCTF 2005 — Spam Museum: Spamometer"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2005 — The Spam Museum: Spamometer**
+
+  A binary service (22KB ELF, `/home/spamometer/spamometer`) that measures spam
+  volume or quality metrics. Source code not recovered — the source archive
+  `/root/spamometer-1.0.tar.gz.gpg` on the VM is GPG-encrypted with an unknown key.
+  Reverse engineering the binary is required to understand the protocol and
+  discover vulnerabilities.
+value: 0
+type: standard
+
+image: null
+protocol: tcp
+flags:
+    - ictf2005{spamometer_pwned}
+
+topics:
+    - binary exploitation
+    - reverse engineering
+
+tags:
+    - binary
+    - re
+    - ictf2005
+    - historical
+    - attack-defense
+
+files:
+    - src/spamometer
+
+state: visible
+version: "0.1"

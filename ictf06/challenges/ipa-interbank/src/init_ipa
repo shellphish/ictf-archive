@@ -1,0 +1,35 @@
+#! /bin/sh
+set -e
+
+IPAL_HOME=/home/ipa/ipal
+
+test -d $IPAL_HOME || exit 0
+
+. /lib/lsb/init-functions
+. /etc/default/rcS
+
+case "$1" in
+  start)	
+	    log_begin_msg "Starting iPal currency exchange service"
+	    if [ -s $IPAL_HOME/log/mongrel.pid ] && kill -0 $(cat $IPAL_HOME/log/mongrel.pid) >/dev/null 2>&1; then
+		exit 0
+	    fi
+            cd $IPAL_HOME
+	    /usr/bin/mongrel_rails start -e production -d -u ipa --group ipa
+            log_end_msg $?
+	;;
+  stop)
+        log_begin_msg "Stopping iPal currency exchange service"
+	ES=$?
+        cd $IPAL_HOME
+	/usr/bin/mongrel_rails stop
+	rm -f $IPAL_HOME/log/mongrel.pid
+        log_end_msg $ES
+	;;
+
+  *)
+	log_success_msg "Usage: /etc/init.d/ipa {start|stop}"
+	exit 1
+esac
+
+exit 0

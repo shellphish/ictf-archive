@@ -1,0 +1,38 @@
+#! /bin/sh
+set -e
+
+DAEMON=/home/bpt/bankproto
+
+test -x $DAEMON || exit 0
+
+. /lib/lsb/init-functions
+. /etc/default/rcS
+
+case "$1" in
+  start)	
+	    log_begin_msg "Starting BPT service"
+	    if [ -s /var/run/bpt.pid ] && kill -0 $(cat /var/run/bpt.pid) >/dev/null 2>&1; then
+		echo "There is an instance of the service running and I can't stop it"
+                exit 0
+	    fi
+            cd /home/bpt
+            start-stop-daemon --start --background \
+                --pidfile /var/run/bpt.pid --make-pidfile \
+                --chdir /home/bpt --verbose --exec /home/bpt/bankproto \
+		-c bpt:bpt 
+            log_end_msg $?
+	;;
+  stop)
+        log_begin_msg "Stopping BPT service"
+	ES=$?
+	start-stop-daemon --stop --quiet --oknodo --pidfile /var/run/bpt.pid
+	rm -f /var/run/bpt.pid
+        log_end_msg $ES
+	;;
+
+  *)
+	log_success_msg "Usage: /etc/init.d/bpt {start|stop}"
+	exit 1
+esac
+
+exit 0

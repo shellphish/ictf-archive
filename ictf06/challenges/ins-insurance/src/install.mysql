@@ -1,0 +1,22 @@
+CREATE TABLE policies (
+  id int NOT NULL,
+  first varchar(32),
+  last varchar(32),
+  address varchar(60),
+  license varchar(12),
+  plate varchar(12),
+  car_model varchar(30),
+  password varchar(12),
+  iban varchar(173),
+  value int,
+  time int,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE claims (
+  id int NOT NULL auto_increment,
+  policy int NOT NULL,
+  description text,
+  amount int,
+  PRIMARY KEY (id)
+);

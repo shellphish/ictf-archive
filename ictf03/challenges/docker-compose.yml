@@ -1,0 +1,57 @@
+services:
+  sfind:
+    build:
+      context: sfind
+      args:
+        FLAG: "${SFIND_FLAG:-17409258fb54788411496ede00051e1a}"
+        PASS: "${SFIND_PASS:-XXGvWEuD1BDMI}"
+    ports:
+      - "31337:31337/udp"
+
+  ftp:
+    build:
+      context: ftp
+      args:
+        FLAG: "${FTP_FLAG:-bcd7ab1b9a91a790e4dcd1e50ab859a0}"
+        PASS: "${FTP_PASS:-secret}"
+    ports:
+      - "21:21"
+      - "2020:2020"
+
+  guestbook:
+    build:
+      context: guestbook
+      args:
+        FLAG: "${GUESTBOOK_FLAG:-ictf2003{guestbook_historical}}"
+        ADMIN_PASS: "${GUESTBOOK_ADMIN_PASS:-admin}"
+    ports:
+      - "8080:80"
+
+  query:
+    build:
+      context: query
+      args:
+        FLAG: "${QUERY_FLAG:-ictf2003{query_historical}}"
+        ADMIN_PASS: "${QUERY_ADMIN_PASS:-admin}"
+        DB_PASS: "${QUERY_DB_PASS:-querypass}"
+    ports:
+      - "8081:80"
+
+  servlet:
+    build:
+      context: servlet
+      args:
+        FLAG: "${SERVLET_FLAG:-ictf2003{servlet_historical}}"
+        PASSWORD: "${SERVLET_PASSWORD:-admin}"
+        DBPASSWORD: "${SERVLET_DBPASSWORD:-kbpass}"
+    ports:
+      - "8082:8080"
+
+  icecast:
+    build:
+      context: icecast
+      args:
+        FLAG: "${ICECAST_FLAG:-ictf2003{icecast_historical}}"
+        ICECAST_PASS: "${ICECAST_PASS:-hackme}"
+    ports:
+      - "8000:8000"

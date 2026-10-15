@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <p>{{ protection.boss.name }}, this is your main tool to manage your business
+relationship with <strong>{{ protection.artist.name }}</strong>. Yes, we know, the tool looks
+simplicistic at the moment, but studies have proved its efficacy and cost
+effectiveness...</p>
+
+  {% if protection_form.has_errors %}
+    <h2>Please correct the following error{{ protection_form.error_dict|pluralize }}:</h2>
+  {% endif %}
+
+  <form method="post" action=".">
+    {{ protection_form.as_p }}
+    <input type="submit" name="protection" value="change rate"/>
+    <br/>
+    {{ news_form.as_p }}
+    <input type="submit" name="news" value="send message"/>
+  </form>
+
+
+{% endblock %}

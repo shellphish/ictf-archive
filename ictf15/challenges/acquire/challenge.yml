@@ -1,12 +1,15 @@
 name: "iCTF 2015 — acquire"
-author: "Giovanni Vigna / UCSB Security Lab"
+author: "UCSB Seclab"
 category: web
 description: |
   **iCTF 2015 — Crowdsourcing Evil**
 
-  Open relay listing for spam (reused from ictf05)
+  This is a website that lists FREE open relays that you can use for spamming!
 
-  Port: 8184. Source not available (only competition database preserved).
+  **Flag ID:** The flag_id is the IP address.
+
+  Port: 8184. Source not available (only competition database and base VM preserved).
+  This service was reused from an earlier iCTF edition or submitted by teams for ictf15.
 value: 0
 type: standard
 image: null

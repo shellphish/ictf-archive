@@ -34,7 +34,7 @@ description: |
   `src/icecast.xml.deployed` (actual deployed config from the CTF VM).
 value: 0
 type: standard
-image: null
+image: "."
 protocol: http
 port: 8000
 flags:

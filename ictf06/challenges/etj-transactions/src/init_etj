@@ -1,0 +1,37 @@
+#! /bin/sh
+set -e
+
+DAEMON=/home/etj/trans.py
+
+test -x $DAEMON || exit 0
+
+. /lib/lsb/init-functions
+. /etc/default/rcS
+
+case "$1" in
+  start)	
+	    log_begin_msg "Starting Hillbilly translator service"
+	    if [ -s /var/run/etj.pid ] && kill -0 $(cat /var/run/etj.pid) >/dev/null 2>&1; then
+		exit 0
+	    fi
+            cd /home/atm
+            start-stop-daemon --start --background \
+                --pidfile /var/run/etj.pid --make-pidfile \
+                --exec /home/etj/trans.py \
+		-c etj:etj 
+            log_end_msg $?
+	;;
+  stop)
+        log_begin_msg "Stopping Hillbilly translator service"
+	ES=$?
+	start-stop-daemon --stop --quiet --oknodo --pidfile /var/run/etj.pid
+	rm -f /var/run/etj.pid
+        log_end_msg $ES
+	;;
+
+  *)
+	log_success_msg "Usage: /etc/init.d/etj {start|stop}"
+	exit 1
+esac
+
+exit 0

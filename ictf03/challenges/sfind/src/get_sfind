@@ -11,9 +11,9 @@ $key = $keywords[rand(@keywords)];
 
 $request = "id $id\nuser whatever \npassword $ARGV[1]\nfilename *.h\nkeyword $key\nenviron $environ[rand(@environ)]\n";
 
-if (! -e "/home/fredrik/ctf_scorebot/scripts/sfindc") {
+if (! -e "./sfindc") {
     die "helper program findc not in local directory";
 }
 
-@reply = `echo "$request" | /home/fredrik/ctf_scorebot/scripts/sfindc $ARGV[0]`;
+@reply = `echo "$request" | ./sfindc $ARGV[0]`;
 print "$reply[1]";

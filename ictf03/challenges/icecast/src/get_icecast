@@ -8,7 +8,7 @@ $ip = $ARGV[0];
 
 $request = "http://$ip:8000/flag";
 
-$output = `wget -T 10 -q -O - $request`;
+$output = `wget -q -O - $request`;
 chop $output;
 chop $output;
 

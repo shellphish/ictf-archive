@@ -1,26 +1,89 @@
-name: "iCTF 2011 — Mule Manager"
+name: "iCTF 2011 — mulemanager"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: web
 description: |
   **iCTF 2011 — Money Laundering**
 
-  Mule Manager was the management backend for the money mule operation.
-  Second most-captured service with 34,559 flag steals.
+  `mulemanager` is the central PHP web application for managing money mule
+  operations. Served by Apache 2.x at the document root (`/var/www/`), it
+  provides account registration, login, profile management, mission assignment,
+  and money transfer functionality.
 
-  Competitors exploited vulnerabilities in the mule management interface to
-  extract flags stored in the database.
+  Port: **80** (HTTP, Apache 2.x, PHP 5.x)
 
-  Source: encrypted VM archive `site/iC7F-l337-vu1n.7z` (AES-encrypted, password unknown).
+  ## Architecture
+
+  PHP application with a shared `library.php` (21 KB, 600+ lines) containing
+  database helpers, sanitization, session management, and HTML rendering.
+
+  Pages:
+  - `index.php` — landing page
+  - `login.php` / `logout.php` — authentication
+  - `register.php` — account creation
+  - `profile.php` — view/edit profile
+  - `update.php` — update account data
+  - `mission.php` — view/accept laundering missions
+  - `contact.php` — contact form
+  - `main.php` — dashboard
+
+  The `library.php` implements `sanitize_r_data()` for input filtering via a
+  whitelist (`$data_chars`) that includes `'` — making its sanitization
+  insufficient for SQL contexts.
+
+  MySQL credentials: `mulemanager / grabthiswhileyoucan` (in library.php).
+
+  ## Vulnerability
+
+  `profile.php` (line 25) appends an unsanitized `$test_fail_condition` to a
+  prepared-statement query string:
+  ```php
+  $st = mysqli_prepare($db, "SELECT ... FROM users WHERE username = ? $test_fail_condition");
+  ```
+  If the scorebot sets `$test_fail_condition`, extra SQL can be injected.
+
+  Additionally, `profile.php` redirects to `update.php` with all user fields
+  including the **stored password hash in the URL** as a GET parameter —
+  exposing it in browser history and server access logs.
+
+  ## Source
+
+  Fully recovered from competition VM `/var/www/`:
+  - `src/library.php` — shared library (DB connection, sanitize, auth)
+  - `src/mission.php` — mule assignment logic (most complex, 8710 bytes)
+  - `src/profile.php` — user profile view (contains SQL construction bug)
+  - `src/update.php` — update form handler (password exposed in URL)
+  - `src/register.php`, `src/login.php`, `src/logout.php`, `src/contact.php`
+  - `src/main.php`, `src/index.php`, `src/send.php`
 value: 0
 type: standard
 image: null
+protocol: http
+port: 80
 flags:
-    - ictf2011{mulemanager_compromised}
+    - ictf2011{mulemanager_pwned}
+topics:
+    - web
+    - php
+    - sql injection
+    - authentication
 tags:
     - web
+    - php
     - ictf2011
     - historical
     - attack-defense
-files: []
+files:
+    - src/library.php
+    - src/index.php
+    - src/login.php
+    - src/logout.php
+    - src/register.php
+    - src/profile.php
+    - src/update.php
+    - src/mission.php
+    - src/contact.php
+    - src/main.php
+    - src/send.php
+    - src/test.php
 state: visible
 version: "0.1"

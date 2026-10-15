@@ -1,12 +1,28 @@
 name: "iCTF 2015 — notecxx"
-author: "Giovanni Vigna / UCSB Security Lab"
+author: "UCSB Seclab (ictf15 crowdsourced service)"
 category: binary
 description: |
   **iCTF 2015 — Crowdsourcing Evil**
 
-  C++ note-taking service with integer overflow in authenticate command. Solved by DCIETS. See notecxx_writeup.md.
+  A C++ note-taking service where users can write notes, load/save them, and
+  issue commands. The service was submitted and solved by team DCIETS.
 
-  Port: null. Source not available (only competition database preserved).
+  The vulnerability exploits undefined behavior in `std::vector<T>::emplace_back`
+  when called recursively from within a constructor. In libstdc++ on Ubuntu 14.04,
+  issuing a `print` command with a string between 15 and 28 characters causes the
+  vector's size to be incremented twice for one actual element — leaving one slot
+  uninitialized with whatever was in that memory previously.
+
+  By carefully crafting a 34-byte note whose 8th character is `'5'` (ASCII 53),
+  the uninitialized command slot is interpreted as a `read` command — allowing
+  file reads (including the flag file) *without* triggering the authenticate
+  command that would otherwise require a 64-bit passcode match.
+
+  **Flag ID:** The flag_id is the filename (used via `cd <flag_id>` to navigate to
+  the flag directory before triggering the read exploit).
+
+  Source code preserved in writeup (`notecxx_writeup.md` in edition root).
+  This was one of the ictf15-specific crowdsourced services (id 43).
 value: 0
 type: standard
 image: null
@@ -14,11 +30,19 @@ protocol: tcp
 port: null
 flags:
     - ictf2015{notecxx_pwned}
+topics:
+    - binary exploitation
+    - C++ undefined behavior
+    - memory corruption
+    - vector reuse
 tags:
     - binary
+    - cpp
+    - pwn
     - ictf2015
     - historical
     - attack-defense
+    - crowdsourced
 files: []
 state: visible
 version: "0.1"

@@ -1,0 +1,49 @@
+#! /bin/sh
+# /etc/init.d/mulemassageappointment
+#
+### BEGIN INIT INFO
+# Provides:          mulemassageappointment
+# Required-Start:    
+# Required-Stop:     
+# Default-Start:     2 3 4 5 
+# Default-Stop:      0 1 6
+# Short-Description: Starts the program at boot time
+# Description:       Enable service provided by the program
+### END INIT INFO
+
+DAEMON=/home/mulemassageappointment/start.sh
+PIDFILE=/var/run/mulemassageappointment.pid
+PROGHOME=/home/mulemassageappointment
+
+test -x $DAEMON || exit 0
+
+case "$1" in
+  start)
+    echo "Starting $PROGNAME..."
+    start-stop-daemon --start -b -m -d $PROGHOME --pidfile $PIDFILE --exec $DAEMON
+    if [ $? -ne 0 ]; then echo "Error: failed starting $PROGNAME (possibly program already running)"; exit 0; fi
+    echo "... started!"
+    ;;
+  stop)
+    echo "Stopping $PROGNAME..."
+    start-stop-daemon --stop --quiet --pidfile $PIDFILE
+    pkill -f 'python /home/mulemassageappointment/mulemassageappointment.pyo'
+    if [ $? -ne 0 ]; then echo "Error: failed stopping $PROGNAME (possibly program already stopped)"; exit 0; fi
+    if [ -x $PIDFILE ]
+        then 
+        rm $PIDFILE
+    fi
+    echo "... stopped!"
+    ;;
+  force-reload|restart)
+    echo "Restarting $PROGNAME..."
+    sh $0 stop
+    sh $0 start
+    ;;
+  *)
+    echo "Usage: $0 [ start | stop | restart ]"
+    exit 1
+    ;;
+esac
+
+exit 0

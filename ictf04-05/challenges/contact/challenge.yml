@@ -6,14 +6,26 @@ description: |
 
   The Bass Tard Corporation's internal contact/phone directory. Contacts have
   a first name, last name, and extension field. The scorebot stored the flag
-  as a contact's extension, updated via a Perl CGI with hardcoded admin
-  credentials (`admin:retard`):
+  as a contact's extension, updated via a Perl CGI.
 
-  ```
-  GET /~contact/cgi-bin/contact_change.pl?login=admin&password=retard&first=…&last=…&ext=<flag>
-  ```
+  ## Vulnerabilities
 
-  Flags were retrieved by looking up a contact's record via `contact.html`.
+  `contact_query.pl` evaluates `/home/contact/init.pl` if it exists (`eval \`cat ${init_file}\``),
+  allowing arbitrary Perl execution via file write. The `$debug` parameter also
+  triggers `` `${identity}` `` (shell exec of whatever `$identity` is set to).
+
+  `contact_change.pl` accepts admin credentials and runs unsanitized SQL:
+  ```perl
+  $sth = $dbh->prepare("UPDATE employees SET extension='$ext' WHERE last='$last' AND first='$first';");
+  ```
+  `$last` and `$first` are unescaped → SQL injection. Admin password MD5:
+  `HRI7PFYDuH/YThpIugvtbA` (base64 MD5).
+
+  ## Source
+
+  Extracted from competition VM (`/home/contact/public_html/cgi-bin/`):
+  - `src/contact_query.pl` — query endpoint; MySQL `corpdb` as `corpdbuser/basstard`
+  - `src/contact_change.pl` — admin update endpoint; SQL injection in last/first params
 value: 0
 type: standard
 image: null
@@ -24,11 +36,17 @@ flags:
     - ictf2005{contact_compromised}
 topics:
     - web exploitation
-    - hardcoded credentials
+    - SQL injection
+    - code injection
 tags:
     - web
+    - perl
+    - cgi
+    - sql-injection
     - ictf2005
     - historical
-files: []
+files:
+    - src/contact_query.pl
+    - src/contact_change.pl
 state: visible
 version: "0.1"

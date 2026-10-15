@@ -1,0 +1,16 @@
+This  is the default  document served  by the  talkserver application. You are
+probably seeing  this because  whoever started  the server  did not specify  a
+document that should be annotated.
+
+Note that you  can specify  a document  using the  --doc option. The  document
+should be an ASCII  document without HTML tags.  You can also specify  a title
+for the document using the --doctitle option.
+
+You can specify  the  port at which  the  server listens to  using  the --port
+option.  You can also specify the port  used for SSL-secured connections using
+the --sslport option.
+
+Finally, you  can specify a password file  containing usernames  and passwords
+using the --users option. The users listed in this file are the only ones that
+are allowed to make annotations.
+

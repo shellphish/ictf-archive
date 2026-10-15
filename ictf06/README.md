@@ -19,11 +19,20 @@ without security-first thinking.
 
 ## Services
 
-| Name | Description |
-|------|-------------|
-| HillbillyBank | Core banking service (web + backend) |
+| Name | Category | Language | Source | Description |
+|------|----------|----------|--------|-------------|
+| [`hillbilly-bank`](challenges/hillbilly-bank/) | crypto | Python | ✓ | RSA check signing (central + branch bank) |
+| [`mom-bank`](challenges/mom-bank/) | web | PHP | ✓ | Member portal (lighttpd, port 1336) |
+| [`ipa-interbank`](challenges/ipa-interbank/) | web | Ruby on Rails | ✓ | Currency exchange (mongrel, port 3000) |
+| [`ins-insurance`](challenges/ins-insurance/) | web | PHP | ✓ | Insurance purchase and claims |
+| [`atm`](challenges/atm/) | binary | Python | ✓ | ATM network service (account/balance) |
+| [`bts-travel`](challenges/bts-travel/) | binary | Python | ✓ | Travel booking service |
+| [`etj-transactions`](challenges/etj-transactions/) | binary | Python | ✓ | Transaction service |
+| [`bpt-proto`](challenges/bpt-proto/) | binary | C | binary only | Bank protocol daemon |
+| [`sts-stock`](challenges/sts-stock/) | binary | C++ | ✓ | Stock market service |
 
-VM image available: `vms/bank2006.tar.gz`
+Source code extracted from CTF VM (`bank2006.tar.gz`) via `qemu-img` + `debugfs`.
+VM image: `vms/bank2006.tar.gz`
 
 ## Data
 

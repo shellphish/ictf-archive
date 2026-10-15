@@ -1,0 +1,12 @@
+#! /usr/bin/python
+#: Stringify HTML for servlet
+
+import sys
+
+line = sys.stdin.readline()
+while line:
+  line = line.replace("\"", "\\\"").replace("\n", "")
+  print "\"" + line + "\" +"
+
+  line = sys.stdin.readline()
+

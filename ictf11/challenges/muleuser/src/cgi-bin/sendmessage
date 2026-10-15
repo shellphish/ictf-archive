@@ -1,0 +1,112 @@
+#!/usr/bin/php-cgi
+
+<?php
+require_once("/var/www/library.php");
+
+/* Checks that the user is logged in */
+if ($username == "") {
+  header("Location: http://$server_name/$login_page"); 
+  die();
+}
+
+$group = sanitize_r_data('group', $_POST);
+$subject = sanitize_r_data('subject', $_POST);
+$body = sanitize_r_data('body', $_POST);
+$submit = sanitize_r_data('submit', $_POST);
+
+myheader("Send Message");
+
+if ($submit != "") {
+  $msg = '
+<msg>
+  <time>' . date("Y-m-d H:i:s") . '</time>
+  <sender>' . $username . '</sender>
+  <group>' . $group . '</group>
+  <subject>' . $subject . '</subject>
+  <msgbody>' . $body . '</msgbody>
+</msg>
+';
+  $fname = tempnam("./messages/", "message.");
+  $fname = $fname . ':' . $username;
+  $fh = fopen($fname, "w+");
+  if ($fh == false) {
+    diefooter("Cannot save message to storage. Please contact the administrator");
+  }
+  fwrite($fh, $msg);
+  fclose($fh);
+  $barename = basename($fname);
+  app_msg("The message has been saved as $barename.");
+  app_msg('You can review the contents of the message <a href="viewmessage?msg=' . $barename . '">here</a>');
+
+  $fp = fsockopen($dispatcher, $dispatcher_port);
+  if ($fp == false) {
+    diefooter("Cannot send message to dispatcher. Please contact the administrator");
+  }
+  fwrite($fp, $msg);
+  fclose($fp);
+  app_msg("The message has been sent.");
+  myfooter("Send Message");
+
+}
+
+$st = mysqli_prepare($db, "SELECT groupname FROM groups");
+if ($st == false) {
+  $err = mysqli_error($db);
+  error_log("Database error 5558: $err");
+  diefooter("Database error 5558. Please contact the administrator.");
+}
+$rs = mysqli_stmt_execute($st);
+if ($rs == false) {
+  $err = mysqli_error($db);
+  error_log("Database error 1557: $err");
+  diefooter("Database error 1557. Please contact the administrator.");
+}
+mysqli_stmt_store_result($st);
+$numrows = mysqli_stmt_num_rows($st);
+mysqli_stmt_bind_result($st, $groupname);
+$groups = array();
+while (mysqli_stmt_fetch($st) != False) {
+  $groups[strtolower($groupname)] = $groupname;
+}
+if (count($groups) == 0) {
+  diefooter("There are no groups to be used as the destination of a message.");
+}
+ksort($groups);
+print '
+<div id="destination_group" class="input_form">
+  <form action="sendmessage" method="post" >
+    <table>
+      <tr>
+        <td class="label">Destination Group</td>
+        <td>:</td>
+        <td class="input">
+          <select id="destination_group_list" name="group">';
+foreach ($groups as $g) {
+  print '
+            <option value="' . $g .'">' . $g . '</option>
+';
+    }
+print '
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="label">Subject</td>
+        <td>:</td>
+        <td class="input"><input type="text" size="45" name="subject" value="" /></td>
+      </tr>
+      <tr>
+        <td class="label_top">Message</td>
+        <td class="label_top">:</td>
+        <td class="input">
+          <textarea rows="10" cols="40" name="body"></textarea>
+        </td>
+      </tr>
+      <tr><td class="submit" colspan="3"><input type="submit" name="submit" value="Send" /></td></tr>
+    </table>
+  </form>
+</div>
+';
+
+myfooter("Send Message");
+?>

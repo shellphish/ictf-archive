@@ -1,0 +1,16 @@
+# Initialization
+AC_INIT(libzocket, 1.0, vigna@cs.ucsb.edu)
+AM_INIT_AUTOMAKE(libzocket, 1.0)
+
+# Check for programs
+AC_PROG_CC
+AC_PROG_INSTALL
+AC_PROG_RANLIB
+
+# Check for bar lib
+AC_CHECK_LIB(mydiag, my_error, , echo "libzocket needs libmydiag in order to build"; exit 1,)
+
+
+# Output functions
+AC_CONFIG_FILES(Makefile)
+AC_OUTPUT

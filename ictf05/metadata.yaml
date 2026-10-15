@@ -26,60 +26,110 @@ results:
     in that file (~20 teams). 0ld Eur0pe won with highest combined offensive+defensive score.
 
 challenges:
+  # All 11 services. Source extracted from CTF VM (RedHat 9 VMware VMDK,
+  # ctf05-final-decrypted.tar.gz) via qemu-img + debugfs.
   - name: spamagent
     title: "Spam Agent"
-    category: web
-    description: "HTTP XML+Tcl agent executor at /~spamagent/spamagent.html; flag via store command."
+    category: pwn
+    description: >
+      C daemon implementing an XML-based agent scripting engine. POST XML with
+      <sender> credentials and <code> (Tcl-like). The `store get flag` command
+      retrieves the flag. C source available (spamagent.c 24KB, autotools package).
+      Vulnerability: code injection through <code> element.
 
   - name: spaminout
     title: "Spam In/Out Gateway"
     category: binary
-    description: "Dual-port TCP gateway (8008 in, 8009 out); SPAM-IN-SPAM-OUT header protocol."
+    description: >
+      Pair of C programs (spamin.c, spamout.c) forming a spam relay. Full source
+      recovered from the CTF VM (spaminout-1.0 autotools package). Binaries are
+      32-bit ELF ~11KB each. Source archive spaminout-1.0.tar.gz was also present
+      unencrypted on the VM.
 
   - name: ftp
     title: "FTP Service"
-    category: binary
-    description: "Anonymous FTP server; flags stored as files in /home/ftp/incoming/."
+    category: network
+    description: >
+      Custom C FTP server (ftpd.c). Anonymous login; flags stored as randomly-named
+      files in /home/ftp/incoming/ via STOR. All files in incoming/ are readable
+      by any connected user without authentication (RETR). Source code available.
 
   - name: acquire
-    title: "Acquire Relay Tracker"
+    title: "Acquire"
     category: web
-    description: "PHP CGI spam relay tracker; flag stored as 'de' field for random IPv6 address."
+    description: >
+      PHP web service for acquiring spam samples. Large PHP files (register.php,
+      search.php ~45KB each), admin panel in secured/delete.php (19KB). Direct
+      flag interface via get.php and set.php. SQL injection likely via unescaped
+      form inputs. Source code fully available.
 
   - name: museum
     title: "Spam Museum"
     category: web
-    description: "Perl CGI idea collector at /~museum/; flag stored as idea field."
+    description: >
+      Perl CGI idea collector. Three scripts: museum_search.pl (command injection:
+      system "grep -i $keyword $_" with only semicolon filtered), museum_upload.pl
+      (path traversal write via ${first}.${last} filename), museum_admin.pl
+      (hardcoded password "unbreakable" + path traversal read). Source available.
 
   - name: spammer
     title: "Spammer Daemon"
-    category: binary
-    description: "TCP daemon on port 4570 with SMTP-like protocol; flag stored as message body."
+    category: network
+    description: >
+      Python TCP network service (spammerd.py) implementing a custom binary SPAM
+      protocol using Scapy-like field descriptors. Banner: "SPAM Server Version 4.5.3
+      (Testing)". Source code available (9KB).
 
   - name: syscalld
     title: "Syscall Daemon"
-    category: binary
-    description: "TCP service on port 31337; XOR-obfuscated binary protocol; flag in memory dump."
+    category: pwn
+    description: >
+      TCP service on port 31337 acting as an interactive x86 assembly interpreter.
+      Clients send XOR-obfuscated x86 instructions; seed is in the banner (v1.0.<seed>).
+      Executes real Linux syscalls via sysenter. Flag at /usr/local/share/syscalld/flag.
+      No source recovered; binary not on VM. Full protocol documented in scoring script.
 
   - name: aqs
-    title: "AQS Guestbook"
-    category: web
-    description: "Python CGI guestbook at /~aqs/; flag stored as private comment."
+    title: "AQS (Association for Quality SPAM)"
+    category: pwn
+    description: >
+      C CGI wrapper (cprog.c) applying a rotating-additive cipher to QUERY_STRING
+      then execl-ing parser.pl (Perl). Also has Python guestbook (guestbook.py).
+      The x86 cipher in cprog adds a rotating key to each byte. Bypassing it
+      allows injecting arbitrary arguments. Source fully available.
 
   - name: contribute
     title: "Contribute"
     category: web
-    description: "Web contribution form at /~contribute/; flag stored as address field."
+    description: >
+      Python CGI accepting contributions to the Spam Museum (MySQL). SQL injection:
+      INSERT query built with Python % formatting, no escaping. Vulnerable fields:
+      name, address, cc (credit card). Hardcoded dev password ctftest visible in source.
 
   - name: spamgen
     title: "Spamgen"
     category: web
-    description: "Spam generator with HTTP form and UDP query interface; flag as uploaded text."
+    description: >
+      Python CGI spam generator using a 2nd-order Markov model. Flag stored in
+      user_db/<hash(username+"miconsenta")>. Critical vulnerability: generate action
+      reads ALL user_db/ files for Markov training — every flag leaks into generated
+      spam. myhash() is deterministic and invertible. Source fully available.
 
   - name: spamdb
     title: "SpamDB"
     category: web
-    description: "PHP XML-RPC spam database at /~spamdb/cgi-bin/server.php."
+    description: >
+      PHP XML-RPC server (server.php) using phpxmlrpc library. Methods: echotest,
+      create_account(email) → password, db_size(). Flags per-account in flat-file DB.
+      Weak/predictable password generation; PHP warning disclosure; potential XML
+      injection in 2005-era phpxmlrpc. Source fully available.
+
+  - name: spamometer
+    title: "Spamometer"
+    category: binary
+    description: >
+      Binary-only service (22KB ELF). Source encrypted (/root/spamometer-1.0.tar.gz.gpg,
+      key unknown). Binary extracted from CTF VM. Reverse engineering required.
 
 data:
   - type: other
@@ -112,6 +162,15 @@ infrastructure:
   docker:
     full_environment: false
     individual_challenges: false
+
+source:
+  # Services with source code recovered from CTF VM (ctf05-final-decrypted.tar.gz)
+  # via qemu-img + debugfs. VM is RedHat 9, single ext3 partition.
+  available: [ftp, museum, aqs, contribute, acquire, spamdb, spamgen, spamagent, spaminout, spammer]
+  binary_only: [spamometer]
+  # syscalld binary was not found on VM (service user home was empty)
+  not_recovered: [syscalld]
+  encrypted: [spaminout-1.0.tar.gz.gpg, spamometer-1.0.tar.gz.gpg, shof-servlet-src.tar.gz.gpg, spamback.tgz.gpg]
 
 resources:
   website: "https://ictf.cs.ucsb.edu/archive/2005/site"

@@ -2,22 +2,25 @@ name: "iCTF 2005 — Spam World: Acquire Relay Tracker"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: web
 description: |
-  **iCTF 2005 — The Spam World**
+  **iCTF 2005 — The Spam Museum: Acquire**
 
-  A spam relay tracking service at `/~acquire/cgi-bin/`. The scorebot registers
-  spam relays with a random IPv6 address and stores the flag as the `de`
-  (description/destination) field. Find a vulnerability to read stored relay records.
+  A PHP web service for acquiring spam samples. Users register, search the spam
+  database, and submit leads. Large PHP scripts: `register.php` and `search.php`
+  are ~45KB each, suggesting complex database interactions with likely SQL injection.
+  An admin panel (`secured/delete.php`, 19KB) provides privileged deletion.
+  `get.php` and `set.php` are the direct flag interface. Source code fully available.
 value: 0
 type: standard
 
-image: .
+image: null
 protocol: http
 flags:
     - ictf2005{acquire_pwned}
 
 topics:
-    - web exploitation
-    - CGI security
+    - PHP
+    - SQL injection
+    - authentication bypass
 
 tags:
     - web
@@ -27,7 +30,18 @@ tags:
     - historical
     - attack-defense
 
-files: []
+files:
+    - src/index.php
+    - src/register.php
+    - src/search.php
+    - src/contact.php
+    - src/get.php
+    - src/set.php
+    - src/paid_service.php
+    - src/links.php
+    - src/howto.php
+    - src/secured/delete.php
+    - src/acquireScoringScript.py
 
 state: visible
 version: "0.1"

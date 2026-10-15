@@ -2,34 +2,43 @@ name: "iCTF 2005 — Spam World: Spam Agent"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: web
 description: |
-  **iCTF 2005 — The Spam World**
+  **iCTF 2005 — The Spam Museum: Spam Agent**
 
-  A web service at `/~spamagent/spamagent.html` that executes submitted XML+Tcl
-  agent scripts. The agent format uses `<sender>` credentials and `<code>` with
-  Tcl commands; the `store` command persists key-value pairs including the flag.
-  Find a way to read other teams' stored values.
+  A C daemon implementing an XML-based agent scripting engine. POST XML to
+  `/~spamagent/spamagent.html` with `<sender>` (user/password) and `<code>`
+  (Tcl-like commands). The `store get flag` command retrieves the stored flag;
+  `results set $val` returns output. C source available (24KB, autotools package).
+  Vulnerability: code injection through `<code>` — the interpreter may allow
+  reading any user's `store` keys regardless of sender credentials.
 value: 0
 type: standard
 
-image: .
+image: null
 protocol: http
 flags:
     - ictf2005{spamagent_pwned}
 
 topics:
-    - web exploitation
-    - Tcl injection
+    - code injection
     - XML
+    - C daemon
+    - scripting engine
 
 tags:
     - web
+    - c
     - xml
-    - tcl
     - ictf2005
     - historical
     - attack-defense
 
-files: []
+files:
+    - src/spamagent.c
+    - src/configure.in
+    - src/Makefile.am
+    - src/README
+    - src/spamagent
+    - src/spamAgentScoringScript.py
 
 state: visible
 version: "0.1"

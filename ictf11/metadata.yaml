@@ -94,6 +94,14 @@ data:
       Competition website with scripts, team data, challenge descriptions,
       game state pusher documentation. Also contains iC7F11-n37.ova (network VM,
       334MB) and iC7F-l337-vu1n.7z (service VM, 772MB AES-encrypted).
+      iC7F11-n37.ova explored: Ubuntu 10.04 32-bit (ext4), VirtualBox "iC7F h4PPY
+      n3tw0Rk VM". Contains OpenVPN client config (server 128.111.48.80:1194/udp,
+      UCSB Security Lab CA), Python + pexpect + python-serial + python-twisted.
+      This is the contestant VPN client VM distributed to teams to connect to the
+      competition network. No service source code in this OVA.
+      Service VM: site/iC7F-l337-vu1n.7z (AES-encrypted 7z, 772 MB).
+      Password recovered from ctf-admin mailing list: w3_4r3_s00000000000_l337
+      Contains "iCTF 2011 Server.ova" — Ubuntu 10.10 LVM, all 10 service sources.
 
   - type: media
     path: "pictures/"

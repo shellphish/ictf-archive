@@ -6,14 +6,46 @@ description: |
 
   The Mafia offers a forgiveness service: wrongdoers can "make amends" by
   paying cash settlements to copyright holders. The service processes
-  payment agreements and generates legal letters. Find a vulnerability in
-  the PHP application and compromise the amends system.
+  payment agreements and generates legal letters (PDF and plain text).
+  Find a vulnerability in the PHP application and compromise the amends system.
+
+  ## Source (extracted from Ubuntu VM, mafia2007.vmwarevm snapshot Dec 2007)
+
+  - `src/cgi-bin/amends.php` — main CGI entrypoint
+  - `src/cgi-bin/chaching.php` — payment processing
+  - `src/cgi-bin/ltr.php` — letter generation dispatcher
+  - `src/cgi-bin/payoff.php` — payoff calculation
+  - `src/cgi-bin/settlement.php` — settlement workflow
+  - `src/php-include/cookie.php`, `dbconfig.php`, `dblogin.php`, `filter.php`, `id.php`, `pagegen.php` — shared libraries
+  - `src/ltrpdf.inc` — PDF letter template
+  - `src/ltrtxt.inc` — plain-text letter template
+  - `src/index.html` — static front page
+
 value: 0
 type: standard
 image: .
 protocol: http
+port: 80
 flags:
     - ictf2007{amends_pwned}
-tags: [web, php, ictf2007, historical]
+topics:
+    - web
+    - php
+tags: [web, php, ictf2007, historical, attack-defense]
+files:
+    - src/index.html
+    - src/ltrpdf.inc
+    - src/ltrtxt.inc
+    - src/cgi-bin/amends.php
+    - src/cgi-bin/chaching.php
+    - src/cgi-bin/ltr.php
+    - src/cgi-bin/payoff.php
+    - src/cgi-bin/settlement.php
+    - src/php-include/cookie.php
+    - src/php-include/dbconfig.php
+    - src/php-include/dblogin.php
+    - src/php-include/filter.php
+    - src/php-include/id.php
+    - src/php-include/pagegen.php
 state: visible
-version: "0.1"
+version: "0.2"
