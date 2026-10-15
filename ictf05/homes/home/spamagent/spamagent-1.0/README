@@ -1,0 +1,30 @@
+SpamAgent 1.0
+
+SpamAgent is a CGI-based mobile agent system to support evasive spamming
+though mobile code.
+
+A mobile agent is a program written in the Tcl language that can travel from
+host to host to carry out its spamming task. The agent is represented by an
+XML document that encapsulates the agent credentials, the agent code, and the
+agent data.  
+
+The migration mechanism relies on the existing Web infrastructure. That is,
+in order to start its execution, an agent submits a POST request to the agent
+system, which is a CGI program. 
+
+The generic interpreter is extended with four application-specific commands,
+namely data, results, store, and go. The "data" command is used to set and get
+the contents of an agent's items. The "results" command is used to retrieve
+and set the contents of the agent results. The "store" command is used to
+permanently store data on the host's filesystem. Finally, the "go" command
+allows an agent to dispatch a copy of itself to another server. The "go"
+command takes, as a parameter, the URL that identifies another mobile agent
+system (that is, another SpamAgent CGI script). When the "go" command is
+executed by an agent, the agent system creates a new agent representation and
+performs an HTTP POST request to that remote site.
+
+The go command blocks until the POST command terminates and eventually returns
+a result string. Note that this means that if an agents starts on host A and
+performs a go to host B, the agent on host A will have to wait until the
+"copy" on host B has finished before returning the results to whoever
+dispatched the agent on host A. 

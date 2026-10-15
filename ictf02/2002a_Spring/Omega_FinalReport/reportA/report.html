@@ -1,0 +1,876 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (X11; U; SunOS 5.8 sun4u) [Netscape]">
+   <title>CS 290I Network Security and Intrusion Detection - 
+	Omega Team Report [Group A]
+</title>
+</head>
+<body>
+
+<h2>
+Group A Report</h2>
+Group A of Omega Team was composed of:
+<ul>
+<li>
+William Robertson [syn] &lt;wkr@cs.ucsb.edu> (Leader)</li>
+
+<li>
+Thomas Pingel [javelin] &lt;pingel@geog.ucsb.edu></li>
+
+<li>
+Krishna Ramachandran [BeAtNiK] &lt;krishna@cs.ucsb.edu></li>
+
+<li>
+Viral Shah [ne0] &lt;viral@cs.ucsb.edu></li>
+
+<li>
+Nitin Solanki [snowleopard] &lt;solanki@cs.ucsb.edu></li>
+
+<li>
+Sunil Soman [NeCroMaNcer] &lt;sunils@cs.ucsb.edu></li>
+
+<li>
+Gerard Sychay [gigajiga] &lt;gerard@cs.ucsb.edu></li>
+
+<li>
+Matthew Ungerer [redF1ve] &lt;unj@cs.ucsb.edu></li>
+
+<li>
+Eric Virnig [nefarious] &lt;eric@cs.ucsb.edu></li>
+</ul>
+Group A was tasked with remotely exploiting Alpha team's defended hosts
+as well as writing network IDS rules to detect any incursions by Alpha
+into Omega's defended hosts.
+<h2>
+Mission</h2>
+Group A was reponsible for compiling a list of all known vulnerabilities
+against the expected target hosts, retrieving and modifying working exploits
+to circumvent naive network intrusion detection system rules, and provide
+a method for the flag search team to launch their search scripts on the
+target hosts.
+<p>In addition to penetrating Alpha's defended hosts, Group A was responsible
+for detecting attempted incursions against Omega's defended hosts, tailoring
+Snort to detect legitimate attacks while ignoring any spurious traffic
+launched by Alpha.
+<p>Each group member was responsible for the following:
+<br>&nbsp;
+<table BORDER=0 CELLSPACING=3 CELLPADDING=3 >
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>Thomas Pingel</td>
+
+<td ALIGN=LEFT>
+<ul>
+<li>
+Develop improved IDS rules against expected obfuscations by Alpha for miscellaneous
+exploits</li>
+</ul>
+</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>Krishna Ramachandran</td>
+
+<td ALIGN=LEFT>
+<ul>
+<li>
+Consolidate and merge IDS rules from group and prepare custom exercise
+configuration</li>
+
+<li>
+Prepare BIND and RH 7.0 LPRng exploits and improved IDS rules to counter
+them</li>
+
+<li>
+Confuse alpha's snort by using snot</li>
+
+<li>
+Parse snort logs using SnortSnarf perl script</li>
+</ul>
+</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>William Robertson</td>
+
+<td ALIGN=LEFT>
+<ul>
+<li>
+Coordinate development activities of group</li>
+
+<li>
+Develop desyncronizer targeted at snort-1.8.x and linux-2.2.x</li>
+
+<li>
+Develop generalized polymorphic assembly routines</li>
+
+<li>
+Develop alternate exploit payloads</li>
+</ul>
+</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>Viral Shah</td>
+
+<td ALIGN=LEFT>
+<ul>
+<li>
+Prepare RH 6.2 NTP exploit and improved IDS rules to counter it</li>
+</ul>
+</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>Nitin Solanki</td>
+
+<td ALIGN=LEFT>
+<ul>
+<li>
+Prepare tcpdump dns-loop and tcpdump AFS ACL exploit and IDS rules to counter
+them</li>
+</ul>
+</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>Sunil Soman</td>
+
+<td ALIGN=LEFT>
+<ul>
+<li>
+Prepare rpc.statd, wu-ftpd exploits and IDS rules to counter them</li>
+
+<li>
+Port search group's program to exploit payload</li>
+
+<li>
+Prepare spp_fnord anti-polymorphic shellcode Snort plugin</li>
+</ul>
+</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>Gerard Sychay</td>
+
+<td ALIGN=LEFT>
+<ul>
+<li>
+Prepare RH 7.0 ftp-glob exploit and IDS rules to counter it</li>
+</ul>
+</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>Matthew Ungerer</td>
+
+<td ALIGN=LEFT>
+<ul>
+<li>
+Consolidate and merge IDS rules from group and prepare custom exercise
+configuration</li>
+
+<li>
+Prepare BIND exploit and IDS rules to counter it</li>
+
+<li>
+Confuse alpha's snort by using snot</li>
+
+<li>
+Parse snort logs using SnortSnarf perl script</li>
+</ul>
+</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>Eric Virnig</td>
+
+<td ALIGN=LEFT>
+<ul>
+<li>
+Prepare rpc.statd exploit and IDS rules to counter it</li>
+
+<li>
+Prepare sendmail local root exploit</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<h2>
+Preparation</h2>
+
+<h3>
+Exercise Preparation</h3>
+To prepare for the exercise, a private testbed for Omega consisting of
+one RH 7.0 and two RH 6.2 hosts was created in order to provide a private
+testing area where Alpha members could not snoop upon Omega's development
+activities.
+<h3>
+Execution Plan</h3>
+Once the IPs and open ports of Alpha's hosts were determined by the responsible
+group, Group A planned to execute its prepared obfuscated exploits through
+a desyncronizer designed to slip them past Alpha's NIDS undetected. Once
+a machine had been compromised, the search program, which had been adapted
+to run inside the exploited process without exec()ing, was to have been
+launched. Had it failed, it was to have created a backdoor. Should this
+entire process fail, backup exploits were to be executed and the search
+program manually downloaded to the target host.
+<p>General guidelines for the attack included maintaining emissions discipline
+during the exercise in order to decrease the chances of detection, and
+some proposed tactics included launching attacks only from UML virtual
+hosts or the third attacking host provided in order to decrease the visibility
+of the defended hosts.
+<p>To detect Alpha's exploit attempts, Snort was to be deployed on the
+defended hosts, utilizing a ruleset tailored to the environment and the
+range of attacks expected to be attempted by Alpha.
+<p>Group A developed the following tools/software during preparation for
+the exercise:
+<ul>
+<li>
+Snort IDS rules (Thomas Pingel, Krishna Ramachandran, Viral Shah, Nitin
+Solanki, Sunil Soman, Gerard Sychay, Matthew Ungerer, Eric Virnig)</li>
+
+<li>
+spp_fnord polymorphic shellcode Snort plugin (Sunil Soman, Gerard Sychay,
+Krishna Ramachandran, Matthew Ungerer)</li>
+
+<li>
+BIND exploits (Krishna Ramachandran, Mathhew Ungerer)</li>
+
+<li>
+LPRng exploits (Krishna Ramachandran, others)</li>
+
+<li>
+NTP exploit (Viral Shah)</li>
+
+<li>
+tcpdump dns-loop exploit (Nitin Solanki)</li>
+
+<li>
+tcpdump AFS ACL exploit (Nitin Solanki)</li>
+
+<li>
+rpc.statd exploit (Sunil Soman, Eric Virnig)</li>
+
+<li>
+wu-ftpd exploit (Sunil Soman)</li>
+
+<li>
+ftp-glob exploit (Gerard Sychay)</li>
+
+<li>
+sendmail exploit (Eric Virnig)</li>
+
+<li>
+Snort 1.8.x / Linux 2.x desyncronizer (William Robertson)</li>
+
+<li>
+Generalized shellcode obfuscation / deobfuscation assembly routines (William
+Robertson)</li>
+
+<li>
+ext2 raw device secret.txt scanner (William Robertson)</li>
+
+<li>
+x86 assembly routines and related tools to transfer and execute code inside
+an exploited process w/o using exec() (William Robertson)</li>
+</ul>
+
+<h2>
+Execution</h2>
+Here are snort alert logs for the following machines:
+<ul>
+<li>
+RedHat 6.2 defended host (<a href="alert-6.2.log">128.111.43.98</a>)</li>
+
+<li>
+RedHat 7.0 defended host (<a href="alert-7.0.log">128.111.43.91</a>)</li>
+
+<li>
+Attacker host (<a href="alert-attacker.log">128.111.49.90</a>)</li>
+</ul>
+
+<table BORDER=0 CELLSPACING=0 CELLPADDING=3 >
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1601_thomas.txt">16:01</a></td>
+
+<td ALIGN=CENTER>Thomas</td>
+
+<td ALIGN=LEFT>Detected scan to <tt>lockd</tt> port on 128.111.43.98 from
+128.111.49.20:4560&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1602_william.txt">16:02</a></td>
+
+<td ALIGN=CENTER>William</td>
+
+<td ALIGN=LEFT><tt>wu-search</tt> (modified polymorphic wuftpd-god exploit
+with net bootstrap/flag search payload) launched against 128.111.49.11,
+connection reset&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1603_william.txt">16:03</a></td>
+
+<td ALIGN=CENTER>William</td>
+
+<td ALIGN=LEFT><tt>wu-search</tt> launched against 128.111.49.17, connection
+reset&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1604_sunil.txt">16:04</a></td>
+
+<td ALIGN=CENTER>Sunil</td>
+
+<td ALIGN=LEFT><tt>rpc.statd</tt> exploit launched against 128.111.49.17,
+failed&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1604.1_sunil.txt">16:04</a></td>
+
+<td ALIGN=CENTER>Sunil</td>
+
+<td ALIGN=LEFT><tt>wuftpd</tt> exploit launched against 128.111.49.17,
+failed&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>16:05</td>
+
+<td ALIGN=CENTER>Krishna</td>
+
+<td ALIGN=LEFT><tt>snot</tt> attack launched against 128.111.49.11. Logs
+not generated as snot uses random times to send packets.&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1605_sunil.txt">16:05</a></td>
+
+<td ALIGN=CENTER>Sunil</td>
+
+<td ALIGN=LEFT><tt>wuftpd</tt> exploit launched against 128.111.49.11,
+successful&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1605_thomas.txt">16:05</a></td>
+
+<td ALIGN=CENTER>Thomas</td>
+
+<td ALIGN=LEFT>Detected <tt>wuftpd</tt> exploit against 128.111.43.98,
+failed&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1606_sunil.txt">16:06</a></td>
+
+<td ALIGN=CENTER>Sunil</td>
+
+<td ALIGN=LEFT><tt>/etc/passwd</tt> file retrieved from 128.111.49.11 and
+processed by John the Ripper, following user accounts compromised:&nbsp;
+<ul>
+<li>
+<tt>manju:manju123</tt></li>
+
+<li>
+<tt>johndoe:cricketi</tt></li>
+
+<li>
+<tt>hndoe:cricketi</tt></li>
+</ul>
+</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1606_thomas.txt">16:06</a></td>
+
+<td ALIGN=CENTER>Thomas</td>
+
+<td ALIGN=LEFT>Detected <tt>wuftpd</tt> exploit against 128.111.43.98,
+failed&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1607_thomas.txt">16:07</a></td>
+
+<td ALIGN=CENTER>Thomas</td>
+
+<td ALIGN=LEFT>Detected bogus FTP commands directed at 128.111.43.98 without
+preceding 3-way handshake, probably intended to determine if FTP server
+up after previous failed exploits&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>16:10</td>
+
+<td ALIGN=CENTER>Krishna</td>
+
+<td ALIGN=LEFT><tt>snot</tt> attack stopped against 128.111.49.11, launched
+against 128.111.49.17&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1610_william.txt">16:10</a></td>
+
+<td ALIGN=CENTER>William</td>
+
+<td ALIGN=LEFT>Remote FTP to 128.111.49.11 as user <tt>johndoe</tt>, search
+program uploaded&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1611_sunil.txt">16:11</a></td>
+
+<td ALIGN=CENTER>Sunil</td>
+
+<td ALIGN=LEFT>Uploaded search program setuid root by exploit root shell&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1611_william.txt">16:11</a></td>
+
+<td ALIGN=CENTER>William</td>
+
+<td ALIGN=LEFT>Remote telnet to 128.111.49.11 as user <tt>johndoe</tt>,
+search program executed with root permissions&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1612_william.txt">16:12</a></td>
+
+<td ALIGN=CENTER>William</td>
+
+<td ALIGN=LEFT>Attempted to login over ssh to 128.111.49.17 with cracked
+user accounts from 128.111.47.11, failed&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1613_krishna.txt">16:13</a></td>
+
+<td ALIGN=CENTER>Krishna</td>
+
+<td ALIGN=LEFT>Stopped <tt>snot</tt> attack against 128.111.49.17, launched
+<tt>LPRng</tt> attack on 128.111.49.17, failed with socket open error&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1616_thomas.txt">16:16</a></td>
+
+<td ALIGN=CENTER>Thomas</td>
+
+<td ALIGN=LEFT>Detected FTP logins into 128.111.43.98, immediate connection
+reset, probably to check server status, or perhaps canceled <tt>wuftpd</tt>
+exploit&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1616.1_thomas.txt">16:16</a></td>
+
+<td ALIGN=CENTER>Thomas</td>
+
+<td ALIGN=LEFT>Detected attempted <tt>wuftpd</tt> exploit against 128.111.43.98,
+failed&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1617_thomas.txt">16:17</a></td>
+
+<td ALIGN=CENTER>Thomas</td>
+
+<td ALIGN=LEFT>Detected more bogus FTP commands directed at 128.111.43.98
+without 3-way handshake, probably scans to determine status of server&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1617.1_thomas.txt">16:17</a></td>
+
+<td ALIGN=CENTER>Thomas</td>
+
+<td ALIGN=LEFT>Detected successful <tt>wuftpd</tt> exploit against 128.111.43.98,
+<tt>slacker</tt> account created with UID 1 (oops ;-) ) and <tt>flbrt</tt>
+account created with UID 0, <tt>/etc/passwd</tt> file retrieved&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1618_thomas.txt">16:18</a></td>
+
+<td ALIGN=CENTER>Thomas</td>
+
+<td ALIGN=LEFT>Detected attempted upload of <tt>evil6.2</tt> flag search
+script as user <tt>slacker</tt> to 128.111.43.98, failed due to insufficient
+permissions&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1620_thomas.txt">16:20</a></td>
+
+<td ALIGN=CENTER>Thomas</td>
+
+<td ALIGN=LEFT>Detected another attempted upload of <tt>evil6.2</tt> flag
+search script as user <tt>slacker</tt> to 128.111.43.98, failed again due
+to insufficient permissions&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1621_thomas.txt">16:21</a></td>
+
+<td ALIGN=CENTER>Thomas</td>
+
+<td ALIGN=LEFT>Detected FTP login to 128.111.43.98, again to test server
+status&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1621.1_thomas.txt">16:21</a></td>
+
+<td ALIGN=CENTER>Thomas</td>
+
+<td ALIGN=LEFT>Detected successful upload (finally) of <tt>evil6.2</tt>
+flag search script as user <tt>flbrt</tt> to 128.111.43.98&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>16:23</td>
+
+<td ALIGN=CENTER>UNKNOWN</td>
+
+<td ALIGN=LEFT><tt>LPRng</tt> format string exploit launched against 128.111.49.17&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>16:23</td>
+
+<td ALIGN=CENTER>UNKNOWN</td>
+
+<td ALIGN=LEFT>Telnet to 128.111.49.17 port 515 in attempt to determine
+if <tt>lpd</tt> service available&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1623_thomas.txt">16:23</a></td>
+
+<td ALIGN=CENTER>Thomas</td>
+
+<td ALIGN=LEFT>Detected successful upload of <tt>evil_omega</tt> flag search
+script as user <tt>flbrt</tt> to 128.111.43.98&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>16:24</td>
+
+<td ALIGN=CENTER>Krishna</td>
+
+<td ALIGN=LEFT><tt>snot</tt> launched against 128.111.49.11&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1624_matt.txt">16:24</a></td>
+
+<td ALIGN=CENTER>Matt</td>
+
+<td ALIGN=LEFT>Detected <tt>LPRng</tt> exploit attempt against 128.111.43.91
+from 128.111.49.20, failed&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1624.1_matt.txt">16:24</a></td>
+
+<td ALIGN=CENTER>Matt</td>
+
+<td ALIGN=LEFT>Detected <tt>LPRng</tt> exploit attempt against 128.111.43.91
+from 128.111.49.20, failed again&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1624.2_matt.txt">16:24</a></td>
+
+<td ALIGN=CENTER>Matt</td>
+
+<td ALIGN=LEFT>Detected <tt>LPRng</tt> exploit attempt against 128.111.43.91
+from 128.111.49.20, failed again&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1624.3_matt.txt">16:24</a></td>
+
+<td ALIGN=CENTER>Matt</td>
+
+<td ALIGN=LEFT>Detected <tt>LPRng</tt> exploit attempt against 128.111.43.91
+from 128.111.49.20, failed again&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1624.4_matt.txt">16:24</a></td>
+
+<td ALIGN=CENTER>Matt</td>
+
+<td ALIGN=LEFT>Detected <tt>LPRng</tt> exploit attempt against 128.111.43.91
+from 128.111.49.20, failed again&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1624.5_matt.txt">16:24</a></td>
+
+<td ALIGN=CENTER>Matt</td>
+
+<td ALIGN=LEFT>Detected <tt>LPRng</tt> exploit attempt against 128.111.43.91
+from 128.111.49.20, failed again&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1624.6_matt.txt">16:24</a></td>
+
+<td ALIGN=CENTER>Matt</td>
+
+<td ALIGN=LEFT>Detected more than 1400 more failed <tt>LPRng</tt> exploit
+attempts against 128.111.43.91 from 128.111.49.20. There are thousands
+of failed exploit attempts against other services, including IIS, that
+we frankly have neither the time nor space to include in this report. We
+conclude that Alpha used Nessus to blindly flood/attack the network.&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>16:26</td>
+
+<td ALIGN=CENTER>Krishna</td>
+
+<td ALIGN=LEFT><tt>snot</tt> stopped against 128.111.49.11, launched against
+128.111.49.17&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>16:30</td>
+
+<td ALIGN=CENTER>Krishna</td>
+
+<td ALIGN=LEFT><tt>snot</tt> stopped against 128.111.49.17&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1632_sunil.txt">16:32</a></td>
+
+<td ALIGN=CENTER>Sunil</td>
+
+<td ALIGN=LEFT>FTP to 128.111.49.17, attempt to retrieve system password
+file&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1634_matt.txt">16:34</a></td>
+
+<td ALIGN=CENTER>Matt</td>
+
+<td ALIGN=LEFT>Detected first extended SSH session from 128.111.49.138
+to 128.111.43.91, deduce that Alpha cracked the <tt>/etc/passwd</tt> file
+from 128.111.43.98 and used the root password to log in to 128.111.43.91
+remotely over SSH. This cannot be determined conclusively due to the encrypted
+nature of SSH sessions.&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1634_sunil.txt">16:34</a></td>
+
+<td ALIGN=CENTER>Sunil</td>
+
+<td ALIGN=LEFT>Uploaded <tt>modutils</tt> local root exploit to 128.111.49.11
+as user <tt>manju</tt>, telnet to 128.111.49.11 as user <tt>manju</tt>,
+attempted to exploit modutils, failed&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1640_sunil.txt">16:40</a></td>
+
+<td ALIGN=CENTER>Sunil</td>
+
+<td ALIGN=LEFT>Account added to 128.111.49.11 with UID 0 (master)&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>16:41</td>
+
+<td ALIGN=CENTER>UNKNOWN</td>
+
+<td ALIGN=LEFT><tt>find</tt> utility executed on 128.111.49.11&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>16:45</td>
+
+<td ALIGN=CENTER>Krishna</td>
+
+<td ALIGN=LEFT><tt>snot</tt> started against 128.111.49.11&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>16:46</td>
+
+<td ALIGN=CENTER>Matt</td>
+
+<td ALIGN=LEFT>Attempt to exploit <tt>LPRng</tt> on 128.111.49.17 <tt>SEClpd</tt></td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>16:49</td>
+
+<td ALIGN=CENTER>UNKNOWN</td>
+
+<td ALIGN=LEFT><tt>updatedb</tt> utility executed on 128.111.49.11&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>16:50</td>
+
+<td ALIGN=CENTER>UNKNOWN</td>
+
+<td ALIGN=LEFT>Attempt to exploit <tt>LPRng</tt> on 128.111.49.17 using
+exploit <tt>LPRng-3.6.24-1</tt></td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1649_krishna.txt">16:49</a></td>
+
+<td ALIGN=CENTER>Krishna</td>
+
+<td ALIGN=LEFT>Retried <tt>LPRng</tt> attack against 128.111.49.17, failed&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1705_krishna.txt">17:05</a></td>
+
+<td ALIGN=CENTER>Krishna</td>
+
+<td ALIGN=LEFT>Tried different version of <tt>LPRng</tt> attack against
+128.111.49.17, logged attack with <tt>tcpdump</tt> to diagnose connection
+resets. Log file shows the problem clearly. FIN packets are sent from 128.111.43.90
+to the attacked host.&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>17:08</td>
+
+<td ALIGN=CENTER>UNKNOWN</td>
+
+<td ALIGN=LEFT>Attempted to execute <tt>evil6-2</tt> search program&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1708_krishna.txt">17:08</a></td>
+
+<td ALIGN=CENTER>Krishna</td>
+
+<td ALIGN=LEFT><tt>LPRng</tt> attack failed again. Deduced that <tt>LPRng</tt>
+failed because 128.111.43.90 (Omega attacker host) was doing premature
+termination of TCP connections by sending FIN/RST packets after 3-way handshake.
+Log file shows Omega attacker host sending RST packets.&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>17:10</td>
+
+<td ALIGN=CENTER>Matt</td>
+
+<td ALIGN=LEFT>Attempt to exploit <tt>LPRng</tt> on 128.111.49.17 using
+<tt>SEClpd</tt> from Alpha's RH 6.2 host&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>17:15</td>
+
+<td ALIGN=CENTER>Krishna</td>
+
+<td ALIGN=LEFT>Asked confuser team to cease activity to debug problem,
+re-ran <tt>LPRng</tt> exploit against 128.111.49.17, failed. <tt>tcpdump</tt>
+logs confirm FIN packets from 128.111.43.90 prematurely closing connections,
+no consensus on whether problem caused by UML or not in discussions with
+Imran and team.&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT><a href="1720_sunil.txt">17:20</a></td>
+
+<td ALIGN=CENTER>Sunil</td>
+
+<td ALIGN=LEFT>Retried <tt>wuftpd</tt> exploit against 128.111.49.17&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>17:29</td>
+
+<td ALIGN=CENTER>Krishna</td>
+
+<td ALIGN=LEFT>Attempting to launch <tt>LPRng</tt> exploit from defended
+RH 6.2 and RH 7.0 hosts&nbsp;</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td ALIGN=RIGHT>17:30</td>
+
+<td ALIGN=CENTER>Krishna</td>
+
+<td ALIGN=LEFT>Unable to remotely log into defended hosts, unable to launch
+attack from console, <tt>LPRng</tt> exploit launched by Matthew (unj@cs)
+from defended RH 6.2 host killed.&nbsp;</td>
+</tr>
+</table>
+
+<h2>
+Evaluation</h2>
+Group A did not perform as well as it potentially could have. Based on
+informal discussions with several Alpha team members, the tools developed
+by the group for the exercise would have allowed Group A to penetrate Alpha's
+RH 6.2 machine virtually undetected had several factors not prevented the
+group from satisfactorily setting up their attack tools. Regardless, the
+group was able to compromise Alpha's RH 6.2 host with standard, easily
+detectable exploits. The failure of Group A to penetrate Alpha's RH 7.0
+host, however, was ultimately due to having come to the conclusion that
+it would not be breakable, without considering strongly enough the possibility
+that its services might be downgraded. The vulnerabilities were well researched,
+but the tools were not readily available when it became obvious that they
+were needed.
+<p>In hindsight, much could have been improved in both the preparation
+and execution stages. Too much time was spent on developing and not enough
+on the actual attack procedure, which prevented the group from performing
+as efficiently as it could have otherwise.
+<p>Another area ripe for vast improvements was that of group communication
+and interaction. Omega acted during preparation for the exercise as four
+separate cells, each acting independently despite the efforts of the team
+leader to foster communication between the groups. Had the groups cooperated
+earlier during the development process, much time would not have been wasted
+revising tools to integrate well with the rest of the team.
+<p>The only substantial criticism of the exercise itself that one could
+make is that there was not enough time to prepare. Perhaps this should
+have been recognized and the KISS principle applied a bit more strongly.
+Otherwise, the exercise was extremely fun to prepare for and itself nothing
+if not a learning experience to remember.
+<h2>
+Miscellaneous</h2>
+Group A wishes to thank the rest of Omega for working incredibly hard to
+prepare for this exercise, as well as Professor Vigna for making it possible.
+<p>The snort logs (parsed to HTML using the SnortSnarf perl script) can
+be seen at
+<a href="http://68.6.63.181:63181/omega/">http://68.6.63.181:63181/omega/</a>
+<h2>
+References</h2>
+Exploits:
+<ul>
+<li>
+<a href="http://online.securityfocus.com/bid/keyword/">SecurityFocus Vulnerability
+DB</a></li>
+
+<li>
+<a href="http://www.redhat.com/apps/support/errata/">RedHat Errata</a></li>
+</ul>
+Miscellaneous:
+<ul>
+<li>
+<a href="http://www.phrack.com/show.php?p=49&a=14">Smashing the Stack for
+Fun and Profit</a></li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,961 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=GB2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./Blue%20Team%20Report.files/filelist.xml">
+<title>Blue Team Report</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>wenye</o:Author>
+  <o:LastAuthor>WY</o:LastAuthor>
+  <o:Revision>4</o:Revision>
+  <o:TotalTime>23</o:TotalTime>
+  <o:LastPrinted>2001-03-14T05:50:00Z</o:LastPrinted>
+  <o:Created>2001-03-14T07:30:00Z</o:Created>
+  <o:LastSaved>2001-03-14T07:34:00Z</o:LastSaved>
+  <o:Pages>5</o:Pages>
+  <o:Words>1529</o:Words>
+  <o:Characters>8720</o:Characters>
+  <o:Company>COE, UCSB</o:Company>
+  <o:Lines>72</o:Lines>
+  <o:Paragraphs>17</o:Paragraphs>
+  <o:CharactersWithSpaces>10708</o:CharactersWithSpaces>
+  <o:Version>9.2812</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	line-height:150%;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;}
+h1
+	{mso-style-next:正文;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	line-height:150%;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-font-kerning:0pt;
+	font-weight:normal;}
+h2
+	{mso-style-next:正文;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	line-height:150%;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;}
+h3
+	{mso-style-next:正文;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	line-height:150%;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:20.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;}
+h4
+	{mso-style-next:正文;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	line-height:150%;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	line-height:150%;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:150%;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;}
+p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	margin-bottom:.0001pt;
+	line-height:150%;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:宋体;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+@page Section1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:838616697;
+	mso-list-type:simple;
+	mso-list-template-ids:67698703;}
+@list l0:level1
+	{mso-level-tab-stop:21.0pt;
+	mso-level-number-position:left;
+	margin-left:21.0pt;
+	text-indent:-21.0pt;}
+@list l1
+	{mso-list-id:1455442247;
+	mso-list-type:simple;
+	mso-list-template-ids:-74031424;}
+@list l1:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:\F06E;
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l2
+	{mso-list-id:1561553045;
+	mso-list-type:simple;
+	mso-list-template-ids:67698711;}
+@list l2:level1
+	{mso-level-number-format:alpha-lower;
+	mso-level-text:"%1\)";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;}
+@list l3
+	{mso-list-id:1773891352;
+	mso-list-type:simple;
+	mso-list-template-ids:1717335614;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F06E;
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l4
+	{mso-list-id:2144304325;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1028090334 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l4:level1
+	{mso-level-tab-stop:21.0pt;
+	mso-level-number-position:left;
+	margin-left:21.0pt;
+	text-indent:-21.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+</head>
+
+<body lang=ZH-CN link=blue vlink=purple style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<h3><span lang=EN-US style='font-family:Arial'>Blue Team Report<o:p></o:p></span></h3>
+
+<h4><span lang=EN-US style='font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></h4>
+
+<h4><span lang=EN-US style='font-family:Arial'>Our Subteam<o:p></o:p></span></h4>
+
+<h1><span lang=EN-US style='font-family:Arial'>We are part of the <span
+style='color:blue'>blue team</span> responsible for protecting host <span
+style='color:red'>leone.cs.ucsb.edu</span><o:p></o:p></span></h1>
+
+<p class=MsoBodyText><span lang=EN-US style='font-family:Arial'>We have the
+following group members:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo4;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>Wen, Ye (Group leader, email: <a
+href="mailto:wenye@cs"><span style='font-size:10.0pt'>wenye@cs</span></a>
+handle: wizard)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo4;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>Su, Chur Li (email: <a href="mailto:hugh1su@cs"><span
+style='font-size:10.0pt'>hugh1su@cs</span></a> handle: speed999)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo4;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>Zhou, Pin (email: <a href="mailto:zhp@cs"><span
+style='font-size:10.0pt'>zhp@cs</span></a> handle: zhp123)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo4;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>Lu, Peiyan (email: <a href="mailto:pylu@cs"><span
+style='font-size:10.0pt'>pylu@cs</span></a> handle: yiya)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo4;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>Cai, Tao (email: TBA handle: tomcl)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>During this exercise, we mainly aim at achieving the
+following two goals:<span style="mso-spacerun: yes">&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>To protect our secret flag file from unauthorized
+users<span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>To detect illegal behaviors <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1><b style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:
+14.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Mission<o:p></o:p></span></b></h1>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>Our final goal is to protect the secret flags from
+illegal access and to record all malicious behaviors on our local host. To
+achieve this goal, we mainly focus on the following tasks:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>Building “confusing” file structures to protect
+secret information <span style='color:blue'>(Zhou and Wen)</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>Building control environment to reduce malicious
+attack and enhance monitoring, including honey pots setups. <span
+style='color:blue'>(Cai, Su and Lu)</span> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>Detecting malicious attacks. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>A. file
+monitoring <span style='color:blue'>(Wen, Zhou)</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>B. process
+monitor <span style='color:blue'>(Wen, Zhou and Cai)</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>C. network
+monitor <span style='color:blue'>(Su and Lu)</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>D. user
+monitor <span style='color:blue'>(Su and Lu)</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'><span
+style="mso-spacerun: yes">&nbsp; </span><o:p></o:p></span></p>
+
+<h2><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial'>Preparation<o:p></o:p></span></h2>
+
+<p class=MsoBodyText><span lang=EN-US style='font-family:Arial'>We have done
+the following planning prior to the exercise. Responsibilities are listed
+within the parentheses:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Information
+hiding<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>In order
+to achieve information hiding, we have planned the following:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-21.0pt;mso-list:l0 level1 lfo2;
+tab-stops:list 21.0pt 36.0pt'><![if !supportLists]><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>Designing multilevel file hierarchy <span
+style='color:blue'>(Zhou and Wen)</span><o:p></o:p></span></p>
+
+<p class=MsoBodyTextIndent2><span lang=EN-US>We designed a file structure to
+prevent non-authorized users to find the secret flag easily. This is done by
+building extremely deep hierarchical directory structure with long file names.
+The effect of such operations causes errors in executions of common utilities,
+such as grep/egrep/find. This method effectively prevents intruder from gaining
+access of critical information. The building process is done by a specially
+designed C program “gentree”.<span style="mso-spacerun: yes">&nbsp; </span></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-21.0pt;mso-list:l0 level1 lfo2;
+tab-stops:list 21.0pt 36.0pt'><![if !supportLists]><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>Allowing legitimate super-user from retrieving
+critical information <span style='color:blue'>(Zhou)</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Special C
+program “puttarget”is written to allow legitimate users to perform find
+operation to the critical information. <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Intrusion
+detection <o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>We have <i>installed</i>
+the following intrusion detection tools to monitor the host activities: <span
+style='color:blue'>(Lu)</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 54.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+Wingdings;mso-bidi-font-family:Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>Hunt <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 54.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+Wingdings;mso-bidi-font-family:Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>Log-Check<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 54.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+Wingdings;mso-bidi-font-family:Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>Port-Sentry<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 54.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>Snort</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><i><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Normal
+users are placed</span></i><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'> in a more controlled environment for monitoring
+purposes. We have automatically built special bin directory for each user.
+Appropriate versions of UNIX commands (some of these commands are modified or
+replaced by shell scripts) are placed in these bin directories. These commands
+“somehow fail” when a user is attempting to access secret information via these
+commands. The automated building process is handled by a shell script called
+mkddd. <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><i><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Shell
+scripts/programs</span></i><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'> are written to replace the common UNIX process/file
+related commands to help recording user activities. The following commands are
+modified: <span style='color:blue'>(Su)</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1'><![if !supportLists]><span
+lang=EN-US style='font-family:Wingdings;mso-bidi-font-family:Arial'>n<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><span
+lang=EN-US style='font-family:Arial'>Ps<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='font-family:Arial'>Root processes are not displayed for non-guard users.
+The login of the user is recorded in a log file.<span style="mso-spacerun:
+yes">&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+Wingdings;mso-bidi-font-family:Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>Which<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='font-family:Arial'>Rather than displaying the location of the user
+commands, it displays the location of the supposed normal UNIX command. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+Wingdings;mso-bidi-font-family:Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>W<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='font-family:Arial'>For non-guard users, sensitive information is not
+displayed. The login of such user is recorded in a log file. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+Wingdings;mso-bidi-font-family:Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>Lsof<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='font-family:Arial'>For guard users, lsof directly calls the corresponding
+UNIX commands. For nonguard users, the login of the users will be kept in a log
+files. Sensitive system</span><span lang=EN-US style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial'> files are not displayed. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+Wingdings;mso-bidi-font-family:Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>Top<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='font-family:Arial'>Keep track of non-guard users which access this
+command in a log file.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><i><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>New
+program/scripts</span></i><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'> are written to report suspicious user processes.
+Unusual file accesses are recorded. We have the following scripts/program:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+Wingdings;mso-bidi-font-family:Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>Chkps <span
+style='color:blue'>(Wen)</span><o:p></o:p></span></p>
+
+<p class=MsoBodyTextIndent><span lang=EN-US style='font-family:Arial'>Match
+suspicious commands/open files appeared in non-guard user processes. Detail
+reports are recorded in log files as well as displaying in blue team terminals.
+<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+Wingdings;mso-bidi-font-family:Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>Guard <span
+style='color:blue'>(Su and Cai)</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Arial'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Check
+all files opened by users, pay special attention to sensitive system files
+opened by non-guard users, storing such information in a specified log file.
+Continuos display unusual events for monitoring. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+Wingdings;mso-bidi-font-family:Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>PIDS <span
+style='color:blue'>(Wen and Zhou)</span><o:p></o:p></span></p>
+
+<p class=MsoBodyTextIndent><span lang=EN-US style='font-family:Arial'>A
+comprehensive IDS detection system designed by ourselves (which is also the
+project for this course) is employed to handle the tasks such as port scan, arp
+spoofing, log checking, and user monitor<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h2><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial'>Execution<o:p></o:p></span></h2>
+
+<p class=MsoNormal style='text-indent:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>During the
+exercise, we mainly focus on monitoring the following aspects:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l2 level1 lfo3;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>File monitor<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Started
+PIDS; <span style='color:blue'>(Wen)</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Started
+LogCheck; <span style='color:blue'>(Zhou)</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Periodically
+using scripts (chkps and lsof) to check the open file access. <span
+style='color:blue'>(Wen and Zhou)</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Periodically
+checking the PIDS log file to check the access to sensitive system files, such
+as /etc/passwd and some commands (grep, find, etc.) <span style='color:blue'>(Wen
+and Zhou)</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l2 level1 lfo3;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>b)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>Process monitor<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Periodically
+using chkps to scan the process lists to check the suspicious process. <span
+style='color:blue'>(Wen)</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l2 level1 lfo3;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>c)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>Network monitor<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Started
+HUNT; <span style='color:blue'>(Su)</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Periodically
+check HUNT for telnet connection and watching some connections; <span
+style='color:blue'>(Su and Cai)</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Periodically
+executing NetStat to monitor the network connections to check vulnerable
+services; <span style='color:blue'>(Su and Cai)</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Detect
+various port scans using “PIDS”/Snort. (Ping scan / UDP scan / TCP SYN scan /TCP
+FIN scan, etc). <span style='color:blue'>(Lu)</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l2 level1 lfo3;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>d)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>User monitor<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>“PIDS’ are
+used interactively to monitor non-guard users. Logs are created upon non-guard
+user logins. Operators <span style='color:blue'>(Su and Lu)</span> report
+suspicious behaviors. <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h2><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial'>Evaluation<o:p></o:p></span></h2>
+
+<p class=MsoBodyText><span lang=EN-US style='font-family:Arial'>The main goal
+of protecting the secret flag is accomplished (with the regret that our host is
+down for certain amount of time). Illegal operations by red team are recorded
+during the exercises. Our team members are aware of certain attacks to our
+host. However, root control is lost during the end of the war.<span
+style="mso-spacerun: yes">&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Successful
+detection <o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-indent:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Various
+Port scans are detected even during the early phase of the exercise. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>##PIDS logs<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>Mar 13 14:23:35 leone wids[2270]:
+URGENT@PortGuard@128.111.048.019@Tue Mar 13 14:23:35 2001@TCP XMAS SCAN
+ATTACK,FROM Tue Mar 13 14:22:51 2001 TO Tue Mar 13 14:23:35 2001,TILL NOW 129
+PORTS SCANED <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>Mar 13 14:23:49 leone wids[2270]:
+URGENT@PortGuard@128.111.048.019@Tue Mar 13 14:23:49 2001@TCP SYN SCAN
+ATTACK,FROM Tue Mar 13 14:23:06 2001 TO Tue Mar 13 14:23:49 2001,TILL NOW 129
+PORTS SCANED <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>Mar 13 14:24:20 leone wids[2270]:
+URGENT@PortGuard@128.111.048.019@Tue Mar 13 14:24:20 2001@TCP XMAS SCAN
+ATTACK,FROM Tue Mar 13 14:22:51 2001 TO Tue Mar 13 14:24:20 2001,TILL NOW 258
+PORTS SCANED <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>Mar 13 14:24:21 leone wids[2270]:
+URGENT@PortGuard@128.111.048.019@Tue Mar 13 14:24:21 2001@TCP SYN SCAN
+ATTACK,FROM Tue Mar 13 14:23:06 2001 TO Tue Mar 13 14:24:21 2001,TILL NOW 258
+PORTS SCANED <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>Mar 13 14:24:43 leone wids[2270]:
+URGENT@PortGuard@128.111.048.019@Tue Mar 13 14:24:43 2001@TCP SYN SCAN
+ATTACK,FROM Tue Mar 13 14:23:06 2001 TO Tue Mar 13 14:24:43 2001,TILL NOW 387
+PORTS SCANED <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>Mar 13 14:25:05 leone wids[2270]:
+URGENT@PortGuard@128.111.048.019@Tue Mar 13 14:25:05 2001@TCP XMAS SCAN
+ATTACK,FROM Tue Mar 13 14:22:51 2001 TO Tue Mar 13 14:25:05 2001,TILL NOW 387
+PORTS SCANED <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>Mar 13 14:25:51 leone wids[2270]:
+URGENT@PortGuard@128.111.048.019@Tue Mar 13 14:25:51 2001@TCP XMAS SCAN
+ATTACK,FROM Tue Mar 13 14:22:51 2001 TO Tue Mar 13 14:25:51 2001,TILL NOW 516
+PORTS SCANED <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>Mar 13 14:26:11 leone wids[2270]: URGENT@PortGuard@128.111.048.019@Tue
+Mar 13 14:26:11 2001@TCP SYN SCAN ATTACK,FROM Tue Mar 13 14:23:06 2001 TO Tue
+Mar 13 14:26:11 2001,TILL NOW 774 PORTS SCANED <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>Mar 13 14:26:36 leone wids[2270]:
+URGENT@PortGuard@128.111.048.019@Tue Mar 13 14:26:36 2001@TCP XMAS SCAN
+ATTACK,FROM Tue Mar 13 14:22:51 2001 TO Tue Mar 13 14:26:36 2001,TILL NOW 645
+PORTS SCANED <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoBodyTextIndent2><span lang=EN-US style='mso-bidi-font-weight:bold'>Suspicious
+login attempts from non-guard users are carefully recorded. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>##PIDS logs<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>Mar 13 14:22:50 leone wids[2268]:
+WARNING@LogGuard@LOCAL HOST@Tue Mar 13 14:22:50 2001@SUSPICIOUS ATTACK FROM
+LOG, Mar 12 21:24:03 leone login[1072]: FAILED LOGIN 1 FROM bird FOR intruder,
+Authentication failure<span style="mso-spacerun: yes">&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoBodyTextIndent2><span lang=EN-US style='mso-bidi-font-weight:bold'>Buffer-overflow
+attacks are detected. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>tcp<span style="mso-spacerun:
+yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>0<span
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>0
+128.111.54.21:ftp<span style="mso-spacerun:
+yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>128.111.54.157:1082<span
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>FIN_WAIT2<span
+style="mso-spacerun: yes">&nbsp;&nbsp; </span>#netstat<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>##PIDS logs<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>Mar 13 14:52:05 leone wids[788]:
+WARNING@LogGuard@LOCAL HOST@Tue Mar 13 14:52:05 2001@TOO LONG LOG LINE,
+&quot;Mar 13 22:52:05 leone ftpd[997]&quot; <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>Mar 13 14:53:17 leone wids[788]:
+WARNING@LogGuard@LOCAL HOST@Tue Mar 13 14:53:17 2001@TOO LONG LOG LINE,
+&quot;Mar 13 22:53:12 leone ftpd[1029&quot; <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>Mar 13 14:53:17 leone wids[788]:
+WARNING@LogGuard@LOCAL HOST@Tue Mar 13 14:53:17 2001@TOO LONG LOG LINE,
+&quot;Mar 13 22:53:12 leone ftpd[1029&quot; <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>Mar 13 14:54:24 leone wids[788]:
+WARNING@LogGuard@LOCAL HOST@Tue Mar 13 14:54:24 2001@TOO LONG LOG LINE,
+&quot;Mar 13 22:54:21 leone ftpd[1048&quot; <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoBodyTextIndent2><span lang=EN-US style='mso-bidi-font-weight:bold'>Successful
+break-in of some intruder:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:18.0pt'><span lang=EN-US
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-fareast-language:
+EN-US;layout-grid-mode:line'>games<span style="mso-spacerun:
+yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>1185<span style="mso-spacerun: yes">&nbsp;
+</span>0.0<span style="mso-spacerun: yes">&nbsp; </span>1.4<span
+style="mso-spacerun: yes">&nbsp; </span>1696<span style="mso-spacerun:
+yes">&nbsp; </span>936 pts/7<span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+</span>S<span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>14:59<span
+style="mso-spacerun: yes">&nbsp;&nbsp; </span>0:00 –sh<span style='mso-tab-count:
+1'>&nbsp;&nbsp; </span>#ps display<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Effective
+protection of secret information<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Illegal
+attackers were unable to retrieve the secret flag even after they finally broke
+into the system.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial'>Possible
+improvement of the exercise<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>Enhance correlation with the network subgroup to
+defend the known attacks<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>Change configurations such as IP and honey pot user
+accounts<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h2><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial'>Miscellaneous<o:p></o:p></span></h2>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>Special circumstance we deal with during the
+exercise:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>Extensively scans are encountered during the early
+phase of the exercises. Our host is bought down by this “effective” (illegal)
+denial-of-service attack. Kernel of the system is crashed (superblock is
+crupted, “great attack!”).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Wingdings;mso-bidi-font-family:
+Arial'>n<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'>We encounter root-password changed during the
+exercises, our regular accesses are abort sometime during the war.
+(Fortunately, the flag is kept safe, yeah!)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h2><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial'>References<o:p></o:p></span></h2>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l4 level1 lfo5;
+tab-stops:list 21.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+Arial'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>Intrusion
+Detection, Theory and Practice, by David &quot;Del&quot; Elson <a
+href="http://www.securityfocus.com/">www.securityfocus.com</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l4 level1 lfo5;
+tab-stops:list 21.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+Arial'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>Standing
+Sentry Over Your Network, by Mark Merkow <a href="http://www.securityfocus.com/">www.securityfocus.com</a>
+<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l4 level1 lfo5;
+tab-stops:list 21.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+Arial'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>Intrusion
+Detection Level Analysis of Nmap and Queso, by Toby Miller <a
+href="http://www.securityfocus.com/">www.securityfocus.com</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l4 level1 lfo5;
+tab-stops:list 21.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+Arial'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>Securing
+Linux, by Dale Coddington <a href="http://www.securityfocus.com/">www.securityfocus.com</a>
+<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l4 level1 lfo5;
+tab-stops:list 21.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+Arial'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>Snort
+Installation and Basic Usage, by Dale Coddington <a
+href="http://www.securityfocus.com/">www.securityfocus.com</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l4 level1 lfo5;
+tab-stops:list 21.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+Arial'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>Linux Stack
+OverFlows, by Willy Tarreau <a href="http://www.rootshell.com/">www.rootshell.com</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l4 level1 lfo5;
+tab-stops:list 21.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+Arial'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>Some
+Problems with the FTP Protocol, by David Sacerdote <a
+href="http://www.rootshell.com/">www.rootshell.com</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l4 level1 lfo5;
+tab-stops:list 21.0pt'><![if !supportLists]><span lang=EN-US style='font-family:
+Arial'>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-family:Arial'>Other sites:
+<a href="http://packetstorm.securify.com/">packetstorm.securify.com</a>, <a
+href="http://www.linuxapps.com/">www.linuxapps.com</a>, <a
+href="http://www.sourceforge.com/">www.sourceforge.com</a>, <a
+href="http://www.cs.ucsb.edu/~vigna/courses/290I">www.cs.ucsb.edu/~vigna/courses/290I</a>
+<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

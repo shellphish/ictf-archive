@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+
+    <title>CS 290I Network Security and Intrusion Detection - Red
+    Team / Blue Team Exercise</title>
+    <meta name="Author" content="Giovanni Vigna">
+    <link href="http://www.cs.ucsb.edu/~vigna/giovastyle.css" rel=
+    "stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <h1 align="center">CS 290I Network Security and Intrusion
+    Detection - Red Team / Blue Team Exercise</h1>
+
+    <p>The class will be divided into two teams: The Red and Blue
+    teams</p>
+
+    <ul>
+      <li>The Red Team is responsible for attacking the testbed
+      network</li>
+
+      <li>The Blue Team is responsible for protecting the
+      network</li>
+    </ul>
+
+    <p>The goal of the Red Team is to <i>capture the flag</i>, that
+    is, to obtain files named <tt>secret.txt</tt> stored on each
+    hosts. There could be multiple copies of the file. The only
+    <i>real</i> flag is the file whose contents start with the
+    keywork <tt>SECRET</tt>.</p>
+
+    <p>The goal of the Blue Team is to <i>protect the flag</i> as
+    much as possible but, more important, its task is to <i>detect
+    the attacks</i>. If an attack is detected than the Blue Team
+    succeeded.</p>
+
+    <p>The leader of the Red Team is Dan Ellis.</p>
+
+    <p>The leader of the Blue Team is Andrew Mitchell.</p>
+
+    <p>On February 15th, the Blue Team will meet in the CS
+    conference room from 1pm to 3pm. On the same day, the Red Team
+    will get together at Phelps 1401.</p>
+
+    <p>The ctual exercise will be carried out March 13th from 1pm
+    to 3pm. We will reserve part of the CSIL for the exercise. Red
+    Team will have root access as needed.</p>
+
+    <h2>Rules</h2>
+
+    <p>There are several rules thaht must be followed prior and
+    during the exercise. These rules are subject to change during
+    the next couple of weeks to adjust to the requests and the
+    requirements posed by the two teams.</p>
+
+    <ul>
+      <li>The Red Team cannot use a priori knowledge about the
+      testbed network.</li>
+
+      <li>The Red Team cannot disrupt services, bring down hosts,
+      and delete files.</li>
+
+      <li>The Blue Team cannot filter/block network traffic.</li>
+
+      <li>The Blue Team cannot patch vulnerable software.</li>
+
+      <li>The Blue Team decides, for each host, where to store the
+      secret file. The only requirements are that the file must be
+      on a mounted filesystem, the name is <tt>secret.txt</tt>, and
+      only one copy of the file starts with the keyword
+      <tt>SECRET</tt>. Other copies can be used as decoy but they
+      cannot contain the secret string <i>at the beginning</i> of
+      the file.</li>
+
+      <li>Only hosts coppola, mamet, altman, and leone can be
+      attacked by the Red Team.</li>
+
+      <li>The Blue Team has (root) access to host truffault.</li>
+    </ul>
+
+    <h2>Rules</h2>
+
+    <p>Participation in the Blue Team/Red Team exercise is 20% of
+    the final grade. Note that being able to successfully detect or
+    carry out an attack is not the only important thing. Other
+    aspects are evaluated:</p>
+
+    <ul>
+      <li>Ability to plan in advance both attack and defense</li>
+
+      <li>Ability to deploy protection/detection systems and to
+      prepare automated attack scripts</li>
+
+      <li>Ability to maintain a log of the activities (both attacks
+      and detections). These logs will be gathered by the Team
+      leaders and submitted in a final report.</li>
+    </ul>
+
+    <h2>Exercise Final Report</h2>
+
+    <h3>Format Overview</h3>
+
+    <p>The Team Report for the Red-Blue Exercise MUST contain the
+    following sections in the given order. The report MUST not
+    exceed 6 pages in length.</p>
+
+    <ol>
+      <li>Team/Subgroup</li>
+
+      <li>Mission</li>
+
+      <li>Preparation</li>
+
+      <li>Execution</li>
+
+      <li>Evaluation</li>
+
+      <li>Miscellaneous</li>
+
+      <li>References</li>
+    </ol>
+
+    <p>The report must conform to the structure described in the
+    example reports for the Blue and Red Teams that are provided
+    below</p>
+
+    <ul>
+      <li><a href=
+      "blueteam_report.html">blueteam_report.html</a></li>
+
+      <li><a href=
+      "redteam_report.html">redteam_report.html</a></li>
+    </ul>
+
+    <h3>Content</h3>
+
+    <p>The following descriptions explain what MUST, MAY, or SHOULD
+    be included in each section.</p>
+
+    <p>The Subgroup section MUST include the following things: the
+    group name, a one line description of what the subgroup was
+    supposed to do, the name of the group members, the email
+    addresses of the group members, and the handles of the group
+    members (on the test bed network). The group leader should be
+    clearly marked.</p>
+
+    <p>The Mission section MUST include the following things: a
+    paragraph giving a more detailed description of what the
+    subgroup was supposed to accomplish, a concise list of
+    responsibilities that each subgroup member had in achieving the
+    subgroup's mission.</p>
+
+    <p>The Preparation section MUST include a description of the
+    activities that were planned. In addition, The Preparation
+    section MUST include a list of tools, software, methods,
+    procedures, etc., that were used or independently produced by
+    the subgroup to prepare for the exercise. Each contribution
+    should be described briefly (1-2 sentences) and credit the
+    specific author(s) if developed independently.</p>
+
+    <p>The Execution section MUST include a (course-grained) log of
+    each member's activities,</p>
+
+    <p>The Evaluation section MUST include: an evaluation of how
+    well the subgroup accomplished its mission, an evaluation of
+    how well the subgroup executed the plan of attack, a
+    description of what could have been done better, an evaluation
+    of how well the subgroup interacted with any adjacent
+    subgroups, an evaluation of the tools that were available for
+    performing the subgroup's mission, and an evaluation of the
+    exercise itself (eg, suggestions for improving the Red-Blue
+    exercise).</p>
+
+    <p>The Miscellaneous section MAY contain any other information
+    that the subgroup feels is pertinent.</p>
+
+    <p>The References section SHOULD contain a list of sources (eg,
+    URLs, articles, books) that were most helpful in preparing for
+    the Red-Blue exercise.</p>
+
+    <h3>Due Date</h3>
+
+    <p>The Due Date for the Red-Blue Exercise Reports is Wednesday,
+    14 March 2001 at 11am. This will give us the time to prepare a
+    report for the last day of class, March 15th.</p>
+
+    <h3>Pictures</h3>
+
+    <p>Check out <a href="RedTeamBlueTeam/index.html">the Red
+    Team/Blue Team pictures</a>!</p>
+
+    <h3>Outcome</h3>
+
+    <p>These are the results</p>
+
+    <table border="1" cellspacing="3">
+      <tr>
+        <td><b>Victim</b></td>
+
+        <td><b>root compromise</b></td>
+
+        <td><b>Flag</b></td>
+      </tr>
+
+      <tr>
+        <td>Mamet</td>
+
+        <td>Yes</td>
+
+        <td><a href="secret.mamet">Yes</a></td>
+      </tr>
+
+      <tr>
+        <td>Coppola</td>
+
+        <td>Yes</td>
+
+        <td>No. Check the Wolf Team report.</td>
+      </tr>
+
+      <tr>
+        <td>Altman</td>
+
+        <td>Yes</td>
+
+        <td><a href="secret.adlon">Yes</a></td>
+      </tr>
+
+      <tr>
+        <td>Leone</td>
+
+        <td>Yes</td>
+
+        <td>No. Check the Wolf Team report.</td>
+      </tr>
+
+      <tr>
+        <td>Adlon</td>
+
+        <td>Yes</td>
+
+        <td>
+          No flag - Not a victim, just a bystander. Red Team got a
+          fake flag file because of double-traitor Rune. The fake
+          flag is <a href="secret.adlon">here</a>. Interesting
+          comment from the Wolf team: 
+<pre>
+The first flag to be acquired was on adlon (128.111.54.40)
+This was done via Social Engineering, which is to say that I 
+convinced a member of the Blue team to e-mail me the flag.
+The validity of the flag, however, could not be confirmed.
+     
+</pre>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Godard</td>
+
+        <td>Yes</td>
+
+        <td>No flag - Not a victim, just a bystander</td>
+      </tr>
+    </table>
+
+    <h3>Reports</h3>
+
+    <h4>Red Team</h4>
+
+    <ul>
+      <li><a href="redteam_eagles.html">Eagles Group</a></li>
+
+      <li><a href="redteam_esquared.html">E-Squared Group</a></li>
+
+      <li><a href="redteam_buzzco.html">Buzz Company Group</a></li>
+
+      <li><a href="redteam_vulture.html">Vulture</a></li>
+
+      <li><a href="redteam_escalation.html">Xploit Men
+      Group</a></li>
+
+      <li><a href="redteam_wolf.html">Wolf Group</a></li>
+    </ul>
+
+    <h4>Blue Team</h4>
+
+    <ul>
+      <li><a href="blueteam_network.html">Network Group</a></li>
+
+      <li><a href="blueteam_altman.html">Altman Group</a></li>
+
+      <li><a href="blueteam_coppola.html">Coppola Group</a></li>
+
+      <li><a href="blueteam_leone.html">Leone Group</a></li>
+
+      <li><a href="blueteam_mamet.html">Mamet Group</a></li>
+    </ul>
+  </body>
+</html>
+

@@ -1,0 +1,335 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
+       "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>CS 290I Network Security and Intrusion Detection - Red Team Report</title>
+</head>
+
+<h1>Red Team Report</h1>
+
+<h2>Team/Subgroup</h2>
+<pre>
+RED TEAM - Subgroup 3: VULNERABILITY SCANNING 
+Codename: Vulture
+
+Group Task:
+To dig out the possible vulnerable holes in targeted systems by performing
+an effective vulnerability scan.
+
+Group members:
+
+	Name			Handle in testbed	Email address
+
+Leader	Siddharth R. Phanse	godfather		phanse@cs.uscb.edu
+	Fang Liu		fang			fliu@cs
+	Lin Qiao		ruby			lqiao@cs
+	Qiang Zhang		snoopy			qzhang@chem
+	Tirthendra S. Sanyal	ghost			tsanyal@cs
+	Ying Yan		ying			ying@cs
+	Yongbo Wang		duckduck		yongbo@cs
+</pre>
+
+<h2>Mission</h2>
+<pre>
+The mission of our group was to scan the targeted systems remotely and get
+possible security holes in these machines. The idea is to get the
+information pertaining to these remote hosts (IP, OS, etc) from group 1
+and conduct a thorough vulnerability scan that could be later exploited by
+the next group that is Vulnerability Exploit group. So we had to pass our
+scan reports to the exploits group thus helping them run the right
+exploits on those machines. We also had an interface to the group 2
+i.e. Service Scan group and they provided us with some scripts to parse
+host information collected by group 1.
+
+This is how we had our responsibilities divided among the group members.
+
+Siddharth: Final Report submission, Nessus installations and Plugins
+study, writing 
+scripts to format our scan results for group 4 input.
+
+Tirthendra: He was our interface to adjacent groups and also gathered
+exploit information from them.
+
+Qiang: Installation of Nessus and study scanning for new exploits.
+
+Yongbo: Collect vulnerability information.
+
+Ying: Report, Scripting.
+
+Lin: Installed SARA and run it on testbed, Report and Scripting. 
+
+Fang: Exploit information from other groups.
+</pre>
+
+<h2>Preparation</h2>
+
+<pre>
+Our main tool for detecting vulnerabilities was Nessus in which we used
+the Plugins corresponding to the exploits collected by the later
+groups. Sara was another useful tool for vulnerability detection and
+analysis that we planned to used during the exercise.
+
+Our first duties as a team involved finding out about Network
+vulnerability scanning, what it is and how it's done, etc. We also
+required various tools that do the remote scanning like Nessus, SARA,
+SAINT, etc. These were initially looked for on the Internet and studied
+for pros and cons. 
+
+We finally narrowed down on NESSUS and SARA (SATAN was considered
+too). However, we ultimately went for NESSUS due to its neat client/server
+architecture and its ability to do an extensive scan using loads of
+Plugins stored in its Knowledge Base. Also, NESSUS runs NMAP tool before
+its scan and so provides a service scan report too (task of group 2 done
+here). 
+For interfacing with the Exploit group we needed to provide them with a
+scan report for their collection of exploits. In anticipation of that,
+Siddharth wrote a shell script (that uses awk) which takes as input the
+NESSUS generated report (which we must say is quite exhaustive) and
+generates a nice little report with only the information relevant to the
+Exploit group. This includes the OS and IP addresses information (provide
+by the group 1) followed by our scan report which provides security holes
+found on the targeted machines and some very useful service information.
+
+For better performance during the actual scan we made sure that we run the
+NESSUS tool in the most optimized way. That included narrowing down the
+scans to important vulnerabilities and those, which were collected by the
+later group to exploit. Also, we decided to separately run different
+Nessus clients for scanning Linux, Solaris and NT machines (if any) on
+separate servers. This way we saved time on scanning the Linux machines,
+which were our main targets during the attack.
+
+Installation of the server part of Nessus was carried out on the testbed
+network and tested and practiced on (running on altman). The client
+portion of Nessus facilitated connectivity to the server Nessus
+daemon. Our members ran a complete scan on the testbed network computers
+and got familiar with the internals of the tool especially the various
+options that could be set to target machines with specific
+characteristics.
+As our group leader, Siddharth held several meetings with both our group
+members and also leaders of adjacent groups as we realized that the
+success of this exercise highly depended on how properly we are interfaced
+to other groups. This helped us figure out exploits for vulnerability
+scanning and effectively lead our tasks. Tirth's duties as the interface
+for our group involved corresponding with the interfaces of group 2
+(Service scanning) and group 4 (Vulnerability Exploits). Qiang and Yongbo
+took charge of the final installations of Nessus on the Red Team machine
+under the supervision of Siddharth. Lin installed SARA on audit5 and
+tested it on the testbed machines to try out if it would be some extra
+help during the exercise.
+</pre>
+
+<h2>Execution</h2>
+
+<pre>
+Fang, Qiang and Yongbo:
+They set up Nessus on snoop through terminal Dagwood. 
+They choose plug-in as Backdoors, Get shell remotely, SMTP, FTP, Get root
+remotely and disable any scan which will crash the destination machine.
+And they use Xmas Tree Scan.
+This Nessus is running especially to the Solaris machine.
+After getting report from grp1, they did scan on "godard".
+The output of scanning is saved as Nessus_Report and this file is sent to
+Siddharth.
+
+Siddharth:
+The first thing that I did before the exercise begin was to get our team
+members agree on some protocol to transfer around information. This was
+required because we were running different NESSUS clients for different OS
+at different red team machines for splitting the load. So reports were
+going to the right place to be picked up by the Exploits group. I was
+working on Dilbert in CSIL and logged on as root into "packard"(which was
+used by most members of other groups) and /root/Nessus/ was our common
+directory for interfacing with group 4.. 
+
+I was handling scans for the Linux hosts and after getting the client
+configured and ready waited for group 1 to pass on the host's
+information. However, they had problems as their result was taking too
+long and so ran NMAP manually to get some partial result (This gave 5
+hosts: 3 Linux including "truffault", 1 NT and 1 Solaris). I passed on the
+information to my group members working on other clients and started scans
+on the 2 Linux hosts excluding "truffault" as decided earlier. This was 15
+past 1. However, while my scans were running group 1 completed there
+automated result and handed over a list of 15 hosts. (8 were unknown while
+other new ones were Linux). So I included these new Linux clients on my
+host and passed on the unknown hosts' information to Tirthendra who was in
+charge in NT and unknown hosts.
+
+	But, I was not too happy with the results that our group got from
+Nessus. Just two of the 7 hosts that we scanned showed up security
+holes. These hosts were 128.111.54.157 (altman) and 128.111.54.30
+(mamet) and the holes were:
+1) FTP SITE EXEC vulnerability. 
+2) It was possible to get the listing of the remote root
+    directory by issuing the command LIST C:\
+
+And the exploit group used this to gain root on 128.111.54.157 using the
+Wu-ftpd exploit that they had ready to fire. After that I ran some
+thorough service scans on a couple other hosts that the exploit group
+wanted information about. 
+Comments: However, it was really disappointing for us not to find the RPC
+statd related security vulnerability which we would always get during
+practice scans on the testbed machines. This left the exploit group
+helpless with its rpc.statd exploit as none of the machines seem to be
+running the statd service of RPC.
+*But, one thing's for sure. This exercise was great fun and learning
+experience. Not experienced such thing before for any class. And everyone
+deserves credit for it. I am not talking here about credits for grade :-) 
+
+Lin Qiao
+Lin's job is to run Sara on possible destination machines, communication
+with other
+Group during the exercise, and logging all the incidents happening in our
+group. She had SARA run on Leone and Mamet. At that time Leone was
+unreachable so she stop the scan. Mamet is alive but the network speed was
+unbelievably slow. So she had to stop heavy scan on Mamet and choose
+middle level scan. The result of middle level scan showed that Mamet is
+GREEN who means that it is safe. Lin thinks that's due to the scan level
+being too low. Lin also collected the info from group members and wrote
+part of  the final report for our group.
+
+Tirthendra S. Sanyal
+On "Hacker day" my job involved strictly adhering to instructions I had
+received from my group leader regarding all the input and output files
+that I would need and carrying out the vulnerability scans on Windows NT
+machines as well as any Unknown OS machines that may have been in the
+testbed. On "Hacker Day" I carried out the scans on the machine
+"Adlon" which was a Windows NT machine as claimed by group 1. I also
+received a list of IP addresses from group 1 which whose OS was Unknown. I
+tried to scan these IP addresses. However Nessus could not scan them as
+they turned out to be spoofed IP addresses generated by the Blue team I
+suspect.
+</pre>
+
+<h2>Evaluation</h2>
+
+<pre>
+	Nessus is a remote network security auditor, the client The Nessus
+Security Scanner is a security auditing tool. It makes possible to test
+security modules in an attempt to find vulnerable spots that should be 
+fixed. It is made up of two parts: a server, and a client. The 
+server/daemon, nessusd, is in charge of the attacks, whereas the client,
+nessus, interferes with the user through nice X11/GTK+ interface. . This
+package contains the GTK+ 1.2 client, which exists in other forms and on
+other platforms, too. 
+
+The Security Auditor's Research Assistant (SARA) is a third generation
+security analysis tool that is based on the SATAN model which is covered
+by the GNU GPL-like open license. It is fostering a collaborative
+environment and is updated periodically to address latest threats. SARA
+doesn't need the OS type before vuln. scan as it can enable nmap by
+-n. And it also has data analysis and reportwriter. So this tool is very
+flexible.
+
+	Using these kinds of tool was a very new and good experience
+especially in such a nice team exercise. However, we did learn that its
+not always good to rely on such tools as results from today's exercise
+points out to. Instead, there must always be some manual backup scans for
+getting the task done cleanly. However, since we found it difficult to
+figure out how scans scripts can be developed without actually exploiting
+the targets for those particular scans. So, we feel there's a really fine
+line here. Still, more dependable scanning tools can be worked on.
+</pre>
+
+<h2>Miscellaneous</h2>
+<pre>
+The configuration of Nessus and report format generated by Nessus.
+
+1. download Nessus from www.nessus.org and install it as root.
+2. create a user by using nessus-adduser.
+3. configure your nessus daemon 
+4. Start nessusd 
+5. client configuration
+5.1 fire up Nessus
+5.2 The security checks configuration 
+5.3 The Plugins preferences 
+5.4 The scan options 
+5.5 Define the targets (waiting for the result of group1)
+5.6 The rules section 
+6. report interpretation
+   It could be in .NSR format, spiffy HTML format, HTML format, ASCII
+text, and LaTeX format.
+
+A sample Nessus_Report formatted by our script:
+
+00:60:08:13:47:01       128.111.54.10    Linux 2.1.122 - 2.2.14
+00:60:08:11:C0:E3       128.111.54.20    Linux 2.1.122 - 2.2.14
+00:60:08:11:C3:D6       128.111.54.30    Linux 2.1.122 - 2.2.14
+00:60:08:13:47:01       128.111.54.34    Unknown OS (time out)
+00:C0:F0:25:1F:67       128.111.54.40    Windows NT4 / Win95 / Win98
+08:00:20:A9:07:22       128.111.54.50    Solaris 2.6 - 2.7, Solaris 7
+00:60:08:13:47:01       128.111.54.66    Unknown OS (time out)
+00:60:08:11:CA:1E       128.111.54.70    Linux 2.1.122 - 2.2.14, Linux
+kernel 2.2.13
+00:60:08:13:47:01       128.111.54.80    Unknown OS (time out)
+00:60:08:13:47:01       128.111.54.122   Unknown OS (time out)
+00:60:08:04:57:D1       128.111.54.150   Unknown OS (time out)
+00:60:08:13:47:01       128.111.54.151   Unknown OS (time out)
+00:60:08:04:57:D1       128.111.54.157   Linux 2.1.122 - 2.2.14
+00:60:08:13:47:01       128.111.54.164   Unknown OS (time out)
+00:60:08:13:47:01       128.111.54.186   Unknown OS (time out)
+Nessus Scan Report
+------------------
+TESTED HOSTS
+
+ 128.111.54.157 (Security holes found) 
+ 128.111.54.30 (Security notes found)
+     
++ 128.111.54.157 : 
+ . Vulnerability found on port ftp (21/tcp) :
+     
+    It was possible to get the listing of the remote root directory by
+issuing the command LIST C:\ 
+    The data we could get is : 0
+    An attacker may use this flaw to retrieve arbitrary files on this
+    server. 
+    Solution : if you are using broker ftp, upgrade to the latest version,
+or
+    contact your vendor for a patch 
+    Risk factor : High
+     
+ . Vulnerability found on port ftp (21/tcp) : 
+          
+    The remote ftp server does not sanitize properly the argument of the
+SITE EXEC command.  It may be possible for a remote attacker to gain root
+access.
+Solution : Upgrade your wu-ftpd server (<= 2.6.0 are vulnerable)
+    or disable any access from untrusted users (especially anonymous).
+     
+    Risk factor : Serious
+    CVE : CVE-2000-0573
+     
++ 128.111.54.30 : 
+     No holes found
+
+
+
+The configuration and execution of SARA (CVE standards support)
+1. download SARA from www-arc.com/sara
+2. create a user by using add-user.
+3. minimum requirment:
+	1).  UNIX/Linux Platform with perl 5.0.3 (or greater), cc (or gcc)
+	2).  A Web Browser (e.g., Netscape, Lynx, Mosaic)
+	3).  Normal utilities, such a gunzip, make, etc.
+4. make "OS" -- in testbed, make linux.
+5. running SARA in 3 modes:
+	1). Local interactive execution
+	2). Command line execution
+	3). Remote interactive execution
+6. use Data Analysis or ReportWriter menu to get result.
+</pre>
+<h2>Reference</h2>
+
+<pre>
+www.nessus.org
+www-arc.com/sara/
+http://www.insecure.org/sploits.html
+http://securityfocus.com/
+http://www.fish.com/satan/
+http://www.linux.com
+http://www.self-evident.com/
+http://www.cerberus-infosec.co.uk/cis.shtml
+</pre>
+
+</body>
+</html>

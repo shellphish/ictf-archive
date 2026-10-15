@@ -1,0 +1,276 @@
+Mar 12 18:04:40 coppola sendmail[518]: alias database /etc/aliases rebuilt by root
+Mar 12 18:04:40 coppola sendmail[518]: /etc/aliases: 14 aliases, longest 10 bytes, 152 bytes total
+Mar 12 18:04:41 coppola sendmail[532]: starting daemon (8.9.3): SMTP+queueing@01:00:00
+Mar 12 20:55:55 coppola sendmail[536]: alias database /etc/aliases rebuilt by root
+Mar 12 20:55:55 coppola sendmail[536]: /etc/aliases: 14 aliases, longest 10 bytes, 152 bytes total
+Mar 12 20:55:56 coppola sendmail[550]: starting daemon (8.9.3): SMTP+queueing@01:00:00
+Mar 12 23:32:34 coppola sendmail[2565]: NOQUEUE: Null connection from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 00:15:24 coppola sendmail[9013]: alias database /etc/aliases rebuilt by root
+Mar 13 00:15:24 coppola sendmail[9013]: /etc/aliases: 14 aliases, longest 10 bytes, 152 bytes total
+Mar 13 00:15:24 coppola sendmail[9027]: starting daemon (8.9.3): SMTP+queueing@01:00:00
+Mar 13 00:25:13 coppola sendmail[9966]: alias database /etc/aliases rebuilt by root
+Mar 13 00:25:13 coppola sendmail[9966]: /etc/aliases: 14 aliases, longest 10 bytes, 152 bytes total
+Mar 13 00:25:14 coppola sendmail[9980]: starting daemon (8.9.3): SMTP+queueing@01:00:00
+Mar 13 00:42:51 coppola sendmail[16067]: alias database /etc/aliases rebuilt by root
+Mar 13 00:42:51 coppola sendmail[16067]: /etc/aliases: 14 aliases, longest 10 bytes, 152 bytes total
+Mar 13 00:42:51 coppola sendmail[16081]: starting daemon (8.9.3): SMTP+queueing@01:00:00
+Mar 13 00:56:09 coppola sendmail[17027]: alias database /etc/aliases rebuilt by root
+Mar 13 00:56:09 coppola sendmail[17027]: /etc/aliases: 14 aliases, longest 10 bytes, 152 bytes total
+Mar 13 00:56:10 coppola sendmail[17041]: starting daemon (8.9.3): SMTP+queueing@01:00:00
+Mar 13 04:47:47 coppola sendmail[22500]: NOQUEUE: Null connection from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 04:49:53 coppola sendmail[22513]: NOQUEUE: packard.cs.ucsb.edu [128.111.48.41]: EXPN root
+Mar 13 04:49:54 coppola sendmail[22516]: EAA22516: |testing... Cannot mail directly to programs
+Mar 13 04:49:54 coppola sendmail[22516]: EAA22516: lost input channel from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 04:49:54 coppola sendmail[22516]: EAA22516: from=root@128.111.54.70, size=0, class=0, pri=0, nrcpts=0, proto=SMTP, relay=packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 04:49:55 coppola sendmail[22518]: NOQUEUE: Null connection from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 04:50:01 coppola sendmail[22525]: EAA22525: /tmp/nessus_test... Cannot mail directly to files
+Mar 13 04:50:01 coppola sendmail[22525]: EAA22525: lost input channel from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 04:50:01 coppola sendmail[22525]: EAA22525: from=root@128.111.54.70, size=0, class=0, pri=0, nrcpts=0, proto=SMTP, relay=packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 04:50:03 coppola sendmail[22528]: EAA22528: setsender: |testing: invalid or unparseable, received from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 04:50:03 coppola sendmail[22528]: EAA22528: from=|testing, size=0, class=0, pri=0, nrcpts=0, proto=SMTP, relay=packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 04:50:05 coppola sendmail[22533]: EAA22533: ruleset=check_rcpt, arg1=root@host1@128.111.54.70, relay=packard.cs.ucsb.edu [128.111.48.41], reject=550 root@host1@128.111.54.70... Relaying denied
+Mar 13 04:50:05 coppola sendmail[22533]: EAA22533: lost input channel from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 04:50:05 coppola sendmail[22533]: EAA22533: from=root@128.111.54.70, size=0, class=0, pri=0, nrcpts=0, proto=SMTP, relay=packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 04:50:08 coppola sendmail[22540]: NOQUEUE: packard.cs.ucsb.edu [128.111.48.41]: EXPN decode
+Mar 13 04:50:12 coppola sendmail[22543]: NOQUEUE: "debug" command from packard.cs.ucsb.edu [128.111.48.41] (128.111.48.41)
+Mar 13 04:50:12 coppola sendmail[22543]: NOQUEUE: Null connection from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 04:50:14 coppola sendmail[22546]: EAA22546: ruleset=check_rcpt, arg1=test_2@nessus.org, relay=packard.cs.ucsb.edu [128.111.48.41], reject=550 test_2@nessus.org... Relaying denied
+Mar 13 04:50:14 coppola sendmail[22546]: EAA22546: lost input channel from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 04:50:14 coppola sendmail[22546]: EAA22546: from=test_1@nessus.org, size=0, class=0, pri=0, nrcpts=0, proto=SMTP, relay=packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 04:50:15 coppola sendmail[22548]: NOQUEUE: Authentication-Warning: coppola.cs.ucsb.edu: packard.cs.ucsb.edu [128.111.48.41] didn't use HELO protocol
+Mar 13 04:50:15 coppola sendmail[22548]: EAA22548: ruleset=check_rcpt, arg1=nobody@nessus.org, relay=packard.cs.ucsb.edu [128.111.48.41], reject=550 nobody@nessus.org... Relaying denied
+Mar 13 04:50:15 coppola sendmail[22548]: EAA22548: lost input channel from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 04:50:15 coppola sendmail[22548]: EAA22548: from=<>, size=0, class=0, pri=0, nrcpts=0, proto=SMTP, relay=packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 04:50:16 coppola sendmail[22551]: NOQUEUE: Null connection from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 04:50:18 coppola sendmail[22554]: NOQUEUE: Null connection from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 11:30:10 coppola sendmail[17041]: NOQUEUE: low on space (have 0, SMTP-DAEMON needs 101 in /var/spool/mqueue)
+Mar 13 11:30:55 coppola last message repeated 3 times
+Mar 13 11:32:10 coppola last message repeated 5 times
+Mar 13 11:33:25 coppola last message repeated 5 times
+Mar 13 11:34:40 coppola last message repeated 5 times
+Mar 13 11:35:55 coppola last message repeated 5 times
+Mar 13 11:37:10 coppola last message repeated 5 times
+Mar 13 11:38:25 coppola last message repeated 5 times
+Mar 13 11:39:40 coppola last message repeated 5 times
+Mar 13 11:40:55 coppola last message repeated 5 times
+Mar 13 11:42:10 coppola last message repeated 5 times
+Mar 13 11:43:25 coppola last message repeated 5 times
+Mar 13 11:44:40 coppola last message repeated 5 times
+Mar 13 11:45:55 coppola last message repeated 5 times
+Mar 13 11:47:10 coppola last message repeated 5 times
+Mar 13 11:48:25 coppola last message repeated 5 times
+Mar 13 11:49:40 coppola last message repeated 5 times
+Mar 13 11:50:55 coppola last message repeated 5 times
+Mar 13 11:52:10 coppola last message repeated 5 times
+Mar 13 11:53:25 coppola last message repeated 5 times
+Mar 13 11:54:40 coppola last message repeated 5 times
+Mar 13 11:55:55 coppola last message repeated 5 times
+Mar 13 11:57:10 coppola last message repeated 5 times
+Mar 13 11:58:25 coppola last message repeated 5 times
+Mar 13 11:59:40 coppola last message repeated 5 times
+Mar 13 12:00:55 coppola last message repeated 5 times
+Mar 13 12:02:10 coppola last message repeated 5 times
+Mar 13 12:03:25 coppola last message repeated 5 times
+Mar 13 12:04:40 coppola last message repeated 5 times
+Mar 13 12:05:55 coppola last message repeated 5 times
+Mar 13 12:07:10 coppola last message repeated 5 times
+Mar 13 12:08:25 coppola last message repeated 5 times
+Mar 13 12:09:40 coppola last message repeated 5 times
+Mar 13 12:10:55 coppola last message repeated 5 times
+Mar 13 12:12:10 coppola last message repeated 5 times
+Mar 13 12:13:25 coppola last message repeated 5 times
+Mar 13 12:14:40 coppola last message repeated 5 times
+Mar 13 12:15:55 coppola last message repeated 5 times
+Mar 13 12:17:10 coppola last message repeated 5 times
+Mar 13 12:18:25 coppola last message repeated 5 times
+Mar 13 12:19:40 coppola last message repeated 5 times
+Mar 13 12:20:55 coppola last message repeated 5 times
+Mar 13 12:22:10 coppola last message repeated 5 times
+Mar 13 12:23:25 coppola last message repeated 5 times
+Mar 13 12:24:40 coppola last message repeated 5 times
+Mar 13 12:25:55 coppola last message repeated 5 times
+Mar 13 12:27:10 coppola last message repeated 5 times
+Mar 13 12:28:25 coppola last message repeated 5 times
+Mar 13 12:29:40 coppola last message repeated 5 times
+Mar 13 12:30:55 coppola last message repeated 5 times
+Mar 13 12:32:10 coppola last message repeated 5 times
+Mar 13 12:33:25 coppola last message repeated 5 times
+Mar 13 12:34:40 coppola last message repeated 5 times
+Mar 13 12:35:55 coppola last message repeated 5 times
+Mar 13 12:37:10 coppola last message repeated 5 times
+Mar 13 12:38:25 coppola last message repeated 5 times
+Mar 13 12:39:40 coppola last message repeated 5 times
+Mar 13 12:40:55 coppola last message repeated 5 times
+Mar 13 12:42:10 coppola last message repeated 5 times
+Mar 13 12:43:25 coppola last message repeated 5 times
+Mar 13 12:44:40 coppola last message repeated 5 times
+Mar 13 12:45:55 coppola last message repeated 5 times
+Mar 13 12:47:10 coppola last message repeated 5 times
+Mar 13 12:48:25 coppola last message repeated 5 times
+Mar 13 12:49:40 coppola last message repeated 5 times
+Mar 13 12:50:55 coppola last message repeated 5 times
+Mar 13 12:52:10 coppola last message repeated 5 times
+Mar 13 12:53:25 coppola last message repeated 5 times
+Mar 13 12:54:40 coppola last message repeated 5 times
+Mar 13 12:55:55 coppola last message repeated 5 times
+Mar 13 12:57:10 coppola last message repeated 5 times
+Mar 13 12:58:25 coppola last message repeated 5 times
+Mar 13 12:59:40 coppola last message repeated 5 times
+Mar 13 13:00:55 coppola last message repeated 5 times
+Mar 13 13:02:10 coppola last message repeated 5 times
+Mar 13 13:03:25 coppola last message repeated 5 times
+Mar 13 13:04:40 coppola last message repeated 5 times
+Mar 13 13:05:55 coppola last message repeated 5 times
+Mar 13 13:07:10 coppola last message repeated 5 times
+Mar 13 13:08:25 coppola last message repeated 5 times
+Mar 13 13:09:40 coppola last message repeated 5 times
+Mar 13 13:10:55 coppola last message repeated 5 times
+Mar 13 13:12:10 coppola last message repeated 5 times
+Mar 13 13:13:25 coppola last message repeated 5 times
+Mar 13 13:14:40 coppola last message repeated 5 times
+Mar 13 13:15:55 coppola last message repeated 5 times
+Mar 13 13:17:10 coppola last message repeated 5 times
+Mar 13 13:18:25 coppola last message repeated 5 times
+Mar 13 13:19:40 coppola last message repeated 5 times
+Mar 13 13:20:55 coppola last message repeated 5 times
+Mar 13 13:22:10 coppola last message repeated 5 times
+Mar 13 13:23:25 coppola last message repeated 5 times
+Mar 13 13:24:40 coppola last message repeated 5 times
+Mar 13 13:25:55 coppola last message repeated 5 times
+Mar 13 13:27:10 coppola last message repeated 5 times
+Mar 13 13:28:25 coppola last message repeated 5 times
+Mar 13 13:29:40 coppola last message repeated 5 times
+Mar 13 13:30:55 coppola last message repeated 5 times
+Mar 13 13:32:10 coppola last message repeated 5 times
+Mar 13 13:33:25 coppola last message repeated 5 times
+Mar 13 13:34:40 coppola last message repeated 5 times
+Mar 13 13:35:55 coppola last message repeated 5 times
+Mar 13 13:37:10 coppola last message repeated 5 times
+Mar 13 13:38:25 coppola last message repeated 5 times
+Mar 13 13:39:40 coppola last message repeated 5 times
+Mar 13 13:40:55 coppola last message repeated 5 times
+Mar 13 13:42:10 coppola last message repeated 5 times
+Mar 13 13:43:25 coppola last message repeated 5 times
+Mar 13 13:44:40 coppola last message repeated 5 times
+Mar 13 13:45:55 coppola last message repeated 5 times
+Mar 13 13:47:10 coppola last message repeated 5 times
+Mar 13 13:48:25 coppola last message repeated 5 times
+Mar 13 13:49:40 coppola last message repeated 5 times
+Mar 13 13:50:55 coppola last message repeated 5 times
+Mar 13 13:52:10 coppola last message repeated 5 times
+Mar 13 13:53:25 coppola last message repeated 5 times
+Mar 13 13:54:40 coppola last message repeated 5 times
+Mar 13 13:55:55 coppola last message repeated 5 times
+Mar 13 13:57:10 coppola last message repeated 5 times
+Mar 13 13:58:25 coppola last message repeated 5 times
+Mar 13 13:59:40 coppola last message repeated 5 times
+Mar 13 14:00:55 coppola last message repeated 5 times
+Mar 13 14:02:10 coppola last message repeated 5 times
+Mar 13 14:03:25 coppola last message repeated 5 times
+Mar 13 14:04:40 coppola last message repeated 5 times
+Mar 13 14:05:55 coppola last message repeated 5 times
+Mar 13 14:07:10 coppola last message repeated 5 times
+Mar 13 14:08:25 coppola last message repeated 5 times
+Mar 13 14:09:40 coppola last message repeated 5 times
+Mar 13 14:10:55 coppola last message repeated 5 times
+Mar 13 14:12:10 coppola last message repeated 5 times
+Mar 13 14:13:25 coppola last message repeated 5 times
+Mar 13 14:14:40 coppola last message repeated 5 times
+Mar 13 14:15:55 coppola last message repeated 5 times
+Mar 13 14:17:10 coppola last message repeated 5 times
+Mar 13 14:18:25 coppola last message repeated 5 times
+Mar 13 14:19:40 coppola last message repeated 5 times
+Mar 13 14:20:55 coppola last message repeated 5 times
+Mar 13 14:22:10 coppola last message repeated 5 times
+Mar 13 14:23:25 coppola last message repeated 5 times
+Mar 13 14:24:40 coppola last message repeated 5 times
+Mar 13 14:25:55 coppola last message repeated 5 times
+Mar 13 14:27:10 coppola last message repeated 5 times
+Mar 13 14:28:25 coppola last message repeated 5 times
+Mar 13 14:29:40 coppola last message repeated 5 times
+Mar 13 14:30:55 coppola last message repeated 5 times
+Mar 13 14:32:10 coppola last message repeated 5 times
+Mar 13 14:33:25 coppola last message repeated 5 times
+Mar 13 14:34:40 coppola last message repeated 5 times
+Mar 13 14:35:55 coppola last message repeated 5 times
+Mar 13 14:36:56 coppola last message repeated 4 times
+Mar 13 14:37:56 coppola last message repeated 4 times
+Mar 13 14:42:22 coppola sendmail[25607]: NOQUEUE: packard.cs.ucsb.edu [128.111.48.41]: EXPN root
+Mar 13 14:42:23 coppola sendmail[25610]: OAA25610: |testing... Cannot mail directly to programs
+Mar 13 14:42:23 coppola sendmail[25610]: OAA25610: lost input channel from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 14:42:23 coppola sendmail[25610]: OAA25610: from=root@coppola, size=0, class=0, pri=0, nrcpts=0, proto=SMTP, relay=packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 14:42:24 coppola sendmail[25612]: NOQUEUE: Null connection from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 14:42:27 coppola sendmail[25618]: OAA25618: /tmp/nessus_test... Cannot mail directly to files
+Mar 13 14:42:27 coppola sendmail[25618]: OAA25618: lost input channel from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 14:42:27 coppola sendmail[25618]: OAA25618: from=root@coppola, size=0, class=0, pri=0, nrcpts=0, proto=SMTP, relay=packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 14:42:27 coppola sendmail[25621]: OAA25621: setsender: |testing: invalid or unparseable, received from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 14:42:27 coppola sendmail[25621]: OAA25621: from=|testing, size=0, class=0, pri=0, nrcpts=0, proto=SMTP, relay=packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 14:42:29 coppola sendmail[25625]: OAA25625: ruleset=check_rcpt, arg1=root@host1@coppola, relay=packard.cs.ucsb.edu [128.111.48.41], reject=550 root@host1@coppola... Relaying denied
+Mar 13 14:42:29 coppola sendmail[25625]: OAA25625: lost input channel from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 14:42:29 coppola sendmail[25625]: OAA25625: from=root@coppola, size=0, class=0, pri=0, nrcpts=0, proto=SMTP, relay=packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 14:42:30 coppola sendmail[25627]: NOQUEUE: Null connection from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 14:42:31 coppola sendmail[25631]: NOQUEUE: packard.cs.ucsb.edu [128.111.48.41]: EXPN decode
+Mar 13 14:42:31 coppola sendmail[25633]: NOQUEUE: "debug" command from packard.cs.ucsb.edu [128.111.48.41] (128.111.48.41)
+Mar 13 14:42:31 coppola sendmail[25633]: NOQUEUE: Null connection from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 14:42:32 coppola sendmail[25637]: OAA25637: ruleset=check_rcpt, arg1=test_2@nessus.org, relay=packard.cs.ucsb.edu [128.111.48.41], reject=550 test_2@nessus.org... Relaying denied
+Mar 13 14:42:32 coppola sendmail[25637]: OAA25637: lost input channel from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 14:42:32 coppola sendmail[25637]: OAA25637: from=test_1@nessus.org, size=0, class=0, pri=0, nrcpts=0, proto=SMTP, relay=packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 14:42:33 coppola sendmail[25639]: NOQUEUE: Authentication-Warning: coppola.cs.ucsb.edu: packard.cs.ucsb.edu [128.111.48.41] didn't use HELO protocol
+Mar 13 14:42:33 coppola sendmail[25639]: OAA25639: ruleset=check_rcpt, arg1=nobody@nessus.org, relay=packard.cs.ucsb.edu [128.111.48.41], reject=550 nobody@nessus.org... Relaying denied
+Mar 13 14:42:33 coppola sendmail[25639]: OAA25639: lost input channel from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 14:42:33 coppola sendmail[25639]: OAA25639: from=<>, size=0, class=0, pri=0, nrcpts=0, proto=SMTP, relay=packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 14:42:35 coppola sendmail[25641]: NOQUEUE: Null connection from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 14:42:58 coppola sendmail[25649]: NOQUEUE: Null connection from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 15:00:40 coppola sendmail[26109]: NOQUEUE: audit5.cs.ucsb.edu [128.111.48.19]: VRFY
+Mar 13 15:00:46 coppola sendmail[26111]: NOQUEUE: audit5.cs.ucsb.edu [128.111.48.19]: VRFY root
+Mar 13 15:00:54 coppola sendmail[26117]: NOQUEUE: audit5.cs.ucsb.edu [128.111.48.19]: VRFY joey
+Mar 13 15:44:09 coppola sendmail[27008]: NOQUEUE: Null connection from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 15:49:54 coppola sendmail[27254]: NOQUEUE: Null connection from packard.cs.ucsb.edu [128.111.48.41]
+Mar 13 15:56:49 coppola sendmail[27362]: PAA27362: from=pappu, size=7424, class=0, pri=37424, nrcpts=1, msgid=<200103132356.PAA27362@coppola.cs.ucsb.edu>, relay=pappu@localhost
+Mar 13 15:56:49 coppola sendmail[27364]: PAA27364: from=pappu, size=7426, class=0, pri=37426, nrcpts=1, msgid=<200103132356.PAA27364@coppola.cs.ucsb.edu>, relay=pappu@localhost
+Mar 13 15:56:50 coppola sendmail[27366]: PAA27362: to=ashish@cs.ucsb.edu, ctladdr=pappu (0/0), delay=00:00:01, xdelay=00:00:00, mailer=esmtp, relay=letters.cs.ucsb.edu. [128.111.41.13], stat=Sent (OAA06506 Message accepted for delivery)
+Mar 13 15:56:50 coppola sendmail[27368]: PAA27364: to=mariabar@cs.ucsb.edu, ctladdr=pappu (0/0), delay=00:00:01, xdelay=00:00:00, mailer=esmtp, relay=letters.cs.ucsb.edu. [128.111.41.13], stat=Sent (OAA06508 Message accepted for delivery)
+Mar 13 16:01:30 coppola sendmail[27539]: QAA27539: from=pappu, size=739, class=0, pri=30739, nrcpts=1, msgid=<200103140001.QAA27539@coppola.cs.ucsb.edu>, relay=pappu@localhost
+Mar 13 16:01:32 coppola sendmail[27541]: QAA27539: to=ashish@cs.ucsb.edu, ctladdr=pappu (0/0), delay=00:00:02, xdelay=00:00:01, mailer=esmtp, relay=letters.cs.ucsb.edu. [128.111.41.13], stat=Sent (OAA06694 Message accepted for delivery)
+Mar 14 10:03:29 coppola sendmail[538]: alias database /etc/aliases rebuilt by pappu
+Mar 14 10:03:29 coppola sendmail[538]: /etc/aliases: 14 aliases, longest 10 bytes, 152 bytes total
+Mar 14 10:03:30 coppola sendmail[552]: starting daemon (8.9.3): SMTP+queueing@01:00:00
+Mar 14 10:10:00 coppola sendmail[695]: KAA00695: forward /bin/fush/.forward.coppola: Not a directory
+Mar 14 10:10:00 coppola sendmail[695]: KAA00695: forward /bin/fush/.forward: Not a directory
+Mar 14 10:10:00 coppola sendmail[695]: KAA00695: from=root, size=231, class=0, pri=30231, nrcpts=1, msgid=<200103141810.KAA00695@coppola.cs.ucsb.edu>, relay=root@localhost
+Mar 14 10:10:00 coppola sendmail[695]: KAA00695: to=root, ctladdr=root (4504/4504), delay=00:00:00, xdelay=00:00:00, mailer=local, stat=Sent
+Mar 14 10:20:01 coppola sendmail[699]: KAA00699: forward /bin/fush/.forward.coppola: Not a directory
+Mar 14 10:20:01 coppola sendmail[699]: KAA00699: forward /bin/fush/.forward: Not a directory
+Mar 14 10:20:01 coppola sendmail[699]: KAA00699: from=root, size=231, class=0, pri=30231, nrcpts=1, msgid=<200103141820.KAA00699@coppola.cs.ucsb.edu>, relay=root@localhost
+Mar 14 10:20:01 coppola sendmail[699]: KAA00699: to=root, ctladdr=root (4504/4504), delay=00:00:00, xdelay=00:00:00, mailer=local, stat=Sent
+Mar 14 10:30:00 coppola sendmail[703]: KAA00703: forward /bin/fush/.forward.coppola: Not a directory
+Mar 14 10:30:00 coppola sendmail[703]: KAA00703: forward /bin/fush/.forward: Not a directory
+Mar 14 10:30:00 coppola sendmail[703]: KAA00703: from=root, size=231, class=0, pri=30231, nrcpts=1, msgid=<200103141830.KAA00703@coppola.cs.ucsb.edu>, relay=root@localhost
+Mar 14 10:30:00 coppola sendmail[703]: KAA00703: to=root, ctladdr=root (4504/4504), delay=00:00:00, xdelay=00:00:00, mailer=local, stat=Sent
+Mar 14 10:40:00 coppola sendmail[707]: KAA00707: forward /bin/fush/.forward.coppola: Not a directory
+Mar 14 10:40:00 coppola sendmail[707]: KAA00707: forward /bin/fush/.forward: Not a directory
+Mar 14 10:40:00 coppola sendmail[707]: KAA00707: from=root, size=231, class=0, pri=30231, nrcpts=1, msgid=<200103141840.KAA00707@coppola.cs.ucsb.edu>, relay=root@localhost
+Mar 14 10:40:00 coppola sendmail[707]: KAA00707: to=root, ctladdr=root (4504/4504), delay=00:00:00, xdelay=00:00:00, mailer=local, stat=Sent
+Mar 14 10:50:00 coppola sendmail[716]: KAA00716: forward /bin/fush/.forward.coppola: Not a directory
+Mar 14 10:50:00 coppola sendmail[716]: KAA00716: forward /bin/fush/.forward: Not a directory
+Mar 14 10:50:00 coppola sendmail[716]: KAA00716: from=root, size=231, class=0, pri=30231, nrcpts=1, msgid=<200103141850.KAA00716@coppola.cs.ucsb.edu>, relay=root@localhost
+Mar 14 10:50:00 coppola sendmail[716]: KAA00716: to=root, ctladdr=root (4504/4504), delay=00:00:00, xdelay=00:00:00, mailer=local, stat=Sent
+Mar 14 11:00:00 coppola sendmail[720]: LAA00720: forward /bin/fush/.forward.coppola: Not a directory
+Mar 14 11:00:00 coppola sendmail[720]: LAA00720: forward /bin/fush/.forward: Not a directory
+Mar 14 11:00:00 coppola sendmail[720]: LAA00720: from=root, size=231, class=0, pri=30231, nrcpts=1, msgid=<200103141900.LAA00720@coppola.cs.ucsb.edu>, relay=root@localhost
+Mar 14 11:00:00 coppola sendmail[720]: LAA00720: to=root, ctladdr=root (4504/4504), delay=00:00:00, xdelay=00:00:00, mailer=local, stat=Sent
+Mar 14 11:10:01 coppola sendmail[740]: LAA00740: forward /bin/fush/.forward.coppola: Not a directory
+Mar 14 11:10:01 coppola sendmail[740]: LAA00740: forward /bin/fush/.forward: Not a directory
+Mar 14 11:10:01 coppola sendmail[740]: LAA00740: from=root, size=231, class=0, pri=30231, nrcpts=1, msgid=<200103141910.LAA00740@coppola.cs.ucsb.edu>, relay=root@localhost
+Mar 14 11:10:01 coppola sendmail[740]: LAA00740: to=root, ctladdr=root (4504/4504), delay=00:00:00, xdelay=00:00:00, mailer=local, stat=Sent
+Mar 14 11:28:02 coppola sendmail[521]: alias database /etc/aliases rebuilt by root
+Mar 14 11:28:02 coppola sendmail[521]: /etc/aliases: 14 aliases, longest 10 bytes, 152 bytes total
+Mar 14 11:28:03 coppola sendmail[535]: starting daemon (8.9.3): SMTP+queueing@01:00:00
+Mar 14 11:52:17 coppola sendmail[524]: alias database /etc/aliases rebuilt by root
+Mar 14 11:52:17 coppola sendmail[524]: /etc/aliases: 14 aliases, longest 10 bytes, 152 bytes total
+Mar 14 11:52:18 coppola sendmail[538]: starting daemon (8.9.3): SMTP+queueing@01:00:00
+Mar 14 12:09:15 coppola sendmail[522]: alias database /etc/aliases rebuilt by root
+Mar 14 12:09:16 coppola sendmail[522]: /etc/aliases: 14 aliases, longest 10 bytes, 152 bytes total
+Mar 14 12:09:16 coppola sendmail[536]: starting daemon (8.9.3): SMTP+queueing@01:00:00
+Mar 14 15:21:06 coppola sendmail[1078]: PAA01078: from=<root@coppola.cs.ucsb.edu>, size=604258, class=0, pri=634258, nrcpts=1, msgid=<Pine.LNX.4.21.0103141520110.1076-101000@coppola.cs.ucsb.edu>, proto=ESMTP, relay=root@localhost
+Mar 14 15:21:08 coppola sendmail[1080]: PAA01078: to=<doli@cs.ucsb.edu>, ctladdr=<root@coppola.cs.ucsb.edu> (0/0), delay=00:00:04, xdelay=00:00:01, mailer=esmtp, relay=letters.cs.ucsb.edu. [128.111.41.13], stat=Sent (OAA18995 Message accepted for delivery)

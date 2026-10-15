@@ -1,0 +1,16 @@
+#!/bin/bash
+echo "Hello"
+echo "Arg1: $1" # IP
+echo "Arg2: $2" # newflag
+echo "Arg3: $3" # Cookie
+echo "Arg4: $4" # extra conf
+echo "Arg5: $5" # extra conf
+echo
+
+echo "COOKIE:$2"
+echo "FLAG:$3";
+
+/home/fredrik/src/ctfscratch/validate 2 $2;
+
+
+exit 0

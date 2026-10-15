@@ -1,0 +1,182 @@
+execve("./vulnerable", ["./vulnerable", "ђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђђл^‰v1А€F‰F°‰уЌNЌVНЂ1Ы‰Ш@НЂиЬяяя/bin/shтяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тяї„тя", "2"], [/* 31 vars */]) = 0
+brk(0)                                  = 0x804981c
+old_mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x40014000
+open("/etc/ld.so.preload", O_RDONLY)    = -1 ENOENT (No such file or directory)
+open("/usr/local/lib/i686/mmx/libc.so.6", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/usr/local/lib/i686/mmx", 0xbfffee48) = -1 ENOENT (No such file or directory)
+open("/usr/local/lib/i686/libc.so.6", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/usr/local/lib/i686", 0xbfffee48) = -1 ENOENT (No such file or directory)
+open("/usr/local/lib/mmx/libc.so.6", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/usr/local/lib/mmx", 0xbfffee48)  = -1 ENOENT (No such file or directory)
+open("/usr/local/lib/libc.so.6", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/usr/local/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+open("/usr/lib/i686/mmx/libc.so.6", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/usr/lib/i686/mmx", 0xbfffee48)   = -1 ENOENT (No such file or directory)
+open("/usr/lib/i686/libc.so.6", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/usr/lib/i686", 0xbfffee48)       = -1 ENOENT (No such file or directory)
+open("/usr/lib/mmx/libc.so.6", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/usr/lib/mmx", 0xbfffee48)        = -1 ENOENT (No such file or directory)
+open("/usr/lib/libc.so.6", O_RDONLY)    = -1 ENOENT (No such file or directory)
+stat("/usr/lib", {st_mode=S_IFDIR|0755, st_size=24576, ...}) = 0
+open("/etc/ld.so.cache", O_RDONLY)      = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=27595, ...}) = 0
+old_mmap(NULL, 27595, PROT_READ, MAP_PRIVATE, 3, 0) = 0x40015000
+close(3)                                = 0
+open("/lib/libc.so.6", O_RDONLY)        = 3
+fstat(3, {st_mode=S_IFREG|0755, st_size=4101324, ...}) = 0
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\210\212"..., 4096) = 4096
+old_mmap(NULL, 1001564, PROT_READ|PROT_EXEC, MAP_PRIVATE, 3, 0) = 0x4001c000
+mprotect(0x40109000, 30812, PROT_NONE)  = 0
+old_mmap(0x40109000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0xec000) = 0x40109000
+old_mmap(0x4010d000, 14428, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x4010d000
+close(3)                                = 0
+mprotect(0x4001c000, 970752, PROT_READ|PROT_WRITE) = 0
+mprotect(0x4001c000, 970752, PROT_READ|PROT_EXEC) = 0
+munmap(0x40015000, 27595)               = 0
+personality(PER_LINUX)                  = 0
+getpid()                                = 16171
+fstat64(0x1, 0xbfffea80)                = -1 ENOSYS (Function not implemented)
+fstat(1, {st_mode=S_IFREG|0644, st_size=3297, ...}) = 0
+old_mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x40015000
+execve("/bin/sh", ["/bin/sh"], [/* 0 vars */]) = 0
+brk(0)                                  = 0x80994a0
+old_mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x40014000
+open("/etc/ld.so.preload", O_RDONLY)    = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY)      = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=27595, ...}) = 0
+old_mmap(NULL, 27595, PROT_READ, MAP_PRIVATE, 3, 0) = 0x40015000
+close(3)                                = 0
+open("/lib/libtermcap.so.2", O_RDONLY)  = 3
+fstat(3, {st_mode=S_IFREG|0755, st_size=12224, ...}) = 0
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0000\16\0"..., 4096) = 4096
+old_mmap(NULL, 15304, PROT_READ|PROT_EXEC, MAP_PRIVATE, 3, 0) = 0x4001c000
+mprotect(0x4001f000, 3016, PROT_NONE)   = 0
+old_mmap(0x4001f000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0x2000) = 0x4001f000
+close(3)                                = 0
+open("/lib/libc.so.6", O_RDONLY)        = 3
+fstat(3, {st_mode=S_IFREG|0755, st_size=4101324, ...}) = 0
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\210\212"..., 4096) = 4096
+old_mmap(NULL, 1001564, PROT_READ|PROT_EXEC, MAP_PRIVATE, 3, 0) = 0x40020000
+mprotect(0x4010d000, 30812, PROT_NONE)  = 0
+old_mmap(0x4010d000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0xec000) = 0x4010d000
+old_mmap(0x40111000, 14428, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x40111000
+close(3)                                = 0
+mprotect(0x40020000, 970752, PROT_READ|PROT_WRITE) = 0
+mprotect(0x40020000, 970752, PROT_READ|PROT_EXEC) = 0
+munmap(0x40015000, 27595)               = 0
+personality(PER_LINUX)                  = 0
+getpid()                                = 16171
+getuid()                                = 11937
+getgid()                                = 33
+geteuid()                               = 11937
+getegid()                               = 33
+brk(0)                                  = 0x80994a0
+brk(0x80994c0)                          = 0x80994c0
+brk(0x809a000)                          = 0x809a000
+time(NULL)                              = 984414307
+ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+ioctl(1, TCGETS, 0xbffffe04)            = -1 ENOTTY (Inappropriate ioctl for device)
+rt_sigaction(SIGCHLD, {SIG_DFL}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGCHLD, {SIG_DFL}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGINT, {SIG_DFL}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGINT, {SIG_DFL}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_DFL}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_DFL}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGHUP, {0x804b8c0, [HUP INT ILL TRAP ABRT BUS FPE USR1 SEGV USR2 PIPE ALRM TERM XCPU XFSZ VTALRM PROF UNUSED], 0x4000000}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGINT, {0x804b8c0, [HUP INT ILL TRAP ABRT BUS FPE USR1 SEGV USR2 PIPE ALRM TERM XCPU XFSZ VTALRM PROF UNUSED], 0x4000000}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGILL, {0x804b8c0, [HUP INT ILL TRAP ABRT BUS FPE USR1 SEGV USR2 PIPE ALRM TERM XCPU XFSZ VTALRM PROF UNUSED], 0x4000000}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGTRAP, {0x804b8c0, [HUP INT ILL TRAP ABRT BUS FPE USR1 SEGV USR2 PIPE ALRM TERM XCPU XFSZ VTALRM PROF UNUSED], 0x4000000}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGABRT, {0x804b8c0, [HUP INT ILL TRAP ABRT BUS FPE USR1 SEGV USR2 PIPE ALRM TERM XCPU XFSZ VTALRM PROF UNUSED], 0x4000000}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGFPE, {0x804b8c0, [HUP INT ILL TRAP ABRT BUS FPE USR1 SEGV USR2 PIPE ALRM TERM XCPU XFSZ VTALRM PROF UNUSED], 0x4000000}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGBUS, {0x804b8c0, [HUP INT ILL TRAP ABRT BUS FPE USR1 SEGV USR2 PIPE ALRM TERM XCPU XFSZ VTALRM PROF UNUSED], 0x4000000}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGSEGV, {0x804b8c0, [HUP INT ILL TRAP ABRT BUS FPE USR1 SEGV USR2 PIPE ALRM TERM XCPU XFSZ VTALRM PROF UNUSED], 0x4000000}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGUNUSED, {0x804b8c0, [HUP INT ILL TRAP ABRT BUS FPE USR1 SEGV USR2 PIPE ALRM TERM XCPU XFSZ VTALRM PROF UNUSED], 0x4000000}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGPIPE, {0x804b8c0, [HUP INT ILL TRAP ABRT BUS FPE USR1 SEGV USR2 PIPE ALRM TERM XCPU XFSZ VTALRM PROF UNUSED], 0x4000000}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGALRM, {0x804b8c0, [HUP INT ILL TRAP ABRT BUS FPE USR1 SEGV USR2 PIPE ALRM TERM XCPU XFSZ VTALRM PROF UNUSED], 0x4000000}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGTERM, {0x804b8c0, [HUP INT ILL TRAP ABRT BUS FPE USR1 SEGV USR2 PIPE ALRM TERM XCPU XFSZ VTALRM PROF UNUSED], 0x4000000}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGXCPU, {0x804b8c0, [HUP INT ILL TRAP ABRT BUS FPE USR1 SEGV USR2 PIPE ALRM TERM XCPU XFSZ VTALRM PROF UNUSED], 0x4000000}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGXFSZ, {0x804b8c0, [HUP INT ILL TRAP ABRT BUS FPE USR1 SEGV USR2 PIPE ALRM TERM XCPU XFSZ VTALRM PROF UNUSED], 0x4000000}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGVTALRM, {0x804b8c0, [HUP INT ILL TRAP ABRT BUS FPE USR1 SEGV USR2 PIPE ALRM TERM XCPU XFSZ VTALRM PROF UNUSED], 0x4000000}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGPROF, {0x804b8c0, [HUP INT ILL TRAP ABRT BUS FPE USR1 SEGV USR2 PIPE ALRM TERM XCPU XFSZ VTALRM PROF UNUSED], 0x4000000}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGUSR1, {0x804b8c0, [HUP INT ILL TRAP ABRT BUS FPE USR1 SEGV USR2 PIPE ALRM TERM XCPU XFSZ VTALRM PROF UNUSED], 0x4000000}, {SIG_DFL}, 8) = 0
+rt_sigaction(SIGUSR2, {0x804b8c0, [HUP INT ILL TRAP ABRT BUS FPE USR1 SEGV USR2 PIPE ALRM TERM XCPU XFSZ VTALRM PROF UNUSED], 0x4000000}, {SIG_DFL}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigaction(SIGQUIT, {SIG_IGN}, {SIG_DFL}, 8) = 0
+socket(PF_UNIX, SOCK_STREAM, 0)         = 3
+connect(3, {sin_family=AF_UNIX, path="                                                                                       /var/run/.nscd_socket"}, 110) = -1 ECONNREFUSED (Connection refused)
+close(3)                                = 0
+open("/etc/nsswitch.conf", O_RDONLY)    = 3
+fstat64(0x3, 0xbffffba0)                = -1 ENOSYS (Function not implemented)
+fstat(3, {st_mode=S_IFREG|0644, st_size=1744, ...}) = 0
+old_mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x40015000
+read(3, "#\n# /etc/nsswitch.conf\n#\n# An ex"..., 4096) = 1744
+brk(0x809b000)                          = 0x809b000
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+munmap(0x40015000, 4096)                = 0
+open("/etc/ld.so.cache", O_RDONLY)      = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=27595, ...}) = 0
+old_mmap(NULL, 27595, PROT_READ, MAP_PRIVATE, 3, 0) = 0x40015000
+close(3)                                = 0
+open("/lib/libnss_files.so.2", O_RDONLY) = 3
+fstat(3, {st_mode=S_IFREG|0755, st_size=246652, ...}) = 0
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0p \0\000"..., 4096) = 4096
+old_mmap(NULL, 36384, PROT_READ|PROT_EXEC, MAP_PRIVATE, 3, 0) = 0x40115000
+mprotect(0x4011d000, 3616, PROT_NONE)   = 0
+old_mmap(0x4011d000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0x7000) = 0x4011d000
+close(3)                                = 0
+munmap(0x40015000, 27595)               = 0
+open("/etc/passwd", O_RDONLY)           = 3
+fcntl(3, F_GETFD)                       = 0
+fcntl(3, F_SETFD, FD_CLOEXEC)           = 0
+fstat(3, {st_mode=S_IFREG|0644, st_size=1349, ...}) = 0
+old_mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x40015000
+read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 4096) = 1349
+close(3)                                = 0
+munmap(0x40015000, 4096)                = 0
+uname({sys="Linux", node="longboard.cs.ucsb.edu", ...}) = 0
+open("/etc/ld.so.cache", O_RDONLY)      = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=27595, ...}) = 0
+old_mmap(NULL, 27595, PROT_READ, MAP_PRIVATE, 3, 0) = 0x40015000
+close(3)                                = 0
+open("/lib/libnss_nisplus.so.2", O_RDONLY) = 3
+fstat(3, {st_mode=S_IFREG|0755, st_size=252234, ...}) = 0
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\20\37\0"..., 4096) = 4096
+old_mmap(NULL, 41972, PROT_READ|PROT_EXEC, MAP_PRIVATE, 3, 0) = 0x4011e000
+mprotect(0x40127000, 5108, PROT_NONE)   = 0
+old_mmap(0x40127000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0x8000) = 0x40127000
+close(3)                                = 0
+open("/lib/libnsl.so.1", O_RDONLY)      = 3
+fstat(3, {st_mode=S_IFREG|0755, st_size=370141, ...}) = 0
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\20?\0\000"..., 4096) = 4096
+old_mmap(NULL, 88104, PROT_READ|PROT_EXEC, MAP_PRIVATE, 3, 0) = 0x40129000
+mprotect(0x4013b000, 14376, PROT_NONE)  = 0
+old_mmap(0x4013b000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0x11000) = 0x4013b000
+old_mmap(0x4013d000, 6184, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x4013d000
+close(3)                                = 0
+munmap(0x40015000, 27595)               = 0
+open("/etc/ld.so.cache", O_RDONLY)      = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=27595, ...}) = 0
+old_mmap(NULL, 27595, PROT_READ, MAP_PRIVATE, 3, 0) = 0x40015000
+close(3)                                = 0
+open("/lib/libnss_nis.so.2", O_RDONLY)  = 3
+fstat(3, {st_mode=S_IFREG|0755, st_size=255963, ...}) = 0
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0`\37\0\000"..., 4096) = 4096
+old_mmap(NULL, 38488, PROT_READ|PROT_EXEC, MAP_PRIVATE, 3, 0) = 0x4013f000
+mprotect(0x40147000, 5720, PROT_NONE)   = 0
+old_mmap(0x40147000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0x7000) = 0x40147000
+close(3)                                = 0
+munmap(0x40015000, 27595)               = 0
+brk(0x809c000)                          = 0x809c000
+brk(0x809e000)                          = 0x809e000
+getcwd("/home/vigna/Teaching/software/bufferovf", 4095) = 40
+getpid()                                = 16171
+getppid()                               = 16170
+getpgrp()                               = 16170
+fcntl(-1, F_SETFD, FD_CLOEXEC)          = -1 EBADF (Bad file descriptor)
+rt_sigaction(SIGCHLD, {0x805c190, [], 0x4000000}, {SIG_DFL}, 8) = 0
+fcntl(0, F_GETFL)                       = 0x2 (flags O_RDWR)
+fstat(0, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 2), ...}) = 0
+lseek(0, 0, SEEK_CUR)                   = -1 ESPIPE (Illegal seek)
+read(0, "", 1)                          = 0
+_exit(0)                                = ?

@@ -1,0 +1,18 @@
+Host    Ethernet          IP             Name       CPU            Memory   OS      Disk       Software
+BETA 	00:60:08:04:57:D1 128.111.54.60  altman     Intel,x86,166  96M      RH 6.2  1,430,608  PasswdFile,SSH_1.2.27
+ALFA    00:60:08:11:CA:1E 128.111.54.70  coppola    Intel,x86,166  128M     RH 6.1  2x254,244  PasswdFile,SSH_1.2.27
+GAMMA   00:60:08:11:C3:D6 128.111.54.30  truffault  Intel,x86,166  128M     RH 6.1  1,430,640  PasswdFile,SSH_1.2.27
+KAPPA   00:60:08:11:C0:E3 128.111.54.20  leone      Intel,x86,166  64M      RH 6.2  687,272    SSH_1.2.27 
+LAMBDA  00:60:08:13:47:01 128.111.54.10  mamet      Intel,x86,166  64M      RH 6.2  603,972    PasswdFile,SSH_1.2.27
+
+Notes
+
+LINUX System installation
+1) Update the /etc/resolv.conf file
+2) Update the /etc/sysconfig/network file
+3) Update the /etc/sysconfig/network-scripts/ifcfg-eth0 file
+4) Update the /etc/passwd file
+5) Create and 'chown' the users' home dirs
+6) Install ssh and put '/usr/local/sbin/sshd &' at the end of /etc/rc.d/rc.local file
+
+

@@ -1,0 +1,220 @@
+=====================================================================
+              REPORT: CTF1
+              team D: Mobsters
+=====================================================================
+
+=====================================================================
+First Steps:
+=====================================================================
+-Logged in as single user, (changed a paramter in the boot loader) and
+-changed the root password. Then restarted again..  Unnecessary
+-trouble with configuring the network on the vmware image. Wrong
+-netmask and no gateway was the problem.  Before the competition
+-started we tried to find the services we should host.  Listed all
+-processes running ($ps -aux) Found Apache, FTP-server and Spam-python
+-script Port scanned our image to find open ports
+-Scanned through the Apache configuration file to see if there was some 
+obvious misconfiguration here, no luck
+
+=====================================================================
+Museum Attacks and Defence:
+=====================================================================
+We noticed that Museum service was a CGI program and none of the three
+perl scripts that ran it performed substantive checking on
+user-supplied input data.  As a result, we discovered that you could
+insert Unix command strings as variables to the QUERY_STRING and force
+their execution.
+
+We found the "set"-method
+the Scoring-machine used to set flags. The flags were stored in a
+folder under the cgi-bin folder. The Perl script that set the flags
+takes as input the firstname and the lastname, and creates a new file
+with the name firstname.lastname. The flag is the input in the new
+file.  
+
+We found the "get" - method in another Perl-script. You give as
+input the firstname and the lastname of the file containing the flag
+you wants. Input '*.*' showed every file in the "flag-directory".  We
+tried this on the other teams, on team B we got all the flags. Tried
+to submit some of the flags but they were all too old. The newest flag
+was maybe somewhere in there, or they tried to trick us.  Team A
+showed no flags, they had likely already patched the hole. After a bit
+of experimenting, we found that Team B had already patched their
+software and was using the vulnerability to seize our flags and then
+remove them to prevent us from getting defense points.The trick they
+did was giving multiple commands through the first or last name, on
+the set flag method.  'blabla;'rm *;' as firstname deletes all the
+files in the flag folder.  This worked on one of the teams, we heard
+their frustration!  This trick we can use to wipe out all the flags,
+so its easier to find the right flag with the *.*-trick 
+
+Now we started to work on defense (patching) and attacking in
+parallel.  Unfortunately we was to late to attack, the other teams had
+already patch the vulnerability.  After we found that the attack no
+longer worked, we sought to patch our own version of the CGI program.
+At first we tried simply filtering out `rm *`, but soon realized that
+we needed to filter out all queries that were not of valid form.  I
+came up with the RE /[a-z+]/ to match lowercase strings, but when Team
+B's attacks continued to work on us, we realized that it did not
+filter as well as I thought it might.  Later, we got it locked down
+with the RE /^[a-z]+$/ which only matches strings that are entirely
+lowercase characters.  This small distinction was very important and
+meant that our service was vulnerable far longer than it should have
+been.
+
+We lost a lot of points because we didn't managed to patch the
+vulnerability right before in the last hour.  Maybe we should had
+taken the service down when we worked on the patching..
+
+Another approach:
+
+I identified the problem with the http service and found a way to view
+Team B's flags. I think the URL I used is something like
+"http://10.10.20.3/search?first=*last=*password=unbreakable". Team A
+fixed their http service quickly and I saw nothing when I used the
+same tactic against their http server. Team B, however, did something
+to it so that I always saw many flags, and I do believe one of them is
+the latest flag.  Because the flag is saved in a file, the order of
+the flags I saw was deteremined by the alphabetic order of their file
+names, I believe. I saved the current screenshot and the next one and
+used "diff" command, and there is a difference. However, "diff"
+regards a newline as the delimiter and simply outputted the entire
+screenshot as being different. To solve this problem I wrote a small
+program to insert newlines after each flag but to my surprise g++ was
+not installed on the image. I compiled my program on my account and
+tried to scp it to our server but I was denied access. Then I decided
+to write the program in C but by that time Team B already fixed their
+thing ...
+
+
+=====================================================================
+Attack of the spammer service (Mailer)
+=====================================================================
+We first realized that the scoring bot created flags through this
+service by creating a new account (with some password) and then adding
+a new spam message to the mailing queue with a subject being the flag
+itself.
+
+We found that we could create a new account with the same name 
+as a previously existing account.  This newly created account 
+would have a password of our choosing, and, most importantly, through
+it, we could access sensitive information associated with the original
+account.  For example, if a remote account named foo existed on a
+remote service, we found that we could create a new account as
+follows:
+
+	new foo some_passwd
+
+Now, we found that executing the 'stat' command, we could see the
+contents of the original foo account's spam queue.  Thus, if we were
+able to create an account with the same name as that which the scoring
+bot has most recently created, we could obtain the flag associated
+with this service.
+
+The problem is that we did not know the name of the account that the
+scoring bot has created.  Upon analyzing the source code of the
+service, we found another vulnerability to solve this problem.
+
+The service has some minimal password integrety checking during new
+account setup.  That is to say, when a password is created, it cannot
+be too short, and it cannot be a dictionary word.  The service checks
+to see if the password is, indeed, a dictionary word through the
+following lines of python code:
+
+	  cmd = "grep"
+	  dict = "/usr/share/dict/american-english"
+	  ...
+	  check = os.popen('%s "^%s$" %s'%(cmd,password,dict)).readlines()
+
+This, we realized, was a format string vulnerability, and was
+paramount to our exploit of this service.  The 'password' argument
+from the above 'open' system call is supplied by the user during
+account creation.  For example, a supplied password of "whatev"
+results in the following command being executed:
+
+	grep "^whatev$" /usr/share/dict/american-english
+
+Thus, a password that looks very much like a command string can by
+executed on the machine hosting this service.  This provided the
+avenue of attack we needed.  Our entire exploit is as follows:
+
+First, create a dummy account with an attack password:
+
+       new foo " < spammerd.py; ls -lt | head; ls "
+
+Now the above syscall gets executed like the following:
+
+    
+	grep "^" < spammerd.py; ls -lt | head; ls "$" /usr/share/...
+
+The most important part is the execution of 'ls -lt | head' on the
+remote host.  This lists the filenames in the spammerd directory and
+allowed us to find out the name of the account most recently created
+by the scoring bot.  Armed with this account name, we exercised the
+vulnerability discussed above to obtain the flag associated with this
+service, namely, assuming that the most recently created account was
+'bar', we executed the following commands within the spammer service:
+
+       new bar some_passwd
+       stat
+
+This printed out the contents of bar's message queue, which happened
+to contain the flag we wanted.
+
+=====================================================================
+Attacks / Defence on ORSL:
+=====================================================================
+To see how the flags are set/get in ORSL service we, first of all,
+checked get.php and set.php files.  Immediatelly, it was obvious that
+the get.php page is vulnerable to attacks allowing us to get a flag
+string without having to have a cookie, or know the IPv6 address that
+the original flag was set from. The code was vulnerable because the
+only check it did to see if you were allowed to get the key was a call
+to PHP stristr(string haystack, string needle) function. It openned
+and read the entire ".temp.txt" file (where all the flags were stored)
+into $entire and checked if $cookie, which was the value of ip, was in
+this file. Then it would print the entire line: ip and flag to the
+user. The trick is that if stristr() finds a needle (which can be just
+one letter) in haystack, it returns the rest of the string in
+haystack. Thus, it was sufficient to guess one char in ip in order to
+get the whole string: ip + flag.  So executing:
+http://host/get.php?ip='some character' from a web browser was giving
+us the flag.
+
+To defend against this we modified the checking to also check for a
+minimum string length, and compare the result of the stristr call to
+the full string.
+
+We found other ways to get flags in other files used by the
+service. However, these vulnerabilities were already fixed by the
+other teams and worked only on our service. Short of time to fix the
+vulnerabilities, we changed the names of the other php files that
+people were able to use to get our flag, since the scorebot was only
+using the get function having those other vulnerable services
+available was not needed.
+
+
+=====================================================================
+FTP defense and attack:
+=====================================================================
+
+Vulnerability: 
+We found a vulnerability in the ftpd software that
+allowed to execute arbitrary commands from the ftp prompt. In
+particular, in the file ftpd.c, in the function list_command(...)
+there is a call to popen without any checking on the arguments. When
+the ls command is prompted from the ftp command line, the input string
+is directly put into the popen command. If for example, from the
+command line "ls -al;env" was prompted, both the command ls -al and
+env were executed.
+
+Actions:
+We first applied a simple patch to the code: every time a
+semicolumn was found in the input string, insted of executing
+popen(string) we execute popen("ls -al").  This would prevent from
+concatenating multiple commands. At the time we discovered the
+vulnerability, it seemed that the other teams all patched their
+software.  After a while though, we discovered that it was just that
+their ftp service was down most of the time. In reality, team 1 had
+patched the software, while team 2 still had the vulnerability. When
+we figured this out though, the competition was almost over.

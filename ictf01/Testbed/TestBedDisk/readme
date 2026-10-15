@@ -1,0 +1,62 @@
+# To configure a testbed machine
+
+1. Copy the files that are on disk to /root
+
+$ su - root
+...
+
+# mcopy a:*.* /root
+
+2. Copy the resolv.conf file to /etc
+
+# cp /root/resolv.conf /etc/resolv.conf
+
+3. Cat the passwd.testbed file to the existing one, first checking that the
+existing password file does not contain the test bed accounts.
+The passowrd file should look like:
+
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:
+daemon:x:2:2:daemon:/sbin:
+adm:x:3:4:adm:/var/adm:
+lp:x:4:7:lp:/var/spool/lpd:
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:
+news:x:9:13:news:/var/spool/news:
+uucp:x:10:14:uucp:/var/spool/uucp:
+operator:x:11:0:operator:/root:
+games:x:12:100:games:/usr/games:
+gopher:x:13:30:gopher:/usr/lib/gopher-data:
+ftp:x:14:50:FTP User:/home/ftp:
+nobody:x:99:99:Nobody:/:
+
+(or with the encrypted passwords in case there is no /etc/shadow)
+
+# cat passwd.testbed >> /etc/passwd
+
+If shadow passwords are being used, remember to do
+
+# pwconv
+
+so that the shadow file gets updated.
+
+4. Create the accounts
+
+# cat passwd.test | ./accounts.pl | /bin/sh
+
+4. Install ssh
+
+# tar xvzf ssh-1.2.27.tar.gz
+# cd ssh-1.2.27
+# ./configure; make; make install
+
+5. Add the following two lines at the end of /etc/rc.d/rc.local
+source /root/firewall.sh
+/usr/local/sbin/sshd &
+
+# echo "source /root/firewall.sh" >> /etc/rc.d/rc.local; 
+# echo "/usr/local/sbin/sshd &" >> /etc/rc.d/rc.local; 
+
+

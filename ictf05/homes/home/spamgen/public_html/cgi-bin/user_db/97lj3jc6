@@ -1,0 +1,95 @@
+ALTRA PROVA
+--------------------END
+Begin by writing "import cgi". Do not use "from cgi import *" -- the module defines all sorts of names for its own use or for backward compatibility that you don't want in your namespace.
+
+When you write a new script, consider adding the line:
+
+import cgitb; cgitb.enable()
+
+This activates a special exception handler that will display detailed reports in the Web browser if any errors occur. If you'd rather not show the guts of your program to users of your script, you can have the reports saved to files instead, with a line like this:
+
+ 
+
+import cgitb; cgitb.enable(display=0, logdir="/tmp")
+
+It's very helpful to use this feature during script development. The reports produced by cgitb provide information that can save you a lot of time in tracking down bugs. You can always remove the cgitb line later when you have tested your script and are confident that it works correctly.
+
+To get at submitted form data, it's best to use the FieldStorage class. The other classes defined in this module are provided mostly for backward compatibility. Instantiate it exactly once, without arguments. This reads the form contents from standard input or the environment (depending on the value of various environment variables set according to the CGI standard). Since it may consume standard input, it should be instantiated only once.
+
+The FieldStorage instance can be indexed like a Python dictionary, and also supports the standard dictionary methods has_key() and keys(). The built-in len() is also supported. Form fields containing empty strings are ignored and do not appear in the dictionary; to keep such values, provide a true value for the optional keep_blank_values keyword parameter when creating the FieldStorage instance.
+
+For instance, the following code (which assumes that the Content-Type: header and blank line have already been printed) checks that the fields name and addr are both set to a non-empty string:
+
+ 
+
+form = cgi.FieldStorage()
+if not (form.has_key("name") and form.has_key("addr")):
+    print "<H1>Error</H1>"
+    print "Please fill in the name and addr fields."
+    return
+print "<p>name:", form["name"].value
+print "<p>addr:", form["addr"].value
+...further form processing here...
+
+Here the fields, accessed through "form[key]", are themselves instances of FieldStorage (or MiniFieldStorage, depending on the form encoding). The value attribute of the instance yields the string value of the field. The getvalue() method returns this string value directly; it also accepts an optional second argument as a default to return if the requested key is not present.
+
+If the submitted form data contains more than one field with the same name, the object retrieved by "form[key]" is not a FieldStorage or MiniFieldStorage instance but a list of such instances. Similarly, in this situation, "form.getvalue(key)" would return a list of strings. If you expect this possibility (when your HTML form contains multiple fields with the same name), use the isinstance() built-in function to determine whether you have a single instance or a list of instances. For example, this code concatenates any number of username fields, separated by commas:
+
+ 
+
+value = form.getvalue("username", "")
+if isinstance(value, list):
+    # Multiple username fields specified
+    usernames = ",".join(value)
+else:
+    # Single or no username field specified
+    usernames = value
+
+If a field represents an uploaded file, accessing the value via the value attribute or the getvalue() method reads the entire file in memory as a string. This may not be what you want. You can test for an uploaded file by testing either the filename attribute or the file attribute. You can then read the data at leisure from the file attribute:
+
+ 
+
+fileitem = form["userfile"]
+if fileitem.file:
+    # It's an uploaded file; count lines
+    linecount = 0
+    while 1:
+        line = fileitem.file.readline()
+        if not line: break
+        linecount = linecount + 1
+
+The file upload draft standard entertains the possibility of uploading multiple files from one field (using a recursive multipart/* encoding). When this occurs, the item will be a dictionary-like FieldStorage item. This can be determined by testing its type attribute, which should be multipart/form-data (or perhaps another MIME type matching multipart/*). In this case, it can be iterated over recursively just like the top-level form object.
+
+When a form is submitted in the ``old'' format (as the query string or as a single data part of type application/x-www-form-urlencoded), the items will actually be instances of the class MiniFieldStorage. In this case, the list, file, and filename attributes are always None.
+
+ 
+
+  
+  		
+
+© 2002-2004 Active-Venture.com Webhosting Service
+ 
+
+Disclaimer: This documentation is provided only for the benefits of our hosting customers.
+For authoritative source of the documentation, please refer to http://python.org/doc/
+
+ 
+
+Domain registration : Buy domain name or register domain name from $5.95/year only
+  	
+
+Cheap domain registration : Register domain name or buy domain name, including free domain hosting services
+  	  Active-Domain.com offers cheap domain registration, domain name transfer and domain search services
+	
+--------------------END
+NUOVA PROVA
+NUOVA PROVA
+NUOVA PROVA
+NUOVA PROVA
+NUOVA PROVA
+NUOVA PROVA
+NUOVA PROVA
+NUOVA PROVA
+NUOVA PROVA
+
+--------------------END

@@ -1,0 +1,25 @@
+AC_INIT(spamagent, 1.0, zanardi@shellphish.net)
+AM_INIT_AUTOMAKE(spamagent, 1.0)
+
+AC_PROG_CC
+AC_PROG_INSTALL
+
+AC_CHECK_HEADERS(stdarg.h varargs.h, break)
+
+# Check for mydiag lib
+AC_CHECK_LIB(mydiag, my_error, , echo "spamagent needs libmydiag in order to build"; exit 1,)
+
+# Check for zocket lib
+AC_CHECK_LIB(zocket, connectTCP, , echo "spamagent needs libzocket in order to build"; exit 1,)
+
+# Check for Tcl lib
+
+AC_CHECK_LIB(tcl, Tcl_Main,, echo 'spamagent needs the Tcl language to build successfully'; exit, ) 
+
+# Check for libxml2
+AC_CHECK_LIB(xml2, htmlNewDocNoDtD,, echo 'spamagent needs libxml2 installed before it can be compiled' ; exit, )
+
+AC_FUNC_VPRINTF
+
+AC_CONFIG_FILES(Makefile)
+AC_OUTPUT

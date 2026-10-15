@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+
+    <title>CS 290I Network Security</title>
+    <meta name="Author" content="Giovanni Vigna">
+    <link href="http://www.cs.ucsb.edu/~vigna/giovastyle.css" rel=
+    "stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <h1 align="center">290I - Network Security and Intrusion
+    Detection</h1>
+
+    <h2 align="center">Abstract</h2>
+
+    <p>Network security has become part of everyday life. Security
+    problems may impact practical aspects of our lives. Even though
+    there is a considerable corpus of knowledge about tools and
+    techniques to protect networks, information about what are the
+    actual vulnerabilities and how they are exploited is not
+    generally available. This situation hampers the effectiveness
+    of security research and practice. Understanding the details of
+    network attacks is a prerequisite for the design and
+    implementation of secure systems.</p>
+
+    <p>This course presents the principal protocols and
+    applications that are used in the Internet today, discussing in
+    detail the related vulnerabilities and how they are exploited.
+    For each vulnerability, possible protection and detection
+    techniques are examined.</p>
+
+    <p>The course mixes a practical character, with a hands-on
+    approach, with a discussion of the current research in the
+    field. Participants will learn how the security of networks can
+    be violated and how such violations can be detected and
+    prevented. The course includes also red-team/blue-team
+    exercises in a protected environment, where the knowledge about
+    attacks and defenses will be validated in the field.</p>
+
+    <p>Ethical issues will also be discussed.</p>
+
+    <h2>Prerequisites</h2>
+
+    <p>The course requires good programming/development skills, a
+    basic background in operating systems, and some basic knowledge
+    about networks.</p>
+
+    <h2>Instructor</h2>
+
+    <p><b>Giovanni Vigna</b></p>
+
+    <p>Engineering I, Room 2109</p>
+
+    <p>Phone: 893-7565</p>
+
+    <h2>Class hours</h2>
+
+    <p>Tuesdays and Thursdays 1pm-3pm, Phelps 1401</p>
+
+    <h2>Office hours</h2>
+
+    <p>Tuesdays and Thursdays 3pm-4pm and by appointment</p>
+
+    <h2>Teaching Assistants</h2>
+
+    <table cellspacing="10" summary="TAs">
+      <tr>
+        <td><b>Dan Ellis</b></td>
+
+        <td><b>Andrew Mitchell</b></td>
+      </tr>
+
+      <tr>
+        <td><a href=
+        "mailto:ellisd@cs.ucsb.edu">ellisd@cs.ucsb.edu</a></td>
+
+        <td><a href=
+        "mailto:chemdog3@cs.ucsb.edu">chemdog3@cs.ucsb.edu</a></td>
+      </tr>
+
+      <tr>
+        <td>GSL</td>
+
+        <td>Phelps 1413</td>
+      </tr>
+
+      <tr>
+        <td>9am-11am, T Th</td>
+
+        <td>1pm-3pm, W F</td>
+      </tr>
+    </table>
+
+    <h2>Topics</h2>
+
+    <ul>
+      <li>Introduction, history, ethics</li>
+
+      <li>Brief introduction to cryptography</li>
+
+      <li>TCP/IP security (spoofing, hijacking, sequence number
+      guessing, denial-of-service attacks)</li>
+
+      <li>Network discovery/vulnerability scanning: techniques and
+      tools (portscans, ping sweeps)</li>
+
+      <li>Web security</li>
+
+      <li>Operating system security and vulnerabilities (UNIX, NT,
+      buffer overflows)</li>
+
+      <li>Distributed systems security (RPC, NIS, Kerberos)</li>
+
+      <li>Firewalls and traffic filtering</li>
+
+      <li>Network-based intrusion detection systems</li>
+
+      <li>Host-based intrusion detection systems</li>
+    </ul>
+
+    <h2>Text books</h2>
+
+    <p>Several topics covered during the course will be supported
+    by material distributed by the instructor through the Web.</p>
+
+    <p>The course will adopt the following book:</p>
+
+    <p>S. Garfinkel, E. Spafford, "<i>Practical Unix and Internet
+    Security,</i>" 2nd Edition, O'Reilly</p>
+
+    <h2>Course requirements</h2>
+
+    <p>There will be homework assignments. In addition, each
+    student will participate in a red-team/blue-team exercise, and
+    will have to analyze and exercise several attack exploits, or
+    complete a research project on a related subject.</p>
+
+    <p>The final grade will be determined according to the
+    following weight:</p>
+
+    <ul>
+      <li>Project: 50%</li>
+
+      <li>Blue team/Red team: 20%</li>
+
+      <li>Homework: 30%</li>
+    </ul>
+
+    <p>Additional information can be found in the following
+    documents:</p>
+
+    <ul>
+      <li><a href="project.html">The project page</a></li>
+
+      <li><a href="redblue.html">The red team/blue team
+      page</a></li>
+    </ul>
+
+    <h2>Course Material</h2>
+
+    <h3>January 9, 2001</h3>
+
+    <ul>
+      <li>Slides: <a href=
+      "1_Introduction_010109.PDF">1_Introduction_010109.PDF</a></li>
+    </ul>
+    <!--
+                <ul>
+                  <li>Introduction to network security</li>
+                  <li>Goals of the course and course outline</li>
+                  <li>Ethics and hacking
+                    <ul>
+
+                      <li><a href="http://www.cs.berkeley.edu/~bh/hackers.html">Brian Harvey
+                      on Hacking</a> (University of Berkeley).</li>
+
+                      <li><a href="http://www.ucop.edu/ucophome/policies/ec/">UC Electronic
+                      Communication Policy</a>.</li>
+
+                      <li><a href="http://www.cs.ucsb.edu/Facilities/Policy/">UCSB Computer
+                      Science Department Policy</a>.</li>
+
+                      <li><a href="">The Hacker Manifesto</a>.</li>
+
+                    </ul>  
+                  </li>
+
+
+                  <li>History
+                    <ul>
+
+                      <li><a href="">Internet history site</a></li>
+
+                      <li><a href="">Bill Cheswick's page</a></li>
+
+                      <li><a href="">Internet history site2</a></li>
+
+                    </ul>
+                  </li>
+
+                  <li>Incidents
+
+                    <ul>
+
+                      <li>The German Hacker 
+
+                        <ul>
+
+                          <li>C. Stoll, &quot;<a href="">The Cuckoo's Egg</a>&quot; Pocket
+                          Books, 19??.</li>
+
+                          <li>C. Stoll, <a href="">Stalking the Wily Hacker</a>&quot;
+                          Communications of the ACM, 31(5), 1988.</li>
+
+                          <li>K. Hafner and J. Markoff, &quot;<a href="">Cyberpunk: Outlaws
+                          and Hackers on the Computer Frontier</a>&quot:, Touchstone Books,
+                          19??</li>
+
+                        </ul>
+                      </li>
+                      <li>The Morris Worm 
+                        <ul>
+
+                          <li>E. Spafford, &quot;<a href="">Crisis and Aftermath</a>&quot;
+                          Communications of the ACM, 32(6), 1989</li>
+
+                          <li>K. Hafner and J. Markoff, &quot;<a href="">Cyberpunk: Outlaws
+                          and Hackers on the Computer Frontier</a>&quot:, Touchstone Books,
+                          19??</li>
+
+                          <li>&quot;<a href="">With Microscope and Tweezers: The Worm from the
+                          MIT perspective</a>&quot; 19??.</li>
+
+                          <li>CERT Advisory: <a href="">Ramen Attack</a></li>
+
+                        </ul>
+                      </li>
+
+                      <li>Kevin Mitnick 
+                        <ul>
+
+                          <li>K. Hafner and J. Markoff, &quot;<a href="">Cyberpunk: Outlaws
+                          and Hackers on the Computer Frontier</a>&quot:, Touchstone Books,
+                          19??</li>
+
+                          <li>J. Littman, &quot;<a href="">The Fugitive Game: Online With
+                          Kevin Mitnick</a>&quot;, Little Brown and Co., 19??</li>
+
+                          <li>J. Markoff and T. Shimomura, &quot:<a href="">Takedown</a>&quot;
+                          </li>
+
+                          <li><a href="">Kevin Mitnik Support Site</a></li>
+
+                        </ul>
+                      </li>
+                      <li>Bank X &quot;legal&quot; Break-in 
+                        <ul>
+
+                          <li>A.L.M. Dos Santos, G. Vigna, and R. Kemmerer, &quot;<a
+                          href="http://www.cs.ucsb.edu/~vigna/pub/santos_vigna_kemmere_WSPEC00.ps.gz">Evaluting
+                          the Security of an International Bank</a>, First Workshop on
+                          Security and Privacy in Electronic Commerce, Athens, Greece,
+                          November 2000.</li>
+
+                        </ul>
+                      </li>
+                    </ul>  
+                  </li>
+                  
+                </ul>
+                -->
+
+    <h3>January 11, 2001</h3>
+
+    <ul>
+      <li><a href="2_TCPIP_010111.PDF">2_TCPIP_010111.PDF</a></li>
+    </ul>
+    <!--
+                <ul>
+
+                  <li>TCP/IP Security</li>
+
+                  <li>ISO/OSI Reference Model (Pages x-y, Tanenmbaum)</li>
+
+                  <li>TCP/IP Protocol suite Stevens pages x-y</li>
+
+                  <li>IP Addressing Stevens pages x-y</li>
+
+                  <li>IP Protocol 
+                    <ul>
+                      <li>RFC xyz</li>
+                    </ul>
+                  </li>
+
+                  <li>Ethernet Protocol 
+                    <ul>
+                      <li>RFC xyz</li>
+                      <li>Stevens page x-z</li>
+                    </ul>
+                  </li>
+
+                  <li>ARP    Protocol 
+                    <ul>
+                      <li>RFC xyz</li>
+                      <li>Stevens page x-z</li>
+                    </ul>
+                  </li>
+
+                  <li>RARP    Protocol 
+                    <ul>
+                      <li>RFC xyz</li>
+                      <li>Stevens page x-z</li>
+                    </ul>
+                  </li>
+
+                  <li>Sniffing
+                    <ul>
+
+                      <li><a href="http://www.monkey.org/~dugsong/dsniff/">Dsniff</a></li>
+
+                      <li><a href="http://www.tcpdump.org/">Libpcap</a></li>
+
+                      <li><a href="http://www.l0pht.com/antisniff">AntiSniff</a></li>
+
+                    </ul>
+                  </li>
+
+                  <li>Spoofing
+                    <ul>
+                      <li><a href="">Blind IP spoofing</a></li>
+                      <li><a href="http://www.packetfactory.net/libnet">Libnet</a></li>
+                    </ul>
+                  </li>
+
+                </ul>
+                -->
+
+    <h3>January 16, 2001</h3>
+
+    <ul>
+      <li>Slides: <a href=
+      "3_TCPIP_010116.PDF">3_TCPIP_010116.PDF</a></li>
+
+      <li><a href="HW1/index.html">Homework 1</a></li>
+    </ul>
+    <!--
+                  <li>ARP Attacks
+                    <ul>
+                      <li><a href="">Playing Games with ARP and ICMP</a></li>
+                      <li><a href="">Libnet-based spoofer</a></li>
+                      <li><a href="">arpwatch</a></li>
+                      <li><a href="">ifconfig command</a></li>
+                      <li><a href="">arp command</a></li>
+                    </ul>
+                  </li>
+
+                  <li>TCPDump
+                    <ul>
+                      <li><a href="http://www.tcpdump.org">www.tcpdump.org</a></li>
+                      <li><a href="">TCPDump documentation</a></li>
+                      <li><a href="">Stevens Pages x-z</a></li>
+                    </ul>
+                  </li>
+
+                  <li>Routing
+                    <ul>
+                      <li><a href="">Stevens pages</a></li>
+                      <li><a href="">Comer pages</a></li>
+                      <li><a href="">Stevens Pages x-z</a></li>
+                    </ul>
+                  </li>
+                -->
+
+    <h3>January 18, 2001</h3>
+
+    <ul>
+      <li>Slides: <a href=
+      "3_TCPIP_010118.PDF">3_TCPIP_010118.PDF</a></li>
+    </ul>
+    <!--
+                  <li>Fragmentation
+                    <ul>
+                      <li><a href="">Stevens pages</a></li>
+                      <li><a href="">Comer pages</a></li>
+                      <li><a href="">Ping of Death attack</a></li>
+                      <li><a href="">Teardrop</a></li>
+                      <li><a href="">TCP Overwrite</a></li>
+                    </ul>
+                  </li>
+
+                  <li>ICMP
+                    <ul>
+                      <li><a href="">Stevens pages</a></li>
+                      <li><a href="">Comer pages</a></li>
+                      <li><a href="">Ping man page</a></li>
+                      <li><a href="">Pingscan</a></li>
+                      <li><a href="">Smurf attack</a></li>
+                      <li><a href="">ICMP redirect attack</a></li>
+                      <li><a href="">Destination unreachable attacks</a></li>
+                      <li><a href="">Traceroute command</a></li>
+                    </ul>
+                  </li>
+
+                  <li>UDP
+                    <ul>
+                      <li><a href="">Stevens pages</a></li>
+                      <li><a href="">Comer pages</a></li>
+                      <li><a href="">RFC XXX</a></li>
+                      <li><a href="">UDP spoofing attack</a></li>
+                      <li><a href="">UDP storm attack</a></li>
+                      <li><a href="">UDP hijacking attack</a></li>
+                      <li><a href="">NIS security paper</a></li>
+                      <li><a href="">UDP portscan</a></li>
+                    </ul>
+                  </li>
+
+                -->
+
+    <h3>January 23, 2001</h3>
+
+    <ul>
+      <li>Slides: <a href=
+      "3_TCPIP_010123.PDF">3_TCPIP_010123.PDF</a></li>
+
+      <li><a href="HW2/index.html">Homework 2</a></li>
+    </ul>
+    <!--
+                  <li><a href="HW2/faq.html">Homework 2 Frequently Asked Questions</a></li>
+                  <li>TCP
+                    <ul>
+                      <li><a href="">Stevens pages</a></li>
+                      <li><a href="">Comer pages</a></li>
+                      <li><a href="">RFC XXX</a></li>
+                      <li><a href="">TCP portscans</a></li>
+                      <li><a href="http://www.insecure.org">Nmap</a></li>
+                      <li><a href="">The Art of Portscanning</a></li>
+                      <li><a href="">TCP spoofing attack</a></li>
+
+                      <li><a href="">R.T. Morris, &quot;A wekaness in the 4.2BSD UNIX TCP/IP
+                      software&quot;, 1985</a></li>
+
+                      <li><a href="">TCP hijacking attack</a></li>
+
+
+                      <li><a href="">J. Joncheray &quot;Simple Active Attack Against
+                      TCP</a></li>
+
+                      <li><a href="http://lin.fsid.cvut.cz/~kra">Hunt</a></li>
+
+                      <li><a href="">SYN-flooding attack</a></li>
+                      <li><a href="">Phrack Project Neptune</a></li>
+                      <li><a href="">CERT Advisory</a></li>
+                      <li><a href="">Process Table attack</a></li>
+                      <li><a href="">Land attack</a></li>
+                    </ul>
+                  </li>
+                -->
+
+    <h3>January 30, 2001</h3>
+
+    <ul>
+      <li>Slides: <a href=
+      "5_Protocols_010130.PDF">5_Protocols_010130.PDF</a></li>
+
+      <li>Slides: <a href=
+      "4_Testbed_010130.PDF">4_Testbed_010130.PDF</a></li>
+    </ul>
+
+    <h3>February 1, 2001</h3>
+
+    <ul>
+      <li>Slides: <a href=
+      "5_Protocols_010201.PDF">5_Protocols_010201.PDF</a></li>
+    </ul>
+
+    <h3>February 6, 2001</h3>
+
+    <ul>
+      <li>Slides: <a href=
+      "5_Protocols_010206.PDF">5_Protocols_010206.PDF</a></li>
+
+      <li>Slides: <a href=
+      "6_Cryptography_010206.PDF">6_Cryptography_010206.PDF</a></li>
+
+      <li><a href="HW3/index.html">Homework 3</a></li>
+
+      <li><a href="HW3/faq.html">Homework 3 Frequently Asked
+      Questions</a></li>
+    </ul>
+
+    <h3>February 8, 2001</h3>
+
+    <ul>
+      <li>Slides: <a href=
+      "6_Cryptography_010208.PDF">6_Cryptography_010208.PDF</a></li>
+
+      <li>Slides: <a href=
+      "7_OperatingSystems_010208.PDF">7_OperatingSystems_010208.PDF</a></li>
+    </ul>
+
+    <h3>February 13, 2001</h3>
+
+    <ul>
+      <li>Slides: <a href=
+      "7_OperatingSystems_010213.PDF">7_OperatingSystems_010213.PDF</a></li>
+
+      <li>Sniffer program: <a href=
+      "sniffer.tar.gz">sniffer.tar.gz</a></li>
+
+      <li>Sniffer source listing: <a href=
+      "sniffer.ps">sniffer.ps</a></li>
+    </ul>
+
+    <h3>February 20, 2001</h3>
+
+    <ul>
+      <li>Slides: <a href=
+      "7_OperatingSystems_010220.PDF">7_OperatingSystems_010220.PDF</a></li>
+    </ul>
+
+    <h3>February 22, 2001</h3>
+
+    <ul>
+      <li>Slides: <a href=
+      "7_OperatingSystems_010222.PDF">7_OperatingSystems_010222.PDF</a>
+      Note that these slides contained a mistake and have been
+      updated.</li>
+    </ul>
+
+    <h3>February 27, 2001</h3>
+
+    <ul>
+      <li>Slides: <a href=
+      "8_DistributedSystems_010227.PDF">8_DistributedSystems_010227.PDF</a></li>
+    </ul>
+
+    <h3>March 1, 2001</h3>
+
+    <ul>
+      <li>Slides: <a href=
+      "8_DistributedSystems_010301.PDF">8_DistributedSystems_010301.PDF</a></li>
+
+      <li>Slides: <a href=
+      "9_Firewalls_010301.PDF">9_Firewalls_010301.PDF</a></li>
+
+      <li><a href="HW4/index.html">Homework 4</a></li>
+
+      <li>You may find the <a href="egg_create.c">egg_create.c</a>
+      source code useful for your homework assignment. It's the
+      program to create the "egg" that was presented in class.</li>
+    </ul>
+
+    <h3>March 6, 2001</h3>
+
+    <ul>
+      <li>Slides: <a href=
+      "9_Firewalls_010306.PDF">9_Firewalls_010306.PDF</a></li>
+
+      <li>Slides: <a href=
+      "10_IntrusionDetection_010306.PDF">10_IntrusionDetection_010306.PDF</a></li>
+    </ul>
+
+    <h3>March 8, 2001</h3>
+
+    <ul>
+      <li>Slides: <a href=
+      "10_IntrusionDetection_010308.PDF">10_IntrusionDetection_010308.PDF</a></li>
+    </ul>
+    <hr>
+  </body>
+</html>
+

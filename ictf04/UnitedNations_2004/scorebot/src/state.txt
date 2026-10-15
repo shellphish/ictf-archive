@@ -1,0 +1,21 @@
+# Points
+teams {
+  team1 2212 999;
+  team2 100 10;
+  team3 1   0;
+}
+
+# Generation num
+services {
+  service1 2000;
+  service2 500;
+  service3 150;
+}
+
+# Do we need this?
+cookies {
+   team1 service1 "cooo";
+   team1 service2 "fooo";
+   team1 service3 "zzzz";
+   team2 service1 "xxxxx";
+}

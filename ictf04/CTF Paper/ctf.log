@@ -1,0 +1,146 @@
+This is TeX, Version 3.14159 (Web2C 7.4.5) (format=latex 2003.12.1)  27 FEB 2004 14:25
+**ctf
+(./ctf.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, n
+ohyphenation, loaded.
+(/sw/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/sw/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/sw/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/sw/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/sw/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/sw/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/sw/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2001/08/31 v1.1 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(/sw/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/sw/share/texmf/tex/latex/misc/url.sty
+\Urlmuskip=\muskip10
+Package: url 1999/03/28  ver 1.5x  Verb mode for urls, etc.
+)
+(/sw/share/texmf/tex/generic/babel/babel.sty
+Package: babel 2001/03/01 v3.7h The Babel package
+
+(/sw/share/texmf/tex/generic/babel/english.ldf
+Language: english 2001/04/15 v3.3l English support from the babel system
+
+(/sw/share/texmf/tex/generic/babel/babel.def
+File: babel.def 2001/03/01 v3.7h Babel common definitions
+\babel@savecnt=\count87
+\U@D=\dimen105
+)
+\l@canadian = a dialect from \language\l@english 
+))
+(/sw/share/texmf/tex/latex/misc/vmargin.sty
+Package: vmargin 2000/08/01
+
+Package: vmargin 2000/08/01 V2.3 (VK) set document margins
+\PaperWidth=\dimen106
+\PaperHeight=\dimen107
+) (./ctf.aux)
+\openout1 = `ctf.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 37.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 37.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 37.
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 37.
+
+LaTeX Font Info:    No file OMScmtt.fd. on input line 37.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 37.
+
+Missing character: There is no   in font cmr9!
+Missing character: There is no   in font cmr9!
+
+LaTeX Warning: Citation `bishop97' on page 1 undefined on input line 75.
+
+
+LaTeX Warning: Citation `bishop00' on page 1 undefined on input line 75.
+
+
+LaTeX Warning: Citation `bishop99' on page 1 undefined on input line 88.
+
+
+LaTeX Warning: Citation `brandt03' on page 1 undefined on input line 100.
+
+[1
+
+] [2] [3]
+File: CTF.eps Graphic file (type eps)
+ <CTF.eps> [4] [5]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 393.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 393.
+ [6] [7] [8]
+File: scoring.eps Graphic file (type eps)
+ <scoring.eps>
+File: scoreboard.eps Graphic file (type eps)
+ <scoreboard.eps>
+[9] [10] [11] [12] [13] (./ctf.bbl [14]) [15] (./ctf.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 995 strings out of 95847
+ 11220 string characters out of 1196009
+ 65014 words of memory out of 1000001
+ 3948 multiletter control sequences out of 10000+50000
+ 9491 words of font info for 34 fonts, out of 500000 for 1000
+ 15 hyphenation exceptions out of 1000
+ 25i,7n,22p,192b,339s stack positions out of 1500i,500n,5000p,200000b,5000s
+
+Output written on ctf.dvi (15 pages, 58328 bytes).

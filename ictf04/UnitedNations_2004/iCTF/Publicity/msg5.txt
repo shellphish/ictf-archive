@@ -1,0 +1,47 @@
+From vigna@cs.ucsb.edu Mon Nov 29 09:34:08 2004
+Date: Tue, 25 Nov 2003 15:16:23 -0800 (PST)
+From: Giovanni Vigna <vigna@cs.ucsb.edu>
+To: adavison@newspress.com, mgreen@newspress.com
+Cc: Giovanni Vigna <vigna@cs.ucsb.edu>
+Subject: Inter-university Capture the Flag Hacking Exercise at UCSB
+
+Folks of the SB News Press,
+                                                                                                  
+        You may be interested in knowing that the Department of Computer Science
+at UCSB is organizing a very unique event. A "capture the flag" hacking contest
+that involves students from a number of Universities and institutions. This
+exercise is organized as part of a graduate class on Network Security and
+Intrusion Detection taught at UCSB.
+                                                                                                  
+The exercise will be held on December 5th and will involve: UCSB, GeorgiaTech,
+Naval Postgraduate School, North Carolina State University, United States
+Military Academy, University of Texas at Austin, University of Illinois at
+Urbana-Champaign.
+                                                                                                  
+Previous editions of the class included "local" hacking contests as a form of
+evaluation of the techniques learned in class. (Note that there are almost no
+educational institutions in the US that offer anything like that)
+                                                                                                  
+This year we decided to extend the exercise to a number of Universities and
+institutions interested in security education. This is a very first
+example of this type of exercise on such a large scale. You can find more
+information at http://www.cs.ucsb.edu/~vigna/CTF
+                                                                                                  
+If you are interesting in covering it, let me know. I think that the students
+would love that (even though I don't think the excitement level can go any 
+higher :).
+                                                                                                  
+Giovanni Vigna
+Assistant Professor
+Department of Computer Science
+Tel: +1 (805) 893 7565
+Cell: +1 (805) 637 6382
+
+P.S.
+Note that usually I would send this through our PR office but the person 
+responsible for it just left for good...
+-- 
+Giovanni Vigna                           
+University of California Santa Barbara - Dept. of Computer Science
+http://www.cs.ucsb.edu/~vigna 
+

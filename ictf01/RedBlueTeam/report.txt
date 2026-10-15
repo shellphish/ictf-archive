@@ -1,0 +1,66 @@
+
+
+I. Format Overview
+
+The Team Report for the Red-Blue Exercise MUST contain the following 
+sections in the given order.  The report MUST not exceed 6 pages in length.
+
+
+				I.    Subgroup
+
+				II.   Mission
+
+				III.  Contributions
+
+				IV.   Log
+
+				V.    Evaluation
+
+				VI.   Miscellaneous
+
+				VIII. References
+
+
+
+II. Content
+
+The following descriptions explain what MUST, MAY, or SHOULD be included in 
+each section.
+
+The Subgroup Section MUST include the following things: the group name, a 
+one line description of what the subgroup was supposed to do, the name of the 
+group members, the email addresses of the group members, and the handles of 
+the group members (on the test bed network).  The group leader should be 
+clearly marked.
+
+The Mission Section MUST include the following things: a paragraph giving a 
+more detailed description of what the subgroup was supposed to accomplish, a 
+concise list of responsibilities that each subgroup member had in achieving 
+the subgroup's mission.
+
+The Contributions Section MUST include a list of tools, software, methods, 
+etc., that were independently produced by the subgroup.  Each contribution 
+should be described briefly (1-2 sentences) and credit the specific author(s).
+
+The Log Section MUST include: the plan that was used to prepare for the
+exercise, and a (course-grained) log of each member's activities,
+
+The Evaluation Section MUST include: an evaluation of how well the subgroup 
+accomplished its mission, an evaluation of how well the subgroup executed the 
+plan of attack, a description of what could have been done better, an 
+evaluation of how well the subgroup interacted with any adjacent subgroups, 
+an evaluation of the tools that were available for performing the subgroup's 
+mission, and an evaluation of the exercise itself (eg, suggestions for 
+improving the Red-Blue exercise).
+
+The Miscellaneous Section MAY contain any other information that the subgroup 
+feels is pertinent.
+
+The References Section SHOULD contain a list of sources (eg, URLs, articles, 
+books) that were most helpful in preparing for the Red-Blue exercise.
+
+
+III. Due Date
+
+The Due Date for the Red-Blue Exercise Reports is Monday, 19 March 2001, at 
+the beginning of the final.
