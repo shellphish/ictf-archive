@@ -1,0 +1,29 @@
+#!/usr/bin/perl 
+
+use HTTP::Lite;
+
+# get the guestbook
+
+$http = new HTTP::Lite;
+$req = $http->request("http://$ARGV[0]/cgi-bin/guestbook.pl") or die "Unable to get guestbook.pl";
+if ($req != 200) {
+	die "Request failed ($req)";
+}
+
+
+# get the body and split it into lines
+
+$body = $http->body();
+@lines = split(/\n/,$body);
+
+
+# look for the flag
+
+foreach $line (@lines)
+{
+    if ($line =~ m/Bill Gates.*\(([0-9a-zA-Z]*)\)/) 
+    {
+	print("$1");
+	exit 0
+    }
+}

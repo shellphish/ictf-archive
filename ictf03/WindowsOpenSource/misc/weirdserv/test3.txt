@@ -1,0 +1,6 @@
+id 17
+user whatever 
+password user@localhost
+filename *.c
+keyword 478959487589475984
+environ PIPPO=foo PEPPO=bar

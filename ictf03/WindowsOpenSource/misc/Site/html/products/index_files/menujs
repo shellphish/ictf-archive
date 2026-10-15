@@ -1,0 +1,13 @@
+
+
+function mnpMenuDir()
+{
+	return "LTR";
+}
+
+function mnpMenuCT()
+{
+	
+	return false;
+}
+

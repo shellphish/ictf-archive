@@ -1,0 +1,51 @@
+Fake Identd has been written by Tomi Ollila <too@iki.fi>.
+
+The Makefile and init script has been added by 
+	Christoph Gebhardt <chris@the.hangout.de>.
+
+Read the file INSTALL for installation instructions.
+See the file COPYING for the GNU General Public License.
+
+This is the original README by the author of this software:
+------------------------------------------------------------------------------
+Fake Identd.
+
+This program replies with a static ident reply for a successful ident
+query. (write something why this is written XXX)
+
+This program handles all connection requests and connections in a
+single process, thus reducing process creation overhead. This program
+is configured to handle 20 concurrent connections.
+Since one connection should not last long, if all 20 connections are
+in use, the next connection will close the oldest connection data
+has been read. This way this program is not very vulnerable to so 
+called `denial of service' attack, thus making this ideal "identd"
+to be used in a firewall, IP masquerading hosts etc.
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+The program is distributed in a single `self compilable' source file.
+
+
+ChangeLog:
+----------
+
+Revision 1.2 1999/07/30 04:08:42 too
+
+- Added printing version string (and exit) with `-V' command line option.
+
+Revision 1.1 1999/04/21 17:23:20 too
+
+- Writes process id to /var/run/identd.pid.
+- Changes (effective) user id to `nobody' after initialization
+     (binding socket etc.).
+- Ignores some signals (HUP and PIPE).
+- Handles some signals that aborts by default. The handler function
+     tries to get rid of the pidfile.
+
+Revision 1.0 1999/04/xx xx:xx:xx 
+
+Initial release. Rerevisioned a while after an initial public release.

@@ -1,0 +1,6 @@
+id 17
+user whatever 
+password user@localhost
+filename *.h
+keyword fork
+environ PIPPO=foo PEPPO=bar

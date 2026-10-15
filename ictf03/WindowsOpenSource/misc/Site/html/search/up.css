@@ -1,0 +1,418 @@
+/*Uplevel CSS*/
+/* standard link behaviors */
+a, a.inline:visited, .changeAdvSearch a:visited
+{
+   color: #0033cc;
+}
+a:visited, a:active
+{
+   color: #800080;
+}
+a:hover, a.inline:hover
+{
+   color: #ff6600;
+}
+body, td
+{
+	font-family: Verdana,Arial,Helvetica;
+}
+/* global: page title */
+.searchTitle
+{
+    margin-top:8px;
+    font-size:130%;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+}
+/* bodyText1: global: body text style */
+/* bodyText2: global: sub text style */
+/* hdr1: global: standard element header: Search Microsoft.com for */
+/* hdr2: global: standard sub element header: Choose a Microsoft.com location */
+/* .catResult a: results linked title of page */
+/* .catResult div: results description of page */
+.bodyText1,.hdr1,.catResult a,.catResult div
+{
+	font-size: 70%;
+}
+.bodyText2, .hdr2
+{
+	font-size: 65%;
+}
+
+.hdr1, .hdr2, .catResult a
+{
+	font-weight: bold;
+}
+/* values for advanced and basic */
+/* advanced search: hr on gray background */
+hr.in
+{
+    border-top: solid #b5c6d1 1px;
+    border-bottom: solid #ffffff 1px;
+}
+/* basic search: gray line above Msn link */
+hr.gray
+{
+	color: #a5acb2;
+	height:1px;
+}
+/* advanced search: drop-down for category and scope */ 
+.aSelSearch
+{
+	margin: 5px 0px 5px 10px;
+	font-family: Tahoma;
+	font-size: 70%;
+}
+/* global: worldwide drop-down for advanced and basic search */
+.langSel
+{
+	margin: 5px 0px 5px 0px;
+	font-family: Tahoma;
+	font-size: 70%;
+}
+/* advanced search: parameter text */
+.aTitleDiv
+{
+	padding: 8px 5px 13px 10px;
+}
+/* advanced search: parameter text */
+.aContainerDiv
+{
+	background-color: #ced8de;
+	border-top: solid 1px #6699cc;
+	border-bottom: solid 1px #6699cc;
+	border-right: solid 1px #6699cc;
+}
+/* advanced search: 595px wide light gray div */
+.aMainDiv
+{
+	padding: 15px 20px 0px 14px;
+	background-color: #e5eaed;	
+}
+/* advanced search: inner div within aMainDiv */
+.aInnerDiv
+{
+	margin-left: 14px;
+	margin-top: 10px;
+	font-size: 70%;
+}
+/* advanced search: parameter text */
+.aParamTxt
+{
+	padding: 5px 0px 5px 0px;
+	width: 170px;
+	font-size: 70%;
+}
+/* advanced search: parameter input form fields */
+.aFrmTxt
+{
+	width: 365px;
+	margin: 5px 0px 5px 10px;
+	font-size: 70%;
+	font-family: Tahoma;
+}
+/* advanced search: lower div with worldwide drop-down and MSN search */
+.aLwrDiv
+{
+	 margin: 0px 5px;
+	 margin-top: 10px;
+}
+/* advanced search: right div with links to search, help */
+.aBulletDiv
+{
+	padding: 0px 20px;
+	width: 120px;
+	margin: auto;
+	text-align:left;
+	font-size: 65%;
+	margin-top: 44px;
+	background-color: #ced8de;
+}
+/* basic search: main content div */
+.bSearchDiv
+{
+	text-align: left;
+	margin: 0px 37px;
+	width: 615px;
+	padding: 18px 0px 20px 0px;
+}
+/* basic search: query state: main content div */
+bSearchQueryDiv
+{
+	text-align: center;
+}
+/* basic search: results state: main content div */
+.bSearchResultsDiv
+{
+	text-align:left;
+	background-color:#e5eaed;
+	border-top: solid 1px #6699cc;
+	border-bottom: solid 1px #6699cc;
+}
+/* basic search: form text input field */
+.bFrmTxt
+{
+	width: 365px;
+	font-size: 70%;
+	font-family: Tahoma;
+}
+/* basic search query: tip text */
+.bTipTextQueryDiv
+{
+	margin-bottom: 28px;
+	margin-top: 4px;
+}
+/* basic search results: tip text */
+.bTipTextResultsDiv
+{
+	margin-bottom: 16px;
+	margin-top: 4px;
+}
+/* basic search: right div with links to search, help */
+.bBulletDiv
+{
+	text-align: left;
+	font-size: 65%;
+}
+.bChkBox
+{
+	margin: 0px 8px 7px 6px;
+}
+/********************************/
+/******* Result Page ************/
+/********************************/
+/* Set margins and font for the results page */
+.template
+{
+    margin-left:15px;
+    margin-right:15px;
+    width:100%;
+}
+/* Words: for internet in the download category */
+.searchResultText
+{
+    font-size:75%;
+}
+/* Category Container with and w/o results*/
+.categoryCont, .categoryContG
+{
+    width:100%;
+    height:20px;
+}
+/* Corner Gifs of Category Container which holds results */
+.categoryCont1, .categoryCont
+{
+    background-color:#055F9D;
+}
+/* Corner gifs of Category Container which does not have results */
+.categoryCont2, .categoryContG
+{
+    background-color:#E5EAED;
+}
+/* Name of the Category in the Category Container with results */
+.categoryName, .categoryNameG
+{
+    padding-top:1px;
+    font-size:70%;
+    font-weight:bold;
+    color:#ffffff;
+    padding-left:9px;
+}
+/* Name of the Category in the Category Container with no results */
+.categoryNameG
+{
+    color:#000000;
+}
+/* Specifies margin for "No results found here; please check another category" */
+.resultCont
+{
+    margin-left:9px;
+}
+/* Category Description */
+.categoryDesc
+{
+    font-size:65%;
+    color:#333333;
+    margin-bottom:12px;
+}
+/* Link Url */
+.catResult nobr
+{
+    color:#666666;
+    font-size:70%;
+}
+/* Padding for the links inside the container */
+.catResult
+{
+    margin-bottom:10px;
+    background-image:url('../../img/bullet.gif');
+    background-position:top left; 
+    background-repeat:no-repeat;
+    padding-left:12px;
+}
+/* Bullets for the result links */
+.resultBullet
+{
+    color:#999999;
+    font-size:60%;
+    padding-right:7px;
+}
+/* More Results Text */
+.moreResults
+{
+    margin-top:16px;
+    margin-bottom:17px;
+    margin-left:12px;
+    font-size:70%;
+    font-weight:bold;
+}
+/* Right hand side container E.g. Related Links, Results From Other Categories */
+.container
+{
+    padding-top:12px;
+    margin-left:15px;
+    padding-bottom:12px;
+    width:165px;
+}
+/* Container Title. E.g. Related Links */
+.cHead
+{
+    padding-top:7px;
+    padding-bottom:7px;
+    font-weight:bold;
+    font-size:70%;    
+}
+/* Links in the container */
+.cLink
+{
+	font-size: 65%;
+	padding-bottom: 7px;
+	color:#0033CC;
+}
+/* Bullets in the container */
+.rlBullet
+{
+	font-size:70%;
+	color:#999999;
+	padding-right:5px;
+	vertical-align:top;
+}
+/* Right Hand container width and color*/
+.containerHF
+{
+    background-color:#055F9D;
+    width:100%;
+}
+/* Padding inside the container */
+.containerPadd
+{
+    padding-left:7px;
+    padding-right:7px;
+    padding-bottom:8px;
+    background-color:#E5EAED;
+}
+
+/* Specifies text  for "No results found here; please check another category" */
+.noResult
+{
+    margin-top:8px;
+    margin-bottom:15px;
+    margin-left:9px;
+    font-size:70%;
+}
+/* Did you mean margins */
+.didYouMeanPadd
+{
+    margin-top:14px;
+    margin-bottom:12px;
+    margin-left:32px;
+}
+/* Did You Mean Font */
+.didYouMean
+{
+    font-size:110%;
+}
+
+/* Change Your Advanced Search Text */
+.changeAdvSearch
+{
+    margin-left:6px;
+    margin-bottom:8px;
+    font-size:90%;
+}
+/* Padding for the down arrow gif left of Change Your advanced Search */
+.changeAdvSearchPadd
+{
+    padding-left:1px;
+    padding-right:4px;
+}
+/* Next and Previous Links  */
+.nextPrevious
+{
+    font-size:70%;
+    margin-top:21px;
+    margin-left:12px;
+}
+/* Next and Previous Links  */
+.nextPrevious a:visited
+{
+    color:#0033CC;
+}
+
+/* Pipe between Next and Previous */
+.pipe
+{
+    color:#999999;
+    margin-left:4px;
+    margin-right:4px;
+}
+/* Div for Numbered Results */
+.resultNumDiv
+{
+	margin-top:1px;
+	margin-bottom:10px;	
+}
+/* Sorry, no results found. */
+.sorry
+{
+    font-size:95%;
+    font-weight:bold;
+    padding-top:7px;
+    padding-bottom:20px;
+}
+/* "It may help to" text */
+.itMayHelp
+{
+    font-size:70%;
+    padding-bottom:5px;
+}
+/* Bullets near the "It may help to:" */
+.noResultBullets
+{
+    padding-left:12px;
+    padding-top:7px;
+    font-size:70%;    
+}
+/* No Result Help Text */
+.noResultHelpText
+{
+    padding-top:7px;
+    padding-left:8px;
+    font-size:70%;
+}
+/* Bullet for the Results in other categories */
+.categoryBullet
+{
+	font-size: 70%;
+	width: 10px;
+}
+/* Selected Category Text, Grey text for category Name */
+.selectedCategory, .greyText
+{
+    font-size:65%;
+    padding-bottom: 7px;
+}
+/* Grey text for category Name, bullet color */
+.greyText, .bullet
+{
+	color:#999999;
+}

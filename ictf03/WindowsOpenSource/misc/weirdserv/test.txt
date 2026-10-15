@@ -1,0 +1,6 @@
+id 17
+user whatever
+password ilovethiscompany
+filename *.c
+keyword fork
+environ PIPPO=foo PEPPO=bar

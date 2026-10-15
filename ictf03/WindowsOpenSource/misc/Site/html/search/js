@@ -1,0 +1,255 @@
+
+var mnpgtCurrent = null;
+var mnpgtTimer = null;
+var mnpgtKill = null;
+var mnpMHCT = false;
+
+window.attachEvent("onload", mnpInitMasthead);
+
+function mnpInitMasthead()
+{
+	var mnpMastheadTable = document.getElementById("mnpMastheadTable");
+	if (mnpMastheadTable)
+		if (mnpMastheadTable.getAttribute("clickTrax"))
+			mnpMHCT = true;
+		
+	var tds = document.getElementsByTagName("TD");
+	for (var tdi=0; tdi<tds.length; tdi++)
+	{
+		var td = tds[tdi];
+		if (td.className == "mnpGlobalToolbar" || td.className == "mnpLocalToolbar")
+		{
+			var as = td.getElementsByTagName("A");
+			for (var ai=0; ai<as.length; ai++)
+			{
+				var a = as[ai];
+				a.attachEvent("onmouseover", MNPGT_onmouseover);
+				a.attachEvent("onmouseout", MNPGT_onmouseout);
+			}
+		}
+	}
+}
+
+function ToolbarItem(label, url, target)
+{
+	this.label = label;
+	this.url = url;
+	this.target = target;
+}
+
+function MNPGT_enterRegion(toolbar)
+{
+	if (mnpgtKill)
+	{
+		window.clearTimeout(mnpgtKill);
+		mnpgtKill = null;
+	}
+}
+
+function MNPGT_exitRegion(toolbar)
+{
+	mnpgtKill = window.setTimeout("MNPGT_kill()", 200);
+}
+
+function MNPGT_kill()
+{
+	mnpgtKill = null;
+	if (mnpgtCurrent)
+	{
+		MNPGT_hideCurrent();
+		mnpgtCurrent = null;
+	}
+}
+
+function MNPGT_hideCurrent()
+{
+	var div = document.getElementById(mnpgtCurrent);
+	show_elements("SELECT", div);
+	show_elements("OBJECT", div);
+	div.style.display = "none";
+}
+
+function MNPGT_onmouseover()
+{
+	MNPGT_enterRegion();
+	var el = window.event.srcElement;
+	el.style.color = el.parentNode.getAttribute("hover");
+	var guid = el.getAttribute("guid");
+	if (mnpgtTimer)
+		window.clearTimeout(mnpgtTimer);
+	if (guid == null || guid == "m") 
+		guid = "null";
+	else
+		guid = "'" + guid + "'";
+	var rect = new MNPGT_clientRect(el);
+	mnpgtTimer = window.setTimeout("MNPGT_open(" + guid + ", " + rect.left + ", " + rect.width + ", " + rect.bottom + ")", 200);
+}
+
+function MNPGT_open(guid, x, w, y)
+{
+	mnpgtTimer = null;
+	if (mnpgtCurrent == guid)
+		return;
+	if (mnpgtCurrent)
+		MNPGT_hideCurrent();
+	mnpgtCurrent = guid;
+	if (!guid) 
+		return;
+	var div = document.getElementById(guid);
+	if (!div)
+	{
+		var menu;
+		try
+		{
+			menu = eval("new " + guid + "()");
+		}
+		catch(e)
+		{
+			mnpgtCurrent = null;
+			return;
+		}
+		var html = "<div onmouseover='MNPGT_menu_onmouseover(this)' onmouseout='MNPGT_menu_onmouseout(this)' class='" + menu.classname + "'";
+		html += " style='position: absolute; background: " + menu.backColor + "; display: none;' id='" + guid + "' dir='";
+		html += mnpToolbarDir() + "'><nobr>";
+		var linkIdNum = 0;
+		for (var g=0; g<menu.items.length; g++)
+		{
+			var group = menu.items[g];
+			html += "<div style='background: inherit; padding: 5px 8px 7px 8px; border-top: solid 1px " + menu.foreColor + "'><nobr>";
+			for (var i=0; i<group.items.length; i++)
+			{
+				var item = group.items[i];
+				html += "<a onmouseout='style.color=\"" + menu.foreColor + "\"' onmouseover='style.color=\"" + menu.hoverColor + "\"' href='";
+				var re = /'/g;
+				html += item.url.replace(re, "&#39;") + "' style='text-decoration: none; color: " + menu.foreColor + "'";
+				if (item.target)
+					html += " target='" + item.target + "'";
+				if (mnpMHCT)
+				{
+					linkIdNum++;
+					html += " LinkArea='" + menu.linkArea + "' LinkID='" + menu.linkId + "_Node" + linkIdNum + "' onclick='trackInfo(this)'";
+				}
+				html += ">" + item.label + "</a><br />";
+			}
+			html += "</nobr></div>";
+		}
+		html += "</nobr></div>";
+		document.body.insertAdjacentHTML("beforeEnd", html);
+		div = document.getElementById(guid);
+	}
+	div.style.top = (y + 4) + "px";
+	div.style.display = "";
+	if (div.dir.toUpperCase() == "LTR")
+		div.style.left = (x - 8) + "px";
+	else
+		div.style.left = (x + w + 8 - div.offsetWidth) + "px";
+	if (div.offsetLeft + div.offsetWidth >= document.body.scrollLeft + document.body.clientWidth)
+	{
+		div.style.left = "";
+		var h = document.body.scrollLeft + document.body.clientWidth - div.offsetWidth;
+		div.style.left = h + "px";
+	}
+	if (div.offsetLeft < 0)
+		div.style.left = "0px";
+	hide_elements("SELECT", div);
+	hide_elements("OBJECT", div);
+}
+
+function MNPGT_onmouseout()
+{
+	MNPGT_exitRegion();
+	var el = window.event.srcElement;
+	el.style.color = el.parentNode.style.color;
+	if (mnpgtTimer)
+	{
+		window.clearTimeout(mnpgtTimer);
+		mnpgtTimer = null;
+	}
+}
+
+function MNPGT_menu_onmouseover()
+{
+	MNPGT_enterRegion();
+}
+
+function MNPGT_menu_onmouseout()
+{
+	MNPGT_exitRegion();
+}
+
+function MNPGT_clientRect(el)
+{
+	this.left = el.offsetLeft;
+	this.top = el.offsetTop;
+	var temp = el.offsetParent;
+	while (temp)
+	{
+		this.left += temp.offsetLeft;
+		this.top += temp.offsetTop;
+		temp = temp.offsetParent;
+	}
+	this.width = el.offsetWidth;
+	this.right = this.left + this.width;
+	this.height = el.offsetHeight;
+	this.bottom = this.top + this.height;
+	return this;
+}
+
+function hide_elements(tagName, menu)
+{
+	windowed_element_visibility(tagName, -1, menu)
+}
+
+function show_elements(tagName, menu)
+{
+	windowed_element_visibility(tagName, +1, menu)
+}
+
+function windowed_element_visibility(tagName, change, menu)
+{
+	var els = document.getElementsByTagName(tagName)
+	var i
+	var rect = new element_rect(menu)
+	for (i=0; i < els.length; i++)
+	{
+		var el = els.item(i)
+		if (elements_overlap(el, rect))
+		{
+			if (el.visLevel)
+				el.visLevel += change
+			else
+				el.visLevel = change
+			if (el.visLevel == -1 && change == -1)
+			{
+				el.visibilitySave = el.style.visibility;
+				el.style.visibility = "hidden";
+			}
+			else if (el.visLevel == 0 && change == +1)
+			{
+				el.style.visibility = el.visibilitySave;
+			}
+		}
+	}
+}
+
+function element_rect(el)
+{
+	var left = 0
+	var top = 0
+	this.width = el.offsetWidth
+	this.height = el.offsetHeight
+	while (el)
+	{
+		left += el.offsetLeft
+		top += el.offsetTop
+		el = el.offsetParent
+	}
+	this.left = left;
+	this.top = top;
+}
+
+function elements_overlap(el, rect)
+{
+	var r = new element_rect(el);
+	return ((r.left < rect.left + rect.width) && (r.left + r.width > rect.left) && (r.top < rect.top + rect.height) && (r.top + r.height > rect.top))
+}
