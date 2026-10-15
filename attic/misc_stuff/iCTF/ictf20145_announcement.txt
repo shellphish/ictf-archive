@@ -1,0 +1,179 @@
+Folks, 
+       We are frantically working on the 2014-but-ran-in-2015 iCTF.
+
+You will soon receive a VirtualBox VM that will act as your router into the competition.
+Please: TEST YOUR CONNECTIVITY ASAP!!!
+
+In many situations, we found that some teams test their connectivity
+at the very last moment, and when something goes wrong we do not have
+the resources to support them, as we are completely devoted to
+jumpstarting the competition. Please help us and test soon.
+
+You will receive the VM for the competition on Thursday. 
+It will be encrypted, and the key will be disclosed on 
+Friday morning.
+
+You will have root on your VM, but you will not able to directly
+attack other teams. Instead, you will have to develop your exploits
+according to our framework (more information soon) and send them to us
+for testing. If they are functional, we will run your exploit on your
+behalf against the other teams.
+
+Now, some notes about scoring. Read carefully.
+
+The score for a team is a composition of four elements:
+
+* The Service Level Agreement (SLA), which takes into account which
+  services are up and/or uncompromised during the competition.
+
+* The Timeliness score, which provides a bonus to teams that exploit a
+  service earlier in the game.
+
+* The Diversity score, which provides a bonus to teams that exploit
+  larger numbers of services.
+
+* The Leetness score, which provides points based on the number of
+  teams that are exploiting a specific service.
+
+More details about these components follow.
+
+* Service Level Agreement
+
+During each tick in the game (say, 2 minutes), the scorebot determines
+the status of the services for each team.
+
+A service can be down (that is, a TCP connection cannot be
+established) or non-functional (that is, something prevents the
+service from being used as intended. For example, a flag cannot be set
+or retrieved). In both cases, the team who owns the service gets 0
+points for that service (but might be informed of the type of failure,
+to help diagnosing problems).
+
+A service can be functional (which implies it is up). In this case, if
+the service has been compromised the team who owns the service gets 1
+SLA point for that service. If the service was not compromised the
+team gets 2 SLA points. The overall SLA is the average of the SLA
+values across the whole competition.
+
+For example, suppose that there are three services (S1, S2, S3) and
+three ticks (there will be a lot more, of course). These are the value
+for a specific team.
+
+Tick 1: S1 is down = 0, S2 and S3 are up and uncompromised = 2 + 2 =
+4. Total is 4
+
+Tick 2: S1 is up but non-functional = 0, S2 is up and compromised = 1,
+and S3 is up and uncompromised = 2. Total is 3
+
+Tick 3: S1 is up and uncompromised = 2, S2 and S3 are down = 0. Total
+is 2
+
+At the end of the competition, the average SLA is (4 + 3 + 2) / 3 = 3.
+
+At the end of the competition, the overall SLA is determined relative
+to the other teams. That is, the team who has the highest SLA (say 6)
+gets a score of 1. Everybody else gets a score that is proportional
+to the highest value. For example, the team in the example above has
+an SLA of 3 and therefore would get a score of 3/6 = 0.5.
+
+This team’s final SLA is 0.5, which means that the overall score of
+ this team (computed as a composition of timeliness, diversity, and
+ leetness) will be cut in half.
+
+Needless to say, it is very important that the team works hard to have
+their services up and functional (and possibly uncompromised).
+
+* Timeliness    
+
+The timeliness points are given to teams who submit early a working
+exploit to a service.
+
+The first team gets full points (e.g., 10), the second team gets less
+points (e.g., 5), and so on. After a few iterations, no one else
+receives timeliness points for that service.
+
+This point system gives a bonus to the fastest team to submit a
+working exploit (and penalizes those who copy it after having observed
+it on the wire).
+
+At the end of the competition, the overall timeliness score is
+determined relative to the other teams. That is, the team who has the
+highest timeliness points (say 50) gets a score of 100. Everybody else
+gets scores proportional to the highest value (for example, a team
+that has 10 timeliness points would get a score of 10/50*100 = 20).
+
+The timeliness score accounts for 20% of the overall score.
+
+* Diversity
+
+The diversity points are given to teams in proportions to the number
+of different services they successfully exploit. If a team exploits a
+service, it will get 10 points. When the team submits a second
+service, the team will get 20 points (for a total of 30 points), for
+the third one, the team will get 30 points (for a total of 60 points).
+
+At the end of the competition, the overall diversity score is
+determined relative to the other teams. That is, the team who has the
+highest diversity points (say 400) gets a score of 100.  Everybody
+else gets scores proportional to the highest value.
+
+The diversity score accounts for 40% of the overall score.
+
+* Leetness
+
+Leetness points are given to the teams that are able to exploit the
+most difficult services.
+
+At each tick there is a number of points (say 100) that are in
+play. These points are divided equally among the services that are
+being exploited in that tick. For example, if there are 5 services
+being actively exploited, each service will get 20 points. These 20
+points are shared equally among the teams that are actively exploiting
+the service. So if a service is exploited by 2 teams, they will get 10
+points each. If a service is exploited by 5 teams, they will each get
+4 points each.
+
+At the end of the competition, the overall leetness score is
+determined relative to the other teams. That is, the team who has the
+highest leetness points (say 2344) gets a score of 100.
+Everybody else gets scores proportional to this value. 
+
+The leetness score accounts for 40% of the overall score.
+
+* Summary
+
+In summary, suppose that a team has an SLA of 0.5.
+
+Suppose that the maximum amount of point for timeliness is 700 (that
+is, these are the timeliness points of the most timely team) and a team got
+30 timeliness point. Their normalized timeliness score is then
+30/700*100 = 4.28.
+
+Suppose that the maximum amount of point for diversity scored by a
+team is 210 (that is, these are the diversity points of the most
+diverse team) and that the team exploited 5 services (150 diversity
+points). Their normalized diversity score is 150/210*100 = 71.4.
+
+Finally, suppose that the team has gained 150 leetness points, and the
+best performing team gained 310 leetness points. Therefore their normalized
+leetness score would be 150/310*100 = 48.38
+
+The overall score of the team would be (4.28 * 0.2) + (71.4 * 0.4) +
+(48.38 * 0.4) = 48.78. These is because of the relative weights of the
+scores.
+
+This has to be me multiplies by the SLA. The team has an average SLA
+of 5.4, while the team with the best SLA has an average SLA of
+7. Therefore the actual SLA score would be 5.4/7 = 0.77, and the final
+point would be: 48.78 * 0.77 = 37.63.
+ 
+The team who has the highest overall final score wins.  Note that
+there might a few parameter that we might change in order to balance
+the game, but this should be a pretty realistic description of our
+scoring procedure.
+
+More details will follow.
+
+Cheers,
+
+	Giovanni Vigna

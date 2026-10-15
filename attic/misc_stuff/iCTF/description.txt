@@ -1,0 +1,67 @@
+Each team is given privileged access to a server that runs a number of
+services.  These services have a number of undisclosed vulnerabilities.
+
+The services are used by a number of simulated users. As part of the
+normal operation of a service, a piece of service-specific
+information, called a flag, is stored and retrieved from each service.
+
+Amidst this normal, benign traffic there are attacks, which are run by
+the organizers of the competition. These attacks exploit
+vulnerabilities in the services in order to retrieve flags that, in
+normal circumstances, would not be accessible to the attacker.
+
+The goal of each team is to identify which TCP connections contain an
+attack.  More precisely, the scoring system pushes to each team a flow
+description (source and destination ports and IP addresses, timestamp,
+and unique ID). The team can then call a scoring service and claim
+that a certain connection (identified by its ID) contains an attack.
+
+Correctly identifying a connection as malicious gives points to the
+defending team.  The amount of points received depends on how timely
+the detection is.  After a few hours, the detection is
+worthless.  Of course, false positives, i.e., identifying as malicious
+a connection that is instead benign, will cause points to be
+subtracted from the team's score.
+
+Teams must identify vulnerabilities in their services and, if
+possible, patch their services so that they are not vulnerable. Note
+that if patching makes the service non-functional for the
+simulated users (that is, it does not work as expected when used in a
+benign way), the service will be labeled as "non-functional". If the
+service is not responding at all, the service will be labeled as "down".
+The amount of services that are fully functional directly affect the
+points that are assigned for correct detections. More precisely, the
+historical values of availability creates a multiplier that is applied to the
+overall score.
+
+Teams must also develop exploits to compromise services. Different
+from other competitions, these exploits will be run by the organizers.
+Therefore, the teams need to deploy their exploits according to a
+well-defined Python-based framework (soon to be published), so that
+they can be integrated in the attack infrastructure. An attack is
+successful when it is able to retrieve the most recent flag for a
+service.
+
+Note that, because of this design, no team is directly attacked by
+another team.  Instead, the organizers' infrastructure is attacking
+each team separately, using both the organizers' exploits, and the
+exploits submitted by the various teams.
+
+If the exploit written by team X is successfully run against a service
+of team Y, points are given to team X. If the attack is detected by
+team Y, of course, points are also assigned to team Y. Therefore, teams
+should devise stealthy attacks, and, at the same time, effective
+patching and attack detection.
+
+A scoreboard, shows, in real-time, the status of the services of each
+team, and the amount of points accumulated. Note that the points can 
+decrease, because of false positives.
+
+Since we are running attack code on behalf of the team, we assume that
+the code will be "well-behaved" (no DOS, no attacks against the
+execution/scoring infrastructure). If such behavior is detected in the
+attack code, the team will be eliminated from the competition.
+
+
+
+

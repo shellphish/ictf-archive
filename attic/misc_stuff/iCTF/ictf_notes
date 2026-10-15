@@ -1,0 +1,3 @@
+Scriptbot runs the scripts and reqeusts/submits flags to the DB API
+Gamebot needs to be using the DB API
+
