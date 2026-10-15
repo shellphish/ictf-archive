@@ -18,6 +18,12 @@ participation:
     RPI Brooklyn (BrooklynPoly), UIUC (uiuc), West Point (usma).
     The competition had serious performance problems.
 
+results:
+  winner: null
+  notes: >
+    No winner was declared. The competition had serious performance problems and
+    ended without a clear outcome. A rematch was held in June 2005 (see ictf04-05).
+
 challenges:
   - name: feedback
     title: "Feedback Service"

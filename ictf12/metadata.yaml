@@ -50,7 +50,14 @@ challenges:
   - name: airplane
     title: "Airplane"
     category: binary
-    description: "SCADA/critical infrastructure service (airplane systems). Exact mechanics not preserved."
+    description: >
+      Air traffic control SCADA service by Benjamin Caillat. The vulnerability involved forging
+      airplane position updates: the system used CRC32 as a "HMAC" (not a real cryptographic
+      hash), allowing teams to craft signed position updates that deviated the airplane trajectory
+      by >0.2 degrees. The "AutoServ DLF-17500" automation server firmware (v2.3.1) had the
+      same RC4 key for request and response encryption. ZDI ("Zebra Dwarf Institution") announced
+      hints mid-competition to help teams find the exploit.
+      (Security advisory: SEC-03-22-2013-DLF-17500; write-up at rep.github.com/ictf-2012-airplane-exploit.html)
 
   - name: curiosityblogging
     title: "Curiosity Blogging"
@@ -93,7 +100,7 @@ data:
     description: "Full competition theme description and rules"
 
 infrastructure:
-  scorebot: "ctf-scorebot5"
+  scorebot: "custom"
   network: >
     Each team was given a server running critical infrastructure services.
     ZDI (Zebra Dwarf Institution) framework for exploit submission.
@@ -103,7 +110,7 @@ infrastructure:
     individual_challenges: false
 
 resources:
-  ctftime: "https://ctftime.org/event/96"
+  ctftime: "https://ctftime.org/event/65"
   website: "http://www.ictf2013.info"
 
 notes: >

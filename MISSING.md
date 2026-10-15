@@ -4,6 +4,8 @@ This document tracks what data, source code, metadata, and infrastructure is mis
 
 **Recent updates (2026-10-14):** Winners for ictf15, ictf16, ictf19, ictf20, ictf21, ictf23, ictf24 added from CTFtime.org. ictf18 stub created (previously missing from archive). ictf22 confirmed: no competition was held (COVID-19). Dates corrected for ictf19, ictf20, ictf21. Team counts updated for ictf07, ictf15, ictf16, ictf19, ictf20, ictf21.
 
+**Recent updates (2026-10-14, session 4):** ictf09 full scoreboard (47 ranks, 56 teams) recovered from `scores.pdf` in iCTF-backup archive; ictf09 browser families confirmed from `stats.pdf` (erbrawser, operla, pyrefox, jecko, crefox — 5 browser families, 13 versions); 4 additional challenge entries added. ictf12 service names confirmed from ctf-admin mailing list (8 services: powerplan, water, airplane, curiosityblogging, pesticides, pewpew_smartgrid, stockjobber, nuclearboom; "irs" was drafted but dropped). ictf13 CTFtime event 112 confirmed. ictf04 `results:` section added (no winner declared).
+
 Severity scale: **🔴 Critical** (fundamental gap) | **🟡 Important** (notable gap) | **🟢 Minor** (nice-to-have)
 
 ---
@@ -115,7 +117,7 @@ Winners confirmed from site files and mailing lists:
 🟡 **Service source code** — 9 services have stubs. Most source is accessible via the site VMs. Dockerfiles: only 1 of 9.  
 🔴 **Winner** — Competition had "serious performance problems" and a rematch was held. No declared winner for ictf04 itself.  
 🟡 **Scoreboard** — No final scoreboard preserved (competition ended without clear winner).  
-🟢 **Metadata completeness** — `results:` section absent; should note "no winner declared — see ictf04-05".
+🟢 **Metadata completeness** — `results:` section added (winner: null, notes explain no winner was declared) ✅
 
 **Possible recovery:** VMs in `vms/` contain service source. The `iCTF2004_Nov12/` in misc_stuff has a broken vmdk stub (no actual disk data — the vmdk file is just 351 bytes).
 
@@ -124,7 +126,7 @@ Winners confirmed from site files and mailing lists:
 ### ictf04-05 (2005) — The Bass Tard Corporation
 
 🟡 **Service source code** — 10 services; 7 with Dockerfiles, 3 stub-only. Source partially extracted from VMs.  
-🔴 **Winner not in metadata** — Winner is "The Tower of Hanoi" (Politecnico di Milano) — confirmed from `ictf04-05/site/index.html` but `results:` section missing from `metadata.yaml`.  
+🟢 **Winner** — Tower of Hanoi (Politecnico di Milano) in `results:` section ✅  
 🟡 **Full scoreboard** — Not preserved (only winner confirmed).  
 🟢 **VM source** — `attic/misc_stuff/iCTF2/iCTF2_clean.tgz` (540 MB, June 2005) is the full Bass Tard rematch VM — mounting this could yield remaining service source.
 
@@ -178,12 +180,13 @@ Winners confirmed from site files and mailing lists:
 
 ### ictf09 (2009) — Know Your Enemy: Rise of the Botnet
 
-🔴 **Service source code** — 4 known services (erlang-browser, robabank, madoffunds, vulnerable-service) have stubs but NO source code and NO Dockerfiles. The services were browser-exploit-based (drive-by download attacks); source may never have been public.  
-🔴 **Service count** — Only 4 services documented; actual competition may have had more.  
-🟢 **Winner** — CInsect (University of Hamburg) ✅  
-🟢 **Scoreboard** — PDF preserved in `data/scores/scores.pdf` ✅  
+🔴 **Service source code** — 8 challenges documented (5 browser families + 3 infrastructure services) but NO source code and NO Dockerfiles. Browser source was in `browsers.tar.gz` which is not preserved; the Windows XP development VM (15 GB) likely contains it.  
+🟡 **Service names** — 8 challenge entries in metadata: browser families (erlang-browser/erbrawser, operla, pyrefox, jecko, crefox) + infrastructure (robabank, madoffunds, vulnerable-service). Only erbrawser and operla were successfully exploited during competition. ✅  
+🟢 **Winner** — CInsects (University of Hamburg) ✅  
+🟢 **Full scoreboard** — 47 ranks (56 teams) recovered from `scores.pdf` in iCTF-backup; all teams with Mulah/L33tnezz/P0wnwership scores ✅  
+🟢 **Team count** — 56 teams confirmed ✅  
 
-**Action needed:** Verify total service count. Source extraction would require mounting the VM (in `vms/`).
+**Action needed:** Verify if browser source code can be extracted from the Windows XP VM. Source recovery requires mounting `Virtual Machine/*.vmdk`.
 
 ---
 
@@ -211,14 +214,14 @@ Winners confirmed from site files and mailing lists:
 
 ### ictf12 (2013) — SCADA Breakdown
 
-🔴 **Service names** — No service names preserved in local archive.  
-🔴 **Service source code** — Zero services in challenges directory.  
+🟡 **Service names** — 8 confirmed from ctf-admin mailing list: powerplan, water, airplane, curiosityblogging, pesticides, pewpew_smartgrid, stockjobber, nuclearboom. "irs" drafted but dropped. Source code not preserved (no VM accessible). ✅  
+🔴 **Service source code** — Zero services in challenges directory; no accessible VM.  
 🟢 **Winner** — PPP (Carnegie Mellon) ✅  
-🟡 **Scoreboard** — Score data preserved in `data/scores/` directory but not summarized in metadata.  
+🟡 **Scoreboard** — Score data preserved in `data/scores/` directory but not summarized in metadata. Transcription still needed.  
 🟡 **Network traffic** — Traffic logs in `data/traffic/` are gitignored (too large).  
-🟢 **Num teams** — Not documented.
+🟡 **Num teams** — Not yet extracted from `data/scores/`.
 
-**Action needed:** Transcribe top scoreboard from `data/scores/` to metadata. Document service names if findable in old emails or the website. Num teams from `data/scores/`.
+**Action needed:** Transcribe top scoreboard from `data/scores/` to metadata. Extract team count from score data.
 
 ---
 
