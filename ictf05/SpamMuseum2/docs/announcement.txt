@@ -1,0 +1,67 @@
+The UCSB International "Capture The Flag" Hacking Competition
+
+The UCSB International Capture The Flag Hacking Competition will be held this
+Friday, December 9, 2005, from 9am to 4pm at the Department of Computer
+Science of UCSB.
+
+This is the largest contest of this kind ever attempted. This year, 22 teams
+from 18 Universities spread over 4 continents (North America, Europe,
+Australia, and South America) will compete to determine who's the best at
+breaking computer networks and fixing them.
+
+The contest, (known as "the iCTF") is a distributed, wide-area security
+exercise, whose goal is to test the security skills of students from both the
+attack and defense viewpoints (details are available at
+http://www.cs.ucsb.edu/~vigna/CTF ).
+
+Each team is given an Internet server that provides a number of services. The
+services have a number of undisclosed vulnerabilities, which have been
+included by the contest organizers.
+
+The goal of each team is to maintain the set of services available and
+uncompromised throughout the contest phase, by finding the vulnerabilities and
+fixing them in their own copy of the server.  The teams will also leverage the
+vulnerabilities they found to compromise other teams' servers.
+
+During the contest, an automated scoring system keeps track, for each team, of
+what services are available, and which services have been compromised (that
+is, "who is hacking who"). Points are assigned to the teams according to their
+ability to defend their systems and successfully compromise the systems of
+other teams.
+
+This unique international exercise involves teams at different universities,
+spread across the US and Europe competing simultaneously. This is the first
+time ever that such a collaboration has developed for a network security
+challenge that involves colleges in the US and Europe.
+
+The institutions that participate are:
+
+- University of California Santa Barbara, USA
+- The University of Texas at Austin, USA
+- Darmstadt University of Technology, Germany
+- University of North Carolina, Charlotte, USA
+- University of Illinois at Urbana-Champaign, USA
+- Politecnico di Milano, Italy
+- Technical University of Vienna, Austria
+- RWTH Aachen University, Germany
+- Polytechnic University Brooklyn, NY, USA
+- University of Colorado at Colorado Springs, USA
+- University of South Florida, Tampa, USA
+- Georgia Tech, USA
+- University of La Plata, Buenos Aires, Argentina
+- Universita' degli Studi di Milano, Italy
+- Naval Postgraduate School at Monterey, USA
+- Queensland University of Technology, Brisbane, Australia
+- North Carolina State University, USA
+- Pennsylvania State University, USA
+
+The complete list (with team names) can be found at:
+http://www.cs.ucsb.edu/~vigna/CTF/participants.html
+
+The event will be based in the Engineering I Building, adjacent to the
+GSL/CISL and hosted by Dr. Giovanni Vigna , Department of Computer Science,
+College of Engineering.  
+
+http://www.cs.ucsb.edu/~vigna
+vigna@cs.ucsb.edu
+

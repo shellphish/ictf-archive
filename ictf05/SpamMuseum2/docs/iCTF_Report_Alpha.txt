@@ -1,0 +1,82 @@
+We decided to employ a proxy (man-in-the-middle) system between all of our TCP services, based on simpleproxy, an open source TCP proxy. We modified the proxy to create seperate log files for each connection, and for each service.  Then we created an ncurses visualization program which can actively visualize up to 15 open connections for a service. During the
+competition the visualizer was run on several services, but only yielded a few pieces of useful information (valuable nonetheless).
+
+The firewall that we setup was based off of the original ipchains that were setup by Vika for the initial redirection and nat-ing.  We user an ipchains wrapper called shorewall.  This system allowed us to quickly edit and update any rules that we had and easily add filters that were needed.  We first turned Vika's rules into the native shorewall format so that we could better understand how it worked for later on.  Then during the competition we defaulted to deny and punched holes in the firewall for the services that we knew about.  This also allowed us to redirect streams to proxies setup by David.
+
+Automated Exploit System (AES)
+We developed an automated script system that executed scripts in a specified
+directory.  They were tested against all vulnerable hosts and invoked
+another script that used regular expressions to extract the flags from the
+exploit output.  Then we utilized MySQL to check for duplicate flags.  If
+the flag did not exist, we then submitted the flag using wget and inserted
+the value into the database.  We manually analyzed the output from the
+system to remove patched hosts in the process.  There were several exploits
+that were very difficult to exploit automatically such as in spammerd.
+These were done manually while development for a script was being created.
+Unfortunately we ran out of time, but the manual process was rather
+successful in the end.
+
+Chaos aptly describes the iCTF for the Alpha team.  We made use of the knowledge we knew for finding vulnerabilities, but initially had troubles automating the attacks that we found.  Personally I worked on the acquire
+web service.  I found, patched and exploited two vulnerabilities.  Then I worked on spamd and due to lack of a automated submission script, I, with others turned in multiple flags.
+
+John Yoder did:
+*	Found and patched the command injection vulnerability in ftpd.
+
+*	Discovered way to spawn remote shell using command injection
+vulnerability in order to list flags in the ftpd directory.
+
+*	Helped develop command injection exploit in spamagent and automated
+exploit script. Ran into a lot of difficulties in automation.
+
+*	Monitored and kept ftpd service running (it sucked and kept crashing).
+
+Caitlin Holman
+    * worked on 'contribute' : found SQL injection vulnerabilities
+                             : worked with David to exploit them
+                             : worked with Amber to patch them
+    * Patched buffer overflow vulnerabilities in ftpd
+    * Worked with Avijit on other ftp vulnerabilites
+
+Avijit:
+*	Analyzed and patched spamagent service based on webform and C program file
+spamagent.c. David and John wrote command injection attack based
+on this analysis. Also patched ftpd,c file for buffer overflow.
+
+Amber:
+*	I worked on three main components:
+*	I helped analyze and patch ftpd.
+*	I helped patch SQL injection vulnerabilities in the contribute section of
+the website.
+*	I analyzed and wrote an automated exploit for the acquire section of the
+website.
+
+Shilpa also contributed:
+1> Spamin-out : tried strings , password hacking of Gnug password
+2> hall of shame:sql query injections
+3> Spammerd : found out working of spammerd, fuzzing and then the hack.
+Got the other members of th team to hack Spammerd of other team, because we
+were not able to automate the exploit.
+
+Kyo's report
+
+I prepared a number of scripts for both attack and defend, such as a
+trojan, process monitoring , file checksum checking, file backup, port
+scanning script.
+
+When the competition started, I ran those scripts in the background and
+referenced them whenever needed. The portscan was very useful in the
+beginnging.
+
+For the first few hours, my main focus was on the defence. while many other
+people in the team were working on patching the services, I took a rather
+different way to protect our services.
+
+I found out where all the flags were located, and wrote a bunch of scripts
+that generates fake flags for each service. Our machine was literally
+loaded with those fake flags constantly so that attacking team would have
+an extreme difficulty on trying to find the correct flags set by the
+scoring machine.
+
+Once I got the defense script working, I helped other people on exploring
+vulnerability, writng an automated script, patching services for the rest
+of the competition.
