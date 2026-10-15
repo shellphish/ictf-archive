@@ -1,0 +1,16 @@
+# Key apache configuration for bincgi service (displwiki):
+#
+# LoadModule cgi_module modules/mod_cgi.so
+# LoadModule actions_module modules/mod_actions.so
+#
+# ServerName displwiki
+# ScriptAlias /cgi-bin/ "/usr/local/apache-2.0.59/cgi-bin/"
+#
+# Action displ /cgi-bin/displ.cgi
+#
+# htdocs/.htaccess contains:
+#   SetHandler displ
+#
+# All requests to htdocs/ are routed through displ.cgi.
+# Log files: htdocs/{2009,2010}/{Jan,Feb,...,Dec}/YYYY_MM_D.log
+# Secret: /home/gpior/data/secret.txt
