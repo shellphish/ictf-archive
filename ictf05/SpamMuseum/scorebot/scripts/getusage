@@ -1,0 +1,3 @@
+#!/bin/bash
+#ssh root@128.111.48.102 "/home/wkr/get_penalty.sh"
+exit 0

@@ -1,0 +1,339 @@
+BODY {
+  background: white; 
+  color: #0c4a73; 
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* General font definitions */
+STRONG { 
+  font-weight: bold 
+}
+
+VAR { 
+  font-style: italic 
+}
+
+SAMP, TT, CODE, PRE { 
+  font-family: Courier New, Courier, monospace 
+}
+
+/* Heading definitions */
+H1 {
+  text-align: right; 
+  color: #0c4a73;
+  font-weight: normal;
+}
+
+H1:before { 
+  counter-reset: section;
+ }
+
+H2 {
+  text-align: left; 
+  color: darkred; 
+  font-weight: normal;
+}
+
+H2:before {
+  content: "Section " counter(section) ":"; 
+  counter-increment: section;
+  counter-reset: subsection;
+  counter-reset: subsubsection;
+}
+
+
+H3 {
+  text-align: left; 
+  color: darkred; 
+  font-weight: normal;
+}
+
+H3:before {
+  content: "Section " counter(section) "." counter(subsection) ": "; 
+  counter-increment: subsection;
+  counter-reset: subsubsection;
+}
+
+H4:before {
+  content: "Section " counter(section) "." counter(subsection) "." counter(subsubsection) ": "; 
+  counter-increment: subsubsection;
+}
+
+H4 {
+  text-align: left; 
+  color: darkred; 
+  font-weight: normal;
+}
+
+
+/* Link definitions */
+A:link {
+  color: #0c4a73;
+}
+
+A:visited {
+  color: darkred;
+}
+
+A:active {
+  color: #0c4a73;
+}
+
+/* List definitions */
+UL {
+  list-style-type: square;
+}
+
+LI {
+  padding: .2em .2em .2em .2em; 
+}
+
+/* Table definitions */
+THEAD {
+  background: #0c4a73; 
+  color: white; 
+  font-weight: bold
+}
+
+THEAD TD {
+  padding: .1em 1em .1em 1em; 
+}
+
+TBODY TD {
+  padding: .2em .2em .2em .2em; 
+}
+
+/* Definition list definitions */
+DT {
+  background: #0c4a73; 
+  width: ;
+  color: white; 
+  padding: .2em 2em .2em 2em; 
+  margin: .1%; 
+  font-weight: bold; 
+}
+
+/* Banner definitions */
+DIV.banner {
+/*  border-style: solid;
+  border-width: medium;
+  border-color: darkblue;*/
+}
+
+/* Sidebar definitions */
+DIV.sidebar {
+  border-style: solid;
+  border-width: 1.2px;
+  border-color: #0c4a73;
+  width: 15%;
+  float: right; 
+  background: white;
+  color: #0c4a73; 
+}
+
+DIV.sidebar H1 {
+  margin: .2em .2em .2em .2em;
+  padding: 3px 3px 3px 3px;
+  text-align: center;
+  color: #0c4a73;
+}
+
+DIV.sidebar H2 {
+  margin: .2em .2em .2em .2em;
+  padding: 3px 3px 3px 3px;
+  text-align: center;
+  color: #0c4a73;
+}
+
+DIV.sidebar H3 {
+  margin: .2em .2em .2em .2em;
+  padding: 3px 3px 3px 3px;
+  text-align: center;
+  color: #0c4a73;
+}
+
+DIV.sidebar H4 {
+  margin: .2em .2em .2em .2em;
+  padding: 3px 3px 3px 3px;
+  text-align: center;
+  color: #0c4a73;
+}
+
+DIV.sidebar A {
+  color: inherit; 
+  text-decoration: none;
+}
+ 
+DIV.sidebar A:hover { 
+  color: inherit; 
+  text-decoration: underline; 
+}
+
+DIV.sidebar A:visited { 
+  color: inherit;
+  text-decoration: none; 
+}
+
+DIV.sidebar UL {
+  /* border-style: solid;
+  border-width: medium;
+  border-color: white;*/
+  list-style: none;
+  margin: .2em .2em .2em .2em;
+  padding: 3px 3px 3px 3px;
+}
+
+DIV.sidebar LI {
+  border-style: solid;
+  border-width: 1.2px;
+  border-color: #0c4a73;
+  background: white;
+  color: #0c4a73;
+  margin: .2em .2em .2em .2em;
+  padding: 4% 4% 4% 4%;
+}
+
+DIV.sidebar LI:hover {
+  background: #0c4a73;
+  color: white;
+}
+
+
+/* Main body definitions */
+DIV.main {
+  /* border-style: solid;
+  border-width: medium;
+  border-color: darkblue;*/
+}
+
+DIV.main H1 {
+  text-align: left; 
+  color: darkred;
+}
+
+DIV.main H2 {
+  text-align: left; 
+  color: darkred;
+}
+
+
+DIV.main H3 {
+  text-align: left; 
+  color: darkred;
+}
+
+DIV.main H4 {
+  text-align: left; 
+  color: darkred;
+}
+
+DIV.sidebar + DIV.main {
+/*  border-style: solid;
+  border-width: medium;
+  border-color: darkblue; */
+  float: right;
+  left: 20%;
+  width: 80%;  
+}
+
+/* Footer definitions */
+DIV.footer {
+  /* border-style: solid;
+  border-width: medium;
+  border-color: darkred;*/
+  clear: both;
+  font-style: italic;
+  font-size: 50%;
+}
+
+/* Document definitions */
+DIV.docs {
+  /* border-style: solid;
+  border-width: medium;
+  border-color: darkred;*/
+}
+
+SPAN.doctitle {
+  font-weight: bold;
+  display: block;
+}
+
+SPAN.docauthors {
+  display: block;
+}
+
+SPAN.docauthors:after {
+  content: ".";
+}
+
+SPAN.dochowpub:after {
+  content: ",";
+}
+
+SPAN.docpublisher:after {
+  content: ",";
+}
+
+SPAN.docproc {
+  font-style: italic;
+}
+
+SPAN.docproc:before {
+  content: "In ";
+}
+
+SPAN.docproc:after {
+  content: ",";
+}
+
+SPAN.docjournal {
+  font-style: italic;
+}
+
+SPAN.docjournal:after {
+  content: ",";
+}
+
+SPAN.docnum:after {
+  content: ",";
+}
+
+SPAN.docnote {
+  font-style: italic;    
+}
+
+SPAN.docnote:after {
+  content: ".";
+}
+
+SPAN.docpages:before {
+  content: "pp. ";
+}
+
+SPAN.docpages:after {
+  content: ",";
+}
+
+SPAN.docwhere:after {
+  content: ",";
+}
+
+SPAN.doctype:after {
+  content: ",";
+}
+
+SPAN.docwhen:after {
+  content: ".";
+}
+
+SPAN.doclink {
+  display: block;
+}
+
+SPAN.doclink:before {
+  content: "[";
+}
+
+SPAN.doclink:after {
+  content: "]";
+}

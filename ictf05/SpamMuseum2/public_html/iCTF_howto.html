@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+      <meta content="HTML Tidy for Mac OS X (vers 1st December 2002), see www.w3.org"
+          name="generator" />
+      <link href="netsec.css" rel="stylesheet" type="text/css" />
+      <title>
+        The 2005 iCTF HowTo
+      </title>
+    </head>
+
+   <body>
+    <div class="banner">
+      <h1>
+        The December 2005 iCTF HowTo
+      </h1>
+    </div>
+
+    <div class="main">
+      <h1>
+        Network Setup
+      </h1>
+
+      This page explains the very basic and simple way to set up
+      a network infrastructure necessary for participating in the
+      iCTF 2005. The closer you follow the instructions provided below, the
+      less likely you will experience connectivity problems before/during the
+      CTF.
+
+      <h2>
+        Team Box Setup
+      </h2>
+
+      <p>
+        The instructions below are based on the following
+        assumptions:
+      </p>
+
+      <ul>
+        <li>
+         You have sent the public IP of your <tt>teambox</tt> to <a
+         href="mailto:rusvika@cs.ucsb.edu">Vika Felmetsger</a>
+	</li>
+	<li>
+	  You have received a public IP of the <tt>mainbox</tt> from
+	  us
+	</li>
+        <li>
+          The non-routable IP address assigned to your <tt>teambox</tt> is
+          10.1.1.1
+        </li>
+        <li>
+          The public IP address of the <tt>mainbox</tt> is 128.111.41.37
+        </li>
+        <li>
+          Your <tt>teambox</tt>'s external NIC interface is <tt>eth0</tt>
+        </li>
+        <li>
+          Your <tt>teambox</tt>'s internal NIC interface is <tt>eth1</tt>
+        </li>
+      </ul>
+      <p>
+        If you follow the steps in this section and substitute the
+        IP addresses given as an example with the IP addresses you
+        will use, by the end of this section you should be able to
+        connect to the main box through the GRE tunnel.
+      </p>
+      <ol>
+        <li>
+          Install <b>Fedora Core 4</b> (Linux 2.6-series kernel)
+          with <tt>iptables v1.3.0</tt> and the <tt>ip</tt>
+          utility (iproute2).
+        </li>
+        <li>
+          Configure your IP address and routing: 
+          <ol>
+            <li>
+              ifconfig eth0 &lt;your public IP&gt; netmask &lt;your
+              netmask&gt; broadcast &lt;your broadcast address&gt;
+            </li>
+            <li>
+              ifconfig eth1 10.1.1.1 netmask 255.255.255.0
+              broadcast 10.1.1.255
+            </li>
+            <li>
+              route add default gw &lt;your gateway IP&gt;eth0
+            </li>
+          </ol>
+          <p>
+            <b>To make this settings permanent, put the above
+            commands into <tt>/etc/rc.local</tt>.</b>
+          </p>
+        </li>
+        <li>
+          Enable IP forwarding: in the file <tt>/etc/sysctl.conf</tt>
+          set <tt>net.ipv4.ip_forward</tt> to 1. For this change to
+          take effect right away (without rebooting the computer),
+          execute: 
+          <pre>
+	     sysctl -p /etc/sysctl.conf
+	  </pre>
+	</li>
+        <li>
+          Setup GRE Tunnel: 
+          <ol>
+            <li>
+              modprobe ipip
+            </li>
+            <li>
+              modprobe ip_gre
+            </li>
+            <li>
+              ip tunnel add vpnet mode gre remote 128.111.41.37
+              local &lt;your <tt>teambox</tt> public IP&gt; ttl 255
+            </li>
+            <li>
+              ip link set vpnet up
+            </li>
+            <li>
+              ip addr add 10.1.1.1 dev vpnet
+            </li>
+            <li>
+              ip route add 10.0.0.0/8 dev vpnet
+            </li>
+          </ol>
+	  <p>
+            At this point, if you execute <tt>ifconfig</tt>, you
+            should see a new interface <tt>vpnet</tt> listed. 
+	    <b>To make this settings permanent, put the above commands
+            into <tt>/etc/rc.local</tt>.</b>
+          </p>
+        </li>
+        <li>
+          Enable NATing: 
+          <ol>
+            <li>
+              iptables --table nat --flush
+            </li>
+            <li>
+              iptables --table nat --delete-chain
+            </li>
+            <li>
+              iptables --table nat -A POSTROUTING -o eth0 -j SNAT
+              --to-source &lt;your public IP&gt;
+            </li>
+          </ol>
+          <p>
+            <b>To make this settings permanent, put the above
+            commands into <tt>/etc/rc.local</tt>.</b>
+          </p>
+        </li>
+        <li>
+          Firewalling: 
+          <ul>
+            <li>
+              You have to make sure that the only packets that are
+              routed through your <tt>teambox</tt> have its source and
+              destination the 10.x.x.x network addresses.: 
+              <ol>
+                <li>
+                  iptables -flush FORWARD
+                </li>
+                <li>
+                  iptables -P FORWARD DROP
+                </li>
+                <li>
+                  iptables -A FORWARD -s 10.0.0.0/8 -d 10.0.0.0/8
+                  -j ACCEPT
+                </li>
+              </ol>
+            </li>
+            <li>
+              <p>
+                It is up to you how to set the INPUT and OUTPUT
+                chain rules, but you have to allow for GRE packets
+                to go through:
+              </p>
+              <ol>
+                <li>
+                  iptables -A INPUT -p gre -s 128.111.41.37 -j
+                  ACCEPT
+                </li>
+                <li>
+                  iptables -A OUTPUT -p gre -d 128.111.41.37 -j
+                  ACCEPT
+                </li>
+              </ol>
+            </li>
+          </ul>
+          <p>
+            <b>To make this settings permanent, put the above
+            commands into <tt>/etc/rc.local</tt>.</b>
+          </p>
+        </li>
+        <li>
+          Send us your public IP address. After that we will be
+          able to connect you to the main box.
+        </li>
+      </ol>
+
+
+      <h2>
+        Image Box Setup
+      </h2>
+
+      <p>
+        The instructions given below are based on the following
+        assumptions:
+      </p>
+      <ul>
+        <li> You have a VMWare Workstation 5.0 license
+	     (you can get a free 30-day evaluation license from 
+	     <a href="http://www.vmware.com">www.vmware.com</a> web site )
+	</li>
+        <li>
+          The IP address assigned to your <tt>imagebox</tt> by us is
+          10.1.1.2
+        </li>
+        <li>
+          The IP address assigned to your <tt>teambox</tt> is 10.1.1.1
+        </li>
+        <li>
+          Your <tt>imagebox</tt>'s external NIC interface is <tt>eth0</tt>
+        </li>
+      </ul>
+      <p>
+        Do the following:
+      </p>
+      <ol>
+        <li>
+          Install <b>Fedora Core 4</b> (Linux 2.6-series kernel)
+          with <tt>iptables v1.3.0</tt> and <tt>ip</tt> utility
+          (iproute2).
+        </li>
+        <li>
+          Configure your IP address and routing: 
+          <ol>
+            <li>
+              ifconfig eth0 10.1.1.2 netmask 255.255.255.0
+              broadcast 10.1.1.255
+            </li>
+            <li>
+              route add default gw 10.1.1.1 eth0
+            </li>
+          </ol>
+	  <b>To make this settings permanent, put the above
+          commands into <tt>/etc/rc.local</tt>.</b>
+        </li>
+        <li>
+          Install VMware from
+          <a href="VMware-workstation-5.0.0-13124.i386.rpm"><tt>VMware-workstation-5.0.0-13124.i386.rpm</tt></a> with
+          bridged networking enabled
+        </li>
+        <li>
+          To be able to run two VMware images on the same VMware
+          machine with bridged networking enabled, patch VMware
+          with <a href="vmware-any-any-update94.tar.gz"><tt>vmware-any-any-update94.tar.gz</tt></a> 
+          <ul>
+            <li>
+              Untar and unzip
+              <tt>vmware-any-any-update94.tar.gz</tt>
+            </li>
+            <li>
+              cd vmware-any-any-update94
+            </li>
+            <li>
+              ./runme.pl
+            </li>
+          </ul>
+        </li>
+        <li>
+          Start you vmware machine and enter the license number.
+        </li>
+        <li>
+          It is up to you how to set up the firewall on your image
+          box. The only requirement is that the images running on
+          your VMware machine must be reachable from the outside
+          (10.0.0.0/8 network).
+        </li>
+      </ol>
+      <p>
+        This host should not be able to connect to any hosts other
+        than the hosts in 10.0.0.0/8 network. Do not add any
+        nameserver information to <tt>/etc/resolv.conf</tt> file.
+      </p>
+
+
+      <h2>
+        Vulnerable Box Setup
+      </h2>
+
+      <p>
+        The instructions given below are based on the following
+        assumptions:
+      </p>
+      <ul>
+        <li>
+          The IP address assigned to your vulnerable box is
+          10.1.1.3
+        </li>
+        <li>
+          Your vulnerable box's external NIC interface is
+          <tt>eth0</tt>
+        </li>
+        <li>
+	  The actual vulnerable MVWare image will be distributed only at the
+	  time of the CTF.  Meanwhile, we are making the image from the
+	  previous iCTF available <a
+	  href="iCTF_basstard.tgz"><tt>here</tt></a>. This image is provided
+	  for your convinience only and you do not have to have it up and
+	  running. 
+        </li>
+      </ul>
+      <p>
+        Do the following:
+      </p>
+      <ol>
+        <li>
+          Start your <tt>VMware</tt> machine.
+        </li>
+
+        <li>
+          Extract the host image from <tt>iCTF_basstard.tgz</tt>
+        </li>
+
+        <li>
+          Boot the VMware image in a single user mode (note that
+          Debian doesn't allow password-less single user mode
+          boot. However, if during the booting procedure you modify
+          the line:
+
+	  <pre>
+	      kernel /boot/vmlinuz-2.6.8-1-686 root=/dev/sda1 ro
+	  </pre>
+	  to
+	  <pre>
+	      kernel /boot/vmlinuz-1.6.8-1-686 root=/dev/sda1 rw init=/bin/sh
+	  </pre>
+
+	  This will give you a shell without asking for a password. Then you can
+	  edit the <tt>rc.local</tt> file and reboot).
+        </li>
+
+        <li>
+          Configure your IP address and routing (add the commands
+          below in <tt>/etc/rc.local</tt> file): 
+          <ol>
+            <li>
+              ifconfig eth0 10.1.1.3 netmask 255.255.255.0
+              broadcast 10.1.1.255
+            </li>
+            <li>
+              route add default gw 10.1.1.1 eth0
+            </li>
+          </ol>
+        </li>
+        <li>
+          Reboot the image.
+        </li>
+      </ol>
+
+
+      <h2>
+        Test Box Setup
+      </h2>
+
+      <p>
+	 <b>Do not modify anything (including the root password) on
+        this host and do not attack this host!</b>
+      </p>
+
+      <p>
+        <tt>Testbox</tt> is the host that we will be using to test the
+        network connectivity between the teams. Please, have this box
+        running <b>at all times</b> starting from now and until the CTF starts.
+        Notify <a href="mailto:rusvika@cs.ucsb.edu">Vika
+        Felmetsger</a> when your <tt>textbox</tt> is up and running.
+      </p>
+
+      <p>
+        <b>Note:</b> We are not planning to use this box at the time
+        of the CTF, but we might ask you to boot your
+        <tt>testboxes</tt> during the CTF if there are connectivity
+        problems with one or more teams.
+      </p>
+
+      <p>
+        The instructions given below are based on the following
+        assumptions:
+      </p>
+
+      <ul>
+        <li>
+          The IP address assigned to your <tt>testbox</tt> is 10.1.1.4
+        </li>
+        <li>
+          Your <tt>testbox</tt>'s external NIC interface is <tt>eth0</tt>
+        </li>
+        <li>
+          We have provided you with the vmware image
+          <a href="iCTF3_testbox.tgz"><tt>iCTF3_testbox.tgz</tt></a>
+        </li>
+      </ul>
+
+      <p>
+        Do the following:
+      </p>
+
+      <ol>
+        <li>
+          Extract the host image from <tt>iCTF3_testbox.tgz</tt>
+        </li>
+        <li>
+          Assuming that you have the VMware machine already running
+          with the vulnerable image, boot the <tt>testbox</tt> image (in a
+          single user mode) as the second image on the same
+          <tt>vmware</tt> machine.
+        </li>
+        <li>
+          Configure your IP address and routing (add the commands
+          below in <tt>/etc/rc.local</tt> file): 
+          <ol>
+            <li>
+              ifconfig eth0 10.1.1.4 netmask 255.255.255.0
+              broadcast 10.1.1.255
+            </li>
+            <li>
+              route add default gw 10.1.1.1 eth0
+            </li>
+          </ol>
+        </li>
+        <li>
+          Reboot the image.
+        </li>
+      </ol>
+    </div>
+
+
+    <div class="footer">
+      <hr />
+      Giovanni Vigna -
+      <a href="http://www.cs.ucsb.edu/~vigna">http://www.cs.ucsb.edu/~vigna</a>
+    </div>
+    <!--  LocalWords:  routable box's NIC eth GRE iptables ip iproute ifconfig gw
+     -->
+    <!--  LocalWords:  netmask sysctl modprobe ipip gre vpnet ttl addr dev NATing
+     -->
+    <!--  LocalWords:  nat POSTROUTING SNAT Firewalling VMware Untar unzip cd iCTF
+     -->
+    <!--  LocalWords:  vmware vuln tgz DAGO CTF dago Vigna
+     -->
+    </body>
+</html>
