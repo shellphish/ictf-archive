@@ -1,0 +1,100 @@
+WHAT: The UCSB International Capture The Flag (iCTF) Hacking Contest (ictf.cs.ucsb.edu)
+
+WHEN: March 22nd, 2013 from 8am PDT to 5pm PDT
+
+WHO: Teams from educational institutions around the world 
+
+HOW: Subscribe at http://www.ictf2013.info
+
+WHY: Because you need to prove you're the best!
+
+THE THEME, AND HOW IT ALL WORKS:
+
+Welcome to the National Cyberdefense Corps! You, along with other
+qualified applicants, have just been hired to secure the critical
+infrastructure of your country.
+
+With the globally recognized threat of Sicilian hackers on the
+offensive, the need to defend your country's critical services from
+catastrophic compromise is more urgent then ever.
+
+To facilitate this defense, you will be give privileged access to a
+server that runs a number of critical infrastructure services. Like
+all software, these services might have a number of undiscovered and
+undisclosed vulnerabilities.
+
+These services run your nation's backbone, and therefore are used by
+citizens of your country on a regular basis. As part of the normal
+operation of a service, a piece of secret, service-specific
+information, called a "flag", is stored and utilized by each service.
+
+Intelligence has deduced that, amidst this normal, benign traffic,
+there are attacks launched by those sneaky Sicilian hackers! These
+attacks exploit vulnerabilities in the services in order to retrieve
+flags that, under normal circumstances, would not be accessible to the
+attacker.
+
+Your first duty is mitigation. Using connection netflow information,
+provided by Intelligence, you must identify any connections that
+contain an attack. Each connection will be identified by a unique ID,
+the source IP and port, the destination IP and port, and a
+timestamp. A successful identification of a malicious connection will
+allow Intelligence to mitigate the damage that the attack might cause,
+and recover points for your country. Missing an attack, or incorrectly
+identifying intended usage of a service as an attack, will penalize
+your country, reducing points.
+
+In order for the mitigation to be successful, the attack must be
+identified quickly. After a few hours, the detection is worthless.
+
+Your next goal is vulnerability management. As the only line of
+cyberdefense, you must identify vulnerabilities in your country's
+services and, if possible, patch their services so that they are not
+vulnerable. Note, however, that if patching makes the service
+non-functional for the users (that is, it does not work as expected
+when used in a benign way), the service will be labeled as
+"non-functional". If the service is not responding at all, the service
+will be labeled as "down". The amount of services that are fully
+functional directly affect the points that are assigned for correct
+detections. More precisely, the historical values of availability
+creates a multiplier that is applied to the overall score.
+
+Of course, little know to your commander-in-chief, the hat that you
+wear isn't entirely white. It's more like an off-white or grey. A
+hacker's gotta eat (and eat in style).
+
+The way you earn your extra money (points) is to develop exploits and
+sell them to the Zebra Dwarf Institution, a sort of vulnerability
+clearinghouse.
+
+It is well known that the ZDI may use and run your exploits against
+other nations. The ZDI requires that the exploit be written according
+to a well-defined Python-based framework (soon to be published in
+underground forums).
+
+ZDI gives money for submitting a valid exploit, and they give
+residuals for each successful flag captured from a service.
+
+Note that, to prevent tarnishing your country's reputation, you can't
+launch attacks against other nations. Instead, ZDI (the organizers'
+infrastructure) will attack each team separately, using both known
+exploits, and the exploits submitted by the various teams.
+
+If the exploit written by nation X is successfully run against a
+service of nation Y, points are given to nation X. If the attack is
+detected by nation Y, of course, points are also assigned to nation
+Y. Therefore, teams should devise stealthy attacks, and, at the same
+time, effective patching and attack detection.
+
+A scoreboard shows, in real-time, the status of the services of each
+team, and the amount of points accumulated. Note that the points can
+decrease, because of false positives.
+
+ZDI is very picky about the code they run. After all they are the ones
+risking to get blown out of a building by a drone!  Therefore, ZDI
+assumes that the code produced by you will be "well-behaved" (no DOS,
+no attacks against the execution/scoring infrastructure). If such
+behavior is detected in the attack code, ZDI will retaliate against
+the offending nation to disastrous results.
+
+The people of your country place their trust in you. Don't let them down!
