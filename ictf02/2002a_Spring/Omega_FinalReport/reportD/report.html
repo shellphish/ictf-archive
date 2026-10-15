@@ -1,0 +1,276 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (X11; U; SunOS 5.8 sun4u) [Netscape]">
+</head>
+<body>
+<b>Group D Report</b>
+<p><u>Subgroup D, Host-based intrusion detection.</u>
+<p>Group Leader:&nbsp;&nbsp;&nbsp;&nbsp; Fredrik Valeur, santas_helper
+<br>Members:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Vladimir Y. Veytser, bitshifter
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Arun D. Qamra, catch22
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Mohit Sang, bugsbunny
+<p>Mission:
+<p>Group D's mission was to do host-based intrusion detection on the Omega
+team's two hosts. In particular, monitor any remote to local intrusions,
+any modifications to system configuration files or binaries, and any attempt
+to access the real and fake flag files.
+<p>The group members responsibilities were:
+<p>Fredrik: Kernel level audit stream provider and a simple IDS based on
+this audit stream.
+<br>Vladimir: Procfile monitor. Develop an IDS using observed changes in
+the proc filesystem as input.
+<br>Arun and Mohit: IDS for monitoring critical system files and log files.
+Used a tool called fcheck that monitors when specified fails have been
+changed etc. Another tool called file_monitor was use to log changes to
+critical system files and to monitor suspicious messages in the system
+log file.
+<br>&nbsp;
+<p>Preparation:
+<p>Most of the software used by the group was developed by the members.
+The following software components were used:
+<p>kaudit: A kernel level audit provider. The system has two parts, a kernel
+module that records events and sends them to user-space and a user-space
+daemon that reads the events, matches them with a number of rules and logs
+any attacks found to a file. The system audits all open() and execve()
+system calls. The IDS rules detects opening of any file named 'secret.txt',
+daemons executing a shell, opening of files in /bin, /sbin or /etc for
+writing, execution of a unknown suid program, and the bobek ftpd attack.
+The program was developed by Fredrik.
+<p>daemonstalker: user level program for monitoring daemons via /proc directory.
+To monitor /proc directory Vladimir used Linux Performance Monitoring Library
+(http://www.olny.cz/linux_monitor/). Using this library Vladimir was able
+to detect processes creation and their behavior. Specifically Vladimir
+was able to monitor shells which do not have tty attached. Shell would
+not have tty attached if it spawned by a daemon or if there was a buffer
+overflow against the daemon followed by execve(sh). That is, software mainly
+monitored shells which do not have tty attached and used to be daemons.
+<p>fcheck: fcheck is a free software, distributed under the GNU GPL. Essentially,
+FCheck has the ability to monitor directories, files or complete filesystems
+for any additions, deletions, and modifications. It is configurable to
+exclude active log files, and can be ran as often as needed from the command
+line or cron making it extremely difficult to circumvent. The tool maintains
+a database with all the information that it needs to monitor. This database
+needs to be initialized and then every time fcheck is run, it compares
+the current state with the database. For the Red-Blue exercise Arun and
+Mohit configured fcheck to monitor /etc, /var/log, /root/.ssh
+<p>file_monitor: This is a tool developed by Arun and Mohit to monitor
+any changes to log files and other important files during the attack. The
+changes seen are logged into a log file. The files monitored during the
+exercise include /etc/passwd, /root/.rhosts, /.ssh/authorized_keys, /var/log/messages.
+This gives important information such as whether any new user has been
+created etc. The messages logged in /var/log/messages are scanned to look
+for those that may have resulted out of a buffer overflow attack, wuFTP
+attack etc. All suspicious messages are logged into a log file maintained
+by file_monitor.
+<br>&nbsp;
+<p>Execution:
+<p>Each group member installed their own system on the protected hosts
+before the exercise started. During the attack the logs were monitored
+for attacks. The following is a log of the most important events with comments:
+<p>6.2 Box:
+<br>(Times are system times, real time (csil) -10 min and 40 sec)
+<br>&nbsp;
+<p>1. Here the Alpha team broke in and changed our root password.
+<p>Fri May 31 15:56:24 2002 Attempted bobek (ftpd) attack
+<br>Fri May 31 15:57:07 2002 (Repeated 25 times)
+<br>Fri May 31 15:57:09 2002 Process 26657&lt;-26451 (passwd) opened the
+file /etc/passwd for writing (0,0)
+<p>from file_monitor:
+<br>diff between /etc/passwd and passwd :
+<br>1c1
+<br>&lt; root:3z4Sq2TtEWm.g:0:0:root:/root:/bin/bash
+<br>---
+<br>> root:ajku6nS.Kx4Yk:0:0:root:/root:/bin/bash
+<br>&nbsp;
+<p>2. A attempted attack on the ftp daemon (cannot say if it was successful)
+- multiple such log entries found
+<p>from file_monitor
+<br>Fri May 31 15:56:30 MST 2002
+<br>suspicious logs in /var/log/messages:
+<br>&lt; May 31 22:56:23 localhost ftpd[26449]: ANONYMOUS FTP LOGIN FROM
+128.111.49.20 [128.111.49.20], ??????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????3&Agrave;1&Ucirc;3&Eacute;&deg;F&Iacute;?3&AElig;6&Otilde;B?&Ugrave;C&deg;?&Iacute;?&euml;k^3&Agrave;3&Eacute;?^^G^F^Dg&sup1;&yuml;^H&deg;%&Iacute;?3&Agrave;?^^A&deg;=&Iacute;?3&Agrave;3&THORN;?^^H?C^B1&Eacute;&thorn;&Eacute;3&Agrave;?^^H&deg;^L&Iacute;?&thorn;&Eacute;u&oacute;3&Agrave;^F^I?^^H&deg;=&Iacute;?&thorn;^N&deg;0&thorn;&Egrave;^F^D3&Agrave;^F^G?v^H?F^L?&oacute;?N^H?V^L&deg;^K&Iacute;?1&Agrave;4&Ucirc;&deg;^E&Iacute;?&egrave;?&yuml;&yuml;&yuml;0bin0sh5..11venglin@kocham.kasie.com
+<br>&nbsp;
+<p>3. We changed back the password
+<p>Fri May 31 16:00:56 2002 Process 27655&lt;-885 (passwd) opened the file
+/etc/passwd for writing (0,0)
+<p>from file_monitor:
+<br>Fri May 31 16:01:18 MST 2002
+<br>diff between /etc/passwd and passwd :
+<br>1c1
+<br>&lt; root:c0HvE6tiiHJpQ:0:0:root:/root:/bin/bash
+<br>---
+<br>> root:3z4Sq2TtEWm.g:0:0:root:/root:/bin/bash
+<br>&nbsp;
+<p>4. Alpha attack #2, this time they are executing a shell.
+<p>Fri May 31 16:07:20 2002 Attempted bobek (ftpd) attack
+<br>Fri May 31 16:08:01 2002 (Repeated 25 times)
+<br>Fri May 31 16:08:33 2002 Successful bobek (ftpd) attack, shell at pid
+29741
+<br>Fri May 31 16:08:33 2002 xinetd daemon 29741 (in.ftpd) executed /bin/sh
+<p>More evidence of attack (from daemonstalker)
+<br>ALERT1: 29741 sh no tty. Used to be in.ftpd. Time Fri May 31 16:08:33
+2002
+<br>WARNING1: 29913 sh no tty. PPID: 29741 sh. Time Fri May 31 16:08:33
+2002
+<br>&nbsp;
+<p>5. Alpha is adding two new users to the passwd file, a regular user
+and a user with uid 0.
+<p>Fri May 31 16:08:54 2002 Process 29741&lt;-541 (sh) opened the file
+/etc/passwd for writing (0,0)
+<br>Fri May 31 16:09:19 2002 Process 29741&lt;-541 (sh) opened the file
+/etc/passwd for writing (0,0)
+<p>from file_monitor:
+<br>Fri May 31 16:09:01 MST 2002
+<br>diff between /etc/passwd and passwd :
+<br>26d25
+<br>&lt; slacker::1:0::/root:/bin/bash
+<br>Fri May 31 16:09:36 MST 2002
+<br>diff between /etc/passwd and passwd :
+<br>1c1
+<br>&lt; root:k8TDYuHN8Pzfo:0:0:root:/root:/bin/bash
+<br>---
+<br>> root:O7TOBZEdzQVC6:0:0:root:/root:/bin/bash
+<br>27d26
+<br>&lt; flbrt::0:0::/root:/bin/bash
+<br>&nbsp;
+<p>6. The flag searching process finds the first fake flag. This message
+repeats a number of times.
+<p>Fri May 31 16:13:15 2002 Process 31150&lt;-31072 (evil6.2) opened the
+fake flag file //etc/secret.txt (0,0)
+<br>&nbsp;
+<p>7. Alpha starts a different search process called evil_omega. This turns
+out to be our own search script used against us.
+<p>Fri May 31 16:20:24 2002 Process 32140&lt;-31773 (evil_omega) opened
+the fake flag file /&lt;really_long_path>/secret.txt (0,0)
+<br>&nbsp;
+<p>8. Alpha finds what they (and our IDS) think is the real flag file.
+<p>It is just a symlink to a file named '_secret.txt'. The process evil_omega
+terminates.
+<br>Fri May 31 16:48:12 2002 Process 32140&lt;-31773 (evil_omega) opened
+the real flag file /setemp/d1/secret.txt (0,0)
+<br>Fri May 31 16:48:12 2002 Process 32140&lt;-31773 (evil_omega) opened
+the real flag file /setemp/d1/secret.txt (0,0)
+<br>&nbsp;
+<p>9. Alpha manually checks the content of the file
+<p>Fri May 31 16:49:42 2002 Process 8607&lt;-31773 (cat) opened the real
+flag file /setemp/d1/secret.txt (0,0)
+<br>&nbsp;
+<p>10. Alpha double checks the file.
+<p>Fri May 31 16:52:50 2002 Process 9449&lt;-31773 (vi) opened the real
+flag file /setemp/d1/secret.txt (0,0)
+<br>--------------
+<br>&nbsp;
+<br>&nbsp;
+<p>7.0 Box:
+<br>(Times are system time, ahead of csil by 1 min 24 sec)
+<br>&nbsp;
+<p>1. This seems like an attempted lprng attack. multiple such attempts
+can be seen
+<p>from file_monitor:
+<br>Fri May 31 16:33:56 PDT 2002
+<br>suspicious logs in /var/log/messages:
+<br>&lt; May 31 16:33:10 alpha SERVER[16163]: Dispatch_input: bad request
+line 'BB^H&yuml;&yuml;&iquest;^I&yuml;&yuml;&iquest;'
+<br>&lt; May 31 16:33:18 alpha SERVER[16228]: Dispatch_input: bad request
+line 'BB^H&thorn;&yuml;&iquest;^I&thorn;&yuml;&iquest;'
+<br>..
+<br>..
+<br>&nbsp;
+<p>2. Alpha broke in and is adding two new users, one regular and one with
+uid 0.
+<p>Fri May 31 16:35:56 2002 Process 17531&lt;-17394 (adduser) opened the
+file /etc/passwd for writing (0,0)
+<br>Fri May 31 16:35:56 2002 Process 17531&lt;-17394 (adduser) opened the
+file /etc/group for writing (0,0)
+<br>Fri May 31 16:36:23 2002 Process 17554&lt;-17394 (passwd) opened the
+file /etc/npasswd for writing (0,0)
+<br>Fri May 31 16:37:01 2002 Process 17586&lt;-17394 (vi) opened the file
+/etc/passwd for writing (0,0)
+<p>from file_monitor:
+<br>Fri May 31 16:36:28 PDT 2002
+<br>diff between /etc/passwd and passwd :
+<br>25d24
+<br>&lt; slacker:rXjRIKibgYwtc:500:500::/home/slacker:/bin/bash
+<br>Fri May 31 16:37:11 PDT 2002
+<br>diff between /etc/passwd and passwd :
+<br>25,26c25
+<br>&lt; slacker:rXjRIKibgYwtc:1:1::/home/slacker:/bin/bash
+<br>&lt; flbrt::0:0::/home/slacker:/bin/bash
+<br>---
+<br>> slacker:rXjRIKibgYwtc:500:500::/home/slacker:/bin/bash
+<br>&nbsp;
+<p>3. Some manual searching
+<p>Fri May 31 16:39:47 2002 Process 18338&lt;-18132 (vi) opened the fake
+flag file /home/secret.txt (0,0)
+<br>Fri May 31 16:40:30 2002 Process 18494&lt;-17394 (vi) opened the fake
+flag file //secret.txt (0,0)
+<br>&nbsp;
+<p>4.The search process is started.
+<p>Fri May 31 16:44:40 2002 Process 19272&lt;-18313 (evil7.0) opened the
+fake flag file //./etc/secret.txt (0,0)
+<br>&nbsp;
+<p>5.A new search process is started, this time a perl script. Note that
+it runs as user 1 (bin), why?
+<br>We also saw many scp between 16:47 and 17:08, perhaps this is when
+they transfered their perl script
+<br>but we can not tell for sure.
+<p>Fri May 31 17:11:38 2002 Process 21519&lt;-21188 (perl) opened the fake
+flag file //etc/secret.txt (1,1)
+<br>&nbsp;
+<p>6. New user created
+<p>from file_monitor:
+<br>Fri May 31 16:51:48 PDT 2002
+<br>diff between /etc/passwd and passwd :
+<br>27d26
+<br>&lt; localuser:!!:500:501::/home/localuser:/bin/bash
+<br>Fri May 31 16:53:07 PDT 2002
+<br>diff between /etc/passwd and passwd :
+<br>27c27
+<br>&lt; localuser:zmsu43fqt2N9c:500:501::/home/localuser:/bin/bash
+<br>---
+<br>> localuser:!!:500:501::/home/localuser:/bin/bash
+<br>&nbsp;
+<p>Other information gathered during execution:
+<br>the IDSs were used to constantly monitor activities of the attacker.
+Activities such as root logins in remotely, the new users created logging
+in etc were all noted. Only significant events have been listed here.
+<p>Note:
+<br>In the events listed above, evidence has been attached from different
+tools that detected that activity.
+<br>&nbsp;
+<br>&nbsp;
+<p>Evaluation:
+<p>The group was able to give real-time feedback about the Alpha teams
+activities. The IDSes used were able to detect which attacks were successful,
+information that usually is not given by a network based IDS. The group
+was also able to monitor how the search for the flag file progressed and
+if the real flag file was found. Most of the groups work was completed
+during the preparation phase. During the attack we just monitored the IDS
+logs and shouted out every time we saw any signs of attacks. This information
+was non-essential for the other groups work, but helped us create a view
+of how Alpha's attack was progressing. All the tools used worked as they
+were supposed to, and we were able to detect the break-ins into both hosts.
+A possible improvement would have been to extend the signatures of kaudit
+and daemonstalker so that both detects the ftpd and lpd attacks that were
+used by Alpha.
+<p>As an overall evaluation of the exercise, too much time and effort was
+spent on hiding and searching for the flags. In a real world scenario the
+break-in process is the most important. Creating and searching a highly
+corrupted and obfuscated filesystem is less of an issue.
+<br>&nbsp;
+<p>References:
+<p>SNARE:&nbsp; <a href="http://www.intersectalliance.com/projects/Snare/">http://www.intersectalliance.com/projects/Snare/</a>&nbsp;
+Used in debugging of the kernel module, could not be used since it is designed
+for newer 2.4 kernels.
+<br>LKMI:&nbsp; <a href="http://www.olny.cz/linux_monitor/">http://www.olny.cz/linux_monitor/</a>&nbsp;
+library for monitoring /proc directory
+<br>Nabou:&nbsp; <a href="http://www.nabou.org">http://www.nabou.org</a>&nbsp;
+Got some ideas for host based IDS from their webpage
+<br>fcheck:&nbsp; <a href="http://www.geocities.com/fcheck2000/fcheck.html">http://www.geocities.com/fcheck2000/fcheck.html</a>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<html>
+<head>
+<title>Service-Scan Group Report</title>
+</head>
+
+<body>
+<h1>Red Team Report: Service-Scan Group</h1>
+
+<p>
+
+<h2>Group</h2>
+<b>Name:</b> Buzz Company<br><br>
+<b>Goal:</b> The goal of our group was to scan all known machines for running services and to report those findings to the Vulnerability Discovery Group (vulture).<br><br>
+<b>Members:</b>
+<ul>
+<li>Robert Chalmers (robertc@cs, nlimbo) <em>leader</em>
+<li>Jim Herzberg (jsh@cs, striker)
+<li>Timothy McFadden (mcfadden@cs, timmmm)
+<li>Long Jiao (longjiao@cs, darkglasses)
+</ul>
+
+<p>
+
+<h2>Mission</h2>
+The Service Scanning Group (SSG) is responsible for quickly and
+effectively identifying the available network services on all of the
+attacked hosts.  The end product of our phase of the Red Team attack
+will be a concise and well-formatted listing of both TCP- and
+UDP-based services running on each host as well as the ports on which
+the services are listening.  We will be provided with a list of IP
+addresses for the target hosts from the OS/Topology Group.  This list
+will be piped through SSG automated script(s), which will execute the
+service scan and report the results in a form that facilitates the needs of the Vulnerability Discovery Group.
+<p>
+The following lists the responsibilities of each member as we executed
+our mission:
+<p>
+<table>
+<tr valign=top>
+<td><b>Jim</b></td>
+<td>Learned all about nmap and decided how to best use it for our
+purposes.  This included specifying the exact input required from the
+OS/Topology Group, determining exactly which command line options to
+use for a successful and stealthy port scan, and producing sample
+output.</td>
+</tr>
+<tr valign=top>
+<td><b>Tim</b></td>
+<td>Investigated alternatives to nmap, primarily focusing on nessus.
+The goal here was to make sure that none of the other tools would
+provide any advantages over nmap and to become familiar with other
+alternatives for port scanning in case nmap fails during the exercise.</td>
+</tr>
+<tr valign=top>
+<td><b>Long</b></td>
+<td>Exhaustively tested the nmap tool in order to catalog the error
+conditions that would need to be handled in our shell script.  Also,
+developed strategies to specifically overcome each message.  This task
+included running nmap on all conceivable test cases and determining
+how to identify glitches based on output and return values.</td>
+</tr>
+<tr valign=top>
+<td><b>Robert</b></td>
+<td>Synthesized work of other team members and negotiated the
+specific details of run-time interfaces with adjacent layers
+(OS/Topology Group and Vulnerability Discovery Group).  Wrote shell
+scripts to retrieve input, pipe it to nmap, and transmit to the next
+team's script.  Perhaps most importantly, provided enthusiasm, morale,
+organization, and was just generally a kick-ass group leader :)</dt>
+</tr>
+</table>
+<p>
+In addition, the group members shared the responsibilities of
+completing this report as follows:
+<p>
+<em>Mission</em> - Jim
+<br>
+<em>Preparation and References</em> - Long
+<br>
+<em>Execution</em> - Tim
+<br>
+<em>Synthesis</em> - Robert
+<br>
+<em>Evaluation</em> - Everyone
+
+<p>
+
+<h2>Preparation</h2>
+After researching various tools and deliberating amongst ourselves, we
+concluded that nmap is the best tool for our purposes.  It provides an
+elegant and simple interface to various port scanning methods,
+including those that are least detectable by intrusion detection
+software (i.e., Christmas Tree Scan, Fin Scan).  We also strongly
+considered nessus, but decided that it had more functionality than was
+necessary for our needs.
+<p>
+Late into the quarter, it was determined that the Vulnerability Discovery Group would subsume our work since they chose to use nessus which internally runs nmap.  Therefore, an explicit interface between our groups was not necessary.  Our group chose to continue developing a separate script to run nmap based on the input from the OS/Topology Group as a backup in case nessus failed to scan properly.  In addition, we discussed appropriate nmap settings within nessus with the Vulnerability Group and wrote two parsing scripts which translated the interface files from the OS/Topology Group to something usable by the Vulnerability Group.  In total, the group produced three scripts:
+<dl>
+<dt><a href="http://www.cs.ucsb.edu/~robertc/redteam/red.iplist">red.iplist</a></dt><dd>This script transforms a list of ethernet, ip, os tuples into a simple list of ips.</dd>
+<dt><a href="http://www.cs.ucsb.edu/~robertc/redteam/red.ossplit">red.ossplit</a></dt><dd>This script transforms a list of ethernet, ip, os tuples into a set of ip lists separated by os type.  Files names IP_{os} are generated for each recognized os, and a separate IP_Unknown is created with all ips from unrecognized operating systems.</dd>
+<dt><a href="http://www.cs.ucsb.edu/~robertc/redteam/red.pscan">red.pscan</a></dt><dd>This script runs nmap with options to Xmas and UDP scan a list of targets.  The list can be specified as a combination of command-line ips, a file with white-space separated ips or in an interface file containing a list of ethernet, ip, os tuples.</dd>
+</dl>
+<p>
+Looking beyond nessus and nmap, the group also investigated other possible tools such as autonoc, blackice, rnamp and zapatista.
+
+<p>
+
+<h2>Execution</h2>
+<table>
+<tr valign=top><td width=30><b>1:00</b></td><td>Every one is here.</td></tr>
+<tr valign=top><td><b>1:05</b></td><td>Consulting with operating system scanning group.</td></tr>
+<tr valign=top><td><b>1:10</b></td><td>Still awaiting results of operating system scan.</td></tr>
+<tr valign=top><td><b>1:11</b></td><td>Begin discussing alternative formats, making sure we're ready when OS scan is done.</td></tr>
+<tr valign=top><td><b>1:16</b></td><td>Format of IP file is in dispute, did we account for spoofing?</td></tr>
+<tr valign=top><td><b>1:18</b></td><td>Still awaiting OS fingerprinting results, pinging to verify IPs, and NSlookups to get machine names.</td></tr>
+<tr valign=top><td><b>1:20</b></td><td>Our script got skipped because group 1 failed to output to a file (They passed the results on a piece of paper).</td></tr>
+<tr valign=top><td><b>1:27</b></td><td>Group three is proceeding with the nessus scan, we are doing a secondary nmap scan.</td></tr>
+<tr valign=top><td><b>1:33</b></td><td>Team three identifies at least two holes on host .157.</td></tr>
+<tr valign=top><td><b>1:38</b></td><td>Begin telneting to various hosts to try and determine OS distribution (not determined by group 1?).</td></tr>
+<tr valign=top><td><b>2:00</b></td><td>Since host .157 is compromised, we log in as root to try and take advantage of any trust relationships.</td></tr>
+<tr valign=top><td><b>2:25</b></td><td>Begin attempting compromised password/user combinations on uncompromised systems.</td></tr>
+<tr valign=top><td><b>2:38</b></td><td>Identify NFS hole, but it is to an already compromised host.</td></tr>
+<tr valign=top><td><b>2:45</b></td><td>Begin search for key on host .10.</td></tr>
+<tr valign=top><td><b>2:52</b></td><td>Begin search for key on host .70.</td></tr>
+</table>
+
+<p>
+
+<h2>Evaluation</h2>
+Our group was successful in its mission, although that mission changed to some degree through the quarter.  Considering that our fate became rather intimately intertwined with the Vulnerability Discovery Group, service scanning was as effective as it could be.  Our interface parsing scripts were not used as fully as expected since the OS/Topology group began to pass information by hand rather than in the agreed upon electronic format.  We did run a separate service <a href="http://www.cs.ucsb.edu/~robertc/redteam/scan.txt">scan</a> using our own scripts, and they were useful in discerning which reported IP addresses were valid hosts.
+<p>
+Our group interacted well with the two adjacent groups, OS/Topology and Vulnerability, both before and during the exercise.  Furthermore, once the scanning was complete, all of our group members helped to determine missing information about certain hosts such as OS type, as well as, help to distinguish between real and spoofed hosts.  Once all machines were successfully identified, our group helped in the exploit effort by trying to leverage trust relationships between compromised hosts and other uncompromised machines.
+<p>
+If we were to hold the exercise again, a few things could be improved.  Although Dan did a good job of coordinating efforts, there was considerable overlap as the exercise progressed.  It would have been better if there had been a whiteboard or some central point where progress was monitored for each target host.  Also, the fact that Leone changed IP addresses mid-exercise was not quite fair.  We actually made a point to continually revisit Leone (.20) to see if it was back on-line, and it wasn't until quite late into the exercise that we learned it had come back up as .21.
+<p>
+The exercise actually progressed better than expected.  It seemed that most groups were prepared.  Even when automated scripts began to break down, the group members were able to diagnose the problems and either fix the broken scripts or continue by hand.  Throughout the exercise, most people were helping outside their own group, assisting other groups where needed.  Dan did a very good job of coordinating the efforts and maintaining some semblance of order.
+
+<p>
+
+<h2>References</h2>
+<ol>
+<li> Nmap homepage, http://www.insecure.org/nmap/
+<li> Rich Jankowski, "Scanning and Defending Networks with Nmap", at
+http://www.linuxsecurity.com/feature_stories/feature_story-4.html
+<li> Remote nmap, http://rnmap.sourceforge.net/
+<li> Josh Flechtner, "Tools of the Trade: nmap", http://www.linuxgazette.com/issue56/flechtner.html
+<li> Nmap man page.
+<li> Toby Miller, "Intrusion Detection Level Analysis of Nmap and Queso", http://www.securityfocus.com/frames/?focus=ids&content=/focus/ids/articles/portscan.html
+<li> Nessus homepage, http://www.nessus.org/
+<li> Fyodor, "The Art of Port Scanning", http://beast.exotic-planet.com/doc/nmap/nmap_doc.html
+<li> Port scan, http://www.networkice.com/Advice/Underground/Hacking/Methods/Technical/Port_Scan/default.htm
+<li> AutoNOC homepage, http://www.autonoc.com
+Mli> What can I use as evidence?, http://www.networkice.com/advice/Support/KB/q000016/default.htm
+<li> ZTPS homepage, http://switch.sjsu.edu/web/v6n2/ztps/
+</ol>
+
+</body>
+</html>

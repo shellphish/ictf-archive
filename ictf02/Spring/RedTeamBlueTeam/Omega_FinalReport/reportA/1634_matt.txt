@@ -1,0 +1,1681 @@
+16:34:05.636181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: S 3812744578:3812744578(0) win 24820 <nop,nop,sackOK,mss 1460> (DF)
+16:34:05.636181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: S 2373197735:2373197735(0) ack 3812744579 win 32120 <mss 1460,nop,nop,sackOK> (DF)
+16:34:05.636181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 1 win 24820 (DF)
+16:34:05.646181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1:24(23) ack 1 win 32120 (DF)
+16:34:05.646181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 24 win 24820 (DF)
+16:34:05.656181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 1:25(24) ack 24 win 24820 (DF)
+16:34:05.656181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 25 win 32120 (DF)
+16:34:05.656181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 24:320(296) ack 25 win 32120 (DF)
+16:34:05.666181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 25:657(632) ack 320 win 24820 (DF)
+16:34:05.666181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 657 win 32120 (DF)
+16:34:05.726181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 657:801(144) ack 320 win 24820 (DF)
+16:34:05.736181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 801 win 32120 (DF)
+16:34:07.486181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 320:968(648) ack 801 win 32120 (DF)
+16:34:07.576181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 968 win 24820 (DF)
+16:34:07.576181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 968:984(16) ack 801 win 32120 (DF)
+16:34:07.626181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 801:817(16) ack 984 win 24820 (DF)
+16:34:07.646181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 817 win 32120 (DF)
+16:34:07.646181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 817:865(48) ack 984 win 24820 (DF)
+16:34:07.646181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 984:1032(48) ack 865 win 32120 (DF)
+16:34:07.646181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 865:929(64) ack 1032 win 24820 (DF)
+16:34:07.666181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 929 win 32120 (DF)
+16:34:07.696181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1032:1088(56) ack 929 win 32120 (DF)
+16:34:07.736181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 929:1505(576) ack 1088 win 24820 (DF)
+16:34:07.736181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1088:1144(56) ack 1505 win 32120 (DF)
+16:34:07.826181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 1144 win 24820 (DF)
+16:34:10.326181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 1505:1649(144) ack 1144 win 24820 (DF)
+16:34:10.346181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 1649 win 32120 (DF)
+16:34:10.386181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1144:1200(56) ack 1649 win 32120 (DF)
+16:34:10.476181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 1200 win 24820 (DF)
+16:34:12.486181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 1649:1793(144) ack 1200 win 24820 (DF)
+16:34:12.506181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 1793 win 32120 (DF)
+16:34:12.686181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1200:1232(32) ack 1793 win 32120 (DF)
+16:34:12.686181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 1793:1849(56) ack 1232 win 24820 (DF)
+16:34:12.686181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1232:1280(48) ack 1849 win 32120 (DF)
+16:34:12.796181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 1280 win 24820 (DF)
+16:34:13.126181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 1849:2305(456) ack 1280 win 24820 (DF)
+16:34:13.126181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 2305:2345(40) ack 1280 win 24820 (DF) [tos 0x10] 
+16:34:13.146181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 2345 win 32120 (DF)
+16:34:13.176181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1280:1320(40) ack 2345 win 32120 (DF)
+16:34:13.276181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 1320 win 24820 (DF) [tos 0x10] 
+16:34:13.276181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1320:1416(96) ack 2345 win 32120 (DF)
+16:34:13.376181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 1416 win 24820 (DF) [tos 0x10] 
+16:34:17.216181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1416:1472(56) ack 2345 win 32120 (DF)
+16:34:17.316181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 1472 win 24820 (DF) [tos 0x10] 
+16:34:22.946181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 2345:2385(40) ack 1472 win 24820 (DF) [tos 0x10] 
+16:34:22.946181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1472:1512(40) ack 2385 win 32120 (DF)
+16:34:23.046181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 1512 win 24820 (DF) [tos 0x10] 
+16:34:23.106181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 2385:2425(40) ack 1512 win 24820 (DF) [tos 0x10] 
+16:34:23.116181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1512:1552(40) ack 2425 win 32120 (DF)
+16:34:23.216181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 1552 win 24820 (DF) [tos 0x10] 
+16:34:23.256181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 2425:2465(40) ack 1552 win 24820 (DF) [tos 0x10] 
+16:34:23.256181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1552:1592(40) ack 2465 win 32120 (DF)
+16:34:23.346181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 2465:2505(40) ack 1592 win 24820 (DF) [tos 0x10] 
+16:34:23.356181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1592:1632(40) ack 2505 win 32120 (DF)
+16:34:23.446181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 1632 win 24820 (DF) [tos 0x10] 
+16:34:23.496181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 2505:2545(40) ack 1632 win 24820 (DF) [tos 0x10] 
+16:34:23.496181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1632:1672(40) ack 2545 win 32120 (DF)
+16:34:23.546181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 2545:2585(40) ack 1672 win 24820 (DF) [tos 0x10] 
+16:34:23.556181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1672:1712(40) ack 2585 win 32120 (DF)
+16:34:23.626181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 2585:2625(40) ack 1712 win 24820 (DF) [tos 0x10] 
+16:34:23.626181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1712:1752(40) ack 2625 win 32120 (DF)
+16:34:23.726181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 1752 win 24820 (DF) [tos 0x10] 
+16:34:23.946181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 2625:2665(40) ack 1752 win 24820 (DF) [tos 0x10] 
+16:34:23.946181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1752:1792(40) ack 2665 win 32120 (DF)
+16:34:24.046181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 1792 win 24820 (DF) [tos 0x10] 
+16:34:24.286181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1792:1888(96) ack 2665 win 32120 (DF)
+16:34:24.376181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 1888 win 24820 (DF) [tos 0x10] 
+16:34:24.376181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 1888:2360(472) ack 2665 win 32120 (DF)
+16:34:24.476181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 2360 win 24820 (DF) [tos 0x10] 
+16:34:25.926181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 2665:2705(40) ack 2360 win 24820 (DF) [tos 0x10] 
+16:34:25.926181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 2360:2408(48) ack 2705 win 32120 (DF)
+16:34:26.026181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 2408 win 24820 (DF) [tos 0x10] 
+16:34:26.356181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 2705:2745(40) ack 2408 win 24820 (DF) [tos 0x10] 
+16:34:26.356181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 2408:2448(40) ack 2745 win 32120 (DF)
+16:34:26.456181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 2448 win 24820 (DF) [tos 0x10] 
+16:34:30.386181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 2745:2785(40) ack 2448 win 24820 (DF) [tos 0x10] 
+16:34:30.396181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 2448:2488(40) ack 2785 win 32120 (DF)
+16:34:30.496181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 2488 win 24820 (DF) [tos 0x10] 
+16:34:30.496181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 2488:2544(56) ack 2785 win 32120 (DF)
+16:34:30.596181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 2544 win 24820 (DF) [tos 0x10] 
+16:34:31.776181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 2785:2825(40) ack 2544 win 24820 (DF) [tos 0x10] 
+16:34:31.776181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 2544:2584(40) ack 2825 win 32120 (DF)
+16:34:31.876181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 2584 win 24820 (DF) [tos 0x10] 
+16:34:32.026181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 2825:2865(40) ack 2584 win 24820 (DF) [tos 0x10] 
+16:34:32.026181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 2584:2624(40) ack 2865 win 32120 (DF)
+16:34:32.126181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 2624 win 24820 (DF) [tos 0x10] 
+16:34:32.156181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 2865:2905(40) ack 2624 win 24820 (DF) [tos 0x10] 
+16:34:32.156181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 2624:2664(40) ack 2905 win 32120 (DF)
+16:34:32.256181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 2664 win 24820 (DF) [tos 0x10] 
+16:34:32.506181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 2905:2945(40) ack 2664 win 24820 (DF) [tos 0x10] 
+16:34:32.516181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 2664:2704(40) ack 2945 win 32120 (DF)
+16:34:32.606181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 2704 win 24820 (DF) [tos 0x10] 
+16:34:32.676181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 2945:2985(40) ack 2704 win 24820 (DF) [tos 0x10] 
+16:34:32.676181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 2704:2744(40) ack 2985 win 32120 (DF)
+16:34:32.776181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 2744 win 24820 (DF) [tos 0x10] 
+16:34:32.786181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 2985:3025(40) ack 2744 win 24820 (DF) [tos 0x10] 
+16:34:32.786181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 2744:2784(40) ack 3025 win 32120 (DF)
+16:34:32.886181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 2784 win 24820 (DF) [tos 0x10] 
+16:34:33.146181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3025:3065(40) ack 2784 win 24820 (DF) [tos 0x10] 
+16:34:33.156181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 2784:2824(40) ack 3065 win 32120 (DF)
+16:34:33.246181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 2824 win 24820 (DF) [tos 0x10] 
+16:34:33.426181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3065:3105(40) ack 2824 win 24820 (DF) [tos 0x10] 
+16:34:33.426181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 2824:2864(40) ack 3105 win 32120 (DF)
+16:34:33.516181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 2864 win 24820 (DF) [tos 0x10] 
+16:34:37.866181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3105:3145(40) ack 2864 win 24820 (DF) [tos 0x10] 
+16:34:37.866181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 2864:2904(40) ack 3145 win 32120 (DF)
+16:34:37.956181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 2904 win 24820 (DF) [tos 0x10] 
+16:34:38.536181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3145:3185(40) ack 2904 win 24820 (DF) [tos 0x10] 
+16:34:38.536181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 2904:2944(40) ack 3185 win 32120 (DF)
+16:34:38.626181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 2944 win 24820 (DF) [tos 0x10] 
+16:34:45.246181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3185:3225(40) ack 2944 win 24820 (DF) [tos 0x10] 
+16:34:45.246181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 2944:2984(40) ack 3225 win 32120 (DF)
+16:34:45.336181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3225:3265(40) ack 2984 win 24820 (DF) [tos 0x10] 
+16:34:45.336181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 2984:3024(40) ack 3265 win 32120 (DF)
+16:34:45.426181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 3024 win 24820 (DF) [tos 0x10] 
+16:34:45.456181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3265:3305(40) ack 3024 win 24820 (DF) [tos 0x10] 
+16:34:45.456181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3024:3064(40) ack 3305 win 32120 (DF)
+16:34:45.546181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 3064 win 24820 (DF) [tos 0x10] 
+16:34:45.666181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3305:3345(40) ack 3064 win 24820 (DF) [tos 0x10] 
+16:34:45.666181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3064:3104(40) ack 3345 win 32120 (DF)
+16:34:45.756181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 3104 win 24820 (DF) [tos 0x10] 
+16:34:45.996181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3345:3385(40) ack 3104 win 24820 (DF) [tos 0x10] 
+16:34:45.996181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3104:3144(40) ack 3385 win 32120 (DF)
+16:34:46.096181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 3144 win 24820 (DF) [tos 0x10] 
+16:34:46.136181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3385:3425(40) ack 3144 win 24820 (DF) [tos 0x10] 
+16:34:46.136181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3144:3184(40) ack 3425 win 32120 (DF)
+16:34:46.186181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3425:3465(40) ack 3184 win 24820 (DF) [tos 0x10] 
+16:34:46.186181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3184:3224(40) ack 3465 win 32120 (DF)
+16:34:46.276181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 3224 win 24820 (DF) [tos 0x10] 
+16:34:49.826181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3465:3505(40) ack 3224 win 24820 (DF) [tos 0x10] 
+16:34:49.826181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3224:3264(40) ack 3505 win 32120 (DF)
+16:34:49.926181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 3264 win 24820 (DF) [tos 0x10] 
+16:34:50.496181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3264:3320(56) ack 3505 win 32120 (DF)
+16:34:50.596181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 3320 win 24820 (DF) [tos 0x10] 
+16:34:52.456181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3505:3545(40) ack 3320 win 24820 (DF) [tos 0x10] 
+16:34:52.456181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3320:3360(40) ack 3545 win 32120 (DF)
+16:34:52.536181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3545:3585(40) ack 3360 win 24820 (DF) [tos 0x10] 
+16:34:52.536181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3360:3400(40) ack 3585 win 32120 (DF)
+16:34:52.626181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 3400 win 24820 (DF) [tos 0x10] 
+16:34:52.636181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3585:3625(40) ack 3400 win 24820 (DF) [tos 0x10] 
+16:34:52.636181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3400:3440(40) ack 3625 win 32120 (DF)
+16:34:52.736181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 3440 win 24820 (DF) [tos 0x10] 
+16:34:53.096181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3625:3665(40) ack 3440 win 24820 (DF) [tos 0x10] 
+16:34:53.096181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3440:3480(40) ack 3665 win 32120 (DF)
+16:34:53.186181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 3480 win 24820 (DF) [tos 0x10] 
+16:34:53.276181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3665:3705(40) ack 3480 win 24820 (DF) [tos 0x10] 
+16:34:53.276181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3480:3520(40) ack 3705 win 32120 (DF)
+16:34:53.376181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 3520 win 24820 (DF) [tos 0x10] 
+16:34:53.466181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3705:3745(40) ack 3520 win 24820 (DF) [tos 0x10] 
+16:34:53.466181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3520:3560(40) ack 3745 win 32120 (DF)
+16:34:53.566181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 3560 win 24820 (DF) [tos 0x10] 
+16:34:53.606181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3745:3785(40) ack 3560 win 24820 (DF) [tos 0x10] 
+16:34:53.606181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3560:3600(40) ack 3785 win 32120 (DF)
+16:34:53.706181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 3600 win 24820 (DF) [tos 0x10] 
+16:34:56.386181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3785:3825(40) ack 3600 win 24820 (DF) [tos 0x10] 
+16:34:56.386181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3600:3640(40) ack 3825 win 32120 (DF)
+16:34:56.436181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3825:3865(40) ack 3640 win 24820 (DF) [tos 0x10] 
+16:34:56.436181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3640:3680(40) ack 3865 win 32120 (DF)
+16:34:56.506181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3865:3905(40) ack 3680 win 24820 (DF) [tos 0x10] 
+16:34:56.506181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3680:3720(40) ack 3905 win 32120 (DF)
+16:34:56.606181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 3720 win 24820 (DF) [tos 0x10] 
+16:34:56.616181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3905:3945(40) ack 3720 win 24820 (DF) [tos 0x10] 
+16:34:56.616181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3720:3760(40) ack 3945 win 32120 (DF)
+16:34:56.676181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3945:3985(40) ack 3760 win 24820 (DF) [tos 0x10] 
+16:34:56.676181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3760:3800(40) ack 3985 win 32120 (DF)
+16:34:56.756181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 3985:4025(40) ack 3800 win 24820 (DF) [tos 0x10] 
+16:34:56.766181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3800:3840(40) ack 4025 win 32120 (DF)
+16:34:56.866181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 3840 win 24820 (DF) [tos 0x10] 
+16:34:56.876181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4025:4065(40) ack 3840 win 24820 (DF) [tos 0x10] 
+16:34:56.896181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 4065 win 32120 (DF)
+16:34:57.056181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3840:3880(40) ack 4065 win 32120 (DF)
+16:34:57.156181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 3880 win 24820 (DF) [tos 0x10] 
+16:34:57.166181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4065:4105(40) ack 3880 win 24820 (DF) [tos 0x10] 
+16:34:57.166181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3880:3920(40) ack 4105 win 32120 (DF)
+16:34:57.266181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 3920 win 24820 (DF) [tos 0x10] 
+16:34:57.596181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4105:4145(40) ack 3920 win 24820 (DF) [tos 0x10] 
+16:34:57.596181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3920:3960(40) ack 4145 win 32120 (DF)
+16:34:57.666181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4145:4185(40) ack 3960 win 24820 (DF) [tos 0x10] 
+16:34:57.666181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 3960:4000(40) ack 4185 win 32120 (DF)
+16:34:57.766181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4000 win 24820 (DF) [tos 0x10] 
+16:34:57.866181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4185:4225(40) ack 4000 win 24820 (DF) [tos 0x10] 
+16:34:57.876181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4000:4040(40) ack 4225 win 32120 (DF)
+16:34:57.976181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4040 win 24820 (DF) [tos 0x10] 
+16:34:58.286181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4225:4265(40) ack 4040 win 24820 (DF) [tos 0x10] 
+16:34:58.286181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4040:4080(40) ack 4265 win 32120 (DF)
+16:34:58.386181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4080 win 24820 (DF) [tos 0x10] 
+16:34:58.386181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4080:4136(56) ack 4265 win 32120 (DF)
+16:34:58.486181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4136 win 24820 (DF) [tos 0x10] 
+16:34:59.016181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4265:4305(40) ack 4136 win 24820 (DF) [tos 0x10] 
+16:34:59.016181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4136:4176(40) ack 4305 win 32120 (DF)
+16:34:59.116181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4176 win 24820 (DF) [tos 0x10] 
+16:34:59.116181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4305:4345(40) ack 4176 win 24820 (DF) [tos 0x10] 
+16:34:59.116181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4176:4216(40) ack 4345 win 32120 (DF)
+16:34:59.216181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4216 win 24820 (DF) [tos 0x10] 
+16:34:59.266181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4345:4385(40) ack 4216 win 24820 (DF) [tos 0x10] 
+16:34:59.266181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4216:4256(40) ack 4385 win 32120 (DF)
+16:34:59.366181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4256 win 24820 (DF) [tos 0x10] 
+16:34:59.396181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4385:4425(40) ack 4256 win 24820 (DF) [tos 0x10] 
+16:34:59.396181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4256:4296(40) ack 4425 win 32120 (DF)
+16:34:59.496181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4296 win 24820 (DF) [tos 0x10] 
+16:34:59.626181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4425:4465(40) ack 4296 win 24820 (DF) [tos 0x10] 
+16:34:59.626181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4296:4336(40) ack 4465 win 32120 (DF)
+16:34:59.726181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4336 win 24820 (DF) [tos 0x10] 
+16:34:59.976181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4465:4505(40) ack 4336 win 24820 (DF) [tos 0x10] 
+16:34:59.976181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4336:4376(40) ack 4505 win 32120 (DF)
+16:34:59.986181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4505:4545(40) ack 4376 win 24820 (DF) [tos 0x10] 
+16:34:59.986181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4376:4416(40) ack 4545 win 32120 (DF)
+16:35:00.076181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4416 win 24820 (DF) [tos 0x10] 
+16:35:00.176181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4545:4585(40) ack 4416 win 24820 (DF) [tos 0x10] 
+16:35:00.176181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4416:4456(40) ack 4585 win 32120 (DF)
+16:35:00.276181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4456 win 24820 (DF) [tos 0x10] 
+16:35:00.326181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4585:4625(40) ack 4456 win 24820 (DF) [tos 0x10] 
+16:35:00.326181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4456:4496(40) ack 4625 win 32120 (DF)
+16:35:00.426181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4496 win 24820 (DF) [tos 0x10] 
+16:35:00.506181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4625:4665(40) ack 4496 win 24820 (DF) [tos 0x10] 
+16:35:00.506181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4496:4536(40) ack 4665 win 32120 (DF)
+16:35:00.606181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4665:4705(40) ack 4536 win 24820 (DF) [tos 0x10] 
+16:35:00.606181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4536:4576(40) ack 4705 win 32120 (DF)
+16:35:00.646181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4705:4745(40) ack 4576 win 24820 (DF) [tos 0x10] 
+16:35:00.646181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4576:4616(40) ack 4745 win 32120 (DF)
+16:35:00.746181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4616 win 24820 (DF) [tos 0x10] 
+16:35:00.866181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4745:4785(40) ack 4616 win 24820 (DF) [tos 0x10] 
+16:35:00.866181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4616:4656(40) ack 4785 win 32120 (DF)
+16:35:00.956181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4656 win 24820 (DF) [tos 0x10] 
+16:35:01.186181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4785:4825(40) ack 4656 win 24820 (DF) [tos 0x10] 
+16:35:01.186181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4656:4696(40) ack 4825 win 32120 (DF)
+16:35:01.286181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4696 win 24820 (DF) [tos 0x10] 
+16:35:01.376181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4825:4865(40) ack 4696 win 24820 (DF) [tos 0x10] 
+16:35:01.376181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4696:4736(40) ack 4865 win 32120 (DF)
+16:35:01.466181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4736 win 24820 (DF) [tos 0x10] 
+16:35:01.676181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4865:4905(40) ack 4736 win 24820 (DF) [tos 0x10] 
+16:35:01.676181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4736:4776(40) ack 4905 win 32120 (DF)
+16:35:01.776181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4776 win 24820 (DF) [tos 0x10] 
+16:35:01.786181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4905:4945(40) ack 4776 win 24820 (DF) [tos 0x10] 
+16:35:01.786181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4776:4816(40) ack 4945 win 32120 (DF)
+16:35:01.826181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4945:4985(40) ack 4816 win 24820 (DF) [tos 0x10] 
+16:35:01.826181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4816:4856(40) ack 4985 win 32120 (DF)
+16:35:01.926181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4856 win 24820 (DF) [tos 0x10] 
+16:35:02.126181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 4985:5025(40) ack 4856 win 24820 (DF) [tos 0x10] 
+16:35:02.126181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4856:4896(40) ack 5025 win 32120 (DF)
+16:35:02.226181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4896 win 24820 (DF) [tos 0x10] 
+16:35:02.436181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5025:5065(40) ack 4896 win 24820 (DF) [tos 0x10] 
+16:35:02.436181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4896:4936(40) ack 5065 win 32120 (DF)
+16:35:02.536181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4936 win 24820 (DF) [tos 0x10] 
+16:35:02.626181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5065:5105(40) ack 4936 win 24820 (DF) [tos 0x10] 
+16:35:02.626181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4936:4976(40) ack 5105 win 32120 (DF)
+16:35:02.726181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 4976 win 24820 (DF) [tos 0x10] 
+16:35:02.946181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5105:5145(40) ack 4976 win 24820 (DF) [tos 0x10] 
+16:35:02.946181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 4976:5016(40) ack 5145 win 32120 (DF)
+16:35:03.026181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5145:5185(40) ack 5016 win 24820 (DF) [tos 0x10] 
+16:35:03.026181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 5016:5056(40) ack 5185 win 32120 (DF)
+16:35:03.096181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5185:5225(40) ack 5056 win 24820 (DF) [tos 0x10] 
+16:35:03.096181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 5056:5096(40) ack 5225 win 32120 (DF)
+16:35:03.186181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 5096 win 24820 (DF) [tos 0x10] 
+16:35:04.346181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5225:5265(40) ack 5096 win 24820 (DF) [tos 0x10] 
+16:35:04.346181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 5096:5136(40) ack 5265 win 32120 (DF)
+16:35:04.446181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 5136 win 24820 (DF) [tos 0x10] 
+16:35:05.226181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5265:5305(40) ack 5136 win 24820 (DF) [tos 0x10] 
+16:35:05.226181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 5136:5176(40) ack 5305 win 32120 (DF)
+16:35:05.316181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 5176 win 24820 (DF) [tos 0x10] 
+16:35:06.346181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5305:5345(40) ack 5176 win 24820 (DF) [tos 0x10] 
+16:35:06.346181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 5176:5216(40) ack 5345 win 32120 (DF)
+16:35:06.446181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 5216 win 24820 (DF) [tos 0x10] 
+16:35:06.626181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 5216:5288(72) ack 5345 win 32120 (DF)
+16:35:06.726181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 5288 win 24820 (DF) [tos 0x10] 
+16:35:06.736181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 5288:5344(56) ack 5345 win 32120 (DF)
+16:35:06.836181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 5344 win 24820 (DF) [tos 0x10] 
+16:35:09.736181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5345:5385(40) ack 5344 win 24820 (DF) [tos 0x10] 
+16:35:09.756181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 5385 win 32120 (DF)
+16:35:09.836181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5385:5425(40) ack 5344 win 24820 (DF) [tos 0x10] 
+16:35:09.856181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 5425 win 32120 (DF)
+16:35:09.956181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5425:5465(40) ack 5344 win 24820 (DF) [tos 0x10] 
+16:35:09.976181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 5465 win 32120 (DF)
+16:35:10.156181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5465:5505(40) ack 5344 win 24820 (DF) [tos 0x10] 
+16:35:10.176181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 5505 win 32120 (DF)
+16:35:10.516181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5505:5545(40) ack 5344 win 24820 (DF) [tos 0x10] 
+16:35:10.536181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 5545 win 32120 (DF)
+16:35:10.536181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5545:5585(40) ack 5344 win 24820 (DF) [tos 0x10] 
+16:35:10.556181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 5585 win 32120 (DF)
+16:35:10.706181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5585:5625(40) ack 5344 win 24820 (DF) [tos 0x10] 
+16:35:10.716181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 5625 win 32120 (DF)
+16:35:10.906181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5625:5665(40) ack 5344 win 24820 (DF) [tos 0x10] 
+16:35:10.926181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 5665 win 32120 (DF)
+16:35:11.536181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5665:5705(40) ack 5344 win 24820 (DF) [tos 0x10] 
+16:35:11.536181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 5344:5384(40) ack 5705 win 32120 (DF)
+16:35:11.626181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 5384 win 24820 (DF) [tos 0x10] 
+16:35:11.756181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 5384:5472(88) ack 5705 win 32120 (DF)
+16:35:11.856181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 5472 win 24820 (DF) [tos 0x10] 
+16:35:11.856181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 5472:5536(64) ack 5705 win 32120 (DF)
+16:35:11.956181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 5536 win 24820 (DF) [tos 0x10] 
+16:35:12.886181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5705:5745(40) ack 5536 win 24820 (DF) [tos 0x10] 
+16:35:12.886181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 5536:5624(88) ack 5745 win 32120 (DF)
+16:35:12.976181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 5624 win 24820 (DF) [tos 0x10] 
+16:35:14.196181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5745:5785(40) ack 5624 win 24820 (DF) [tos 0x10] 
+16:35:14.216181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 5785 win 32120 (DF)
+16:35:14.386181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5785:5825(40) ack 5624 win 24820 (DF) [tos 0x10] 
+16:35:14.406181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 5825 win 32120 (DF)
+16:35:14.526181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5825:5865(40) ack 5624 win 24820 (DF) [tos 0x10] 
+16:35:14.546181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 5865 win 32120 (DF)
+16:35:14.786181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5865:5905(40) ack 5624 win 24820 (DF) [tos 0x10] 
+16:35:14.796181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 5905 win 32120 (DF)
+16:35:14.976181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5905:5945(40) ack 5624 win 24820 (DF) [tos 0x10] 
+16:35:14.996181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 5945 win 32120 (DF)
+16:35:15.176181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5945:5985(40) ack 5624 win 24820 (DF) [tos 0x10] 
+16:35:15.186181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 5985 win 32120 (DF)
+16:35:15.196181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 5985:6025(40) ack 5624 win 24820 (DF) [tos 0x10] 
+16:35:15.206181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 6025 win 32120 (DF)
+16:35:15.516181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6025:6065(40) ack 5624 win 24820 (DF) [tos 0x10] 
+16:35:15.516181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 5624:5736(112) ack 6065 win 32120 (DF)
+16:35:15.616181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 5736 win 24820 (DF) [tos 0x10] 
+16:35:16.186181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6065:6105(40) ack 5736 win 24820 (DF) [tos 0x10] 
+16:35:16.196181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 6105 win 32120 (DF)
+16:35:16.306181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6105:6145(40) ack 5736 win 24820 (DF) [tos 0x10] 
+16:35:16.316181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 6145 win 32120 (DF)
+16:35:16.496181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6145:6185(40) ack 5736 win 24820 (DF) [tos 0x10] 
+16:35:16.506181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 6185 win 32120 (DF)
+16:35:16.736181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6185:6225(40) ack 5736 win 24820 (DF) [tos 0x10] 
+16:35:16.756181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 6225 win 32120 (DF)
+16:35:16.946181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6225:6265(40) ack 5736 win 24820 (DF) [tos 0x10] 
+16:35:16.956181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 6265 win 32120 (DF)
+16:35:17.106181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6265:6305(40) ack 5736 win 24820 (DF) [tos 0x10] 
+16:35:17.116181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 6305 win 32120 (DF)
+16:35:17.156181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6305:6345(40) ack 5736 win 24820 (DF) [tos 0x10] 
+16:35:17.166181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 6345 win 32120 (DF)
+16:35:17.336181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6345:6385(40) ack 5736 win 24820 (DF) [tos 0x10] 
+16:35:17.346181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 6385 win 32120 (DF)
+16:35:17.366181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 5736:5832(96) ack 6385 win 32120 (DF)
+16:35:17.456181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 5832 win 24820 (DF) [tos 0x10] 
+16:35:17.456181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 5832:5888(56) ack 6385 win 32120 (DF)
+16:35:17.556181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 5888 win 24820 (DF) [tos 0x10] 
+16:35:22.416181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6385:6425(40) ack 5888 win 24820 (DF) [tos 0x10] 
+16:35:22.416181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 5888:5928(40) ack 6425 win 32120 (DF)
+16:35:22.466181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6425:6465(40) ack 5928 win 24820 (DF) [tos 0x10] 
+16:35:22.466181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 5928:5968(40) ack 6465 win 32120 (DF)
+16:35:22.526181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6465:6505(40) ack 5968 win 24820 (DF) [tos 0x10] 
+16:35:22.526181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 5968:6008(40) ack 6505 win 32120 (DF)
+16:35:22.616181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 6008 win 24820 (DF) [tos 0x10] 
+16:35:22.706181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6505:6545(40) ack 6008 win 24820 (DF) [tos 0x10] 
+16:35:22.706181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 6008:6048(40) ack 6545 win 32120 (DF)
+16:35:22.806181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 6048 win 24820 (DF) [tos 0x10] 
+16:35:22.906181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6545:6585(40) ack 6048 win 24820 (DF) [tos 0x10] 
+16:35:22.906181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 6048:6088(40) ack 6585 win 32120 (DF)
+16:35:22.936181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6585:6625(40) ack 6088 win 24820 (DF) [tos 0x10] 
+16:35:22.946181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 6088:6128(40) ack 6625 win 32120 (DF)
+16:35:23.036181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 6128 win 24820 (DF) [tos 0x10] 
+16:35:23.076181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6625:6665(40) ack 6128 win 24820 (DF) [tos 0x10] 
+16:35:23.086181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 6128:6168(40) ack 6665 win 32120 (DF)
+16:35:23.176181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 6168 win 24820 (DF) [tos 0x10] 
+16:35:23.286181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6665:6705(40) ack 6168 win 24820 (DF) [tos 0x10] 
+16:35:23.286181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 6168:6208(40) ack 6705 win 32120 (DF)
+16:35:23.376181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 6208 win 24820 (DF) [tos 0x10] 
+16:35:23.406181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6705:6745(40) ack 6208 win 24820 (DF) [tos 0x10] 
+16:35:23.406181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 6208:6248(40) ack 6745 win 32120 (DF)
+16:35:23.496181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 6248 win 24820 (DF) [tos 0x10] 
+16:35:23.546181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6745:6785(40) ack 6248 win 24820 (DF) [tos 0x10] 
+16:35:23.546181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 6248:6288(40) ack 6785 win 32120 (DF)
+16:35:23.646181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 6288 win 24820 (DF) [tos 0x10] 
+16:35:23.856181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6785:6825(40) ack 6288 win 24820 (DF) [tos 0x10] 
+16:35:23.866181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 6288:6328(40) ack 6825 win 32120 (DF)
+16:35:23.966181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 6328 win 24820 (DF) [tos 0x10] 
+16:35:24.156181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6825:6865(40) ack 6328 win 24820 (DF) [tos 0x10] 
+16:35:24.156181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 6328:6368(40) ack 6865 win 32120 (DF)
+16:35:24.256181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 6368 win 24820 (DF) [tos 0x10] 
+16:35:24.276181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 6368:6408(40) ack 6865 win 32120 (DF)
+16:35:24.286181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 6408:7464(1056) ack 6865 win 32120 (DF)
+16:35:24.286181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 7464 win 24820 (DF) [tos 0x10] 
+16:35:25.216181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6865:6905(40) ack 7464 win 24820 (DF) [tos 0x10] 
+16:35:25.216181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 7464:7648(184) ack 6905 win 32120 (DF)
+16:35:25.316181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 7648 win 24820 (DF) [tos 0x10] 
+16:35:25.736181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6905:6945(40) ack 7648 win 24820 (DF) [tos 0x10] 
+16:35:25.736181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 7648:7704(56) ack 6945 win 32120 (DF)
+16:35:25.836181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 7704 win 24820 (DF) [tos 0x10] 
+16:35:26.296181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6945:6985(40) ack 7704 win 24820 (DF) [tos 0x10] 
+16:35:26.296181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 7704:7744(40) ack 6985 win 32120 (DF)
+16:35:26.346181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 6985:7025(40) ack 7744 win 24820 (DF) [tos 0x10] 
+16:35:26.346181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 7744:7784(40) ack 7025 win 32120 (DF)
+16:35:26.396181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7025:7065(40) ack 7784 win 24820 (DF) [tos 0x10] 
+16:35:26.396181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 7784:7824(40) ack 7065 win 32120 (DF)
+16:35:26.446181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7065:7105(40) ack 7824 win 24820 (DF) [tos 0x10] 
+16:35:26.446181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 7824:7864(40) ack 7105 win 32120 (DF)
+16:35:26.496181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7105:7145(40) ack 7864 win 24820 (DF) [tos 0x10] 
+16:35:26.496181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 7864:7904(40) ack 7145 win 32120 (DF)
+16:35:26.546181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7145:7185(40) ack 7904 win 24820 (DF) [tos 0x10] 
+16:35:26.546181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 7904:7944(40) ack 7185 win 32120 (DF)
+16:35:26.646181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 7944 win 24820 (DF) [tos 0x10] 
+16:35:26.656181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7185:7225(40) ack 7944 win 24820 (DF) [tos 0x10] 
+16:35:26.656181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 7944:7984(40) ack 7225 win 32120 (DF)
+16:35:26.706181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7225:7265(40) ack 7984 win 24820 (DF) [tos 0x10] 
+16:35:26.706181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 7984:8024(40) ack 7265 win 32120 (DF)
+16:35:26.806181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 8024 win 24820 (DF) [tos 0x10] 
+16:35:26.816181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7265:7305(40) ack 8024 win 24820 (DF) [tos 0x10] 
+16:35:26.816181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8024:8064(40) ack 7305 win 32120 (DF)
+16:35:26.866181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7305:7345(40) ack 8064 win 24820 (DF) [tos 0x10] 
+16:35:26.876181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8064:8104(40) ack 7345 win 32120 (DF)
+16:35:26.966181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 8104 win 24820 (DF) [tos 0x10] 
+16:35:26.976181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7345:7385(40) ack 8104 win 24820 (DF) [tos 0x10] 
+16:35:26.976181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8104:8144(40) ack 7385 win 32120 (DF)
+16:35:27.026181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7385:7425(40) ack 8144 win 24820 (DF) [tos 0x10] 
+16:35:27.036181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8144:8184(40) ack 7425 win 32120 (DF)
+16:35:27.096181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7425:7465(40) ack 8184 win 24820 (DF) [tos 0x10] 
+16:35:27.096181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8184:8224(40) ack 7465 win 32120 (DF)
+16:35:27.146181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7465:7505(40) ack 8224 win 24820 (DF) [tos 0x10] 
+16:35:27.156181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8224:8264(40) ack 7505 win 32120 (DF)
+16:35:27.206181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7505:7545(40) ack 8264 win 24820 (DF) [tos 0x10] 
+16:35:27.206181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8264:8304(40) ack 7545 win 32120 (DF)
+16:35:27.256181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7545:7585(40) ack 8304 win 24820 (DF) [tos 0x10] 
+16:35:27.266181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8304:8344(40) ack 7585 win 32120 (DF)
+16:35:27.316181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7585:7625(40) ack 8344 win 24820 (DF) [tos 0x10] 
+16:35:27.316181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8344:8384(40) ack 7625 win 32120 (DF)
+16:35:27.366181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7625:7665(40) ack 8384 win 24820 (DF) [tos 0x10] 
+16:35:27.376181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8384:8424(40) ack 7665 win 32120 (DF)
+16:35:27.466181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 8424 win 24820 (DF) [tos 0x10] 
+16:35:27.566181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7665:7705(40) ack 8424 win 24820 (DF) [tos 0x10] 
+16:35:27.566181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8424:8464(40) ack 7705 win 32120 (DF)
+16:35:27.666181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 8464 win 24820 (DF) [tos 0x10] 
+16:35:27.696181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7705:7745(40) ack 8464 win 24820 (DF) [tos 0x10] 
+16:35:27.696181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8464:8504(40) ack 7745 win 32120 (DF)
+16:35:27.786181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 8504 win 24820 (DF) [tos 0x10] 
+16:35:27.816181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7745:7785(40) ack 8504 win 24820 (DF) [tos 0x10] 
+16:35:27.816181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8504:8544(40) ack 7785 win 32120 (DF)
+16:35:27.916181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 8544 win 24820 (DF) [tos 0x10] 
+16:35:28.096181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7785:7825(40) ack 8544 win 24820 (DF) [tos 0x10] 
+16:35:28.116181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8544:8640(96) ack 7825 win 32120 (DF)
+16:35:28.206181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 8640 win 24820 (DF) [tos 0x10] 
+16:35:28.256181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7825:7865(40) ack 8640 win 24820 (DF) [tos 0x10] 
+16:35:28.256181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8640:8736(96) ack 7865 win 32120 (DF)
+16:35:28.346181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 8736 win 24820 (DF) [tos 0x10] 
+16:35:28.446181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7865:7905(40) ack 8736 win 24820 (DF) [tos 0x10] 
+16:35:28.446181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8736:8832(96) ack 7905 win 32120 (DF)
+16:35:28.546181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 8832 win 24820 (DF) [tos 0x10] 
+16:35:29.076181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7905:7945(40) ack 8832 win 24820 (DF) [tos 0x10] 
+16:35:29.086181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8832:8904(72) ack 7945 win 32120 (DF)
+16:35:29.176181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 8904 win 24820 (DF) [tos 0x10] 
+16:35:32.636181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7945:7985(40) ack 8904 win 24820 (DF) [tos 0x10] 
+16:35:32.636181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8904:8992(88) ack 7985 win 32120 (DF)
+16:35:32.736181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 8992 win 24820 (DF) [tos 0x10] 
+16:35:33.166181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 7985:8025(40) ack 8992 win 24820 (DF) [tos 0x10] 
+16:35:33.186181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 8025 win 32120 (DF)
+16:35:33.196181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 8992:9048(56) ack 8025 win 32120 (DF)
+16:35:33.296181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 9048 win 24820 (DF) [tos 0x10] 
+16:35:33.336181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8025:8065(40) ack 9048 win 24820 (DF) [tos 0x10] 
+16:35:33.336181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 9048:9096(48) ack 8065 win 32120 (DF)
+16:35:33.436181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 9096 win 24820 (DF) [tos 0x10] 
+16:35:33.466181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8065:8105(40) ack 9096 win 24820 (DF) [tos 0x10] 
+16:35:33.466181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 9096:9136(40) ack 8105 win 32120 (DF)
+16:35:33.566181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 9136 win 24820 (DF) [tos 0x10] 
+16:35:34.046181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8105:8145(40) ack 9136 win 24820 (DF) [tos 0x10] 
+16:35:34.056181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 8145 win 32120 (DF)
+16:35:34.066181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8145:8185(40) ack 9136 win 24820 (DF) [tos 0x10] 
+16:35:34.066181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 9136:9256(120) ack 8185 win 32120 (DF)
+16:35:34.166181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 9256 win 24820 (DF) [tos 0x10] 
+16:35:34.346181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8185:8225(40) ack 9256 win 24820 (DF) [tos 0x10] 
+16:35:34.346181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 9256:9344(88) ack 8225 win 32120 (DF)
+16:35:34.446181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 9344 win 24820 (DF) [tos 0x10] 
+16:35:34.676181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8225:8265(40) ack 9344 win 24820 (DF) [tos 0x10] 
+16:35:34.686181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 8265 win 32120 (DF)
+16:35:34.696181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 9344:9400(56) ack 8265 win 32120 (DF)
+16:35:34.796181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 9400 win 24820 (DF) [tos 0x10] 
+16:35:35.696181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 9400:9448(48) ack 8265 win 32120 (DF)
+16:35:35.796181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 9448 win 24820 (DF) [tos 0x10] 
+16:35:36.246181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8265:8305(40) ack 9448 win 24820 (DF) [tos 0x10] 
+16:35:36.266181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 8305 win 32120 (DF)
+16:35:36.386181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8305:8345(40) ack 9448 win 24820 (DF) [tos 0x10] 
+16:35:36.396181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 8345 win 32120 (DF)
+16:35:36.606181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8345:8385(40) ack 9448 win 24820 (DF) [tos 0x10] 
+16:35:36.616181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 9448:9576(128) ack 8385 win 32120 (DF)
+16:35:36.706181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 9576 win 24820 (DF) [tos 0x10] 
+16:35:37.206181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8385:8425(40) ack 9576 win 24820 (DF) [tos 0x10] 
+16:35:37.216181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 9576:9616(40) ack 8425 win 32120 (DF)
+16:35:37.306181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 9616 win 24820 (DF) [tos 0x10] 
+16:35:37.546181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8425:8465(40) ack 9616 win 24820 (DF) [tos 0x10] 
+16:35:37.546181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 9616:9656(40) ack 8465 win 32120 (DF)
+16:35:37.646181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 9656 win 24820 (DF) [tos 0x10] 
+16:35:38.966181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8465:8505(40) ack 9656 win 24820 (DF) [tos 0x10] 
+16:35:38.986181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 8505 win 32120 (DF)
+16:35:39.026181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8505:8545(40) ack 9656 win 24820 (DF) [tos 0x10] 
+16:35:39.026181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 9656:9792(136) ack 8545 win 32120 (DF)
+16:35:39.126181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 9792 win 24820 (DF) [tos 0x10] 
+16:35:41.246181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8545:8585(40) ack 9792 win 24820 (DF) [tos 0x10] 
+16:35:41.256181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 9792:9888(96) ack 8585 win 32120 (DF)
+16:35:41.356181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 9888 win 24820 (DF) [tos 0x10] 
+16:35:41.616181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8585:8625(40) ack 9888 win 24820 (DF) [tos 0x10] 
+16:35:41.616181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 9888:9984(96) ack 8625 win 32120 (DF)
+16:35:41.716181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 9984 win 24820 (DF) [tos 0x10] 
+16:35:41.886181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8625:8665(40) ack 9984 win 24820 (DF) [tos 0x10] 
+16:35:41.896181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 9984:10080(96) ack 8665 win 32120 (DF)
+16:35:41.996181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 10080 win 24820 (DF) [tos 0x10] 
+16:35:42.166181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8665:8705(40) ack 10080 win 24820 (DF) [tos 0x10] 
+16:35:42.176181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 10080:10176(96) ack 8705 win 32120 (DF)
+16:35:42.266181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 10176 win 24820 (DF) [tos 0x10] 
+16:35:42.456181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8705:8745(40) ack 10176 win 24820 (DF) [tos 0x10] 
+16:35:42.456181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 10176:10272(96) ack 8745 win 32120 (DF)
+16:35:42.556181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 10272 win 24820 (DF) [tos 0x10] 
+16:35:43.336181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8745:8785(40) ack 10272 win 24820 (DF) [tos 0x10] 
+16:35:43.356181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 8785 win 32120 (DF)
+16:35:43.366181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 10272:10328(56) ack 8785 win 32120 (DF)
+16:35:43.466181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 10328 win 24820 (DF) [tos 0x10] 
+16:35:43.806181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8785:8825(40) ack 10328 win 24820 (DF) [tos 0x10] 
+16:35:43.806181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 10328:10376(48) ack 8825 win 32120 (DF)
+16:35:43.906181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 10376 win 24820 (DF) [tos 0x10] 
+16:35:43.946181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8825:8865(40) ack 10376 win 24820 (DF) [tos 0x10] 
+16:35:43.946181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 10376:10416(40) ack 8865 win 32120 (DF)
+16:35:44.046181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 10416 win 24820 (DF) [tos 0x10] 
+16:35:45.356181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8865:8905(40) ack 10416 win 24820 (DF) [tos 0x10] 
+16:35:45.356181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 10416:10528(112) ack 8905 win 32120 (DF)
+16:35:45.456181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 10528 win 24820 (DF) [tos 0x10] 
+16:35:45.896181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8905:8945(40) ack 10528 win 24820 (DF) [tos 0x10] 
+16:35:45.906181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 10528:10632(104) ack 8945 win 32120 (DF)
+16:35:45.996181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 10632 win 24820 (DF) [tos 0x10] 
+16:35:46.116181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8945:8985(40) ack 10632 win 24820 (DF) [tos 0x10] 
+16:35:46.116181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 10632:10736(104) ack 8985 win 32120 (DF)
+16:35:46.206181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 10736 win 24820 (DF) [tos 0x10] 
+16:35:46.276181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 8985:9025(40) ack 10736 win 24820 (DF) [tos 0x10] 
+16:35:46.276181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 10736:10840(104) ack 9025 win 32120 (DF)
+16:35:46.366181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 10840 win 24820 (DF) [tos 0x10] 
+16:35:46.466181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9025:9065(40) ack 10840 win 24820 (DF) [tos 0x10] 
+16:35:46.466181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 10840:10944(104) ack 9065 win 32120 (DF)
+16:35:46.566181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 10944 win 24820 (DF) [tos 0x10] 
+16:35:46.606181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9065:9105(40) ack 10944 win 24820 (DF) [tos 0x10] 
+16:35:46.616181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 10944:11048(104) ack 9105 win 32120 (DF)
+16:35:46.706181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 11048 win 24820 (DF) [tos 0x10] 
+16:35:46.746181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9105:9145(40) ack 11048 win 24820 (DF) [tos 0x10] 
+16:35:46.746181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 11048:11152(104) ack 9145 win 32120 (DF)
+16:35:46.846181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 11152 win 24820 (DF) [tos 0x10] 
+16:35:46.876181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9145:9185(40) ack 11152 win 24820 (DF) [tos 0x10] 
+16:35:46.876181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 11152:11256(104) ack 9185 win 32120 (DF)
+16:35:46.966181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 11256 win 24820 (DF) [tos 0x10] 
+16:35:46.986181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9185:9225(40) ack 11256 win 24820 (DF) [tos 0x10] 
+16:35:46.986181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 11256:11360(104) ack 9225 win 32120 (DF)
+16:35:47.086181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 11360 win 24820 (DF) [tos 0x10] 
+16:35:47.116181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9225:9265(40) ack 11360 win 24820 (DF) [tos 0x10] 
+16:35:47.116181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 11360:11456(96) ack 9265 win 32120 (DF)
+16:35:47.206181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 11456 win 24820 (DF) [tos 0x10] 
+16:35:47.236181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9265:9305(40) ack 11456 win 24820 (DF) [tos 0x10] 
+16:35:47.236181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 11456:11552(96) ack 9305 win 32120 (DF)
+16:35:47.326181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 11552 win 24820 (DF) [tos 0x10] 
+16:35:47.396181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9305:9345(40) ack 11552 win 24820 (DF) [tos 0x10] 
+16:35:47.396181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 11552:11648(96) ack 9345 win 32120 (DF)
+16:35:47.486181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 11648 win 24820 (DF) [tos 0x10] 
+16:35:47.746181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9345:9385(40) ack 11648 win 24820 (DF) [tos 0x10] 
+16:35:47.746181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 11648:11744(96) ack 9385 win 32120 (DF)
+16:35:47.836181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 11744 win 24820 (DF) [tos 0x10] 
+16:35:48.266181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9385:9425(40) ack 11744 win 24820 (DF) [tos 0x10] 
+16:35:48.266181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 11744:11784(40) ack 9425 win 32120 (DF)
+16:35:48.356181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 11784 win 24820 (DF) [tos 0x10] 
+16:35:49.286181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9425:9465(40) ack 11784 win 24820 (DF) [tos 0x10] 
+16:35:49.296181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 9465 win 32120 (DF)
+16:35:50.276181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 11784:11824(40) ack 9465 win 32120 (DF)
+16:35:50.376181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 11824 win 24820 (DF) [tos 0x10] 
+16:35:50.416181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9465:9505(40) ack 11824 win 24820 (DF) [tos 0x10] 
+16:35:50.436181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 9505 win 32120 (DF)
+16:35:50.566181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9505:9545(40) ack 11824 win 24820 (DF) [tos 0x10] 
+16:35:50.566181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 11824:11872(48) ack 9545 win 32120 (DF)
+16:35:50.666181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 11872 win 24820 (DF) [tos 0x10] 
+16:35:50.996181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9545:9585(40) ack 11872 win 24820 (DF) [tos 0x10] 
+16:35:50.996181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 11872:11912(40) ack 9585 win 32120 (DF)
+16:35:51.096181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 11912 win 24820 (DF) [tos 0x10] 
+16:35:51.226181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9585:9625(40) ack 11912 win 24820 (DF) [tos 0x10] 
+16:35:51.226181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 11912:11952(40) ack 9625 win 32120 (DF)
+16:35:51.326181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 11952 win 24820 (DF) [tos 0x10] 
+16:35:51.666181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9625:9665(40) ack 11952 win 24820 (DF) [tos 0x10] 
+16:35:51.686181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 9665 win 32120 (DF)
+16:35:51.866181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9665:9705(40) ack 11952 win 24820 (DF) [tos 0x10] 
+16:35:51.866181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 11952:12000(48) ack 9705 win 32120 (DF)
+16:35:51.966181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 12000 win 24820 (DF) [tos 0x10] 
+16:35:52.326181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9705:9745(40) ack 12000 win 24820 (DF) [tos 0x10] 
+16:35:52.326181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12000:12040(40) ack 9745 win 32120 (DF)
+16:35:52.426181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 12040 win 24820 (DF) [tos 0x10] 
+16:35:52.486181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9745:9785(40) ack 12040 win 24820 (DF) [tos 0x10] 
+16:35:52.486181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12040:12080(40) ack 9785 win 32120 (DF)
+16:35:52.576181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 12080 win 24820 (DF) [tos 0x10] 
+16:35:52.606181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9785:9825(40) ack 12080 win 24820 (DF) [tos 0x10] 
+16:35:52.606181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12080:12120(40) ack 9825 win 32120 (DF)
+16:35:52.696181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 12120 win 24820 (DF) [tos 0x10] 
+16:35:52.726181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9825:9865(40) ack 12120 win 24820 (DF) [tos 0x10] 
+16:35:52.726181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12120:12160(40) ack 9865 win 32120 (DF)
+16:35:52.816181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 12160 win 24820 (DF) [tos 0x10] 
+16:35:52.846181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9865:9905(40) ack 12160 win 24820 (DF) [tos 0x10] 
+16:35:52.846181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12160:12200(40) ack 9905 win 32120 (DF)
+16:35:52.936181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 12200 win 24820 (DF) [tos 0x10] 
+16:35:52.966181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9905:9945(40) ack 12200 win 24820 (DF) [tos 0x10] 
+16:35:52.966181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12200:12240(40) ack 9945 win 32120 (DF)
+16:35:53.056181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 12240 win 24820 (DF) [tos 0x10] 
+16:35:53.086181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9945:9985(40) ack 12240 win 24820 (DF) [tos 0x10] 
+16:35:53.086181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12240:12280(40) ack 9985 win 32120 (DF)
+16:35:53.186181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 12280 win 24820 (DF) [tos 0x10] 
+16:35:53.846181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 9985:10025(40) ack 12280 win 24820 (DF) [tos 0x10] 
+16:35:53.866181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 10025 win 32120 (DF)
+16:35:54.046181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10025:10065(40) ack 12280 win 24820 (DF) [tos 0x10] 
+16:35:54.046181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12280:12328(48) ack 10065 win 32120 (DF)
+16:35:54.136181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 12328 win 24820 (DF) [tos 0x10] 
+16:35:54.846181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10065:10105(40) ack 12328 win 24820 (DF) [tos 0x10] 
+16:35:54.866181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 10105 win 32120 (DF)
+16:35:55.166181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10105:10145(40) ack 12328 win 24820 (DF) [tos 0x10] 
+16:35:55.166181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12328:12384(56) ack 10145 win 32120 (DF)
+16:35:55.256181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 12384 win 24820 (DF) [tos 0x10] 
+16:35:55.426181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10145:10185(40) ack 12384 win 24820 (DF) [tos 0x10] 
+16:35:55.426181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12384:12424(40) ack 10185 win 32120 (DF)
+16:35:55.486181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10185:10225(40) ack 12424 win 24820 (DF) [tos 0x10] 
+16:35:55.486181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12424:12464(40) ack 10225 win 32120 (DF)
+16:35:55.586181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 12464 win 24820 (DF) [tos 0x10] 
+16:35:55.646181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10225:10265(40) ack 12464 win 24820 (DF) [tos 0x10] 
+16:35:55.656181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12464:12552(88) ack 10265 win 32120 (DF)
+16:35:55.746181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 12552 win 24820 (DF) [tos 0x10] 
+16:35:55.746181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12552:12608(56) ack 10265 win 32120 (DF)
+16:35:55.846181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 12608 win 24820 (DF) [tos 0x10] 
+16:37:25.646181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10265:10305(40) ack 12608 win 24820 (DF) [tos 0x10] 
+16:37:25.646181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12608:12648(40) ack 10305 win 32120 (DF)
+16:37:25.716181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10305:10345(40) ack 12648 win 24820 (DF) [tos 0x10] 
+16:37:25.716181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12648:12688(40) ack 10345 win 32120 (DF)
+16:37:25.776181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10345:10385(40) ack 12688 win 24820 (DF) [tos 0x10] 
+16:37:25.776181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12688:12728(40) ack 10385 win 32120 (DF)
+16:37:25.866181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 12728 win 24820 (DF) [tos 0x10] 
+16:37:25.876181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10385:10425(40) ack 12728 win 24820 (DF) [tos 0x10] 
+16:37:25.876181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12728:12768(40) ack 10425 win 32120 (DF)
+16:37:25.976181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 12768 win 24820 (DF) [tos 0x10] 
+16:37:25.976181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12768:12872(104) ack 10425 win 32120 (DF)
+16:37:26.076181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 12872 win 24820 (DF) [tos 0x10] 
+16:37:45.856181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10425:10465(40) ack 12872 win 24820 (DF) [tos 0x10] 
+16:37:45.856181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12872:12912(40) ack 10465 win 32120 (DF)
+16:37:45.916181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10465:10505(40) ack 12912 win 24820 (DF) [tos 0x10] 
+16:37:45.916181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12912:12952(40) ack 10505 win 32120 (DF)
+16:37:46.016181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 12952 win 24820 (DF) [tos 0x10] 
+16:37:46.026181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10505:10545(40) ack 12952 win 24820 (DF) [tos 0x10] 
+16:37:46.026181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12952:12992(40) ack 10545 win 32120 (DF)
+16:37:46.126181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 12992 win 24820 (DF) [tos 0x10] 
+16:37:46.126181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 12992:13352(360) ack 10545 win 32120 (DF)
+16:37:46.226181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 13352 win 24820 (DF) [tos 0x10] 
+16:37:52.156181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10545:10585(40) ack 13352 win 24820 (DF) [tos 0x10] 
+16:37:52.156181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 13352:13392(40) ack 10585 win 32120 (DF)
+16:37:52.256181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 13392 win 24820 (DF) [tos 0x10] 
+16:37:52.266181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10585:10625(40) ack 13392 win 24820 (DF) [tos 0x10] 
+16:37:52.266181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 13392:13432(40) ack 10625 win 32120 (DF)
+16:37:52.346181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10625:10665(40) ack 13432 win 24820 (DF) [tos 0x10] 
+16:37:52.346181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 13432:13472(40) ack 10665 win 32120 (DF)
+16:37:52.426181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10665:10705(40) ack 13472 win 24820 (DF) [tos 0x10] 
+16:37:52.426181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 13472:13512(40) ack 10705 win 32120 (DF)
+16:37:52.526181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 13512 win 24820 (DF) [tos 0x10] 
+16:37:52.606181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10705:10745(40) ack 13512 win 24820 (DF) [tos 0x10] 
+16:37:52.606181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 13512:13552(40) ack 10745 win 32120 (DF)
+16:37:52.696181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 13552 win 24820 (DF) [tos 0x10] 
+16:37:52.716181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10745:10785(40) ack 13552 win 24820 (DF) [tos 0x10] 
+16:37:52.716181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 13552:13592(40) ack 10785 win 32120 (DF)
+16:37:52.806181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 13592 win 24820 (DF) [tos 0x10] 
+16:37:52.816181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10785:10825(40) ack 13592 win 24820 (DF) [tos 0x10] 
+16:37:52.816181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 13592:13632(40) ack 10825 win 32120 (DF)
+16:37:52.876181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10825:10865(40) ack 13632 win 24820 (DF) [tos 0x10] 
+16:37:52.876181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 13632:13672(40) ack 10865 win 32120 (DF)
+16:37:52.966181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 13672 win 24820 (DF) [tos 0x10] 
+16:37:53.116181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10865:10905(40) ack 13672 win 24820 (DF) [tos 0x10] 
+16:37:53.116181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 13672:13712(40) ack 10905 win 32120 (DF)
+16:37:53.206181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 13712 win 24820 (DF) [tos 0x10] 
+16:37:53.326181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 13712:13752(40) ack 10905 win 32120 (DF)
+16:37:53.416181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 13752 win 24820 (DF) [tos 0x10] 
+16:37:53.416181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 13752:14064(312) ack 10905 win 32120 (DF)
+16:37:53.516181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 14064 win 24820 (DF) [tos 0x10] 
+16:38:00.606181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10905:10945(40) ack 14064 win 24820 (DF) [tos 0x10] 
+16:38:00.606181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 14064:14136(72) ack 10945 win 32120 (DF)
+16:38:00.696181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 14136 win 24820 (DF) [tos 0x10] 
+16:38:00.746181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10945:10985(40) ack 14136 win 24820 (DF) [tos 0x10] 
+16:38:00.746181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 14136:14176(40) ack 10985 win 32120 (DF)
+16:38:00.836181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 14176 win 24820 (DF) [tos 0x10] 
+16:38:00.856181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 10985:11025(40) ack 14176 win 24820 (DF) [tos 0x10] 
+16:38:00.856181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 14176:14240(64) ack 11025 win 32120 (DF)
+16:38:00.946181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 14240 win 24820 (DF) [tos 0x10] 
+16:38:00.946181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 14240:14296(56) ack 11025 win 32120 (DF)
+16:38:01.046181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 14296 win 24820 (DF) [tos 0x10] 
+16:38:03.086181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11025:11065(40) ack 14296 win 24820 (DF) [tos 0x10] 
+16:38:03.086181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 14296:14336(40) ack 11065 win 32120 (DF)
+16:38:03.186181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 14336 win 24820 (DF) [tos 0x10] 
+16:38:03.186181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11065:11105(40) ack 14336 win 24820 (DF) [tos 0x10] 
+16:38:03.186181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 14336:14376(40) ack 11105 win 32120 (DF)
+16:38:03.266181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11105:11145(40) ack 14376 win 24820 (DF) [tos 0x10] 
+16:38:03.266181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 14376:14416(40) ack 11145 win 32120 (DF)
+16:38:03.366181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 14416 win 24820 (DF) [tos 0x10] 
+16:38:03.366181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 14416:14776(360) ack 11145 win 32120 (DF)
+16:38:03.466181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 14776 win 24820 (DF) [tos 0x10] 
+16:38:06.666181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11145:11185(40) ack 14776 win 24820 (DF) [tos 0x10] 
+16:38:06.666181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 14776:14816(40) ack 11185 win 32120 (DF)
+16:38:06.736181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11185:11225(40) ack 14816 win 24820 (DF) [tos 0x10] 
+16:38:06.736181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 14816:14856(40) ack 11225 win 32120 (DF)
+16:38:06.806181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11225:11265(40) ack 14856 win 24820 (DF) [tos 0x10] 
+16:38:06.806181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 14856:14896(40) ack 11265 win 32120 (DF)
+16:38:06.906181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 14896 win 24820 (DF) [tos 0x10] 
+16:38:07.066181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11265:11305(40) ack 14896 win 24820 (DF) [tos 0x10] 
+16:38:07.066181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 14896:14936(40) ack 11305 win 32120 (DF)
+16:38:07.156181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11305:11345(40) ack 14936 win 24820 (DF) [tos 0x10] 
+16:38:07.156181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 14936:14976(40) ack 11345 win 32120 (DF)
+16:38:07.226181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11345:11385(40) ack 14976 win 24820 (DF) [tos 0x10] 
+16:38:07.226181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 14976:15016(40) ack 11385 win 32120 (DF)
+16:38:07.316181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 15016 win 24820 (DF) [tos 0x10] 
+16:38:07.466181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11385:11425(40) ack 15016 win 24820 (DF) [tos 0x10] 
+16:38:07.466181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 15016:15056(40) ack 11425 win 32120 (DF)
+16:38:07.526181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11425:11465(40) ack 15056 win 24820 (DF) [tos 0x10] 
+16:38:07.526181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 15056:15096(40) ack 11465 win 32120 (DF)
+16:38:07.626181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 15096 win 24820 (DF) [tos 0x10] 
+16:38:08.166181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11465:11505(40) ack 15096 win 24820 (DF) [tos 0x10] 
+16:38:08.166181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 15096:15136(40) ack 11505 win 32120 (DF)
+16:38:08.256181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 15136 win 24820 (DF) [tos 0x10] 
+16:38:08.316181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11505:11545(40) ack 15136 win 24820 (DF) [tos 0x10] 
+16:38:08.316181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 15136:15184(48) ack 11545 win 32120 (DF)
+16:38:08.416181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 15184 win 24820 (DF) [tos 0x10] 
+16:38:08.526181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11545:11585(40) ack 15184 win 24820 (DF) [tos 0x10] 
+16:38:08.526181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 15184:15224(40) ack 11585 win 32120 (DF)
+16:38:08.616181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 15224 win 24820 (DF) [tos 0x10] 
+16:38:08.616181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 15224:15288(64) ack 11585 win 32120 (DF)
+16:38:08.716181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 15288 win 24820 (DF) [tos 0x10] 
+16:38:08.946181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11585:11625(40) ack 15288 win 24820 (DF) [tos 0x10] 
+16:38:08.946181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 15288:15328(40) ack 11625 win 32120 (DF)
+16:38:09.036181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 15328 win 24820 (DF) [tos 0x10] 
+16:38:09.156181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11625:11665(40) ack 15328 win 24820 (DF) [tos 0x10] 
+16:38:09.156181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 15328:15368(40) ack 11665 win 32120 (DF)
+16:38:09.256181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 15368 win 24820 (DF) [tos 0x10] 
+16:38:09.276181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11665:11705(40) ack 15368 win 24820 (DF) [tos 0x10] 
+16:38:09.276181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 15368:15408(40) ack 11705 win 32120 (DF)
+16:38:09.376181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 15408 win 24820 (DF) [tos 0x10] 
+16:38:09.406181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 15408:15656(248) ack 11705 win 32120 (DF)
+16:38:09.496181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 15656 win 24820 (DF) [tos 0x10] 
+16:38:09.496181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 15656:16232(576) ack 11705 win 32120 (DF)
+16:38:09.596181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 16232 win 24820 (DF) [tos 0x10] 
+16:38:20.446181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11705:11745(40) ack 16232 win 24820 (DF) [tos 0x10] 
+16:38:20.446181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 16232:16272(40) ack 11745 win 32120 (DF)
+16:38:20.546181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 16272 win 24820 (DF) [tos 0x10] 
+16:38:20.576181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11745:11785(40) ack 16272 win 24820 (DF) [tos 0x10] 
+16:38:20.576181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 16272:16312(40) ack 11785 win 32120 (DF)
+16:38:20.666181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11785:11825(40) ack 16312 win 24820 (DF) [tos 0x10] 
+16:38:20.666181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 16312:16352(40) ack 11825 win 32120 (DF)
+16:38:20.766181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 16352 win 24820 (DF) [tos 0x10] 
+16:38:21.176181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11825:11865(40) ack 16352 win 24820 (DF) [tos 0x10] 
+16:38:21.186181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 16352:16392(40) ack 11865 win 32120 (DF)
+16:38:21.286181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 16392 win 24820 (DF) [tos 0x10] 
+16:38:21.376181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11865:11905(40) ack 16392 win 24820 (DF) [tos 0x10] 
+16:38:21.376181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 16392:16432(40) ack 11905 win 32120 (DF)
+16:38:21.476181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 16432 win 24820 (DF) [tos 0x10] 
+16:38:21.496181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11905:11945(40) ack 16432 win 24820 (DF) [tos 0x10] 
+16:38:21.496181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 16432:16472(40) ack 11945 win 32120 (DF)
+16:38:21.596181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 16472 win 24820 (DF) [tos 0x10] 
+16:38:21.776181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11945:11985(40) ack 16472 win 24820 (DF) [tos 0x10] 
+16:38:21.786181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 16472:16512(40) ack 11985 win 32120 (DF)
+16:38:21.886181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 16512 win 24820 (DF) [tos 0x10] 
+16:38:21.886181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 11985:12025(40) ack 16512 win 24820 (DF) [tos 0x10] 
+16:38:21.886181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 16512:16552(40) ack 12025 win 32120 (DF)
+16:38:21.986181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 16552 win 24820 (DF) [tos 0x10] 
+16:38:22.116181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12025:12065(40) ack 16552 win 24820 (DF) [tos 0x10] 
+16:38:22.116181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 16552:16592(40) ack 12065 win 32120 (DF)
+16:38:22.216181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 16592 win 24820 (DF) [tos 0x10] 
+16:38:22.266181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12065:12105(40) ack 16592 win 24820 (DF) [tos 0x10] 
+16:38:22.266181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 16592:16632(40) ack 12105 win 32120 (DF)
+16:38:22.366181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 16632 win 24820 (DF) [tos 0x10] 
+16:38:22.416181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12105:12145(40) ack 16632 win 24820 (DF) [tos 0x10] 
+16:38:22.416181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 16632:16672(40) ack 12145 win 32120 (DF)
+16:38:22.516181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 16672 win 24820 (DF) [tos 0x10] 
+16:38:22.586181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12145:12185(40) ack 16672 win 24820 (DF) [tos 0x10] 
+16:38:22.586181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 16672:16712(40) ack 12185 win 32120 (DF)
+16:38:22.686181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 16712 win 24820 (DF) [tos 0x10] 
+16:38:22.776181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12185:12225(40) ack 16712 win 24820 (DF) [tos 0x10] 
+16:38:22.776181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 16712:16752(40) ack 12225 win 32120 (DF)
+16:38:22.866181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12225:12265(40) ack 16752 win 24820 (DF) [tos 0x10] 
+16:38:22.866181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 16752:16792(40) ack 12265 win 32120 (DF)
+16:38:22.966181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 16792 win 24820 (DF) [tos 0x10] 
+16:38:23.026181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12265:12305(40) ack 16792 win 24820 (DF) [tos 0x10] 
+16:38:23.026181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 16792:16832(40) ack 12305 win 32120 (DF)
+16:38:23.126181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 16832 win 24820 (DF) [tos 0x10] 
+16:38:23.126181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 16832:16872(40) ack 12305 win 32120 (DF)
+16:38:23.156181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 16872:17928(1056) ack 12305 win 32120 (DF)
+16:38:23.156181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 17928 win 24820 (DF) [tos 0x10] 
+16:38:24.856181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12305:12345(40) ack 17928 win 24820 (DF) [tos 0x10] 
+16:38:24.856181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 17928:17968(40) ack 12345 win 32120 (DF)
+16:38:24.946181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 17968 win 24820 (DF) [tos 0x10] 
+16:38:25.406181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12345:12385(40) ack 17968 win 24820 (DF) [tos 0x10] 
+16:38:25.406181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 17968:18008(40) ack 12385 win 32120 (DF)
+16:38:25.456181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12385:12425(40) ack 18008 win 24820 (DF) [tos 0x10] 
+16:38:25.456181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18008:18048(40) ack 12425 win 32120 (DF)
+16:38:25.506181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12425:12465(40) ack 18048 win 24820 (DF) [tos 0x10] 
+16:38:25.506181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18048:18088(40) ack 12465 win 32120 (DF)
+16:38:25.556181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12465:12505(40) ack 18088 win 24820 (DF) [tos 0x10] 
+16:38:25.556181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18088:18128(40) ack 12505 win 32120 (DF)
+16:38:25.606181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12505:12545(40) ack 18128 win 24820 (DF) [tos 0x10] 
+16:38:25.606181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18128:18168(40) ack 12545 win 32120 (DF)
+16:38:25.656181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12545:12585(40) ack 18168 win 24820 (DF) [tos 0x10] 
+16:38:25.656181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18168:18208(40) ack 12585 win 32120 (DF)
+16:38:25.756181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 18208 win 24820 (DF) [tos 0x10] 
+16:38:25.766181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12585:12625(40) ack 18208 win 24820 (DF) [tos 0x10] 
+16:38:25.766181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18208:18248(40) ack 12625 win 32120 (DF)
+16:38:25.816181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12625:12665(40) ack 18248 win 24820 (DF) [tos 0x10] 
+16:38:25.816181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18248:18288(40) ack 12665 win 32120 (DF)
+16:38:25.866181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12665:12705(40) ack 18288 win 24820 (DF) [tos 0x10] 
+16:38:25.866181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18288:18328(40) ack 12705 win 32120 (DF)
+16:38:25.916181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12705:12745(40) ack 18328 win 24820 (DF) [tos 0x10] 
+16:38:25.916181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18328:18368(40) ack 12745 win 32120 (DF)
+16:38:25.966181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12745:12785(40) ack 18368 win 24820 (DF) [tos 0x10] 
+16:38:25.966181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18368:18408(40) ack 12785 win 32120 (DF)
+16:38:26.016181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12785:12825(40) ack 18408 win 24820 (DF) [tos 0x10] 
+16:38:26.026181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18408:18448(40) ack 12825 win 32120 (DF)
+16:38:26.066181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12825:12865(40) ack 18448 win 24820 (DF) [tos 0x10] 
+16:38:26.066181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18448:18488(40) ack 12865 win 32120 (DF)
+16:38:26.116181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12865:12905(40) ack 18488 win 24820 (DF) [tos 0x10] 
+16:38:26.126181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18488:18528(40) ack 12905 win 32120 (DF)
+16:38:26.216181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 18528 win 24820 (DF) [tos 0x10] 
+16:38:26.226181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12905:12945(40) ack 18528 win 24820 (DF) [tos 0x10] 
+16:38:26.226181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18528:18568(40) ack 12945 win 32120 (DF)
+16:38:26.276181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12945:12985(40) ack 18568 win 24820 (DF) [tos 0x10] 
+16:38:26.286181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18568:18608(40) ack 12985 win 32120 (DF)
+16:38:26.326181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 12985:13025(40) ack 18608 win 24820 (DF) [tos 0x10] 
+16:38:26.336181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18608:18648(40) ack 13025 win 32120 (DF)
+16:38:26.426181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 18648 win 24820 (DF) [tos 0x10] 
+16:38:26.436181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13025:13065(40) ack 18648 win 24820 (DF) [tos 0x10] 
+16:38:26.446181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18648:18688(40) ack 13065 win 32120 (DF)
+16:38:26.486181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13065:13105(40) ack 18688 win 24820 (DF) [tos 0x10] 
+16:38:26.496181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18688:18728(40) ack 13105 win 32120 (DF)
+16:38:26.536181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13105:13145(40) ack 18728 win 24820 (DF) [tos 0x10] 
+16:38:26.546181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18728:18768(40) ack 13145 win 32120 (DF)
+16:38:26.586181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13145:13185(40) ack 18768 win 24820 (DF) [tos 0x10] 
+16:38:26.596181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18768:18808(40) ack 13185 win 32120 (DF)
+16:38:26.636181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13185:13225(40) ack 18808 win 24820 (DF) [tos 0x10] 
+16:38:26.646181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18808:18936(128) ack 13225 win 32120 (DF)
+16:38:26.706181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13225:13265(40) ack 18936 win 24820 (DF) [tos 0x10] 
+16:38:26.716181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 18936:19080(144) ack 13265 win 32120 (DF)
+16:38:26.776181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13265:13305(40) ack 19080 win 24820 (DF) [tos 0x10] 
+16:38:26.786181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19080:19192(112) ack 13305 win 32120 (DF)
+16:38:26.846181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13305:13345(40) ack 19192 win 24820 (DF) [tos 0x10] 
+16:38:26.856181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19192:19232(40) ack 13345 win 32120 (DF)
+16:38:26.896181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13345:13385(40) ack 19232 win 24820 (DF) [tos 0x10] 
+16:38:26.906181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19232:19272(40) ack 13385 win 32120 (DF)
+16:38:26.996181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 19272 win 24820 (DF) [tos 0x10] 
+16:38:27.006181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13385:13425(40) ack 19272 win 24820 (DF) [tos 0x10] 
+16:38:27.016181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19272:19312(40) ack 13425 win 32120 (DF)
+16:38:27.106181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 19312 win 24820 (DF) [tos 0x10] 
+16:38:27.156181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13425:13465(40) ack 19312 win 24820 (DF) [tos 0x10] 
+16:38:27.166181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19312:19352(40) ack 13465 win 32120 (DF)
+16:38:27.256181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 19352 win 24820 (DF) [tos 0x10] 
+16:38:28.046181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13465:13505(40) ack 19352 win 24820 (DF) [tos 0x10] 
+16:38:28.046181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19352:19400(48) ack 13505 win 32120 (DF)
+16:38:28.136181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 19400 win 24820 (DF) [tos 0x10] 
+16:38:28.366181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13505:13545(40) ack 19400 win 24820 (DF) [tos 0x10] 
+16:38:28.366181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19400:19448(48) ack 13545 win 32120 (DF)
+16:38:28.456181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 19448 win 24820 (DF) [tos 0x10] 
+16:38:28.656181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13545:13585(40) ack 19448 win 24820 (DF) [tos 0x10] 
+16:38:28.656181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19448:19496(48) ack 13585 win 32120 (DF)
+16:38:28.756181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 19496 win 24820 (DF) [tos 0x10] 
+16:38:28.946181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13585:13625(40) ack 19496 win 24820 (DF) [tos 0x10] 
+16:38:28.946181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19496:19544(48) ack 13625 win 32120 (DF)
+16:38:29.046181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 19544 win 24820 (DF) [tos 0x10] 
+16:38:29.266181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13625:13665(40) ack 19544 win 24820 (DF) [tos 0x10] 
+16:38:29.266181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19544:19592(48) ack 13665 win 32120 (DF)
+16:38:29.366181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 19592 win 24820 (DF) [tos 0x10] 
+16:38:29.496181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13665:13705(40) ack 19592 win 24820 (DF) [tos 0x10] 
+16:38:29.506181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19592:19640(48) ack 13705 win 32120 (DF)
+16:38:29.606181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 19640 win 24820 (DF) [tos 0x10] 
+16:38:30.816181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13705:13745(40) ack 19640 win 24820 (DF) [tos 0x10] 
+16:38:30.816181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19640:19696(56) ack 13745 win 32120 (DF)
+16:38:30.916181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 19696 win 24820 (DF) [tos 0x10] 
+16:38:31.066181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13745:13785(40) ack 19696 win 24820 (DF) [tos 0x10] 
+16:38:31.066181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19696:19736(40) ack 13785 win 32120 (DF)
+16:38:31.166181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 19736 win 24820 (DF) [tos 0x10] 
+16:38:31.406181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13785:13825(40) ack 19736 win 24820 (DF) [tos 0x10] 
+16:38:31.406181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19736:19800(64) ack 13825 win 32120 (DF)
+16:38:31.506181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 19800 win 24820 (DF) [tos 0x10] 
+16:38:31.506181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19800:19864(64) ack 13825 win 32120 (DF)
+16:38:31.606181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 19864 win 24820 (DF) [tos 0x10] 
+16:38:32.516181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13825:13865(40) ack 19864 win 24820 (DF) [tos 0x10] 
+16:38:32.516181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19864:19904(40) ack 13865 win 32120 (DF)
+16:38:32.616181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13865:13905(40) ack 19904 win 24820 (DF) [tos 0x10] 
+16:38:32.616181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19904:19944(40) ack 13905 win 32120 (DF)
+16:38:32.696181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13905:13945(40) ack 19944 win 24820 (DF) [tos 0x10] 
+16:38:32.696181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19944:19984(40) ack 13945 win 32120 (DF)
+16:38:32.746181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 19984:20744(760) ack 13945 win 32120 (DF)
+16:38:32.746181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 20744 win 24820 (DF) [tos 0x10] 
+16:38:32.746181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 20744:20808(64) ack 13945 win 32120 (DF)
+16:38:32.846181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 20808 win 24820 (DF) [tos 0x10] 
+16:38:33.896181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13945:13985(40) ack 20808 win 24820 (DF) [tos 0x10] 
+16:38:33.896181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 20808:20848(40) ack 13985 win 32120 (DF)
+16:38:33.996181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 20848 win 24820 (DF) [tos 0x10] 
+16:38:34.006181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 13985:14025(40) ack 20848 win 24820 (DF) [tos 0x10] 
+16:38:34.006181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 20848:20888(40) ack 14025 win 32120 (DF)
+16:38:34.096181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 20888 win 24820 (DF) [tos 0x10] 
+16:38:34.136181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14025:14065(40) ack 20888 win 24820 (DF) [tos 0x10] 
+16:38:34.136181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 20888:20928(40) ack 14065 win 32120 (DF)
+16:38:34.226181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 20928 win 24820 (DF) [tos 0x10] 
+16:38:35.456181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14065:14105(40) ack 20928 win 24820 (DF) [tos 0x10] 
+16:38:35.456181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 20928:20968(40) ack 14105 win 32120 (DF)
+16:38:35.546181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 20968 win 24820 (DF) [tos 0x10] 
+16:38:35.586181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14105:14145(40) ack 20968 win 24820 (DF) [tos 0x10] 
+16:38:35.586181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 20968:21008(40) ack 14145 win 32120 (DF)
+16:38:35.686181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 21008 win 24820 (DF) [tos 0x10] 
+16:38:35.866181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14145:14185(40) ack 21008 win 24820 (DF) [tos 0x10] 
+16:38:35.876181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 21008:21048(40) ack 14185 win 32120 (DF)
+16:38:35.966181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 21048 win 24820 (DF) [tos 0x10] 
+16:38:35.966181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 21048:21104(56) ack 14185 win 32120 (DF)
+16:38:36.066181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 21104 win 24820 (DF) [tos 0x10] 
+16:38:36.256181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14185:14225(40) ack 21104 win 24820 (DF) [tos 0x10] 
+16:38:36.256181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 21104:21144(40) ack 14225 win 32120 (DF)
+16:38:36.346181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 21144 win 24820 (DF) [tos 0x10] 
+16:38:36.356181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14225:14265(40) ack 21144 win 24820 (DF) [tos 0x10] 
+16:38:36.356181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 21144:21184(40) ack 14265 win 32120 (DF)
+16:38:36.406181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14265:14305(40) ack 21184 win 24820 (DF) [tos 0x10] 
+16:38:36.406181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 21184:21224(40) ack 14305 win 32120 (DF)
+16:38:36.496181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 21224 win 24820 (DF) [tos 0x10] 
+16:38:36.656181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 21224:21488(264) ack 14305 win 32120 (DF)
+16:38:36.756181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 21488 win 24820 (DF) [tos 0x10] 
+16:38:36.756181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 21488:21584(96) ack 14305 win 32120 (DF)
+16:38:36.856181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 21584 win 24820 (DF) [tos 0x10] 
+16:38:40.816181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14305:14345(40) ack 21584 win 24820 (DF) [tos 0x10] 
+16:38:40.816181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 21584:21624(40) ack 14345 win 32120 (DF)
+16:38:40.856181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14345:14385(40) ack 21624 win 24820 (DF) [tos 0x10] 
+16:38:40.856181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 21624:21664(40) ack 14385 win 32120 (DF)
+16:38:40.946181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 21664 win 24820 (DF) [tos 0x10] 
+16:38:41.016181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14385:14425(40) ack 21664 win 24820 (DF) [tos 0x10] 
+16:38:41.016181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 21664:21704(40) ack 14425 win 32120 (DF)
+16:38:41.106181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 21704 win 24820 (DF) [tos 0x10] 
+16:38:41.336181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14425:14465(40) ack 21704 win 24820 (DF) [tos 0x10] 
+16:38:41.336181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 21704:21744(40) ack 14465 win 32120 (DF)
+16:38:41.426181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 21744 win 24820 (DF) [tos 0x10] 
+16:38:41.576181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14465:14505(40) ack 21744 win 24820 (DF) [tos 0x10] 
+16:38:41.576181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 21744:21784(40) ack 14505 win 32120 (DF)
+16:38:41.676181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 21784 win 24820 (DF) [tos 0x10] 
+16:38:42.446181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14505:14545(40) ack 21784 win 24820 (DF) [tos 0x10] 
+16:38:42.466181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 14545 win 32120 (DF)
+16:38:42.496181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 21784:21824(40) ack 14545 win 32120 (DF)
+16:38:42.596181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 21824 win 24820 (DF) [tos 0x10] 
+16:38:42.646181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14545:14585(40) ack 21824 win 24820 (DF) [tos 0x10] 
+16:38:42.646181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 21824:21864(40) ack 14585 win 32120 (DF)
+16:38:42.736181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 21864 win 24820 (DF) [tos 0x10] 
+16:38:43.066181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14585:14625(40) ack 21864 win 24820 (DF) [tos 0x10] 
+16:38:43.066181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 21864:21904(40) ack 14625 win 32120 (DF)
+16:38:43.166181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 21904 win 24820 (DF) [tos 0x10] 
+16:38:43.296181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14625:14665(40) ack 21904 win 24820 (DF) [tos 0x10] 
+16:38:43.306181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 21904:21944(40) ack 14665 win 32120 (DF)
+16:38:43.396181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 21944 win 24820 (DF) [tos 0x10] 
+16:38:43.486181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14665:14705(40) ack 21944 win 24820 (DF) [tos 0x10] 
+16:38:43.486181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 21944:21984(40) ack 14705 win 32120 (DF)
+16:38:43.576181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 21984 win 24820 (DF) [tos 0x10] 
+16:38:43.656181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14705:14745(40) ack 21984 win 24820 (DF) [tos 0x10] 
+16:38:43.656181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 21984:22024(40) ack 14745 win 32120 (DF)
+16:38:43.756181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 22024 win 24820 (DF) [tos 0x10] 
+16:38:44.356181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14745:14785(40) ack 22024 win 24820 (DF) [tos 0x10] 
+16:38:44.356181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 22024:22064(40) ack 14785 win 32120 (DF)
+16:38:44.446181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14785:14825(40) ack 22064 win 24820 (DF) [tos 0x10] 
+16:38:44.446181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 22064:22104(40) ack 14825 win 32120 (DF)
+16:38:44.496181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14825:14865(40) ack 22104 win 24820 (DF) [tos 0x10] 
+16:38:44.506181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 22104:22144(40) ack 14865 win 32120 (DF)
+16:38:44.596181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 22144 win 24820 (DF) [tos 0x10] 
+16:38:44.776181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14865:14905(40) ack 22144 win 24820 (DF) [tos 0x10] 
+16:38:44.796181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 14905 win 32120 (DF)
+16:38:44.796181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 22144:22184(40) ack 14905 win 32120 (DF)
+16:38:44.886181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 22184 win 24820 (DF) [tos 0x10] 
+16:38:44.976181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14905:14945(40) ack 22184 win 24820 (DF) [tos 0x10] 
+16:38:44.976181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 22184:22224(40) ack 14945 win 32120 (DF)
+16:38:45.066181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 22224 win 24820 (DF) [tos 0x10] 
+16:38:45.366181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 22224:22280(56) ack 14945 win 32120 (DF)
+16:38:45.456181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 22280 win 24820 (DF) [tos 0x10] 
+16:38:46.096181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14945:14985(40) ack 22280 win 24820 (DF) [tos 0x10] 
+16:38:46.096181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 22280:22320(40) ack 14985 win 32120 (DF)
+16:38:46.186181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 14985:15025(40) ack 22320 win 24820 (DF) [tos 0x10] 
+16:38:46.186181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 22320:22360(40) ack 15025 win 32120 (DF)
+16:38:46.256181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15025:15065(40) ack 22360 win 24820 (DF) [tos 0x10] 
+16:38:46.256181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 22360:22400(40) ack 15065 win 32120 (DF)
+16:38:46.356181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 22400 win 24820 (DF) [tos 0x10] 
+16:38:46.786181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 22400:22568(168) ack 15065 win 32120 (DF)
+16:38:46.786181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 22568:23408(840) ack 15065 win 32120 (DF)
+16:38:46.786181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 23408 win 24820 (DF) [tos 0x10] 
+16:38:46.786181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 23408:23576(168) ack 15065 win 32120 (DF)
+16:38:46.796181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 23576:24416(840) ack 15065 win 32120 (DF)
+16:38:46.796181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 24416 win 24820 (DF) [tos 0x10] 
+16:38:46.796181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 24416:24584(168) ack 15065 win 32120 (DF)
+16:38:46.796181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 24584:25424(840) ack 15065 win 32120 (DF)
+16:38:46.796181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 25424 win 24820 (DF) [tos 0x10] 
+16:38:46.806181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 25424:25592(168) ack 15065 win 32120 (DF)
+16:38:46.806181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 25592:26432(840) ack 15065 win 32120 (DF)
+16:38:46.806181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 26432 win 24820 (DF) [tos 0x10] 
+16:38:46.806181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 26432:26600(168) ack 15065 win 32120 (DF)
+16:38:46.806181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 26600:27440(840) ack 15065 win 32120 (DF)
+16:38:46.816181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 27440 win 24820 (DF) [tos 0x10] 
+16:38:46.816181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 27440:27608(168) ack 15065 win 32120 (DF)
+16:38:46.826181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 27608:28448(840) ack 15065 win 32120 (DF)
+16:38:46.826181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 28448 win 24820 (DF) [tos 0x10] 
+16:38:46.826181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 28448:28616(168) ack 15065 win 32120 (DF)
+16:38:46.836181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 28616:29456(840) ack 15065 win 32120 (DF)
+16:38:46.836181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 29456 win 24820 (DF) [tos 0x10] 
+16:38:46.836181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 29456:29624(168) ack 15065 win 32120 (DF)
+16:38:46.856181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 29624:30464(840) ack 15065 win 32120 (DF)
+16:38:46.856181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 30464 win 24820 (DF) [tos 0x10] 
+16:38:46.856181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 30464:30632(168) ack 15065 win 32120 (DF)
+16:38:46.866181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 30632:31472(840) ack 15065 win 32120 (DF)
+16:38:46.866181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 31472 win 24820 (DF) [tos 0x10] 
+16:38:46.866181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 31472:31640(168) ack 15065 win 32120 (DF)
+16:38:46.866181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 31640:32480(840) ack 15065 win 32120 (DF)
+16:38:46.866181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 32480 win 24820 (DF) [tos 0x10] 
+16:38:46.866181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 32480:32648(168) ack 15065 win 32120 (DF)
+16:38:46.876181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 32648:33488(840) ack 15065 win 32120 (DF)
+16:38:46.876181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 33488 win 24820 (DF) [tos 0x10] 
+16:38:46.876181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 33488:33664(176) ack 15065 win 32120 (DF)
+16:38:46.876181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15065:15105(40) ack 33664 win 24820 (DF) [tos 0x10] 
+16:38:46.876181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 33664:33840(176) ack 15105 win 32120 (DF)
+16:38:46.976181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 33840 win 24820 (DF) [tos 0x10] 
+16:38:47.086181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 33840:35300(1460) ack 15105 win 32120 (DF)
+16:38:47.086181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 35300:36760(1460) ack 15105 win 32120 (DF)
+16:38:47.086181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 36760:37976(1216) ack 15105 win 32120 (DF)
+16:38:47.086181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 35300 win 24820 (DF) [tos 0x10] 
+16:38:47.086181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 37976:39436(1460) ack 15105 win 32120 (DF)
+16:38:47.086181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 39436:40896(1460) ack 15105 win 32120 (DF)
+16:38:47.086181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 40896:42112(1216) ack 15105 win 32120 (DF)
+16:38:47.086181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 39436 win 24820 (DF) [tos 0x10] 
+16:38:47.096181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 42112:42952(840) ack 15105 win 32120 (DF)
+16:38:47.096181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 42952 win 24820 (DF) [tos 0x10] 
+16:38:47.096181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 42952:43128(176) ack 15105 win 32120 (DF)
+16:38:47.096181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 43128:44008(880) ack 15105 win 32120 (DF)
+16:38:47.096181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 44008 win 24820 (DF) [tos 0x10] 
+16:38:47.096181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 44008:44184(176) ack 15105 win 32120 (DF)
+16:38:47.106181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 44184:45064(880) ack 15105 win 32120 (DF)
+16:38:47.106181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 45064 win 24820 (DF) [tos 0x10] 
+16:38:47.106181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 45064:45240(176) ack 15105 win 32120 (DF)
+16:38:47.116181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 45240:46120(880) ack 15105 win 32120 (DF)
+16:38:47.116181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 46120 win 24820 (DF) [tos 0x10] 
+16:38:47.116181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 46120:46296(176) ack 15105 win 32120 (DF)
+16:38:47.116181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 46296:47176(880) ack 15105 win 32120 (DF)
+16:38:47.116181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 47176 win 24820 (DF) [tos 0x10] 
+16:38:47.116181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 47176:47352(176) ack 15105 win 32120 (DF)
+16:38:47.126181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 47352:48232(880) ack 15105 win 32120 (DF)
+16:38:47.126181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 48232 win 24820 (DF) [tos 0x10] 
+16:38:47.126181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 48232:48408(176) ack 15105 win 32120 (DF)
+16:38:47.126181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 48408:49288(880) ack 15105 win 32120 (DF)
+16:38:47.126181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 49288 win 24820 (DF) [tos 0x10] 
+16:38:47.126181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 49288:49464(176) ack 15105 win 32120 (DF)
+16:38:47.136181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 49464:50344(880) ack 15105 win 32120 (DF)
+16:38:47.136181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 50344 win 24820 (DF) [tos 0x10] 
+16:38:47.136181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 50344:50520(176) ack 15105 win 32120 (DF)
+16:38:47.136181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 50520:51392(872) ack 15105 win 32120 (DF)
+16:38:47.136181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 51392 win 24820 (DF) [tos 0x10] 
+16:38:47.136181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 51392:51568(176) ack 15105 win 32120 (DF)
+16:38:47.146181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 51568:52448(880) ack 15105 win 32120 (DF)
+16:38:47.146181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 52448 win 24820 (DF) [tos 0x10] 
+16:38:47.146181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 52448:52624(176) ack 15105 win 32120 (DF)
+16:38:47.146181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15105:15145(40) ack 52448 win 24820 (DF) [tos 0x10] 
+16:38:47.146181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 52624:53504(880) ack 15145 win 32120 (DF)
+16:38:47.156181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 53504 win 24820 (DF) [tos 0x10] 
+16:38:47.156181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 53504:53680(176) ack 15145 win 32120 (DF)
+16:38:47.156181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 53680:54560(880) ack 15145 win 32120 (DF)
+16:38:47.156181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 54560 win 24820 (DF) [tos 0x10] 
+16:38:47.156181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 54560:54736(176) ack 15145 win 32120 (DF)
+16:38:47.166181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 54736:55616(880) ack 15145 win 32120 (DF)
+16:38:47.166181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 55616 win 24820 (DF) [tos 0x10] 
+16:38:47.166181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 55616:55792(176) ack 15145 win 32120 (DF)
+16:38:47.166181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 55792:56672(880) ack 15145 win 32120 (DF)
+16:38:47.166181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 56672 win 24820 (DF) [tos 0x10] 
+16:38:47.166181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 56672:56848(176) ack 15145 win 32120 (DF)
+16:38:47.176181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 56848:57728(880) ack 15145 win 32120 (DF)
+16:38:47.176181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 57728 win 24820 (DF) [tos 0x10] 
+16:38:47.176181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 57728:57904(176) ack 15145 win 32120 (DF)
+16:38:47.176181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 57904:58784(880) ack 15145 win 32120 (DF)
+16:38:47.176181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 58784 win 24820 (DF) [tos 0x10] 
+16:38:47.176181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 58784:58960(176) ack 15145 win 32120 (DF)
+16:38:47.186181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 58960:59840(880) ack 15145 win 32120 (DF)
+16:38:47.186181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 59840 win 24820 (DF) [tos 0x10] 
+16:38:47.186181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 59840:60016(176) ack 15145 win 32120 (DF)
+16:38:47.186181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 60016:60896(880) ack 15145 win 32120 (DF)
+16:38:47.186181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 60896 win 24820 (DF) [tos 0x10] 
+16:38:47.196181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 60896:61072(176) ack 15145 win 32120 (DF)
+16:38:47.196181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 61072:61952(880) ack 15145 win 32120 (DF)
+16:38:47.196181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 61952 win 24820 (DF) [tos 0x10] 
+16:38:47.196181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 61952:62128(176) ack 15145 win 32120 (DF)
+16:38:47.196181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 62128:63000(872) ack 15145 win 32120 (DF)
+16:38:47.206181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 63000 win 24820 (DF) [tos 0x10] 
+16:38:47.206181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 63000:63176(176) ack 15145 win 32120 (DF)
+16:38:47.206181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 63176:64056(880) ack 15145 win 32120 (DF)
+16:38:47.206181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 64056 win 24820 (DF) [tos 0x10] 
+16:38:47.206181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 64056:64232(176) ack 15145 win 32120 (DF)
+16:38:47.216181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 64232:65104(872) ack 15145 win 32120 (DF)
+16:38:47.216181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 65104 win 24820 (DF) [tos 0x10] 
+16:38:47.216181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 65104:65280(176) ack 15145 win 32120 (DF)
+16:38:47.216181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 65280:66160(880) ack 15145 win 32120 (DF)
+16:38:47.216181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 66160 win 24820 (DF) [tos 0x10] 
+16:38:47.216181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 66160:66328(168) ack 15145 win 32120 (DF)
+16:38:47.226181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 66328:67208(880) ack 15145 win 32120 (DF)
+16:38:47.226181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 67208 win 24820 (DF) [tos 0x10] 
+16:38:47.226181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 67208:67384(176) ack 15145 win 32120 (DF)
+16:38:47.226181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 67384:68256(872) ack 15145 win 32120 (DF)
+16:38:47.226181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 68256 win 24820 (DF) [tos 0x10] 
+16:38:47.226181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 68256:68432(176) ack 15145 win 32120 (DF)
+16:38:47.236181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 68432:69312(880) ack 15145 win 32120 (DF)
+16:38:47.236181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 69312 win 24820 (DF) [tos 0x10] 
+16:38:47.236181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 69312:69488(176) ack 15145 win 32120 (DF)
+16:38:47.236181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 69488:70360(872) ack 15145 win 32120 (DF)
+16:38:47.236181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 70360 win 24820 (DF) [tos 0x10] 
+16:38:47.236181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 70360:70536(176) ack 15145 win 32120 (DF)
+16:38:47.246181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 70536:71416(880) ack 15145 win 32120 (DF)
+16:38:47.246181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 71416 win 24820 (DF) [tos 0x10] 
+16:38:47.246181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 71416:71592(176) ack 15145 win 32120 (DF)
+16:38:47.246181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 71592:72464(872) ack 15145 win 32120 (DF)
+16:38:47.246181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 72464 win 24820 (DF) [tos 0x10] 
+16:38:47.246181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 72464:72640(176) ack 15145 win 32120 (DF)
+16:38:47.256181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 72640:73520(880) ack 15145 win 32120 (DF)
+16:38:47.256181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 73520 win 24820 (DF) [tos 0x10] 
+16:38:47.256181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 73520:73696(176) ack 15145 win 32120 (DF)
+16:38:47.256181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 73696:74568(872) ack 15145 win 32120 (DF)
+16:38:47.266181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 74568 win 24820 (DF) [tos 0x10] 
+16:38:47.266181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 74568:74744(176) ack 15145 win 32120 (DF)
+16:38:47.266181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15145:15185(40) ack 74744 win 24820 (DF) [tos 0x10] 
+16:38:47.266181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 74744:74920(176) ack 15185 win 32120 (DF)
+16:38:47.266181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 74920:75800(880) ack 15185 win 32120 (DF)
+16:38:47.266181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 75800 win 24820 (DF) [tos 0x10] 
+16:38:47.266181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 75800:75976(176) ack 15185 win 32120 (DF)
+16:38:47.276181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 75976:76856(880) ack 15185 win 32120 (DF)
+16:38:47.276181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 76856 win 24820 (DF) [tos 0x10] 
+16:38:47.296181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 76856:77032(176) ack 15185 win 32120 (DF)
+16:38:47.296181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 77032:77912(880) ack 15185 win 32120 (DF)
+16:38:47.296181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 77912 win 24820 (DF) [tos 0x10] 
+16:38:47.296181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 77912:78088(176) ack 15185 win 32120 (DF)
+16:38:47.306181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 78088:78968(880) ack 15185 win 32120 (DF)
+16:38:47.306181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 78968 win 24820 (DF) [tos 0x10] 
+16:38:47.306181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 78968:79144(176) ack 15185 win 32120 (DF)
+16:38:47.306181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 79144:80024(880) ack 15185 win 32120 (DF)
+16:38:47.306181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 80024 win 24820 (DF) [tos 0x10] 
+16:38:47.306181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 80024:80200(176) ack 15185 win 32120 (DF)
+16:38:47.316181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 80200:81080(880) ack 15185 win 32120 (DF)
+16:38:47.316181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 81080 win 24820 (DF) [tos 0x10] 
+16:38:47.316181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 81080:81256(176) ack 15185 win 32120 (DF)
+16:38:47.316181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 81256:82136(880) ack 15185 win 32120 (DF)
+16:38:47.326181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 82136 win 24820 (DF) [tos 0x10] 
+16:38:47.326181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 82136:82312(176) ack 15185 win 32120 (DF)
+16:38:47.336181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 82312:83192(880) ack 15185 win 32120 (DF)
+16:38:47.336181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 83192 win 24820 (DF) [tos 0x10] 
+16:38:47.336181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 83192:83368(176) ack 15185 win 32120 (DF)
+16:38:47.346181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 83368:84248(880) ack 15185 win 32120 (DF)
+16:38:47.346181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 84248 win 24820 (DF) [tos 0x10] 
+16:38:47.346181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 84248:84424(176) ack 15185 win 32120 (DF)
+16:38:47.346181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 84424:85304(880) ack 15185 win 32120 (DF)
+16:38:47.346181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 85304 win 24820 (DF) [tos 0x10] 
+16:38:47.346181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 85304:85480(176) ack 15185 win 32120 (DF)
+16:38:47.356181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 85480:86360(880) ack 15185 win 32120 (DF)
+16:38:47.356181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 86360 win 24820 (DF) [tos 0x10] 
+16:38:47.356181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 86360:86536(176) ack 15185 win 32120 (DF)
+16:38:47.356181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 86536:87400(864) ack 15185 win 32120 (DF)
+16:38:47.356181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 87400 win 24820 (DF) [tos 0x10] 
+16:38:47.356181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 87400:87568(168) ack 15185 win 32120 (DF)
+16:38:47.366181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 87568:88408(840) ack 15185 win 32120 (DF)
+16:38:47.366181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 88408 win 24820 (DF) [tos 0x10] 
+16:38:47.366181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 88408:88576(168) ack 15185 win 32120 (DF)
+16:38:47.366181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 88576:89416(840) ack 15185 win 32120 (DF)
+16:38:47.366181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 89416 win 24820 (DF) [tos 0x10] 
+16:38:47.376181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 89416:89584(168) ack 15185 win 32120 (DF)
+16:38:47.376181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 89584:91044(1460) ack 15185 win 32120 (DF)
+16:38:47.376181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 91044:92280(1236) ack 15185 win 32120 (DF)
+16:38:47.386181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 92280 win 24820 (DF) [tos 0x10] 
+16:38:47.386181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 92280:93232(952) ack 15185 win 32120 (DF)
+16:38:47.396181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 93232:94692(1460) ack 15185 win 32120 (DF)
+16:38:47.396181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 94692:96152(1460) ack 15185 win 32120 (DF)
+16:38:47.396181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 96152:97368(1216) ack 15185 win 32120 (DF)
+16:38:47.396181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 96152 win 20948 (DF) [tos 0x10] 
+16:38:47.406181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 97368:98828(1460) ack 15185 win 32120 (DF)
+16:38:47.406181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 98828:100288(1460) ack 15185 win 32120 (DF)
+16:38:47.406181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 100288:101504(1216) ack 15185 win 32120 (DF)
+16:38:47.406181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 100288 win 16812 (DF) [tos 0x10] 
+16:38:47.416181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 101504:102964(1460) ack 15185 win 32120 (DF)
+16:38:47.416181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 102964:104424(1460) ack 15185 win 32120 (DF)
+16:38:47.416181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 104424:105640(1216) ack 15185 win 32120 (DF)
+16:38:47.416181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 104424 win 12676 (DF) [tos 0x10] 
+16:38:47.426181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 105640 win 24820 (DF) [tos 0x10] 
+16:38:47.426181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15185:15225(40) ack 105640 win 24820 (DF) [tos 0x10] 
+16:38:47.436181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 105640:107100(1460) ack 15225 win 32120 (DF)
+16:38:47.436181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 107100:108560(1460) ack 15225 win 32120 (DF)
+16:38:47.436181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 108560:109776(1216) ack 15225 win 32120 (DF)
+16:38:47.436181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 108560 win 24820 (DF) [tos 0x10] 
+16:38:47.456181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 109776:111236(1460) ack 15225 win 32120 (DF)
+16:38:47.456181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 111236:112696(1460) ack 15225 win 32120 (DF)
+16:38:47.456181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 112696:113912(1216) ack 15225 win 32120 (DF)
+16:38:47.456181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 112696 win 24820 (DF) [tos 0x10] 
+16:38:47.466181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 113912:115372(1460) ack 15225 win 32120 (DF)
+16:38:47.466181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 115372:116832(1460) ack 15225 win 32120 (DF)
+16:38:47.466181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 116832:118048(1216) ack 15225 win 32120 (DF)
+16:38:47.466181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 116832 win 24820 (DF) [tos 0x10] 
+16:38:47.476181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 118048:119508(1460) ack 15225 win 32120 (DF)
+16:38:47.476181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 119508:120968(1460) ack 15225 win 32120 (DF)
+16:38:47.476181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 120968:122184(1216) ack 15225 win 32120 (DF)
+16:38:47.476181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 120968 win 24820 (DF) [tos 0x10] 
+16:38:47.486181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15225:15265(40) ack 122184 win 24820 (DF) [tos 0x10] 
+16:38:47.486181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 122184:122288(104) ack 15265 win 32120 (DF)
+16:38:47.486181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 122288:123748(1460) ack 15265 win 32120 (DF)
+16:38:47.516181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 123748:124616(868) ack 15265 win 32120 (DF)
+16:38:47.516181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 124616 win 24820 (DF) [tos 0x10] 
+16:38:47.516181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 124616:124792(176) ack 15265 win 32120 (DF)
+16:38:47.526181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 124792:126252(1460) ack 15265 win 32120 (DF)
+16:38:47.526181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 126252:127712(1460) ack 15265 win 32120 (DF)
+16:38:47.526181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 127712:128928(1216) ack 15265 win 32120 (DF)
+16:38:47.526181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 127712 win 24820 (DF) [tos 0x10] 
+16:38:47.536181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 128928:130388(1460) ack 15265 win 32120 (DF)
+16:38:47.536181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 130388:131848(1460) ack 15265 win 32120 (DF)
+16:38:47.536181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 131848:133308(1460) ack 15265 win 32120 (DF)
+16:38:47.536181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 131848 win 24820 (DF) [tos 0x10] 
+16:38:47.546181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 133308:134184(876) ack 15265 win 32120 (DF)
+16:38:47.546181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 134184:135072(888) ack 15265 win 32120 (DF)
+16:38:47.546181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 135072 win 24820 (DF) [tos 0x10] 
+16:38:47.546181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 135072:135248(176) ack 15265 win 32120 (DF)
+16:38:47.556181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 135248:136128(880) ack 15265 win 32120 (DF)
+16:38:47.556181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 136128 win 24820 (DF) [tos 0x10] 
+16:38:47.556181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 136128:136304(176) ack 15265 win 32120 (DF)
+16:38:47.556181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 136304:137192(888) ack 15265 win 32120 (DF)
+16:38:47.556181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 137192 win 24820 (DF) [tos 0x10] 
+16:38:47.556181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 137192:137368(176) ack 15265 win 32120 (DF)
+16:38:47.566181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 137368:138248(880) ack 15265 win 32120 (DF)
+16:38:47.566181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 138248 win 24820 (DF) [tos 0x10] 
+16:38:47.566181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 138248:138432(184) ack 15265 win 32120 (DF)
+16:38:47.566181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 138432:139312(880) ack 15265 win 32120 (DF)
+16:38:47.566181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 139312 win 24820 (DF) [tos 0x10] 
+16:38:47.566181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 139312:139488(176) ack 15265 win 32120 (DF)
+16:38:47.576181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 139488:140376(888) ack 15265 win 32120 (DF)
+16:38:47.576181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 140376 win 24820 (DF) [tos 0x10] 
+16:38:47.576181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 140376:141232(856) ack 15265 win 32120 (DF)
+16:38:47.586181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 141232:142416(1184) ack 15265 win 32120 (DF)
+16:38:47.586181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 142416 win 24820 (DF) [tos 0x10] 
+16:38:47.586181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 142416:142472(56) ack 15265 win 32120 (DF)
+16:38:47.586181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15265:15305(40) ack 142472 win 24820 (DF) [tos 0x10] 
+16:38:47.606181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 15305 win 32120 (DF)
+16:39:17.626181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15305:15345(40) ack 142472 win 24820 (DF) [tos 0x10] 
+16:39:17.626181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 142472:142512(40) ack 15345 win 32120 (DF)
+16:39:17.716181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15345:15385(40) ack 142512 win 24820 (DF) [tos 0x10] 
+16:39:17.716181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 142512:142552(40) ack 15385 win 32120 (DF)
+16:39:17.816181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 142552 win 24820 (DF) [tos 0x10] 
+16:39:17.926181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15385:15425(40) ack 142552 win 24820 (DF) [tos 0x10] 
+16:39:17.926181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 142552:142592(40) ack 15425 win 32120 (DF)
+16:39:18.016181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 142592 win 24820 (DF) [tos 0x10] 
+16:39:18.066181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15425:15465(40) ack 142592 win 24820 (DF) [tos 0x10] 
+16:39:18.066181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 142592:142632(40) ack 15465 win 32120 (DF)
+16:39:18.166181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 142632 win 24820 (DF) [tos 0x10] 
+16:39:18.176181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15465:15505(40) ack 142632 win 24820 (DF) [tos 0x10] 
+16:39:18.176181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 142632:142672(40) ack 15505 win 32120 (DF)
+16:39:18.266181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 142672 win 24820 (DF) [tos 0x10] 
+16:39:18.606181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15505:15545(40) ack 142672 win 24820 (DF) [tos 0x10] 
+16:39:18.606181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 142672:142712(40) ack 15545 win 32120 (DF)
+16:39:18.676181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15545:15585(40) ack 142712 win 24820 (DF) [tos 0x10] 
+16:39:18.676181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 142712:142752(40) ack 15585 win 32120 (DF)
+16:39:18.766181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 142752 win 24820 (DF) [tos 0x10] 
+16:39:18.866181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15585:15625(40) ack 142752 win 24820 (DF) [tos 0x10] 
+16:39:18.866181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 142752:142792(40) ack 15625 win 32120 (DF)
+16:39:18.966181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 142792 win 24820 (DF) [tos 0x10] 
+16:39:19.116181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15625:15665(40) ack 142792 win 24820 (DF) [tos 0x10] 
+16:39:19.116181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 142792:142832(40) ack 15665 win 32120 (DF)
+16:39:19.206181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 142832 win 24820 (DF) [tos 0x10] 
+16:39:19.226181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15665:15705(40) ack 142832 win 24820 (DF) [tos 0x10] 
+16:39:19.226181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 142832:142872(40) ack 15705 win 32120 (DF)
+16:39:19.326181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 142872 win 24820 (DF) [tos 0x10] 
+16:39:19.356181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15705:15745(40) ack 142872 win 24820 (DF) [tos 0x10] 
+16:39:19.356181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 142872:142912(40) ack 15745 win 32120 (DF)
+16:39:19.446181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 142912 win 24820 (DF) [tos 0x10] 
+16:39:19.496181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15745:15785(40) ack 142912 win 24820 (DF) [tos 0x10] 
+16:39:19.496181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 142912:142952(40) ack 15785 win 32120 (DF)
+16:39:19.596181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 142952 win 24820 (DF) [tos 0x10] 
+16:39:19.626181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15785:15825(40) ack 142952 win 24820 (DF) [tos 0x10] 
+16:39:19.626181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 142952:142992(40) ack 15825 win 32120 (DF)
+16:39:19.726181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 142992 win 24820 (DF) [tos 0x10] 
+16:39:20.286181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15825:15865(40) ack 142992 win 24820 (DF) [tos 0x10] 
+16:39:20.286181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 142992:143032(40) ack 15865 win 32120 (DF)
+16:39:20.376181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 143032 win 24820 (DF) [tos 0x10] 
+16:39:20.806181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15865:15905(40) ack 143032 win 24820 (DF) [tos 0x10] 
+16:39:20.806181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143032:143072(40) ack 15905 win 32120 (DF)
+16:39:20.896181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 143072 win 24820 (DF) [tos 0x10] 
+16:39:20.916181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15905:15945(40) ack 143072 win 24820 (DF) [tos 0x10] 
+16:39:20.916181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143072:143112(40) ack 15945 win 32120 (DF)
+16:39:20.966181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15945:15985(40) ack 143112 win 24820 (DF) [tos 0x10] 
+16:39:20.966181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143112:143152(40) ack 15985 win 32120 (DF)
+16:39:21.016181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 15985:16025(40) ack 143152 win 24820 (DF) [tos 0x10] 
+16:39:21.016181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143152:143192(40) ack 16025 win 32120 (DF)
+16:39:21.066181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16025:16065(40) ack 143192 win 24820 (DF) [tos 0x10] 
+16:39:21.066181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143192:143232(40) ack 16065 win 32120 (DF)
+16:39:21.156181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16065:16105(40) ack 143232 win 24820 (DF) [tos 0x10] 
+16:39:21.156181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143232:143272(40) ack 16105 win 32120 (DF)
+16:39:21.246181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 143272 win 24820 (DF) [tos 0x10] 
+16:39:21.266181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16105:16145(40) ack 143272 win 24820 (DF) [tos 0x10] 
+16:39:21.266181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143272:143312(40) ack 16145 win 32120 (DF)
+16:39:21.316181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16145:16185(40) ack 143312 win 24820 (DF) [tos 0x10] 
+16:39:21.316181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143312:143352(40) ack 16185 win 32120 (DF)
+16:39:21.366181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16185:16225(40) ack 143352 win 24820 (DF) [tos 0x10] 
+16:39:21.366181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143352:143392(40) ack 16225 win 32120 (DF)
+16:39:21.416181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16225:16265(40) ack 143392 win 24820 (DF) [tos 0x10] 
+16:39:21.416181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143392:143432(40) ack 16265 win 32120 (DF)
+16:39:21.466181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16265:16305(40) ack 143432 win 24820 (DF) [tos 0x10] 
+16:39:21.466181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143432:143472(40) ack 16305 win 32120 (DF)
+16:39:21.516181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16305:16345(40) ack 143472 win 24820 (DF) [tos 0x10] 
+16:39:21.516181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143472:143512(40) ack 16345 win 32120 (DF)
+16:39:21.606181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 143512 win 24820 (DF) [tos 0x10] 
+16:39:21.766181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16345:16385(40) ack 143512 win 24820 (DF) [tos 0x10] 
+16:39:21.776181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143512:143552(40) ack 16385 win 32120 (DF)
+16:39:21.876181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 143552 win 24820 (DF) [tos 0x10] 
+16:39:22.596181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16385:16425(40) ack 143552 win 24820 (DF) [tos 0x10] 
+16:39:22.596181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143552:143592(40) ack 16425 win 32120 (DF)
+16:39:22.696181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 143592 win 24820 (DF) [tos 0x10] 
+16:39:22.716181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16425:16465(40) ack 143592 win 24820 (DF) [tos 0x10] 
+16:39:22.716181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143592:143632(40) ack 16465 win 32120 (DF)
+16:39:22.776181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16465:16505(40) ack 143632 win 24820 (DF) [tos 0x10] 
+16:39:22.776181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143632:143672(40) ack 16505 win 32120 (DF)
+16:39:22.876181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 143672 win 24820 (DF) [tos 0x10] 
+16:39:22.906181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16505:16545(40) ack 143672 win 24820 (DF) [tos 0x10] 
+16:39:22.906181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143672:143712(40) ack 16545 win 32120 (DF)
+16:39:23.006181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 143712 win 24820 (DF) [tos 0x10] 
+16:39:23.006181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16545:16585(40) ack 143712 win 24820 (DF) [tos 0x10] 
+16:39:23.016181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 16585 win 32120 (DF)
+16:39:23.016181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143712:143752(40) ack 16585 win 32120 (DF)
+16:39:23.116181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 143752 win 24820 (DF) [tos 0x10] 
+16:39:23.246181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16585:16625(40) ack 143752 win 24820 (DF) [tos 0x10] 
+16:39:23.256181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143752:143792(40) ack 16625 win 32120 (DF)
+16:39:23.356181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 143792 win 24820 (DF) [tos 0x10] 
+16:39:23.466181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16625:16665(40) ack 143792 win 24820 (DF) [tos 0x10] 
+16:39:23.486181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 16665 win 32120 (DF)
+16:39:23.636181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143792:143840(48) ack 16665 win 32120 (DF)
+16:39:23.636181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16665:16705(40) ack 143792 win 24820 (DF) [tos 0x10] 
+16:39:23.646181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 16705 win 32120 (DF)
+16:39:23.736181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 143840 win 24820 (DF) [tos 0x10] 
+16:39:23.736181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143840:143880(40) ack 16705 win 32120 (DF)
+16:39:23.836181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 143880 win 24820 (DF) [tos 0x10] 
+16:39:23.916181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143880:143920(40) ack 16705 win 32120 (DF)
+16:39:24.006181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 143920 win 24820 (DF) [tos 0x10] 
+16:39:24.046181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143920:143992(72) ack 16705 win 32120 (DF)
+16:39:24.146181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 143992 win 24820 (DF) [tos 0x10] 
+16:39:24.146181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 143992:144168(176) ack 16705 win 32120 (DF)
+16:39:24.246181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 144168 win 24820 (DF) [tos 0x10] 
+16:39:25.486181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16705:16745(40) ack 144168 win 24820 (DF) [tos 0x10] 
+16:39:25.496181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 144168:144240(72) ack 16745 win 32120 (DF)
+16:39:25.586181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 144240 win 24820 (DF) [tos 0x10] 
+16:39:25.906181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16745:16785(40) ack 144240 win 24820 (DF) [tos 0x10] 
+16:39:25.906181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 144240:144280(40) ack 16785 win 32120 (DF)
+16:39:26.006181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 144280 win 24820 (DF) [tos 0x10] 
+16:39:26.046181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16785:16825(40) ack 144280 win 24820 (DF) [tos 0x10] 
+16:39:26.046181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 144280:144344(64) ack 16825 win 32120 (DF)
+16:39:26.146181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 144344 win 24820 (DF) [tos 0x10] 
+16:39:26.146181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 144344:144400(56) ack 16825 win 32120 (DF)
+16:39:26.246181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 144400 win 24820 (DF) [tos 0x10] 
+16:39:27.526181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16825:16865(40) ack 144400 win 24820 (DF) [tos 0x10] 
+16:39:27.526181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 144400:144440(40) ack 16865 win 32120 (DF)
+16:39:27.576181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16865:16905(40) ack 144440 win 24820 (DF) [tos 0x10] 
+16:39:27.576181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 144440:144480(40) ack 16905 win 32120 (DF)
+16:39:27.676181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 144480 win 24820 (DF) [tos 0x10] 
+16:39:27.706181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16905:16945(40) ack 144480 win 24820 (DF) [tos 0x10] 
+16:39:27.706181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 144480:144520(40) ack 16945 win 32120 (DF)
+16:39:27.806181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 144520 win 24820 (DF) [tos 0x10] 
+16:39:28.136181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 144520:144688(168) ack 16945 win 32120 (DF)
+16:39:28.156181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 144688:145528(840) ack 16945 win 32120 (DF)
+16:39:28.166181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 145528 win 24820 (DF) [tos 0x10] 
+16:39:28.166181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 145528:145696(168) ack 16945 win 32120 (DF)
+16:39:28.166181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 145696:146536(840) ack 16945 win 32120 (DF)
+16:39:28.166181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 146536 win 24820 (DF) [tos 0x10] 
+16:39:28.186181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 146536:146704(168) ack 16945 win 32120 (DF)
+16:39:28.196181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 146704:147544(840) ack 16945 win 32120 (DF)
+16:39:28.196181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 147544 win 24820 (DF) [tos 0x10] 
+16:39:28.196181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 147544:147712(168) ack 16945 win 32120 (DF)
+16:39:28.196181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 147712:148552(840) ack 16945 win 32120 (DF)
+16:39:28.196181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 148552 win 24820 (DF) [tos 0x10] 
+16:39:28.196181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 148552:148720(168) ack 16945 win 32120 (DF)
+16:39:28.206181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 148720:149560(840) ack 16945 win 32120 (DF)
+16:39:28.206181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 149560 win 24820 (DF) [tos 0x10] 
+16:39:28.206181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 149560:149728(168) ack 16945 win 32120 (DF)
+16:39:28.206181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 149728:150568(840) ack 16945 win 32120 (DF)
+16:39:28.206181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 150568 win 24820 (DF) [tos 0x10] 
+16:39:28.206181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 150568:150736(168) ack 16945 win 32120 (DF)
+16:39:28.216181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 150736:151576(840) ack 16945 win 32120 (DF)
+16:39:28.216181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 151576 win 24820 (DF) [tos 0x10] 
+16:39:28.216181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 151576:151744(168) ack 16945 win 32120 (DF)
+16:39:28.216181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 151744:152584(840) ack 16945 win 32120 (DF)
+16:39:28.226181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 152584 win 24820 (DF) [tos 0x10] 
+16:39:28.226181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 152584:152752(168) ack 16945 win 32120 (DF)
+16:39:28.226181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 152752:153592(840) ack 16945 win 32120 (DF)
+16:39:28.226181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 153592 win 24820 (DF) [tos 0x10] 
+16:39:28.256181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 153592:153760(168) ack 16945 win 32120 (DF)
+16:39:28.256181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 153760:154600(840) ack 16945 win 32120 (DF)
+16:39:28.256181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 154600 win 24820 (DF) [tos 0x10] 
+16:39:28.256181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 154600:154768(168) ack 16945 win 32120 (DF)
+16:39:28.266181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 154768:155608(840) ack 16945 win 32120 (DF)
+16:39:28.266181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 155608 win 24820 (DF) [tos 0x10] 
+16:39:28.266181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 155608:155784(176) ack 16945 win 32120 (DF)
+16:39:28.266181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 155784:156664(880) ack 16945 win 32120 (DF)
+16:39:28.266181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 156664 win 24820 (DF) [tos 0x10] 
+16:39:28.266181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 156664:156840(176) ack 16945 win 32120 (DF)
+16:39:28.266181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16945:16985(40) ack 156840 win 24820 (DF) [tos 0x10] 
+16:39:28.266181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 156840:157016(176) ack 16985 win 32120 (DF)
+16:39:28.276181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 157016:157896(880) ack 16985 win 32120 (DF)
+16:39:28.276181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 157896 win 24820 (DF) [tos 0x10] 
+16:39:28.276181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 157896:158072(176) ack 16985 win 32120 (DF)
+16:39:28.276181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 158072:158952(880) ack 16985 win 32120 (DF)
+16:39:28.286181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 158952 win 24820 (DF) [tos 0x10] 
+16:39:28.286181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 158952:159128(176) ack 16985 win 32120 (DF)
+16:39:28.286181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 159128:160008(880) ack 16985 win 32120 (DF)
+16:39:28.286181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 160008 win 24820 (DF) [tos 0x10] 
+16:39:28.286181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 160008:160184(176) ack 16985 win 32120 (DF)
+16:39:28.296181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 160184:161064(880) ack 16985 win 32120 (DF)
+16:39:28.296181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 161064 win 24820 (DF) [tos 0x10] 
+16:39:28.296181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 161064:161240(176) ack 16985 win 32120 (DF)
+16:39:28.296181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 161240:162120(880) ack 16985 win 32120 (DF)
+16:39:28.296181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 162120 win 24820 (DF) [tos 0x10] 
+16:39:28.296181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 162120:162296(176) ack 16985 win 32120 (DF)
+16:39:28.306181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 162296:163176(880) ack 16985 win 32120 (DF)
+16:39:28.306181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 163176 win 24820 (DF) [tos 0x10] 
+16:39:28.306181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 163176:163352(176) ack 16985 win 32120 (DF)
+16:39:28.306181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 163352:164232(880) ack 16985 win 32120 (DF)
+16:39:28.306181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 164232 win 24820 (DF) [tos 0x10] 
+16:39:28.306181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 164232:164408(176) ack 16985 win 32120 (DF)
+16:39:28.316181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 164408:165288(880) ack 16985 win 32120 (DF)
+16:39:28.316181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 165288 win 24820 (DF) [tos 0x10] 
+16:39:28.316181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 165288:165464(176) ack 16985 win 32120 (DF)
+16:39:28.326181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 165464:166344(880) ack 16985 win 32120 (DF)
+16:39:28.326181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 166344 win 24820 (DF) [tos 0x10] 
+16:39:28.326181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 166344:166520(176) ack 16985 win 32120 (DF)
+16:39:28.326181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 166520:167400(880) ack 16985 win 32120 (DF)
+16:39:28.326181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 167400 win 24820 (DF) [tos 0x10] 
+16:39:28.326181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 167400:167576(176) ack 16985 win 32120 (DF)
+16:39:28.336181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 167576:168456(880) ack 16985 win 32120 (DF)
+16:39:28.336181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 168456 win 24820 (DF) [tos 0x10] 
+16:39:28.336181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 168456:168632(176) ack 16985 win 32120 (DF)
+16:39:28.336181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 168632:169512(880) ack 16985 win 32120 (DF)
+16:39:28.336181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 169512 win 24820 (DF) [tos 0x10] 
+16:39:28.336181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 169512:169688(176) ack 16985 win 32120 (DF)
+16:39:28.346181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 169688:171148(1460) ack 16985 win 32120 (DF)
+16:39:28.346181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 171148:172608(1460) ack 16985 win 32120 (DF)
+16:39:28.346181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 172608:173824(1216) ack 16985 win 32120 (DF)
+16:39:28.346181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 172608 win 24820 (DF) [tos 0x10] 
+16:39:28.356181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 173824:174680(856) ack 16985 win 32120 (DF)
+16:39:28.356181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 174680 win 24820 (DF) [tos 0x10] 
+16:39:28.356181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 174680:174856(176) ack 16985 win 32120 (DF)
+16:39:28.356181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 174856:175736(880) ack 16985 win 32120 (DF)
+16:39:28.356181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 175736 win 24820 (DF) [tos 0x10] 
+16:39:28.366181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 175736:175912(176) ack 16985 win 32120 (DF)
+16:39:28.366181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 175912:176792(880) ack 16985 win 32120 (DF)
+16:39:28.366181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 176792 win 24820 (DF) [tos 0x10] 
+16:39:28.366181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 176792:176968(176) ack 16985 win 32120 (DF)
+16:39:28.366181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 16985:17025(40) ack 176968 win 24820 (DF) [tos 0x10] 
+16:39:28.366181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 176968:177144(176) ack 17025 win 32120 (DF)
+16:39:28.376181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 177144:178024(880) ack 17025 win 32120 (DF)
+16:39:28.376181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 178024 win 24820 (DF) [tos 0x10] 
+16:39:28.376181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 178024:178200(176) ack 17025 win 32120 (DF)
+16:39:28.376181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 178200:179080(880) ack 17025 win 32120 (DF)
+16:39:28.376181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 179080 win 24820 (DF) [tos 0x10] 
+16:39:28.376181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 179080:179256(176) ack 17025 win 32120 (DF)
+16:39:28.386181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 179256:180136(880) ack 17025 win 32120 (DF)
+16:39:28.386181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 180136 win 24820 (DF) [tos 0x10] 
+16:39:28.386181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 180136:180312(176) ack 17025 win 32120 (DF)
+16:39:28.386181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 180312:181192(880) ack 17025 win 32120 (DF)
+16:39:28.386181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 181192 win 24820 (DF) [tos 0x10] 
+16:39:28.386181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 181192:181368(176) ack 17025 win 32120 (DF)
+16:39:28.396181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 181368:182248(880) ack 17025 win 32120 (DF)
+16:39:28.396181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 182248 win 24820 (DF) [tos 0x10] 
+16:39:28.396181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 182248:182424(176) ack 17025 win 32120 (DF)
+16:39:28.396181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 182424:183304(880) ack 17025 win 32120 (DF)
+16:39:28.396181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 183304 win 24820 (DF) [tos 0x10] 
+16:39:28.396181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 183304:183480(176) ack 17025 win 32120 (DF)
+16:39:28.406181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 183480:184360(880) ack 17025 win 32120 (DF)
+16:39:28.406181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 184360 win 24820 (DF) [tos 0x10] 
+16:39:28.406181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 184360:184536(176) ack 17025 win 32120 (DF)
+16:39:28.406181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 184536:185416(880) ack 17025 win 32120 (DF)
+16:39:28.416181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 185416 win 24820 (DF) [tos 0x10] 
+16:39:28.416181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 185416:185592(176) ack 17025 win 32120 (DF)
+16:39:28.426181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 185592:186464(872) ack 17025 win 32120 (DF)
+16:39:28.426181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 186464 win 24820 (DF) [tos 0x10] 
+16:39:28.426181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 186464:186640(176) ack 17025 win 32120 (DF)
+16:39:28.436181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 186640:187520(880) ack 17025 win 32120 (DF)
+16:39:28.436181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 187520 win 24820 (DF) [tos 0x10] 
+16:39:28.436181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 187520:187688(168) ack 17025 win 32120 (DF)
+16:39:28.526181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 187688 win 24820 (DF) [tos 0x10] 
+16:39:28.526181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 187688:188216(528) ack 17025 win 32120 (DF)
+16:39:28.536181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 188216:189096(880) ack 17025 win 32120 (DF)
+16:39:28.536181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 189096 win 24820 (DF) [tos 0x10] 
+16:39:28.536181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 189096:189272(176) ack 17025 win 32120 (DF)
+16:39:28.536181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 189272:190144(872) ack 17025 win 32120 (DF)
+16:39:28.536181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 190144 win 24820 (DF) [tos 0x10] 
+16:39:28.536181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 190144:190320(176) ack 17025 win 32120 (DF)
+16:39:28.546181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 190320:191200(880) ack 17025 win 32120 (DF)
+16:39:28.546181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 191200 win 24820 (DF) [tos 0x10] 
+16:39:28.546181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 191200:191544(344) ack 17025 win 32120 (DF)
+16:39:28.546181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 191544:192424(880) ack 17025 win 32120 (DF)
+16:39:28.546181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 192424 win 24820 (DF) [tos 0x10] 
+16:39:28.546181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 192424:192776(352) ack 17025 win 32120 (DF)
+16:39:28.556181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 192776:193648(872) ack 17025 win 32120 (DF)
+16:39:28.556181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 193648 win 24820 (DF) [tos 0x10] 
+16:39:28.556181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 193648:193824(176) ack 17025 win 32120 (DF)
+16:39:28.556181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 193824:194704(880) ack 17025 win 32120 (DF)
+16:39:28.556181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 194704 win 24820 (DF) [tos 0x10] 
+16:39:28.556181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 194704:194880(176) ack 17025 win 32120 (DF)
+16:39:28.556181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 194880:195752(872) ack 17025 win 32120 (DF)
+16:39:28.566181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 195752 win 24820 (DF) [tos 0x10] 
+16:39:28.566181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 195752:195928(176) ack 17025 win 32120 (DF)
+16:39:28.566181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 195928:196808(880) ack 17025 win 32120 (DF)
+16:39:28.566181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 196808 win 24820 (DF) [tos 0x10] 
+16:39:28.566181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 196808:196984(176) ack 17025 win 32120 (DF)
+16:39:28.566181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 196984:197856(872) ack 17025 win 32120 (DF)
+16:39:28.566181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 197856 win 24820 (DF) [tos 0x10] 
+16:39:28.566181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 197856:198032(176) ack 17025 win 32120 (DF)
+16:39:28.576181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 198032:198912(880) ack 17025 win 32120 (DF)
+16:39:28.576181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 198912 win 24820 (DF) [tos 0x10] 
+16:39:28.576181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 198912:199264(352) ack 17025 win 32120 (DF)
+16:39:28.576181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 17025:17065(40) ack 199264 win 24820 (DF) [tos 0x10] 
+16:39:28.576181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 199264:199440(176) ack 17065 win 32120 (DF)
+16:39:28.576181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 199440:200320(880) ack 17065 win 32120 (DF)
+16:39:28.576181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 200320 win 24820 (DF) [tos 0x10] 
+16:39:28.576181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 200320:200672(352) ack 17065 win 32120 (DF)
+16:39:28.586181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 200672:201552(880) ack 17065 win 32120 (DF)
+16:39:28.586181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 201552 win 24820 (DF) [tos 0x10] 
+16:39:28.586181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 201552:201728(176) ack 17065 win 32120 (DF)
+16:39:28.586181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 201728:202608(880) ack 17065 win 32120 (DF)
+16:39:28.586181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 202608 win 24820 (DF) [tos 0x10] 
+16:39:28.586181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 202608:202784(176) ack 17065 win 32120 (DF)
+16:39:28.596181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 202784:203664(880) ack 17065 win 32120 (DF)
+16:39:28.596181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 203664 win 24820 (DF) [tos 0x10] 
+16:39:28.596181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 203664:204016(352) ack 17065 win 32120 (DF)
+16:39:28.596181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 204016:204896(880) ack 17065 win 32120 (DF)
+16:39:28.596181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 204896 win 24820 (DF) [tos 0x10] 
+16:39:28.596181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 204896:205072(176) ack 17065 win 32120 (DF)
+16:39:28.606181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 205072:205952(880) ack 17065 win 32120 (DF)
+16:39:28.606181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 205952 win 24820 (DF) [tos 0x10] 
+16:39:28.606181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 205952:206128(176) ack 17065 win 32120 (DF)
+16:39:28.606181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 206128:207008(880) ack 17065 win 32120 (DF)
+16:39:28.606181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 207008 win 24820 (DF) [tos 0x10] 
+16:39:28.606181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 207008:207360(352) ack 17065 win 32120 (DF)
+16:39:28.606181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 207360:208240(880) ack 17065 win 32120 (DF)
+16:39:28.616181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 208240 win 24820 (DF) [tos 0x10] 
+16:39:28.616181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 208240:208416(176) ack 17065 win 32120 (DF)
+16:39:28.616181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 208416:209296(880) ack 17065 win 32120 (DF)
+16:39:28.616181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 209296 win 24820 (DF) [tos 0x10] 
+16:39:28.616181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 209296:209472(176) ack 17065 win 32120 (DF)
+16:39:28.616181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 209472:210352(880) ack 17065 win 32120 (DF)
+16:39:28.616181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 210352 win 24820 (DF) [tos 0x10] 
+16:39:28.616181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 210352:210520(168) ack 17065 win 32120 (DF)
+16:39:28.626181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 210520:211360(840) ack 17065 win 32120 (DF)
+16:39:28.626181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 211360 win 24820 (DF) [tos 0x10] 
+16:39:28.626181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 211360:211528(168) ack 17065 win 32120 (DF)
+16:39:28.626181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 211528:212368(840) ack 17065 win 32120 (DF)
+16:39:28.626181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 212368 win 24820 (DF) [tos 0x10] 
+16:39:28.626181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 212368:212536(168) ack 17065 win 32120 (DF)
+16:39:28.636181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 212536:213376(840) ack 17065 win 32120 (DF)
+16:39:28.636181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 213376 win 24820 (DF) [tos 0x10] 
+16:39:28.636181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 213376:213544(168) ack 17065 win 32120 (DF)
+16:39:28.636181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 213544:214384(840) ack 17065 win 32120 (DF)
+16:39:28.636181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 214384 win 24820 (DF) [tos 0x10] 
+16:39:28.636181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 214384:214552(168) ack 17065 win 32120 (DF)
+16:39:28.636181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 214552:215392(840) ack 17065 win 32120 (DF)
+16:39:28.646181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 215392 win 24820 (DF) [tos 0x10] 
+16:39:28.646181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 215392:215728(336) ack 17065 win 32120 (DF)
+16:39:28.646181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 215728:216568(840) ack 17065 win 32120 (DF)
+16:39:28.646181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 216568 win 24820 (DF) [tos 0x10] 
+16:39:28.646181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 216568:216736(168) ack 17065 win 32120 (DF)
+16:39:28.646181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 216736:217576(840) ack 17065 win 32120 (DF)
+16:39:28.656181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 217576 win 24820 (DF) [tos 0x10] 
+16:39:28.656181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 217576:217744(168) ack 17065 win 32120 (DF)
+16:39:28.656181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 217744:218584(840) ack 17065 win 32120 (DF)
+16:39:28.656181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 218584 win 24820 (DF) [tos 0x10] 
+16:39:28.656181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 218584:218752(168) ack 17065 win 32120 (DF)
+16:39:28.656181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 218752:219592(840) ack 17065 win 32120 (DF)
+16:39:28.656181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 219592 win 24820 (DF) [tos 0x10] 
+16:39:28.656181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 219592:219760(168) ack 17065 win 32120 (DF)
+16:39:28.666181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 219760:220600(840) ack 17065 win 32120 (DF)
+16:39:28.666181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 220600 win 24820 (DF) [tos 0x10] 
+16:39:28.666181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 220600:220768(168) ack 17065 win 32120 (DF)
+16:39:28.666181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 17065:17105(40) ack 220768 win 24820 (DF) [tos 0x10] 
+16:39:28.666181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 220768:221104(336) ack 17105 win 32120 (DF)
+16:39:28.666181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 221104:221984(880) ack 17105 win 32120 (DF)
+16:39:28.666181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 221984 win 24820 (DF) [tos 0x10] 
+16:39:28.666181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 221984:222160(176) ack 17105 win 32120 (DF)
+16:39:28.676181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 222160:223040(880) ack 17105 win 32120 (DF)
+16:39:28.676181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 223040 win 24820 (DF) [tos 0x10] 
+16:39:28.676181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 223040:223216(176) ack 17105 win 32120 (DF)
+16:39:28.676181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 223216:224096(880) ack 17105 win 32120 (DF)
+16:39:28.676181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 224096 win 24820 (DF) [tos 0x10] 
+16:39:28.676181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 224096:224272(176) ack 17105 win 32120 (DF)
+16:39:28.686181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 224272:225152(880) ack 17105 win 32120 (DF)
+16:39:28.686181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 225152 win 24820 (DF) [tos 0x10] 
+16:39:28.686181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 225152:225328(176) ack 17105 win 32120 (DF)
+16:39:28.686181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 225328:226208(880) ack 17105 win 32120 (DF)
+16:39:28.686181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 226208 win 24820 (DF) [tos 0x10] 
+16:39:28.686181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 226208:226384(176) ack 17105 win 32120 (DF)
+16:39:28.696181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 226384:227264(880) ack 17105 win 32120 (DF)
+16:39:28.696181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 227264 win 24820 (DF) [tos 0x10] 
+16:39:28.696181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 227264:227440(176) ack 17105 win 32120 (DF)
+16:39:28.706181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 227440:228320(880) ack 17105 win 32120 (DF)
+16:39:28.706181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 228320 win 24820 (DF) [tos 0x10] 
+16:39:28.706181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 228320:228496(176) ack 17105 win 32120 (DF)
+16:39:28.706181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 228496:229376(880) ack 17105 win 32120 (DF)
+16:39:28.706181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 229376 win 24820 (DF) [tos 0x10] 
+16:39:28.706181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 229376:229552(176) ack 17105 win 32120 (DF)
+16:39:28.716181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 229552:230432(880) ack 17105 win 32120 (DF)
+16:39:28.716181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 230432 win 24820 (DF) [tos 0x10] 
+16:39:28.716181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 230432:230608(176) ack 17105 win 32120 (DF)
+16:39:28.726181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 230608:231488(880) ack 17105 win 32120 (DF)
+16:39:28.726181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 231488 win 24820 (DF) [tos 0x10] 
+16:39:28.726181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 231488:231840(352) ack 17105 win 32120 (DF)
+16:39:28.726181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 231840:232720(880) ack 17105 win 32120 (DF)
+16:39:28.726181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 232720 win 24820 (DF) [tos 0x10] 
+16:39:28.736181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 232720:232896(176) ack 17105 win 32120 (DF)
+16:39:28.736181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 232896:233776(880) ack 17105 win 32120 (DF)
+16:39:28.736181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 233776 win 24820 (DF) [tos 0x10] 
+16:39:28.736181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 233776:233952(176) ack 17105 win 32120 (DF)
+16:39:28.736181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 233952:234832(880) ack 17105 win 32120 (DF)
+16:39:28.736181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 234832 win 24820 (DF) [tos 0x10] 
+16:39:28.736181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 234832:235184(352) ack 17105 win 32120 (DF)
+16:39:28.746181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 235184:236064(880) ack 17105 win 32120 (DF)
+16:39:28.746181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 236064 win 24820 (DF) [tos 0x10] 
+16:39:28.746181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 236064:236416(352) ack 17105 win 32120 (DF)
+16:39:28.766181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 236416:237296(880) ack 17105 win 32120 (DF)
+16:39:28.766181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 237296 win 24820 (DF) [tos 0x10] 
+16:39:28.776181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 237296:237472(176) ack 17105 win 32120 (DF)
+16:39:28.776181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 237472:238352(880) ack 17105 win 32120 (DF)
+16:39:28.776181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 238352 win 24820 (DF) [tos 0x10] 
+16:39:28.776181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 238352:238528(176) ack 17105 win 32120 (DF)
+16:39:28.776181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 238528:239408(880) ack 17105 win 32120 (DF)
+16:39:28.776181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 239408 win 24820 (DF) [tos 0x10] 
+16:39:28.786181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 239408:239584(176) ack 17105 win 32120 (DF)
+16:39:28.796181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 239584:240464(880) ack 17105 win 32120 (DF)
+16:39:28.796181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 240464 win 24820 (DF) [tos 0x10] 
+16:39:28.796181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 240464:240640(176) ack 17105 win 32120 (DF)
+16:39:28.796181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 240640:241520(880) ack 17105 win 32120 (DF)
+16:39:28.796181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 241520 win 24820 (DF) [tos 0x10] 
+16:39:28.796181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 241520:241696(176) ack 17105 win 32120 (DF)
+16:39:28.796181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 17105:17145(40) ack 241696 win 24820 (DF) [tos 0x10] 
+16:39:28.796181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 241696:242048(352) ack 17145 win 32120 (DF)
+16:39:28.806181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 242048:242928(880) ack 17145 win 32120 (DF)
+16:39:28.806181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 242928 win 24820 (DF) [tos 0x10] 
+16:39:28.806181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 242928:243104(176) ack 17145 win 32120 (DF)
+16:39:28.806181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 243104:243984(880) ack 17145 win 32120 (DF)
+16:39:28.806181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 243984 win 24820 (DF) [tos 0x10] 
+16:39:28.806181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 243984:244160(176) ack 17145 win 32120 (DF)
+16:39:28.816181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 244160:245040(880) ack 17145 win 32120 (DF)
+16:39:28.816181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 245040 win 24820 (DF) [tos 0x10] 
+16:39:28.816181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 245040:245216(176) ack 17145 win 32120 (DF)
+16:39:28.816181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 245216:246096(880) ack 17145 win 32120 (DF)
+16:39:28.816181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 246096 win 24820 (DF) [tos 0x10] 
+16:39:28.816181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 246096:246272(176) ack 17145 win 32120 (DF)
+16:39:28.826181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 246272:247152(880) ack 17145 win 32120 (DF)
+16:39:28.826181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 247152 win 24820 (DF) [tos 0x10] 
+16:39:28.826181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 247152:247328(176) ack 17145 win 32120 (DF)
+16:39:28.856181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 247328:248208(880) ack 17145 win 32120 (DF)
+16:39:28.856181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 248208 win 24820 (DF) [tos 0x10] 
+16:39:28.856181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 248208:248384(176) ack 17145 win 32120 (DF)
+16:39:28.886181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 248384:249264(880) ack 17145 win 32120 (DF)
+16:39:28.896181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 249264 win 24820 (DF) [tos 0x10] 
+16:39:28.896181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 249264:249440(176) ack 17145 win 32120 (DF)
+16:39:28.896181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 249440:250320(880) ack 17145 win 32120 (DF)
+16:39:28.896181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 250320 win 24820 (DF) [tos 0x10] 
+16:39:28.896181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 250320:250672(352) ack 17145 win 32120 (DF)
+16:39:28.906181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 250672:251552(880) ack 17145 win 32120 (DF)
+16:39:28.906181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 251552 win 24820 (DF) [tos 0x10] 
+16:39:28.906181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 251552:251728(176) ack 17145 win 32120 (DF)
+16:39:28.906181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 251728:252608(880) ack 17145 win 32120 (DF)
+16:39:28.906181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 252608 win 24820 (DF) [tos 0x10] 
+16:39:28.906181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 252608:252960(352) ack 17145 win 32120 (DF)
+16:39:28.916181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 252960:253840(880) ack 17145 win 32120 (DF)
+16:39:28.916181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 253840 win 24820 (DF) [tos 0x10] 
+16:39:28.916181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 253840:254016(176) ack 17145 win 32120 (DF)
+16:39:28.916181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 254016:254896(880) ack 17145 win 32120 (DF)
+16:39:28.916181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 254896 win 24820 (DF) [tos 0x10] 
+16:39:28.916181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 254896:255072(176) ack 17145 win 32120 (DF)
+16:39:28.936181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 255072:256532(1460) ack 17145 win 32120 (DF)
+16:39:28.936181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 256532:257992(1460) ack 17145 win 32120 (DF)
+16:39:28.936181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 257992:259384(1392) ack 17145 win 32120 (DF)
+16:39:28.936181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 257992 win 24820 (DF) [tos 0x10] 
+16:39:28.946181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 259384:260844(1460) ack 17145 win 32120 (DF)
+16:39:28.946181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 260844:262304(1460) ack 17145 win 32120 (DF)
+16:39:28.946181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 262304 win 24820 (DF) [tos 0x10] 
+16:39:28.946181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 262304:262800(496) ack 17145 win 32120 (DF)
+16:39:28.956181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 17145:17185(40) ack 262800 win 24820 (DF) [tos 0x10] 
+16:39:28.956181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 262800:263520(720) ack 17185 win 32120 (DF)
+16:39:28.956181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 263520:264980(1460) ack 17185 win 32120 (DF)
+16:39:28.966181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 264980:266440(1460) ack 17185 win 32120 (DF)
+16:39:28.966181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 266440:267900(1460) ack 17185 win 32120 (DF)
+16:39:28.966181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 267900:269240(1340) ack 17185 win 32120 (DF)
+16:39:28.966181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 266440 win 24820 (DF) [tos 0x10] 
+16:39:28.986181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 269240:270700(1460) ack 17185 win 32120 (DF)
+16:39:28.986181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 270700:272160(1460) ack 17185 win 32120 (DF)
+16:39:28.986181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 272160:273064(904) ack 17185 win 32120 (DF)
+16:39:28.986181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 270700 win 24820 (DF) [tos 0x10] 
+16:39:29.076181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 273064 win 24820 (DF) [tos 0x10] 
+16:39:29.076181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: P 273064:273120(56) ack 17185 win 32120 (DF)
+16:39:29.176181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 273120 win 24820 (DF) [tos 0x10] 
+17:05:25.526181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 17185:17225(40) ack 273120 win 24820 (DF) [tos 0x10] 
+17:05:25.546181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 17225 win 32120 (DF)
+17:05:25.686181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 17225:17265(40) ack 273120 win 24820 (DF) [tos 0x10] 
+17:05:25.696181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 17265 win 32120 (DF)
+17:05:25.786181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 17265:17305(40) ack 273120 win 24820 (DF) [tos 0x10] 
+17:05:25.806181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 17305 win 32120 (DF)
+17:05:28.206181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 17305:17345(40) ack 273120 win 24820 (DF) [tos 0x10] 
+17:05:28.216181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 17345 win 32120 (DF)
+17:05:28.486181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: P 17345:17385(40) ack 273120 win 24820 (DF) [tos 0x10] 
+17:05:28.496181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 17385 win 32120 (DF)
+17:05:48.886181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: F 17385:17385(0) ack 273120 win 24820 (DF) [tos 0x10] 
+17:05:48.886181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: . ack 17386 win 32120 (DF)
+17:07:15.906181 128.111.43.91.ssh > dorsey.cs.ucsb.edu.996: F 273120:273120(0) ack 17386 win 32120 (DF)
+17:07:15.906181 dorsey.cs.ucsb.edu.996 > 128.111.43.91.ssh: . ack 273121 win 24820 (DF) [tos 0x10] 

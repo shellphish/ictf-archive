@@ -1,0 +1,11 @@
+Name:    snoop.cs.ucsb.edu
+Address:  128.111.48.43
+Name:    packard.cs.ucsb.edu
+Address:  128.111.48.41
+Name:    audit5.cs.ucsb.edu
+Address:  128.111.48.19
+Name:    vladimir.cs.ucsb.edu
+Address:  128.111.48.11
+
+Password: "testarossa"
+

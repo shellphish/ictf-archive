@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+
+    <title>CS 290I Network Security and Intrusion Detection -
+    Project</title>
+    <meta name="Author" content="Giovanni Vigna">
+    <link href="http://www.cs.ucsb.edu/~vigna/giovastyle.css" rel=
+    "stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <h1 align="center">CS 290I Network Security and Intrusion
+    Detection - Project</h1>
+
+    <p>The final for the class consists in a project.</p>
+
+    <p>The project can be of two types:</p>
+
+    <ul>
+      <li>A vulnerability collection (deadline March 17th, 2001 at
+      midnight)</li>
+
+      <li>The implementation of a new attack or the development of
+      some security-related application (deadline March 18th, 2001
+      at midnight)</li>
+    </ul>
+
+    <p>Projects can be carried out in groups. Groups can be at most
+    of three people.</p>
+
+    <p>Both projects can provide up to 12 points. These points will
+    count for 50% of the final grade.</p>
+
+    <p>Note that the project points are not in scale with the
+    homeworks or red team/ blue team exercise.</p>
+
+    <p>Some of the best projects will be presented March 19, 2001
+    from 12 to 3pm.</p>
+
+    <h2>Vulnerability Collection</h2>
+
+    <p>The vulnerability collection project consists in analyzing
+    several vulnerabilities and the corresponding exploits.</p>
+
+    <p>A minimum of 4 vulnerabilities must be submitted.</p>
+
+    <p>A maximum of 5 vulnerabilities can be submitted. Submitting
+    5 vulnerabilities can help in reaching (but not in overcoming)
+    the maximum score (12 points).</p>
+
+    <p>Each vulnerability will be evaluated with a score from 0 to
+    3.</p>
+
+    <p>If the project is carried out in a group, the number of
+    vulnerabilities to be submitted will grow linearly with the
+    number of people in the group. For example, a group of three
+    people must submit a minimum of 12 vulnerabilities (and may
+    submit a maximum of 15 vulnerabilities).</p>
+
+    <h3>Requesting a Vulnerability</h3>
+
+    <p>Each vulnerability must be approved by the instructor,
+    before submission. This is to avoid multiple submissions for
+    the same vulnerability. To get a vulnerability approved it is
+    necessary to send an email to <a href=
+    "mailto:vigna@cs.ucsb.edu">vigna@cs.ucsb.edu</a> with the
+    following data:</p>
+
+    <ul>
+      <li>Subject: last,first CS290I_Vulnerability Request</li>
+
+      <li>Body:<br>
+       &lt;vulnerability&gt;<br>
+       &nbsp; &lt;group&gt;<br>
+       &nbsp;&nbsp;&nbsp;
+      &lt;student&gt;Last1,First1&lt;/student&gt;<br>
+       &nbsp;&nbsp;&nbsp;
+      &lt;student&gt;Last2,First2&lt;/student&gt;<br>
+       &nbsp; &lt;/group&gt;<br>
+       &nbsp; &lt;name&gt;Name of the vulnerability, if
+      well-known&lt;/name&gt;<br>
+       &nbsp; &lt;bugtraqid&gt;bugtraq id, if
+      available&lt;/bugtraqid&gt;<br>
+       &nbsp; &lt;description&gt;Brief description of the
+      vulnerability&lt;/description&gt;<br>
+       &lt;/vulnerability&gt;</li>
+    </ul>
+
+    <p>For example, suppose that students Mark Twain and Bill
+    Shakespeare want to include the phf vulnerability in their
+    vulnerability collection. Mark and Bill decided that Mark Twain
+    is the "point-of-contact" (POC) for the group. Therefore, Mark
+    sends the following message to <a href=
+    "mailto:vigna@cs.ucsb.edu">vigna@cs.ucsb.edu</a>:</p>
+
+    <p>Subject: Twain,Mark CS290I_Vulnerability Request</p>
+
+    <p>&lt;vulnerability&gt;<br>
+     &nbsp; &lt;group&gt;<br>
+     &nbsp;&nbsp;&nbsp;
+    &lt;student&gt;Twain,Mark&lt;/student&gt;<br>
+     &nbsp;&nbsp;&nbsp;
+    &lt;student&gt;Shakespeare,Bill&lt;/student&gt;<br>
+     &nbsp; &lt;/group&gt;<br>
+     &nbsp; &lt;name&gt;phf (exec)&lt;/name&gt;<br>
+     &nbsp; &lt;bugtraqid&gt;629&lt;/bugtraqid&gt;<br>
+     &nbsp; &lt;description&gt;phf CGI script allows one to execute
+    arbitrary commands&lt;/description&gt;<br>
+     &lt;/vulnerability&gt;</p>
+
+    <p>If the vulnerability is accepted, you can start collecting
+    the necessary information.</p>
+
+    <h3>Submitting a Vulnerability Collection</h3>
+
+    <p>To submit a vulnerability collection, you have to send a
+    separate message for each vulnerability. To submit a
+    vulnerability send an email to <a href=
+    "mailto:vigna@cs.ucsb.edu">vigna@cs.ucsb.edu</a> with the
+    following subject:</p>
+
+    <p><tt>Subject: last,first CS290I_Vulnerability Turnin
+    n/total</tt></p>
+
+    <p>Where <tt>last</tt> and <tt>first</tt> are the last and
+    first name of the POC. <tt>n/total</tt> indicates what
+    vulnerability is the one attached to the message. For example,
+    if a group of three people whose POC is Mark Twain is
+    submitting the third vulnerability of the thirteen they
+    prepared, they would send a message with the following
+    subject:</p>
+
+    <p><tt>Subject: Mark,Twain CS290I_Vulnerability Turnin
+    3/13</tt></p>
+
+    <p>Each message must contain, in attachment, a tar archive
+    compressed with gzip. The name of the tar archive must be
+    <tt>last_first_n_of_total_vulnerabilityname.tar.gz</tt>. Where
+    last, first, n, total, have the meaning described above and
+    <tt>vulnerabilityname</tt> is the name of the vulnerability
+    (e.g., "phf"). The tar file must expand to a subdirectory that
+    has the same name of the archive.</p>
+
+    <p>Each vulnerability must provide the following
+    information</p>
+
+    <ul>
+      <li>Name of the vulnerability</li>
+
+      <li>Discussion of the vulnerability</li>
+
+      <li>Vulnerable software (when applicable)</li>
+
+      <li>Exploit</li>
+
+      <li>Manifestation of the attack (and record of normal usage
+      if possible)</li>
+    </ul>
+
+    <p>Inside the archive there must be an index.html file
+    containing the index to the contents of the directory. An
+    example of the vulnerability archive for the phf directory is
+    provided <a href="phf">here</a>. The packaged directory can be
+    downloaded <a href="phf.tar.gz">here</a>.</p>
+
+    <p>The manifestation/signature information that must be
+    provided for each vulnerability can be of two types.</p>
+
+    <p>If the attack is a "local" attack (e.g., a local buffer
+    overflow) the manifestation is a trace of the system calls
+    associated with the execution of the attack. The trace can be
+    collected using the <tt>strace</tt> or <tt>truss</tt> programs.
+    Here is an example:</p>
+<pre>
+    % strace -s 65535 -f -x -v -o buffer_overflow.trace ./vulnerable $EGG
+   
+</pre>
+
+    <p>In this case a buffer overflow in the program "vulnerable"
+    is exploited. The trace of the execution (that is available <a
+    href="buffer_overflow.trace">here</a>) shows the system calls
+    invoked by the program, including the execution of
+    <tt>/bin/sh</tt> as a consequence of the overwriting of the
+    return address and execution of the shellcode.</p>
+
+    <p>If the attack is a "remote" attack then a tcpdump trace of
+    the attack must be provided. See the phf vulnerability page for
+    an example.</p>
+
+    <p>Note that a signature for the attack is not required anymore
+    because there was not enough time spent in class on writing
+    signatures to consider fair such a requirement. A discussion of
+    how the attack manifests itself is required instead. For
+    example in the case of the buffer overflow it would be enough
+    to provide a comment on the fact that the execve system call is
+    invoked as a consequence of the buffer overflow.</p>
+
+    <h2>Security Application</h2>
+
+    <p>This project must be discussed with the instructor and
+    receive approval.</p>
+
+    <p>If the project is approved, a short description of the
+    project must be sent by email to <a href=
+    "mailto:vigna@cs.ucsb.edu">vigna@cs.ucsb.edu</a>. The email
+    message must contain the following data:</p>
+
+    <ul>
+      <li>Subject: last,first CS290I_Project Description</li>
+
+      <li>Body:<br>
+       &lt;project&gt;<br>
+       &nbsp; &lt;group&gt;<br>
+       &nbsp;&nbsp;&nbsp;
+      &lt;student&gt;Last1,First1&lt;/student&gt;<br>
+       &nbsp;&nbsp;&nbsp;
+      &lt;student&gt;Last2,First2&lt;/student&gt;<br>
+       &nbsp; &lt;/group&gt;<br>
+       &nbsp; &lt;name&gt;Name of the project&lt;/name&gt;<br>
+       &nbsp; &lt;description&gt;Brief description of the
+      project&lt;/description&gt;<br>
+       &lt;/project&gt;</li>
+    </ul>
+
+    <p>For example, suppose that students Jim Joyce and Jack
+    Kerouac want to propose a project on the security analysis of
+    the RIP protocol. After having discussed the project with the
+    instructor Jim and Jack decided that Jim is the
+    "point-of-contact" for the group. Therefore, Jim sends the
+    following message to <a href=
+    "mailto:vigna@cs.ucsb.edu">vigna@cs.ucsb.edu</a>:</p>
+
+    <p>Subject: Joyce,Jim CS290I_Project Description</p>
+
+    <p>&lt;project&gt;<br>
+     &nbsp; &lt;group&gt;<br>
+     &nbsp;&nbsp;&nbsp;
+    &lt;student&gt;Joyce,Jim&lt;/student&gt;<br>
+     &nbsp;&nbsp;&nbsp;
+    &lt;student&gt;Kerouac,Jack&lt;/student&gt;<br>
+     &nbsp; &lt;/group&gt;<br>
+     &nbsp; &lt;name&gt;Exploiting RIP attacks&lt;/name&gt;<br>
+     &nbsp; &lt;description&gt;<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    The project will analyze the security of the RIP protocol
+    and<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    develop an attack that allows one to modify the routing
+    tables<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    of a network through a graphical interface.<br>
+     &nbsp; &lt;/description&gt;<br>
+     &lt;/project&gt;</p>
+
+    <h3>Submitting a Project</h3>
+
+    <p>To submit the final project, you have to send a message to
+    <a href="mailto:vigna@cs.ucsb.edu">vigna@cs.ucsb.edu</a> with
+    the following subject:</p>
+
+    <p><tt>Subject: last,first CS290I_Project Turnin</tt></p>
+
+    <p>Where <tt>last,first</tt> are last and first name of the
+    group POC.</p>
+
+    <p>The message must contain, in attachment, a tar archive
+    compressed with gzip. The name of the tar archive must be
+    <tt>last_first_projectname.tar.gz</tt>. Where last and first
+    have the meaning described above and <tt>projectname</tt> is
+    the name of the project (e.g., "totalrerouting"). The tar file
+    must expand to a subdirectory that has the same name of the
+    archive (i.e., <tt>last_first_projectname</tt>).</p>
+
+    <p>The archive will contain all the necessary information
+    (including documentation) to evaluate the project.</p>
+    <!--    <h2>Ideas for Projects</h2>
+
+                <p>Somebody asked for ideas for their final project. This is a list of
+                suggestions. The details should be discussed with the instructor</p>
+
+                <ul>
+
+                  <li><b>Hijacking partners in DDOS.</b> Study the possible techniques that
+                  allow an attacker to use multiple hosts in a DDOS without having to
+                  install <i>zombie</i> applications.</li>
+
+                  <li><b>Total rerouting.</b> Study the attack techniques that can be used
+                  to set an arbitrary for IP traffic delivery inside an autonomous system
+                  (use of ICMP and RIP spoofing).</li>
+
+                  <li><b>SNMP-based traffic verification.</b>Use the data stored in a
+                  router MIB (e.g., how many IP datagrams were forwarded) to determine is
+                  somebody is spoofing router traffic</li>
+
+                  <li><b>NetMeeting meets security.</b> Study the security features of
+                  NetMeeting and analyze possible attacks.</li>
+
+                  <li><b>Anti spoofing techinques.</b> Study how Ethernet spoofing may be
+                  detected at the network driver level.</li>
+
+                  <li><b>XML DOM model and security.</b> Analyze how the new DOM-enabled
+                  browsers can be subject to attacks.</li>
+
+                  <li><b>Overfind.</b> Build a tool that automatically checks for buffer
+                  overflow given an abstract specification of the possible input
+                  channels.</li>
+
+                  <li><b>Wireless Security.</b> Study the possible vulenrabilities in
+                  wireless systems and PDAs.</li>
+
+                  <li><b>TCP spoofing.</b> Build an application that performs TCP spoofing
+                  with sequence number guessing.</li>
+
+                  <li><b>Win2k AD/DNS.</b> Analyze if and how DNS based attacks could be
+                  used to modify information in Win 2000 Active Directory. An interesting
+                  posting on AD and security can be found on bugratq looking for mail with
+                  the subject <i>Win2k directory services weakness</i>.  </li>
+
+                </ul>
+            -->
+    <hr>
+  </body>
+</html>
+

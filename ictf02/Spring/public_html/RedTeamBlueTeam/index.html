@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <meta name="generator" content=
+    "HTML Tidy for Linux/x86 (vers 1st February 2002), see www.w3.org">
+
+    <title>CS 290I Network Security and Intrusion Detection - Red
+    Team / Blue Team Exercise</title>
+    <meta name="Author" content="Giovanni Vigna">
+    <link href="netsec.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <h1>CS 290I Network Security and Intrusion Detection - Red Team
+    / Blue Team Exercise</h1>
+
+    <p>The class is divided into two teams. The Alpha team is
+    composed of the students with last names from A to N. The Omega
+    team is compose of students with last name from O to Z.</p>
+
+    <p>When the exercise starts, the two teams will be assigned a
+    set of hosts. The task of each team is to protect their hosts
+    and attack the hosts of theother team.</p>
+
+    <p>At the beginning of the exercise, the teams have two hours
+    of "truce" to prepare their hosts for the exercise
+    (installation of attack/defense software, hiding of the flags,
+    etc). The actual attck will be carried out in the following two
+    hours.</p>
+
+    <p>The goal of the each team is to <i>capture the flags</i>,
+    that is, to obtain files named <tt>secret.txt</tt> stored on
+    each of the hosts managed by the opposing team. There could be
+    multiple copies of the file. The only <i>real</i> flag is the
+    file whose contents start with the keyword <tt>SECRET</tt>,
+    other info is included in the file to discriminate among the
+    different flags.</p>
+
+    <p>At the same time, each team has to <i>protect the flags</i>
+    stored on their own hosts as much as possible but, more
+    important, the task of each team is to <i>detect the
+    attacks</i> performed by the other team. If an attack is
+    detected than the team gets points.</p>
+
+    <p>The leader of the Alpha Team is Rishi Mathew.</p>
+
+    <p>The leader of the Omega Team is Kimaya Sinzgiri.</p>
+
+    <p>The leaders will coordinate the activities of their teams
+    and will report to the instructor/TAs possible problems.</p>
+
+    <p>The actual exercise will be carried out Friday May 31st from
+    1pm to 5pm. We will reserve part of the CSIL for the
+    exercise.</p>
+
+    <h2>Rules</h2>
+
+    <p>There are several rules thaht must be followed prior and
+    during the exercise. These rules are subject to change during
+    the next couple of weeks to adjust to the requests and the
+    requirements posed by the two teams.</p>
+
+    <ul>
+      <li>The teams cannot use a priori knowledge about the testbed
+      network.</li>
+
+      <li>The teams cannot disrupt services, bring down hosts, and
+      delete files.</li>
+
+      <li>The teams cannot filter/block network traffic.</li>
+
+      <li>The teams cannot patch vulnerable software.</li>
+
+      <li>Each team decides, for each host, where to store the
+      secret file. The only requirements are that the file must be
+      on a mounted filesystem, the name is <tt>secret.txt</tt>, and
+      only one copy of the file starts with the keyword
+      <tt>SECRET</tt>. Other copies can be used as decoy but they
+      cannot contain the secret string <i>at the beginning</i> of
+      the file.</li>
+
+      <li>Only the hosts that will be given to you at the beginning
+      of the exreicse can be attacked by the teams. Attacking other
+      host will penalize SEVERELY a team.</li>
+    </ul>
+
+    <h2>Evaluation</h2>
+
+    <p>Participation in the Blue Team/Red Team exercise is 20% of
+    the final grade. Note that being able to successfully detect or
+    carry out an attack is not the only important thing. Other
+    aspects are evaluated:</p>
+
+    <ul>
+      <li>Ability to plan in advance both attack and defense</li>
+
+      <li>Ability to deploy protection/detection systems and to
+      prepare automated attack scripts</li>
+
+      <li>Ability to maintain a log of the activities (both attacks
+      and detections). These logs will be gathered by the Team
+      leaders and submitted in a final report.</li>
+    </ul>
+
+    <h2>Exercise Final Report</h2>
+
+    <h3>Format Overview</h3>
+
+    <p>The Team Report for the Red-Blue Exercise MUST contain the
+    following sections in the given order. The report MUST not
+    exceed 6 pages in length.</p>
+
+    <ol>
+      <li>Team/Subgroup</li>
+
+      <li>Mission</li>
+
+      <li>Preparation</li>
+
+      <li>Execution</li>
+
+      <li>Evaluation</li>
+
+      <li>Miscellaneous</li>
+
+      <li>References</li>
+    </ol>
+
+    <p>The report must conform to the structure described in the
+    example report available <a href="report.html">here</a></p>
+
+    <h3>Content</h3>
+
+    <p>The following descriptions explain what MUST, MAY, or SHOULD
+    be included in each section.</p>
+
+    <p>The Subgroup section MUST include the following things: the
+    group name, a one line description of what the subgroup was
+    supposed to do, the name of the group members, the email
+    addresses of the group members, and the handles of the group
+    members (on the test bed network). The group leader should be
+    clearly marked.</p>
+
+    <p>The Mission section MUST include the following things: a
+    paragraph giving a more detailed description of what the
+    subgroup was supposed to accomplish, a concise list of
+    responsibilities that each subgroup member had in achieving the
+    subgroup's mission.</p>
+
+    <p>The Preparation section MUST include a description of the
+    activities that were planned. In addition, The Preparation
+    section MUST include a list of tools, software, methods,
+    procedures, etc., that were used or independently produced by
+    the subgroup to prepare for the exercise. Each contribution
+    should be described briefly (1-2 sentences) and credit the
+    specific author(s) if developed independently.</p>
+
+    <p>The Execution section MUST include a (course-grained) log of
+    each member's activities,</p>
+
+    <p>The Evaluation section MUST include: an evaluation of how
+    well the subgroup accomplished its mission, an evaluation of
+    how well the subgroup executed the plan of attack, a
+    description of what could have been done better, an evaluation
+    of how well the subgroup interacted with any adjacent
+    subgroups, an evaluation of the tools that were available for
+    performing the subgroup's mission, and an evaluation of the
+    exercise itself (eg, suggestions for improving the Red-Blue
+    exercise).</p>
+
+    <p>The Miscellaneous section MAY contain any other information
+    that the subgroup feels is pertinent.</p>
+
+    <p>The References section SHOULD contain a list of sources (eg,
+    URLs, articles, books) that were most helpful in preparing for
+    the Red-Blue exercise.</p>
+
+    <h3>Due Date</h3>
+
+    <p>The Due Date for the Red-Blue Exercise Reports is Monday,
+    June 3 2002 at 11am. This will give us the time to prepare a
+    report for the last day of class, June 5th.</p>
+  </body>
+</html>
+

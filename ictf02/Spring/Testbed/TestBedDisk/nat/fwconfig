@@ -1,0 +1,75 @@
+#!/bin/bash
+PATH=/sbin:/bin:.
+
+# Set default policies
+iptables -P INPUT DROP
+iptables -P OUTPUT ACCEPT
+iptables -P FORWARD DROP
+
+# Flush all chains, delete user defined chains
+iptables -F
+iptables -X
+
+##### CHAIN LDROP #####
+# Logs, then drops a packet
+# Creates a new chain called LDROP
+iptables -N LDROP
+iptables -A LDROP -m limit -j LOG --log-prefix "Firewall LDROP:" 
+iptables -A LDROP -j DROP
+
+##### CHAIN LREJECT ####
+# Logs, then rejects the packet
+iptables -N LREJECT
+iptables -A LREJECT -m limit -j LOG --log-prefix "Firewall LREJECT:"
+iptables -A LREJECT -j REJECT
+
+####  INPUT CHAIN #####
+# Opens loopback interface
+iptables -A INPUT -i lo -j ACCEPT
+
+# Drop and log invalid packets, allow nonsetup packets
+iptables -A INPUT -m state --state INVALID -j LDROP
+
+# Allow related packets
+iptables -A INPUT -m state --state ESTABLISHED -j ACCEPT
+iptables -A INPUT -m state --state RELATED -j ACCEPT
+
+# Allow ping requests
+iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
+
+# Open ssh
+iptables -A INPUT -p tcp --destination-port 22 -j ACCEPT
+
+# Open 4025
+iptables -A INPUT -p tcp --destination-port 4025 -j ACCEPT
+
+# Drop and log everything else
+iptables -A INPUT -d 128.111.48.255 -j DROP
+iptables -A INPUT -d 128.111.255.255 -j DROP
+iptables -A INPUT -d 128.255.255.255 -j DROP
+iptables -A INPUT -d 255.255.255.255 -j DROP
+iptables -A INPUT -d 224.0.0.0/8 -j DROP
+
+iptables -A INPUT -j LDROP
+
+####  OUTPUT CHAIN #####
+
+# No private addresses out on outside
+iptables -A OUTPUT -o eth0 -s 192.168.0.0/16 -j REJECT
+iptables -A OUTPUT -o eth0 -d 192.168.0.0/16 -j REJECT
+
+
+####  FORWARD CHAIN #####
+# Allow everything out, established to .48
+iptables -A FORWARD -i eth1 -o eth0 -p tcp -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A FORWARD -i eth1 -o eth0 -d 128.111.48.0/24 -j LDROP
+iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT
+
+# Only allow established and related in. + ssh
+iptables -A FORWARD -i eth0 -o eth1 -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A FORWARD -i eth0 -o eth1 -p tcp --destination-port 22 -j ACCEPT
+iptables -A FORWARD -i eth0 -o eth1 -p tcp --destination-port 4025 -j ACCEPT
+
+. /etc/nat/nat
+
+

@@ -1,0 +1,75 @@
+Media Advisory: Computer Science at UCSB organizes international computer
+hacking competition
+
+What: Something never tried before: an INTERNATIONAL hacking competition 
+called 'Capture The Flag', where multiple teams from universities in US and
+Europe have to engage in a 'network security battle'.
+
+Who: 19 teams from 15 universities in USA and Europe
+  USA
+    UCSB, United States Military Academy, Georgia Tech, New York Polytechnic
+    University, North Carolina State University, The University of Texas
+    (Austin), Naval Postgraduate School at Monterey, University of Illinois at
+    Urbana-Champaign, University of Nebraska, Omaha.  
+  Europe
+    Technical University of Vienna, Austria, Politecnico di Milano, Italy,
+    Darmstadt University of Technology, Germany, Norwegian University of
+    Science and Technology, Norway, RWTH Aachen University, Germany
+    Universita' degli Studi di Milano, Italy
+
+When/Where: Friday, December 4rd, from 11:00am - 4:00pm, Engineering I, Ground
+Floor near GSL/CISL (follow the noise)
+
+
+More Info: http://www.cs.ucsb.edu/~vigna/CTF
+
+Description:
+
+An international contest including multiple teams from the United States and
+Europe will be held on Friday 12/03/04, 11am - 4pm, at the Department of
+Computer Science of UCSB.
+
+The contest, (known as "Capture The Flag") is a distributed, wide-area
+security exercise, whose goal is to test the security skills of students from
+both the attack and defense viewpoints.
+
+Each team is given an Internet server that provides a number of services. The
+services have a number of undisclosed vulnerabilities, which have been
+included by the contest organizers.
+
+The goal of each team is to maintain the set of services available and
+uncompromised throughout the contest phase, by finding the vulnerabilities and
+fixing them in their own copy of the server.  The teams will also leverage the
+vulnerabilities they found to compromise other teams' servers.
+
+During the contest, an automated scoring system keeps track, for each team, of
+what services are available, and which services have been compromised (that
+is, "who is hacking who"). Points are assigned to the teams according to their
+ability to defend their systems and successfully compromise the systems of
+other teams.
+
+This unique international exercise involves teams at different universities,
+spread across the US and Europe competing simultaneously. This is the first
+time ever that such a collaboration has developed for a network security
+challenge that involves colleges in the US and Europe.
+
+The institutions that participate are:
+- UCSB College of Engineering, USA
+- Technical University of Vienna, Austria
+- The United States Military Academy, USA
+- Georgia Tech, USA
+- New York Polytechnic University, USA
+- North Carolina State University, USA
+- The University of Texas (Austin), USA
+- Naval Postgraduate School at Monterey, USA
+- Politecnico di Milano, Italy
+- University of Illinois at Urbana-Champaign
+- Darmstadt University of Technology, Germany
+- Norwegian University of Science and Technology, Norway
+- RWTH Aachen University, Germany
+- Universita' degli Studi di Milano, Italy
+- University of Nebraska, Omaha, USA
+
+The event will be based in the Engineering I Building, adjacent to the
+GSL/CISL and hosted by Dr. Giovanni Vigna , Department of Computer Science,
+College of Engineering.

@@ -1,0 +1,321 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
+       "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>CS 290I Network Security and Intrusion Detection - Red Team Report</title>
+</head>
+
+<h1>Red Team Report</h1>
+
+<h2>Team/Subgroup</h2>
+<pre>
+Team Wolf - Flag Acquisition and Noise Generation
+
+Team Member        E-mail address          Handle
+-----------------  ----------------------  ----------
+*Adam Badik        <adam@cs.ucsb.edu>      undef
+Rajiv Ranjan       <ranjan@cs.ucsb.edu>    kya           
+Esteban Dominguez  <eds@cs.ucsb.edu>       Ret           
+Yan Wang           <wangyan@cs.ucsb.edu>   frozenfire
+
+* - Team Captain
+</pre>
+
+<h2>Mission</h2>
+<pre>
+    Team Wolf had two goals; The primary goal was to acquire the
+secret.txt flag, the secondary goal was to generate network noise 
+to disguise red team efforts. Both of these goals required team 
+members to think like a member of the Blue team: Where would you
+hide a file? How would you monitor a network? How can we circumvent
+that?
+
+Team Member        Responsibilities
+-----------------  ----------------------  
+Adam Badik         = Organize the team
+                   = Write a Perl script to locate and transfer the
+                     Flag
+
+Rajiv Ranjan       = Act as a contact for the other teams
+                   = Develop test scenarios for hiding the flag
+                   
+Esteban Dominguez  = Research intrusion detection systems and
+                   = Find a way to render them useless
+                   
+Yan Wang           = Test scenarios for hiding the flag
+                   = Develop Alternate search strategies
+
+Additionally, all members of the team participated in developing the
+desired behavior for the Perl script. From these team discussions
+came such ideas as UUencodeing the file (to catch unprintable chars)
+and displaying it to the screen, which we log on our end using 'script';
+and deleting the perl script internally so that the blue team wouldn't
+be able to view it.
+</pre>
+
+<h2>Preparation</h2>
+
+<pre>
+The team met on three separate occasions to plan our strategies
+and to discuss new ideas as they came up. At the last meeting
+all members performed the flag acquisition tasks by logging into
+the test network and running this Perl script, written by Adam Badik:
+
+#!/bin/perl -w
+use strict;
+use File::Find;
+BEGIN{ unlink $0 }
+
+find( sub {
+    return 0 unless 'secret.txt' eq $_;
+    
+    print "Checking first 6 chars of '$File::Find::name'\n";
+    open FH, "< $File::Find::name" or return warn $!;
+    my $line1 = <FH>;
+    
+    if( 'SECRET' eq substr( $line1, 0, 6 ) )
+    {
+        my @file = ( $line1, <FH> );
+        print "="x33, " BEGIN  FILE ", "="x33, "\n";
+        print @file;
+        print "="x33, "  UUENCODED  ", "="x33, "\n";
+        print pack "u", join '', @file;
+        print "="x33, "  END  FILE  ", "="x33, "\n";
+        my $conf = <STDIN>;
+        exit 0;  
+    }
+    
+    close FH or warn "Close failed: $!\n";  
+    return 0;
+}, '/' );
+
+__END__
+
+The procedure was:
+- Run script(1) on the local machine.
+- Some attack leaves a root shell running.
+- Use a text editor to cut & paste the script to the target
+- run the script: "perl find.pl"
+- When the script finishes, the flag is now in the log file
+  on the local machine. It is both there as it was printed to
+  the screen, but also UUencoded to preserve unprintable 
+  characters. Decoding could be done using:
+  perl -e 'print unpack "u", join "", <>' uuencoded.file > uudecoded.file
+
+  Note that the script cleans itself up, deleting itself 
+  when it starts, and that it does not rely on anything more
+  then a standard install of Perl - it does not use find(1).
+
+An alternative script was written by Yan Wang:
+#!\sbin\perl
+
+open (FILE, "find / -iname $ARGV[1]|");
+while(<FILE>)
+{
+    open($Read,"<$_");
+    if(<$Read>=~/^$ARGV[2]/)
+    print("$Read");
+}
+__END__
+
+We chose not to use this as it relied on find(1) and required us to
+be able to read the path to the file. Since we were concerned about
+non-printing characters (perl -e 'print chr 7' ) we agreed to require
+that the script handle the file completely. This lead, eventually, to 
+the script that we used.
+  
+Also note we did not want to add any additional channels that would 
+be noticeable by the Blue team, such as ftp(1), and so we chose to 
+print the file to the shell already in use. script(1) was to be used
+in case the file was larger then the terminal buffer.
+
+As for noise generation, Esteban Dominguez became an expert at using
+a program called Ides (http://mixtersecurity.tripod.com/ides.c) which
+listens to network traffic and injects logically forged packets. The 
+"noise" packets inserted will eventually overload sniffers and intrusion
+detection systems used by the Blue team. It will also make all intrusion 
+detection log files unreliable. This system needed to be run on the 
+subnet, and Esteban prepared a complete installation package, including
+all necessary libraries.
+
+Additionally we decided to have other teams log into known accounts on
+the network (as they are discovered) and start doing random tasks that 
+may lead to overload the history log and create additional TCP traffic. 
+In this way, the blue team may not be able to assert when the secret 
+file was acquired and from what specific host the attack was perpetrated.
+</pre>
+
+<h2>Execution</h2>
+
+<pre>
+*mamet       54.10       Linux     -------- Flagged (2:40)
+*leone       54.20       Linux     X
+*coppola     54.70       Linux     X
+*altman      54.157      Linux     -------- Flagged (2:00)
+*godard      54.50       Solaris   no perl, find(1) found no flag file
+*adlon       54.40       Win NT    -------- Flagged via Social Engineering
+
+The first flag to be acquired was on adlon (128.111.54.40)
+This was done via Social Engineering, which is to say that I 
+convinced a member of the Blue team to e-mail me the flag.
+The validity of the flag, however, could not be confirmed.
+
+Next Andrew A. Mutz <amutz@cs.ucsb.edu> provided me with a 
+back door user name and password for altman (128.111.54.157).
+Esteban Dominguez and I ran the script on the compromised
+host, but in our haste failed to start script(1). Lucky for
+us the flag was not very large and we could read off the
+screen:
+Checking first 6 chars of
+'/usr/doc/mars-nwe-0.99pl17/secret/secret/secret/secret/secret/secret/secret/secret/secret/secret/secret/secret/secret/secret/secret
+/secret/secret/secret/secret/secret/secret/secret/secret.txt'
+================================= BEGIN  FILE
+=================================
+SECRETS
+ SECRET
+ SECRET
+ SECRET
+ SECRET
+=================================  UUENCODED
+=================================
+H4T5#4D544PH@4T5#4D54"B!314-2150*(%-%0U)%5`H@4T5#4D54"@``
+=================================  END  FILE
+=================================
+
+At this point Esteban Dominguez set to work running Ides on
+the 128.111.54 subnet (with precautions to avoid Truffault).
+
+Next godard (128.111.54.50) was hacked. Yan Wang was there to
+handle File Acquisition, but godard was a Solaris box, and did
+not have Perl installed. The team which hacked into the box
+then ran a find(1) for 'secret.txt' but did not find any file
+by that name. Since it would be against the rules for the
+Blue team to re-write find(1) to ignore a 'secret.txt' files,
+we can only assume that there was no flag on this machine.
+
+Finally mamet (128.111.54.10) was hacked, and I set to work
+trying to find the flag. Once again we were without script(1),
+and this time the flag was large. So we ended up redirecting
+the output of the script to a file which Andrew Mutz ftped to
+his local machine and then e-mailed to me. What I found was
+the flag named:
+'/.341sdf/15s3165/1235sdf/2341dfas98.asdf/.dfs412/.235das/qadf2315/.123fasd/2314fsd/.sdfa/2314dsf/.321sd/3125sdfa/.2314dfas/.154sdfa
+/asdf1234/.3242341d/.2341sdfa/.fd/2314dfas/.1234sdfa/sdfa2341/dasf1234sdf/.1234fsd/.sdfa2341/adfs/.sdfa421/.fdxcvz213/.xcv1235/.c3q5
+fds/sda2315/124xcv/secret.txt'
+
+And containing the following two lines repeated over and over again:
+SECRET325197ng3925iwdfhg927346ikher8g7i469q7weiuhj23945h3fe8734y5h34t78te
+secret231587esigwe8t38qu46ihjegro87we9t7piwtopu349ijfg87isgj98pufgoijsfgk
+
+While I was doing this Rajiv Ranjan and Esteban Dominguez
+set to work with the last two machines to be hacked: leone
+(128.111.54.20) and coppola (128.111.54.70). Here we ran
+into an unexpected problem - the directory structures ran 
+so deep that the Perl script just reported, "File name
+to long." and left us flag-less.
+</pre>
+
+<h2>Evaluation</h2>
+
+<pre>
+How well did the subgroup accomplish its mission?
+
+    For the most part our team did an excellent job of acquiring the
+    flags. We acquired 3 flags, and only failed to find the remaining
+    flags due to time constraints and deep file structures. We actually
+    came up with a solution to the deep file structures problem and
+    were prepared to edit our scripts to handle this problem, however
+    the time ran out. (The edit would be to restart the search deeper
+    into the file structure in the places where it was too deep. An
+    alternative fix, which was not thought of until after the exercise,
+    would be to change the open() command to open $_ instead of
+    $File::find::name, as $_ was just the file name, and the working
+    directory was actually at that location.)
+    
+    We will not know the success of Ides until the Blue team reports,
+    but we did run it from Altman as planned.
+    
+    We did not accomplish our other noise generation goals, which 
+    focused on having other Red team members generate noise by using 
+    the compromised machines. This was due to both organization and 
+    communication problems between subgroups.
+
+How well did the subgroup execute the plan of attack?
+
+    We never managed to use script(1) the way we had planned, and ended
+    up violating most of our plans to keep a low profile. This didn't
+    hurt our search for the flag, which was our primary goal, but did
+    provide the Blue team more data then we had planned.
+
+Describe what could have been done better.
+
+    I think that the team captains from the subgroups of the Red team
+    needed to meet a couple times over the 3 weeks of preparation. This
+    would have opened communications and prepared us to work together
+    during the actual attack. Instead we had a small variation on utter
+    chaos. People did not know who was responsible for what. Our team
+    was dependant on the previous teams to either provide us a back door,
+    or an interactive shell with script(1) running. But they never ran
+    script(1). Sadly, we too failed to use script(1) while using the
+    back doors opened for us by other teams.
+
+How well did the subgroup interact with any adjacent subgroups?
+
+    Poorly. Our team was not in a central location in CSIL, and as
+    a result I did not always know where my team members were, or 
+    what they were doing. Worse, we failed to communicate our
+    expectations to the exploit teams, and were thus in the unfortunate
+    state of having to search for our script on the compromised hosts.
+    These problems could have been avoided by pre-assigning the work
+    stations in CSIL to groups (instead a first-come first-seat basis).
+    And by holding team lead meetings prior to the exercise. The
+    one "test run" was done too late in the preparation, and did not
+    exercise our code.
+
+Evaluate the tools that were available for performing the 
+subgroup's mission.
+
+    Our script had a rather noticeable bug - the file name problem,
+    but other then that it handled the situation nicely.
+    
+    We will not know the success of Ides until the Blue team reports.
+
+Evaluation of the exercise itself with suggestions for 
+improving the Red-Blue exercise. 
+
+    I think the exercise itself was excellent, but more focus needed
+    to be placed on intrusion detection and prevention, as well as
+    more organization between subgroups. Also, the event itself should
+    have used both rooms of CSIL, physically separating the Red and
+    Blue teams, and the teams should have been seated in a way to 
+    facilitate communication without having everyone piled on top 
+    of each other.
+</pre>
+
+<h2>Miscellaneous</h2>
+
+<h2>References</h2>
+
+<pre>
+"Insertion, Evasion and Denial of Service: Eluding Network Intrusion Detection"
+Thomas H. Ptacek, Timothy N. Newsham
+
+"Defeating Sniffers and Intrusion Detection Systems"
+Phrack Magazine   Volume 8, Issue 54 Dec 25th, 1998, article 10 of 12
+http://phrack.infonexus.com/search.phtml?view&article=p54-10
+
+"Network Intrusion Detection Systems"
+ISAserver.org
+http://www.isaserver.org/pages/intrusion detection faq3.htm
+
+"Intrusion Detection FAQ: Can the volume of network traffic get high enough to exceed the capability of the detectors?"
+SANS Institute resources
+http://www.sans.org/newlook/resources/IDFAQ/network_traffic.htm
+
+IDES: Intrusion Detection Evasion System
+http://mixtersecurity.tripod.com/ides.c
+</pre>
+
+</body>
+</html>

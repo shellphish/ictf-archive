@@ -1,0 +1,86 @@
+#! /usr/bin/python
+
+"""
+Get and set flag for election daemon.
+"""
+
+import random, socket, sys
+from OpenSSL import SSL
+
+def mkuser():
+	user = ""
+	for i in range(8):
+		user += chr(random.randint(ord("a"), ord("z")))
+	return user
+
+def main():
+	# Check usage
+	if len(sys.argv) < 4:
+		print "usage: %s <IP address> <new flag> <cookie>" % (sys.argv[0])
+		return 1
+
+	ret = 0
+	testFlag = ""
+	newUser = ""
+	newFlag = ""
+
+	try:
+		addr, newFlag, cookie = sys.argv[1:]
+		if cookie:
+			oldUser, oldFlag = cookie.split(",")
+		else:
+			oldUser = mkuser()
+
+		# Connect
+		ctx = SSL.Context(SSL.TLSv1_METHOD)
+		fd = SSL.Connection(ctx, socket.socket(socket.AF_INET, socket.SOCK_STREAM))
+		fd.connect((addr, 8008))
+
+		# Send old user
+		fd.send("%s\n" % (oldUser))
+
+		# Read old flag
+		testFlag = fd.recv(1024)[:-1]
+		#print "DEBUG: oldUser=%s, oldFlag=%s, testFlag=%s" % (oldUser, oldFlag, testFlag)
+
+		# Generate and send new user
+		newUser = mkuser()
+		fd.send("%s\n" % (newUser))
+
+		# Send new flag
+		fd.send("%s\n" % (newFlag))
+
+	except Exception, e:
+		print "DEBUG: %s" % (e)
+
+	try:
+		# Get dump
+		data = fd.recv(1024)
+		while data:
+			sys.stdout.write(data)
+			data = fd.recv(1024)
+
+		# Clean up
+		fd.shutdown()
+		fd.close()
+        except SSL.ZeroReturnError:
+                pass
+        except Exception, e:
+		print "Exception wile putting flag %s" % (e)
+
+	# Print out flag, cookie
+	cookie = ""
+	if newUser and newFlag:
+		cookie = "%s,%s" % (newUser, newFlag)
+	if testFlag == "USER NOT FOUND :-(":
+		testFlag = ""
+        print "ssssssssssssssssssssssssssssssssssssssssssssss"
+
+	print "FLAG:%s" % (testFlag)
+	print "COOKIE:%s" % (cookie)
+
+	return 0
+
+if __name__ == "__main__":
+	sys.exit(main())
+

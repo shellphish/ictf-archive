@@ -1,0 +1,42 @@
+Host    Ethernet          IP                    CPU            Memory   OS      Disk       Functtion
+ALFA    00:60:08:11:CB:D4 182.168.1.10		Intel,x86,166  96M      RH 7.0  1,430,608  Test
+BETA 	00:60:08:04:57:D2 192.168.1.20		Intel,x86,166  64M      RH 7.0  1,430,608  Test
+GAMMA   00:D0:B7:BA:7A:0A 192.168.1.30		Intel,x86,166  128M     W2000S  1,584,544  Test
+DELTA   00:C0:4F:A3:32:5A 192.168.1.40		Intel,x86,300  192M     RH 7.0  3,866,116  Test
+PSI			  192.168.1.230		Intel,x86,??   ??	W2000S	??	   Image Server
+OMEGA   00:D0:B7:25:F6:F0 128.111.48.48		Intel,x86,166  128M     RH 7.2  1,929,068  Firewall
+	00:04:75:7A:CB:6B 192.168.1.254
+
+Notes
+
+LINUX System installation
+1) Update the /etc/sysconfig/network-scripts/ifcfg-eth0 file with the right parameters
+DEVICE=eth0
+BOOTPROTO=static
+IPADDR=192.168.1.XX
+NETMASK=255.255.255.0
+NETWORK=192.168.1.0
+BROADCAST=192.168.1.255
+GATEWAY=192.168.1.254
+ONBOOT=YES
+2) Update the /etc/hosts file with the one provided on the diskette
+# cp /dev/fd0/hosts.testbed /etc/hosts
+3) Append to the /etc/passwd file the contents of the passwd.add file provided on the diskette
+   (Remember to check that the password file does not already contain the accounts)
+# cat /dev/fd0/passwd.add >> /etc/passwd
+4) Create the users home dirs by using the script on the diskette
+# cat /dev/fd0/passwd.add | /dev/fd0/accounts.pl | /bin/sh
+5) Update the /etc/resolv.conf file with the one provided on the disk
+# cp /dev/fd0/resolv.conf.testbed /etc/resolv.conf
+
+Software
+
+WINDOWS System Installation
+1) Update the IP setup with the information on IP addr, gateway, DNS, etc
+
+Software
+
+Install cygwin
+
+
+

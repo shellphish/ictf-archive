@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
+       "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>CS 290I Network Security and Intrusion Detection - Blue Team Report</title>
+</head>
+
+<h1>Blue Team Report</h1>
+
+<h2>Team/Subgroup</h2>
+<pre>
+Our team was Alan Phipps <evodius@cs>, Evelyn Smith <efsmith@cs>, and
+Douglas Kuschner <kuschner@cs>.  We were protecting the host Mamet as
+defined below.
+</pre>
+
+<h2>Mission</h2>
+<pre>
+Our mission, as we understood it, was to hide the flag in a decent place,
+to try to make it difficult for host intruders to find and copy the flag
+to their own machines, and (primarily) to detect any unauthorized accesses
+of the flag.  We did not break up the group into precise responsibilities
+on a per-person basis.
+</pre>
+
+<h2>Preparation</h2>
+
+<pre>
+Before the war, Alan developed and used a program to monitor whether or
+not anyone accessed the real flag.  Upon flag access, the program echoed a
+warning and wrote it in the /var/log/messages file as well.  It was quite
+effective.
+
+Before the war, Evelyn thought she could download the actual code for the
+commands ls, grep, cat, etc. that have to do with viewing filenames and
+file contents.  The plan was to render any file named "secret.txt"
+effectively invisible.  She also wanted to seed Mamet with decoy flags.
+
+Before the war, Doug wrote a program to detect spoofed IP packets
+coming to Manet, keep track of MAC-IP associations from the traffic,
+and give a warning upon detection of a spoofed packets (the next
+version was to perform its own arp query on each incoming IP to verify
+the MAC address).  This would have required installing JDK on Mamet,
+had there been time and availability.  It looks as if it would have
+been of definite help to us.
+</pre>
+
+<h2>Execution</h2>
+
+<pre>
+Alan developed and used a program to monitor whether or not anyone
+accessed the real flag.  Upon flag access, the program echoed a warning
+and wrote it in the /var/log/messages file as well.
+
+The true flag's contents begin with "SECRET," unlike the contents of all
+the decoy flags, which began with "secret"; all lines of the file began
+with "SECRET" or "secret" in alternating lines, followed by alphanumerics.
+False flags and the real flag, along with the new directories that in many
+cases the flags were hidden in, were created by Evelyn.
+
+Doug developed a program to detect and warn of IP spoofing.  By the
+onset of the war, this program had not been installed or tested and
+would have required the installation of JDK.  What with time and
+availability problems, Doug didn't find the installation and testing
+feasible.
+
+Any obviously malicious processes were killed off.  "Obviously malicious,"
+in this case, means that either we or another team managed to link some
+malicious activity (e.g., a buffer overflow attack, or searching for
+secret.txt) with a process and/or user.
+</pre>
+
+<h2>Evaluation</h2>
+
+<pre>
+Overall we did a pretty decent job.  It was about an hour and a half
+before any real intrusion took place.  Our flag was accessed multiple
+times, and (obviously) we succeeded in detecting these accesses.  We
+therefore achieved our goal.
+
+The change-the-commands-to-hide-secret.txt plan didn't work out.
+Searching for the code files on Mamet was a horrible task and did not lead
+to any results.  Searching on the internet gave lots of nice-looking
+results.  Evelyn altered "ls" so that, she hoped, it would not show any
+file named "secret.txt."  However, jubilation turned quickly to despair
+once it became obvious that neither "ls" nor any other of the internet-
+provided files was compatible with Mamet's setup.  Reluctantly Evelyn
+concluded that this approach wouldn't be of any use.
+
+On the whole, we didn't have too much excitement to begin with.  We got
+scanned many times, and this scanning went on throughout much of the war.
+We also were subjected to a huge number of buffer-overflow attacks,
+especially ftp-buffer-overflow attacks from packard.cs.ucsb.edu.
+Processing on Mamet became proportionally slow--and "slow" is an
+understatement here.  We ran netstat and kept doing "who" and "finger" to
+figure out who was playing with poor Mamet, and what exactly they were
+trying to do.  Other than packard, snoop, garfield, and audit5 were three
+machines that also seemed quite determined to get into Mamet.
+
+At 2:19 pm the /etc/passwd file was modified, and our root process was
+killed off.  We found that someone (probably from garfield) had changed
+the root password, as well as the passwords of the two currently active
+team user accounts.  It was a clever attack in that they also created
+their own user account, bdr, and seemed to be using it to some effect,
+since we saw multiple accesses of our real flag at this time, probably
+from garfield and audit5, if we were to judge from the activity and
+messages we got.  (At regular intervals, we copied /var/log/messages to
+/.messages1, /.messages2, etc. so that any invaders to our machine could
+not easily dispose of the evidence.)
+
+Turnabout is fair play.  Having been kicked off our machine, we used a
+(perl-based) buffer overflow attack in order to get back in.  It took
+about 5 minutes.  Once in, we changed the root password and the two team
+passwords, killed off all invading processes, and reclaimed our machine.
+We justify this cyber- massacre because the naughty behavior was very
+clear from the messages log and from the advice of other teams.  Also, it
+had been our understanding that changing the root password had been
+declared illegal.
+
+We also changed the password of the newly created user "bdr", and the
+messages file reflected this change because the creator attempted to log
+in as "bdr" repeatedly.  We had a good laugh at this, but we didn't laugh
+long:  soon "bd" was logged in to Mamet.  We weren't fooled--we knew it
+was another interloper, but just as we were going to kill it off, we were
+told by Giovanni that we shouldn't.  The system, he said, was supposed to
+be left relatively insecure, as if we weren't there.  This viewpoint
+contradicted what we'd previously thought, which was that we'd be allowed
+to kill any processes that were obviously doing wrong.  We then backed off
+and basically watched the rest of the war, at least until 2:50pm, at which
+point we logged off to go to our 3pm classes.
+
+Our flag was accessed roughly 7 or 8 times.  (I'd go back and count, but
+my password is still mucked up, so I can't get in.)  This doesn't actually
+tell us who managed to get a copy of the file.
+
+We interacted with two or three of the nearby groups, giving them the
+names of intruders we had detected and the attacks we believed they were
+using.  They in turn notified us of intruder activity on Mamet.  It was
+fairly effective in terms of communication.
+
+Late in the game we tried to download an IDS from www.securityfocus.com to
+play with, having realized that it was permitted, and that we'd have the
+time to try.  We copied Adwids 0.8b1 over to Mamet using scp, but we
+couldn't find it on Mamet.  We tried several times to no avail.  By this
+time, it was quite out of the question to use ftp--too insecure.  Thus we
+let this idea go.  We should have made sure what was permitted and what
+was not, and we should have spent more time in setting up permitted
+programs to monitor unauthorized activity.
+
+Also, it would have been nice if we'd known who the teams were, known
+what hosts we'd be on, met ahead of time, and had some concrete goals
+to work with.  We had little time to coordinate and prepare.  As a
+result we missed out on taking advantage of Doug's code, for example:
+he didn't even get to mention it during the war, what with all the
+other tactics we were trying, and the need for vigilance.
+
+Furthermore, having the war and the class project and a homework
+assignment due all on the same week really put a time crunch on us; it
+would have been more fun if we could have at least not had a homework
+assignment due this week.  (Other classes have things due this week,
+too, of course, so that only worsened the situation.  That's why we
+lost a team member: he took one look at the amount of stuff he had to
+do this week for this class, and he knew he'd have to drop it.)
+
+Some red team members started attacking before the war. This no doubt
+made their task unfairly easy when wartime came.  In general, it
+would've been nice if the rules of the war had been more clearly
+stated.  There were multiple instances in which a clarification of the
+rules would have saved everyone a lot of trouble.  Also, some form of
+rule enforcement would've been nice.  Lots of people crashed hosts and
+didn't even bother to notify the TAs; that sort of downtime severely
+impacted the rest of the class.
+
+Of course, it would have been nice if the red and blue teams could
+have been put in separate rooms.  Installing the most basic security
+precautions would also have been nice (shadow passwords, for example),
+although I understand that the TAs were horribly pressed for time, and
+the whole crashing thing made their lives as difficult as it made ours.
+</pre>
+
+<h2>Miscellaneous</h2>
+<pre>
+This was the correct path for our flag:
+
+/.341sdf/15s3165/1235sdf/2341dfas98.asdf/.dfs412/.235das/qadf2315
+/.123fasd/2314fsd/.sdfa/2314dsf/.321sd/3125sdfa/.2314dfas/.154sdfa
+/asdf1234/.3242341d/.2341sdfa/.fd/2314dfas/.1234sdfa/sdfa2341
+/dasf1234sdf/.1234fsd/.sdfa2341/adfs/.sdfa421/.fdxcvz213/.xcv1235
+/.c3q5fds/sda2315/124xcv/secret.txt
+
+Our machine was the last to come up, and the last to have a workable ssh
+thanks to bad luck.  It was our belief that prepackaged IDS would not be
+welcome, so systems such as Tripwire and so forth were not considered as
+possible ways to defend our system until very late.  Also, one of our team
+members (Mathias Kolsch), it turned out, was forced to drop the class over
+the weekend due to other obligations.  As a result, unexpectedly we had
+only three team members show up to the war.
+</pre>
+<h2>References</h2>
+
+<pre>
+List of sources (e.g., URLs, articles, books) that were the most helpful
+in preparing for the Red-Blue exercise:
+        www.securityfocus.com
+        www.bugtraq.com
+</pre>
+
+</body>
+</html>

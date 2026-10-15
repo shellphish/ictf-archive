@@ -1,0 +1,236 @@
+Dec 17 13:56:29 www2 syslogd 1.4.1: restart.
+Dec 17 14:12:20 www2 kernel: keyboard: unrecognized scancode (7f) - ignored
+Dec 17 14:12:23 www2 last message repeated 2 times
+Dec 17 14:41:06 www2 /sbin/mingetty[1150]: tty1: invalid character ^[ in login name
+Dec 17 14:43:40 www2 login(pam_unix)[10152]: authentication failure; logname=LOGIN uid=0 euid=0 tty=tty1 ruser= rhost=  user=root
+Dec 17 14:43:42 www2 login[10152]: FAILED LOGIN 1 FROM (null) FOR root, Authentication failure
+Dec 17 14:43:49 www2 login[10152]: FAILED LOGIN 2 FROM (null) FOR root, Authentication failure
+Dec 17 14:43:58 www2 login[10152]: FAILED LOGIN 3 FROM (null) FOR root, Authentication failure
+Dec 17 14:44:01 www2 shutdown: shutting down for system reboot
+Dec 17 14:44:01 www2 init: Switching to runlevel: 6
+Dec 17 14:44:02 www2 atd: atd shutdown succeeded
+Dec 17 14:44:03 www2 Font Server[1068]: terminating 
+Dec 17 14:44:03 www2 xfs: xfs shutdown succeeded
+Dec 17 14:44:03 www2 gpm: gpm shutdown succeeded
+Dec 17 14:44:04 www2 httpd: httpd shutdown succeeded
+Dec 17 14:44:05 www2 sshd: sshd -TERM succeeded
+Dec 17 14:44:05 www2 sendmail: sendmail shutdown succeeded
+Dec 17 14:44:05 www2 xinetd[905]: Exiting...
+Dec 17 14:44:05 www2 xinetd: xinetd shutdown succeeded
+Dec 17 14:44:05 www2 crond: crond shutdown succeeded
+Dec 17 14:44:06 www2 apmd[818]: Exiting
+Dec 17 14:44:07 www2 apmd: apmd shutdown succeeded
+Dec 17 14:44:07 www2 dd: 1+0 records in
+Dec 17 14:44:07 www2 dd: 1+0 records out
+Dec 17 14:44:07 www2 random: Saving random seed:  succeeded
+Dec 17 14:44:07 www2 rpc.statd[705]: Caught signal 15, un-registering and exiting.
+Dec 17 14:44:07 www2 nfslock: rpc.statd shutdown succeeded
+Dec 17 14:44:08 www2 portmap: portmap shutdown succeeded
+Dec 17 14:44:08 www2 kernel: Kernel logging (proc) stopped.
+Dec 17 14:44:08 www2 kernel: Kernel log daemon terminating.
+Dec 17 14:44:09 www2 syslog: klogd shutdown succeeded
+Dec 17 14:44:09 www2 exiting on signal 15
+Dec 17 14:47:42 www2 syslogd 1.4.1: restart.
+Dec 17 14:47:42 www2 syslog: syslogd startup succeeded
+Dec 17 14:47:42 www2 syslog: klogd startup succeeded
+Dec 17 14:47:42 www2 kernel: klogd 1.4.1, log source = /proc/kmsg started.
+Dec 17 14:47:42 www2 kernel: Linux version 2.4.18-3 (bhcompile@daffy.perf.redhat.com) (gcc version 2.96 20000731 (Red Hat Linux 7.3 2.96-110)) #1 Thu Apr 18 07:37:53 EDT 2002
+Dec 17 14:47:42 www2 kernel: BIOS-provided physical RAM map:
+Dec 17 14:47:42 www2 kernel:  BIOS-e820: 0000000000000000 - 00000000000a0000 (usable)
+Dec 17 14:47:42 www2 kernel:  BIOS-e820: 00000000000f0000 - 0000000000100000 (reserved)
+Dec 17 14:47:42 www2 kernel:  BIOS-e820: 0000000000100000 - 000000000ff77000 (usable)
+Dec 17 14:47:42 www2 kernel:  BIOS-e820: 000000000ff77000 - 000000000ff79000 (ACPI NVS)
+Dec 17 14:47:42 www2 kernel:  BIOS-e820: 000000000ff79000 - 0000000010000000 (reserved)
+Dec 17 14:47:42 www2 kernel:  BIOS-e820: 00000000fec00000 - 00000000fec10000 (reserved)
+Dec 17 14:47:42 www2 kernel:  BIOS-e820: 00000000fee00000 - 00000000fee10000 (reserved)
+Dec 17 14:47:42 www2 kernel:  BIOS-e820: 00000000ffb00000 - 0000000100000000 (reserved)
+Dec 17 14:47:42 www2 kernel: On node 0 totalpages: 65399
+Dec 17 14:47:43 www2 portmap: portmap startup succeeded
+Dec 17 14:47:43 www2 kernel: zone(0): 4096 pages.
+Dec 17 14:47:43 www2 kernel: zone(1): 61303 pages.
+Dec 17 14:47:43 www2 kernel: zone(2): 0 pages.
+Dec 17 14:47:43 www2 kernel: Kernel command line: ro root=/dev/hda2 -s
+Dec 17 14:47:43 www2 kernel: Initializing CPU#0
+Dec 17 14:47:43 www2 kernel: Detected 1495.177 MHz processor.
+Dec 17 14:47:43 www2 rpc.statd[706]: Version 0.3.3 Starting
+Dec 17 14:47:43 www2 nfslock: rpc.statd startup succeeded
+Dec 17 14:47:43 www2 kernel: Console: colour VGA+ 80x25
+Dec 17 14:47:43 www2 kernel: Calibrating delay loop... 2981.88 BogoMIPS
+Dec 17 14:47:43 www2 kernel: Memory: 254968k/261596k available (1119k kernel code, 6244k reserved, 775k data, 280k init, 0k highmem)
+Dec 17 14:47:43 www2 kernel: Dentry cache hash table entries: 32768 (order: 6, 262144 bytes)
+Dec 17 14:47:43 www2 kernel: Inode cache hash table entries: 16384 (order: 5, 131072 bytes)
+Dec 17 14:47:43 www2 kernel: Mount-cache hash table entries: 4096 (order: 3, 32768 bytes)
+Dec 17 14:47:43 www2 kernel: Buffer cache hash table entries: 16384 (order: 4, 65536 bytes)
+Dec 17 14:47:43 www2 kernel: Page-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Dec 17 14:47:43 www2 kernel: CPU: L1 I cache: 12K, L1 D cache: 8K
+Dec 17 14:47:43 www2 kernel: CPU: L2 cache: 256K
+Dec 17 14:47:43 www2 kernel: Intel machine check architecture supported.
+Dec 17 14:47:43 www2 kernel: Intel machine check reporting enabled on CPU#0.
+Dec 17 14:47:43 www2 kernel: CPU: Intel(R) Pentium(R) 4 CPU 1500MHz stepping 0a
+Dec 17 14:47:43 www2 kernel: Enabling fast FPU save and restore... done.
+Dec 17 14:47:43 www2 kernel: Enabling unmasked SIMD FPU exception support... done.
+Dec 17 14:47:43 www2 kernel: Checking 'hlt' instruction... OK.
+Dec 17 14:47:43 www2 keytable: Loading keymap:  succeeded
+Dec 17 14:47:43 www2 kernel: POSIX conformance testing by UNIFIX
+Dec 17 14:47:43 www2 kernel: mtrr: v1.40 (20010327) Richard Gooch (rgooch@atnf.csiro.au)
+Dec 17 14:47:43 www2 keytable: Loading system font:  succeeded
+Dec 17 14:47:43 www2 kernel: mtrr: detected mtrr type: Intel
+Dec 17 14:47:43 www2 kernel: PCI: PCI BIOS revision 2.10 entry at 0xfbece, last bus=2
+Dec 17 14:47:43 www2 kernel: PCI: Using configuration type 1
+Dec 17 14:47:43 www2 kernel: PCI: Probing PCI hardware
+Dec 17 14:47:43 www2 kernel: Unknown bridge resource 2: assuming transparent
+Dec 17 14:47:43 www2 kernel: PCI: Using IRQ router PIIX [8086/2440] at 00:1f.0
+Dec 17 14:47:43 www2 kernel: isapnp: Scanning for PnP cards...
+Dec 17 14:47:43 www2 kernel: isapnp: No Plug & Play device found
+Dec 17 14:47:43 www2 kernel: Linux NET4.0 for Linux 2.4
+Dec 17 14:47:43 www2 kernel: Based upon Swansea University Computer Society NET3.039
+Dec 17 14:47:43 www2 kernel: Initializing RT netlink socket
+Dec 17 14:47:43 www2 kernel: apm: BIOS version 1.2 Flags 0x03 (Driver version 1.16)
+Dec 17 14:47:43 www2 kernel: Starting kswapd
+Dec 17 14:47:43 www2 kernel: VFS: Diskquotas version dquot_6.5.0 initialized
+Dec 17 14:47:43 www2 kernel: Detected PS/2 Mouse Port.
+Dec 17 14:47:43 www2 kernel: pty: 2048 Unix98 ptys configured
+Dec 17 14:47:43 www2 kernel: Serial driver version 5.05c (2001-07-08) with MANY_PORTS MULTIPORT SHARE_IRQ SERIAL_PCI ISAPNP enabled
+Dec 17 14:47:43 www2 kernel: ttyS00 at 0x03f8 (irq = 4) is a 16550A
+Dec 17 14:47:43 www2 kernel: Real Time Clock Driver v1.10e
+Dec 17 14:47:43 www2 kernel: block: 496 slots per queue, batch=124
+Dec 17 14:47:43 www2 kernel: Uniform Multi-Platform E-IDE driver Revision: 6.31
+Dec 17 14:47:43 www2 kernel: ide: Assuming 33MHz system bus speed for PIO modes; override with idebus=xx
+Dec 17 14:47:43 www2 kernel: PIIX4: IDE controller on PCI bus 00 dev f9
+Dec 17 14:47:43 www2 random: Initializing random number generator:  succeeded
+Dec 17 14:47:43 www2 kernel: PIIX4: chipset revision 18
+Dec 17 14:47:43 www2 kernel: PIIX4: not 100%% native mode: will probe irqs later
+Dec 17 14:47:43 www2 kernel:     ide0: BM-DMA at 0xffa0-0xffa7, BIOS settings: hda:DMA, hdb:pio
+Dec 17 14:47:43 www2 kernel:     ide1: BM-DMA at 0xffa8-0xffaf, BIOS settings: hdc:DMA, hdd:pio
+Dec 17 14:47:43 www2 kernel: hda: IC35L020AVER07-0, ATA DISK drive
+Dec 17 14:47:43 www2 kernel: hdc: CRD-8482B, ATAPI CD/DVD-ROM drive
+Dec 17 14:47:44 www2 kernel: ide0 at 0x1f0-0x1f7,0x3f6 on irq 14
+Dec 17 14:47:44 www2 kernel: ide1 at 0x170-0x177,0x376 on irq 15
+Dec 17 14:47:44 www2 kernel: blk: queue c035e6a4, I/O limit 4095Mb (mask 0xffffffff)
+Dec 17 14:47:44 www2 kernel: hda: 39102336 sectors (20020 MB) w/1916KiB Cache, CHS=2434/255/63, UDMA(100)
+Dec 17 14:47:44 www2 kernel: ide-floppy driver 0.99.newide
+Dec 17 14:47:44 www2 kernel: Partition check:
+Dec 17 14:47:44 www2 kernel:  hda: hda1 hda2 hda3
+Dec 17 14:47:44 www2 kernel: Floppy drive(s): fd0 is 1.44M
+Dec 17 14:47:44 www2 netfs: Mounting other filesystems:  succeeded
+Dec 17 14:47:44 www2 kernel: FDC 0 is a post-1991 82077
+Dec 17 14:47:44 www2 kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Dec 17 14:47:44 www2 kernel: ide-floppy driver 0.99.newide
+Dec 17 14:47:44 www2 kernel: md: md driver 0.90.0 MAX_MD_DEVS=256, MD_SB_DISKS=27
+Dec 17 14:47:44 www2 kernel: md: Autodetecting RAID arrays.
+Dec 17 14:47:44 www2 kernel: md: autorun ...
+Dec 17 14:47:44 www2 kernel: md: ... autorun DONE.
+Dec 17 14:47:44 www2 kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Dec 17 14:47:44 www2 kernel: IP Protocols: ICMP, UDP, TCP, IGMP
+Dec 17 14:47:44 www2 apmd: apmd startup succeeded
+Dec 17 14:47:44 www2 apmd[818]: Version 3.0.2 (APM BIOS 1.2, Linux driver 1.16)
+Dec 17 14:47:44 www2 kernel: IP: routing cache hash table of 2048 buckets, 16Kbytes
+Dec 17 14:47:44 www2 kernel: TCP: Hash tables configured (established 16384 bind 16384)
+Dec 17 14:47:44 www2 kernel: Linux IP multicast router 0.06 plus PIM-SM
+Dec 17 14:47:44 www2 kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Dec 17 14:47:44 www2 kernel: RAMDISK: Compressed image found at block 0
+Dec 17 14:47:44 www2 kernel: Freeing initrd memory: 123k freed
+Dec 17 14:47:44 www2 kernel: VFS: Mounted root (ext2 filesystem).
+Dec 17 14:47:44 www2 kernel: Journalled Block Device driver loaded
+Dec 17 14:47:44 www2 kernel: kjournald starting.  Commit interval 5 seconds
+Dec 17 14:47:44 www2 kernel: EXT3-fs: mounted filesystem with ordered data mode.
+Dec 17 14:47:44 www2 kernel: Freeing unused kernel memory: 280k freed
+Dec 17 14:47:44 www2 kernel: Adding Swap: 522104k swap-space (priority -1)
+Dec 17 14:47:44 www2 kernel: usb.c: registered new driver usbdevfs
+Dec 17 14:47:44 www2 kernel: usb.c: registered new driver hub
+Dec 17 14:47:44 www2 kernel: usb-uhci.c: $Revision: 1.275 $ time 07:43:07 Apr 18 2002
+Dec 17 14:47:44 www2 kernel: usb-uhci.c: High bandwidth mode enabled
+Dec 17 14:47:44 www2 autofs: automount startup succeeded
+Dec 17 14:47:44 www2 kernel: PCI: Found IRQ 11 for device 00:1f.2
+Dec 17 14:47:44 www2 kernel: PCI: Sharing IRQ 11 with 02:0a.0
+Dec 17 14:47:44 www2 kernel: PCI: Setting latency timer of device 00:1f.2 to 64
+Dec 17 14:47:44 www2 kernel: usb-uhci.c: USB UHCI at I/O 0xff80, IRQ 11
+Dec 17 14:47:44 www2 kernel: usb-uhci.c: Detected 2 ports
+Dec 17 14:47:44 www2 kernel: usb.c: new USB bus registered, assigned bus number 1
+Dec 17 14:45:00 www2 rc.sysinit: Mounting proc filesystem:  succeeded 
+Dec 17 14:47:45 www2 kernel: hub.c: USB hub found
+Dec 17 14:45:00 www2 rc.sysinit: Unmounting initrd:  succeeded 
+Dec 17 14:47:45 www2 sshd: Starting sshd:
+Dec 17 14:47:45 www2 kernel: hub.c: 2 ports detected
+Dec 17 14:45:00 www2 sysctl: net.ipv4.ip_forward = 0 
+Dec 17 14:47:45 www2 kernel: PCI: Found IRQ 9 for device 00:1f.4
+Dec 17 14:45:00 www2 sysctl: net.ipv4.conf.default.rp_filter = 1 
+Dec 17 14:47:45 www2 kernel: PCI: Setting latency timer of device 00:1f.4 to 64
+Dec 17 14:45:00 www2 sysctl: kernel.sysrq = 0 
+Dec 17 14:47:45 www2 kernel: usb-uhci.c: USB UHCI at I/O 0xff60, IRQ 9
+Dec 17 14:45:00 www2 sysctl: kernel.core_uses_pid = 1 
+Dec 17 14:47:45 www2 apmd[818]: Charge: * * * (-1% unknown)
+Dec 17 14:47:45 www2 kernel: usb-uhci.c: Detected 2 ports
+Dec 17 14:45:00 www2 rc.sysinit: Configuring kernel parameters:  succeeded 
+Dec 17 14:47:45 www2 kernel: usb.c: new USB bus registered, assigned bus number 2
+Dec 17 14:45:00 www2 date: Tue Dec 17 14:44:53 PST 2002 
+Dec 17 14:47:46 www2 sshd:  succeeded
+Dec 17 14:47:46 www2 kernel: hub.c: USB hub found
+Dec 17 14:45:00 www2 rc.sysinit: Setting clock  (localtime): Tue Dec 17 14:44:53 PST 2002 succeeded 
+Dec 17 14:47:46 www2 kernel: hub.c: 2 ports detected
+Dec 17 14:47:46 www2 sshd: 
+Dec 17 14:45:00 www2 rc.sysinit: Loading default keymap succeeded 
+Dec 17 14:47:46 www2 kernel: usb-uhci.c: v1.275:USB Universal Host Controller Interface driver
+Dec 17 14:47:46 www2 rc: Starting sshd:  succeeded
+Dec 17 14:45:00 www2 rc.sysinit: Setting default font (lat0-sun16):  succeeded 
+Dec 17 14:47:46 www2 kernel: EXT3 FS 2.4-0.9.17, 10 Jan 2002 on ide0(3,2), internal journal
+Dec 17 14:45:00 www2 rc.sysinit: Activating swap partitions:  succeeded 
+Dec 17 14:47:46 www2 kernel: kjournald starting.  Commit interval 5 seconds
+Dec 17 14:45:00 www2 rc.sysinit: Setting hostname www2:  succeeded 
+Dec 17 14:47:46 www2 kernel: EXT3 FS 2.4-0.9.17, 10 Jan 2002 on ide0(3,1), internal journal
+Dec 17 14:45:00 www2 rc.sysinit: Mounting USB filesystem:  succeeded 
+Dec 17 14:47:46 www2 kernel: EXT3-fs: mounted filesystem with ordered data mode.
+Dec 17 14:45:00 www2 rc.sysinit: Initializing USB controller (usb-uhci):  succeeded 
+Dec 17 14:47:47 www2 kernel: ide-floppy driver 0.99.newide
+Dec 17 14:45:00 www2 fsck: /: clean, 107189/2375680 files, 555452/4745199 blocks 
+Dec 17 14:47:47 www2 kernel: hdc: ATAPI 48X CD-ROM drive, 128kB Cache, UDMA(33)
+Dec 17 14:45:00 www2 rc.sysinit: Checking root filesystem succeeded 
+Dec 17 14:47:47 www2 kernel: Uniform CD-ROM driver Revision: 3.12
+Dec 17 14:45:00 www2 rc.sysinit: Remounting root filesystem in read-write mode:  succeeded 
+Dec 17 14:47:47 www2 kernel: hdc: DMA disabled
+Dec 17 14:45:04 www2 rc.sysinit: Finding module dependencies:  succeeded 
+Dec 17 14:47:47 www2 kernel: parport0: PC-style at 0x378 (0x778) [PCSPP,TRISTATE]
+Dec 17 14:45:05 www2 fsck: /boot: clean, 40/12048 files, 10376/48163 blocks 
+Dec 17 14:47:47 www2 kernel: parport0: irq 7 detected
+Dec 17 14:45:05 www2 rc.sysinit: Checking filesystems succeeded 
+Dec 17 14:47:47 www2 kernel: ip_tables: (C) 2000-2002 Netfilter core team
+Dec 17 14:45:05 www2 rc.sysinit: Mounting local filesystems:  succeeded 
+Dec 17 14:47:47 www2 kernel: PCI: Found IRQ 11 for device 02:09.0
+Dec 17 14:45:05 www2 rc.sysinit: Enabling local filesystem quotas:  succeeded 
+Dec 17 14:47:47 www2 kernel: 3c59x: Donald Becker and others. www.scyld.com/network/vortex.html
+Dec 17 14:45:06 www2 rc.sysinit: Enabling swap space:  succeeded 
+Dec 17 14:47:47 www2 kernel: 02:09.0: 3Com PCI 3c905C Tornado at 0xdc80. Vers LK1.1.16
+Dec 17 14:47:00 www2 passwd(pam_unix)[316]: password changed for root 
+Dec 17 14:47:47 www2 kernel: PCI: Found IRQ 11 for device 02:0a.0
+Dec 17 14:47:18 www2 init: Entering runlevel: 3 
+Dec 17 14:47:47 www2 kernel: PCI: Sharing IRQ 11 with 00:1f.2
+Dec 17 14:47:19 www2 kudzu: Updating /etc/fstab succeeded 
+Dec 17 14:47:47 www2 kernel: 02:0a.0: 3Com PCI 3c905C Tornado at 0xdc00. Vers LK1.1.16
+Dec 17 14:47:39 www2 kudzu:  succeeded 
+Dec 17 14:47:39 www2 iptables: Flushing all current rules and user defined chains: succeeded 
+Dec 17 14:47:39 www2 iptables: Clearing all current rules and user defined chains: succeeded 
+Dec 17 14:47:39 www2 iptables: Flushing all current rules and user defined chains: succeeded 
+Dec 17 14:47:39 www2 iptables: Clearing all current rules and user defined chains: succeeded 
+Dec 17 14:47:39 www2 iptables: Applying iptables firewall rules succeeded 
+Dec 17 14:47:39 www2 sysctl: net.ipv4.ip_forward = 0 
+Dec 17 14:47:39 www2 sysctl: net.ipv4.conf.default.rp_filter = 1 
+Dec 17 14:47:39 www2 sysctl: kernel.sysrq = 0 
+Dec 17 14:47:39 www2 sysctl: kernel.core_uses_pid = 1 
+Dec 17 14:47:39 www2 network: Setting network parameters:  succeeded 
+Dec 17 14:47:40 www2 network: Bringing up loopback interface:  succeeded 
+Dec 17 14:47:42 www2 network: Bringing up interface eth0:  succeeded 
+Dec 17 14:47:49 www2 xinetd[906]: xinetd Version 2002.03.28 started with libwrap options compiled in.
+Dec 17 14:47:49 www2 xinetd[906]: Started working: 1 available service
+Dec 17 14:47:50 www2 xinetd: xinetd startup succeeded
+Dec 17 14:47:52 www2 httpd: [Tue Dec 17 14:47:52 2002] [alert] httpd: Could not determine the server's fully qualified domain name, using 127.0.0.1 for ServerName
+Dec 17 14:47:54 www2 httpd: httpd startup succeeded
+Dec 17 14:47:55 www2 sendmail: sendmail startup succeeded
+Dec 17 14:47:55 www2 gpm: gpm startup succeeded
+Dec 17 14:47:56 www2 crond: crond startup succeeded
+Dec 17 14:47:57 www2 xfs: xfs startup succeeded
+Dec 17 14:47:57 www2 xfs: listening on port 7100 
+Dec 17 14:47:57 www2 anacron: anacron startup succeeded
+Dec 17 14:47:58 www2 atd: atd startup succeeded
+Dec 17 14:47:58 www2 wine: Registering binary handler for Windows applications
+Dec 17 14:47:58 www2 xfs: ignoring font path element /usr/X11R6/lib/X11/fonts/cyrillic (unreadable) 
+Dec 17 14:47:58 www2 xfs: ignoring font path elemen                                                                                                                                                                                                                                                                                                                                                                                                                                                            

@@ -59,6 +59,11 @@ attic/ictf-mailing-lists-historical.tgz
 # Embedded git repos in attic (include content without submodule complexity)
 attic/ictf-website/
 
+# CTFd full-export zips (> 100 MB; challenge content is already in challenges/)
+ictf23/CTFd_Archive/*.zip
+ictf24/iCTF?2024?High?School?Track*.zip
+ictf24/iCTF?2024?Undergraduate?Track*.zip
+
 # === Claude workspace ===
 .claude/
 

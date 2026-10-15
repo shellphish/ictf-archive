@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> 
+  <head>
+     <title>phf attack</title>
+  </head>
+
+  <body>
+
+    <h1 align="center"><tt>phf</tt> Vulnerability</h1>
+
+    <h2>Archive Author</h2>
+
+    <ul>
+      <li>Giovanni Vigna</li>
+    </ul>
+
+    <h2>Description</h2>
+
+    <p>The <tt>phf</tt> CGI program contains a bug in the argument parsing
+    procedure. By inserting new lines in the script parameters it is possible
+    to execute a command as the user running the WWW server. For example, it
+    is possible to retrieve the password file with the following GET
+    request:</p>
+
+    <pre>
+    GET /cgi-bin/phf?Qalias=x%0a/bin/cat%20/etc/passwd
+    </pre>
+
+    <h2>Exploit</h2> 
+
+    <p>To exploit this vulnerability, we developed the phf-attack program that
+    takes as inputs the host/port where the vulnerable Web server is located,
+    and the list of commands to be executed. The program packages the commands
+    in a GET request and then connects to the vulnerable server and performs
+    the exploit.
+
+    <!-- One or more exploit programs -->
+    <ul>
+      <li><a href="phf-attack.c"><code>phf-attack.c</code></a> Exploit for the
+      phf bug.</li>
+    </ul>
+
+    <h2>Vulnerable Software</h2>
+    
+    <p>The phf.c program was originally distributed with the NCSA 1.3 web
+    server. The code can be compiled separately and put on a web server
+    cgi-bin directory to test the exploit.</p>
+    <ul>
+      <li><a href="phf.c">phf.c</a>: The phf source</li>
+      <li><a href="util.c">util.c</a>: Additional routines needed to compile the program.</li>
+    </ul>
+
+    <p>To compile the phf CGI program (tested on Linux RedHat 6.2):</p>
+    <pre>
+    % gcc -c util.c -o util.o 
+    % gcc -c phf.c -o phf.o
+    % gcc util.o phf.o -o phf
+    </pre>
+
+    <p>To install the phf CGI program, simply copy the program to the CGI
+    directory of any web server. </p>
+
+    <h2>Manifestation</h2> 
+
+    <p>The attack can be detected by examining the contents of the TCP
+    connection to the server. The following two links provide tcpdump logs for
+    an attack and a normal invocation of the CGI program</p>
+
+    <ul> 
+
+      <li><a href="tcpdump-phf">tcpdump-phf</a> tcpdump trace of the
+      attack.</li>
+
+      <li><a href="tcpdump-phf-normal">tcpdump-phf-normal</a> tcpdump trace of
+      a normal request.</li>
+
+    </ul>
+
+    <h2>Signature for the Attack</h2>
+
+    <p>This file contains the snort signature for the phf attack</p>
+ 
+    <ul> 
+
+      <li><a href="snort.txt">snort.txt</a>.</li>
+
+    </ul>
+    
+    <p>The signature does not distinguish between a successful exploitation of
+    the vulnerability and normal usage. The signature could be enhanced by
+    matching the character used to invoke the additional command. For
+    example...
+
+    <h2>Links and Additional Resources</h2>
+
+    <ul>
+
+      <li><a href="http://www.cert.org/advisories/CA-1996-06.html">CERT
+      Advisory CA-1996-06 Vulnerability in NCSA/Apache CGI example
+      code</a></li>
+      
+    </ul>
+    <hr>
+
+  </body> 
+</html>
+
+
+
+
+

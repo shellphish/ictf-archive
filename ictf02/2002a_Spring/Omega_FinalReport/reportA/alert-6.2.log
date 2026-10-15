@@ -1,0 +1,312 @@
+05/31-15:51:36.659343  [**] [1:469:1] ICMP PING NMAP [**] [Classification: Attempted Information Leak] [Priority: 2] {ICMP} 128.111.49.20 -> 128.111.43.98
+05/31-15:51:37.375813  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED from 128.111.49.20 (THRESHOLD 4 connections exceeded in 0 seconds) [**] 
+05/31-15:51:37.400502  [**] [1:620:1] SCAN Proxy attempt [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.20:3263 -> 128.111.43.98:8080
+05/31-15:51:37.744864  [**] [1:615:2] SCAN Proxy attempt [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.20:4382 -> 128.111.43.98:1080
+05/31-15:51:37.800691  [**] [1:618:1] INFO - Possible Squid Scan [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.20:4530 -> 128.111.43.98:3128
+05/31-15:51:37.895694  [**] [111:12:1] spp_stream4: NMAP FINGERPRINT (stateful) detection [**] {TCP} 128.111.49.20:47774 -> 128.111.43.98:21
+05/31-15:51:37.897978  [**] [1:628:1] SCAN nmap TCP [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.20:47776 -> 128.111.43.98:1
+05/31-15:51:37.897983  [**] [111:10:1] spp_stream4: STEALTH ACTIVITY (nmap XMAS scan) detection [**] {TCP} 128.111.49.20:47777 -> 128.111.43.98:1
+05/31-15:51:40.659595  [**] [111:9:1] spp_stream4: STEALTH ACTIVITY (NULL scan) detection [**] {TCP} 128.111.49.20:47772 -> 128.111.43.98:21
+05/31-15:51:42.491964  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.20: 1557 connections across 1 hosts: TCP(1557), UDP(0) STEALTH [**] 
+05/31-15:52:56.590063  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.20: 1 connections across 1 hosts: TCP(1), UDP(0) [**] 
+05/31-15:53:00.076772  [**] [1:718:3] TELNET login incorrect [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.43.98:23 -> 128.111.43.90:32912
+05/31-15:56:20.691073  [**] [1:587:2] RPC portmap request status [**] [Classification: Decode of an RPC Query] [Priority: 2] {UDP} 128.111.49.20:925 -> 128.111.43.98:111
+05/31-15:56:20.752438  [**] [1:1282:1] RPC EXPLOIT statdx [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {UDP} 128.111.49.20:926 -> 128.111.43.98:975
+05/31-15:56:20.791086  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.20: 1 connections across 1 hosts: TCP(1), UDP(0) [**] 
+05/31-15:56:23.832123  [**] [1:348:1] FTP EXPLOIT wu-ftpd 2.6.0 [**] [Classification: Attempted User Privilege Gain] [Priority: 1] {TCP} 128.111.49.20:2159 -> 128.111.43.98:21
+05/31-15:56:23.942506  [**] [1:345:2] FTP EXPLOIT wu-ftpd 2.6.0 site exec format string overflow generic [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.20:2159 -> 128.111.43.98:21
+05/31-15:56:23.959592  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2159 -> 128.111.43.98:21
+05/31-15:56:23.979688  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2159 -> 128.111.43.98:21
+05/31-15:56:23.999355  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2159 -> 128.111.43.98:21
+05/31-15:56:24.099641  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2159 -> 128.111.43.98:21
+05/31-15:56:24.179300  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2159 -> 128.111.43.98:21
+05/31-15:56:24.199570  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2159 -> 128.111.43.98:21
+05/31-15:56:24.369222  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2159 -> 128.111.43.98:21
+05/31-15:56:24.389701  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2159 -> 128.111.43.98:21
+05/31-15:56:24.409334  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2159 -> 128.111.43.98:21
+05/31-15:56:24.599337  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2159 -> 128.111.43.98:21
+05/31-15:56:24.809553  [**] [1:346:2] FTP EXPLOIT wu-ftpd 2.6.0 site exec format string check [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.20:2159 -> 128.111.43.98:21
+05/31-15:56:24.866315  [**] [1:346:2] FTP EXPLOIT wu-ftpd 2.6.0 site exec format string check [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.20:2159 -> 128.111.43.98:21
+05/31-15:56:50.602962  [**] [1:905:1] WEB-COLDFUSION application.cfm access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.21:14896 -> 128.111.43.98:80
+05/31-15:56:51.104910  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 53080 from 128.111.49.243 (STEALTH) [**] 
+05/31-15:56:51.105007  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.20: TOTAL time(283s) hosts(1) TCP(1559) UDP(0) STEALTH [**] 
+05/31-15:56:51.993551  [**] [1:299:1] EXPLOIT imap x86 linux overflow [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.141:53481 -> 128.111.43.98:143
+05/31-15:56:52.793784  [**] [1:1154:1] WEB-MISC Domino names.nsf access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.194:25056 -> 128.111.43.98:80
+05/31-15:56:53.013497  [**] [1:310:2] EXPLOIT x86 windows MailMax overflow [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.153:21916 -> 128.111.43.98:25
+05/31-15:56:53.733601  [**] [1:1370:1] WEB-ATTACKS /etc/inetd.conf access [**] [Classification: access to a potentially vulnerable web application] [Priority: 2] {TCP} 128.111.49.195:15052 -> 128.111.43.98:80
+05/31-15:56:54.414468  [**] [1:1386:3] MS-SQL/SMB raiserror possible buffer overflow [**] [Classification: Attempted User Privilege Gain] [Priority: 1] {TCP} 128.111.49.58:35592 -> 128.111.43.98:139
+05/31-15:56:55.294538  [**] [1:1089:2] WEB-MISC shopping cart directory traversal [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.37:10395 -> 128.111.43.98:80
+05/31-15:56:58.494359  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 1217 from 128.111.49.198 (STEALTH) [**] 
+05/31-15:56:58.494519  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.243: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**] 
+05/31-15:57:02.165726  [**] [1:499:1] MISC Large ICMP Packet [**] [Classification: Potentially Bad Traffic] [Priority: 2] {ICMP} 128.111.49.104 -> 128.111.43.98
+05/31-15:57:02.706003  [**] [1:1360:1] WEB-ATTACKS netcat command attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.31:16805 -> 128.111.43.98:80
+05/31-15:57:02.985949  [**] [1:289:1] EXPLOIT pop3 x86 sco overflow [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.83:33074 -> 128.111.43.98:110
+05/31-15:57:03.171454  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.243: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**] 
+05/31-15:57:03.171608  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.198: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**] 
+05/31-15:57:03.856937  [**] [1:1336:1] WEB-ATTACKS chmod command attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.80:15793 -> 128.111.43.98:80
+05/31-15:57:04.185655  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 25 from 128.111.49.36 (STEALTH) [**] 
+05/31-15:57:06.126301  [**] [1:1088:3] WEB-MISC eXtropia webstore directory traversal [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.207:21013 -> 128.111.43.98:80
+05/31-15:57:06.204049  [**] [1:348:1] FTP EXPLOIT wu-ftpd 2.6.0 [**] [Classification: Attempted User Privilege Gain] [Priority: 1] {TCP} 128.111.49.20:2609 -> 128.111.43.98:21
+05/31-15:57:06.216322  [**] [1:345:2] FTP EXPLOIT wu-ftpd 2.6.0 site exec format string overflow generic [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.20:2609 -> 128.111.43.98:21
+05/31-15:57:06.225536  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2609 -> 128.111.43.98:21
+05/31-15:57:06.235991  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2609 -> 128.111.43.98:21
+05/31-15:57:06.245929  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2609 -> 128.111.43.98:21
+05/31-15:57:06.265816  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2609 -> 128.111.43.98:21
+05/31-15:57:06.276590  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2609 -> 128.111.43.98:21
+05/31-15:57:06.315465  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2609 -> 128.111.43.98:21
+05/31-15:57:06.505469  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2609 -> 128.111.43.98:21
+05/31-15:57:06.595532  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2609 -> 128.111.43.98:21
+05/31-15:57:06.635497  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2609 -> 128.111.43.98:21
+05/31-15:57:06.675811  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:2609 -> 128.111.43.98:21
+05/31-15:57:06.695775  [**] [1:346:2] FTP EXPLOIT wu-ftpd 2.6.0 site exec format string check [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.20:2609 -> 128.111.43.98:21
+05/31-15:57:06.856300  [**] [1:346:2] FTP EXPLOIT wu-ftpd 2.6.0 site exec format string check [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.20:2609 -> 128.111.43.98:21
+05/31-15:57:07.016344  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 5895 from 128.111.49.42 (STEALTH) [**] 
+05/31-15:57:07.016436  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.198: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**] 
+05/31-15:57:07.114323  [**] [1:346:2] FTP EXPLOIT wu-ftpd 2.6.0 site exec format string check [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.20:2609 -> 128.111.43.98:21
+05/31-15:57:08.286374  [**] [1:578:2] RPC portmap request cmsd [**] [Classification: Decode of an RPC Query] [Priority: 2] {UDP} 128.111.49.167:30265 -> 128.111.43.98:111
+05/31-15:57:09.805662  [**] [1:1302:1] WEB-MISC console.exe access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.12:14631 -> 128.111.43.98:80
+05/31-15:57:10.446799  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 4822 from 128.111.49.178 (STEALTH) [**] 
+05/31-15:57:10.446967  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.36: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**] 
+05/31-15:57:11.016609  [**] [1:611:2] RSERVICES rlogin login failure [**] [Classification: Unsuccessful User Privilege Gain] [Priority: 1] {TCP} 128.111.49.156:28594 -> 128.111.43.98:64954
+05/31-15:57:11.316982  [**] [1:906:1] WEB-COLDFUSION getfile.cfm access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.252:39877 -> 128.111.43.98:80
+05/31-15:57:11.456794  [**] [1:351:1] FTP EXPLOIT x86 linux overflow [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.226:55761 -> 128.111.43.98:21
+05/31-15:57:12.796974  [**] [1:662:1] SMTP sendmail 5.5.5 exploit [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.216:40629 -> 128.111.43.98:25
+05/31-15:57:13.316986  [**] [1:258:1] DNS EXPLOIT named 8.2->8.2.1 [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.26:4474 -> 128.111.43.98:53
+05/31-15:57:14.146661  [**] [1:966:2] WEB-FRONTPAGE fourdots request [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.105:62679 -> 128.111.43.98:80
+05/31-15:57:15.076689  [**] [1:856:1] WEB-CGI environ.cgi access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.185:3890 -> 128.111.43.98:80
+05/31-15:57:15.897789  [**] [1:1180:3] WEB-MISC get32.exe access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.184:30806 -> 128.111.43.98:80
+05/31-15:57:16.536766  [**] [1:856:1] WEB-CGI environ.cgi access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.253:34949 -> 128.111.43.98:80
+05/31-15:57:16.796954  [**] [1:314:5] EXPLOIT named tsig overflow attempt [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {UDP} 128.111.49.176:185 -> 128.111.43.98:53
+05/31-15:57:17.597468  [**] [1:316:1] EXPLOIT x86 linux mountd overflow [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {UDP} 128.111.49.236:29338 -> 128.111.43.98:635
+05/31-15:57:17.717514  [**] [1:1060:2] WEB-MISC availablemedia attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.15:39564 -> 128.111.43.98:80
+05/31-15:57:20.408038  [**] [1:854:2] WEB-CGI classifieds.cgi access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.223:59007 -> 128.111.43.98:80
+05/31-15:57:20.957419  [**] [1:710:2] TELNET EZsetup account attempt [**] [Classification: An attempted login using a suspicious username was detected] [Priority: 2] {TCP} 128.111.49.221:38071 -> 128.111.43.98:23
+05/31-15:57:21.828941  [**] [1:485:2] ICMP Destination Unreachable (Communication Administratively Prohibited) [**] [Classification: Misc activity] [Priority: 3] {ICMP} 128.111.49.13 -> 128.111.43.98
+05/31-15:57:22.848132  [**] [1:346:2] FTP EXPLOIT wu-ftpd 2.6.0 site exec format string check [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.21:4645 -> 128.111.43.98:21
+05/31-15:57:23.328291  [**] [1:1361:1] WEB-ATTACKS nmap command attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.126:56607 -> 128.111.43.98:80
+05/31-15:57:24.317571  [**] [1:599:3] RPC portmap listing [**] [Classification: Decode of an RPC Query] [Priority: 2] {TCP} 128.111.49.96:51773 -> 128.111.43.98:32771
+05/31-15:57:27.718580  [**] [1:310:2] EXPLOIT x86 windows MailMax overflow [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.217:16460 -> 128.111.43.98:25
+05/31-15:57:27.859365  [**] [1:1386:3] MS-SQL/SMB raiserror possible buffer overflow [**] [Classification: Attempted User Privilege Gain] [Priority: 1] {TCP} 128.111.49.225:16583 -> 128.111.43.98:139
+05/31-15:57:29.208359  [**] [1:1089:2] WEB-MISC shopping cart directory traversal [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.227:58980 -> 128.111.43.98:80
+05/31-15:57:32.359154  [**] [1:837:1] WEB-CGI uploader.exe access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.203:27264 -> 128.111.43.98:80
+05/31-15:57:35.029389  [**] [1:901:1] WEB-CGI webspirs access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.127:33046 -> 128.111.43.98:80
+05/31-15:57:36.029243  [**] [1:357:2] FTP piss scan [**] [Classification: An attempted login using a suspicious username was detected] [Priority: 2] {TCP} 128.111.49.124:29919 -> 128.111.43.98:21
+05/31-15:57:37.340080  [**] [1:712:1] TELNET ld_library_path [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.50:53851 -> 128.111.43.98:23
+05/31-15:57:38.550487  [**] [1:1234:1] WEB-MISC VirusWall FtpSaveCSP access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.182:41296 -> 128.111.43.98:80
+05/31-15:57:39.069299  [**] [1:685:3] MS-SQL sp_adduser - database user creation [**] [Classification: Attempted User Privilege Gain] [Priority: 1] {TCP} 128.111.49.149:54447 -> 128.111.43.98:1433
+05/31-15:57:39.469757  [**] [1:1090:2] WEB-MISC Allaire Pro Web Shell attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.222:61159 -> 128.111.43.98:80
+05/31-15:57:39.740566  [**] [1:1056:2] WEB-MISC tomcat view source attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.163:2734 -> 128.111.43.98:80
+05/31-15:57:40.389834  [**] [1:945:2] WEB-FRONTPAGE fpadmin.htm access [**] [Classification: access to a potentially vulnerable web application] [Priority: 2] {TCP} 128.111.49.248:54987 -> 128.111.43.98:80
+05/31-15:57:40.800354  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.36: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**] 
+05/31-15:57:40.800503  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.42: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**] 
+05/31-15:57:40.800617  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.178: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**] 
+05/31-15:57:41.930467  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 5700 from 128.111.49.39 (STEALTH) [**] 
+05/31-15:57:42.851001  [**] [1:826:2] WEB-CGI htmlscript access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.70:921 -> 128.111.43.98:80
+05/31-15:57:43.160527  [**] [1:1363:1] WEB-ATTACKS X application to remote host attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.84:32052 -> 128.111.43.98:80
+05/31-15:57:43.500237  [**] [1:818:2] WEB-CGI dcforum.cgi access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.80:35453 -> 128.111.43.98:80
+05/31-15:57:43.841008  [**] [1:1246:4] WEB-FRONTPAGE rad overflow attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.251:34634 -> 128.111.43.98:80
+05/31-15:57:44.121074  [**] [1:518:2] TFTP Write [**] [Classification: Potentially Bad Traffic] [Priority: 2] {UDP} 128.111.49.82:51917 -> 128.111.43.98:69
+05/31-15:57:44.326249  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.42: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**] 
+05/31-15:57:44.326339  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.178: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**] 
+05/31-15:57:44.910369  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 80 from 128.111.49.208 (STEALTH) [**] 
+05/31-15:57:45.350484  [**] [1:1217:1] WEB-MISC plusmail access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.61:54917 -> 128.111.43.98:80
+05/31-15:57:46.171456  [**] [1:1086:2] WEB-MISC PHP strings overflow [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.69:54081 -> 128.111.43.98:80
+05/31-15:57:46.901828  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 25634 from 128.111.49.201 (STEALTH) [**] 
+05/31-15:57:46.901982  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.39: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**] 
+05/31-15:57:47.631940  [**] [1:1247:3] WEB-FRONTPAGE rad overflow attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.145:52410 -> 128.111.43.98:80
+05/31-15:57:48.081469  [**] [1:674:3] MS-SQL xp_displayparamstmt possible buffer overflow [**] [Classification: Attempted User Privilege Gain] [Priority: 1] {TCP} 128.111.49.135:35633 -> 128.111.43.98:1433
+05/31-15:57:48.680909  [**] [1:1397:1] WEB-CGI wayboard attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.102:60354 -> 128.111.43.98:80
+05/31-15:57:49.211654  [**] [1:693:2] MS-SQL shellcode attempt [**] [Classification: Executable code was detected] [Priority: 1] {TCP} 128.111.49.201:4960 -> 128.111.43.98:1433
+05/31-15:57:49.602044  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.176:20823 -> 128.111.43.98:21
+05/31-15:57:50.131798  [**] [1:1155:1] WEB-MISC Ecommerce checks.txt access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.197:59794 -> 128.111.43.98:80
+05/31-15:57:50.742130  [**] [1:1241:1] WEB-MISC SWEditServlet directory traversal attempt [**] [Classification: Attempted User Privilege Gain] [Priority: 1] {TCP} 128.111.49.232:2579 -> 128.111.43.98:80
+05/31-15:57:50.962476  [**] [1:539:1] NETBIOS Samba clientaccess [**] [Classification: Not Suspicious Traffic] [Priority: 3] {TCP} 128.111.49.218:39627 -> 128.111.43.98:139
+05/31-15:57:54.602282  [**] [1:670:1] SMTP sendmail 8.6.9 exploit [**] [Classification: Attempted User Privilege Gain] [Priority: 1] {TCP} 128.111.49.221:32748 -> 128.111.43.98:25
+05/31-15:57:55.202466  [**] [1:239:1] DDOS shaft handler to agent [**] [Classification: Attempted Denial of Service] [Priority: 2] {UDP} 128.111.49.135:62490 -> 128.111.43.98:18753
+05/31-15:57:56.072765  [**] [1:1307:1] WEB-MISC store.cgi access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.253:22726 -> 128.111.43.98:80
+05/31-15:57:57.373030  [**] [1:954:2] WEB-FRONTPAGE form_results.htm access [**] [Classification: access to a potentially vulnerable web application] [Priority: 2] {TCP} 128.111.49.137:25744 -> 128.111.43.98:80
+05/31-15:57:58.002522  [**] [1:253:2] DNS SPOOF query response PTR with TTL: 1 min. and no authority [**] [Classification: Potentially Bad Traffic] [Priority: 2] {UDP} 128.111.49.59:53 -> 128.111.43.98:31014
+05/31-15:57:58.122930  [**] [1:1224:1] WEB-MISC ROADS attempt [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.229:5781 -> 128.111.43.98:80
+05/31-15:57:58.373057  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 55047 from 128.111.49.191 (STEALTH) [**] 
+05/31-15:57:58.373147  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.39: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**] 
+05/31-15:57:58.373265  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.208: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**] 
+05/31-15:57:58.373377  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.201: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**] 
+05/31-15:57:58.823015  [**] [1:857:2] WEB-CGI faxsurvey access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.94:28019 -> 128.111.43.98:80
+05/31-15:57:59.473022  [**] [1:281:2] DOS Ascend Route [**] [Classification: Attempted Denial of Service] [Priority: 2] {UDP} 128.111.49.188:60767 -> 128.111.43.98:9
+05/31-15:57:59.763309  [**] [1:1174:2] WEB-MISC /cgi-bin/jj attempt [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.75:11574 -> 128.111.43.98:80
+05/31-15:58:01.083401  [**] [1:880:1] WEB-CGI LWGate access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.176:55217 -> 128.111.43.98:80
+05/31-15:58:02.363220  [**] [1:944:2] WEB-FRONTPAGE fpremadm.exe access [**] [Classification: access to a potentially vulnerable web application] [Priority: 2] {TCP} 128.111.49.84:7279 -> 128.111.43.98:80
+05/31-15:58:02.774364  [**] [1:499:1] MISC Large ICMP Packet [**] [Classification: Potentially Bad Traffic] [Priority: 2] {ICMP} 128.111.49.100 -> 128.111.43.98
+05/31-15:58:03.453855  [**] [1:1377:4] FTP wu-ftp file completion attempt [ [**] [Classification: Misc Attack] [Priority: 2] {TCP} 128.111.49.210:10253 -> 128.111.43.98:21
+05/31-15:58:04.354010  [**] [1:288:1] EXPLOIT pop3 x86 linux overflow [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.89:33459 -> 128.111.43.98:110
+05/31-15:58:06.344618  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 33328 from 128.111.49.170 (STEALTH) [**] 
+05/31-15:58:06.344720  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.208: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**] 
+05/31-15:58:06.344781  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.201: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**] 
+05/31-15:58:06.344899  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.191: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**] 
+05/31-15:58:07.064375  [**] [1:314:5] EXPLOIT named tsig overflow attempt [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {UDP} 128.111.49.24:56408 -> 128.111.43.98:53
+05/31-15:58:07.925004  [**] [1:993:2] WEB-IIS admin access [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.165:22022 -> 128.111.43.98:80
+05/31-15:58:09.124468  [**] [1:1136:1] WEB-MISC cd.. [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.58:39602 -> 128.111.43.98:80
+05/31-15:58:10.075068  [**] [1:1371:1] WEB-ATTACKS /etc/motd access [**] [Classification: access to a potentially vulnerable web application] [Priority: 2] {TCP} 128.111.49.220:36285 -> 128.111.43.98:80
+05/31-15:58:12.414950  [**] [1:664:2] SMTP sendmail 5.6.4 exploit [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.231:58555 -> 128.111.43.98:25
+05/31-15:58:13.185385  [**] [1:1152:1] WEB-MISC Domino domlog.nsf access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.86:20022 -> 128.111.43.98:80
+05/31-15:58:13.425001  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 35663 from 128.111.49.92 (STEALTH) [**] 
+05/31-15:58:13.425089  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.191: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**] 
+05/31-15:58:13.425209  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.170: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**] 
+05/31-15:58:14.295478  [**] [1:314:5] EXPLOIT named tsig overflow attempt [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {UDP} 128.111.49.157:28829 -> 128.111.43.98:53
+05/31-15:58:15.275365  [**] [1:993:2] WEB-IIS admin access [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.87:13137 -> 128.111.43.98:80
+05/31-15:58:16.085417  [**] [1:499:1] MISC Large ICMP Packet [**] [Classification: Potentially Bad Traffic] [Priority: 2] {ICMP} 128.111.49.158 -> 128.111.43.98
+05/31-15:58:16.565905  [**] [1:1100:2] WEB-MISC L3retriever HTTP Probe [**] [Classification: access to a potentially vulnerable web application] [Priority: 2] {TCP} 128.111.49.70:17565 -> 128.111.43.98:80
+05/31-15:58:17.685193  [**] [1:996:2] WEB-IIS anot.htr access [**] [Classification: access to a potentially vulnerable web application] [Priority: 2] {TCP} 128.111.49.143:36498 -> 128.111.43.98:80
+05/31-15:58:18.285521  [**] [1:927:2] WEB-COLDFUSION settings refresh attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.103:45100 -> 128.111.43.98:80
+05/31-15:58:18.815810  [**] [1:818:2] WEB-CGI dcforum.cgi access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.122:36946 -> 128.111.43.98:80
+05/31-15:58:19.386249  [**] [1:692:3] MS-SQL/SMB shellcode attempt [**] [Classification: Executable code was detected] [Priority: 1] {TCP} 128.111.49.126:33456 -> 128.111.43.98:139
+05/31-15:58:20.476452  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 51046 from 128.111.49.26 (STEALTH) [**] 
+05/31-15:58:20.476542  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.170: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**] 
+05/31-15:58:20.476663  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.92: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**] 
+05/31-15:58:21.326809  [**] [1:524:3] BAD TRAFFIC tcp port 0 traffic [**] [Classification: Misc activity] [Priority: 3] {TCP} 128.111.49.46:20 -> 128.111.43.98:0
+05/31-15:58:21.326916  [**] [1:524:3] BAD TRAFFIC tcp port 0 traffic [**] [Classification: Misc activity] [Priority: 3] {TCP} 128.111.43.98:0 -> 128.111.49.46:20
+05/31-15:58:21.776252  [**] [1:529:1] NETBIOS DOS RFPoison [**] [Classification: Attempted Denial of Service] [Priority: 2] {TCP} 128.111.49.101:40186 -> 128.111.43.98:139
+05/31-15:58:22.405891  [**] [1:524:3] BAD TRAFFIC tcp port 0 traffic [**] [Classification: Misc activity] [Priority: 3] {TCP} 128.111.49.46:20 -> 128.111.43.98:0
+05/31-15:58:22.516428  [**] [1:696:4] MS-SQL/SMB xp_showcolv possible buffer overflow [**] [Classification: Attempted User Privilege Gain] [Priority: 1] {TCP} 128.111.49.197:62460 -> 128.111.43.98:139
+05/31-15:58:23.356348  [**] [1:223:1] DDOS Trin00:DaemontoMaster(PONGdetected) [**] [Classification: Attempted Information Leak] [Priority: 2] {UDP} 128.111.49.193:14298 -> 128.111.43.98:31335
+05/31-15:58:24.106859  [**] [1:1377:4] FTP wu-ftp file completion attempt [ [**] [Classification: Misc Attack] [Priority: 2] {TCP} 128.111.49.204:21199 -> 128.111.43.98:21
+05/31-15:58:24.766925  [**] [1:499:1] MISC Large ICMP Packet [**] [Classification: Potentially Bad Traffic] [Priority: 2] {ICMP} 128.111.49.71 -> 128.111.43.98
+05/31-15:58:25.536435  [**] [1:1242:2] WEB-IIS ISAPI .ida access [**] [Classification: access to a potentially vulnerable web application] [Priority: 2] {TCP} 128.111.49.88:27467 -> 128.111.43.98:80
+05/31-15:58:25.827125  [**] [1:916:2] WEB-COLDFUSION getodbcdsn access [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.166:24551 -> 128.111.43.98:80
+05/31-16:06:53.652708  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.92: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**] 
+05/31-16:06:53.652874  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.26: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**] 
+05/31-16:07:03.217711  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.26: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**] 
+05/31-16:07:17.003980  [**] [1:587:2] RPC portmap request status [**] [Classification: Decode of an RPC Query] [Priority: 2] {UDP} 128.111.49.20:685 -> 128.111.43.98:111
+05/31-16:07:17.007102  [**] [1:1282:1] RPC EXPLOIT statdx [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {UDP} 128.111.49.20:686 -> 128.111.43.98:975
+05/31-16:07:20.062459  [**] [1:348:1] FTP EXPLOIT wu-ftpd 2.6.0 [**] [Classification: Attempted User Privilege Gain] [Priority: 1] {TCP} 128.111.49.20:3564 -> 128.111.43.98:21
+05/31-16:07:20.074945  [**] [1:345:2] FTP EXPLOIT wu-ftpd 2.6.0 site exec format string overflow generic [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.20:3564 -> 128.111.43.98:21
+05/31-16:07:20.085011  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:3564 -> 128.111.43.98:21
+05/31-16:07:20.145508  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:3564 -> 128.111.43.98:21
+05/31-16:07:20.205537  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:3564 -> 128.111.43.98:21
+05/31-16:07:20.225178  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:3564 -> 128.111.43.98:21
+05/31-16:07:20.325472  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:3564 -> 128.111.43.98:21
+05/31-16:07:20.385546  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:3564 -> 128.111.43.98:21
+05/31-16:07:20.405459  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:3564 -> 128.111.43.98:21
+05/31-16:07:20.425315  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:3564 -> 128.111.43.98:21
+05/31-16:07:20.465651  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:3564 -> 128.111.43.98:21
+05/31-16:07:20.655144  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:3564 -> 128.111.43.98:21
+05/31-16:07:20.745685  [**] [1:346:2] FTP EXPLOIT wu-ftpd 2.6.0 site exec format string check [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.20:3564 -> 128.111.43.98:21
+05/31-16:07:20.785462  [**] [1:346:2] FTP EXPLOIT wu-ftpd 2.6.0 site exec format string check [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.20:3564 -> 128.111.43.98:21
+05/31-16:07:31.736246  [**] [1:1149:3] WEB-MISC count.cgi access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.103:9434 -> 128.111.43.98:80
+05/31-16:07:32.486937  [**] [1:1011:2] WEB-IIS exec-src access [**] [Classification: access to a potentially vulnerable web application] [Priority: 2] {TCP} 128.111.49.131:16204 -> 128.111.43.98:80
+05/31-16:07:33.007798  [**] [1:974:3] WEB-IIS .... access [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.43:16775 -> 128.111.43.98:80
+05/31-16:07:33.367223  [**] [1:1141:2] WEB-MISC handler access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.7:41899 -> 128.111.43.98:80
+05/31-16:07:33.487327  [**] [1:235:1] DDOS Trin00 Attacker to Master default mdie password [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.68:47966 -> 128.111.43.98:27665
+05/31-16:07:33.728002  [**] [1:337:2] FTP EXPLOIT aix overflow [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.214:20675 -> 128.111.43.98:21
+05/31-16:07:34.277191  [**] [1:714:1] TELNET resolv_host_conf [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.226:14879 -> 128.111.43.98:23
+05/31-16:07:34.827361  [**] [1:295:1] EXPLOIT imap x86 linux overflow [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.234:45365 -> 128.111.43.98:143
+05/31-16:07:36.447666  [**] [1:1067:2] WEB-MISC net attempt [**] [Classification: access to a potentially vulnerable web application] [Priority: 2] {TCP} 128.111.49.108:59104 -> 128.111.43.98:80
+05/31-16:07:38.097897  [**] [1:993:2] WEB-IIS admin access [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.165:60422 -> 128.111.43.98:80
+05/31-16:07:38.497907  [**] [1:302:1] EXPLOIT redhat 7.0 lprd overflow [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.167:48309 -> 128.111.43.98:515
+05/31-16:07:39.158074  [**] [1:1404:1] WEB-MISC showcode access [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.57:4027 -> 128.111.43.98:80
+05/31-16:07:39.978772  [**] [1:499:1] MISC Large ICMP Packet [**] [Classification: Potentially Bad Traffic] [Priority: 2] {ICMP} 128.111.49.73 -> 128.111.43.98
+05/31-16:07:41.378404  [**] [1:1283:4] WEB-IIS outlook web dos [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.130:50079 -> 128.111.43.98:80
+05/31-16:07:41.969071  [**] [1:1117:2] WEB-MISC Lotus EditDoc attempt [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.57:19119 -> 128.111.43.98:80
+05/31-16:07:42.928745  [**] [1:833:2] WEB-CGI rguest.exe access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.89:42060 -> 128.111.43.98:80
+05/31-16:07:44.799680  [**] [1:1148:1] WEB-MISC Ecommerce import.txt access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.64:23130 -> 128.111.43.98:80
+05/31-16:07:45.188922  [**] [1:1100:2] WEB-MISC L3retriever HTTP Probe [**] [Classification: access to a potentially vulnerable web application] [Priority: 2] {TCP} 128.111.49.75:13742 -> 128.111.43.98:80
+05/31-16:07:46.319249  [**] [1:979:3] WEB-IIS ASP contents view [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.141:49955 -> 128.111.43.98:80
+05/31-16:07:46.689137  [**] [1:913:2] WEB-COLDFUSION cfappman access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.98:50299 -> 128.111.43.98:80
+05/31-16:07:48.829910  [**] [1:1287:2] WEB-IIS scripts access [**] [Classification: access to a potentially vulnerable web application] [Priority: 2] {TCP} 128.111.49.46:16567 -> 128.111.43.98:80
+05/31-16:07:49.900250  [**] [1:1130:1] WEB-MISC .wwwacl access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.72:38528 -> 128.111.43.98:80
+05/31-16:07:50.300090  [**] [1:1377:4] FTP wu-ftp file completion attempt [ [**] [Classification: Misc Attack] [Priority: 2] {TCP} 128.111.49.183:34134 -> 128.111.43.98:21
+05/31-16:07:51.249995  [**] [1:1160:3] WEB-MISC netscape dir index wp [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.148:61146 -> 128.111.43.98:80
+05/31-16:07:52.190158  [**] [1:1340:1] WEB-ATTACKS tftp command attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.172:33949 -> 128.111.43.98:80
+05/31-16:07:52.610646  [**] [1:899:2] WEB-CGI Amaya templates sendtemp.pl directory traversal attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.119:28169 -> 128.111.43.98:80
+05/31-16:07:53.519973  [**] [1:616:1] SCAN ident version [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.218:39671 -> 128.111.43.98:113
+05/31-16:07:54.531050  [**] [1:1181:2] WEB-MISC Annex Terminal DOS attempt [**] [Classification: Attempted Denial of Service] [Priority: 2] {TCP} 128.111.49.170:44671 -> 128.111.43.98:80
+05/31-16:07:54.830206  [**] [1:1300:1] WEB-MISC admin.php file upload attempt [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.139:38859 -> 128.111.43.98:80
+05/31-16:07:55.030166  [**] [1:1406:1] WEB-CGI agora.cgi access [**] [Classification: access to a potentially vulnerable web application] [Priority: 2] {TCP} 128.111.49.26:17842 -> 128.111.43.98:80
+05/31-16:07:55.931484  [**] [1:499:1] MISC Large ICMP Packet [**] [Classification: Potentially Bad Traffic] [Priority: 2] {ICMP} 128.111.49.187 -> 128.111.43.98
+05/31-16:07:56.380615  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 80 from 128.111.49.96 (STEALTH) [**] 
+05/31-16:07:56.831400  [**] [1:1234:1] WEB-MISC VirusWall FtpSaveCSP access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.86:36842 -> 128.111.43.98:80
+05/31-16:07:56.990790  [**] [1:1377:4] FTP wu-ftp file completion attempt [ [**] [Classification: Misc Attack] [Priority: 2] {TCP} 128.111.49.41:42840 -> 128.111.43.98:21
+05/31-16:07:57.651035  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 40811 from 128.111.49.86 (STEALTH) [**] 
+05/31-16:07:58.100951  [**] [1:1155:1] WEB-MISC Ecommerce checks.txt access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.239:57809 -> 128.111.43.98:80
+05/31-16:07:58.330959  [**] [1:1083:2] WEB-MISC unify eWave ServletExec DOS [**] [Classification: access to a potentially vulnerable web application] [Priority: 2] {TCP} 128.111.49.250:42834 -> 128.111.43.98:80
+05/31-16:07:58.611614  [**] [1:1261:1] EXPLOIT aix pdnsd overflow [**] [Classification: Attempted User Privilege Gain] [Priority: 1] {TCP} 128.111.49.79:7067 -> 128.111.43.98:4242
+05/31-16:07:59.221662  [**] [1:262:1] DNS EXPLOIT x86 linux [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.82:61098 -> 128.111.43.98:53
+05/31-16:07:59.710887  [**] [1:1160:3] WEB-MISC netscape dir index wp [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.199:44664 -> 128.111.43.98:80
+05/31-16:07:59.902405  [**] [1:348:1] FTP EXPLOIT wu-ftpd 2.6.0 [**] [Classification: Attempted User Privilege Gain] [Priority: 1] {TCP} 128.111.49.20:1144 -> 128.111.43.98:21
+05/31-16:07:59.910254  [**] [1:345:2] FTP EXPLOIT wu-ftpd 2.6.0 site exec format string overflow generic [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.20:1144 -> 128.111.43.98:21
+05/31-16:07:59.921327  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:1144 -> 128.111.43.98:21
+05/31-16:08:00.001353  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:1144 -> 128.111.43.98:21
+05/31-16:08:00.061424  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:1144 -> 128.111.43.98:21
+05/31-16:08:00.080920  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:1144 -> 128.111.43.98:21
+05/31-16:08:00.111316  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:1144 -> 128.111.43.98:21
+05/31-16:08:00.161756  [**] [1:586:2] RPC portmap request selection_svc [**] [Classification: Decode of an RPC Query] [Priority: 2] {UDP} 128.111.49.94:5992 -> 128.111.43.98:111
+05/31-16:08:00.211023  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:1144 -> 128.111.43.98:21
+05/31-16:08:00.241046  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:1144 -> 128.111.43.98:21
+05/31-16:08:00.271021  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:1144 -> 128.111.43.98:21
+05/31-16:08:00.291078  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:1144 -> 128.111.43.98:21
+05/31-16:08:00.321157  [**] [1:361:2] FTP site exec [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.20:1144 -> 128.111.43.98:21
+05/31-16:08:00.421085  [**] [1:346:2] FTP EXPLOIT wu-ftpd 2.6.0 site exec format string check [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.20:1144 -> 128.111.43.98:21
+05/31-16:08:00.451019  [**] [1:346:2] FTP EXPLOIT wu-ftpd 2.6.0 site exec format string check [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.20:1144 -> 128.111.43.98:21
+05/31-16:08:00.521077  [**] [1:228:1] DDOS TFN client command BE [**] [Classification: Attempted Denial of Service] [Priority: 2] {ICMP} 128.111.49.226 -> 128.111.43.98
+05/31-16:08:01.221362  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 19498 from 128.111.49.189 (STEALTH) [**] 
+05/31-16:08:01.221546  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.96: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**] 
+05/31-16:08:01.221666  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.86: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**] 
+05/31-16:08:01.451523  [**] [1:804:2] WEB-CGI SWSoft ASPSeek Overflow attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.207:52253 -> 128.111.43.98:80
+05/31-16:08:02.441697  [**] [1:988:2] WEB-IIS SAM Attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.172:35816 -> 128.111.43.98:80
+05/31-16:08:03.172219  [**] [1:303:6] EXPLOIT named tsig overflow attempt [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.113:11727 -> 128.111.43.98:53
+05/31-16:08:03.731592  [**] [1:815:2] WEB-CGI websendmail access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.195:39006 -> 128.111.43.98:80
+05/31-16:08:04.602187  [**] [1:1154:1] WEB-MISC Domino names.nsf access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.35:43318 -> 128.111.43.98:80
+05/31-16:08:06.062331  [**] [1:682:4] MS-SQL xp_enumresultset possible buffer overflow [**] [Classification: Attempted User Privilege Gain] [Priority: 1] {TCP} 128.111.49.53:14291 -> 128.111.43.98:1433
+05/31-16:08:06.342793  [**] [1:301:1] EXPLOIT LPRng overflow [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.238:15505 -> 128.111.43.98:515
+05/31-16:08:07.272372  [**] [1:851:1] WEB-CGI files.pl access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.3:48009 -> 128.111.43.98:80
+05/31-16:08:07.711974  [**] [1:1269:2] RPC portmap request rexd [**] [Classification: Decode of an RPC Query] [Priority: 2] {TCP} 128.111.49.248:25256 -> 128.111.43.98:111
+05/31-16:08:08.242510  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.96: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**] 
+05/31-16:08:08.242600  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.86: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**] 
+05/31-16:08:08.242748  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.189: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**] 
+05/31-16:08:08.242281  [**] [1:526:4] BAD TRAFFIC data in TCP SYN packet [**] [Classification: Misc activity] [Priority: 3] {TCP} 128.111.49.153:1565 -> 128.111.43.98:8080
+05/31-16:08:09.112704  [**] [1:665:1] SMTP sendmail 5.6.5 exploit [**] [Classification: Attempted User Privilege Gain] [Priority: 1] {TCP} 128.111.49.7:51301 -> 128.111.43.98:25
+05/31-16:08:10.142756  [**] [1:1097:1] WEB-MISC Talentsoft Web+ exploit attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.140:62673 -> 128.111.43.98:80
+05/31-16:08:10.442328  [**] [1:1001:2] WEB-MISC carbo.dll access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.18:44812 -> 128.111.43.98:80
+05/31-16:08:11.072172  [**] [1:221:1] DDOS TFN Probe [**] [Classification: Attempted Information Leak] [Priority: 2] {ICMP} 128.111.49.43 -> 128.111.43.98
+05/31-16:08:11.442777  [**] [1:1020:3] WEB-IIS isc attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.105:61071 -> 128.111.43.98:80
+05/31-16:08:12.173499  [**] [1:337:2] FTP EXPLOIT aix overflow [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 128.111.49.132:57479 -> 128.111.43.98:21
+05/31-16:08:12.933309  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.189: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**] 
+05/31-16:08:12.933091  [**] [1:526:4] BAD TRAFFIC data in TCP SYN packet [**] [Classification: Misc activity] [Priority: 3] {TCP} 128.111.49.97:2162 -> 128.111.43.98:15104
+05/31-16:08:13.322992  [**] [1:1214:1] WEB-MISC intranet access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.216:46838 -> 128.111.43.98:80
+05/31-16:08:13.783392  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 21347 from 128.111.49.136 (STEALTH) [**] 
+05/31-16:08:14.523349  [**] [1:505:1] MISC Insecure TIMBUKTU Password [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.49.136:63613 -> 128.111.43.98:1417
+05/31-16:08:15.963812  [**] [1:1275:2] RPC portmap request yppasswd [**] [Classification: Decode of an RPC Query] [Priority: 2] {TCP} 128.111.49.66:46966 -> 128.111.43.98:111
+05/31-16:08:16.343635  [**] [1:826:2] WEB-CGI htmlscript access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.252:16365 -> 128.111.43.98:80
+05/31-16:08:17.693846  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 20860 from 128.111.49.102 (STEALTH) [**] 
+05/31-16:08:17.694014  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.136: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**] 
+05/31-16:08:18.583594  [**] [1:467:1] ICMP Nemesis v1.1 Echo [**] [Classification: Attempted Information Leak] [Priority: 2] {ICMP} 128.111.49.242 -> 128.111.43.98
+05/31-16:08:19.533393  [**] [1:1105:1] WEB-MISC BigBrother access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.97:33530 -> 128.111.43.98:80
+05/31-16:08:20.514384  [**] [1:1380:1] WEB-IIS cross-site scripting attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.241:31615 -> 128.111.43.98:80
+05/31-16:08:20.744816  [**] [1:1291:1] WEB-MISC sml3com access [**] [Classification: Attempted Denial of Service] [Priority: 2] {TCP} 128.111.49.159:27113 -> 128.111.43.98:80
+05/31-16:08:21.555132  [**] [1:1246:4] WEB-FRONTPAGE rad overflow attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.230:18755 -> 128.111.43.98:80
+05/31-16:08:22.034856  [**] [1:1343:1] WEB-ATTACKS /usr/bin/cc command attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.235:33572 -> 128.111.43.98:80
+05/31-16:08:22.684682  [**] [1:1130:1] WEB-MISC .wwwacl access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.228:60706 -> 128.111.43.98:80
+05/31-16:08:23.394636  [**] [1:465:1] ICMP ISS Pinger [**] [Classification: Attempted Information Leak] [Priority: 2] {ICMP} 128.111.49.142 -> 128.111.43.98
+05/31-16:08:23.784652  [**] [1:1012:4] WEB-IIS fpcount attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.208:64752 -> 128.111.43.98:80
+05/31-16:08:23.945430  [**] [1:904:1] WEB-COLDFUSION exampleapp application.cfm [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.116:37528 -> 128.111.43.98:80
+05/31-16:08:24.985576  [**] [1:1356:1] WEB-ATTACKS perl execution attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.247:52269 -> 128.111.43.98:80
+05/31-16:08:26.475123  [**] [1:1007:2] WEB-IIS cross-site scripting attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.154:45381 -> 128.111.43.98:80
+05/31-16:08:27.654502  [**] [1:875:2] WEB-CGI win-c-sample.exe access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.146:43666 -> 128.111.43.98:80
+05/31-16:08:28.425548  [**] [1:986:2] WEB-IIS MSProxy access [**] [Classification: access to a potentially vulnerable web application] [Priority: 2] {TCP} 128.111.49.246:48281 -> 128.111.43.98:80
+05/31-16:08:30.125429  [**] [100:1:1] spp_portscan: PORTSCAN DETECTED to port 12313 from 128.111.49.221 (STEALTH) [**] 
+05/31-16:08:30.125539  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.136: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**] 
+05/31-16:08:30.125662  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.102: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**] 
+05/31-16:08:30.695335  [**] [1:699:4] MS-SQL xp_printstatements possible buffer overflow [**] [Classification: Attempted User Privilege Gain] [Priority: 1] {TCP} 128.111.49.190:2795 -> 128.111.43.98:1433
+05/31-16:08:31.815540  [**] [1:326:3] FINGER remote command ; execution attempt [**] [Classification: Attempted User Privilege Gain] [Priority: 1] {TCP} 128.111.49.107:19126 -> 128.111.43.98:79
+05/31-16:08:32.795548  [**] [1:1185:2] WEB-MISC bizdbsearch access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.39:25446 -> 128.111.43.98:80
+05/31-16:08:33.225903  [**] [1:659:1] SMTP expn decode [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.221:53934 -> 128.111.43.98:25
+05/31-16:08:33.294113  [**] [1:498:2] ATTACK RESPONSES id check returned root [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 128.111.43.98:21 -> 128.111.49.20:1144
+05/31-16:08:34.045706  [**] [1:1323:1] EXPLOIT rwhoisd format string attempt [**] [Classification: Misc Attack] [Priority: 2] {TCP} 128.111.49.174:11775 -> 128.111.43.98:4321
+05/31-16:08:35.556156  [**] [1:1304:2] WEB-MISC txt2html access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.189:47566 -> 128.111.43.98:80
+05/31-16:08:36.316869  [**] [1:1270:3] RPC portmap request rstatd [**] [Classification: Decode of an RPC Query] [Priority: 2] {TCP} 128.111.49.107:24786 -> 128.111.43.98:111
+05/31-16:08:37.555728  [**] [1:245:1] DDOS mstream handler ping to agent [**] [Classification: Attempted Denial of Service] [Priority: 2] {UDP} 128.111.49.19:42524 -> 128.111.43.98:10498
+05/31-16:08:37.946581  [**] [1:1247:3] WEB-FRONTPAGE rad overflow attempt [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 128.111.49.8:22243 -> 128.111.43.98:80
+05/31-16:08:38.246209  [**] [1:1107:1] WEB-MISC ftp.pl access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 128.111.49.251:48186 -> 128.111.43.98:80
+05/31-16:09:07.165700  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.102: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**] 
+05/31-16:09:07.165870  [**] [100:2:1] spp_portscan: portscan status from 128.111.49.221: 1 connections across 1 hosts: TCP(1), UDP(0) STEALTH [**] 
+05/31-16:09:51.833646  [**] [100:3:1] spp_portscan: End of portscan from 128.111.49.221: TOTAL time(0s) hosts(1) TCP(1) UDP(0) STEALTH [**] 

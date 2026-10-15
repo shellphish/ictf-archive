@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+    <meta http-equiv="Content-Type" content=
+    "text/html; charset=iso-8859-1">
+
+    <title>CS 290I Network Security and Intrusion Detection - Blue
+    Team Report</title>
+  </head>
+
+  <body>
+    <h1>Blue Team Report</h1>
+
+    <h2>Team/Subgroup</h2>
+
+    <p>Group Name: COPPOLA</p>
+
+    <table>
+      <tr>
+        <td><b>NAME</b></td>
+
+        <td><b>email</b></td>
+
+        <td><b>testbed handle (original/war)</b></td>
+      </tr>
+
+      <tr>
+        <td>Sunita Verma (LEADER)</td>
+
+        <td>sverma@cs</td>
+
+        <td>cherry, catcpy</td>
+      </tr>
+
+      <tr>
+        <td>Madhavan Kasthurirangan</td>
+
+        <td>madhavan@cs</td>
+
+        <td>jingobingo, greyhound</td>
+      </tr>
+
+      <tr>
+        <td>Amit Bhosle</td>
+
+        <td>bhosle@cs</td>
+
+        <td>intruder, vetaal</td>
+      </tr>
+
+      <tr>
+        <td>Vishal Kher</td>
+
+        <td>vkher@cs</td>
+
+        <td>mutin, autocad</td>
+      </tr>
+
+      <tr>
+        <td>Doli Bambhania</td>
+
+        <td>doli@cs</td>
+
+        <td>dolibee, savior</td>
+      </tr>
+    </table>
+
+    <h2>Mission</h2>
+
+    <p>Our mission was to detect intrusion on coppola and hide the
+    flag. To this end, we had several responsibilities. First, we
+    had to protect secret.txt mounted on host coppola. To do this,
+    we decided to put the real secret.txt very deep in directory
+    hierarchy (~3000 levels) and put a multiple copies of fake
+    secret.txt all over the place. We had to monitor the activities
+    on the host itself and detecting any unauthorized access /
+    malicious activity. For this, we monitored lots of logs, used
+    IP chains, TCP wrappers, Tripwire, and some UNIX commands like
+    lsof, who, netstat, strace, etc.</p>
+
+    <p>RESPONSIBILITIES:</p>
+
+    <p></p>
+
+    <ul>
+      <li>Sunita/Madhavan: Learning, configuring rules for IP
+      chains and TCP wrappers and monitoring/maintaining respective
+      logs during the exercise.</li>
+
+      <li>Amit/Vishal: Writing scripts to embed secret.txt deep,
+      putting other fake secret.txt's, installing and configuring
+      Snort.</li>
+
+      <li>Doli: Installing and configuring Tripwire, and monitoring
+      activities during the war using it, helping out with
+      Snort.</li>
+    </ul>
+
+    <h2>Preparation</h2>
+
+    <ul>
+      <li>Logging and protecting access to the host (IP chains and
+      TCP Wrappers) - Madhavan /Sunita</li>
+
+      <li>Detecting any backdoors/ modification (Tripwire) -
+      Doli</li>
+
+      <li>Changing the root login and password - This was
+      everyone's suggestion and everyone modified the password file
+      as necessary during the exercise.</li>
+
+      <li>Protecting the secret.txt file and logging any access to
+      it (Perl script) and creating multiple fake copies of it -
+      Amit/Vishal</li>
+
+      <li>Hiding the file deep in to OS. But the file was still
+      accessible (access to the file was not denied) (perl script)
+      - Amit/Vishal</li>
+
+      <li>Monitored whether the directory in which the file was
+      kept was ever accessed and the file itself was ever accessed
+      and wrote script generate logs</li>
+
+      <li>Tried to figure out to run snort on coppola. During the
+      final day network group was executing snort hence we did not
+      run it on coppola to avoid redundancy of logs -
+      Amit/Vishal/Doli</li>
+
+      <li>Tried to write a program which can log all keystrokes of
+      the user on a terminal (sort of Terminate and stay resident,
+      TSR in DOS) but no such script was available for linux
+      neither could we find enough information on net. -
+      Amit/Vishal</li>
+
+      <li>Changed the name of root to pappu</li>
+
+      <li>We had even thought of the idea of creating a .profile
+      with "exit" in it to serve as an auto-logout for the honeypot
+      accounts. But Andrew had already created 'fush' for this
+      purpose.</li>
+    </ul>
+
+    <h2>Execution</h2>
+
+    <p>During the exercise, we all pretty much worked together to
+    detect intrusion on the network. The tools that were used were
+    logs created by TCP wrappers, IP Chains, Tripwire, in addition
+    to using commands like 'w', 'netstat', 'who', 'lsof', 'strace',
+    etc. It's difficult to give logs of everyone because often, we
+    all discovered things simultaneously, so we'll give a log of
+    what happened. (The times given are approximate)</p>
+
+    <table>
+      <tr>
+        <td><b>TIME</b></td>
+
+        <td><b>ACTIVITY</b></td>
+      </tr>
+
+      <tr>
+        <td>1:10</td>
+
+        <td>Detected pingscan from 128.111.48.41</td>
+      </tr>
+
+      <tr>
+        <td>1:12</td>
+
+        <td>Detected pingscan from 128.111.18.19</td>
+      </tr>
+
+      <tr>
+        <td>1:15</td>
+
+        <td>Detected scan from 128.111.48.41</td>
+      </tr>
+
+      <tr>
+        <td>1:20</td>
+
+        <td>removed user 'root', replaced it with 'pappu' and
+        difficult to guess password</td>
+      </tr>
+
+      <tr>
+        <td>1:35</td>
+
+        <td>ftp-scan from packard.cs, bullwinkle.cs</td>
+      </tr>
+
+      <tr>
+        <td>1:35</td>
+
+        <td>attempt to log in as root by some 'outsiders' - not a
+        member of our team</td>
+      </tr>
+
+      <tr>
+        <td>1:40</td>
+
+        <td>attempted login from audit5.cs.ucsb.edu
+        (128.111.48.19)</td>
+      </tr>
+
+      <tr>
+        <td>1:47</td>
+
+        <td>attempt to telnet into coppola from packard.cs
+        (128.111.48.41)</td>
+      </tr>
+
+      <tr>
+        <td>1:55</td>
+
+        <td>ftp attempt from packard.cs</td>
+      </tr>
+
+      <tr>
+        <td>2:10</td>
+
+        <td>attempt to crack root password from packard.cs</td>
+      </tr>
+
+      <tr>
+        <td>2:15</td>
+
+        <td>packard logged out</td>
+      </tr>
+
+      <tr>
+        <td>2:15</td>
+
+        <td>scan from 128.111.48.41 (packard.cs)</td>
+      </tr>
+
+      <tr>
+        <td>2:15</td>
+
+        <td>
+          <ul>
+            <li>spoofing using 128.111.54.157 (compromised host
+            ?)</li>
+
+            <li>attempt to rlogin</li>
+
+            <li>scan through password file</li>
+
+            <li>more rlogin attempts</li>
+
+            <li>more scans through password file</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td>2:25</td>
+
+        <td>
+          <ul>
+            <li>user 'zhoupin' compromised</li>
+
+            <li>intruder logged in as 'zhoupin' and logged out -
+            connection from 128.111.43.36</li>
+
+            <li>connection accepted from 128.111.43.36</li>
+
+            <li>performed another scan through the password
+            file</li>
+
+            <li>
+              two outside hosts logged into coppola: 
+
+              <ul>
+                <li>packard.cs</li>
+
+                <li>128.111.54.157 (guessing this was a compromised
+                host)</li>
+              </ul>
+            </li>
+
+            <li>These connections were using ports ranging from
+            1020 - 1023</li>
+
+            <li>an attempt to connect from 'coppola' to
+            'coppola'</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td>2:30</td>
+
+        <td>another scan</td>
+      </tr>
+
+      <tr>
+        <td>2:35</td>
+
+        <td>
+          <ul>
+            <li>'gethostbyname' error: rpc.statd - ftp buffer
+            overflow</li>
+
+            <li>someone coming in from 'mamet', a compromised
+            host</li>
+
+            <li>connection accepted from 128.111.49.43</li>
+
+            <li>user 'bdr' logged in!!! (backdoor)</li>
+
+            <li>can now login as 'root' without password</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td>2:40</td>
+
+        <td>We made account 'root' inaccessible</td>
+      </tr>
+
+      <tr>
+        <td>2:50</td>
+
+        <td>
+          <ul>
+            <li>Intruder created accounts 'bdr', 'bd', 'bdu,
+            'bdu1'</li>
+
+            <li>upon detection, we gave them all 'fush' shells</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td>2:50</td>
+
+        <td>root (pappu) password changed!! Scary!</td>
+      </tr>
+
+      <tr>
+        <td>3:00</td>
+
+        <td>THE FLAG STILL NOT ACCESSED!!! YAY! :)</td>
+      </tr>
+    </table>
+
+    <p>For reference, <a href="logs">here</a> are the logs.</p>
+
+    <h2>Evaluation</h2>
+    Here is what we think: 
+
+    <ul>
+      <li>We did a reasonably good job of handling our
+      responsibilities and were successful to a large extent in
+      protecting our machine.</li>
+
+      <li>We worked together well and had a lot of fun!</li>
+
+      <li>A remarkable point is that only the coppola flag remained
+      uncaptured and untraced !! Thanks to all of us.</li>
+    </ul>
+
+    <h2>Miscellaneous</h2>
+    A lot of things made sense looking at logs afterwards and
+    talking to people. For instance, in the mail log, there were
+    mails sent from root to ashish@cs and mariabar@cs. These were
+    the password files. We found this out when we talked to Ashish
+    later. 
+
+    <h2>References</h2>
+
+    <ol>
+      <li>IPChains -
+      http://www.sans.org/infosecFAQ/firewall/blocking_ipchains.htm</li>
+
+      <li>TCP Wrappers -
+      ftp://ftp.porcupine.org/pub/security/index.html#software</li>
+
+      <li>Man pages for ipchains</li>
+
+      <li>Man pages of lsof, fstat, perl, snort</li>
+
+      <li>Tripwire download and documentation:
+      http://www.tripwire.org</li>
+    </ol>
+  </body>
+</html>
+
