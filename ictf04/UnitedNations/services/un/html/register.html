@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="HTML Tidy for Mac OS X (vers 1st December 2002), see www.w3.org"
+          name="generator" />
+    <meta name="Author" content="z4n4rd1" />
+    <link href="un.css" rel="stylesheet" type="text/css" />
+    <script language="JavaScript" type="text/javascript">
+<!--
+var reg = /^[a-zA-z0-9\-\s=@\.]+$/
+function isacceptable(field)
+{
+  if (reg.exec(field)) { return true; }
+  return false;
+}
+
+function checkregistration(form)
+{
+if (!isacceptable(registration.first.value)) {
+  alert( "You are entering a null value or invalid characters in the First Name field!" );
+  return false ;
+}
+if (!isacceptable(registration.last.value)) {
+  alert( "You are entering a null value or invalid characters in the Last Name field!" );
+  return false ;
+}
+if (!isacceptable(registration.dob.value)) {
+  alert( "You are entering a null value or invalid characters in the DOB field!" );
+  return false ;
+}
+if (!isacceptable(registration.wwid.value)) {
+  alert( "You are entering a null value or invalid characters in the World-Wide ID field!" );
+  return false ;
+}
+if (!isacceptable(registration.email.value)) {
+  alert( "You are entering a null value or invalid characters in the E-mail field!" );
+  return false ;
+}
+if (!isacceptable(registration.password.value)) {
+  alert( "You are entering a null value or invalid characters in the Password field!" );
+  return false ;
+}
+
+  return true ;
+}
+
+function checkreview(form)
+{
+if (!isacceptable(review.wwid.value)) {
+  alert( "You are entering a null value or invalid characters in the World-Wide ID field!" );
+  return false ;
+}
+if (!isacceptable(review.password.value)) {
+  alert( "You are entering a null value or invalid characters in the password field!" );
+  return false ;
+}
+
+return true ;
+}
+//-->
+</script>
+
+    <title>
+	Voter Registration
+    </title>
+  </head>
+  <body>
+    <div class="banner">
+<table width="100%" border="0" summary="table">
+        <tr>
+          <td width="10%"><a href="index.html"><img alt = "UN" src="unlogo.gif" /></a></td>
+
+          <td width="100%"><h1>Voter Registration</h1></td>
+
+          <td width="10%"><a href="index.html"><img alt="UN" src="unlogo.gif" /></a></td>
+
+	</tr>
+      </table>
+    </div>
+    <div class="main">
+      <p>
+	Please, fill in the form below to register for voting.
+      </p>
+      <form name="registration" action="/cgi-bin/register.pl" onsubmit="return checkregistration()" method="get">
+        <p><table summary="registration">
+<tr><td>First:</td><td><input type="text" name="first"></td></tr>
+<tr><td>Last:</td><td><input type="text" name="last"></td></tr>
+<tr><td>Date Of Birth:</td><td><input type="text" name="dob"></td></tr>
+<tr><td>World-Wide ID:</td><td><input type="text" name="wwid"></td></tr>
+<tr><td>E-mail:</td><td><input type="text" name="email"></td></tr>
+<tr><td>Password:</td><td><input type="password" name="password"></td></tr>
+<tr><td><input type="submit" value="Submit"></td><td></td></tr></table>
+      </form>
+
+      <p>
+	At any moment, you can review your information using the form below.
+      </p>
+
+      <form name="review" action="/cgi-bin/review.pl" method="get" onsubmit="return checkreview()">
+        <p><table summary="review">
+<tr><td>World-Wide ID:</td><td><input type="text" name="wwid"></td></tr>
+<tr><td>Password:</td><td><input type="password" name="password"></td></tr>
+<tr><td><input type="submit" value="Review"></td><td></td></tr></table>
+      </form>
+
+ 
+    </div>
+
+    <div class="footer">
+<hr />
+      Administered by <a href="/diebald">The Die-Bald Corporation</a>
+    </div>
+  </body>
+</html>

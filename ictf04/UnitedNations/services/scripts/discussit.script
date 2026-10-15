@@ -1,0 +1,29 @@
+There are two ways in which this can be run.
+1) By using the same operator each time
+2) By creating a new operator each time
+
+
+Algorithm 1
+- Read old username 
+- Generate new flag
+- Connect to port 7413 
+- Send old username, followed by space, followed by new flag
+- The operator will answer "Last time we were talking about "..." 
+  where "..." is the old flag
+- Optional: send some random
+- Send "exit"
+Next time the newly set flag will be returned.
+
+Algorithm 2
+- Read old username 
+- Generate new username and new flag
+- Connect to port 7413 
+- Send old username, followed by space, followed by a random string
+- The operator will answer "Last time we were talking about "..." 
+  where "..." is the old flag
+- Send "exit"
+- Connect to port 7413 (again) 
+- Send new username, followed by space, followed by new flag
+- new username will be the "old username" next time
+ 
+

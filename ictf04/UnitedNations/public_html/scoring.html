@@ -1,0 +1,71 @@
+<h2>Scoring</h2>
+
+<p>Each team must maintain a number of services active and uncompromised.</p>
+
+<p>At the beginning of a scoring period (say time <i>t0</i>), the scoring
+system connects to a service using a username and password (possibly creating
+an account on-the-fly) and stores a flag that is unique with respect to the
+team, the service, and this particular iteration of the scoring process. The
+flag is stored in a location that, in theory, is accessible only by using the
+username and password used by the scoring system.</p>
+
+<p>After a certain period of time (say at time <i>t1 = t0 + q</i>) the scoring
+systems tries to log in again with the same username and password. At this
+point, if the login is not successful, the service is considered as
+malfunctioning and no defense point are assigned to the team that is running
+the service.  If the scoring system can successfully log in and nobody proved
+that at time <i>t</i>, with <i>t0 &lt; t &lt t1</i>, the flag has been stolen,
+then the team hosting the service gets a number of defense points.</p>
+
+<p>A team (say A) might compromise the service of another team (say B). In
+practice this means that team A is able to read the flags stored by the
+scoring system on team B's server for a specific service (without having to
+know the username/password combination used by the scoring system). Team A can
+then submit the flag to a central flag certification system to prove that it
+was able to compromise B's server security. If the flag is correct and
+&quot;fresh&quot; than, at the end of the scoring period, team A gets a number
+of attack points. Note that if another team (say C) steals the same flag, then
+the points are divided between the teams. This means that services that are
+easy to compromise may give less points, while services that are more
+difficult to hack may guarantee higher returns.</p>
+
+<p>Note that the scoring period <i>q<i> is different for each
+service. Services that are more difficult to compromise may be scored more
+often, which means that if a team compromises that service it may get points
+at a higher rate.</p>
+
+<p>Now a little example to clarify. Suppose that the server implements a
+web-based discussion service where authenticated users can post
+messages. Users can post messages publicly or to a private discussion forum
+that requires a username and a password to access the forum contents.</p>
+
+<p>The scorebot connects to the service of team B and creates a new forum,
+called &quot;recipes&quot; protected by a password, say
+&quot;spaghetti&quot;. Then it generates the flag and creates a message in the
+forum that contains the flag (e.g., in the body of a posting to that
+forum). The flag looks like this:
+<tt>MTNzEwECA+hWjCb8t8/FgbEg/mSm1hbU231kjg==</tt></p>
+
+<p>After some time, the scoring system attempts to log into the forum (using
+forum name &quot;recipes&quot; and password &quot;spaghetti&quot;) and checks
+if the flag is still there. If it is, then a new flag is created as the body
+of another posting. (note that the scoring system might also decide to create
+a complete different forum to store the new flag.)</p>
+
+<p>In order to steal the flag team A has to connect to team B's server and in
+some way access the contents of the &quot;recipes&quot; forum. Of course team
+A does not know the password used to create the forum and therefore it has to
+find some way to bypass security. If successful team A will be able to read
+the flag.  Then, team A will <i>immediately</i> submit the flag using a form
+on the scoring web site. The fact that team A stole the flag will be recorded
+and, at the end of the scoring period, some points will be granted to team
+A.</p>
+
+
+
+
+ 
+
+
+<!--  LocalWords:  uncompromised scorebot username B's
+ -->
