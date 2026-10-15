@@ -239,13 +239,15 @@ Winners confirmed from site files and mailing lists:
 
 ### ictf14 (2015) — Large-scale Hacking
 
-🔴 **Service names and source** — No services in challenges directory; specific service names not in archive.  
-🟡 **Winner not in metadata results** — SpamAndHex (Hungary, score 92.744) confirmed from MySQL dump but `results:` section absent from `metadata.yaml`.  
-🟡 **Scoreboard** — Scoreboard screenshots in `iCTF scoreboard/` but not transcribed. Full scoreboard from MySQL dump could be extracted.  
-🟡 **Registration data** — 88-team registration SQL now in `data/ictf_registration_apr_2015-final-final.sql` ✅  
-🟢 **Num teams** — 88 (confirmed).
+🟢 **Service names** — **COMPLETE!** 52 services confirmed from ctf-admin email (March 3, 2015): recycled from ictf04/04-05 (15), ictf05 (8), ictf07 (4), ictf11 (10), ictf12 (5), ictf13 (10). All in metadata challenges list with source_edition references. ✅  
+🔴 **Service source code** — No source in ictf14/challenges/ (services were deployed from source editions' code). Source in corresponding ictf04-ictf13 directories.  
+🟢 **Winner** — SpamAndHex (Hungary, 92.744 pts), in `results:` section ✅  
+🟡 **Dates** — Confirmed April 10, 2015 (from press release) ✅  
+🟡 **Full scoreboard** — Not transcribed; scoreboard screenshots in `iCTF scoreboard/` and MySQL dump available.  
+🟢 **Registration data** — 88-team SQL in `data/ictf_registration_apr_2015-final-final.sql` ✅  
+🟢 **Num teams** — 88 (confirmed) ✅
 
-**Action needed:** Add `results:` section. Extract and document full scoreboard from MySQL dump. Identify service names from mailing list or website.
+**Action needed:** Extract full scoreboard from MySQL dump (`2014-2015.mysql.gz`).
 
 ---
 
@@ -359,6 +361,15 @@ Winners confirmed from site files and mailing lists:
 
 ---
 
+### ictf25 (2025) — Unknown
+
+🔴 **No local archive** — No `ictf25/` directory exists in the archive. Only a registration form in `/data/vigna/ACTION/iCTF/iCTF2025/`.  
+🔴 **Theme, services, winner** — All unknown. Competition may have run but data not collected.
+
+**Possible recovery:** Check shellphish GitHub for `ictf25` or `ictf-2025` repos. Ask organizers for materials.
+
+---
+
 ### ictf26 (2026) — AI Agents and Cybersecurity (Agentish)
 
 🟡 **Challenge source** — References `shellphish/ictf-challenges-2026` but source not cloned locally.  
@@ -373,8 +384,9 @@ Winners confirmed from site files and mailing lists:
 
 ### High Priority (fills critical data gaps)
 
-1. **Add `results:` sections** to metadata for ictf04-05, ictf05, ictf06, ictf07, ictf08 — all have confirmed winners from site files or mailing lists. _(ictf10, ictf14, ictf15–ictf21, ictf23, ictf24 now done ✅)_
-2. **Create Dockerfiles** for ictf05 (9 services), ictf07 (4 services), ictf08 (7 services), ictf03 (6 services).
+1. **Collect ictf25 data** — No archive for 2025 competition. Check shellphish GitHub and organizers.
+2. **Add `results:` sections** to metadata for ictf04-05, ictf05, ictf06, ictf07, ictf08 — all have confirmed winners from site files or mailing lists. _(ictf04, ictf09–ictf14, ictf15–ictf21, ictf23, ictf24 now done ✅)_
+3. **Create Dockerfiles** for ictf05 (9 services), ictf07 (4 services), ictf08 (7 services), ictf03 (6 services).
 3. **Wire up ictf20 challenges/** — source is in `src/`, needs challenge.yml linking. Dockerfiles can be derived from existing docker-compose.yml files.
 4. **Extract ictf19 full scoreboard** from `data/scores/` directory (winner known; need complete ranking).
 5. **Extract ictf12 scoreboard** from `data/scores/` directory.
