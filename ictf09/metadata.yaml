@@ -21,30 +21,129 @@ participation:
     Largest security competition ever performed at the time.
 
 results:
-  winner: "CInsect (University of Hamburg, Germany)"
-  notes: "Won December 4, 2009 (from official site: 'won by the CInsect team, from the University of Hamburg, Germany')"
+  winner: "CInsects (University of Hamburg, Germany)"
+  final_scoreboard:
+    - {rank: 1,  team: "CInsects",              mulah: 2299.1,  l33tnezz: 1067.1,  pownwership: 16747.1}
+    - {rank: 2,  team: "We_0wn_Y0u",            mulah: 2338.1,  l33tnezz: 1200.1,  pownwership: 4738.1}
+    - {rank: 3,  team: "Chocolate Makers",      mulah: 76.1,    l33tnezz: 3400.1,  pownwership: 0.1}
+    - {rank: 4,  team: "Plaid Parliament of Pwning", mulah: 304.9, l33tnezz: 1800.1, pownwership: 2500.1}
+    - {rank: 5,  team: "ENOFLAG",               mulah: 0.1,     l33tnezz: 1500.1,  pownwership: 3539.1}
+    - {rank: 6,  team: "HackerDom",             mulah: 890.1,   l33tnezz: 1480.1,  pownwership: 264.1}
+    - {rank: 7,  team: "gn00bz",                mulah: 0.1,     l33tnezz: 2700.1,  pownwership: 0.1}
+    - {rank: 8,  team: "The Electronic Mayhem", mulah: 125.1,   l33tnezz: 2300.1,  pownwership: 354.1}
+    - {rank: 9,  team: "Tower of Hanoi",        mulah: 90.1,    l33tnezz: 2300.1,  pownwership: 0.1}
+    - {rank: 10, team: "Ulm Security Sparrows", mulah: 0.1,     l33tnezz: 2300.1,  pownwership: 0.1}
+    - {rank: 11, team: "FluxFingers",           mulah: 0.1,     l33tnezz: 2100.1,  pownwership: 0.1}
+    - {rank: 12, team: "Nibbles",               mulah: 100.0,   l33tnezz: 1900.1,  pownwership: 0.1}
+    - {rank: 13, team: "WildRide",              mulah: 10.1,    l33tnezz: 1690.1,  pownwership: 0.1}
+    - {rank: 14, team: "f0gd0gs",               mulah: 72.1,    l33tnezz: 1550.1,  pownwership: 0.1}
+    - {rank: 15, team: "Brooklyn Overflow",     mulah: 800.1,   l33tnezz: 400.1,   pownwership: 0.1}
+    - {rank: 16, team: "squareroots",           mulah: 100.1,   l33tnezz: 1400.1,  pownwership: 0.1}
+    - {rank: 17, team: "Defender of the Flag",  mulah: 61.2,    l33tnezz: 1439.1,  pownwership: 0.0}
+    - {rank: 18, team: "RPISEC",                mulah: 130.2,   l33tnezz: 1076.0,  pownwership: 384.1}
+    - {rank: 19, team: "Space Invaders",        mulah: 700.1,   l33tnezz: 400.1,   pownwership: 0.1}
+    - {rank: 20, team: "forKLory",              mulah: 972.1,   l33tnezz: 4.1,     pownwership: 0.1}
+    - {rank: 21, team: "Graham's Crackers",     mulah: 899.2,   l33tnezz: 101.0,   pownwership: 0.1}
+    - {rank: 22, team: "smoked chicken",        mulah: 119.1,   l33tnezz: 1200.1,  pownwership: 0.1}
+    - {rank: 23, team: "WCSC",                  mulah: 3.3,     l33tnezz: 1296.9,  pownwership: 0.1}
+    - {rank: 24, team: "UFOlogists",            mulah: 848.1,   l33tnezz: 0.1,     pownwership: 0.1}
+    - {rank: 25, team: "SecDawgs ate all your cookies", mulah: 2.1, l33tnezz: 1198.1, pownwership: 0.1}
+    - {rank: 26, team: "h4ck1nb3rg",           mulah: 100.1,   l33tnezz: 1000.1,  pownwership: 0.1}
+    - {rank: 27, team: "SiBears",               mulah: 11.1,    l33tnezz: 1100.1,  pownwership: 0.1}
+    - {rank: 28, team: "UC Lions",              mulah: 143.1,   l33tnezz: 900.1,   pownwership: 0.1}
+    - {rank: 29, team: "CIT",                   mulah: 450.2,   l33tnezz: 450.0,   pownwership: 0.0}
+    - {rank: 30, team: "Les Super Gentils Haxorizateurs", mulah: 13.1, l33tnezz: 997.1, pownwership: 0.1}
+    - {rank: 31, team: "The B0mb Squad",        mulah: 10.1,    l33tnezz: 990.1,   pownwership: 0.1}
+    - {rank: 32, team: "Cheddar Horsemen",      mulah: 0.1,     l33tnezz: 1000.1,  pownwership: 0.1}
+    - {rank: 33, team: "pwnyexpress",           mulah: 119.1,   l33tnezz: 800.1,   pownwership: 0.1}
+    - {rank: 34, team: "censored",              mulah: 660.1,   l33tnezz: 0.1,     pownwership: 0.1}
+    - {rank: 35, team: "StopUsToo",             mulah: 100.1,   l33tnezz: 800.1,   pownwership: 0.1}
+    - {rank: 36, team: "Miner Threat",          mulah: 0.1,     l33tnezz: 900.1,   pownwership: 0.1}
+    - {rank: 37, team: "0ldEur0pe",             mulah: 100.1,   l33tnezz: 700.1,   pownwership: 126.1}
+    - {rank: 38, team: "c00kies@venice",        mulah: 420.1,   l33tnezz: 285.1,   pownwership: 0.1}
+    - {rank: 39, team: "int80",                 mulah: 200.1,   l33tnezz: 500.1,   pownwership: 0.1}
+    - {rank: 40, team: "KEVA",                  mulah: 0.1,     l33tnezz: 700.1,   pownwership: 0.1}
+    - {rank: 40, team: "zone63",                mulah: 0.1,     l33tnezz: 700.1,   pownwership: 0.1}
+    - {rank: 40, team: "in23canation",          mulah: 0.1,     l33tnezz: 700.1,   pownwership: 0.1}
+    - {rank: 40, team: "finely trained monkeys", mulah: 0.1,   l33tnezz: 700.1,   pownwership: 0.1}
+    - {rank: 40, team: "PeterPEN",              mulah: 0.1,     l33tnezz: 700.1,   pownwership: 0.1}
+    - {rank: 41, team: "Red Cops",              mulah: 122.1,   l33tnezz: 500.1,   pownwership: 0.1}
+    - {rank: 42, team: "PwnDevils",             mulah: 21.1,    l33tnezz: 500.1,   pownwership: 0.1}
+    - {rank: 43, team: "SYPER",                 mulah: 0.1,     l33tnezz: 500.1,   pownwership: 0.1}
+    - {rank: 43, team: "SYNners",               mulah: 0.1,     l33tnezz: 500.1,   pownwership: 0.1}
+    - {rank: 43, team: "VLGU",                  mulah: 0.1,     l33tnezz: 500.1,   pownwership: 0.1}
+    - {rank: 44, team: "m4d c0wZ",              mulah: 0.2,     l33tnezz: 400.0,   pownwership: 0.1}
+    - {rank: 45, team: "WTF",                   mulah: 0.1,     l33tnezz: 400.1,   pownwership: 0.1}
+    - {rank: 45, team: "LIST",                  mulah: 0.1,     l33tnezz: 400.1,   pownwership: 0.1}
+    - {rank: 45, team: "Take Over the World",   mulah: 0.1,     l33tnezz: 400.1,   pownwership: 0.1}
+    - {rank: 46, team: "Kernel Sanders",        mulah: 39.2,    l33tnezz: 0.0,     pownwership: 0.1}
+    - {rank: 47, team: "Wizard of Dos",         mulah: 0.1,     l33tnezz: 0.1,     pownwership: 0.1}
+    - {rank: 47, team: "Big Chief",             mulah: 0.1,     l33tnezz: 0.1,     pownwership: 0.1}
+  notes: >
+    Scoring had three components: Mulah (money stolen via exploited browsers),
+    L33tnezz (standalone CTF challenge points), P0wnwership (browser ownership).
+    CInsects won primarily through P0wnwership (16,747 pts = most browsers owned).
+    Source: scores.pdf from competition site, dated December 13, 2009.
 
 challenges:
+  # Browser families (attack targets): 5 families, 13 total versions.
+  # Only 4 of the 13 browser versions were successfully exploited.
+  # Source: stats.pdf from competition (The 2009 UCSB International CTF).
+  # erbrawser = Erlang browser; operla = Perl-based Opera; pyrefox = Python Firefox;
+  # jecko = Java Gecko browser; crefox = C-based Firefox/Chrome.
   - name: erlang-browser
-    title: "Erlang Browser"
+    title: "Erlang Browser (erbrawser)"
     category: web
     description: >
-      An Erlang-based automated web browser. Teams exploited it via
-      drive-by download attacks using Erlang erl_eval injection.
+      Erlang-based automated web browser (family name: erbrawser).
+      Versions 1.0 and 2.0 deployed. erbrawser-1.0 was exploited by 3 teams
+      (hackerdom, cinsects, mayhem); erbrawser-2.0 by 1 team (cinsects).
+      Attack: drive-by download via Erlang erl_eval injection.
+
+  - name: operla
+    title: "Operla Browser (Perl Opera)"
+    category: web
+    description: >
+      Perl-based Opera browser parody (family name: operla).
+      Versions 0.1, 0.2, 0.3 deployed. operla-0.3 exploited by 2 teams
+      (enoflag, cinsects); operla-0.2 by 2 teams (enoflag, rpisec);
+      operla-0.1 not exploited.
+
+  - name: pyrefox
+    title: "Pyrefox Browser (Python Firefox)"
+    category: web
+    description: >
+      Python-based Firefox browser parody (family name: pyrefox).
+      Versions 0.1 and 1.0 deployed. Neither version was exploited
+      during the competition.
+
+  - name: jecko
+    title: "Jecko Browser (Java Gecko)"
+    category: web
+    description: >
+      Java-based Gecko rendering engine browser parody (family name: jecko).
+      Versions 1.0, 2.0, 3.0 deployed. None were exploited.
+
+  - name: crefox
+    title: "CrEFox Browser (C Firefox)"
+    category: web
+    description: >
+      C-based Firefox/Chrome parody browser (family name: crefox).
+      Versions 1.0, 2.0, 3.0 deployed. None were exploited.
 
   - name: robabank
     title: "RobaBank"
     category: web
     description: >
       In-game banking service. Browsers held accounts there; credential theft
-      from exploited browsers let teams steal funds.
+      from exploited browsers let teams steal funds (scored as "Mulah").
 
   - name: madoffunds
     title: "MadoFunds"
     category: misc
     description: >
       In-game currency exchange (Madoff parody). Convert CTF challenge
-      "leetness points" to in-game money.
+      "leetness points" (L33tnezz score) to in-game money (Mulah).
 
   - name: vulnerable-service
     title: "Vulnerable System Service"

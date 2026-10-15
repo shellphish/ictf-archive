@@ -49,17 +49,27 @@ challenges:
   - name: tattletale
     title: "tattletale"
     category: binary
-    description: "L2 service — information disclosure"
+    description: >
+      Edward Snowden-themed file-sharing / bandwidth-optimization puzzle service (L2).
+      Authored by Patrick B and Kyle MacNamara. Clients connect, join a room, and interact with
+      "E.Snowden" who assigns files and bandwidth quotas. Teams must use /list and /send commands
+      to exfiltrate maximum-value files without exceeding bandwidth. Exploit: race condition /
+      improper state tracking across multiple simultaneous connections allows flag extraction.
+      (Writeup published by "Glimpses Grandeur" on ctf-participants list, December 2013.)
 
   - name: dexware
     title: "dexware"
     category: binary
-    description: "L3 service"
+    description: >
+      DalvikVM Android bytecode service (L3). Authored by Yanick Fratantonio (reyammer).
+      Clients interact with a service that executes Dalvik bytecode. Exploit: Java reflection
+      allowed accessing private fields of the DexWare object to extract flags from FormulaDB.
+      Blog post: reyammer.blogspot.com/2013/12/the-behind-scene-of-dexware-dalvikvm.html
 
   - name: driller
     title: "driller"
     category: binary
-    description: "L3 service — drilling/excavation theme"
+    description: "L3 service — drilling/excavation theme. Authored by Fish Wang."
 
   - name: mathconsole
     title: "mathconsole"
