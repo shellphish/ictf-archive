@@ -1,0 +1,6 @@
+#!/usr/bin/env python2.6
+import msgdispatcher
+import sys
+if len(sys.argv) > 1:
+    sys.exit(0)
+msgdispatcher.start()

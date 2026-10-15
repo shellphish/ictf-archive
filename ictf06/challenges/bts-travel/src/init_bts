@@ -1,0 +1,37 @@
+#! /bin/sh
+set -e
+
+DAEMON=/home/bts/runme.py
+
+test -x $DAEMON || exit 0
+
+. /lib/lsb/init-functions
+. /etc/default/rcS
+
+case "$1" in
+  start)	
+	    log_begin_msg "Starting BTS service"
+	    if [ -s /var/run/bts.pid ] && kill -0 $(cat /var/run/bts.pid) >/dev/null 2>&1; then
+		exit 0
+	    fi
+            cd /home/bts
+            start-stop-daemon --start --background \
+                --pidfile /var/run/bts.pid --make-pidfile \
+                --exec /home/bts/runme.py \
+		-c bts:bts
+            log_end_msg $?
+	;;
+  stop)
+        log_begin_msg "Stopping BTS service"
+	ES=$?
+	start-stop-daemon --stop --quiet --oknodo --pidfile /var/run/bts.pid
+	rm -f /var/run/bts.pid
+        log_end_msg $ES
+	;;
+
+  *)
+	log_success_msg "Usage: /etc/init.d/bts {start|stop}"
+	exit 1
+esac
+
+exit 0

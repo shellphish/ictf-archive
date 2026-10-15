@@ -1,0 +1,48 @@
+#!/bin/bash
+#
+# Init file for ftpd daemon 
+#
+
+# source function library
+. /etc/rc.d/init.d/functions
+
+RETVAL=0
+FTPD=/usr/local/sbin/ftpd
+prog=ftpd
+
+start()
+{
+	echo -n $"Starting $prog:"
+	cd /var/ftp && /usr/local/sbin/ftpd 2>/dev/null
+	RETVAL=$?
+	[ "$RETVAL" = 0 ] && touch /var/lock/subsys/ftpd
+	echo
+}
+
+stop()
+{
+	echo -n $"Stopping $prog:"
+	killproc $FTPD -TERM
+	RETVAL=$?
+	[ "$RETVAL" = 0 ] && rm -f /var/lock/subsys/ftpd
+	echo
+}
+
+
+case "$1" in
+	start)
+		start
+		;;
+	stop)
+		stop
+		;;
+	restart)
+		stop
+		start
+		;;
+   *)
+    stop
+    start
+    ;;
+esac
+exit $RETVAL

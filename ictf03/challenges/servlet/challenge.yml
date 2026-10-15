@@ -23,35 +23,50 @@ description: |
 
   ## Source
 
-  Four Java files in `src/`:
-  - `Search.java` — main search servlet with doGet/doPost handlers
-  - `Admin.java` — admin authentication and article management servlet
-  - `Database.java` — flat-file or in-memory database for articles
-  - `Page.java` — HTML page generation helpers
+  Source extracted from CTF VM (RedHat 9 VMware image, `/root/setup/servlet/tmpl/`):
 
-  The scorebot (`src/getflag-servlet`) searches for `"Suspicious" registry key: NSA-<flag>`
-  in search results. The admin script (`src/setflag-servlet`) logs in via cookie
-  and updates the article keyword to embed the flag.
+  - `src/webapp/src/ctf/Search.java` — search servlet (GET /search/search)
+  - `src/webapp/src/ctf/Admin.java` — admin auth/article management (GET/POST /search/admin)
+  - `src/webapp/src/ctf/Database.java` — PostgreSQL database access layer
+  - `src/webapp/src/ctf/Page.java` — HTML page generation helpers
+  - `src/webapp/web/WEB-INF/web.xml` — servlet configuration
+  - `src/webapp/build.xml` — Ant build script (targets: compile, install, deploy)
+  - `src/webapp.tgz` — original archive including web assets (CSS, images, JS)
+  - `src/getflag-servlet`, `src/setflag-servlet` — scorebot interaction scripts
+  - `src/setup.sh`, `src/init_servlet`, `src/transform` — deployment scripts
+
+  The webapp is "BassTard Support Forum" — two servlets: `ctf.Search` (/search)
+  and `ctf.Admin` (/admin). Deployed under Tomcat 4.1.29 at `/search` context.
+  Uses PostgreSQL (via postgresql.jar).
 value: 0
 type: standard
-image: null
+image: "."
 protocol: http
 port: 80
 flags:
     - ictf2003{servlet_pwned}
+topics:
+    - java servlet
+    - web
 tags:
     - web
     - java
     - servlet
+    - tomcat
     - ictf2003
     - historical
     - attack-defense
 files:
-    - src/Search.java
-    - src/Admin.java
-    - src/Database.java
-    - src/Page.java
+    - src/webapp/src/ctf/Search.java
+    - src/webapp/src/ctf/Admin.java
+    - src/webapp/src/ctf/Database.java
+    - src/webapp/src/ctf/Page.java
+    - src/webapp/web/WEB-INF/web.xml
+    - src/webapp/build.xml
+    - src/webapp.tgz
     - src/getflag-servlet
     - src/setflag-servlet
+    - src/setup.sh
+    - src/init_servlet
 state: visible
 version: "0.1"

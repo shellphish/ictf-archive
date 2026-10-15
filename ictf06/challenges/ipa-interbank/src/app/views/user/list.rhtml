@@ -1,0 +1,35 @@
+<h2>Users</h2>
+
+<ul>
+<% for user in @users %>
+  <li>
+    <%= link_to h(user.login), :controller => 'user', :action => 'show', :id => user.id %></b><br/>
+    <% if not user.description.nil? %>
+        <%= user.description[0,30] %>
+        <% if user.description.length > 30 %>
+            ...
+        <% end %>
+    <% else %>
+        No description, yet.
+    <% end %>
+
+    <br/>
+
+    <% if not user.contacts.include?(current_user) and
+          not user.id == current_user.id %>
+        <%= link_to "Add me", :controller => "user", :action => "add_contact", :id => user.id %> to <%= user.login %>'s contacts. 
+    <% elsif current_user.id == user.id %>
+        <%= link_to "My account", :controller => "user", :action => "show", :id => nil %>
+    <% else %>
+        <%= link_to "Remove me", :controller => "user", :action => "remove_contacat", :id => user.id %> from <%= user.login %>'s contacts.
+    <% end %>
+
+  </li>
+<% end %>
+</ul>
+
+<p>
+<%= link_to 'Previous page', { :page => @user_pages.current.previous } if @user_pages.current.previous %>
+<%= link_to 'Next page', { :page => @user_pages.current.next } if @user_pages.current.next %> 
+
+

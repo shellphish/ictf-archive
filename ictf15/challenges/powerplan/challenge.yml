@@ -1,21 +1,24 @@
 name: "iCTF 2015 — powerplan"
-author: "Giovanni Vigna / UCSB Security Lab"
-category: binary
+author: "UCSB Seclab"
+category: web
 description: |
   **iCTF 2015 — Crowdsourcing Evil**
 
-  Game service
+  This is a game service!
 
-  Port: 9898. Source not available (only competition database preserved).
+  **Flag ID:** The flag_id is the username.
+
+  Port: 9898. Source not available (only competition database and base VM preserved).
+  This service was reused from an earlier iCTF edition or submitted by teams for ictf15.
 value: 0
 type: standard
 image: null
-protocol: tcp
+protocol: http
 port: 9898
 flags:
     - ictf2015{powerplan_pwned}
 tags:
-    - binary
+    - web
     - ictf2015
     - historical
     - attack-defense

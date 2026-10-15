@@ -18,7 +18,11 @@ description: |
 
   Source distributed during the competition as `browsers.tar.gz`; not
   preserved in this archive. A Windows XP development VM is available in
-  `Virtual Machine/`.
+  `Virtual Machine/` — it was the organizer's research workstation (user: Adam),
+  not a competition challenge VM. Extracted from it:
+  - `src/vm-artifacts/rootkit/MyRootkit.c` — Windows kernel driver template (SecLab TU Wien)
+  - `src/vm-artifacts/rootkit/HideProcessHookMDL.c` — SSDT process-hiding rootkit (MDLM technique)
+  - `src/vm-artifacts/WinDNSSpoof/` — DNS ID spoofing tool (C++/WinPcap)
 value: 0
 type: standard
 
@@ -39,7 +43,11 @@ tags:
     - ictf2009
     - historical
 
-files: []
+files:
+    - src/vm-artifacts/rootkit/MyRootkit.c
+    - src/vm-artifacts/rootkit/HideProcessHookMDL.c
+    - src/vm-artifacts/WinDNSSpoof/dnsspoof.cpp
+    - src/vm-artifacts/WinDNSSpoof/README.txt
 
 state: visible
 version: "0.1"

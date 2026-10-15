@@ -7,9 +7,7 @@ set password [lindex ${argv} 2]
 
 set timeout 5
 
-log_user 0
-
-# puts "${ipaddr}:21 ${flag} ${password}"
+puts "${ipaddr}:21 ${flag} ${password}"
 
 spawn nc ${ipaddr} 21
 

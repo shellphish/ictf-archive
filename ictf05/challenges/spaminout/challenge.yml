@@ -2,33 +2,43 @@ name: "iCTF 2005 — Spam World: Spam In/Out Gateway"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: binary
 description: |
-  **iCTF 2005 — The Spam World**
+  **iCTF 2005 — The Spam Museum: Spam In/Out Gateway**
 
-  A dual-port TCP spam gateway. Port 8008 (spam-in) accepts messages with a
-  magic header; port 8009 (spam-out) retrieves them. Protocol: send
-  `SPAM-IN-SPAM-OUT\n<name>\n<flag>\n` to store; `SPAM-IN-SPAM-OUT\n<name>\n`
-  to retrieve. Find a vulnerability to intercept other teams' messages.
+  A pair of C programs: `spamin` (port 8008) receives spam via
+  `SPAM-IN-SPAM-OUT\n<filename>\n<content>` and writes content to files.
+  Multiple vulnerabilities: (1) `gets(filename)` buffer overflow on most
+  connections (`be` counter logic means `gets` is used when `be != 16`);
+  (2) `gets(flag)` always used (`bop=22 < 46` → always false branch);
+  (3) format string: `printf(banner)` with attacker-controlled input;
+  (4) path traversal: `fopen(filename, "a+")` writes to arbitrary files.
+  Full C source available.
 value: 0
 type: standard
 
-image: .
+image: null
 protocol: tcp
 flags:
     - ictf2005{spaminout_pwned}
 
 topics:
     - binary exploitation
-    - network protocol
+    - C network service
 
 tags:
     - binary
     - tcp
+    - c
     - network
     - ictf2005
     - historical
     - attack-defense
 
-files: []
+files:
+    - src/spamin.c
+    - src/spamout.c
+    - src/spamin
+    - src/spamout
+    - src/spamInOutScoringScript.py
 
 state: visible
 version: "0.1"

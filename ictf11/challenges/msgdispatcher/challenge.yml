@@ -1,24 +1,57 @@
-name: "iCTF 2011 — Message Dispatcher"
+name: "iCTF 2011 — msgdispatcher"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: network
 description: |
   **iCTF 2011 — Money Laundering**
 
-  Message Dispatcher was a generic message routing and dispatch service.
-  The least-captured service with only 507 flag steals, suggesting it was
-  either well-defended or particularly difficult to exploit.
+  `msgdispatcher` is a Python 2.6 TCP service that routes XML messages between
+  Money Laundering infrastructure components (`muleserver`, `mulemanager`).
+  It stores pending messages as files under `/home/msgdispatcher/messages/` and
+  processes command plugins from `/home/msgdispatcher/commands/`.
 
-  Source: encrypted VM archive `site/iC7F-l337-vu1n.7z` (AES-encrypted, password unknown).
+  Port: **31337** (TCP, XML protocol)
+
+  ## Architecture
+
+  XML-based client-server protocol. `ClientManager` class handles each
+  connection in a thread. Uses a `libs.py` helper module for cleanup and
+  parsing. Commands are loaded as plugins from the commands/ directory.
+
+  The `muleserver` and `mulemanager` roles appear in the XML protocol as
+  message recipients/senders.
+
+  ## Source
+
+  Compiled Python (`.pyc`) recovered from competition VM (`/usr/local/bin/`):
+  - `src/msgdispatcher.pyc` — main dispatcher (decompilable with uncompyle2)
+  - `src/libs.pyc` — shared library
+  - `src/msgdispatcher_main` — startup wrapper shell script
+
+  Decompile with: `uncompyle2 msgdispatcher.pyc`
 value: 0
 type: standard
 image: null
+protocol: tcp
+port: 31337
 flags:
-    - ictf2011{msgdispatcher_compromised}
+    - ictf2011{msgdispatcher_pwned}
+topics:
+    - network
+    - python
+    - xml injection
+    - message dispatch
 tags:
     - network
+    - python
+    - xml
     - ictf2011
     - historical
     - attack-defense
-files: []
+files:
+    - src/msgdispatcher.pyc
+    - src/libs.pyc
+    - src/msgdispatcher_main
+    - src/command/__init__.py
+    - src/init_msgdispatcher
 state: visible
 version: "0.1"

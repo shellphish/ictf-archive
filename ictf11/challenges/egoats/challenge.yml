@@ -1,23 +1,68 @@
-name: "iCTF 2011 — eGoats"
+name: "iCTF 2011 — egoats"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: web
 description: |
   **iCTF 2011 — Money Laundering**
 
-  eGoats was a web service representing the mule operation's livestock front
-  business (a money laundering cover). Captured 13,234 times.
+  egoats is a Ruby on Rails web application used as a cover story for money
+  laundering — a "legitimate" online goat-selling marketplace. Under the hood,
+  it handles payments and remote fund transfers between teams.
 
-  Source: encrypted VM archive `site/iC7F-l337-vu1n.7z` (AES-encrypted, password unknown).
+  Port: **53550** (Rails production, REE 1.8.7)
+
+  ## Architecture
+
+  Rails 3.x with Devise authentication. Resources:
+  - `users` — account management, `/users/me` (current user profile)
+  - `payments` — create/show payments, poll remote payment status
+  - `remote_payments` — cross-team fund transfers (update/show/edit)
+  - `credit_cards` — stored card management
+
+  The competition scenario: competitors steal egoats accounts from IRC channel
+  `#egoats` and use payment APIs to drain funds across teams.
+
+  ## Source
+
+  Extracted from competition VM (Ubuntu 10.10 LVM, ext4). Full Rails app:
+  - `src/app/controllers/` — PaymentsController, RemotePaymentsController,
+    UsersController, CreditCardsController
+  - `src/app/models/` — User, Payment, CreditCard, RemotePayment
+  - `src/config/routes.rb` — route definitions
+  - `src/db/schema.rb` — database schema
+  - `src/Gemfile` — gem dependencies
+  - `src/launch` — startup script (RVM + rake db:migrate + rails s -p 53550)
 value: 0
 type: standard
 image: null
+protocol: http
+port: 53550
 flags:
-    - ictf2011{egoats_compromised}
+    - ictf2011{egoats_pwned}
+topics:
+    - ruby on rails
+    - web
+    - authentication
+    - mass assignment
 tags:
     - web
+    - rails
+    - ruby
     - ictf2011
     - historical
     - attack-defense
-files: []
+files:
+    - src/app/controllers/payments_controller.rb
+    - src/app/controllers/remote_payments_controller.rb
+    - src/app/controllers/users_controller.rb
+    - src/app/controllers/credit_cards_controller.rb
+    - src/app/models/user.rb
+    - src/app/models/payment.rb
+    - src/app/models/remote_payment.rb
+    - src/app/models/credit_card.rb
+    - src/config/routes.rb
+    - src/db/schema.rb
+    - src/Gemfile
+    - src/launch
+    - src/README.important
 state: visible
 version: "0.1"

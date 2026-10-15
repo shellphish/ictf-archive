@@ -1,26 +1,50 @@
-name: "iCTF 2011 — Mail Gateway"
+name: "iCTF 2011 — mailgateway"
 author: "Giovanni Vigna / UCSB Security Lab"
-category: network
+category: pwn
 description: |
   **iCTF 2011 — Money Laundering**
 
-  Mail Gateway was an email relay service used in the money laundering
-  communication network. Captured 6,437 times.
+  `mailgateway` is a compiled C binary that serves as the mail/message routing
+  gateway for the Money Laundering operation. It accepts connections, creates
+  per-user account directories under `/home/mailgateway/messages/`, and routes
+  encrypted messages between participants.
 
-  Flags were embedded in email messages transiting through the gateway.
+  Port: **9119** (TCP, custom binary protocol)
 
-  Source: encrypted VM archive `site/iC7F-l337-vu1n.7z` (AES-encrypted, password unknown).
+  ## Architecture
+
+  Binary protocol with single-character commands (`Command: %c`). The service:
+  - Creates accounts (`Created account %s`)
+  - Sanitizes message content (`sanitizing: %s`)
+  - Routes messages by recipient (`Sending message to: %s`, `TO: %s`)
+  - Stores messages as files in `/home/mailgateway/messages/<account>/`
+
+  The binary is 32-bit ELF, not stripped, compiled with GCC 4.x on Ubuntu 10.10.
+  Uses `fork()`/`wait3()` pattern, `dup2(stdout)` for connection handling.
+  No stack canary or PIE detected.
+
+  Source code not recovered (binary-only from competition VM).
 value: 0
 type: standard
 image: null
+protocol: tcp
+port: 9119
 flags:
-    - ictf2011{mailgateway_compromised}
+    - ictf2011{mailgateway_pwned}
+topics:
+    - binary exploitation
+    - reverse engineering
+    - custom protocol
 tags:
-    - network
-    - email
+    - pwn
+    - rev
+    - binary
     - ictf2011
     - historical
     - attack-defense
-files: []
+    - binary-only
+files:
+    - src/mailgw
+    - src/init_mailgateway
 state: visible
 version: "0.1"

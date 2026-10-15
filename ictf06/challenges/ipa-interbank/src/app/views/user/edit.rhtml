@@ -1,0 +1,8 @@
+<h2>Editing <%= @user.login %>'s Profile</h2>
+
+
+<%= start_form_tag :action => 'update', :id => @user %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Edit' %>
+<%= end_form_tag %>
+

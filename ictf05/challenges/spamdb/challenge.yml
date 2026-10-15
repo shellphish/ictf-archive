@@ -2,25 +2,27 @@ name: "iCTF 2005 — Spam World: SpamDB"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: web
 description: |
-  **iCTF 2005 — The Spam World**
+  **iCTF 2005 — The Spam Museum: SpamDB**
 
-  A PHP XML-RPC server at `/~spamdb/cgi-bin/server.php` that manages a spam
-  database. The API: `spamdb.create_account(email)` returns a password;
-  `spamdb.upload_data(user, password, flag)` stores the flag;
-  `spamdb.veryfy_data(user, password)` retrieves it. Find a vulnerability in
-  the XML-RPC interface or authentication.
+  A PHP XML-RPC server (`server.php`) using phpxmlrpc. Exported methods include
+  `echotest`, `create_account(email)` → password, and `db_size()`. Flags are
+  stored per-account in a flat-file database (via `spamdb.inc`). Vulnerabilities:
+  weak/predictable password generation in `gen_passwd()`; PHP warning disclosure
+  from `phpwarninggenerator` (undefined `$b`); potential XML injection in the
+  2005-era phpxmlrpc library. Source code fully available.
 value: 0
 type: standard
 
-image: .
+image: null
 protocol: http
 flags:
     - ictf2005{spamdb_pwned}
 
 topics:
-    - web exploitation
     - XML-RPC
-    - authentication bypass
+    - PHP
+    - weak password generation
+    - information disclosure
 
 tags:
     - web
@@ -30,7 +32,12 @@ tags:
     - historical
     - attack-defense
 
-files: []
+files:
+    - src/server.php
+    - src/spamdb.inc
+    - src/lib/xmlrpc.inc
+    - src/lib/xmlrpcs.inc
+    - src/spamdbScoringScript.py
 
 state: visible
 version: "0.1"

@@ -2,31 +2,39 @@ name: "iCTF 2005 — Spam World: FTP Service"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: binary
 description: |
-  **iCTF 2005 — The Spam World**
+  **iCTF 2005 — The Spam Museum: FTP Service**
 
-  An anonymous FTP server where the scorebot uploads flag files to
-  `/home/ftp/incoming/`. Each flag is stored as the content of a randomly
-  named file. Find a way to list and read other teams' flag files.
+  A custom C FTP server (anonymous login). The scorebot stores the flag as a
+  randomly-named file in `/home/ftp/incoming/` via `STOR`, and retrieves it
+  via `RETR`. Any connected user can `LIST` the `incoming/` directory and
+  `RETR` all files — all flags are publicly accessible without authentication.
+  Source code available: look for buffer overflows and path traversal in the
+  custom C implementation.
 value: 0
 type: standard
 
-image: .
+image: null
 protocol: ftp
 flags:
     - ictf2005{ftp_pwned}
 
 topics:
-    - FTP exploitation
-    - file access control
+    - FTP
+    - custom C server
+    - information disclosure
 
 tags:
     - ftp
     - network
+    - c
     - ictf2005
     - historical
     - attack-defense
 
-files: []
+files:
+    - src/ftpd.c
+    - src/ftpd
+    - src/ftpScoringScript.py
 
 state: visible
 version: "0.1"

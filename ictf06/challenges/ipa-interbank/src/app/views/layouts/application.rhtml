@@ -1,0 +1,58 @@
+<html>
+<head>
+  <meta name="author" content="Mercutio"/>
+  <%= stylesheet_link_tag 'ipal' %>
+  <link rel="shortcut icon" href="/favicon.ico"/>
+  <title>iPal: <%= controller.action_name %></title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+  <br/>
+  <h1>iPal.com</h1>
+</div> <!-- header -->
+
+  <div id="navigation">
+    <ul>
+       <li><%= link_to "Home", {:controller => "welcome"}, { :id => "home" } %> </li>
+       <% if not logged_in? %>
+       <li><%= link_to "Login", {:controller => "session", :action => "login"}, { :id => "login" } %></li>
+       <li><%= link_to "Signup", {:controller => "session", :action => "signup"}, { :id => "signup"} %>
+       <% else %>
+       <li><%= link_to "My Account", { :controller => "user", :action => "show", :id => nil}, { :id => "account" } %></li>
+       <li><%= link_to "Logout", { :controller => "session", :action => "logout"}, { :id => "logout" } %></li>
+       <li><%= link_to "Remove Account", {:controller => "user", :action => "destroy"} %>
+       <% end %>
+    </ul>
+  </div> <!-- navigation -->
+
+<div id="content">
+
+<p style="color: red"><%= flash[:error] %></p>
+<p style="color: green"><%= flash[:notice] %></p>
+
+<%= yield  %>
+</div>
+
+<div id="footer">
+    <hr/>
+    <div>
+        <ul>
+            <li><%= link_to "Investor Relations", "/investor.html" %></li>
+            <li><%= link_to "Press Releases", "/press.html" %></li>
+            <li><%= link_to "Careers", "/careers.html" %></li>
+        </ul>
+        <ul>
+            <li>&copy; 2006, iPal.com, Inc. or its affiliates</li>
+        </ul>
+    </div>
+</div>
+
+
+</div>
+
+</body>
+</html>

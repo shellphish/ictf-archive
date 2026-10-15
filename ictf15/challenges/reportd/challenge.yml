@@ -1,12 +1,15 @@
 name: "iCTF 2015 — reportd"
-author: "Giovanni Vigna / UCSB Security Lab"
+author: "UCSB Seclab"
 category: network
 description: |
   **iCTF 2015 — Crowdsourcing Evil**
 
-  Employee reporting daemon (reused from ictf04-05)
+  This is an employee reporting service!
 
-  Port: 6666. Source not available (only competition database preserved).
+  **Flag ID:** The flag_id is the prefix of the flag (actual prefix is flag_id:).
+
+  Port: 6666. Source not available (only competition database and base VM preserved).
+  This service was reused from an earlier iCTF edition or submitted by teams for ictf15.
 value: 0
 type: standard
 image: null

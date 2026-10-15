@@ -1,0 +1,11 @@
+<h2>New deposit</h2>
+
+<%= start_form_tag :action => 'create' %>
+  <p><label for="check_id">Check ID</label><br/>
+  <%= text_area_tag 'check_id', nil, :size => "80x3" %></p>
+  <label for="currency_id">Currency</label><br/>
+  <%= select_tag 'currency_id', options_for_select(@currencies) %>
+
+  <%= submit_tag "Deposit" %>
+<%= end_form_tag %>
+

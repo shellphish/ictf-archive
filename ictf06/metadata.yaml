@@ -35,13 +35,60 @@ results:
     Ran December 8th, 2006 from UCSB Frank Hall.
 
 challenges:
-  - name: hillbillybank
-    title: "Hillbilly Bank"
-    category: web
-    vm_image: "vms/bank2006.tar.gz"
+  # All 8 services extracted from CTF VM (Ubuntu, VMware VMDK) via qemu-img + debugfs.
+  # Source code recovered from /home/<user>/ directories on the VM image.
+  - name: hillbilly-bank
+    category: crypto
     description: >
-      Services for the Hillbilly Bank, a rich-yet-uneducated financial
-      institution. Teams attacked and defended banking services.
+      RSA check signing and verification system (the central bank).
+      Branch bank (branchbank.py) validates RSA-signed checks using a public key.
+      Central bank (centralbank.py) issues checks with the private key.
+      Scoring scripts and Python RSA implementation preserved.
+  - name: mom-bank
+    category: web
+    description: >
+      PHP web portal for "Mom's Bank" (lighttpd, port 1336). Members take a
+      personality quiz to qualify for accounts, then deposit checks and transfer
+      funds. Source extracted from /home/mom/public_html/.
+  - name: sts-stock
+    category: binary
+    description: >
+      C++ stock trading service (lighttpd CGI binary, port 1337). Serves the
+      stock exchange for the Hillbilly Bank. Source extracted from
+      /home/sts/stock_service.cpp.
+  - name: ipa-interbank
+    category: web
+    description: >
+      Ruby on Rails currency exchange service (mongrel, port 3000). Users deposit
+      RSA-signed checks and withdraw funds in various currencies. Key vulnerability:
+      command injection via IO.popen in DepositController.
+  - name: ins-insurance
+    category: web
+    description: >
+      PHP car insurance service (lighttpd, port 1335). Customers buy insurance
+      with RSA checks, then file damage claims. SQL injection in claim.php.
+  - name: atm
+    category: binary
+    description: >
+      Python 2 ATM service (SimpleXMLRPC). Manages credit card accounts and
+      withdrawals using a SQLite database (atmdb). Source extracted from
+      /home/atm/.
+  - name: bpt-proto
+    category: binary
+    description: >
+      Bank Protocol service (C binary, UDP port 2342). Handles account creation,
+      check deposits, and money transfers via a UDP-based custom protocol.
+      Binary extracted from /home/bpt/bankproto.
+  - name: bts-travel
+    category: web
+    description: >
+      Bank Travel Service (Python 2, HTTP). Allows account signup with RSA checks
+      and fund transfers. Source extracted from /home/bts/runme.py.
+  - name: etj-transactions
+    category: network
+    description: >
+      "Hillbilly translator" TCP service (Python 2, port 44000). Handles
+      inter-bank transaction relay. Source extracted from /home/etj/trans.py.
 
 data:
   - type: other
@@ -66,6 +113,20 @@ infrastructure:
   docker:
     full_environment: false
     individual_challenges: false
+  services:
+    web_http:
+      - {name: ipa-interbank,   port: 3000, server: mongrel,  lang: ruby}
+      - {name: ins-insurance,   port: 1335, server: lighttpd, lang: php}
+      - {name: mom-bank,        port: 1336, server: lighttpd, lang: php}
+      - {name: sts-stock,       port: 1337, server: lighttpd, lang: "c++"}
+    tcp:
+      - {name: etj-transactions, port: 44000, lang: python}
+    udp:
+      - {name: bpt-proto, port: 2342, lang: c}
+    xmlrpc:
+      - {name: atm, lang: python}
+    http:
+      - {name: bts-travel, lang: python}
 
 resources:
   website: "https://ictf.cs.ucsb.edu/archive/2006/site"

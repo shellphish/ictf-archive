@@ -44,16 +44,16 @@ over more than two decades.
 |---------|-------------------|-------------|-----------|------------|-------------|-------|
 | [ictf01](ictf01/) | — | — | — | — | — | HTML team reports only |
 | [ictf02](ictf02/) | — | — | — | — | — | Minimal files |
-| [ictf03](ictf03/) | 6 stubs | — | ✓ VMware | — | — | RedHat 9 VMDKs; scorebot scripts |
+| [ictf03](ictf03/) | 6 + source | ✓ | ✓ VMware | — | — | RedHat 9 VMDKs; source extracted from VM |
 | [ictf04](ictf04/) | 9 + source | ✓ | — | — | — | No winner declared; rematch → ictf04-05 |
 | [ictf04-05](ictf04-05/) | 10 + source | ✓ | — | — | — | June 2005 Bass Tard rematch |
-| [ictf05](ictf05/) | 11 + source | ✓ | — | — | — | Scorebot checker scripts preserved |
-| [ictf06](ictf06/) | — | — | — | — | — | Minimal archive |
+| [ictf05](ictf05/) | 11 (10 + source) | ✓ partial | ✓ VMware | — | — | RedHat 9 VMDKs; source extracted from VM (1 binary-only) |
+| [ictf06](ictf06/) | 9 (8 + source) | ✓ partial | ✓ VMware | — | — | Ubuntu VMDKs; source extracted; RSA bank + Rails + PHP + C++ |
 | [ictf07](ictf07/) | 8 + source | ✓ | — | — | — | Scorebot checker scripts preserved |
-| [ictf08](ictf08/) | 11 + Dockerfiles | ✓ | — | — | ✓ MySQL | Reference impl; exploit submissions; side challenges |
+| [ictf08](ictf08/) | 11 + Dockerfiles | ✓ | ✓ FreeDOS | — | ✓ MySQL | Reference impl; exploit submissions; side challenges; WOPR client recovered |
 | [ictf09](ictf09/) | 8 entries | — | ✓ VMware | ✓ 47 teams | — | Browser-exploit format; stats.pdf; scores.pdf |
 | [ictf10](ictf10/) | 15 (13 + source) | ✓ partial | ✓ Linux VMs | — | ✓ MySQL | LVM VMs; scorekeeper backup.sql |
-| [ictf11](ictf11/) | 10 stubs | — | ✗ encrypted | — | — | Service VM AES-encrypted; source unavailable |
+| [ictf11](ictf11/) | 10 + source | ✓ | ✓ VirtualBox (decrypted) | — | — | Ubuntu 10.10 LVM VM; 7z pw found in mailing list |
 | [ictf12](ictf12/) | 9 confirmed | — | — | — | — | ZDI framework; writeup from codezen.fr |
 | [ictf13](ictf13/) | 11 (debs preserved) | — | — | — | — | 32-bit i386 .deb packages; IRC log; audio |
 | [ictf14](ictf14/) | 42 (recycled) | ✓ in src editions | — | ✓ 88 teams | ✓ MySQL | Service DB in ictf15/database/; reg. DB |

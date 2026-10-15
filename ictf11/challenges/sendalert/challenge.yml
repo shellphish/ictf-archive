@@ -1,25 +1,68 @@
-name: "iCTF 2011 — Send Alert"
+name: "iCTF 2011 — sendalert"
 author: "Giovanni Vigna / UCSB Security Lab"
-category: network
+category: web
 description: |
   **iCTF 2011 — Money Laundering**
 
-  Send Alert was an alert and notification service within the mule operation
-  infrastructure. Captured 5,537 times.
+  `sendalert` is a Python 2.6 HTTP server (ThreadingHTTPServer) that provides
+  an alert/notification web interface for suspicious transactions. Mules use it
+  to send batch alerts to other participants.
 
-  Flags were stored in pending alerts awaiting delivery.
+  Port: **11111** (HTTP)
+  Connects to: `msgdispatcher` at port 31337
 
-  Source: encrypted VM archive `site/iC7F-l337-vu1n.7z` (AES-encrypted, password unknown).
+  ## Architecture
+
+  Endpoints: `/login`, `/logout`, `/register`, `/status`, `/send`, `/batch`
+
+  Session cookies use MD5 of `secret + username` where secret is hardcoded
+  as `"milkthemule"` — trivially forgeable if the username is known.
+
+  SQLite3 database stores user accounts and message queues.
+  Config file (`sendalert.ini`) seeds initial users and alert data.
+
+  ## Vulnerabilities
+
+  1. **Forged session cookie**: Session cookie is `MD5(secret + username)` where
+     `secret = "milkthemule"` (hardcoded in `sendalert.py`). Any attacker who
+     knows a valid username can forge a valid session cookie.
+
+  2. **SQL injection via forged session** (second-order): After forging a
+     cookie, it's used in a non-parameterized query:
+     ```python
+     cur.execute("""select username, data from users where session='%s'""" % session)
+     ```
+     Since the attacker controls `session`, this is a direct SQL injection.
+
+  ## Source
+
+  Fully recovered from competition VM (`/usr/local/bin/`):
+  - `src/sendalert.py` — complete Python HTTP server (25 KB, full source)
+  - `src/sendalert_main` — startup wrapper shell script
+  - `src/sendalert.ini` — initial user/data seeding config
+  - `src/init_sendalert` — init.d script
 value: 0
 type: standard
 image: null
+protocol: http
+port: 11111
 flags:
-    - ictf2011{sendalert_compromised}
+    - ictf2011{sendalert_pwned}
+topics:
+    - web
+    - python
+    - session forgery
+    - MD5
 tags:
-    - network
+    - web
+    - python
     - ictf2011
     - historical
     - attack-defense
-files: []
+files:
+    - src/sendalert.py
+    - src/sendalert_main
+    - src/sendalert.ini
+    - src/init_sendalert
 state: visible
 version: "0.1"

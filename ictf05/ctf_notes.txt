@@ -1,0 +1,21 @@
+Installed TFTPD should be configures as backdoor to access
+some service's flags.
+
+The password for the "museum" account is "bicicletta".
+The idea is that they should use an Italian dictionary...
+
+The password for "spam" is "qwertyuiop"
+so far there is no vulnerability for this account.
+Maybe the SQL-based vulnerability should go here...
+
+
+The password for "aqs" is "spamspamspam"
+
+
+The password for "contribute" is "moneymoney"
+
+The password for "acquire" is "barfoobar"
+
+The password for "spamometer" is "berluskamerda"
+
+The password for spamagent is "crackmeifyoucan"

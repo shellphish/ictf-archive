@@ -1,12 +1,15 @@
 name: "iCTF 2015 — aqs"
-author: "Giovanni Vigna / UCSB Security Lab"
+author: "UCSB Seclab"
 category: web
 description: |
   **iCTF 2015 — Crowdsourcing Evil**
 
-  Association for Quality SPAM guestbook (reused from ictf05)
+  This is a website that has a guestbook for The Association for Quality SPAM!
 
-  Port: 8014. Source not available (only competition database preserved).
+  **Flag ID:** The flag_id is the first part of the username, separated from the second part by an underscore.
+
+  Port: 8014. Source not available (only competition database and base VM preserved).
+  This service was reused from an earlier iCTF edition or submitted by teams for ictf15.
 value: 0
 type: standard
 image: null

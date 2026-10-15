@@ -113,6 +113,23 @@ Official walkthroughs for all challenges are in [`site/challenges/`](site/challe
   `bonus_walkthrough.txt`
 - Winner's full solution: [`site/ENOFLAG_Walkthrough.html`](site/ENOFLAG_Walkthrough.html)
 
+## Participant Attack Workstation
+
+The `ucsb-ictf-08-final.tar.gz.gpg` GPG archive (password: `ucsb`) contained
+the **bootable FreeDOS 4.1 disk image** used by participants as their attack
+workstation. Key artifacts are in [`infrastructure/wopr-client/`](infrastructure/wopr-client/):
+
+- **`WOPR.C`** — Source code for the scenario intro program (Open Watcom C).
+  Prints the Jack Bauer story one character at a time, then counts down 10 seconds
+  and deletes `\KERNEL.SYS`, making the disk unbootable (`unlink("\kernel.sys")`).
+- **`STORY.TXT`** — The Jack Bauer / nuclear bomb intro text (C string literal format).
+- **`WATTCP.CFG`** — TCP/IP configuration: `my_ip = 128.111.48.248` (UCSB network),
+  gateway `128.111.48.2`, domain `cs.ucsb.edu`. Uses WATTCP networking for DOS.
+- **`AUTOEXEC.BAT`** — Boot script: loads Crynwr packet driver, runs WOPR, reboots.
+
+The disk contained a full Open Watcom C development environment, which teams
+could use to compile custom attack tools in C for DOS.
+
 ## Infrastructure Code
 
 The scoring and hint system is in [`iCTF_2008/public_html/`](iCTF_2008/public_html/):

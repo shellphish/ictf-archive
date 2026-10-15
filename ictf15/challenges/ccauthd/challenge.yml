@@ -1,12 +1,15 @@
 name: "iCTF 2015 — ccauthd"
-author: "Giovanni Vigna / UCSB Security Lab"
-category: network
+author: "UCSB Seclab"
+category: binary
 description: |
   **iCTF 2015 — Crowdsourcing Evil**
 
-  Credit card authorization daemon (reused from ictf04-05)
+  This is a credit card authorization service!
 
-  Port: 12345. Source not available (only competition database preserved).
+  **Flag ID:** The flag_id is the first 14 characters of the auth token, which is also the filename containing the flag.
+
+  Port: 12345. Source not available (only competition database and base VM preserved).
+  This service was reused from an earlier iCTF edition or submitted by teams for ictf15.
 value: 0
 type: standard
 image: null
@@ -15,7 +18,7 @@ port: 12345
 flags:
     - ictf2015{ccauthd_pwned}
 tags:
-    - network
+    - binary
     - ictf2015
     - historical
     - attack-defense

@@ -4,20 +4,39 @@ category: web
 description: |
   **iCTF 2004 — The UN Voting System**
 
-  A campaign donation tracking service at `/~support/cgi-bin/donate.py`. The
-  scorebot stores the flag as the `comment` field in donation records.
-  Find a way to enumerate or read donation records.
+  A campaign donation tracking service at `/~support/cgi-bin/donate.py`.
+  Teams could donate UN Secretary-General election funds to candidates
+  (Blitzkrieg, Stallone, Schtrappe, Blix, Schmidt). The flag is stored
+  as the credit-card number (`cc`) field; donation summaries are exposed
+  as `/~support/<cc>.php` pages.
+
+  The Python CGI `donate.py` (extracted from the competition VM) stores
+  donations in `donations.bin` and generates per-`cc` result pages using
+  unsanitized filenames: `open("../%s.php" % cc, 'w')`. A `cc` value
+  containing `../` (filtered only for `/`) can escape the `cgi-bin/`
+  directory — enabling path traversal writes and potentially overwriting
+  arbitrary PHP files on the server.
+
+  ## Source
+
+  - `src/donate.py` — CGI script (extracted from competition VM at `/home/support/public_html/cgi-bin/`)
+  - `src/donate.py.old` — earlier revision with same bug
+  - `src/support.html` — donation form page
+  - `src/support_bot.py` — scorebot client (how the scorebot stores/retrieves flags)
 value: 0
 type: standard
 
-image: .
+image: null
 protocol: http
+port: 80
+
 flags:
     - ictf2004{contribute_pwned}
 
 topics:
     - web exploitation
     - CGI security
+    - path traversal
 
 tags:
     - web
@@ -27,7 +46,12 @@ tags:
     - historical
     - attack-defense
 
-files: []
+files:
+    - src/donate.py
+    - src/donate.py.old
+    - src/support.html
+    - src/support_bot.py
+    - src/contributeScoringScript.py
 
 state: visible
 version: "0.1"

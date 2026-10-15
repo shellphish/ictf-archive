@@ -1,16 +1,19 @@
 name: "iCTF 2015 — simpleftp"
-author: "Giovanni Vigna / UCSB Security Lab"
+author: "UCSB Seclab"
 category: network
 description: |
   **iCTF 2015 — Crowdsourcing Evil**
 
-  File storage service (FTP-like)
+  This is a file storing service!
 
-  Port: 2025. Source not available (only competition database preserved).
+  **Flag ID:** The flag_id is the content of a file (whose name is the actual flag).
+
+  Port: 2025. Source not available (only competition database and base VM preserved).
+  This service was reused from an earlier iCTF edition or submitted by teams for ictf15.
 value: 0
 type: standard
 image: null
-protocol: tcp
+protocol: ftp
 port: 2025
 flags:
     - ictf2015{simpleftp_pwned}

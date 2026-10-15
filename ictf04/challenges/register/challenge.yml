@@ -4,28 +4,44 @@ category: web
 description: |
   **iCTF 2004 — The UN Voting System**
 
-  A voter registration web service at `/~register/register.html`. The scorebot
-  submits a registration form with the `wwid` (worker/voter ID) field set to the
-  flag. Find a vulnerability to extract registered voter IDs.
+  A UN voter registration CGI service (`register.pl`). The Perl CGI script
+  registers voters and stores registration data including the flag as the
+  voter credential. Find a way to enumerate or retrieve registered voter records.
+
+  ## Source
+
+  - `src/register.pl` — Perl CGI registration handler
+  - `src/register.html` — HTML registration form
+  - `src/register_bot.py` — scorebot interaction script
+  - `src/registerScoringScript.py` — scoring script
 value: 0
 type: standard
 
-image: .
+image: null
 protocol: http
+port: 80
+
 flags:
     - ictf2004{register_pwned}
 
 topics:
     - web exploitation
     - information disclosure
+    - Perl CGI
 
 tags:
     - web
+    - perl
+    - cgi
     - ictf2004
     - historical
     - attack-defense
 
-files: []
+files:
+    - src/register.pl
+    - src/register.html
+    - src/register_bot.py
+    - src/registerScoringScript.py
 
 state: visible
 version: "0.1"

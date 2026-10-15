@@ -27,7 +27,6 @@ int main(int argc, char **argv) {
   char *ip = argv[1];
   char *flag = argv[2];
   char *adminPassword = argv[3];
-
   int i;
   int params[32];
   char preamble[512];
@@ -58,7 +57,7 @@ int main(int argc, char **argv) {
 	  params[0],
 	  params[1]);
 
-  sprintf(command, "wget -T 10 -O /dev/null --http-user=%s --http-passwd=%s --quiet \"%s\"", 
+  sprintf(command, "wget --http-user=%s --http-passwd=%s --quiet \"%s\"", 
 	  adminLogin,
 	  adminPassword,
 	  request);
@@ -75,7 +74,7 @@ int main(int argc, char **argv) {
 	  params[4],
 	  params[5]);
 
-  sprintf(command, "wget -T 10 -O /dev/null --http-user=%s --http-passwd=%s --quiet \"%s\"", 
+  sprintf(command, "wget --http-user=%s --http-passwd=%s --quiet \"%s\"", 
 	  adminLogin,
 	  adminPassword,
 	  request);
@@ -94,7 +93,7 @@ int main(int argc, char **argv) {
 	  params[8],
 	  params[9]);
 
-  sprintf(command, "wget -T 10 -O /dev/null --http-user=%s --http-passwd=%s --quiet \"%s\"", 
+  sprintf(command, "wget --http-user=%s --http-passwd=%s --quiet \"%s\"", 
 	  adminLogin,
 	  adminPassword,
 	  request);
@@ -113,7 +112,7 @@ int main(int argc, char **argv) {
 	  params[12],
 	  params[13]);
 
-  sprintf(command, "wget -T 10 -O /dev/null --http-user=%s --http-passwd=%s --quiet \"%s\"", 
+  sprintf(command, "wget --http-user=%s --http-passwd=%s --quiet \"%s\"", 
 	  adminLogin,
 	  adminPassword,
 	  request);
@@ -129,7 +128,7 @@ int main(int argc, char **argv) {
 	  params[14],
 	  params[15]);
 
-  sprintf(command, "wget -T 10 -O /dev/null --http-user=%s --http-passwd=%s --quiet \"%s\"", 
+  sprintf(command, "wget --http-user=%s --http-passwd=%s --quiet \"%s\"", 
 	  adminLogin,
 	  adminPassword,
 	  request);

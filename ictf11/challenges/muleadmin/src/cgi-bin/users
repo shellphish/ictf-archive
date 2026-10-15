@@ -1,0 +1,415 @@
+#!/usr/bin/php-cgi
+<?php
+require_once("/var/www/library.php");
+
+print '<div style="display:none">';
+if (file_exists("admin_skin.css")) {
+  require_once("admin_skin.css");
+}
+print '</div>';
+
+$operation = sanitize_r_data('operation', $_GET);
+$user = sanitize_r_data('user', $_GET);
+$submit = sanitize_r_data('submit', $_GET);
+$first = sanitize_r_data('first', $_GET);
+$last = sanitize_r_data('last', $_GET);
+$email = sanitize_r_data('email', $_GET);
+$pass = sanitize_r_data('pass', $_GET);
+$repeat_pass = sanitize_r_data('repeat_pass', $_GET);
+$phone = sanitize_r_data('phone', $_GET);
+$affiliation = sanitize_r_data('affiliation', $_GET);
+$address = sanitize_r_data('address', $_GET);
+$city = sanitize_r_data('city', $_GET);
+$state = sanitize_r_data('state', $_GET);
+$zip = sanitize_r_data('zip', $_GET);
+$ticket = sanitize_r_data('ticket', $_GET);
+$country = sanitize_r_data('country', $_GET);
+
+define("DEBUG", True);
+
+myheader("Manage Users");
+
+if ($username != $admin_user) {
+  diefooter("You are not an administrator!");
+}
+
+if ($operation == "add") {
+
+  if ($submit != "") {
+    if ($user == "") {
+      error_msg("Invalid username.");
+      error_log("Invalid username ($username).");
+    }
+    else if ($pass == "") {
+      error_msg("Invalid password.");
+      error_log("Invalid password ($pass).");
+      $pass = "";
+      $repeat_pass = "";
+    }
+    else if ($pass != $repeat_pass) {
+      error_msg("The passwords do not match.");
+      error_log("The passwords do not match ($pass/$repeat_pass).");
+      $pass = "";
+      $repeat_pass = "";
+    }
+    else if ($user == "" || $pass == "") {
+      error_msg("You must specify all the fields that are marked as mandatory.");    
+      error_log("User did not specify all the fields that are marked as mandatory.");    
+    }
+    /* The data seems valid */
+    else {
+      if (DEBUG) error_log("Starting the administrative registration process for user $user...");
+      
+      $st = mysqli_prepare($db, "SELECT username, password, email, first_name, last_name, phone, affiliation, address, city, state, zipcode, country FROM users WHERE username = ?");
+      if ($st == false) {
+	$err = mysqli_error($db);
+	error_log("Database error 5578: $err");
+	diefooter("Database error 5578. Please contact the administrator.");
+      }
+      $rs = mysqli_stmt_bind_param($st, "s", $user);
+      if ($rs == false) {
+	$err = mysqli_error($db);
+	error_log("Database error 8199: $err");
+	diefooter("Database error 8199. Please contact the administrator.");
+      }
+      $rs = mysqli_stmt_execute($st);
+      if ($rs == false) {
+	$err = mysqli_error($db);
+	error_log("Database error 3219: $err");
+	diefooter("Database error 3219. Please contact the administrator.");
+      }
+      mysqli_stmt_store_result($st);
+      $numrows = mysqli_stmt_num_rows($st);
+      mysqli_stmt_bind_result($st, $user, $storedpass, $email, $first, $last, $phone, $affiliation, $address, $city, $state, $zip, $country);
+      mysqli_stmt_fetch($st);
+    
+      /* The user already exists */
+      if ($numrows > 0) {
+	error_msg('The username ' . $user . ' is already registered.');    
+      }
+      else {
+	/* The user does not already exist */
+	mysqli_stmt_close($st);
+
+	/* Inserts the user data */
+	$st = mysqli_prepare($db, "INSERT INTO users (username, password, email, first_name, last_name, phone, affiliation, address, city, state, zipcode, country) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+	if ($st == false) {
+	  $err = mysqli_error($db);
+	  $err = mysqli_error($db);
+	  error_log("Database error 7221: $err");
+	  diefooter("Database error 7221. Please contact the administrator.");
+	}
+	$rs = mysqli_stmt_bind_param($st, "ssssssssssss", $user, $pass, $email, $first, $last, $phone, $affiliation, $address, $city, $state, $zip, $country);
+	if ($rs == false) {
+	  $err = mysqli_error($db);
+	  error_log("Database error 5487: $err");
+	  diefooter("Database error 5487. Please contact the administrator.");
+	}
+	$rs = mysqli_stmt_execute($st);
+	if ($rs == false) {
+	  $err = mysqli_error($db);
+	  error_log("Database error 4452: $err");
+	  diefooter("Database error 4452. Please contact the administrator.");
+	}
+	app_msg("User $user has been successfully registered.");
+	if ($ticket) ticket_log($ticket, "User $user registered");
+	myfooter("Manage Users");
+	die();
+      }
+    }
+  }
+  app_msg("The fields marked with &quot;*&quot; are mandatory.");
+print '
+<div id="add_user" class="input_form">
+<form action="users" method="get" >
+  <input type="hidden" name="operation" value="add" />
+  <input type="hidden" name="ticket" value="' . $ticket .'" />
+  <table summary="registration">
+    <tr><td class="label">* Username</td><td>:</td><td class="input"><input type="text" size="45" name="user" value="' . $user . '" /></td></tr>
+    <tr><td class="label">* Password</td><td>:</td><td class="input"><input type="password" size="45" name="pass" /></td></tr>
+    <tr><td class="label">* Repeat Password</td><td>:</td><td class="input"><input type="password" size="45" name="repeat_pass" /></td></tr>
+    <tr><td class="label">First, Last</td><td>:</td><td class="input"><input type="text" name="first" value="' . $first .'" />&nbsp;&nbsp;<input type="text" name="last" value="'. $last . '"/></td></tr>
+    <tr><td class="label">Email Address</td><td>:</td><td class="input"><input type="text" size="45" name="email" value="' . $email . '" /></td></tr>
+    <tr><td class="label">Phone Number</td><td>:</td><td class="input"><input type="text" size="30" name="phone" value="' . $phone . '" /></td></tr>
+    <tr><td class="label">Affiliation</td><td>:</td><td class="input"><input type="text" size="45" name="affiliation" value="' . $affiliation . '" /></td></tr>
+    <tr><td class="label">Address</td><td>:</td><td class="input"><input type="text" size="45" name="address" value="' . $address . '"/></td></tr>
+    <tr><td class="label">City, State/Province</td><td>:</td><td class="input"><input type="text" name="city" value="' . $city . '" />&nbsp;&nbsp;<input type="text" name="state" value="' . $state . '" /></td></tr>
+    <tr><td class="label">Zip/Postal Code</td><td>:</td><td class="input"><input type="text" name="zip" value="' . $zip . '" size="8" /></td></tr>
+    <tr>
+      <td class="label">Country</td><td>:</td><td class="input">
+        <select name="country">';
+  
+  if ($country == "") {
+    print '
+          <option value="" selected="selected">Please select...</option> ';
+  } else {
+    print '
+          <option value="' . $country . '" selected="selected" >' . $country . '</option>';
+  }
+  print $option_countries;
+  print '
+        </select>
+      </td>
+    </tr>  
+    <tr><td class="submit" colspan="3"><input type="submit" name="submit" value="Create User" /></td></tr>
+  </table>
+</form>
+</div>';
+}
+else if ($operation == "delete") {
+  if ($user != "") {
+    $st = mysqli_prepare($db, "DELETE FROM mulemanager.users WHERE username=?");
+    if ($st == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 4178: $err");
+      diefooter("Database error 4178. Please contact the administrator.");
+    }
+    $rs = mysqli_stmt_bind_param($st, "s", $user);
+    if ($rs == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 3199: $err");
+      diefooter("Database error 3199. Please contact the administrator.");
+    }
+    $rs = mysqli_stmt_execute($st);
+    if ($rs == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 3244: $err");
+      diefooter("Database error 3244. Please contact the administrator.");
+    }
+    if ($ticket) ticket_log($ticket, "User $user deleted");
+  }
+  $st = mysqli_prepare($db, "SELECT username, first_name, last_name FROM users WHERE username != ?");
+  if ($st == false) {
+    $err = mysqli_error($db);
+    error_log("Database error 5548: $err");
+    diefooter("Database error 5548. Please contact the administrator.");
+  }
+  $rs = mysqli_stmt_bind_param($st, "s", $username);
+  if ($rs == false) {
+    $err = mysqli_error($db);
+    error_log("Database error 8119: $err");
+    diefooter("Database error 8119. Please contact the administrator.");
+  }
+  $rs = mysqli_stmt_execute($st);
+  if ($rs == false) {
+    $err = mysqli_error($db);
+    error_log("Database error 3217: $err");
+    diefooter("Database error 3217. Please contact the administrator.");
+  }
+  mysqli_stmt_store_result($st);
+  $numrows = mysqli_stmt_num_rows($st);
+  mysqli_stmt_bind_result($st, $user, $first, $last);
+  $users = array();
+  while (mysqli_stmt_fetch($st) != False) {
+    $users[strtolower($last) . strtolower($first)] = array("user" => $user, "first" => $first, "last" => $last);
+  }
+  if (count($users) == 0) {
+    app_msg("There are no users to be deleted.");
+  }
+  else {
+    ksort($users);
+    app_msg("Please select a user to be deleted.");
+print '
+<div id="delete_user" class="input_form">
+  <form action="users" method="get" >
+    <input type="hidden" name="operatioan" value="delete" />
+    <input type="hidden" name="ticket" value="' . $ticket . '" />
+    <table>
+      <tr>
+        <td>
+          <select id="delete_user_list" name="user">';
+    foreach ($users as $u) {
+      print '
+            <option value="' . $u["user"] .'">' . $u["first"] . ' ' . $u["last"] . ' (' . $u["user"] . ')</option>
+';
+    }
+    print '
+          </select>
+        </td>
+        <td>
+          <input type="submit" name="submit" value="Delete" /></td>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+';
+  }
+}
+/* MODIFY A USER */
+else if ($operation == "modify") {
+  if ($submit == "Update") {
+    $st = mysqli_prepare($db, "UPDATE mulemanager.users SET password=?, email=?, first_name=?, last_name=?, phone=?, affiliation=?, address=?, city=?, state=?, zipcode=?, country=? WHERE username=?");
+    if ($st == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 4231: $err.");
+      diefooter("Database error 4231. Please contact the administrator.");
+    }
+    $rs = mysqli_stmt_bind_param($st, "ssssssssssss", $pass, $email, $first, $last, $phone, $affiliation, $address, $city, $state, $zip, $country, $user);
+    if ($rs == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 2730: $err.");
+      diefooter("Database error 2730. Please contact the administrator.");
+    }
+    $rs = mysqli_stmt_execute($st);
+    if ($rs == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 7221: $err.");
+      diefooter("Database error 7221. Please contact the administrator.");
+    }
+    mysqli_stmt_store_result($st);
+    print '<div class="message">User information updated</div>'; 
+    if ($ticket) ticket_log($ticket, "User $user modified");
+  }
+  if ($user != "") {
+    app_msg("Profile for user $user.");
+    $st = mysqli_prepare($db, "SELECT username, password, email, first_name, last_name, phone, affiliation, address, city, state, zipcode, country FROM users WHERE username = ?");
+    if ($st == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 1578: $err");
+      diefooter("Database error 1578. Please contact the administrator.");
+    }
+    $rs = mysqli_stmt_bind_param($st, "s", $user);
+    if ($rs == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 8799: $err");
+      diefooter("Database error 8799. Please contact the administrator.");
+    }
+    $rs = mysqli_stmt_execute($st);
+    if ($rs == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 2219: $err");
+      diefooter("Database error 2219. Please contact the administrator.");
+    }
+    mysqli_stmt_store_result($st);
+    $numrows = mysqli_stmt_num_rows($st);
+    mysqli_stmt_bind_result($st, $user, $storedpass, $email, $first, $last, $phone, $affiliation, $address, $city, $state, $zip, $country);
+    mysqli_stmt_fetch($st);
+print '
+<div id="profile" class="input_form">
+<form action="users" method="get" >
+  <input type="hidden" name="operation" value="modify" />
+  <input type="hidden" name="ticket" value="' . $ticket . '" />
+  <input type="hidden" name="user" value="' . $user . '" />
+  <table summary="profile">
+    <tr><td class="label">First, Last</td><td>:</td><td class="input"><input type="text" name="first" value="' . $first .'" />&nbsp;&nbsp;<input type="text" name="last" value="'. $last . '"/></td></tr>
+    <tr><td class="label">Password</td><td>:</td><td class="input"><input type="text" size="45" name="pass" value="' . $storedpass . '" /></td></tr>
+    <tr><td class="label">Email Address</td><td>:</td><td class="input"><input type="text" size="45" name="email" value="' . $email . '" /></td></tr>
+    <tr><td class="label">Phone Number</td><td>:</td><td class="input"><input type="text" size="30" name="phone" value="' . $phone . '" /></td></tr>
+    <tr><td class="label">Affiliation</td><td>:</td><td class="input"><input type="text" size="45" name="affiliation" value="' . $affiliation . '" /></td></tr>
+    <tr><td class="label">Address</td><td>:</td><td class="input"><input type="text" size="45" name="address" value="' . $address . '" /></td></tr>
+    <tr><td class="label">City, State/Province</td><td>:</td><td class="input"><input type="text" name="city" value="' . $city . '" />&nbsp;&nbsp;<input type="text" name="state" value="' . $state . '" /></td></tr>
+    <tr><td class="label">Zip/Postal Code</td><td>:</td><td class="input"><input type="text" name="zip" value="' . $zip . '" size="8" /></td></tr>
+    <tr>
+      <td class="label">Country</td>
+      <td>:</td>
+      <td class="input">
+        <select name="country">';
+
+if ($country == "") {
+  print '
+          <option value="" selected="selected">Please select...</option> ';
+} else {
+  print '
+          <option value="' . $country . '" selected="selected" >' . $country . '</option>';
+}
+print $option_countries;
+print '
+        </select>
+      </td>
+    </tr>
+    <tr><td class="submit" colspan="3"><input type="submit" name="submit" value="Update" /></td></tr>
+  </table>
+</form>
+</div>';
+  }
+  if ($submit == "") {
+    $st = mysqli_prepare($db, "SELECT username, first_name, last_name FROM users WHERE username != ?");
+    if ($st == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 6548: $err");
+      diefooter("Database error 6548. Please contact the administrator.");
+    }
+    $rs = mysqli_stmt_bind_param($st, "s", $username);
+    if ($rs == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 8159: $err");
+      diefooter("Database error 8159. Please contact the administrator.");
+    }
+    $rs = mysqli_stmt_execute($st);
+    if ($rs == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 4117: $err");
+      diefooter("Database error 4117. Please contact the administrator.");
+    }
+    mysqli_stmt_store_result($st);
+    $numrows = mysqli_stmt_num_rows($st);
+    mysqli_stmt_bind_result($st, $user, $first, $last);
+    $users = array();
+    while (mysqli_stmt_fetch($st) != False) {
+      $users[strtolower($last) . strtolower($first)] = array("user" => $user, "first" => $first, "last" => $last);
+    }
+    if (count($users) == 0) {
+      app_msg("There are no users to be modified.");
+    }
+    else {
+      ksort($users);
+      app_msg("Please select a user to be modified.");
+      print '
+<div id="delete_user">
+  <form action="users" method="get" >
+    <input type="hidden" name="operation" value="modify" />
+    <input type="hidden" name="ticket" value="' . $ticket . '" />
+    <table>
+      <tr>
+        <td>
+          <select id="delete_user_list" name="user">';
+      foreach ($users as $u) {
+	print '
+            <option value="' . $u["user"] .'">' . $u["first"] . ' ' . $u["last"] . ' (' . $u["user"] . ')</option>
+';
+    }
+      print '
+          </select>
+        </td>
+        <td>
+          <input type="submit" name="submit" value="Select User" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+';
+  
+    }
+  }
+}
+else {
+  $ticket_str = "";
+  if ($ticket) {
+    $ticket_str = "&ticket=$ticket";
+  }
+  print '
+  <div id="operations">
+    <ul>
+      <li><a href="users?operation=add' . $ticket_str . '">Add a user</a></li>
+      <li><a href="users?operation=delete' . $ticket_str . '">Remove a user</a></li>
+      <li><a href="users?operation=modify' . $ticket_str . '">Modify a user</a></li>
+    </ul>
+  </div>
+';
+
+  if ($ticket) {
+    print '
+<div id="ticket_log">
+';
+    ticket_dump($ticket);
+    print '
+</div>
+';
+  }
+} 
+
+myfooter("Manage Users");
+die();
+?>

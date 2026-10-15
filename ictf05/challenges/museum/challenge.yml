@@ -2,22 +2,28 @@ name: "iCTF 2005 — Spam World: Spam Museum"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: web
 description: |
-  **iCTF 2005 — The Spam World**
+  **iCTF 2005 — The Spam Museum**
 
-  A Perl CGI "spam museum" that collects spam improvement ideas. The scorebot
-  uploads ideas via `museum_upload.pl` with the flag as the `idea` field, then
-  retrieves them via `museum_admin.pl`. Find a vulnerability to access stored ideas.
+  A Perl CGI spam museum that collects spam improvement ideas.  Flags are stored
+  as idea entries via `museum_upload.pl` (first/last/idea params).  Three
+  vulnerabilities: (1) command injection in `museum_search.pl` via unquoted
+  `$keyword` in `system "grep -i $keyword $_"` — only semicolons are filtered,
+  shell metacharacters work; (2) path traversal write in `museum_upload.pl` via
+  unsanitized `${first}.${last}` filename; (3) hardcoded admin password
+  `"unbreakable"` in `museum_admin.pl` plus path traversal read.
 value: 0
 type: standard
 
-image: .
+image: null
 protocol: http
 flags:
     - ictf2005{museum_pwned}
 
 topics:
-    - web exploitation
+    - command injection
+    - path traversal
     - Perl CGI
+    - hardcoded credentials
 
 tags:
     - web
@@ -27,7 +33,11 @@ tags:
     - historical
     - attack-defense
 
-files: []
+files:
+    - src/museum_search.pl
+    - src/museum_upload.pl
+    - src/museum_admin.pl
+    - src/museumScoringScript.py
 
 state: visible
 version: "0.1"

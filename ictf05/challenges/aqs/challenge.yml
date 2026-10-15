@@ -2,33 +2,45 @@ name: "iCTF 2005 — Spam World: AQS Guestbook"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: web
 description: |
-  **iCTF 2005 — The Spam World**
+  **iCTF 2005 — The Spam Museum: AQS (Association for Quality SPAM)**
 
-  A Python CGI guestbook at `/~aqs/cgi-bin/guestbook.py`. The scorebot signs
-  the guestbook with a random name and stores the flag as the `comment` field.
-  The `priv=on` parameter marks entries as private. Find a way to read private entries.
+  A multi-component CGI: `cprog` (C binary) applies a rotating-additive cipher
+  to QUERY_STRING then `execl`s `parser.pl` (Perl) with the ciphered args.
+  Also includes a Python guestbook (`guestbook.py`/`library.py`). The C source
+  is available; the inline x86 `speedup` function adds a rotating key (starting
+  at 1, incremented by 3 mod 16) to each byte. Bypassing the cipher allows
+  injecting arbitrary arguments into `parser.pl`.
 value: 0
 type: standard
 
-image: .
+image: null
 protocol: http
 flags:
     - ictf2005{aqs_pwned}
 
 topics:
-    - web exploitation
-    - CGI security
-    - information disclosure
+    - reverse engineering
+    - CGI
+    - cipher bypass
+    - x86 assembly
 
 tags:
     - web
+    - c
+    - perl
     - python
     - cgi
     - ictf2005
     - historical
     - attack-defense
 
-files: []
+files:
+    - src/cprog.c
+    - src/cprog
+    - src/guestbook.py
+    - src/library.py
+    - src/parser.pl
+    - src/aqsScoringScript.py
 
 state: visible
 version: "0.1"

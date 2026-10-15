@@ -1,12 +1,15 @@
 name: "iCTF 2015 — webasstard"
-author: "Giovanni Vigna / UCSB Security Lab"
+author: "UCSB Seclab"
 category: web
 description: |
   **iCTF 2015 — Crowdsourcing Evil**
 
-  File sharing website (reused from ictf04-05)
+  This is a website used for File Sharing!
 
-  Port: 4443. Source not available (only competition database preserved).
+  **Flag ID:** The flag_id is the first 8 characters of the names of the files saved in the webdocs folder.
+
+  Port: 4443. Source not available (only competition database and base VM preserved).
+  This service was reused from an earlier iCTF edition or submitted by teams for ictf15.
 value: 0
 type: standard
 image: null

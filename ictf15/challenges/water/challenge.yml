@@ -1,12 +1,15 @@
 name: "iCTF 2015 — water"
-author: "Giovanni Vigna / UCSB Security Lab"
+author: "UCSB Seclab"
 category: network
 description: |
   **iCTF 2015 — Crowdsourcing Evil**
 
-  Water measurement service
+  This is a Water Measurement service!
 
-  Port: 3333. Source not available (only competition database preserved).
+  **Flag ID:** The flag_id is the flag_id.
+
+  Port: 3333. Source not available (only competition database and base VM preserved).
+  This service was reused from an earlier iCTF edition or submitted by teams for ictf15.
 value: 0
 type: standard
 image: null

@@ -1,27 +1,55 @@
-name: "iCTF 2011 — Mule Admin"
+name: "iCTF 2011 — muleadmin"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: web
 description: |
   **iCTF 2011 — Money Laundering**
 
-  Mule Admin was the administrator portal for the money laundering mule operation.
-  The most-captured service with 46,867 flag steals, making it the primary attack
-  target of the competition.
+  `muleadmin` is the administrator portal for the money mule operation —
+  the most-captured service with **46,867** flag steals.
 
-  Competitors exploited web vulnerabilities to access the admin panel and steal
-  flags representing dirty money waiting to be laundered.
+  Port: **80** (HTTP, Apache 2.x UserDir + PHP-CGI)
+  Path: `/~muleadmin/cgi-bin/groups` and `/~muleadmin/cgi-bin/users`
 
-  Source: encrypted VM archive `site/iC7F-l337-vu1n.7z` (AES-encrypted, password unknown).
+  ## Architecture
+
+  PHP-CGI scripts served via Apache's `mod_userdir` at `/~muleadmin/`.
+  Both scripts share `/var/www/library.php` (same library as `mulemanager`).
+
+  MySQL credentials: `mulemanager / grabthiswhileyoucan` (database: `mulemanager`)
+
+  - `groups` (15 KB) — create/delete groups, add/remove users, list members
+  - `users` (16 KB) — user management, registration, roles
+  - Both use `ticket_log()` for flag-associated audit trail
+  - `ticket` parameter passed as GET arg, logged to database on group operations
+
+  The `tickets` directory at `/home/muleadmin/tickets/` stores flag-value
+  tickets written by the scorebot.
+
+  ## Attack Surface
+
+  The `data_chars` whitelist in `library.php` includes `'` (single quote).
+  Any SQL query built via string interpolation after `sanitize_r_data()` is
+  vulnerable to SQL injection. The ticket log pattern is the flag channel.
 value: 0
 type: standard
 image: null
+protocol: http
+port: 80
 flags:
-    - ictf2011{muleadmin_compromised}
+    - ictf2011{muleadmin_pwned}
+topics:
+    - web
+    - php
+    - sql injection
+    - cgi
 tags:
     - web
+    - php
     - ictf2011
     - historical
     - attack-defense
-files: []
+files:
+    - src/cgi-bin/groups
+    - src/cgi-bin/users
 state: visible
 version: "0.1"

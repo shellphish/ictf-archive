@@ -5,16 +5,45 @@ description: |
   **iCTF 2007 — The Copyright Mafia**
 
   A Mafia social compliance service: "Would you pay the fine? Would you
-  sign the settlement?" A compiled binary service (Windows PE exe on Linux
-  via Wine). Source GPG-encrypted. Binary available for reverse engineering.
+  sign the settlement?" A compiled Windows PE executable run on Linux via
+  Wine. A Python 2.5 CGI wrapper (`wouldyou.pyc`) communicates with the
+  Windows service via a localhost TCP socket.
+
+  ## Architecture
+
+  - `wouldyou.exe` — Windows PE binary (Wine daemon, binds local TCP port)
+  - `wouldyou.pyc` — Python 2.5 CGI wrapper: forwards client requests to
+    the Wine process over a localhost socket
+  - Wine init script (`/etc/init.d/wouldyou`) starts the exe as user `wouldyou`
+
+  ## Source availability
+
+  - `wouldyou.exe` — Windows PE binary, available for static/dynamic analysis
+  - `wouldyou.pyc` — Python 2.5 bytecode (CGI wrapper); source `wouldyou.cpp.gpg`
+    was GPG-encrypted on the VM (key unknown)
+
+  ## Vulnerability hints
+
+  - The Windows binary handles flag storage; look for buffer overflows in
+    the custom TCP protocol, format string bugs, or integer issues
+  - The Python CGI layer may add its own attack surface (parameter injection,
+    forged session tokens passed to the exe)
+  - Wine boundary: can you escape the Wine sandbox or exploit Win32 API quirks?
+
 value: 0
 type: standard
 image: null
 protocol: tcp
 flags:
     - ictf2007{wouldyou_pwned}
-tags: [binary, re, wine, ictf2007, historical]
+topics:
+    - reverse engineering
+    - binary exploitation
+    - windows
+    - wine
+tags: [binary, re, wine, windows, ictf2007, historical, attack-defense]
 files:
     - src/wouldyou.exe
+    - src/wouldyou.pyc
 state: visible
-version: "0.1"
+version: "0.2"

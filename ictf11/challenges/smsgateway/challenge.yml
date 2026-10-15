@@ -1,23 +1,45 @@
-name: "iCTF 2011 — SMS Gateway"
+name: "iCTF 2011 — smsgateway"
 author: "Giovanni Vigna / UCSB Security Lab"
-category: network
+category: pwn
 description: |
   **iCTF 2011 — Money Laundering**
 
-  SMS Gateway was an SMS/text message notification service used by the mule
-  operation for out-of-band communication. Captured 1,951 times.
+  `smsgateway` is a compiled C binary providing an SMS-style message gateway
+  for the Money Laundering operation — a cover for passing flags as "text
+  messages" between money mules.
 
-  Source: encrypted VM archive `site/iC7F-l337-vu1n.7z` (AES-encrypted, password unknown).
+  Port: **1991** (TCP, custom binary protocol)
+
+  ## Architecture
+
+  TCP server accepting carrier-typed SMS messages. The binary prints carrier
+  information (`ERROR: Unsupported carrier %s`) and port number in its help
+  output. Uses `listen`/`bind`/`accept` pattern with fork-based connection
+  handling. The service takes a port argument at startup.
+
+  32-bit ELF, not stripped, compiled on Ubuntu 10.10.
+  Source code not recovered (binary-only from competition VM).
 value: 0
 type: standard
 image: null
+protocol: tcp
+port: 1991
 flags:
-    - ictf2011{smsgateway_compromised}
+    - ictf2011{smsgateway_pwned}
+topics:
+    - binary exploitation
+    - reverse engineering
+    - custom protocol
 tags:
-    - network
+    - pwn
+    - rev
+    - binary
     - ictf2011
     - historical
     - attack-defense
-files: []
+    - binary-only
+files:
+    - src/smsgw
+    - src/init_smsgateway
 state: visible
 version: "0.1"

@@ -1,0 +1,11 @@
+<p>
+  <b>User:</b> <%= @deposit.user.login %>
+</p>
+<% for column in Deposit.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @deposit.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @deposit %> |
+<%= link_to 'Back', :action => 'list' %>

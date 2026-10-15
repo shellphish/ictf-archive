@@ -1,0 +1,58 @@
+name: "iCTF 2006 — Hillbilly Bank: Insurance Service"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2006 — The Hillbilly Bank**
+
+  The Hillbilly Insurance service lets customers purchase car insurance by
+  submitting an RSA-signed check and personal details. After purchase, customers
+  can log in and file damage claims.
+
+  The service is a PHP application served by lighttpd on port 1335. Key
+  vulnerabilities:
+
+  1. **SQL injection** in `claim.php`: the `$_POST["desc"]` (claim description)
+     is inserted into SQL without sanitization.
+  2. **Logic flaw** in `claim.php`: the `$value` variable controlling the
+     insurance cap comes from the outer session scope but `$damage` comparison
+     uses it before it is set if not in the right path.
+  3. Credentials: MySQL `insurance` database, username `ins`, password `abracadabra`.
+
+  *Source extracted from the CTF VM (Ubuntu, VMware VMDK) via qemu-img + debugfs.*
+value: 0
+type: standard
+
+image: null
+protocol: http
+host: null
+connection_info: "http://<host>:1335/"
+
+flags:
+    - ictf2006{ins_insurance_pwned}
+
+topics:
+    - web exploitation
+    - php
+    - sql injection
+
+tags:
+    - web
+    - php
+    - sql injection
+    - ictf2006
+    - historical
+
+files:
+    - src/buy.php
+    - src/claim.php
+    - src/login.php
+    - src/db.php
+    - src/vars.php
+    - src/nav.php
+    - src/index.php
+    - src/extend.php
+    - src/install.mysql
+    - src/lighttpd.conf
+
+state: visible
+version: "0.1"

@@ -1,0 +1,10 @@
+<h2>Withdraw Deposit</h2>
+
+<%= start_form_tag :action => 'destroy' %>
+  <p><label for="id">Deposit ID:&nbsp;<%= text_field_tag "id", @deposit.id, :size => @deposit.id.to_s.length %><br/>
+  <label for="iban">IBAN</label><br/>
+  <%= text_area_tag 'iban', nil, :size => "80x3" %></p>
+
+  <%= submit_tag "Withdraw" %>
+<%= end_form_tag %>
+

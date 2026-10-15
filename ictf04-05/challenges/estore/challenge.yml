@@ -6,9 +6,29 @@ description: |
 
   The Bass Tard Corporation's e-commerce platform. Users can register accounts,
   log in, browse products, and update profile information. The flag is stored
-  in the email field of a registered user account and is readable only after
-  authenticating as that user. The service exposes CGI scripts at
-  `/~estore/cgi-bin/` (createuser.php, login.php, update.php, logout.php).
+  as a product entry in the `estore` MySQL database, accessible only to
+  authenticated users. Service exposes CGI scripts at `/~estore/cgi-bin/`.
+
+  ## Vulnerability
+
+  `process_login.php` sanitizes `username` but **not** `password`:
+  ```php
+  $username = mysql_real_escape_string($_GET['username']);
+  $password = $_GET['password'];  // raw!
+  ...
+  "SELECT * FROM users WHERE username='${username}' AND password='${password}'"
+  ```
+  Classic SQL injection: `password=' OR '1'='1` bypasses authentication.
+  Cookie format is `username:password:expiration:token` — credentials in cleartext.
+  Database: MySQL `estore` as `estoreuser:retard`.
+
+  ## Source
+
+  Extracted from competition VM (`/home/estore/public_html/cgi-bin/`):
+  PHP4 CGI scripts: `login.php`, `process_login.php`, `createuser.php`,
+  `process_createuser.php`, `buy.php`, `process_buy.php`, `sell.php`,
+  `process_sell.php`, `update.php`, `process_update.php`, `logout.php`,
+  `process_logout.php`, `myfuncs.php`, `debug.php`, `info.php`.
 value: 0
 type: standard
 image: null
@@ -19,12 +39,29 @@ flags:
     - ictf2005{estore_compromised}
 topics:
     - web exploitation
-    - authentication bypass
     - SQL injection
+    - authentication bypass
 tags:
     - web
+    - php
+    - sql-injection
     - ictf2005
     - historical
-files: []
+files:
+    - src/login.php
+    - src/process_login.php
+    - src/createuser.php
+    - src/process_createuser.php
+    - src/buy.php
+    - src/process_buy.php
+    - src/sell.php
+    - src/process_sell.php
+    - src/update.php
+    - src/process_update.php
+    - src/logout.php
+    - src/process_logout.php
+    - src/myfuncs.php
+    - src/debug.php
+    - src/info.php
 state: visible
 version: "0.1"

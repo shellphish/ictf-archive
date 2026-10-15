@@ -1,12 +1,15 @@
 name: "iCTF 2015 — contribute"
-author: "Giovanni Vigna / UCSB Security Lab"
+author: "Zanardi, UCSB Seclab"
 category: web
 description: |
   **iCTF 2015 — Crowdsourcing Evil**
 
-  Donations website (reused from ictf04/ictf05)
+  This is a website used for donations!
 
-  Port: 8112. Source not available (only competition database preserved).
+  **Flag ID:** The flag_id is the comment in a donation.
+
+  Port: 8112. Source not available (only competition database and base VM preserved).
+  This service was reused from an earlier iCTF edition or submitted by teams for ictf15.
 value: 0
 type: standard
 image: null

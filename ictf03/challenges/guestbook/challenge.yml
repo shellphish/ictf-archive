@@ -27,16 +27,16 @@ description: |
   - `src/templates/` — HTML page templates (header.html, footer.html, index.html)
 
   The flag is stored as a guestbook entry for "Bill Gates" in the format
-  `Bill Gates (flagvalue) wrote:`. The `save_message.pl` script sanitizes
-  some shell metacharacters but uses `system("echo $gb_entry >> ./guestbook.txt")`
-  with unsanitized output of `md5_hex(\`date\`)` — a classic shell injection path.
+  `<b>Bill Gates</b> (##GUESTBOOK_FLAG##) wrote:`. The admin interface
+  (`guestbook_admin.pl`) authenticates with MD5 of the password, then renders
+  the entire guestbook.txt in a textarea. `save_messages_admin.pl` replaces the
+  file content with the submitted textarea body.
 
-  The admin scripts (`guestbook_admin.pl`, `save_messages_admin.pl`) that
-  the scorebot uses to set flags were not present in the clean VM image.
-  See `src/get_guestbook` and `src/set_guestbook` for the scorebot protocol.
+  Source extracted from CTF VM (RedHat 9 VMware image, `/root/setup/guestbook/`).
+  All admin scripts and scorebot interaction scripts are present.
 value: 0
 type: standard
-image: null
+image: "."
 protocol: http
 port: 80
 flags:
@@ -44,6 +44,7 @@ flags:
 topics:
     - web
     - perl cgi
+    - authentication bypass
 tags:
     - web
     - perl
@@ -52,12 +53,14 @@ tags:
     - historical
     - attack-defense
 files:
+    - src/guestbook_admin.pl
+    - src/save_messages_admin.pl
     - src/guestbook.pl
     - src/save_message.pl
-    - src/templates/index.html
-    - src/templates/header.html
-    - src/templates/footer.html
+    - src/guestbook.txt
     - src/get_guestbook
     - src/set_guestbook
+    - src/setup.sh
+    - src/init_guestbook
 state: visible
 version: "0.1"

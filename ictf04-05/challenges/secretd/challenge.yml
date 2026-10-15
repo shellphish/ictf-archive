@@ -1,30 +1,51 @@
-name: "iCTF 2005 — Secret Storage Daemon (secretd)"
+name: "iCTF 2004-05 — Secret Storage Daemon (secretd)"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: binary
 description: |
-  **iCTF 2005 — The Bass Tard Corporation**
+  **iCTF 2004-05 — The Bass Tard Corporation**
 
-  A C service with separate public and private interfaces for storing
-  and retrieving secret data. The service has both a public-facing
-  component and a privileged internal component. Find the vulnerability
-  that allows reading secrets without authorization.
+  `secretd` is a C++ SSL/TLS daemon (port 8008) backed by BerkeleyDB.
+  It stores and retrieves named secrets, protected by an RSA key pair
+  (`secretd.public` / `secretd.private` — included in the repository).
+
+  The service uses a custom `CHECKSUM_KEY` (0xb976be5) anti-tamper
+  scheme: stored entries include a checksum; a wrong key causes reads
+  to return garbage (`SCRAMBLE` mode) or nothing. The service forks
+  on each connection (or uses threads when `USE_THREADS` is defined).
+
+  A `DUMP_PROBABILITY` of 75% means the service randomly drops responses,
+  making timing-based attacks unreliable. The `secretd.in` management
+  script and `poundsvc` (pound reverse proxy) scripts are included.
+
+  Scorebot password: `b1t3m3`
+
+  Reverse the protocol, bypass the SSL client-certificate check (if any),
+  or find logic flaws in the checksum or scramble paths to read secrets
+  without the proper credentials.
 value: 0
 type: standard
-image: .
+image: "."
 protocol: tcp
-host: null
-connection_info: null
+port: 8008
 flags:
-    - ictf2005{secretd_compromised}
+    - ictf0405{secretd_compromised}
 topics:
     - binary exploitation
-    - privilege separation
-    - C
+    - SSL/TLS
+    - C++
+    - BerkeleyDB
 tags:
     - binary
-    - ictf2005
+    - pwn
+    - ssl
+    - crypto
+    - ictf0405
     - historical
+    - attack-defense
 files:
-    - src/
+    - src/src/secretd.cc
+    - src/secretd.public
+    - src/secretd.private
+    - src/scripts/scorebot_secretd.py
 state: visible
 version: "0.1"

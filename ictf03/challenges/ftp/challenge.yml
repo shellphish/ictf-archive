@@ -14,25 +14,33 @@ description: |
 
   ## Source
 
-  Custom FTP server written in C (`src/weirdftp.c`). The flag and password
-  are embedded as `##FTP_FLAG##` and `##FTP_PASS##` placeholders replaced
-  at deployment time. The server implements a full FTP command set with
-  intentional quirks: the `APPE` command returns the flag in its 200
-  response, `PASV` always returns 500, and `CWD` to `/etc` or `/bin/login`
-  returns 550. The password is also obscured via XOR encoding in `filename_encoded`.
+  Source extracted from CTF VM (RedHat 9 VMware image).
 
-  Scorebot scripts (`src/get_ftp`, `src/set_ftp`) use `expect`/`nc` to
-  interact with the server, storing flags via `STAT <flag>` and retrieving
-  via `APPE`.
+  - `src/ftpd.c` — final deployed custom FTP server (19.5 KB)
+  - `src/weirdftp.c` — earlier development version (19.5 KB)
+  - `src/encode` — flag/password encoding binary
+  - `src/setup.sh` — deployment script
+  - `src/init_ftp` — service init script
+  - `src/get_ftp`, `src/set_ftp` — scorebot interaction scripts
+
+  The server implements a subset of FTP with intentional non-standard behaviors:
+  - `APPE` returns the flag in its `200` response (bypasses normal file transfer)
+  - `STAT <flag>` stores a new flag value
+  - `PASV` always returns `500` (only active mode supported)
+  - `CWD /etc` and `CWD /bin/login` return `550 Access denied`
+
+  Flag filename is XOR-encoded in the binary (`filename_encoded` array).
+  The `BYPASSWORD` constant is the admin auth bypass.
 value: 0
 type: standard
-image: null
+image: "."
 protocol: ftp
 port: 21
 flags:
     - ictf2003{ftp_pwned}
 topics:
     - ftp
+    - custom protocol
 tags:
     - network
     - ftp
@@ -40,8 +48,11 @@ tags:
     - historical
     - attack-defense
 files:
+    - src/ftpd.c
     - src/weirdftp.c
     - src/get_ftp
     - src/set_ftp
+    - src/setup.sh
+    - src/init_ftp
 state: visible
 version: "0.1"

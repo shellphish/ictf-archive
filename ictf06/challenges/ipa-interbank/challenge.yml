@@ -1,0 +1,59 @@
+name: "iCTF 2006 — Hillbilly Bank: iPal Currency Exchange"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2006 — The Hillbilly Bank**
+
+  iPal is the Hillbilly Bank's inter-bank currency exchange service, built as a
+  Ruby on Rails 1.x application served via mongrel (port 3000). Users can sign
+  up, deposit RSA-signed checks from the central bank, and withdraw funds to an
+  IBAN address in various currencies.
+
+  Key vulnerability: the `DepositController#create` action passes `params[:check_id]`
+  directly into a shell command via `IO.popen`:
+
+  ```ruby
+  ccheck = IO.popen("/usr/bin/ccheck #{params[:check_id]}", "r")
+  ```
+
+  Although the check ID must be exactly 172 characters, shell metacharacters
+  in that string execute arbitrary commands. Find a way to exploit this to read
+  the flag.
+
+  *Source extracted from the CTF VM (Ubuntu, VMware VMDK) via qemu-img + debugfs.*
+value: 0
+type: standard
+
+image: null
+protocol: http
+host: null
+connection_info: "http://<host>:3000/"
+
+flags:
+    - ictf2006{ipa_currency_pwned}
+
+topics:
+    - web exploitation
+    - ruby on rails
+    - command injection
+
+tags:
+    - web
+    - ruby
+    - rails
+    - command injection
+    - ictf2006
+    - historical
+
+files:
+    - src/app/controllers/deposit_controller.rb
+    - src/app/controllers/session_controller.rb
+    - src/app/controllers/user_controller.rb
+    - src/app/models/user.rb
+    - src/app/models/deposit.rb
+    - src/config/routes.rb
+    - src/config/database.yml
+    - src/db/schema.rb
+
+state: visible
+version: "0.1"

@@ -1,12 +1,15 @@
 name: "iCTF 2015 — convicts"
-author: "Giovanni Vigna / UCSB Security Lab"
-category: binary
+author: "Yan Shoshitaishvili (yans@cs.ucsb.edu)"
+category: network
 description: |
   **iCTF 2015 — Crowdsourcing Evil**
 
-  Convict communication service (reused from ictf11)
+  This is a service for communicating as convicts!
 
-  Port: 911. Source not available (only competition database preserved).
+  **Flag ID:** The flag_id is the ID of the crap you flushed.
+
+  Port: 911. Source not available (only competition database and base VM preserved).
+  This service was reused from an earlier iCTF edition or submitted by teams for ictf15.
 value: 0
 type: standard
 image: null
@@ -15,7 +18,7 @@ port: 911
 flags:
     - ictf2015{convicts_pwned}
 tags:
-    - binary
+    - network
     - ictf2015
     - historical
     - attack-defense

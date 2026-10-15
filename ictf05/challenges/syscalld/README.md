@@ -1,22 +1,53 @@
-# Syscall Daemon (iCTF 2005)
+# syscalld — iCTF 2005
 
-Part of the **Spam World** theme of iCTF 2005.
+**Competition:** iCTF 2005 "The Spam Museum" (December 2005, UCSB)
+**Category:** pwn / reverse engineering
+**Format:** Attack-defense service
 
-## Description
+## Overview
 
-A TCP service on port 31337 with a custom binary protocol. The banner contains a
-version string like `v1.2.3` where the patch number is the XOR seed. All protocol
-instructions are XOR'd with this seed byte.
+A remote service (TCP port 31337) that acts as an interactive x86 assembly
+interpreter. Clients send x86 instructions (`pushl`, `popl`, `movl`, `addl`,
+`sysenter`, `dump`) one per line, and the service executes them directly on
+an in-process virtual register file, calling actual Linux syscalls via
+`sysenter`. The flag is stored at `/usr/local/share/syscalld/flag`.
 
-The flag is stored in memory in little-endian 32-bit word order; the service
-exposes it as a hex memory dump.
+The service XOR-obfuscates instruction keywords with a seed extracted from
+the version banner: `"v1.0.<seed>"`. Clients must XOR each keyword byte by
+the seed before sending.
 
-## Protocol
+## Architecture
 
-Connect on port 31337. Parse the version string for the seed. Send XOR'd
-instructions to read/write flag memory.
+```
+TCP port 31337
+Banner: "syscalld vX.Y.<seed>\n"
+Commands (XOR-obfuscated): pushl, popl, movl, addl, sysenter, dump
+```
 
-## Source
+The scorebot opens `/usr/local/share/syscalld/flag` (syscall 5 = open),
+reads it (syscall 3 = read), and writes a new flag (syscall 4 = write)
+using `sysenter`. The `dump` command shows registers as a hex memory dump.
 
-See `writeup/SyscalldServiceScript.py` for the scorebot checker with full
-`extractSeed`, `extractFlag`, and `randomize` helper functions.
+## Vulnerability
+
+The service exposes arbitrary Linux syscall execution. An attacker who can
+recover the XOR seed from the banner can:
+1. XOR-encode any instruction keyword and send it
+2. Open, read, or write any file accessible to the service user
+3. Execute shellcode via arbitrary syscalls
+
+The XOR seed is trivially recoverable: it appears in plaintext in the banner
+as the version number's build component (`v1.0.<seed>`).
+
+## Files
+
+| File | Description |
+|------|-------------|
+| `src/syscalldScoringScript.py` | Scorebot flag set/get script (shows full protocol) |
+
+## Notes
+
+- No source code found on the VM; the service binary was not in `/home/syscalld/`.
+- Source is likely in a GPG-encrypted archive or was not preserved.
+- The scoring script fully documents the protocol: extract seed from banner,
+  XOR all keyword bytes, send x86 instructions to open/read/write the flag file.

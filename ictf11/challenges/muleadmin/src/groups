@@ -1,0 +1,490 @@
+#!/usr/bin/php-cgi
+<?php
+require_once("/var/www/library.php");
+
+print '<div style="display:none">';
+if (file_exists("./admin_skin.css")) {
+  require_once("./admin_skin.css");
+}
+print '</div>';
+
+$operation = sanitize_r_data('operation', $_GET);
+$group = sanitize_r_data('group', $_GET);
+$user = sanitize_r_data('user', $_GET);
+$ticket = sanitize_r_data('ticket', $_GET);
+$submit = sanitize_r_data('submit', $_GET);
+
+error_log("Executing operation $operation with user $user and group $group ($submit)");
+myheader("Manage Groups");
+
+if ($username != $admin_user) {
+  diefooter("You are not an administrator!");
+}
+
+if ($operation == "add") {
+  if ($submit != "") {
+    if ($group == "") {
+      error_msg("Invalid group name.");
+      error_log("Invalid group name ($group).");
+    }
+    else {
+      $st = mysqli_prepare($db, "SELECT groupname FROM groups WHERE groupname = ?");
+      if ($st == false) {
+	$err = mysqli_error($db);
+	error_log("Database error 1178: $err");
+	diefooter("Database error 1178. Please contact the administrator.");
+      }
+      $rs = mysqli_stmt_bind_param($st, "s", $group);
+      if ($rs == false) {
+	$err = mysqli_error($db);
+	error_log("Database error 8239: $err");
+	diefooter("Database error 8239. Please contact the administrator.");
+      }
+      $rs = mysqli_stmt_execute($st);
+      if ($rs == false) {
+	$err = mysqli_error($db);
+	error_log("Database error 3214: $err");
+	diefooter("Database error 3214. Please contact the administrator.");
+      }
+      mysqli_stmt_store_result($st);
+      $numrows = mysqli_stmt_num_rows($st);
+    
+      if ($numrows > 0) {
+	error_msg('The group ' . $group . '  already exists.');    
+	error_log('The group ' . $group . '  already exists.');    
+      }
+      else {
+	mysqli_stmt_close($st);
+
+	$st = mysqli_prepare($db, "INSERT INTO groups (groupname) VALUES (?)");
+	if ($st == false) {
+	  $err = mysqli_error($db);
+	  $err = mysqli_error($db);
+	  error_log("Database error 1221: $err");
+	  diefooter("Database error 1221. Please contact the administrator.");
+	}
+	$rs = mysqli_stmt_bind_param($st, "s", $group);
+	if ($rs == false) {
+	  $err = mysqli_error($db);
+	  error_log("Database error 2487: $err");
+	  diefooter("Database error 2487. Please contact the administrator.");
+	}
+	$rs = mysqli_stmt_execute($st);
+	if ($rs == false) {
+	  $err = mysqli_error($db);
+	  error_log("Database error 4352: $err");
+	  diefooter("Database error 4352. Please contact the administrator.");
+	}
+	if ($ticket) ticket_log($ticket, "Group $group created");
+	app_msg('Group ' . $group . ' has been successfully created.');
+      }
+    }
+  }
+  app_msg("Please specify the name of the group to be created.");
+print '
+<div id="add_group" class="input_form">
+<form action="groups" method="get" >
+  <input type="hidden" name="operation" value="add" />
+  <input type="hidden" name="ticket" value="' . $ticket . '" />
+  <table>
+    <tr><td class="label">Group Name</td><td>:</td><td class="input"><input type="text" size="45" name="group" /></td></tr>
+    <tr><td class="submit" colspan="3"><input type="submit" name="submit" value="Create Group" /></td></tr>
+  </table>
+</form>
+</div>';
+}
+else if ($operation == "delete") {
+  if ($group != "") {
+    $st = mysqli_prepare($db, "DELETE FROM mulemanager.groups WHERE groupname=?");
+    if ($st == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 4148: $err");
+      diefooter("Database error 4148. Please contact the administrator.");
+    }
+    $rs = mysqli_stmt_bind_param($st, "s", $group);
+    if ($rs == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 3197: $err");
+      diefooter("Database error 3197. Please contact the administrator.");
+    }
+    $rs = mysqli_stmt_execute($st);
+    if ($rs == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 3247: $err");
+      diefooter("Database error 3247. Please contact the administrator.");
+    }
+    if ($ticket) ticket_log($ticket, "Group $group deleted");
+  }
+  $st = mysqli_prepare($db, "SELECT groupname FROM groups");
+  if ($st == false) {
+    $err = mysqli_error($db);
+    error_log("Database error 5248: $err");
+    diefooter("Database error 5248. Please contact the administrator.");
+  }
+  $rs = mysqli_stmt_execute($st);
+  if ($rs == false) {
+    $err = mysqli_error($db);
+    error_log("Database error 1217: $err");
+    diefooter("Database error 1217. Please contact the administrator.");
+  }
+  mysqli_stmt_store_result($st);
+  $numrows = mysqli_stmt_num_rows($st);
+  mysqli_stmt_bind_result($st, $groupname);
+  $groups = array();
+  while (mysqli_stmt_fetch($st) != False) {
+    $groups[strtolower($groupname)] = $groupname;
+  }
+  if (count($groups) == 0) {
+    app_msg("There are no groups to be deleted.");
+  }
+  else {
+    ksort($groups);
+    app_msg("Please select a group to be deleted.");
+print '
+<div id="delete_group" class="input_form">
+  <form action="groups" method="get" >
+    <input type="hidden" name="operation" value="delete" />
+    <input type="hidden" name="ticket" value="' . $ticket . '" />
+    <table>
+      <tr>
+        <td>
+          <select id="delete_group_list" name="group">';
+    foreach ($groups as $g) {
+      print '
+            <option value="' . $g .'">' . $g . '</option>
+';
+    }
+    print '
+          </select>
+        </td>
+        <td>
+          <input type="submit" name="submit" value="Delete" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+';
+  }
+}
+else if ($operation == "add_user") {
+  if ($submit != "") {
+    if ($user == "" || $group == "") {
+      error_msg("Invalid user or group.");
+    }
+    else {
+      $st = mysqli_prepare($db, "SELECT username, groupname FROM groups_users WHERE username=? AND groupname=?");
+      if ($st == false) {
+	$err = mysqli_error($db);
+	error_log("Database error 5138: $err");
+	diefooter("Database error 5138. Please contact the administrator.");
+      }
+      $rs = mysqli_stmt_bind_param($st, "ss", $user, $group);
+      if ($rs == false) {
+	$err = mysqli_error($db);
+	error_log("Database error 8113: $err");
+	diefooter("Database error 8113. Please contact the administrator.");
+      }
+      $rs = mysqli_stmt_execute($st);
+      if ($rs == false) {
+	$err = mysqli_error($db);
+	error_log("Database error 4255: $err");
+	diefooter("Database error 4255. Please contact the administrator.");
+      }
+      mysqli_stmt_store_result($st);
+      $numrows = mysqli_stmt_num_rows($st);
+      if ($numrows > 0) {
+	error_msg("User $user is already a member of group $group");
+      }
+      else {
+	$st = mysqli_prepare($db, "INSERT INTO groups_users (groupname, username) VALUES (?, ?)");
+	if ($st == false) {
+	  $err = mysqli_error($db);
+	  $err = mysqli_error($db);
+	  error_log("Database error 3321: $err");
+	  diefooter("Database error 3321. Please contact the administrator.");
+	}
+	$rs = mysqli_stmt_bind_param($st, "ss", $group, $user);
+	if ($rs == false) {
+	  $err = mysqli_error($db);
+	  error_log("Database error 3557: $err");
+	  diefooter("Database error 3557. Please contact the administrator.");
+	}
+	$rs = mysqli_stmt_execute($st);
+	if ($rs == false) {
+	  $err = mysqli_error($db);
+	  error_log("Database error 4352: $err");
+	  diefooter("Database error 4352. Please contact the administrator.");
+	}
+	if ($ticket) ticket_log($ticket, "User $user added to group $group");
+	app_msg("User $user has been successfully added to group $group");
+      }
+    }
+  }
+  $st = mysqli_prepare($db, "SELECT username, first_name, last_name FROM users WHERE username != ?");
+  if ($st == false) {
+    $err = mysqli_error($db);
+    error_log("Database error 5148: $err");
+    diefooter("Database error 5148. Please contact the administrator.");
+  }
+  $rs = mysqli_stmt_bind_param($st, "s", $username);
+  if ($rs == false) {
+    $err = mysqli_error($db);
+    error_log("Database error 8112: $err");
+    diefooter("Database error 8112. Please contact the administrator.");
+  }
+  $rs = mysqli_stmt_execute($st);
+  if ($rs == false) {
+    $err = mysqli_error($db);
+    error_log("Database error 3255: $err");
+    diefooter("Database error 3255. Please contact the administrator.");
+  }
+  mysqli_stmt_store_result($st);
+  $numrows = mysqli_stmt_num_rows($st);
+  mysqli_stmt_bind_result($st, $user, $first, $last);
+  $users = array();
+  while (mysqli_stmt_fetch($st) != False) {
+    $users[strtolower($last) . strtolower($first)] = array("user" => $user, "first" => $first, "last" => $last);
+  }
+  ksort($users);
+  if (count($users) == 0) {
+    app_msg("There are no users to be added to groups.");
+    myfooter("Manage Groups");
+    die();
+  }
+  $st = mysqli_prepare($db, "SELECT groupname FROM groups");
+  if ($st == false) {
+    $err = mysqli_error($db);
+    error_log("Database error 5348: $err");
+    diefooter("Database error 5348. Please contact the administrator.");
+  }
+  $rs = mysqli_stmt_execute($st);
+  if ($rs == false) {
+    $err = mysqli_error($db);
+    error_log("Database error 1317: $err");
+    diefooter("Database error 1317. Please contact the administrator.");
+  }
+  mysqli_stmt_store_result($st);
+  $numrows = mysqli_stmt_num_rows($st);
+  mysqli_stmt_bind_result($st, $groupname);
+  $groups = array();
+  while (mysqli_stmt_fetch($st) != False) {
+    $groups[strtolower($groupname)] = $groupname;
+  }
+  ksort($groups);
+  if (count($groups) == 0) {
+    app_msg("There are no groups. Please first create a group.");
+    myfooter("Manage Groups");
+    die();
+  }
+  app_msg("Please select a user and a group.");
+print '
+<div id="add_user" class="input_form">
+  <form action="groups" method="get" >
+    <input type="hidden" name="operation" value="add_user" />
+    <input type="hidden" name="ticket" value="' . $ticket . '" />
+    <table>
+      <tr>
+        <td>
+          <select id="add_user_list" name="user">';
+    foreach ($users as $u) {
+      print '
+            <option value="' . $u["user"] .'">' . $u["first"] . ' ' . $u["last"] . ' (' . $u["user"] . ')</option>
+';
+    }
+    print '
+          </select>
+        </td>
+        <td>
+          <select id="add_group_list" name="group">';
+    foreach ($groups as $g) {
+      $selected_string = "";
+      if ($g == $group) {
+	$selected_string = 'selected="selected"';
+      }
+      print '
+            <option ' . $selected_string . ' value="' . $g .'">' . $g . '</option>
+';
+    }
+    print '
+          </select>
+        </td>
+        <td>
+          <input type="submit" name="submit" value="Add User To Group" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+';
+}
+else if ($operation == "del_user") {
+  if ($submit != "") {
+    if ($submit == "Delete User") {
+      if (($group == "") || ($user == "")) {
+	error_msg("Invalid group or user name");
+      }
+      else {
+	$st = mysqli_prepare($db, "DELETE FROM groups_users WHERE groupname=? AND username=?");
+	if ($st == false) {
+	  $err = mysqli_error($db);
+	  error_log("Database error 2148: $err");
+	  diefooter("Database error 2148. Please contact the administrator.");
+	}
+	$rs = mysqli_stmt_bind_param($st, "ss", $group, $user);
+	if ($rs == false) {
+	  $err = mysqli_error($db);
+	  error_log("Database error 3147: $err");
+	  diefooter("Database error 3147. Please contact the administrator.");
+	}
+	$rs = mysqli_stmt_execute($st);
+	if ($rs == false) {
+	  $err = mysqli_error($db);
+	  error_log("Database error 1747: $err");
+	  diefooter("Database error 1747. Please contact the administrator.");
+	}
+	if ($ticket) ticket_log($ticket, "User $user removed from group $group");
+      }
+    }
+    $st = mysqli_prepare($db, "SELECT users.username, users.first_name, users.last_name FROM groups_users LEFT JOIN users ON groups_users.username = users.username WHERE groups_users.groupname = ?");
+    if ($st == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 1548: $err");
+      diefooter("Database error 1548. Please contact the administrator.");
+    }
+    $rs = mysqli_stmt_bind_param($st, "s", $group);
+    if ($rs == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 8119: $err");
+      diefooter("Database error 8119. Please contact the administrator.");
+    }
+    $rs = mysqli_stmt_execute($st);
+    if ($rs == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 3217: $err");
+      diefooter("Database error 3217. Please contact the administrator.");
+    }
+    mysqli_stmt_store_result($st);
+    $numrows = mysqli_stmt_num_rows($st);
+    mysqli_stmt_bind_result($st, $user, $first, $last);
+    $users = array();
+    while (mysqli_stmt_fetch($st) != False) {
+      $users[strtolower($last) . strtolower($first)] = array("user" => $user, "first" => $first, "last" => $last);
+    }
+    if (count($users) == 0) {
+      app_msg("There are no users to be deleted.");
+    }
+    else {
+      ksort($users);
+      app_msg("Please select a user to be deleted from group $group.");
+      print '
+<div id="delete_user" class="input_form">
+  <form action="groups" method="get" >
+    <input type="hidden" name="operation" value="del_user" />
+    <input type="hidden" name="group" value="' . $group . '" />
+    <input type="hidden" name="ticket" value="' . $ticket . '" />
+    <table>
+      <tr>
+        <td>
+          <select id="delete_user_list" name="user">';
+	foreach ($users as $u) {
+	  print '
+            <option value="' . $u["user"] .'">' . $u["first"] . ' ' . $u["last"] . ' (' . $u["user"] . ')</option>
+';
+    }
+    print '
+          </select>
+        </td>
+        <td>
+          <input type="submit" name="submit" value="Delete User" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+';
+    }
+  }
+  else {
+    $st = mysqli_prepare($db, "SELECT groupname FROM groups");
+    if ($st == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 5248: $err");
+      diefooter("Database error 5248. Please contact the administrator.");
+    }
+    $rs = mysqli_stmt_execute($st);
+    if ($rs == false) {
+      $err = mysqli_error($db);
+      error_log("Database error 1217: $err");
+      diefooter("Database error 1217. Please contact the administrator.");
+    }
+    mysqli_stmt_store_result($st);
+    $numrows = mysqli_stmt_num_rows($st);
+    mysqli_stmt_bind_result($st, $groupname);
+    $groups = array();
+    while (mysqli_stmt_fetch($st) != False) {
+      $groups[strtolower($groupname)] = $groupname;
+    }
+    if (count($groups) == 0) {
+      app_msg("There are no groups to be modified.");
+    }
+    else {
+      ksort($groups);
+      app_msg("Please select a group to be modified.");
+      print '
+<div id="del_user_from_group" class="input_form">
+  <form action="groups" method="get" >
+    <input type="hidden" name="operation" value="del_user" />
+    <input type="hidden" name="ticket" value="' . $ticket . '" />
+    <table>
+      <tr>
+        <td>
+          <select id="del_user_group_list" name="group">';
+      foreach ($groups as $g) {
+	print '
+            <option value="' . $g .'">' . $g . '</option>
+';
+      }
+      print '
+          </select>
+        </td>
+        <td>
+          <input type="submit" name="submit" value="Select Group" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+';
+    }
+  }
+}
+else {
+  $ticket_str = "";
+  if ($ticket) {
+    $ticket_str = "&ticket=$ticket";
+  }
+  print '
+  <div id="operations">
+    <ul>
+      <li><a href="groups?operation=add' . $ticket_str . '">Add a group</a></li>
+      <li><a href="groups?operation=delete' . $ticket_str . '">Remove a group</a></li>
+      <li><a href="groups?operation=add_user' . $ticket_str . '">Add a user to a group</a></li>
+      <li><a href="groups?operation=del_user' . $ticket_str . '">Remove a user from a group</a></li>
+    </ul>
+  </div>
+';
+  if ($ticket) {
+    print '
+<div id="ticket_log">
+';
+    ticket_dump($ticket);
+    print '
+</div>
+';
+  }
+} 
+
+
+myfooter("Manage Groups");
+?>

@@ -1,0 +1,223 @@
+BODY {
+  background: #6699ff; 
+  color: white; 
+  font-family: Times, Times New Roman;
+  margin: 5 5 5 5;
+  border: 5;
+}
+
+/* General font definitions */
+STRONG { 
+  font-weight: bold 
+}
+
+VAR { 
+  font-style: italic 
+}
+
+SAMP, TT, CODE, PRE { 
+  font-family: Courier New, Courier, monospace 
+}
+
+/* Heading definitions */
+H1 {
+  text-align: center; 
+  color: white;
+  font-weight: normal;
+}
+
+H2 {
+  text-align: left; 
+  color: white; 
+  font-weight: normal;
+}
+
+H3 {
+  text-align: left; 
+  color: white; 
+  font-weight: normal;
+}
+
+H4 {
+  text-align: left; 
+  color: white; 
+  font-weight: normal;
+}
+
+/* Link definitions */
+A:link {
+  color: white;
+}
+
+A:visited {
+  color: white;
+}
+
+A:active {
+  color: white;
+}
+
+/* List definitions */
+UL {
+  list-style-type: square;
+}
+
+LI {
+  padding: .2em .2em .2em .2em; 
+}
+
+/* Table definitions */
+THEAD {
+  background: white; 
+  color: #6699ff; 
+  font-weight: bold
+}
+
+THEAD TD {
+  padding: .1em 1em .1em 1em; 
+}
+
+TBODY TD {
+  padding: .2em .2em .2em .2em; 
+}
+
+/* Definition list definitions */
+DT {
+  background: white; 
+  color: #6699ff; 
+  padding: .2em 2em .2em 2em; 
+  margin: .1%; 
+  font-weight: bold; 
+}
+
+/* Banner definitions */
+DIV.banner {
+/*  border-style: solid;
+  border-width: medium;
+  border-color: darkblue;*/
+}
+
+/* Sidebar definitions */
+DIV.sidebar {
+  border-style: solid;
+  border-width: 1.2px;
+  border-color: blue;
+  width: 15%;
+  float: right; 
+  background: white;
+  color: #6699ff; 
+}
+
+DIV.sidebar H1 {
+  margin: .2em .2em .2em .2em;
+  padding: 3px 3px 3px 3px;
+  text-align: center;
+  color: white;
+}
+
+DIV.sidebar H2 {
+  margin: .2em .2em .2em .2em;
+  padding: 3px 3px 3px 3px;
+  text-align: center;
+  color: white;
+}
+
+DIV.sidebar H3 {
+  margin: .2em .2em .2em .2em;
+  padding: 3px 3px 3px 3px;
+  text-align: center;
+  color: white;
+}
+
+DIV.sidebar H4 {
+  margin: .2em .2em .2em .2em;
+  padding: 3px 3px 3px 3px;
+  text-align: center;
+  color: white;
+}
+
+DIV.sidebar A {
+  color: inherit; 
+  text-decoration: none;
+}
+ 
+DIV.sidebar A:hover { 
+  color: inherit; 
+  text-decoration: underline; 
+}
+
+DIV.sidebar A:visited { 
+  color: inherit;
+  text-decoration: none; 
+}
+
+DIV.sidebar UL {
+  /* border-style: solid;
+  border-width: medium;
+  border-color: white;*/
+  list-style: none;
+  margin: .2em .2em .2em .2em;
+  padding: 3px 3px 3px 3px;
+}
+
+DIV.sidebar LI {
+  border-style: solid;
+  border-width: 1.2px;
+  border-color: blue;
+  background: white;
+  color: #6699ff;
+  margin: .2em .2em .2em .2em;
+  padding: 4% 4% 4% 4%;
+}
+
+DIV.sidebar LI:hover {
+  background: ##6699ff;
+  color: white;
+}
+
+
+/* Main body definitions */
+DIV.main {
+  /* border-style: solid;
+  border-width: medium;
+  border-color: darkblue;*/
+}
+
+DIV.main H1 {
+  text-align: left; 
+  color: white;
+}
+
+DIV.main H2 {
+  text-align: left; 
+  color: white;
+}
+
+DIV.main H3 {
+  text-align: left; 
+  color: white;
+}
+
+DIV.main H4 {
+  text-align: left; 
+  color: white;
+}
+
+DIV.sidebar + DIV.main {
+/*  border-style: solid;
+  border-width: medium;
+  border-color: darkblue; */
+  float: right;
+  left: 20%;
+  width: 80%;  
+}
+
+/* Footer definitions */
+DIV.footer {
+  /* border-style: solid;
+  border-width: medium;
+  border-color: darkred;*/
+  clear: both;
+  font-style: italic;
+  font-size: 50%;
+}

@@ -4,18 +4,70 @@ category: web
 description: |
   **iCTF 2007 — The Copyright Mafia**
 
-  The Mafia's enforcement arm: bosses and artists who don't pay up get
-  "shaken down". The PHP frontend manages boss/artist relationships
-  and enforces Mafia terms. Full source was GPG-encrypted on the VM.
+  The Mafia's enforcement arm. Bosses register protection rackets over
+  Artists; Artists pay revenue to their Boss. Implemented as a **Django**
+  web application (Python 2.5, Django 0.96) with two user roles:
+  Artist (musician) and Boss (mafia enforcer).
+
+  ## Architecture
+
+  - Django app: `/home/shakedown/public_html/shakedown/` (served via Apache mod_python/mod_wsgi)
+  - Static PHP gateway: `/home/shakedown/public_html/artists.php`, `bosses.php` (redirect pages)
+  - Models: `Artist`, `Boss`, `Protection` (rate + revenue), `News`
+  - URL routes: `/artists/*`, `/bosses/*`, `/protections/edit/<id>/`
+
+  ## Flag mechanism
+
+  The flag is stored as a Protection revenue value on a specific Artist.
+  The scorebot creates a Boss, creates an Artist with the flag embedded as
+  the protection rate or via the `News` entries attached to an artist account.
+
+  ## Vulnerability hints
+
+  - Artist/Boss profile edit: image upload with weak format validation
+  - Boss can view Artist "revenue" data — IDOR on artist IDs
+  - Django 0.96-era missing CSRF protection — forge POST requests
+  - Password hashing scheme may be weak
+
+  ## Source (extracted from Ubuntu VM, mafia2007.vmwarevm snapshot Dec 2007)
+
+  - `src/shakedown/protections/views.pyc` — Python 2.5 bytecode (views)
+  - `src/shakedown/protections/models.pyc` — Python 2.5 bytecode (models)
+  - `src/shakedown/urls.pyc` — URL routing
+  - `src/shakedown/settings.pyc` — Django settings
+  - `src/shakedown/templates/*.html` — Django HTML templates (plaintext)
+  - `src/artists.php`, `src/bosses.php` — static redirect pages
+
+  Note: Python source (.py) files were GPG-encrypted on the VM;
+  only compiled bytecode (.pyc) and HTML templates survive.
 value: 0
 type: standard
 image: null
 protocol: http
+port: 80
 flags:
     - ictf2007{shakedown_pwned}
-tags: [web, php, ictf2007, historical]
+topics:
+    - django
+    - web
+    - python
+    - IDOR
+tags: [web, python, django, ictf2007, historical, attack-defense]
 files:
     - src/artists.php
     - src/bosses.php
+    - src/shakedown/protections/views.pyc
+    - src/shakedown/protections/models.pyc
+    - src/shakedown/urls.pyc
+    - src/shakedown/settings.pyc
+    - src/shakedown/templates/artist_login.html
+    - src/shakedown/templates/artist_view.html
+    - src/shakedown/templates/artist_edit.html
+    - src/shakedown/templates/boss_login.html
+    - src/shakedown/templates/boss_view_private.html
+    - src/shakedown/templates/boss_view_public.html
+    - src/shakedown/templates/boss_edit.html
+    - src/shakedown/templates/protection_edit.html
+    - src/shakedown/templates/base.html
 state: visible
-version: "0.1"
+version: "0.2"

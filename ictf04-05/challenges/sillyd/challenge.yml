@@ -1,37 +1,58 @@
-name: "iCTF 2005 — Silly Auth Server (sillyd)"
+name: "iCTF 2004-05 — Silly Auth Server (sillyd)"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: binary
 description: |
-  **iCTF 2005 — The Bass Tard Corporation**
+  **iCTF 2004-05 — The Bass Tard Corporation**
 
-  A simple C authentication daemon (port 12345/tcp) with REG/AUTH/REVOKE/
-  STATUS/PING/QUIT commands. It stores auth tokens in files under `data/`.
+  `sillyd` is a C authentication daemon listening on TCP port 12345.
+  It issues random 31-character auth tokens (stored as flat files under
+  `data/`) and verifies them with REG/AUTH/REVOKE commands.
 
-  The service has two known vulnerabilities:
-  1. **Auth token shell injection** — a valid but oversized auth token merges
-     the `id` and `cmdbuf` fields, allowing extra parameters to be passed to
-     `grep` (or the shell) called via `system()`.
-  2. **PING buffer overflow** — the PING command uses a `char*` where an
-     `int*` is expected, allowing overflow of the `bp` size variable when the
-     command is not terminated with `\r\n`.
+  Protocol:
+  ```
+  REG    <secretID>   => +REG <auth token>
+  AUTH   <auth token> => +AUTH <secretID>
+  REVOKE <auth token> => +REVOKE
+  PING   <num>        => +PONG
+  ```
+
+  Two documented vulnerabilities (see `src/sillyd.txt`):
+
+  1. **Command injection via AUTH** — If the auth token is valid but
+     long enough that `id` and `cmdbuf` merge into a single string, the
+     call to `grep` via `system()` will see extra shell arguments. Exploit
+     to inject shell commands along with the token match.
+
+  2. **PING buffer overflow** — The PING handler passes a `char*` as an
+     `int*` to store the ping count. This corrupts the `bp` variable (the
+     remaining `read()` size), allowing a crafted PING (without `\r\n`
+     terminator) to grow the read buffer and overflow `cmdbuf` (2342 bytes)
+     on the next read.
+
+  Run: `cd sillyd_dir && mkdir data && ./sillyd &`
 value: 0
 type: standard
-image: .
+image: "."
 protocol: tcp
-host: null
-connection_info: null
+port: 12345
 flags:
-    - ictf2005{sillyd_compromised}
+    - ictf0405{sillyd_compromised}
 topics:
     - buffer overflow
     - command injection
     - C
+    - custom protocol
 tags:
     - binary
     - pwn
-    - ictf2005
+    - buffer-overflow
+    - command-injection
+    - ictf0405
     - historical
+    - attack-defense
 files:
     - src/sillyd.c
+    - src/sillyd.txt
+    - src/scorebot_sillyd.py
 state: visible
 version: "0.1"

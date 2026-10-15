@@ -4,29 +4,54 @@ category: web
 description: |
   **iCTF 2004 — The UN Voting System**
 
-  The Diebald service (a parody of Diebold voting machines) exposes an admin CGI
-  at `/~diebald/cgi-bin/admin`. The scorebot creates a user and assigns a task
-  whose value is the flag. Find a way to enumerate or read other teams' tasks.
+  The Diebald service (a parody of Diebold voting machines) provides a
+  web interface to the UN voting system at `/~diebald/`. The `admin` CGI
+  binary (C source at `src/admin.c`) handles administrative operations
+  including creating tasks (flag storage). The flag is stored as task data.
+
+  ## Source
+
+  HTML/CSS frontend extracted from the competition VM (`/~diebald/`):
+  - `src/index.html` — landing page
+  - `src/products.html` — product page
+  - `src/diebald.css` — stylesheet
+
+  Admin CGI (C binary, symbols intact):
+  - `src/admin.c` — C source for the admin CGI backend
+
+  Scoring scripts:
+  - `src/diebold_bot.py` — scorebot interaction script
+  - `src/diebaldScoringScript.py` — scoring script
 value: 0
 type: standard
 
-image: .
+image: null
 protocol: http
+port: 80
+
 flags:
     - ictf2004{diebald_pwned}
 
 topics:
     - web exploitation
     - CGI security
+    - binary exploitation
 
 tags:
     - web
     - cgi
+    - binary
     - ictf2004
     - historical
     - attack-defense
 
-files: []
+files:
+    - src/admin.c
+    - src/index.html
+    - src/products.html
+    - src/diebald.css
+    - src/diebold_bot.py
+    - src/diebaldScoringScript.py
 
 state: visible
 version: "0.1"

@@ -1,12 +1,15 @@
 name: "iCTF 2015 — driller"
-author: "Giovanni Vigna / UCSB Security Lab"
-category: binary
+author: "Fish, UCSB Seclab"
+category: network
 description: |
   **iCTF 2015 — Crowdsourcing Evil**
 
-  Uranium drilling enterprise service (reused from ictf13)
+  In the awesome old days, everyone could freely setup their own uranium mine around the globe -- as long as they have enough money to bribe those governments. However, some great guys saw the great opportunity beneath, and they set up their own evil enterprise! Here it is, Global Drillers Enterprise Ltd. Their sweet dream, and your nightmare! With seamless cooperation with most countries, now you have to buy their service, select a spot and choose a driller, before you make any penny from uranium mines.
 
-  Port: 9091. Source not available (only competition database preserved).
+  **Flag ID:** The flag_id is the name of the spot.
+
+  Port: 9091. Source not available (only competition database and base VM preserved).
+  This service was reused from an earlier iCTF edition or submitted by teams for ictf15.
 value: 0
 type: standard
 image: null
@@ -15,7 +18,7 @@ port: 9091
 flags:
     - ictf2015{driller_pwned}
 tags:
-    - binary
+    - network
     - ictf2015
     - historical
     - attack-defense

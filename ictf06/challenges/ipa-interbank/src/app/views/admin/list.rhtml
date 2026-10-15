@@ -1,0 +1,27 @@
+<h1>Listing deposits</h1>
+
+<table>
+  <tr>
+  <% for column in Deposit.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for deposit in @deposits %>
+  <tr>
+  <% for column in Deposit.content_columns %>
+    <td><%=h deposit.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => deposit %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => deposit %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => deposit }, :confirm => 'Are you sure?', :post => true %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @deposit_pages.current.previous } if @deposit_pages.current.previous %>
+<%= link_to 'Next page', { :page => @deposit_pages.current.next } if @deposit_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New deposit', :action => 'new' %>

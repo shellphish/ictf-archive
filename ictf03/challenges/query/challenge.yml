@@ -17,23 +17,28 @@ description: |
   The `change.pl` CGI script accepted unsanitized parameters in a GET
   request. Classic Perl CGI parameter injection or SQL injection likely.
 
+  ## Vulnerability
+
+  The search CGI (`query_extension.pl`) sanitizes with `s/[^a-zA-Z]//g`,
+  stripping non-alpha characters — but `change.pl` accepts admin credentials
+  in a GET request. The admin password (`##QUERY_DB_PASS##` placeholder)
+  is embedded in the CGI source. The SQL query uses string interpolation:
+  `WHERE last = '$cboname'` — sanitized via regex, but `change.pl` may
+  not sanitize its inputs, allowing unauthorized flag updates.
+
   ## Source
 
-  Two CGI scripts (not found in clean VM image; likely removed for distribution):
-  - `query_extension.pl` — searches phone directory for "Gates" and returns
-    the extension (flag) as a table cell value
-  - `change.pl` — admin update: `GET /cgi-bin/change.pl?login=admin&password=<pw>&last=Gates&first=Bill&id=<flag>`
+  Source extracted from CTF VM (RedHat 9 VMware image, `/root/setup/query/`):
 
-  The `/var/www/html/assistance/` static page served as the front-end for the
-  telephone directory. The service used an HTTP-based query interface typical
-  of Perl CGI phone book web apps from that era.
-
-  Scorebot interaction scripts are in `src/get_query` and `src/set_query`.
-  The CGI source was not recoverable from the clean VM image; the running VM
-  (vms/winOpenSrc2003.tar.gz) was not extracted.
+  - `src/query_extension.pl` — Perl CGI phone directory search; connects to
+    PostgreSQL `querydb` as `queryuser`, lists all employees or filters by
+    last name; flag is the `id` field of the "Bill Gates" row
+  - `src/change.pl` — admin CGI to update an employee record (last, first, id)
+  - `src/get_query`, `src/set_query` — scorebot interaction scripts
+  - `src/setup.sh`, `src/init_query`, `src/init.sh` — deployment scripts
 value: 0
 type: standard
-image: null
+image: "."
 protocol: http
 port: 80
 flags:
@@ -41,6 +46,7 @@ flags:
 topics:
     - web
     - perl cgi
+    - sql injection
 tags:
     - web
     - perl
@@ -49,7 +55,11 @@ tags:
     - historical
     - attack-defense
 files:
+    - src/query_extension.pl
+    - src/change.pl
     - src/get_query
     - src/set_query
+    - src/setup.sh
+    - src/init_query
 state: visible
 version: "0.1"

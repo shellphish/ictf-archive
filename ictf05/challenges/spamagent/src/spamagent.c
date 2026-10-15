@@ -8,7 +8,7 @@
 #include <unistd.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
-#include <tcl.h>
+#include <tcl/tcl.h>
 #include <libxml/parser.h>
 #include <libxml/tree.h>
 
@@ -27,7 +27,7 @@
 #define MSG_REPLY_TCL_ERROR "Tcl Error: %s\n%s\n"
 
 /* #define DEBUG
-   #define DEBUG2  */
+#define DEBUG2 */  
 #define CHUNKSIZE 1024
 #define DIRSIZE 1024
 
@@ -854,7 +854,7 @@ int main(int argc, char* argv[], char *env[])
     }
 
 #ifdef DEBUG2
-  my_debug(__FILE__, __LINE__, "data is %s", data);
+  my_debug(__FILE__, __LINE__, "data is %s", data); 
 #endif
 
   xml_data = strstr(data, AGENT_START_TAG);

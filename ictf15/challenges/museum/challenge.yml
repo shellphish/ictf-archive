@@ -1,12 +1,15 @@
 name: "iCTF 2015 — museum"
-author: "Giovanni Vigna / UCSB Security Lab"
+author: "UCSB Seclab"
 category: web
 description: |
   **iCTF 2015 — Crowdsourcing Evil**
 
-  SPAM submission and search service (reused from ictf05)
+  This is a website for submitting and searching for ways to SPAM!
 
-  Port: 8001. Source not available (only competition database preserved).
+  **Flag ID:** The flag_id is the first name.
+
+  Port: 8001. Source not available (only competition database and base VM preserved).
+  This service was reused from an earlier iCTF edition or submitted by teams for ictf15.
 value: 0
 type: standard
 image: null

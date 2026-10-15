@@ -1,0 +1,78 @@
+{% load humanize %}
+
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class="shakedown-nav">
+    {% ifequal artist.user user %}
+	<a href="/artists/logout/">Logout</a>
+    {% else %}
+	<a href="/artists/login">Login</a>
+    {% endifequal %}
+  </div>
+
+
+  <div class="figure-left">
+      <img width="90" height="90" src="{{ artist.get_image_url }}"/> 
+  </div>
+
+ <p>
+    {{ artist.name }}<br/>
+    {{ artist.country }}<br/>
+    MAFIA's POC: {{ boss.get_view_link }}<br/>
+    Current Protection Rate: {{ rate }}
+    <br/><br/></p>
+
+  <h2>Revenues</h2>
+  {% if has_revenues %}
+  <img src="/artists/revenue/{{artist.user.id}}" style="border:6px solid lightgray"/> 
+  {% else %}
+    No revenues data yet. Do something! Or go get a real job!
+  {% endif %}
+
+  <h2>Latest Personal Communication</h2>
+  {% ifequal artist.news_set.count 0 %}
+    No news is good news...
+  {% else %}
+    <ul class="news_list">
+    {% for n in news %}
+      <li>
+	<div class="news_meta">
+        <span class="news_title">{{ n.title }}</span> ::
+        <span class="news_date">{{ n.pub_date }}</span>
+	</div>
+
+	<div class="news_content">{{ n.content }}.
+        {% ifnotequal n.revenue 0 %}
+        You made ${{n.revenue|intword}}!
+        {% endifnotequal %}
+	</div>
+
+      </li>
+    {% endfor %}
+    </ul>
+
+    {% if is_paginated %}
+        {% if has_previous %}
+        <a href="?newspage={{ previous_page}}">
+        {% endif %}
+        &lt; Prev
+        {% if has_previous %}
+        </a>
+        {% endif %}
+        {{ current_page }} of {{ pages }}
+        {% if has_next %}
+        <a href="?newspage={{ next_page }}">
+        {% endif %}
+        Next &gt;
+        {% if has_next %}
+        </a>
+        {% endif %}
+
+    {% endif %}
+  {% endifequal %}  
+
+  
+
+{% endblock %}

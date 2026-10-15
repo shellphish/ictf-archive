@@ -1,23 +1,60 @@
-name: "iCTF 2011 — Mule User"
+name: "iCTF 2011 — muleuser"
 author: "Giovanni Vigna / UCSB Security Lab"
 category: web
 description: |
   **iCTF 2011 — Money Laundering**
 
-  Mule User was the end-user portal for money mules to interact with the
-  laundering operation. Captured 2,953 times.
+  `muleuser` is the end-user portal for money mules — 2,953 flag captures.
 
-  Source: encrypted VM archive `site/iC7F-l337-vu1n.7z` (AES-encrypted, password unknown).
+  Port: **80** (HTTP, Apache 2.x UserDir + PHP-CGI)
+  Path: `/~muleuser/cgi-bin/`
+
+  ## Architecture
+
+  PHP-CGI scripts served via Apache `mod_userdir`. All scripts share
+  `/var/www/library.php` (same as `mulemanager` and `muleadmin`).
+
+  Scripts:
+  - `browsers/` — browser-detection PHP scripts (chrome, firefox, ie6/7/8,
+    mozilla, opera, safari), each checks the User-Agent and customizes output
+  - `sendmessage` — submit a message to another mule
+  - `viewmessage` — read received messages (flag channel)
+
+  Message files stored in `/home/muleuser/public_html/cgi-bin/messages/` as
+  `message.<cookie>` files.
+
+  ## Attack Surface
+
+  The `data_chars` whitelist in `library.php` includes `'`. The browser
+  User-Agent fingerprinting and message file naming may allow path traversal
+  or injection in the message storage/retrieval path.
 value: 0
 type: standard
 image: null
+protocol: http
+port: 80
 flags:
-    - ictf2011{muleuser_compromised}
+    - ictf2011{muleuser_pwned}
+topics:
+    - web
+    - php
+    - cgi
 tags:
     - web
+    - php
     - ictf2011
     - historical
     - attack-defense
-files: []
+files:
+    - src/cgi-bin/sendmessage
+    - src/cgi-bin/viewmessage
+    - src/cgi-bin/browsers/firefox.php
+    - src/cgi-bin/browsers/chrome.php
+    - src/cgi-bin/browsers/safari.php
+    - src/cgi-bin/browsers/ie6.php
+    - src/cgi-bin/browsers/ie7.php
+    - src/cgi-bin/browsers/ie8.php
+    - src/cgi-bin/browsers/mozilla.php
+    - src/cgi-bin/browsers/opera.php
 state: visible
 version: "0.1"

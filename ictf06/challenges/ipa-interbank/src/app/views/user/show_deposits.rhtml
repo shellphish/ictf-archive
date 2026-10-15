@@ -1,0 +1,34 @@
+<h2><%= @user.login %></h2>
+
+<h3>Deposits</h3>
+
+<% if @user.deposits.size == 0 %>
+    <p>No deposit yet!
+<% else %>
+<table>
+<tr>
+  <th>Amount ($)</th>
+  <th>Amount (Currency)</th>
+  <th>Original Rate</th>
+  <th>Current Rate</th>
+  <th>Operation</th>
+</tr>
+
+<% @deposits.each do |d| %>
+<tr>
+    <td>$<%= d.amount %></td>
+    <td><%= link_to d.currency.symbol, :controller => "currency", :action => "show", :id => d.currency.id %>&nbsp;<%= '%.2f' % (d.amount * 1/d.curr_rate) %></td>
+    <td><%= d.orig_rate %></td>
+    <td><%= d.curr_rate %></td>
+    <td><%= link_to "Withdraw", :controller => "deposit", :action => "withdraw", :id => d.id %>
+</tr>
+<% end %>
+</table>
+
+<p><%= link_to 'Previous page', { :page => @deposit_pages.current.previous } if @deposit_pages.current.previous %>
+<%= link_to 'Next page', { :page => @deposit_pages.current.next } if @deposit_pages.current.next %>
+<p>
+<% end %>
+
+<p><%= link_to "Make a deposit", :controller => "deposit", :action => "new" %>
+

@@ -5,14 +5,33 @@ description: |
   **iCTF 2004 — The UN Voting System**
 
   A TCP voting service on port 1969. All messages are XOR-encrypted with the
-  fixed key `F2654hD4`. The protocol sends `!<wwid> <vote>` where vote is the
-  flag. Find a vulnerability in the XOR encryption or the service logic to read
-  stored votes.
+  fixed key `F2654hD4` (defined in the source). The protocol sends a vote
+  `!<wwid> <vote>` where the `vote` is the flag, stored in `votes/<wwid>`.
+
+  Full C source available for client, server, and admin:
+  - **Server** (`votecastd.c`): fork-per-connection daemon; reads XOR-encrypted
+    request, extracts `wwid` and `vote`, stores in `votes/<wwid>`.
+  - **Client** (`votecast.c`): XOR-encrypts and sends a vote.
+  - **Admin** (`voteadmin.c`): administrative query interface.
+
+  Key vulnerability: `MAXSIZE 512` buffers for `wwid`, `vote`, `logfilename`,
+  `cmd` — classic stack buffer overflow. Also: fixed XOR key is trivially
+  reversible; `votes/<wwid>` path can be traversed.
+
+  ## Source
+
+  - `src/server/votecastd.c` — voting server daemon
+  - `src/client/votecast.c` — voting client
+  - `src/admin/voteadmin.c` — admin client
+  - `src/votecast_bot.py` — scorebot interaction script
+  - `src/votecastScoringScript.py` — scoring script
 value: 0
 type: standard
 
-image: .
+image: null
 protocol: tcp
+port: 1969
+
 flags:
     - ictf2004{votecast_pwned}
 
@@ -20,16 +39,24 @@ topics:
     - cryptography
     - binary exploitation
     - XOR cipher
+    - buffer overflow
 
 tags:
     - binary
     - crypto
     - tcp
+    - c
+    - bof
     - ictf2004
     - historical
     - attack-defense
 
-files: []
+files:
+    - src/server/votecastd.c
+    - src/client/votecast.c
+    - src/admin/voteadmin.c
+    - src/votecast_bot.py
+    - src/votecastScoringScript.py
 
 state: visible
 version: "0.1"

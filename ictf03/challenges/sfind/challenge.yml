@@ -23,31 +23,45 @@ description: |
 
   ## Vulnerability
 
-  The `environ` parameter allowed setting environment variables
-  (e.g., `FSI=.`, `EXTN1=`, `TST=xxx`, `PASSWORD=`, `EGG=`) —
-  likely enabling environment-based exploitation (e.g., LD_PRELOAD,
-  buffer overflows, or format string bugs in the C helper binary).
+  Two confirmed vulnerabilities (from source, extracted from CTF VM):
+
+  1. **Command injection**: The `keyword` field is passed unquoted to `system()`:
+     ```c
+     sprintf(cmd, "find %s -name \"%s\" -exec grep -H -n %s \\{\\} \\; > %s",
+             init_cwd, filename, keyword, outf);
+     system(cmd);
+     ```
+     Injecting shell metacharacters in `keyword` (e.g., `foo; cat /etc/passwd`)
+     executes arbitrary commands.
+
+  2. **Environment variable injection**: The `environ` command sets environment
+     variables via `putenv()` before the `find` exec, allowing `LD_PRELOAD`
+     injection or similar attacks.
 
   ## Source
 
-  Custom C server (`src/weirdfind.c`). The flag and password are embedded
-  via `##FIND_FLAG##` and `##FIND_PASS##` placeholders. The service listens
-  on a custom TCP port and accepts text-protocol requests. The flag filename
-  is XOR-encoded in `flagname_encoded`. The `sfindc` client binary is also
-  available (as part of the scorebot scripts).
+  Source extracted from CTF VM (RedHat 9 VMware image).
 
-  Scorebot scripts (`src/get_sfind`, `src/set_sfind`) use the `sfindc`
-  helper to interact with the service.
+  - `src/sfind.c` — final deployed server (has hardcoded flag/password placeholders)
+  - `src/weirdfind.c` — earlier development version (same logic)
+  - `src/weirdfindc.c` — earlier version of the client
+  - `src/encode.c` — flag/password encoding utility
+  - `src/setup.sh` — deployment script
+  - `src/get_sfind`, `src/set_sfind` — scorebot scripts (use `sfindc` binary)
+  - `src/init_sfind` — service init script
+
+  The flag filename is XOR-encoded in `flagname_encoded[]` (decoded: `" !"` minus 8, 9, 10).
+  The `BYPASSWORD` constant `"XXGvWEuD1BDMI"` is the service auth bypass password.
 value: 0
 type: standard
-image: null
+image: "."
 protocol: tcp
 port: null
 flags:
     - ictf2003{sfind_pwned}
 topics:
+    - command injection
     - environment variable injection
-    - binary exploitation
 tags:
     - pwn
     - binary
@@ -56,8 +70,13 @@ tags:
     - historical
     - attack-defense
 files:
+    - src/sfind.c
     - src/weirdfind.c
+    - src/weirdfindc.c
+    - src/encode.c
     - src/get_sfind
     - src/set_sfind
+    - src/setup.sh
+    - src/init_sfind
 state: visible
 version: "0.1"

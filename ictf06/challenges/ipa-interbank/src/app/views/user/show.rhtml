@@ -1,0 +1,32 @@
+<h2><%= @user.login %></h2>
+<p><%= image_tag(@user.image_link, :size => "45x45", :border => 0) %>
+<%= @user.description %><br/>
+<% if @user.id == current_user.id %>
+    <%= link_to "Edit Account", :controller => "user", :action => "edit", :id => @user.id %>
+<% end %>
+
+<h3>Contacts</h3>
+<p>
+<% if @user.contacts.size > 0 %>
+    The following users expressed interest in doing business with 
+    <% if @user.id == current_user.id %>
+        you:
+    <% else %>
+        <%= @user.login %>:
+    <% end %>
+<% else %>
+    No contacts yet...
+<% end %>
+<div class="contacts">
+<ul>
+<% @user.contacts.each do |c| %>
+    <li><table><tr><td><%= image_tag(c.image_link, :size => "45x45", :border => 0)%></td><td><%= link_to c.login, :controller => "user", :action => "show", :id => c.id %></td></tr></table></li>
+<% end %>
+</ul>
+</div>
+
+<% if @user.id == current_user.id %>
+<p>
+    <%= link_to "View deposits", :controller => 'user', :action => 'show_deposits' %>
+<% end %>
+

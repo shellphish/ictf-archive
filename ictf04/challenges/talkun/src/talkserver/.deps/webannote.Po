@@ -1,0 +1,271 @@
+webannote.o: webannote.c /usr/include/stdio.h /usr/include/sys/types.h \
+  /usr/include/sys/appleapiopts.h /usr/include/sys/cdefs.h \
+  /usr/include/machine/types.h /usr/include/ppc/types.h \
+  /usr/include/machine/ansi.h /usr/include/ppc/ansi.h \
+  /usr/include/machine/endian.h /usr/include/ppc/endian.h \
+  /usr/include/stdlib.h /usr/include/alloca.h /usr/include/string.h \
+  /usr/include/unistd.h /usr/include/sys/unistd.h /usr/include/signal.h \
+  /usr/include/sys/signal.h /usr/include/machine/signal.h \
+  /usr/include/ppc/signal.h /usr/include/errno.h /usr/include/sys/errno.h \
+  /usr/include/dirent.h /usr/include/sys/dirent.h /usr/include/sys/dir.h \
+  /usr/include/sys/socket.h /usr/include/machine/param.h \
+  /usr/include/ppc/param.h /usr/include/sys/time.h /usr/include/time.h \
+  /usr/include/gcc/darwin/3.3/machine/limits.h /usr/include/ppc/limits.h \
+  /usr/include/netinet/in.h /usr/include/netinet6/in6.h \
+  /usr/include/arpa/inet.h /usr/include/sys/param.h \
+  /usr/include/sys/syslimits.h /usr/include/limits.h \
+  /usr/include/sys/wait.h /usr/include/sys/stat.h /usr/include/fcntl.h \
+  /usr/include/sys/fcntl.h /usr/include/sys/uio.h /usr/include/ctype.h \
+  /usr/include/runetype.h /usr/include/gcc/darwin/3.3/assert.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/ssl.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/e_os2.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/opensslconf.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/comp.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/crypto.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/stack.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/safestack.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/opensslv.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/symhacks.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/bio.h \
+  /usr/include/gcc/darwin/3.3/stdarg.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/x509.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/buffer.h \
+  /usr/include/stddef.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/evp.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/ossl_typ.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/md2.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/md4.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/md5.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/sha.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/ripemd.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/des.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/des_old.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/ui_compat.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/ui.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/rc4.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/rc2.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/rc5.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/blowfish.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/cast.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/idea.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/mdc2.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/aes.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/rsa.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/asn1.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/bn.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/dsa.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/dh.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/objects.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/obj_mac.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/x509_vfy.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/lhash.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/pkcs7.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/kssl.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/pem.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/pem2.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/ssl2.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/ssl3.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/tls1.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/ssl23.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/err.h \
+  /usr/include/netdb.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/mydiag.h \
+  /home/vigna/Teaching/CS176B/Class/HW3/install/include/zocket.h
+
+/usr/include/stdio.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/sys/appleapiopts.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/machine/types.h:
+
+/usr/include/ppc/types.h:
+
+/usr/include/machine/ansi.h:
+
+/usr/include/ppc/ansi.h:
+
+/usr/include/machine/endian.h:
+
+/usr/include/ppc/endian.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/alloca.h:
+
+/usr/include/string.h:
+
+/usr/include/unistd.h:
+
+/usr/include/sys/unistd.h:
+
+/usr/include/signal.h:
+
+/usr/include/sys/signal.h:
+
+/usr/include/machine/signal.h:
+
+/usr/include/ppc/signal.h:
+
+/usr/include/errno.h:
+
+/usr/include/sys/errno.h:
+
+/usr/include/dirent.h:
+
+/usr/include/sys/dirent.h:
+
+/usr/include/sys/dir.h:
+
+/usr/include/sys/socket.h:
+
+/usr/include/machine/param.h:
+
+/usr/include/ppc/param.h:
+
+/usr/include/sys/time.h:
+
+/usr/include/time.h:
+
+/usr/include/gcc/darwin/3.3/machine/limits.h:
+
+/usr/include/ppc/limits.h:
+
+/usr/include/netinet/in.h:
+
+/usr/include/netinet6/in6.h:
+
+/usr/include/arpa/inet.h:
+
+/usr/include/sys/param.h:
+
+/usr/include/sys/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/sys/wait.h:
+
+/usr/include/sys/stat.h:
+
+/usr/include/fcntl.h:
+
+/usr/include/sys/fcntl.h:
+
+/usr/include/sys/uio.h:
+
+/usr/include/ctype.h:
+
+/usr/include/runetype.h:
+
+/usr/include/gcc/darwin/3.3/assert.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/ssl.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/e_os2.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/opensslconf.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/comp.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/crypto.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/stack.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/safestack.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/opensslv.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/symhacks.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/bio.h:
+
+/usr/include/gcc/darwin/3.3/stdarg.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/x509.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/buffer.h:
+
+/usr/include/stddef.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/evp.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/ossl_typ.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/md2.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/md4.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/md5.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/sha.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/ripemd.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/des.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/des_old.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/ui_compat.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/ui.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/rc4.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/rc2.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/rc5.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/blowfish.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/cast.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/idea.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/mdc2.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/aes.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/rsa.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/asn1.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/bn.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/dsa.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/dh.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/objects.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/obj_mac.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/x509_vfy.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/lhash.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/pkcs7.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/kssl.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/pem.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/pem2.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/ssl2.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/ssl3.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/tls1.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/ssl23.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/openssl/err.h:
+
+/usr/include/netdb.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/mydiag.h:
+
+/home/vigna/Teaching/CS176B/Class/HW3/install/include/zocket.h:

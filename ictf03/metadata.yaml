@@ -36,8 +36,41 @@ results:
     - {rank: 12, team: "UTexas", score: 2680}
     - {rank: 13, team: "Argus", score: 2170}
 
-challenges: []
-# Services hosted on VM images (available in vms/).
+challenges:
+  # All 6 services extracted from CTF VM (RedHat 9 VMware VMDK) via qemu-img + debugfs.
+  # Source code recovered from /root/setup/ on the VM image.
+  - name: servlet
+    category: web
+    description: >
+      Java servlet webapp "BassTard Support Forum" (Tomcat 4.1.29 + PostgreSQL).
+      Two servlets: ctf.Search (/search) and ctf.Admin (/admin).
+      Flag stored as article keyword in PostgreSQL database.
+  - name: icecast
+    category: web
+    description: >
+      Icecast 2.0-beta-1 streaming server patched to serve the flag at /flag (port 8000).
+      Flag embedded in sock.c at compile time via sed substitution.
+  - name: guestbook
+    category: web
+    description: >
+      Perl CGI guestbook (Apache/mod_perl). Flag stored as "Bill Gates" entry in
+      guestbook.txt. Admin interface protected by MD5 password hash.
+  - name: ftp
+    category: network
+    description: >
+      Custom C FTP server. Flag stored via STAT command, retrieved via APPE command
+      (non-standard FTP semantics). Full source code available.
+  - name: sfind
+    category: pwn
+    description: >
+      Custom C file-search daemon. Command injection via unquoted keyword in system()
+      call: find ... -exec grep -H -n KEYWORD. Also environment variable injection via
+      putenv(). Full source code available.
+  - name: query
+    category: web
+    description: >
+      Perl CGI telephone directory (PostgreSQL). Flag stored as employee ID of "Bill Gates"
+      entry. Admin update via change.pl CGI with GET parameters.
 
 data:
   - type: scorebot
