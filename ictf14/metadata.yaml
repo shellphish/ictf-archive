@@ -116,75 +116,72 @@ results:
     ranks 67-87 scored 0 (did not successfully exploit any services).
 
 challenges:
-  # 52 services total: recycled from ictf04/04-05, ictf05, ictf07, ictf11, ictf12, ictf13.
-  # Service assignment confirmed from ctf-admin email (Giovanni Vigna, March 3, 2015):
-  # "Fwd: [ctf-admin] iCTF service list" — 13 assignees × 4 services each = 52.
-  # All services prefixed ictf-YEAR- indicate the source edition.
-  # Source code for most is in the corresponding source edition's challenges/ directory.
+  # 42 services actually deployed (confirmed from services table in ictf15/database/last_db.sql.xz,
+  # which has MySQL header "Database: ictf14" and timestamp 2015-04-10 matching this competition).
+  # Max diversity score 6300 = 42 services × 150 pts/service (SpamAndHex achieved max).
+  # Note: pre-competition email listed 52 service assignments, but 10 were dropped or renamed.
+  # Renames: copyright→music-copyright, nuclearboom→nuclearboom2, secretvault→securenotebook,
+  #   ftp→simpleftp. Dropped: contact, estore, feedback, pollit, spamgen, amends, therapy,
+  #   dexware, egoats, muleadmin, mulemassageappointment, muleuser.
+  # New/added: echo (Fish Wang), contributions (ictf05 variant), stockjobber (ictf12).
 
-  # --- From ictf04 / ictf04-05 (Bass Tard Corporation + UN Vote) ---
-  - {name: ictf-2004-bassretard,       source_edition: ictf04-05}
-  - {name: ictf-2004-ccauthd,          source_edition: ictf04-05}
-  - {name: ictf-2004-contact,          source_edition: ictf04-05}
-  - {name: ictf-2004-contribute,       source_edition: ictf04}
-  - {name: ictf-2004-diebald,          source_edition: ictf04}
-  - {name: ictf-2004-discussit,        source_edition: ictf04}
-  - {name: ictf-2004-estore,           source_edition: ictf04-05}
-  - {name: ictf-2004-feedback,         source_edition: ictf04}
-  - {name: ictf-2004-guestbook,        source_edition: ictf04-05}
-  - {name: ictf-2004-passwordverify,   source_edition: ictf04}
-  - {name: ictf-2004-pollit,           source_edition: ictf04}
-  - {name: ictf-2004-register,         source_edition: ictf04}
-  - {name: ictf-2004-reportd,          source_edition: ictf04-05}
-  - {name: ictf-2004-talkun,           source_edition: ictf04}
-  - {name: ictf-2004-webasstard,       source_edition: ictf04-05}
+  # --- From ictf04 / ictf04-05 ---
+  - {name: bassretard,       port: 10080, source_edition: ictf04-05}
+  - {name: ccauthd,          port: 12345, source_edition: ictf04-05}
+  - {name: contribute,       port: 8112,  source_edition: ictf04}
+  - {name: diebald,          port: 8012,  source_edition: ictf04}
+  - {name: discussit,        port: 7413,  source_edition: ictf04}
+  - {name: guestbook,        port: 8182,  source_edition: ictf04-05}
+  - {name: passwordverify,   port: 11111, source_edition: ictf04}
+  - {name: register,         port: 6789,  source_edition: ictf04}
+  - {name: reportd,          port: 6666,  source_edition: ictf04-05}
+  - {name: talkun,           port: 8081,  source_edition: ictf04}
+  - {name: webasstard,       port: 4443,  source_edition: ictf04-05}
 
   # --- From ictf05 (Spam Museum) ---
-  - {name: ictf-2005-acquire,          source_edition: ictf05}
-  - {name: ictf-2005-aqs,              source_edition: ictf05}
-  - {name: ictf-2005-contribute,       source_edition: ictf05}
-  - {name: ictf-2005-ftp,              source_edition: ictf05}
-  - {name: ictf-2005-museum,           source_edition: ictf05}
-  - {name: ictf-2005-spamagent,        source_edition: ictf05}
-  - {name: ictf-2005-spamgen,          source_edition: ictf05}
-  - {name: ictf-2005-spammer,          source_edition: ictf05}
+  - {name: acquire,          port: 8184,  source_edition: ictf05}
+  - {name: aqs,              port: 8014,  source_edition: ictf05}
+  - {name: contributions,    port: 8018,  source_edition: ictf05}  # "contribute" variant
+  - {name: museum,           port: 8001,  source_edition: ictf05}
+  - {name: simpleftp,        port: 2025,  source_edition: ictf05}  # renamed from "ftp"
+  - {name: spamagent,        port: 8185,  source_edition: ictf05}
+  - {name: spammer,          port: 4570,  source_edition: ictf05}
 
   # --- From ictf07 (Copyright Mafia) ---
-  - {name: ictf-2007-amends,           source_edition: ictf07}
-  - {name: ictf-2007-copyright,        source_edition: ictf07}
-  - {name: ictf-2007-petition,         source_edition: ictf07}
-  - {name: ictf-2007-therapy,          source_edition: ictf07}
+  - {name: music-copyright,  port: 8015,  source_edition: ictf07}  # renamed from "copyright"
+  - {name: petition,         port: 8017,  source_edition: ictf07}
 
   # --- From ictf11 (Money Laundering) ---
-  - {name: ictf-2011-convicts,         source_edition: ictf11}
-  - {name: ictf-2011-egoats,           source_edition: ictf11}
-  - {name: ictf-2011-mailgateway,      source_edition: ictf11}
-  - {name: ictf-2011-msgdispatcher,    source_edition: ictf11}
-  - {name: ictf-2011-muleadmin,        source_edition: ictf11}
-  - {name: ictf-2011-mulemanager,      source_edition: ictf11}
-  - {name: ictf-2011-mulemassageappointment, source_edition: ictf11}
-  - {name: ictf-2011-muleuser,         source_edition: ictf11}
-  - {name: ictf-2011-sendalert,        source_edition: ictf11}
-  - {name: ictf-2011-smsgateway,       source_edition: ictf11}
+  - {name: convicts,         port: 911,   source_edition: ictf11}
+  - {name: mailgateway,      port: 9119,  source_edition: ictf11}
+  - {name: msgdispatcher,    port: 31337, source_edition: ictf11}
+  - {name: mulemanager,      port: 7899,  source_edition: ictf11}
+  - {name: sendalert,        port: 12111, source_edition: ictf11}
+  - {name: smsgateway,       port: 1991,  source_edition: ictf11}
 
   # --- From ictf12 (SCADA Breakdown) ---
-  - {name: ictf-2012-curiosityblogging, source_edition: ictf12}
-  - {name: ictf-2012-nuclearboom,      source_edition: ictf12}
-  - {name: ictf-2012-powerplan,        source_edition: ictf12}
-  - {name: ictf-2012-traintrain,       source_edition: ictf12}
-  - {name: ictf-2012-water,            source_edition: ictf12}
+  - {name: curiosityblogging, port: 8089, source_edition: ictf12}
+  - {name: nuclearboom2,     port: 4444,  source_edition: ictf12}  # renamed from "nuclearboom"
+  - {name: powerplan,        port: 9898,  source_edition: ictf12}
+  - {name: stockjobber,      port: 2583,  source_edition: ictf12}
+  - {name: traintrain,       port: 8888,  source_edition: ictf12}
+  - {name: water,            port: 3333,  source_edition: ictf12}
 
   # --- From ictf13 (Nuke 'em) ---
-  - {name: ictf-2013-dexware,          source_edition: ictf13}
-  - {name: ictf-2013-driller,          source_edition: ictf13}
-  - {name: ictf-2013-mathconsole,      source_edition: ictf13}
-  - {name: ictf-2013-noradioactive,    source_edition: ictf13}
-  - {name: ictf-2013-poipoi,           source_edition: ictf13}
-  - {name: ictf-2013-secretvault,      source_edition: ictf13}
-  - {name: ictf-2013-sillybox,         source_edition: ictf13}
-  - {name: ictf-2013-tattletale,       source_edition: ictf13}
-  - {name: ictf-2013-temperature,      source_edition: ictf13}
-  - {name: ictf-2013-yeesbutno,        source_edition: ictf13}
+  - {name: driller,          port: 9091,  source_edition: ictf13}
+  - {name: mathconsole,      port: 9899,  source_edition: ictf13}
+  - {name: noradioactive,    port: 9292,  source_edition: ictf13}
+  - {name: poipoi,           port: 3335,  source_edition: ictf13}
+  - {name: securenotebook,   port: 2190,  source_edition: ictf13}  # renamed from "secretvault"
+  - {name: sillybox,         port: 4669,  source_edition: ictf13}
+  - {name: tattletale,       port: 13007, source_edition: ictf13}
+  - {name: temperature,      port: 56098, source_edition: ictf13}
+  - {name: yeesbutno,        port: 3336,  source_edition: ictf13}
+
+  # --- New for ictf14 ---
+  - {name: echo,             port: 9148,  source_edition: null,
+     description: "Simple TCP echo backdoor service, authored by Fish Wang. 'Your iCTF experience starts here!'"}
+
 
 data:
   - type: scoring_db
