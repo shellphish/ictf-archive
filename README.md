@@ -32,8 +32,9 @@ over more than two decades.
 | [ictf21](ictf21/) | 2021 | The Ethalia Market | attack-defense (market mechanic) | — | — |
 | [ictf23](ictf23/) | 2023 | AI and Cybersecurity | jeopardy (2 tracks) | ~52 | *(per track)* |
 | [ictf24](ictf24/) | 2024 | iCTF 2024 | jeopardy (3 tracks) | ~66 | *(per track)* |
+| [ictf26](ictf26/) | 2026 | AI Agents and Cybersecurity | jeopardy (2 tracks) | — | *(per track)* |
 
-*Note: ictf18 and ictf22 were not held. ictf16 ended early due to a DDoS; LC/BC disqualified.*
+*Note: ictf18 and ictf22 were not held. ictf25 data not yet in archive. ictf16 ended early due to a DDoS; LC/BC disqualified.*
 
 ---
 
@@ -64,6 +65,7 @@ over more than two decades.
 | [ictf21](ictf21/) | — | — | — | — | — | Source at shellphish/ictf21-challenges (private) |
 | [ictf23](ictf23/) | 43 (complete) | ✓ | — | — | ✓ CTFd | Full CTFd export; 21 undergrad + 22 HS challenges |
 | [ictf24](ictf24/) | 25+ (complete) | ✓ | — | — | ✓ CTFd | Full CTFd export; 3 tracks (UG + HS + training) |
+| [ictf26](ictf26/) | 42 (complete) | ✓ | — | — | — | 17 Agentish (MCP/LangGraph) + 25 normal; full source |
 
 **Key:** ✓ = available, ✗ = exists but inaccessible (encrypted), — = not in archive, *partial* = incomplete
 
@@ -136,6 +138,10 @@ importable into CTFd or pwn.college DOJO courses.
   Flask SSTI exploit (`flasking_unicorns` service). The forensic analysis is in `ictf16/DDOS.md`.
 - **ictf23** and **ictf24** are fully preserved as CTFd exports with complete challenge
   source code across undergraduate and high-school tracks.
+- **ictf26** introduced [Agentish](https://github.com/shellphish/agentish), a visual
+  workflow editor for LangGraph-based AI agent challenges. The 17 Agentish challenges
+  involve MCP tool integration, LLM-based systems, and AI agent security. Full source
+  code is at [shellphish/ictf-challenges-2026](https://github.com/shellphish/ictf-challenges-2026).
 
 ## Citation
 
