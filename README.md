@@ -1,36 +1,73 @@
 # iCTF Historical Dataset
 
 This repository contains the archives of the **iCTF (International Capture the Flag)** competition,
-organized by the [Security Lab at UC Santa Barbara](https://seclab.cs.ucsb.edu) since 2002.
-iCTF is one of the longest-running academic CTF competitions in the world.
+organized by the [Security Lab at UC Santa Barbara](https://seclab.cs.ucsb.edu) since 2001.
+iCTF is one of the longest-running academic CTF competitions in the world, spanning 23 editions
+over more than two decades.
 
 ## Editions
 
-| Directory | Year | Title | Format | Teams |
-|-----------|------|-------|--------|-------|
-| [ictf01](ictf01/) | 2001 | The First Security Exercise | red-blue | — |
-| [ictf02](ictf02/) | 2002 | Treasure Hunt in Cyberspace | jeopardy | — |
-| [ictf03](ictf03/) | 2003 | Windows Goes Open-Source | attack-defense | — |
-| [ictf04](ictf04/) | 2004 | The 2004 United Nations Vote | attack-defense | — |
-| [ictf04-05](ictf04-05/) | 2005 (Jun) | The Bass Tard Corporation | attack-defense | — |
-| [ictf05](ictf05/) | 2005 (Dec) | The Spam Museum | attack-defense | — |
-| [ictf06](ictf06/) | 2006 | The Hillbilly Bank | attack-defense | — |
-| [ictf07](ictf07/) | 2007 | The Copyright Mafia | attack-defense | — |
-| [ictf08](ictf08/) | 2008 | The Softerror.com Network | attack | 40 |
-| [ictf09](ictf09/) | 2009 | Know Your Enemy: Rise of the Botnet | attack-defense | — |
-| [ictf10](ictf10/) | 2010 | Hit 'em Where it Hurts | attack-defense | — |
-| [ictf11](ictf11/) | 2011 | Do You Feel Lucky? | attack-defense | — |
-| [ictf12](ictf12/) | 2012–13 (Dec) | SCADA Breakdown | attack-defense | — |
-| [ictf13](ictf13/) | 2013 (Dec) | Nuke 'em (or duck and cover!) | attack-defense | — |
-| [ictf14](ictf14/) | 2014–15 (Apr) | Large-scale Hacking | attack-defense | — |
-| [ictf15](ictf15/) | 2015 (Dec) | Crowdsourcing Evil | attack-defense | — |
-| [ictf16](ictf16/) | 2016–17 | Shell We Play a Game? | attack-defense | 300+ |
-| [ictf17](ictf17/) | 2017 | Defend the Critical Infrastructure | attack-defense | — |
-| [ictf19](ictf19/) | 2019 | The Grey Hat Nation | attack-defense (ZDI) | — |
-| [ictf20](ictf20/) | 2020 | Abbey Road (1 After 909) | attack-defense | — |
-| [ictf21](ictf21/) | 2021 | The Ethalia Market | attack-defense | — |
-| [ictf23](ictf23/) | 2023 | AI and Cybersecurity | jeopardy (2 tracks) | ~52 |
-| [ictf24](ictf24/) | 2024 | iCTF 2024 | jeopardy (2 tracks) | ~66 |
+| Directory | Date | Title | Format | Teams | Winner |
+|-----------|------|-------|--------|-------|--------|
+| [ictf01](ictf01/) | 2001 | Red Team / Blue Team | red-blue (class exercise) | — | — |
+| [ictf02](ictf02/) | 2002 | Treasure Hunt in Cyberspace | jeopardy | — | — |
+| [ictf03](ictf03/) | Nov 2003 | Windows Goes Open-Source | attack-defense | — | — |
+| [ictf04](ictf04/) | Nov–Dec 2004 | The 2004 United Nations Vote | attack-defense | — | *(none declared)* |
+| [ictf04-05](ictf04-05/) | Jun 2005 | The Bass Tard Corporation | attack-defense | — | — |
+| [ictf05](ictf05/) | Dec 2005 | The Spam Museum | attack-defense | — | — |
+| [ictf06](ictf06/) | 2006 | The Hillbilly Bank | attack-defense | — | — |
+| [ictf07](ictf07/) | 2007 | The Copyright Mafia | attack-defense | — | — |
+| [ictf08](ictf08/) | Dec 2008 | "24" (Softerror.com) | attack (isolated) | 40 | ENOFLAG (TU Berlin) |
+| [ictf09](ictf09/) | 2009 | Know Your Enemy: Rise of the Botnet | browser exploitation | 47 | CInsects (Germany) |
+| [ictf10](ictf10/) | 2010 | Hit 'em Where it Hurts | attack-defense | — | — |
+| [ictf11](ictf11/) | 2011 | Money Laundering | attack-defense | — | — |
+| [ictf12](ictf12/) | Mar 2013 | SCADA Breakdown | attack-defense (ZDI) | — | PPP (CMU) |
+| [ictf13](ictf13/) | Dec 2013 | Nuke 'em (or duck and cover!) | attack-defense (ZDI) | 100+ | Bushwhackers (Russia) |
+| [ictf14](ictf14/) | Apr 2015 | Large-scale Hacking | attack-defense (ZDI) | 88 | SpamAndHex (Hungary) |
+| [ictf15](ictf15/) | Dec 2015 | Crowdsourcing Evil | attack-defense (crowdsourced) | 35 | Bushwhackers (Russia) |
+| [ictf16](ictf16/) | Mar 2017 | Shell We Play a Game? | attack-defense (open, DEF CON qual.) | 314 | Bushwhackers (Russia) |
+| [ictf17](ictf17/) | 2017–18 | Defend the Critical Infrastructure | attack-defense | — | — |
+| [ictf19](ictf19/) | 2019 | The Grey Hat Nation | attack-defense (ZDI) | — | — |
+| [ictf20](ictf20/) | 2020 | Abbey Road (1 After 909) | attack-defense | — | — |
+| [ictf21](ictf21/) | 2021 | The Ethalia Market | attack-defense (market mechanic) | — | — |
+| [ictf23](ictf23/) | 2023 | AI and Cybersecurity | jeopardy (2 tracks) | ~52 | *(per track)* |
+| [ictf24](ictf24/) | 2024 | iCTF 2024 | jeopardy (3 tracks) | ~66 | *(per track)* |
+
+*Note: ictf18 and ictf22 were not held. ictf16 ended early due to a DDoS; LC/BC disqualified.*
+
+---
+
+## Data Availability by Edition
+
+| Edition | Challenges (count) | Source Code | VM Images | Scoreboard | DB / Scores | Notes |
+|---------|-------------------|-------------|-----------|------------|-------------|-------|
+| [ictf01](ictf01/) | — | — | — | — | — | HTML team reports only |
+| [ictf02](ictf02/) | — | — | — | — | — | Minimal files |
+| [ictf03](ictf03/) | 6 stubs | — | ✓ VMware | — | — | RedHat 9 VMDKs; scorebot scripts |
+| [ictf04](ictf04/) | 9 + source | ✓ | — | — | — | No winner declared; rematch → ictf04-05 |
+| [ictf04-05](ictf04-05/) | 10 + source | ✓ | — | — | — | June 2005 Bass Tard rematch |
+| [ictf05](ictf05/) | 11 + source | ✓ | — | — | — | Scorebot checker scripts preserved |
+| [ictf06](ictf06/) | — | — | — | — | — | Minimal archive |
+| [ictf07](ictf07/) | 8 + source | ✓ | — | — | — | Scorebot checker scripts preserved |
+| [ictf08](ictf08/) | 11 + Dockerfiles | ✓ | — | — | ✓ MySQL | Reference impl; exploit submissions; side challenges |
+| [ictf09](ictf09/) | 8 entries | — | ✓ VMware | ✓ 47 teams | — | Browser-exploit format; stats.pdf; scores.pdf |
+| [ictf10](ictf10/) | 15 (13 + source) | ✓ partial | ✓ Linux VMs | — | ✓ MySQL | LVM VMs; scorekeeper backup.sql |
+| [ictf11](ictf11/) | 10 stubs | — | ✗ encrypted | — | — | Service VM AES-encrypted; source unavailable |
+| [ictf12](ictf12/) | 9 confirmed | — | — | — | — | ZDI framework; writeup from codezen.fr |
+| [ictf13](ictf13/) | 11 (debs preserved) | — | — | — | — | 32-bit i386 .deb packages; IRC log; audio |
+| [ictf14](ictf14/) | 42 (recycled) | ✓ in src editions | — | ✓ 88 teams | ✓ MySQL | Service DB in ictf15/database/; reg. DB |
+| [ictf15](ictf15/) | 43 | partial | — | — | ✓ MySQL | Crowdsourced; service DB preserved; best-service prize |
+| [ictf16](ictf16/) | 2 confirmed / 12 total | — | — | ✓ top 10 | — | DEF CON qual; DDoS incident; LC/BC disqualified |
+| [ictf17](ictf17/) | — | — | — | — | — | Minimal; anti-cheating system docs |
+| [ictf19](ictf19/) | — | — | — | — | — | Service spec template only |
+| [ictf20](ictf20/) | 7 + source | ✓ GitHub | — | — | — | Public repo: shellphish/ictf-2020-challs-public |
+| [ictf21](ictf21/) | — | — | — | — | — | Source at shellphish/ictf21-challenges (private) |
+| [ictf23](ictf23/) | 43 (complete) | ✓ | — | — | ✓ CTFd | Full CTFd export; 21 undergrad + 22 HS challenges |
+| [ictf24](ictf24/) | 25+ (complete) | ✓ | — | — | ✓ CTFd | Full CTFd export; 3 tracks (UG + HS + training) |
+
+**Key:** ✓ = available, ✗ = exists but inaccessible (encrypted), — = not in archive, *partial* = incomplete
+
+---
 
 ## Repository Structure
 
@@ -60,7 +97,7 @@ ictfXX/
 
 ## Running a Challenge
 
-Each challenge has a standalone `Dockerfile`. To run one:
+Each challenge with a `Dockerfile` can be run standalone:
 
 ```bash
 cd ictf08/challenges/mainwebsite
@@ -70,7 +107,7 @@ docker run -p 8080:80 ictf08-mainwebsite
 
 ## Running a Full Edition
 
-Each edition with sufficient data has a `docker-compose.yml`:
+Editions with sufficient data have a `docker-compose.yml`:
 
 ```bash
 cd ictf08/infrastructure
@@ -85,19 +122,20 @@ Each challenge directory contains a `challenge.yml` in
 [ctfcli format](https://github.com/CTFd/ctfcli), making individual challenges
 importable into CTFd or pwn.college DOJO courses.
 
-## Data Availability
+## Notable Editions
 
-| Data Type | Editions | Notes |
-|-----------|----------|-------|
-| Service source code | 2004–2010 | Varying completeness |
-| VMware VM images | 2004–2010 | Original deployment images |
-| PCAP network dumps | 2003–2010 | Up to 44 GB per edition |
-| CTFd exports | 2023–2024 | Full challenge + solve data |
-| Scoring database | 2008, 2014–2015 | MySQL dumps |
-| Team exploit submissions | 2008 | Graded submissions |
-| Official writeups/walkthroughs | 2008 | Per-challenge solutions |
-
-Large files (VM images, PCAPs) are stored via [Git LFS](https://git-lfs.com).
+- **ictf08** is the best-preserved edition, with full source code, Dockerfiles, scoring
+  database, exploit submissions, and side challenges. It serves as the reference
+  implementation for the archive structure.
+- **ictf10** has the most complete VM extraction: all 15 services recovered from LVM-backed
+  VMDK images using `qemu-img` + `debugfs`.
+- **ictf14** reused 42 services from six earlier editions (ictf04–ictf13) and has a complete
+  88-team final scoreboard. The service database is preserved in `ictf15/database/`.
+- **ictf16** (March 2017) was the first iCTF hosted on AWS and the first DEF CON CTF
+  qualifier. It ended early when second-place team LC/BC launched a botnet DDoS via a
+  Flask SSTI exploit (`flasking_unicorns` service). The forensic analysis is in `ictf16/DDOS.md`.
+- **ictf23** and **ictf24** are fully preserved as CTFd exports with complete challenge
+  source code across undergraduate and high-school tracks.
 
 ## Citation
 
@@ -108,8 +146,8 @@ If you use this dataset in research, please cite:
   author       = {Vigna, Giovanni},
   title        = {iCTF Historical Dataset},
   year         = {2025},
-  organization = {UC Santa Barbara Security Lab},
-  url          = {https://github.com/ucsb-seclab/ictf-dataset}
+  organization = {Shellphish},
+  url          = {https://github.com/shellphish/ictf-archive}
 }
 ```
 
