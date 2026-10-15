@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta content="HTML Tidy for Linux/x86 (vers 1st April 2003), see www.w3.org"
+        name="generator" />
+  <link href="netsec.css" rel="stylesheet" type="text/css" />
+
+  <title>Capture The Flag - Setup</title>
+</head>
+
+<body>
+  <h1>Capture The Flag - Setup</h1>
+
+  <p>The Capture The Flag (CTF) exercise involves a number of sites
+  (e.g., UCSB, UC Davis, Georgia Tech). Each site has a number of
+  independent teams (for example, UCSB has four teams).</p>
+
+  <h2>Topology</h2>
+
+  <p>Each site has a dedicated non-routeable set of addresses. Each
+  team at each site has a dedicated class C subnetwork allocated
+  within the address space of the site. For example, UCSB has the
+  10.10.x.x address space, and the four UCSB teams has address
+  spaces 10.10.10.x, 10.10.20.x, 10.10.30.x, and 10.10.40.x,
+  respectively.</p>
+
+  <p>Each site has a dedicated host, called the <i>site box</i>.
+  The site box is connected to each of the site team subnetworks by
+  means of a dedicated interface whose address is the "1" address
+  of the corresponding subnetwork. For example, UCSB's site box is
+  connected to the subnetworks through four interfaces with
+  addresses 10.10.10.1, 10.10.20.1, 10.10.30.1, and 10.10.40.1,
+  respectively.</p>
+
+  <p>Each site box is connected to a central host called the
+  <i>main box</i>. The connection between site boxes and the main
+  box is implemented through a VPN tunnel. The figure below shows
+  an example of the topology for four sites (UCSB, A, B, and C),
+  with four, three, two, and one team,
+  respectively.</p><img alt="ctf topology"
+  src="ctf-topology.png" /> 
+
+  <h2>IP address assignment</h2>
+
+  <p>Each site has a range of IP address assigned. You can check
+  the IP address range assignments
+  <a href="participants.html">here</a>. 
+
+  <p>If you are not on the participant list, send email to <a
+  href="mailto:vigna@cs.ucsb.edu">vigna@cs.ucsb.edu</a>. If you are listed but
+  you do not have an IP address range, send email to <a
+  href="mailto:fredrik@cs.ucsb.edu">fredrik@cs.ucsb.edu</a>.</p>
+
+  <h2>VPN setup</h2>
+
+  <p>Each site box is connected to the main box through a encrypted
+  tunnel. The main box is running the FreeS/WAN VPN implementation.
+  It is strongly recommended that the site box runs RedHat 9.0,
+  since precompiled RPMs are available. If you prefer another
+  distribution, you should verify that necessary packages are
+  available. FreeS/WAN version 1.99 and 2.03 have been tested.</p>
+
+  <p>To set up FreeS/WAN on RedHat 9.0, fetch the two RPMS
+  <a href="vpn/freeswan-module-2.03_2.4.20_8-0.i386.rpm">freeswan-module</a>
+  and
+  <a href="vpn/freeswan-userland-2.03_2.4.20_8-0.i386.rpm">freeswan-userland</a>.
+  Install these packages with the command:</p>
+  <pre>
+rpm -i  freeswan-module-2.03_2.4.20_8-0.i386.rpm freeswan-userland-2.03_2.4.20_8-0.i386.rpm
+  
+</pre>
+
+  <p>Make sure ipsec is running at startup by running:</p>
+  <pre>
+/sbin/chkconfig --level 345 ipsec on
+  
+</pre>
+
+  <p>Then, generate your public/private key-pair. Type the
+  command:</p>
+  <pre>
+ipsec newhostkey --output /etc/ipsec.secrets
+  
+</pre>
+
+  <p>Export a copy of your public key by executing:</p>
+  <pre>
+ipsec showhostkey --left &gt; publickey.out
+  
+</pre>
+
+  <p>After this step, email a copy of the file
+  <tt>publickey.out</tt> along with the IP address of your site box
+  to <a href="mailto:fredrik@cs.ucsb.edu">fredrik@cs.ucsb.edu</a>.
+  He will return you a configuration file to be put in
+  <tt>/etc/ipsec.d/</tt>.</p>
+
+  <p>If there is a firewall between the site box and the Internet,
+  make sure that the IPSEC traffic is allowed to pass through. You
+  need to open UDP port 500 and the ESP protocol to the main box.
+  With iptables it can be done like with this commands:</p>
+  <pre>
+iptables -A INPUT -s 128.111.48.101 -p udp --dport 500 -j ACCEPT
+iptables -A INPUT -s 128.111.48.101 -p esp -j ACCEPT
+  
+</pre>
+
+  <h2>Routing Configuration</h2>
+
+  <p>The site boxes are configured so that all the traffic out of
+  each team subnetwork is sent to the main box. This is an
+  important difference with respect to a standard configuration. In
+  a "normal" set up, traffic exchanged between two subnetworks
+  connected to the same site box would not be sent to the main box.
+  In this setup, instead, the traffic has always to be forwarded to
+  the main box because the box is configured to anonymize the
+  traffic and collect statistics. For example, imagine the two
+  hosts 10.10.20.2 and 10.10.40.2 in the figure above want to
+  communicate. In a usual setup the traffic would have been routed
+  through the site box only. In the CTF setup the traffic is routed
+  through the following path: 10.10.20.2 -&gt; site box -&gt; main
+  box -&gt; site box -&gt; 10.10.40.2.</p>
+
+  <p>To achieve this, it is necessary to configure a site box
+  properly. Note that if you only have one team at your site, you
+  do not have to perform this step. Also, this step should not be
+  performed until the VPN is set up (and tested).</p>
+
+  <p>To set up the routing configuration, the following magic
+  commands work (again on RedHat 9.0):</p>
+  <pre>
+# Clear the mangle table 
+iptables -t mangle -F
+
+# Mark packets coming from teams, going to other teams
+# Assumes your public interface is eth0
+iptables -t mangle -A PREROUTING -i eth0 -j RETURN
+iptables -t mangle -A PREROUTING -i eth+ -d 10.0.0.0/8 -j MARK --set-mark 1
+
+# Delete pre-existing stuff
+# May give error messages, this is OK
+ip rule del fwmark 1
+ip route del table 1
+
+# Add a new routingtable with default route through the VPN
+ip route add default table 1 via 128.111.48.101 dev ipsec0
+ip rule add fwmark 1 table 1
+</pre>
+
+  <p>Note that after these commands are executed, the connection
+  between the local subnets will break if the VPN goes down. If
+  this happens, "ip rule del fwmark 1" will fix things.</p>
+
+  <h2>Team Hosts</h2>
+
+  <p>Each team can have any number of hosts in their subnetwork.  The only
+  requirement is that a PC, called, the <i>team box</i> is part of the
+  subnetwork. The team box Red Hat 9 and VMware Workstation 4.0.5
+  installed. Red Hat 9 is freely available. A copy of the ISO images for the
+  installation disks is available <a
+  href="ftp://ftp.ucsb.edu/pub/mirrors/linux/redhat/linux/9/en/iso/i386/">here</a>. A
+  copy of the RPM for VMware Workstation 4.0.5 is available <a
+  href="vmware">here</a>. A 30-day evaluation key for VMware is available at
+  the <a href="http://www.vmare.com/">VMware web site</a>.</p>
+
+  <p>To configure a team host, first install Red Hat 9. Then
+  install VMware and configure it. The VMware host must be assigned
+  an address within the subnetwork address space. For example, if
+  the team's subnetwork is 10.10.30.x, then the team box may have
+  address 10.10.30.5 and the VMware host running on it may be
+  assigned the 10.10.30.67 address.</p>
+
+  <p>You can test your VMware installation by loading a test image
+  that is available <a href="testimage">here</a>.</p>
+
+  <p>Note that the VMware host is the only host in a team's network
+  that has to be reachable from the outside. All the other hosts
+  can be configured to block traffic coming from the outside.</p>
+  <hr />
+  <!--  LocalWords:  Arial Helvetica FFFFFF px Trebuchet OL THEAD TBODY TFOOT CTF
+     -->
+  <!--  LocalWords:  UCSB UC UCSB's VPN anonymize VMware routeable IP NPS FreeS
+     -->
+  <!--  LocalWords:  RedHat precompiled RPMs freeswan userland ipsec newhostkey
+   -->
+  <!--  LocalWords:  showhostkey publickey UDP iptables udp dport eth PREROUTING
+   -->
+  <!--  LocalWords:  pre ip del fwmark routingtable dev
+   -->
+</body>
+</html>

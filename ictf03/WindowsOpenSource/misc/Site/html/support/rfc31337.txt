@@ -1,0 +1,222 @@
+Microsoft Developer Network                                   S. Ballmer
+Request for Comments: 31337                                    Microsoft
+Category: Standards Track                                       W. Gates
+                                                               Microsoft
+                                                           December 2003
+
+
+                   The Microsoft SourceFind Protocol
+
+Status of this Memo
+
+   This  document  specifies an  Internet  standards  track  protocol for  the
+   Internet   community,   and  requests   discussion   and  suggestions   for
+   improvements.   Please  refer  to  the  current edition  of  the  "Internet
+   Official  Protocol Standards"  (STD 1)  for the  standardization  state and
+   status of this protocol.  Distribution of this memo is unlimited.
+
+Copyright Notice
+
+   Copyright (C) Microsoft Corp. (2003). All Rights Reserved.
+
+Abstract
+
+   This  document describes  a  new protocol  to  query a  remote source  code
+   repository for  files that contain  a specified keyword. This  protocol has
+   been designed to support developer in finding the files they are interested
+   in, without having to download an entire source repository.
+
+1. Introduction
+
+The SourceFind  protocol follows a  query/reply structure. The user  queries a
+source repository  specifying a filename pattern  and a keyword.  The files in
+the repository are matched against the keyword and a list of matching files is
+returned.
+
+The SourceFind protocol is based on  UDP and a composition of IP addresses and
+user-provided credential for authentication.
+
+The keywords MUST,  MUST NOT, REQUIRED, SHALL, SHALL  NOT, SHOULD, SHOULD NOT,
+RECOMMENDED, MAY, and  OPTIONAL, when they appear in this  document, are to be
+interpreted as described in RFC 2119 [Bra97].
+
+Ballmer & Gates            Standards Track                     [Page 1]
+
+RFC 31337         The Microsoft SourceFind Protocol       December 2003
+
+
+2. Query Format
+
+A query is contained  in a single UDP packet. A query  MUST HAVE the following
+format:
+
+id <id>\n
+user <username>\n
+password <password>\n
+filename <pattern>\n
+keyword <keyword>\n
+environ <attr=value> <attr=value>\n
+
+2.1 The Id Field
+
+The "id" field is used to match queries and replies.
+
+2.2 The User Field
+
+The "user" field is used to specify a user for non-anonymous query. This field
+MUST be set to "whatever" for anonymous queries.
+
+2.3 The Password Field
+
+The  "password" field is  used to  authenticate the  user. It  MUST be  set to
+"ilovethiscompany"  for anonymous  requests.  It  MUST be  set  to the  user's
+password if a user name is specified (see Section 2.1).
+
+2.4 The Filename Field
+
+The "filename" is used to specify a  pattern for the names of the source files
+to be matched.
+
+2.5 The Keyword Field
+
+The "keyword" field specifies a keyword to be looked for in the files matching
+the pattern of the "filename" field (see Section 2.4).
+
+2.6 The Environ Field
+
+The "environ" field  is optional and it is used  to pass environment variables
+to the process that will execute the query on the repository.
+
+3. Reply format 
+
+The reply to a query is in the form:
+
+id <id>
+<filename>:<linenum>:<line>\n
+<filename>:<linenum>:<line>\n
+<filename>:<linenum>:<line>\n
+...
+
+where <id> is  the id of the corresponding request, <filename>  is the name of
+the file that contains the keyword, <linenum> is the line of the file at which
+the keyword is found, and <line> is  the content of the line where the keyword
+is found.
+
+Ballmer & Gates            Standards Track                     [Page 2]
+
+RFC 31337         The Microsoft SourceFind Protocol       December 2003
+
+4. Examples
+
+4.1 Anonymous Query
+
+Query:
+
+id 1881\n
+user whatever\n
+password ilovethiscompany\n
+filename *.c\n
+keyword extern\n
+
+Reply:
+
+id 1881\n
+./crypto/proc.c:21:extern struct list_head crypto_alg_list;\n
+./crypto/proc.c:22:extern struct rw_semaphore crypto_alg_sem;\n
+./fs/namespace.c:27:extern int __init init_rootfs(void);\n
+./fs/fcntl.c:20:extern int sock_fcntl (struct file *, unsigned int cmd, unsigned long arg);\n
+./fs/fcntl.c:21:extern int fcntl_setlease(unsigned int fd, struct file *filp, long arg);\n
+
+
+4.2 Authenticated Query
+
+Query:
+
+id 137\n
+user bgates\n
+password msrules\n
+filename *.c\n
+keyword copyright\n
+environ LANG=en_US SHELL=cmd.exe\n
+
+Reply:
+
+id 137\n
+./crypto/twofish.c:11: * The original author has disclaimed all copyright interest in this
+./crypto/aes.c:28: *   1. distributions of this source code include the above copyright
+./crypto/aes.c:31: *   2. distributions in binary form include the above copyright
+./crypto/aes.c:35: *   3. the copyright holder's name is not used to endorse products
+./fs/namespace.c:7: * Based on code from fs/super.c, copyright Linus Torvalds and others.
+
+6.  Security Considerations
+
+   Security  is central  to the  design of  this protocol,  we even  put  in a
+   password.   Additional security-relevant  aspects of  using  the SourceFind
+   protocol will come  out as user will start  complaining about horrible bugs
+   in both the protocol and its implementation. We are used to that.
+
+Ballmer & Gates            Standards Track                     [Page 3]
+
+RFC 31337         The Microsoft SourceFind Protocol       December 2003
+
+References
+
+   [Bra97]   Bradner, S., "Key words for use in RFCs to Indicate
+             Requirement Level", BCP 14, RFC 2119, March 1997.
+
+
+Disclaimer
+
+   The  views and  specification here  are those  of the  authors and  are not
+   necessarily those of their employers  (?).  The authors and their employers
+   specifically disclaim responsibility for  any problems arising from correct
+   or incorrect implementation or use of this specification.
+
+Author Information
+
+   Stephen Ballmer
+   Microsoft Corporation
+   One Microsoft Way
+   Redmond, WA 98052
+
+   Phone: +1 425 000-0002
+   EMail: ballmer@microsoft.com
+
+   William B.Gates
+   Microsoft Corporation
+   One Microsoft Way
+   Redmond, WA 98052
+
+   Phone: +1 425 000-0001
+   EMail: bgates@microsoft.com
+
+Ballmer & Gates            Standards Track                     [Page 4]
+
+RFC 31337         The Microsoft SourceFind Protocol       December 2003
+
+Copyright (C) The Microsoft Corporation (2003).  All Rights Reserved.
+
+   This document and translations of it may be copied and furnished to others,
+   and derivative works  that comment on or otherwise explain  it or assist in
+   its implementation  may be prepared, copied, published  and distributed, in
+   whole or in part, without restriction  of any kind, provided that the above
+   copyright notice  and this  paragraph are included  on all such  copies and
+   derivative works.  However, this document itself may not be modified in any
+   way,  such  as  by removing  the  copyright  notice  or references  to  the
+   Microsoft Corp. or other organizations, except as needed for the purpose of
+   developing Internet  standards in which case the  procedures for copyrights
+   defined in the Internet Standards  process must be followed, or as required
+   to translate it into languages other than English.
+
+   The limited permissions granted above are perpetual and will not be revoked
+   by the Microsoft Corp. or its successors or assigns.
+
+   This document  and the information contained  herein is provided  on an "AS
+   IS"  basis and  THE MICROSOFT  CORP. DISCLAIMS  ALL WARRANTIES,  EXPRESS OR
+   IMPLIED, INCLUDING  BUT NOT  LIMITED TO  ANY WARRANTY THAT  THE USE  OF THE
+   INFORMATION HEREIN WILL  NOT INFRINGE ANY RIGHTS OR  ANY IMPLIED WARRANTIES
+   OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+Ballmer & Gates            Standards Track                     [Page 5]
+
+RFC 31337         The Microsoft SourceFind Protocol       December 2003

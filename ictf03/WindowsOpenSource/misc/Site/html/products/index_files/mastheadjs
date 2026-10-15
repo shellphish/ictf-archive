@@ -1,0 +1,164 @@
+
+
+function mnpToolbarDir()
+{
+	return "LTR";
+}
+
+function m71a06c18019585dbc34a9c4c641a3a08()
+{
+	this.backColor = '#000000';
+	this.foreColor = '#FFFFFF';
+	this.hoverColor = '#FFCC00';
+	this.classname = 'mnpGlobalToolbar';
+	this.linkArea = 'GlobalToolbar';
+	this.linkId = 'GT_Drop1';
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new g15812604a7ff6e8edabc0c90d2a7da8d()
+	this.items[n++] = new gec95e3ef65b093743045dda8daa20f1b()
+}
+
+function g15812604a7ff6e8edabc0c90d2a7da8d()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new ToolbarItem('All Products', '/isapi/gomscom.asp?target=/catalog/', '_parent');
+	this.items[n++] = new ToolbarItem('Windows', '/isapi/gomscom.asp?target=/windows/', '_parent');
+	this.items[n++] = new ToolbarItem('Office', 'http://office.microsoft.com', '_parent');
+	this.items[n++] = new ToolbarItem('Servers', '/isapi/gomscom.asp?target=/servers/', '_parent');
+	this.items[n++] = new ToolbarItem('Visual Studio', '/isapi/gomsdn.asp?target=/vstudio/', '_parent');
+}
+
+function gec95e3ef65b093743045dda8daa20f1b()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new ToolbarItem('MSN', 'http://www.msn.com/', '_parent');
+}
+
+function medf9a186fb918ffce063d27c6d67cffe()
+{
+	this.backColor = '#000000';
+	this.foreColor = '#FFFFFF';
+	this.hoverColor = '#FFCC00';
+	this.classname = 'mnpGlobalToolbar';
+	this.linkArea = 'GlobalToolbar';
+	this.linkId = 'GT_Drop2';
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new ga1fa04ac2fd9ea1fa52c76311de43296()
+}
+
+function ga1fa04ac2fd9ea1fa52c76311de43296()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new ToolbarItem('Download Center', '/isapi/gomscom.asp?target=/downloads/', '_parent');
+	this.items[n++] = new ToolbarItem('Windows Update', 'http://windowsupdate.microsoft.com', '_parent');
+	this.items[n++] = new ToolbarItem('Office Downloads', 'http://office.microsoft.com/downloads/', '_parent');
+}
+
+function m1b3560fa9d8189ce386c2508f94c616f()
+{
+	this.backColor = '#000000';
+	this.foreColor = '#FFFFFF';
+	this.hoverColor = '#FFCC00';
+	this.classname = 'mnpGlobalToolbar';
+	this.linkArea = 'GlobalToolbar';
+	this.linkId = 'GT_Drop3';
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new g72ebafadfaf442af5d5ddfa386063360()
+}
+
+function g72ebafadfaf442af5d5ddfa386063360()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new ToolbarItem('Product Support', 'http://support.microsoft.com', '_parent');
+	this.items[n++] = new ToolbarItem('Knowledge Base', '/isapi/gosupport.asp?target=/search/', '_parent');
+	this.items[n++] = new ToolbarItem('Developer Support', '/isapi/gomsdn.asp?target=/support/', '_parent');
+	this.items[n++] = new ToolbarItem('IT Pro Support', '/isapi/gomscom.asp?target=/technet/support/', '_parent');
+	this.items[n++] = new ToolbarItem('Service Partner Referrals', 'http://mcspreferral.microsoft.com', '_parent');
+}
+
+function mc56a833edd4edfae7787c623c8510629()
+{
+	this.backColor = '#000000';
+	this.foreColor = '#FFFFFF';
+	this.hoverColor = '#FFCC00';
+	this.classname = 'mnpGlobalToolbar';
+	this.linkArea = 'GlobalToolbar';
+	this.linkId = 'GT_Drop4';
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new g83d1b64bd5c2e296c08674d78b6bce38()
+	this.items[n++] = new g869bb20b5c4ed4140cb975f2aa8bdbcd()
+}
+
+function g83d1b64bd5c2e296c08674d78b6bce38()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new ToolbarItem('Search Microsoft.com', '/isapi/gosearch.asp?target=/', '_parent');
+}
+
+function g869bb20b5c4ed4140cb975f2aa8bdbcd()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new ToolbarItem('MSN Web Search', 'http://search.msn.com/', '_parent');
+}
+
+function m60638ac32df0e62d79e6bce849e695fe()
+{
+	this.backColor = '#000000';
+	this.foreColor = '#FFFFFF';
+	this.hoverColor = '#FFCC00';
+	this.classname = 'mnpGlobalToolbar';
+	this.linkArea = 'GlobalToolbar';
+	this.linkId = 'GT_Drop5';
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new g6917253d8279b11025f4acbdec0a29ca()
+}
+
+function g6917253d8279b11025f4acbdec0a29ca()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new ToolbarItem('Microsoft Worldwide', '/isapi/gomscom.asp?target=/worldwide/', '_parent');
+}
+
+function m7367a73751f32aeeeff7c8b6363bded0()
+{
+	this.backColor = '#000000';
+	this.foreColor = '#FFFFFF';
+	this.hoverColor = '#FFCC00';
+	this.classname = 'mnpGlobalToolbar';
+	this.linkArea = 'GlobalToolbar';
+	this.linkId = 'GT_Drop6';
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new g762061f03af0f34c48a113fa27a1d41e()
+	this.items[n++] = new ga3e36f27eef312621f5c66805dfcd688()
+}
+
+function g762061f03af0f34c48a113fa27a1d41e()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new ToolbarItem('Microsoft.com Home', '/isapi/gomscom.asp?target=/', '_parent');
+	this.items[n++] = new ToolbarItem('Manage Your Profile', 'http://go.microsoft.com/?linkid=317027', '_parent');
+	this.items[n++] = new ToolbarItem('Training &amp; Certification', '/isapi/gomscom.asp?target=/traincert/', '_parent');
+	this.items[n++] = new ToolbarItem('Events', '/isapi/gomscom.asp?target=/usa/events/', '_parent');
+}
+
+function ga3e36f27eef312621f5c66805dfcd688()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new ToolbarItem('MSN.com Home', 'http://www.msn.com', '_parent');
+}
+

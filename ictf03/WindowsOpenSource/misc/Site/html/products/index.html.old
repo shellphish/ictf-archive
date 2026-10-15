@@ -1,0 +1,847 @@
+<html>
+<head>
+  <meta content=
+  "HTML Tidy for Linux/x86 (vers 1st April 2003), see www.w3.org"
+  name="generator">
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=us-ascii">
+  <meta name="ms.locale" content="en-us">
+
+  <title>Microsoft Product Information Center -</title>
+  <meta name="description" content=
+  "Learn about and purchase Microsoft products in this category.">
+  <link rel="stylesheet" type="text/css" href="index_files/up.css">
+  <link type="text/css" rel="Stylesheet" href=
+  "index_files/css.css">
+</head>
+
+<body>
+  <a name="top"></a><a href="#mainContent" style=
+  "display: none;">Click here to jump to main page content</a>
+  <script language="Javascript" type="text/javascript">
+                                if (self.name == "MNPMainFrame")
+                                        top.location.href = self.location.href;
+  </script>
+
+  <table id="mnpMastheadTable" width="100%" cellpadding="0"
+  cellspacing="0" border="2" bgcolor="#0A6CCE" dir="ltr">
+    <tbody>
+      <tr>
+        <td width="100%" valign="top" rowspan="2"><a href=
+        "../index.html"><img border="2" src=
+        "index_files/bnr_microsoft.gif" alt="Microsoft Home">
+        </a></td>
+
+        <td valign="top" height="20" width="19" align="right">
+        <img alt="*" src="index_files/curveLTR.gif"></td>
+
+        <td valign="middle" nowrap="nowrap" colspan="2" class=
+        "mnpGlobalToolbar" hover="#FFCC00">&nbsp;&nbsp;<a class=
+        "mnpGlobalToolbarLink" dir="ltr" href=
+        "index.html"
+           target="_parent" guid=
+           "m71a06c18019585dbc34a9c4c641a3a08">Products</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="mnpGlobalToolbarLink"
+           dir="ltr" href=
+           "http://www.microsoft.com/isapi/gomscom.asp?target=/downloads/"
+           target="_parent" guid=
+           "medf9a186fb918ffce063d27c6d67cffe">Downloads</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="mnpGlobalToolbarLink"
+           dir="ltr" href="http://support.microsoft.com/" target=
+           "_parent" guid=
+           "m1b3560fa9d8189ce386c2508f94c616f">Support</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="mnpGlobalToolbarLink"
+           dir="ltr" href=
+           "http://www.microsoft.com/isapi/gosearch.asp?target=/"
+           target="_parent" guid=
+           "mc56a833edd4edfae7787c623c8510629">Search</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="mnpGlobalToolbarLink"
+           dir="ltr" href=
+           "http://www.microsoft.com/isapi/gomscom.asp?target=/worldwide/"
+           target="_parent" guid=
+           "m60638ac32df0e62d79e6bce849e695fe">Worldwide</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="mnpGlobalToolbarLink"
+           dir="ltr" href=
+           "http://www.microsoft.com/isapi/gomscom.asp?target=/"
+           target="_parent" guid=
+           "m7367a73751f32aeeeff7c8b6363bded0">Microsoft</a>&nbsp;&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td width="19">&nbsp;</td>
+
+        <td valign="top" height="40" nowrap="nowrap">&nbsp;</td>
+
+        <td valign="top" height="40" nowrap="nowrap" class=
+        "mnpMastheadLogo" align="right"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table width="100%" cellpadding="0" cellspacing="0" border="1"
+         style="border-bottom: 1px solid white;" bgcolor="#0A6CCE">
+    <tbody>
+      <tr>
+        <td height="20" valign="middle" nowrap="nowrap" class=
+        "mnpLocalToolbar" style="color: rgb(255, 255, 255);"
+            hover="#FFCC00">&nbsp;<a style=
+            "color: rgb(255, 255, 255); text-decoration: none;" dir=
+            "ltr" href="http://www.microsoft.com/" target=
+            "_parent">Microsoft Home</a>&nbsp;&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" border="1" width="100%"
+  dir="ltr">
+    <tbody>
+      <tr valign="top">
+        <td height="100%" style="" width="181">
+          <table cellpadding="0" cellspacing="0" border="1"
+                 width="100%">
+            <tbody>
+              <tr>
+                <td class="mnpQuickSearch" style=
+                "background: rgb(10, 108, 206) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: rgb(255, 255, 255);"
+                    dir="ltr">
+                  <form style="margin: 0px;" action=
+                  "views/22/searchRdr.aspx">
+                    <nobr><font color="#ffffff">Search
+                    for</font><br></nobr>
+
+                    <table cellpadding="0" cellspacing="0"
+                           border="2">
+                      <tbody>
+                        <tr>
+                          <td class="mnpQuickSearch" style=
+                          "padding: 0px;"><span style=
+                          "width: 137px;"><input class=
+                          "mnpSearchBox" type="text" id="qu"
+                                 name="qu" maxlength="255" style=
+                                 "width: 100%;"></span></td>
+
+                          <td><input class="mnpSearchButton"
+                                 type="submit" value="Go"><br></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </form>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div id="mnpMenuTop" class="mnpMenuTop" style=
+          "width: 181px;" url="/products/info/default.aspx?view=22"
+          dir="ltr">
+            <div class="mnpInherit">
+              <div class="mnpMenuRow" style=
+              "border-color: rgb(153, 153, 153); background: white none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; cursor: default; width: 153px;">
+              <img width="4" height="7" border="2" alt="*" title=""
+                     class="mnpMenuArrow" src=
+                     "index_files/arrowLTR.gif" style=
+                     "left: 166px; visibility: hidden;"><a aoff=
+                     "yes" href=
+                     "http://www.microsoft.com/products/info/default.aspx?view=22">
+                Product Information Center Home</a>
+              </div>
+
+              <div class="mnpMenuBorder" style="width: 180px;">
+              </div>
+
+              <div class="mnpMenuRow" style=
+              "border-color: rgb(241, 241, 241); background: rgb(241, 241, 241) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 153px;">
+              <img width="4" height="7" border="2" alt="*" title=""
+                     class="mnpMenuArrow" src=
+                     "index_files/arrowLTR.gif" style=
+                     "left: 166px; visibility: hidden;">
+                Windows OS
+              </div>
+
+              <div class="mnpMenuRow" style=
+              "border-color: rgb(241, 241, 241); background: rgb(241, 241, 241) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 153px;">
+              <img width="4" height="7" border="2" alt="*" title=""
+                     class="mnpMenuArrow" src=
+                     "index_files/arrowLTR.gif" style=
+                     "left: 166px; visibility: hidden;"><a href=
+                     "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=fab9617a-57ff-4789-9397-6dac071b19b0">
+                Office</a>
+              </div>
+
+              <div class="mnpMenuRow" style=
+              "border-color: rgb(241, 241, 241); background: rgb(241, 241, 241) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 153px;">
+              <img width="4" height="7" border="2" alt="*" title=""
+                     class="mnpMenuArrow" src=
+                     "index_files/arrowLTR.gif" style=
+                     "left: 166px; visibility: hidden;"><a href=
+                     "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=b8310ada-9e77-4aab-947a-14eabe785fd0">
+                Developers</a>
+              </div>
+
+              <div class="mnpMenuRow" style=
+              "border-color: rgb(241, 241, 241); background: rgb(241, 241, 241) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 153px;">
+              <img width="4" height="7" border="2" alt="*" title=""
+                     class="mnpMenuArrow" src=
+                     "index_files/arrowLTR.gif" style=
+                     "left: 166px; visibility: hidden;"><a href=
+                     "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=060d3ddc-a650-461e-ab7b-36124df1e60e">
+                IT Professionals</a>
+              </div>
+
+              <div class="mnpMenuRow" style=
+              "border-color: rgb(241, 241, 241); background: rgb(241, 241, 241) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 153px;">
+              <img width="4" height="7" border="2" alt="*" title=""
+                     class="mnpMenuArrow" src=
+                     "index_files/arrowLTR.gif" style=
+                     "left: 166px; visibility: hidden;"><a href=
+                     "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=1be952ef-523d-47cb-9308-f4aca52b52d5">
+                Business Users</a>
+              </div>
+
+              <div class="mnpMenuRow" style=
+              "border-color: rgb(241, 241, 241); background: rgb(241, 241, 241) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 153px;">
+              <img width="4" height="7" border="2" alt="*" title=""
+                     class="mnpMenuArrow" src=
+                     "index_files/arrowLTR.gif" style=
+                     "left: 166px; visibility: hidden;"><a href=
+                     "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=840ef51a-ff33-4cb8-8462-0d86bd5d8a2a">
+                Home Users</a>
+              </div>
+
+              <div class="mnpMenuRow" style=
+              "border-color: rgb(241, 241, 241); background: rgb(241, 241, 241) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 153px;">
+              <img width="4" height="7" border="2" alt="*" title=""
+                     class="mnpMenuArrow" src=
+                     "index_files/arrowLTR.gif" style=
+                     "left: 166px; visibility: hidden;"><a href=
+                     "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=c250fb0a-1613-4550-983d-ba203f357698">
+                Hardware</a>
+              </div>
+
+              <div class="mnpMenuRow" style=
+              "border-color: rgb(241, 241, 241); background: rgb(241, 241, 241) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 153px;">
+              <img width="4" height="7" border="2" alt="*" title=""
+                     class="mnpMenuArrow" src=
+                     "index_files/arrowLTR.gif" style=
+                     "left: 166px; visibility: hidden;"><a href=
+                     "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=94990857-7785-484f-abb8-ef0a71a1958d">
+                Games and Xbox</a>
+              </div>
+
+              <div class="mnpMenuBorder" style="width: 180px;">
+              </div>
+
+              <div class="mnpMenuRow" style=
+              "border-color: rgb(241, 241, 241); background: rgb(241, 241, 241) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 153px;">
+              <img width="4" height="7" border="2" alt="*" title=""
+                     class="mnpMenuArrow" src=
+                     "index_files/arrowLTR.gif" style=
+                     "left: 166px; visibility: hidden;"><a href=
+                     "http://www.microsoft.com/products/info/list.aspx?view=22&amp;type=all">
+                All Products</a>
+              </div>
+
+              <div class="mnpMenuBorder" style="width: 180px;">
+              </div>
+
+              <div class="mnpMenuRow" style=
+              "border-color: rgb(241, 241, 241); background: rgb(241, 241, 241) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 153px;">
+              <img width="4" height="7" border="2" alt="*" title=""
+                     class="mnpMenuArrow" src=
+                     "index_files/arrowLTR.gif" style=
+                     "left: 166px; visibility: hidden;"><a href=
+                     "http://www.microsoft.com/products/info/list.aspx?view=22&amp;type=new">
+                New and Coming Soon</a>
+              </div>
+
+              <div class="mnpMenuRow" style=
+              "border-color: rgb(241, 241, 241); background: rgb(241, 241, 241) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 153px;">
+              <img width="4" height="7" border="2" alt="*" title=""
+                     class="mnpMenuArrow" src=
+                     "index_files/arrowLTR.gif" style=
+                     "left: 166px; visibility: hidden;"><a href=
+                     "http://www.microsoft.com/products/info/render.aspx?view=22&amp;type=mnp&amp;content=22/custsrv">
+                Customer Service</a>
+              </div>
+
+              <div class="mnpMenuRow" style=
+              "border-color: rgb(241, 241, 241); background: rgb(241, 241, 241) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 153px;">
+              <img width="4" height="7" border="2" alt="*" title=""
+                     class="mnpMenuArrow" src=
+                     "index_files/arrowLTR.gif" style=
+                     "left: 166px; visibility: hidden;"><a href=
+                     "http://www.microsoft.com/products/info/render.aspx?View=22&amp;type=std&amp;content=22/listofsubs&amp;ss=sharedxslt/wwwpicfinder">
+                Worldwide Sites</a>
+              </div>
+
+              <div class="mnpMenuBorder" style=
+              "width: 180px; margin-bottom: 0px;"></div>
+            </div>
+          </div>
+
+          <div class="mnpAds" style=
+          "border-style: solid; border-color: rgb(153, 153, 153); border-width: 0px 1px 0px 0px; background: rgb(241, 241, 241) none repeat scroll 0%; width: 181px; height: 100%; margin-bottom: 20px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">
+          </div>
+        </td>
+
+        <td width="100%" dir="ltr">
+          <table width="100%" cellpadding="0" cellspacing="0"
+                 style="width: 100%; background-color: rgb(6, 81, 167);">
+                 
+            <tbody>
+              <tr valign="middle">
+                <td><img src="index_files/subbanner.gif" alt=
+                "Product Information Center" height="30"></td>
+
+                <td width="100%" style="padding-right: 5px;"
+                    align="right" nowrap="nowrap"></td>
+              </tr>
+            </tbody>
+          </table><a name="mainContent"></a><span id=
+          "homepage"></span>
+
+          <table cellpadding="0" cellspacing="0" width="100%"
+          border="2">
+            <tbody>
+              <tr valign="top">
+                <td>
+                  <a href=
+                  "http://www.microsoft.com/products/info/render.aspx?view=22&amp;type=std&amp;content=22/holidayOverview&amp;ss=22/xslt/holidayOverview">
+                  <img alt="Holiday Shopping from Microsoft"
+                       border="2" title="" src=
+                       "index_files/d481ec39-b780-4cb7-9f8a-f024d25464fb_1.jpg">
+                  </a>
+
+                  <table cellpadding="0" cellspacing="0"
+                         width="100%" style="margin-top: 26px;">
+                    <tbody>
+                      <tr valign="top">
+                        <td width="20">
+                          <div style="width: 20px;">
+                            &nbsp;
+                          </div>
+                        </td>
+
+                        <td width="50%">
+                          <h2 class="home">Windows OS&nbsp;</h2>
+
+                          <table cellpadding="0" cellspacing="0">
+                            <tbody>
+                              <tr valign="top">
+                                <td width="60"><a href=
+                                "http://www.microsoft.com/products/info/product.aspx?view=22&amp;pcid=2abf99cd-a5e4-469c-802e-55ca8ec542d5">
+                                <img alt="" border="2" title=""
+                                     src="index_files/d481ec39-b780-4cb7-9f8a-f024d25464fb_2.jpg">
+                                </a></td>
+
+                                <td class="itemDetails">
+                                Windows OS XP Professional<br>
+                                &quot;OS&quot; is for &quot;Open Source&quot;! Be in control! Use the source!</td>
+                              </tr>
+
+                            </tbody>
+                          </table>
+                        </td>
+
+                        <td width="21">
+                          <div style="width: 21px;">
+                            &nbsp;
+                          </div>
+                        </td>
+
+                        <td width="50%">
+                          <h2 class="home">Open Office&nbsp;</h2>
+
+                          <table cellpadding="0" cellspacing="0">
+                            <tbody>
+                              <tr valign="top">
+                                <td width="60"><img width="80" alt="" border="2" title=""
+                                     src="openoffice.png">
+                                </td>
+
+                                <td class="itemDetails">
+                                Open Office System<br>
+                                Find Office 2003 Editions,
+                                products, and books designed to
+                                work together to help improve your
+                                productivity.</td>
+                              </tr>
+
+                              <tr>
+                                <td colspan="2"><a href=
+                                ""></a><a href=
+                                "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=fab9617a-57ff-4789-9397-6dac071b19b0">
+                                More Office Products</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+
+                        <td width="15">
+                          <div style="width: 15px;">
+                            &nbsp;
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td width="20"></td>
+
+                        <td width="50%"></td>
+
+                        <td width="21"></td>
+
+                        <td width="50%"></td>
+
+                        <td width="15"></td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="5">
+                          <p>&nbsp;</p>
+                        </td>
+                      </tr>
+
+                      <tr valign="top">
+                        <td width="20">
+                          <div style="width: 20px;">
+                            &nbsp;
+                          </div>
+                        </td>
+
+                        <td width="50%">
+                          <h2 class="home">Developers &nbsp;</h2>
+
+                          <table cellpadding="0" cellspacing="0">
+                            <tbody>
+                              <tr valign="top">
+                                <td width="60"><a href=
+                                "http://www.microsoft.com/products/info/product.aspx?view=22&amp;pcid=cb2f1db7-77fe-4c91-a3c1-96e44dcac05d&amp;type=ovr">
+                                <img alt="" border="2" title=""
+                                     src="index_files/d481ec39-b780-4cb7-9f8a-f024d25464fb_4.jpg">
+                                </a></td>
+
+                                <td class="itemDetails"><a href=
+                                "http://www.microsoft.com/products/info/product.aspx?view=22&amp;pcid=cb2f1db7-77fe-4c91-a3c1-96e44dcac05d&amp;type=ovr">
+                                Visual Studio .NET 2003 Enterprise
+                                Architect</a><br>
+                                Effectively design and build
+                                distributed applications and
+                                communicate development best
+                                practices.</td>
+                              </tr>
+
+                              <tr>
+                                <td colspan="2"><a href=
+                                ""></a><a href=
+                                "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=b8310ada-9e77-4aab-947a-14eabe785fd0">
+                                More Developer Products</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+
+                        <td width="21">
+                          <div style="width: 21px;">
+                            &nbsp;
+                          </div>
+                        </td>
+
+                        <td width="50%">
+                          <h2 class="home">IT
+                          Professionals&nbsp;</h2>
+
+                          <table cellpadding="0" cellspacing="0">
+                            <tbody>
+                              <tr valign="top">
+                                <td width="60"><a href=
+                                "http://www.microsoft.com/products/info/product.aspx?view=22&amp;pcid=98f7f7d0-7442-4494-9f94-7cc0ea0e2e35&amp;type=ovr">
+                                <img alt="" border="2" title=""
+                                     src="index_files/d481ec39-b780-4cb7-9f8a-f024d25464fb_5.jpg">
+                                </a></td>
+
+                                <td class="itemDetails"><a href=
+                                "http://www.microsoft.com/products/info/product.aspx?view=22&amp;pcid=98f7f7d0-7442-4494-9f94-7cc0ea0e2e35&amp;type=ovr">
+                                Small Business Server 2003 Premium
+                                Edition</a><br>
+                                Ideal for small businesses with
+                                demanding IT needs, such as
+                                data-intensive applications.</td>
+                              </tr>
+
+                              <tr>
+                                <td colspan="2"><a href=
+                                ""></a><a href=
+                                "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=060d3ddc-a650-461e-ab7b-36124df1e60e">
+                                More IT Pro Products</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+
+                        <td width="15">
+                          <div style="width: 15px;">
+                            &nbsp;
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td width="20"></td>
+
+                        <td width="50%"></td>
+
+                        <td width="21"></td>
+
+                        <td width="50%"></td>
+
+                        <td width="15"></td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="5">
+                          <p>&nbsp;</p>
+                        </td>
+                      </tr>
+
+                      <tr valign="top">
+                        <td width="20">
+                          <div style="width: 20px;">
+                            &nbsp;
+                          </div>
+                        </td>
+
+                        <td width="50%">
+                          <h2 class="home">Business
+                          Users&nbsp;</h2>
+
+                          <table cellpadding="0" cellspacing="0">
+                            <tbody>
+                              <tr valign="top">
+                                <td width="60"><a href=
+                                "http://www.microsoft.com/products/info/product.aspx?view=22&amp;pcid=60259a1e-9faf-43be-9995-a68c31a07339&amp;type=ovr">
+                                <img alt="" border="2" title=""
+                                     src="index_files/d481ec39-b780-4cb7-9f8a-f024d25464fb_6.jpg">
+                                </a></td>
+
+                                <td class="itemDetails"><a href=
+                                "http://www.microsoft.com/products/info/product.aspx?view=22&amp;pcid=60259a1e-9faf-43be-9995-a68c31a07339&amp;type=ovr">
+                                Office Visio Professional
+                                2003</a><br>
+                                Document, design, communicate, and
+                                automate complex processes and
+                                systems.</td>
+                              </tr>
+
+                              <tr>
+                                <td colspan="2"><a href=
+                                ""></a><a href=
+                                "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=1be952ef-523d-47cb-9308-f4aca52b52d5">
+                                More Business Products</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+
+                        <td width="21">
+                          <div style="width: 21px;">
+                            &nbsp;
+                          </div>
+                        </td>
+
+                        <td width="50%">
+                          <h2 class="home">Home Users&nbsp;</h2>
+
+                          <table cellpadding="0" cellspacing="0">
+                            <tbody>
+                              <tr valign="top">
+                                <td width="60"><a href=
+                                "http://www.microsoft.com/products/info/product.aspx?view=22&amp;pcid=9ae5227f-0b02-448b-acc7-4c67d9251081&amp;type=ovr">
+                                <img alt="" border="2" title=""
+                                     src="index_files/d481ec39-b780-4cb7-9f8a-f024d25464fb_7.jpg">
+                                </a></td>
+
+                                <td class="itemDetails"><a href=
+                                "http://www.microsoft.com/products/info/product.aspx?view=22&amp;pcid=9ae5227f-0b02-448b-acc7-4c67d9251081&amp;type=ovr">
+                                Plus! Digital Media Edition</a><br>
+                                Delivers easy and exciting new ways
+                                to share your photos and enjoy your
+                                music and home movies.</td>
+                              </tr>
+
+                              <tr>
+                                <td colspan="2"><a href=
+                                ""></a><a href=
+                                "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=840ef51a-ff33-4cb8-8462-0d86bd5d8a2a">
+                                More Home User Products</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+
+                        <td width="15">
+                          <div style="width: 15px;">
+                            &nbsp;
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td width="20"></td>
+
+                        <td width="50%"></td>
+
+                        <td width="21"></td>
+
+                        <td width="50%"></td>
+
+                        <td width="15"></td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="5">
+                          <p>&nbsp;</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <table cellpadding="0" cellspacing="0" border="2"
+                         width="100%">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="categoryIndex" style=
+                          "padding: 0px 20px;">
+                            <h2 class="home" style=
+                            "margin-right: 30px;">Browse by
+                            Category</h2>
+
+                            <table id="categoryIndex"
+                                   cellpadding="0" cellspacing="0"
+                                   width="100%">
+                              <tbody>
+                                <tr>
+                                  <td valign="top" width="8">
+                                  &#226;&#8364;&#162;</td>
+
+                                  <td><a href=
+                                  "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=ea710cad-37b0-4975-bcd6-abfee19961df">
+                                  Windows</a></td>
+
+                                  <td valign="top" width="8">
+                                  &#226;&#8364;&#162;</td>
+
+                                  <td><a href=
+                                  "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=fab9617a-57ff-4789-9397-6dac071b19b0">
+                                  Office</a></td>
+
+                                  <td valign="top" width="8">
+                                  &#226;&#8364;&#162;</td>
+
+                                  <td><a href=
+                                  "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=b8310ada-9e77-4aab-947a-14eabe785fd0">
+                                  Developers</a></td>
+                                </tr>
+
+                                <tr>
+                                  <td valign="top" width="8">
+                                  &#226;&#8364;&#162;</td>
+
+                                  <td><a href=
+                                  "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=060d3ddc-a650-461e-ab7b-36124df1e60e">
+                                  IT Professionals</a></td>
+
+                                  <td valign="top" width="8">
+                                  &#226;&#8364;&#162;</td>
+
+                                  <td><a href=
+                                  "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=1be952ef-523d-47cb-9308-f4aca52b52d5">
+                                  Business Users</a></td>
+
+                                  <td valign="top" width="8">
+                                  &#226;&#8364;&#162;</td>
+
+                                  <td><a href=
+                                  "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=840ef51a-ff33-4cb8-8462-0d86bd5d8a2a">
+                                  Home Users</a></td>
+                                </tr>
+
+                                <tr>
+                                  <td valign="top" width="8">
+                                  &#226;&#8364;&#162;</td>
+
+                                  <td><a href=
+                                  "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=c250fb0a-1613-4550-983d-ba203f357698">
+                                  Hardware</a></td>
+
+                                  <td valign="top" width="8">
+                                  &#226;&#8364;&#162;</td>
+
+                                  <td><a href=
+                                  "http://www.microsoft.com/products/info/default.aspx?view=22&amp;pcid=94990857-7785-484f-abb8-ef0a71a1958d">
+                                  Games and Xbox</a></td>
+
+                                  <td valign="top" width="8">
+                                  &#226;&#8364;&#162;</td>
+
+                                  <td><a href=
+                                  "http://www.microsoft.com/products/info/list.aspx?view=22&amp;type=all">
+                                  All Products</a></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+
+                <td width="165" class="rightContainer">
+                  <table dir="ltr" width="165" cellpadding="0"
+                  cellspacing="0" bgcolor="#C3C8CD" style=
+                  "margin-top: 13px;">
+                    <tbody>
+                      <tr>
+                        <td><img width="165" height="3" src=
+                        "index_files/bc_top.gif" title=""></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div style=
+                  "background: rgb(241, 243, 244) none repeat scroll 0%; width: 165px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">
+                  <a href=
+                  "http://www.microsoft.com/security/protect/default.asp"
+                         style=
+                         "display: block; text-align: center; margin-top: 21px;">
+                    <img alt="" border="2" title="" src=
+                    "index_files/d481ec39-b780-4cb7-9f8a-f024d25464fb_8.gif">
+                    </a>
+
+                    <h2 class="featuredProducts">Bestsellers</h2>
+
+                    <div class="featuredProduct" style=
+                    "border-top: 1px solid rgb(195, 200, 205); padding-top: 5px; margin-top: 5px;">
+                    <a href=
+                    "http://www.microsoft.com/products/info/product.aspx?view=22&amp;pcid=2f2112b0-3495-4f29-a8fb-3a16f6bef3fc">
+                      <img alt="" border="2" title="" src=
+                      "index_files/2f2112b0-3495-4f29-a8fb-3a16f6bef3fc_small.jpg">
+                      </a><br>
+                      <a class="featuredProduct" href=
+                      "http://www.microsoft.com/products/info/product.aspx?view=22&amp;pcid=2f2112b0-3495-4f29-a8fb-3a16f6bef3fc">
+                      Money 2004 Deluxe Edition</a>Here's the quick
+                      and easy way to organize and manage your
+                      personal finances.
+
+                      <div class="price">
+                        $59.95
+                      </div>
+
+                      <div class="SKU">
+                        860-00240
+                      </div>
+
+                      <form class="cartButton" method="post"
+                            action="http://shop.microsoft.com/referral/selector.asp?furl=3&amp;skuqty=1&amp;subid=22&amp;pcid=&amp;sku=860-00240&amp;">
+                      <input type="submit" value="Add to Cart">
+                      </form>
+                    </div>
+
+                    <div class="featuredProduct" style=
+                    "border-top: 1px solid rgb(195, 200, 205); padding-top: 14px; margin-top: 14px; padding-bottom: 25px;">
+                    <a href=
+                    "http://www.microsoft.com/products/info/product.aspx?view=22&amp;pcid=9fdcc2af-6b86-4ee8-9b71-90cebe8626e6">
+                      <img alt="" border="2" title="" src=
+                      "index_files/VSnetP2003_s.jpg"></a><br>
+                      <a class="featuredProduct" href=
+                      "http://www.microsoft.com/products/info/product.aspx?view=22&amp;pcid=9fdcc2af-6b86-4ee8-9b71-90cebe8626e6">
+                      Visual Studio .NET 2003 Professional
+                      Edition</a>Rapidly build a broad range of
+                      applications for Windows, the Web, and mobile
+                      devices.
+
+                      <div class="price">
+                        $1,079.00
+                      </div>
+
+                      <div class="SKU">
+                        659-01131
+                      </div>
+
+                      <form class="cartButton" method="post"
+                            action="http://shop.microsoft.com/referral/selector.asp?furl=3&amp;skuqty=1&amp;subid=22&amp;pcid=&amp;sku=659-01131&amp;">
+                      <input type="submit" value="Add to Cart">
+                      </form>
+                    </div>
+                  </div>
+
+                  <table dir="ltr" width="165" cellpadding="0"
+                  cellspacing="0" bgcolor="#C3C8CD">
+                    <tbody>
+                      <tr>
+                        <td><img width="165" height="3" src=
+                        "index_files/bc_bottom.gif" title=""></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="margin-top: 36px;">
+            <span id="homepage"><a href=
+            "http://www.microsoft.com/products/info/detailsLinks.aspx?view=22">
+            <img width="1" height="1" src="index_files/trans.gif"
+            alt="" title="" border></a></span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" width="100%" border="2"
+         bgcolor="#0A6CCE" style="color: rgb(255, 255, 255);" dir=
+         "ltr">
+    <tbody>
+      <tr>
+        <td class="mnpFooterTopRow" nowrap="nowrap" height="20">
+        &nbsp;<a href=
+        "http://order.microsoft.upgrade.com/scripts/cust_assist/assistance.asp"
+           target="_parent" style=
+           "color: rgb(255, 255, 255); text-decoration: none;"
+           onmouseout="mnpFooterMouse(this, '#FFFFFF')"
+           onmouseover="mnpFooterMouse(this, '#FFCC00')">Contact
+           Us</a>&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td class="mnpFooterBottomRow" nowrap="nowrap" height="30">
+        <font color="#ffffff">&nbsp;<span dir=
+        "ltr">&#194;&#169;2003 Microsoft Corporation. All rights
+        reserved.</span>&nbsp;<a href=
+        "http://www.microsoft.com/isapi/gomscom.asp?target=/info/cpyright.htm"
+           target="_parent" style="color: rgb(255, 255, 255);"
+           onmouseout="mnpFooterMouse(this, '#FFFFFF')"
+           onmouseover="mnpFooterMouse(this, '#FFCC00')">Terms of
+           Use</a>&nbsp;|&nbsp;<a href=
+           "http://www.microsoft.com/isapi/gomscom.asp?target=/info/privacy.htm"
+           target="_parent" style="color: rgb(255, 255, 255);"
+           onmouseout="mnpFooterMouse(this, '#FFFFFF')"
+           onmouseover="mnpFooterMouse(this, '#FFCC00')">Privacy
+           Statement</a>&nbsp;</font></td>
+      </tr>
+    </tbody>
+  </table><script type="text/javascript" language="Javascript">
+                        function mnpFooterMouse(el, co)
+                        {
+                                if (el.style) el.style.color = co;
+                        }
+  </script>
+
+  <layer visibility="hide"></layer>
+
+  <div style="display: none;">
+    <img width="0" height="0" border="2" hspace="0" vspace="0"
+         src="index_files/trans_pixel.gif">
+  </div><img width="1" height="1" border="2" src=
+  "index_files/catalogger.html">
+</body>
+</html>

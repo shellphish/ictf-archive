@@ -1,0 +1,181 @@
+
+.mnpGlobalToolbar
+{
+	color: White;
+	background: Black;
+}
+
+.mnpGlobalToolbar a
+{
+	color: White;
+	text-decoration: inherit;
+	background: inherit;
+	font-weight: normal;
+}
+
+.mnpGlobalToolbar a:visited
+{
+	color: White;
+	text-decoration: inherit;
+	background: inherit;
+	font-weight: normal;
+}
+
+.mnpGlobalToolbar a:hover
+{
+	color: inherit;
+	text-decoration: inherit;
+	background: inherit;
+	font-weight: normal;
+}
+
+.mnpGlobalToolbarLink
+{
+	color: White;
+	text-decoration: none;
+}
+
+.mnpGlobalToolbar1
+{
+	font: 65% Verdana;
+	background: white;
+}
+
+.mnpGlobalToolbar1 a:link
+{
+	color: inherit;
+	background: inherit;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.mnpGlobalToolbar1 a:visited
+{
+	color: inherit;
+	background: inherit;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.mnpGlobalToolbar1 a:hover
+{
+	color: inherit;
+	background: inherit;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.mnpLocalToolbar a
+{
+	color: inherit;
+	text-decoration: inherit;
+	background: inherit;
+	font-weight: bold;
+}
+
+.mnpLocalToolbar a:visited
+{
+	color: inherit;
+	text-decoration: inherit;
+	background: inherit;
+	font-weight: bold;
+}
+
+.mnpLocalToolbar a:hover
+{
+	color: inherit;
+	text-decoration: inherit;
+	background: inherit;
+	font-weight: bold;
+}
+
+.mnpMastheadLogo a
+{
+	background: inherit;
+}
+
+.mnpMastheadLogo a:visited
+{
+	background: inherit;
+}
+
+.mnpMastheadLogo a:hover
+{
+	background: inherit;
+}
+
+
+			.mnpGlobalToolbar
+			{
+				font: 65% Verdana;
+			}
+			.mnpLocalToolbar
+			{
+				font: bold 65% Verdana;
+			}
+        .mnpFooterTopRow a
+{
+	text-decoration: inherit;
+	color: inherit;
+	background: inherit;
+	font-weight: bold;
+}
+
+.mnpFooterTopRow a:visited
+{
+	text-decoration: inherit;
+	color: inherit;
+	background: inherit;
+	font-weight: bold;
+}
+
+.mnpFooterTopRow a:hover
+{
+	text-decoration: inherit;
+	color: inherit;
+	background: inherit;
+	font-weight: bold;
+}
+
+.mnpFooterBottomRow
+{
+	padding: 4px 0px 10px 0px;
+}
+
+.mnpFooterBottomRow a
+{
+	text-decoration: inherit;
+	color: inherit;
+	background: inherit;
+	font-weight: normal;
+}
+
+.mnpFooterBottomRow a:visited
+{
+	text-decoration: inherit;
+	color: inherit;
+	background: inherit;
+	font-weight: normal;
+}
+
+.mnpFooterBottomRow a:hover
+{
+	text-decoration: inherit;
+	color: inherit;
+	background: inherit;
+	font-weight: normal;
+}
+
+
+			.mnpFooterTopRow
+			{
+				font: bold 65% Verdana;
+			}
+			.mnpFooterBottomRow
+			{
+				font: 70% Tahoma, Helvetica;
+			}
+        body
+{
+	margin: 0px;
+}

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta content="HTML Tidy for Linux/x86 (vers 1st April 2003), see www.w3.org"
+        name="generator" />
+  <link href="netsec.css" rel="stylesheet" type="text/css" />
+
+  <title>Capture The Flag - Description</title>
+</head>
+
+<body>
+  <h1>Capture The Flag - Description</h1>
+
+  <p>The Capture The Flag contest is a multi-site, multi-team
+  hacking contest in which a number of teams compete independently
+  against each other.</p>
+
+  <p>This exercise is the latest of a series of live exercises
+  organized as part of the graduate course on "Network Security and
+  Intrusion Detection" taught at UCSB by Giovanni Vigna. Previous
+  versions of this exercise are described in the paper:</p>
+
+  <ul>
+    <li>G.&nbsp;Vigna, "<i>Teaching Hands-On Network Security:
+    Testbeds and Live Exercises</i>," Journal of Information
+    Warfare, vol. 3, no. 2, pp. 8-25, 2003.
+    [<a href="2003_vigna_jiw03.pdf">PDF</a>]</li>
+  </ul>
+
+  <p>This edition of the live exercise is different because instead
+  of having the students of the class compete against each other,
+  it involves different teams at different universities and
+  institutions.</p>
+
+  <p>The exercise is loosely based on the <a
+  href="http://www.defcon.org">DEFCON</a> Capture the Flag
+  contest. Acknowledgments go to the Ghetto Hackers that did such a wonderful
+  (and inspiring) job in organizing the CTF contest at DEFCON.</p>
+
+  <p>This exercise is different from the DEFCON contest because it
+  involves several educational institutions spread across the
+  nation. The DEFCON contest includes locally connected teams
+  only.</p>
+
+  <p>In addition, the DEFCON contest has always involved a limited
+  number of teams. We tried to develop a new network solution that
+  allows a large number of teams to participate.</p>
+
+  <h2>Goals</h2>
+
+  <p>The goal of each team is to maintain a set of services
+  available and uncompromised throughout the contest phase. Each
+  team can (and should) attempt to compromise other teams'
+  services.</p>
+
+  <p>The services to be provided are implemented as part of an
+  operating system installation running as a VMware image. Each
+  service has a number of associated <i>flags</i>. Initially, the
+  flags are set to the flag of the team that set up the VMware
+  host. The goal of each team is to keep their flag uncompromised
+  while trying to change the flags of other teams to their own.</p>
+
+  <h2>Scoring</h2>
+
+  <p>During the contest phase of the exercise the scoring software
+  will connect periodically to each service and check the
+  corresponding flag values.</p>
+
+  <ul>
+    <li>If the service is not available, the team receives no
+    points.</li>
+
+    <li>If the service is up and the flag is the flag of the team
+    managing the host, the team gets some points.</li>
+
+    <li>If the service is up but the flag is set to the one of
+    another team, the other team gets some points.</li>
+  </ul>
+
+  <p>Note that each time a flag is tested its value is substituted
+  with a new value computed by applying a secret hash function to
+  the original value. Therefore, simply rebooting a host on a
+  regular basis will not grant points since the hash value will be
+  restored to the original value.</p>
+
+  <p>A set of slides presenting the details of the CTF is available
+  <a href="CTF.ppt">here</a>.</p>
+
+  <h2>D-Day</h2>
+
+  <p>The CTF is scheduled to run on December 5th from 9am to 5pm,
+  PST. The exercise will go through three phases.</p>
+
+  <h3>Image distribution and setup</h3>
+
+  <p>The VMware images to be installed will be distributed at 9am,
+  PST. The teams will have from 9am to 11am to install their images
+  and configure their VMware hosts. During this phase no network
+  connectivity to the site's box or the main box is required.</p>
+
+  <h3>Connection establishment</h3>
+
+  <p>From 11am to 1pm PST, the links between team boxes, site
+  boxes, and the main box will be tested. During this phase, the
+  VMware boxes should be configured to allow incoming SSH
+  connections only.</p>
+
+  <h3>Contest</h3>
+
+  <p>The actual contest will start at 1pm and it will last until
+  5pm, PST. During the contest phase the VMware boxes must allow
+  incoming connections to the services that have to be provided
+  (e.g., SMTP, Web, FTP).</p>
+  <hr />
+  <!--  LocalWords:  VMware CTF UCSB Vigna PDF BibTeX DEFCON uncompromised
+     -->
+</body>
+</html>

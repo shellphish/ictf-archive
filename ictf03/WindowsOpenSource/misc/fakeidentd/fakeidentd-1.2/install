@@ -1,0 +1,6 @@
+Installation instructions:
+- Edit the top of the Makefile to suit your needs. This is important!
+- type "make"
+- get root ("su")
+- type "make install" to install identd as a daemon
+- type "make install-inetd" to install identd for use with inetd

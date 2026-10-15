@@ -1,0 +1,96 @@
+.flyoutMenu {
+	background-color: #eeeeee;
+	border-color: #999999;
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	behavior: url(/presspass/global/default.htc);
+}
+.flyoutHeading {
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 70%;
+	background-color: #eeeeee;
+	font-weight: bold;
+	padding-top: 2px;
+	padding-bottom: 4px;
+	padding-left: 2px;
+	cursor: default;
+}
+.flyoutLink  {
+	border-color: #eeeeee;
+	border-width: 1px;
+	border-style: solid;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 70%;
+	padding-left: 6px;
+	padding-right: 25px;
+	padding-top: 1px;
+	padding-left: 10px;
+	cursor: hand;
+}
+.flyoutMenu TD.flyoutLink  {
+	border-color: #eeeeee;
+	border-width: 1px;
+	border-style: solid;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 70%;
+	padding: 1px 25px 3px 6px;
+	cursor: hand;
+}
+.flyoutLink a {
+	color: black;
+	text-decoration: none;
+}
+.flyoutLink a:hover {
+	color: black;
+	text-decoration: none;
+}
+.flyoutLink a:visited {
+	color: black;
+	text-decoration: none;
+}
+.flyoutLink a:active {
+	color: black;
+	text-decoration: none;
+}
+.flyoutSubHeading {
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 70%;
+	background-color: #eeeeee;
+	font-weight: bold;
+	padding-top: 2px;
+	padding-bottom: 4px;
+	padding-left: 15px;
+	cursor: default;
+}
+.flyoutSubLink {
+	border-color: #eeeeee;
+	border-width: 1px;
+	border-style: solid;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 70%;
+	padding: 1px 15px 3px 11px;
+	cursor: hand;
+}
+.flyoutSubLink a {
+	color: black;
+	text-decoration: none;
+}
+.flyoutSubLink a:hover {
+	color: black;
+	text-decoration: none;
+}
+.flyoutSubLink a:visited {
+	color: black;
+	text-decoration: none;
+}
+.flyoutSubLink a:active {
+	color: black;
+	text-decoration: none;
+}
+
+
+/* NS uses a different size for font size="1", so correct it w/ nssmall*/
+.NSSmall, {fontSize:7.5pt;font-size:7.5pt;}
+
+
+

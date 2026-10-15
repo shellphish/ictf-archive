@@ -1,0 +1,60 @@
+#!/usr/bin/expect --
+set ipaddr [lindex ${argv} 0]
+
+set flag [lindex ${argv} 1]
+
+set password [lindex ${argv} 2]
+
+set timeout 5
+
+puts "${ipaddr}:21 ${flag} ${password}"
+
+spawn nc ${ipaddr} 21
+
+expect "220*\r\n" {} timeout {exit 1}
+
+send "USER ftp \r"
+
+expect "331*\r\n" {} timeout {exit 1}
+
+send "PASS ${password}\r"
+
+expect "l0gged*\r\n" {} timeout {exit 1}
+
+send "PWD\r"
+
+expect "257*\r\n" {} timeout {exit 1}
+
+send "CWD ..\r"
+
+expect "550*\r\n" {} timeout {exit 1}
+
+send "PORT ${ipaddr},4,1\r"
+
+expect "PORT*\r\n" {} timeout {exit 1}
+
+send "PWD\r"
+
+expect "257*\r\n"  {} timeout {exit 1}
+
+send "CWD /etc\r"
+
+expect "550*\r\n"  {} timeout {exit 1}
+
+send "CWD /etcc\r"
+
+expect "550*\r\n"  {} timeout {exit 1}
+
+send "STAT ${flag}\r"
+
+expect "200*\r\n"  {} timeout {exit 1}
+
+send "PORT ${ipaddr},4,2\r"
+
+expect "PORT*\r\n"  {} timeout {exit 1}
+
+send "PASV\r"
+
+expect "500*\r\n"  {} timeout {exit 1}
+
+exit 0

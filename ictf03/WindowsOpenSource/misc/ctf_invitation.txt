@@ -1,0 +1,15 @@
+        I am organizing a "capture the flag" exercise between Universities
+(I think I already talked to you about that). We are finalizing the details
+and we are inviting people to participate.
+                                                                               
+I would like to invite you to be part of this effort. Some initial information
+can be found at http://www.cs.ucsb.edu/~vigna/CTF and more stuff will be added
+soon as we define the nitty-gritty details.
+                                                                               
+The exercise itself would be carried out December 5th, therefore I'd like to
+move quickly. As you see from the setup description you need to put together
+3 PCs (minimum) and install some software.
+                                                                               
+It should be fun to try this. If you have a student willing to coordinate
+the effort on your side you can send me his/her email address so that we
+can start talking about what needs to be done.

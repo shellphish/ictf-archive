@@ -1,0 +1,440 @@
+From: Security Wire Perspectives <searchSecurity@lists.techtarget.com>
+Date: August 16, 2004 3:01:03 AM PDT
+To: Security Wire Perspectives <searchSecurity@lists.techtarget.com>
+Subject: Security Wire Perspectives, Vol. 6, No. 63, August 16, 2004
+Reply-To: "no_reply@lists.techtarget.com" <no_reply@lists.techtarget.com>
+
+
+Security Wire Perspectives is published by Information Security, the
+industry's leading magazine for security news and information, and
+SearchSecurity.com, the Web's best security-specific information
+resource for enterprise IT professionals. Additional newsletters
+available at http://searchsecurity.techtarget.com/?track=NL-358&ad=489365&Offer=swp
+
+IN THIS ISSUE:
+
+A READ ON THE NEWS
+*Capture the Flag competitions can net far more than fun 
+Need to boost morale? Find flaws in your systems? Enhance employees'
+security skills? Consider Capture the Flag competitions.
+
+*Privacy: Security pros should practice what they preach
+Calling privacy "a neglected area" in information security, expert
+Sarah Gordon says security professionals need to set an example by
+taking advantage of technical and policy solutions that can help
+mitigate risks to corporations.
+
+HEADLINES
+*Low-cost way(s) to 'foil' low-tech RFID tags
+*Security Bytes: Blaster author admits guilt, faces prison
+*Security Bytes: Earnings are up for security firms
+*Cisco defends NAC security strategy
+
+SOUND BYTES
+*Browsing for alternatives
+Mozilla and other Linux applications help reduce risk exposure.
+By Jay Beale
+
+LINKS TO THE INDUSTRY
+
+YOUR TWO CENTS
+Readers sound off
+
+TO UNSUBSCRIBE, REFER TO THE INSTRUCTIONS AT THE END OF THIS MESSAGE
+
+=====================================================
+
+SECURITY WIRE PERSPECTIVES IS SPONSORED BY: Postini
+
+Free White Paper: How spammers are stealing your email directory
+
+Did you know that spammers are probing your e-mail system in an
+attempt to identify and "harvest" legitimate e-mail addresses from
+your organization? This is what is known as the "silent killer" or
+"directory harvest attack" (DHA). A rising industry threat, you may
+have already observed some of the symptoms of these virtually
+undetectable attacks on your e-mail systems. Learn what you can do
+today to protect your organization from these attacks. Click here for
+your Free White Paper.
+
+http://ttarget.adbureau.net/adclick/CID=000067be0000000000000000 
+
+=====================================================
+
+A READ ON THE NEWS
+
+*CAPTURE THE FLAG COMPETITIONS CAN NET FAR MORE THAN FUN
+By Anne Saita, Staff Writer
+
+SAN DIEGO -- Need to boost morale? Find flaws in your systems?
+Enhance employees' security skills? Consider Capture the Flag
+competitions.
+
+At last week's Usenix Security Symposium, experts advocated these
+hacking contests to improve security programs by allowing employees
+or students to attack simulated networks. In the process, enterprises
+can become more adept at finding soft spots in their real-life
+systems while employees discover weaknesses in their own skills.
+
+"Pretty much any security practitioner will tell you that you need to
+know how to attack to know how to defend," noted Marc Dougherty, a
+recent Northeastern University graduate who came to enhance his
+campus's Capture the Flag program after initially exploiting a
+weakness to win.
+
+The goal of most games is to gain root access to privileged areas and
+retrieve a token. Then it's just as important to hold off attackers
+trying to steal that booty. 
+
+"The competition creates teamwork, and that's something most security
+classes do not focus on," said Giovanni Vigna, a University of
+California, Santa Barbara, computer science professor who
+incorporates student competitions into his curriculum. 
+
+"One criticism has been that it's not realistic," he continued.
+Usually defense is a slow-building process, he explained, "while this
+is concentrated Campbell's soup. But I think it's well suited for
+education because it can really put people in a crisis situation --
+and that's something normally not taught in classrooms."
+
+Nor in the workplace. Capture the Flag contests are used increasingly
+as a corporate training tool, according to Tina Bird, a Stanford
+University network security expert who moderated a panel on the
+competitions. Intel, for example, has fielded a team for DefCon. "I
+know that it's in a lot of companies now," she said.
+
+The panel also included professor Chris Eagle, whose Naval
+Postgraduate School team captured the flag this year at DefCon, and
+Riley Eller, better known in hacker circles as Caesar. His group,
+Ghetto Hackers, has run DefCon's game for several years and will
+create competitions for private groups (including companies) upon
+request.
+
+Though growing in popularity, the competitions are still difficult to
+orchestrate. 
+
+First and foremost, the games must be done on isolated networks.
+"Never, ever wire a contest to a real network," Eller warned. 
+
+Some contests allow Internet access to retrieve online tools, but
+this can create liabilities if the game gets out of hand. Ethics need
+to be stressed and repercussions for violators well outlined.
+"There's an element of trust that they're going to keep it inside the
+trusted network," Eagle said. Dougherty added, "It's in everyone's
+best interest to behave." 
+
+Scoring can be difficult. "It's not like a 40-year dash. It's just
+difficult to quantify," Bird remarked. The reward system must be
+explained and enforced -- and fair to both attackers and defenders.
+Be sure to use licensed copies of any commercial software, too. 
+
+"And don't try to reverse engineer the scoring system," Vigna
+advised. "That's lame."
+
+
+*PRIVACY: SECURITY PROS SHOULD PRACTICE WHAT THEY PREACH
+By Shawna McAlearney, News Editor
+
+Security professionals should practice what they preach, and many
+don't when it comes to privacy.
+
+Calling privacy "a neglected area" in information security, expert
+Sarah Gordon said security professionals need to set an example by
+taking advantage of technical and policy solutions that can help
+mitigate risks to corporations.
+
+In analyzing a recent survey conducted by her company, Gordon, a
+Symantec senior research fellow, found that a surprisingly large
+number of security practitioners fail to encrypt sensitive materials.
+
+The majority of the 154 surveyed in the United States, United Kingdom
+and European Union failed to encrypt data on the hard disk (85%);
+don't encrypt all e-mail messages (98%); and don't even encrypt
+sensitive e-mail messages (62%).
+
+Gordon noted that failure to take steps to protect this information
+could easily cost companies money through the loss of intellectual
+property, particularly when e-mail and attachments pass through many
+points with potential eavesdropping prior to reaching their
+destination. Other consequences could be the loss of time, work and
+credibility.
+
+Gordon's advice to enterprises is standard. Encrypt this information
+to protect it in transit from prying eyes, and from theft by Trojans
+and malicious code on the hard drive.
+
+=====================================================
+
+HEADLINES
+A look at other significant industry happenings from our sister
+publication, Security Wire Daily
+
+*Low-cost way(s) to 'foil' low-tech RFID tags
+SearchSecurity.com
+They're cheap and mobile and coming to a store near you. But
+inexpensive radio frequency identification tags could cost us. A
+report on the latest approaches to taming RFID devices from the
+Usenix Security Symposium.
+http://searchsecurity.techtarget.com/originalContent/0,289142,sid14_gci999990,00.html?track=NL-358&ad=489365
+
+
+*Security Bytes: Blaster author admits guilt, faces prison
+SearchSecurity.com
+A teenaged Blaster author pleads guilty, while Check Point unveils an
+enhanced VPN client; Meantime, a flaw is found in BlackICE and
+another, in StackDefender, is disputed.
+http://searchsecurity.techtarget.com/originalContent/0,289142,sid14_gci1000005,00.html?track=NL-358&ad=489365
+
+
+*Security Bytes: Earnings are up for security firms
+SearchSecurity.com
+Tech firms in the security business report strong gains, while flaws
+or fixes are found in OS X, SuSE Linux and Apache.
+http://searchsecurity.techtarget.com/originalContent/0,289142,sid14_gci999701,00.html?track=NL-358&ad=489365
+
+
+*Cisco defends NAC security strategy
+SearchSecurity.com
+One of Cisco's top security executives details the vendor's NAC
+strategy, and explains why putting security within devices won't
+necessarily force enterprises to run end-to-end Cisco networks.
+http://searchsecurity.techtarget.com/qna/0,289202,sid14_gci999704,00.html?track=NL-358&ad=489365
+
+=====================================================
+
+*Don't miss this month's LIVE webcast: Security Appliances: Hype vs.
+Reality*
+
+Log in to SearchSecurity.com on Wednesday, August 25 at 12:00 p.m.
+EST when guest expert and Information Security magazine contributing
+editor, Scott Sidel, reveals the inside scoop on what to expect from
+the latest security appliances. Attend free and hear Sidel separate
+fact from fiction as he peers under the hood of the purpose-built
+boxes to disclose:
+
+** When an appliance is better than a server, and when it isn't
+** Expert guidelines to select the right appliance
+** Vendor claims vs. reality
+** Analysis of performance, manageability and flexibility
+** Risks to watch out for, including single-point-of-failure
+** And more
+
+Pre-register today right here:
+http://searchsecurity.techtarget.com/webcastPreRegister/0,295011,sid14_gci992853,00.html?track=NL-358&ad=489365
+
+=====================================================
+
+SOUND BYTES 
+
+*BROWSING FOR ALTERNATIVES
+By Jay Beale
+
+Following the discovery that several major financial institutions'
+Web sites were being used to spread an Internet Explorer exploit, The
+Register ran the story, "CERT recommends anything but IE." 
+
+CERT's point is that enterprises and individual users can reduce
+their risk exposure by using browsers that aren't as susceptible to
+Web-based exploits. 
+
+So, why are we giving malware writers easy targets? Why aren't we
+switching to more secure browsers? 
+
+When Robert Morris released his famous worm in 1988, it wasn't
+capable of infecting most Internet-attached systems because there was
+a healthy diversity of OSes. But, modern worms achieve huge infection
+rates because we're all running the same operating systems and
+programs. 
+
+Given this apparent problem with IE, should we look to alternatives?
+Absolutely. 
+
+The commercial Opera browser runs on Windows, Unix, Mac and even cell
+phone OSes. Opera is blindingly fast and relatively inexpensive. But,
+if commercial tools don't fit your budget, there's Mozilla, the
+open-source offshoot of Netscape (the original Web browser). Both
+Opera and Mozilla would help organizations to avoid the next IE
+exploit. 
+
+Microsoft might claim that you're losing interoperability by
+switching browsers, but this isn't always the case. Some Web pages
+may not appear as pretty as in IE, but it doesn't go deeper than
+that. Opera renders pages just as well as IE. 
+
+As long as we're considering alternatives, let's look at operating
+systems. This column was written with Microsoft Word running on a
+Linux system, using a commercial tool called Crossover Office.
+Available for $40 for a single license, it allows users to run
+Microsoft Office, Outlook, Project, Visio, Lotus Notes, Adobe
+Photoshop, Quickbooks, Efax and other popular apps on Linux. I can
+even run these as a lesser-privileged user to prevent vulnerabilities
+in Microsoft software from allowing hackers and worms free rein over
+my system. 
+
+Best of all, from the migration perspective, Crossover Office ships
+as part of the Debian-based Xandros Linux Desktop, which syncs out of
+the box with Windows 2000 Active Directory or a Windows NT PDC. 
+
+For a long time, Linux enthusiasts have been told, "Users don't care
+about operating systems, they just want their applications to run."
+IT managers don't consider Linux for the desktop because they expect
+to lose application support. Perhaps these worries are unfounded. 
+
+Crossover Office isn't the only tool allowing Linux desktops to
+integrate into the Microsoft enterprise. Novell's Evolution (free)
+provides Linux users a client for Microsoft Exchange and Novell
+Groupwise. 
+
+Moving from Windows to Linux isn't a new concept, but products like
+Crossover Office and Evolution are making it easier. IBM, Novell and
+many smaller players offer migration assistance and consulting, and
+there are multiple books and training courses. 
+
+Whether you only migrate away from IE or wholly to Linux, you can
+dodge many prodigious and insidious attacks. The alternatives won't
+make you bulletproof, but they may reduce your risk exposure. 
+
+
+JAY BEALE is the lead developer of Bastille Linux and the editor of
+Syngress Publishing's Open Source Security series. 
+
+
+Note: This column originally appeared in the August issue of
+Information Security magazine. To subscribe to Information Security
+magazine, please go to
+http://informationsecurity.techtarget.com/magQual1/1,294625,sid42,00.html?track=NL-358&ad=489365 
+
+Have an opinion on this article? E-mail your letters to Shawna
+McAlearney ( mailto:smcalearney@infosecuritymag.com ), and include
+your name, title and organization. Letters may be edited for space
+and clarity.
+
+=====================================================
+
+Expert Answer Center: Come get fast answers to your IT questions!
+
+The Expert Answer Center combines advice and solutions from over 100
+technology, management and career experts from TechTarget's family of
+IT-oriented Web sites. In addition to this massive searchable
+database, the Expert Answer Center continually highlights one
+featured expert who answers new questions from our members on a
+specific topic. This site is also the home of the IT Visions Webcast
+Series, a monthly webcast for IT executives that spotlights strategic
+issues. 
+
+http://expertanswercenter.techtarget.com/eac/home/0,295193,sid63,00.html?track=NL-358&ad=489365
+
+=====================================================
+LINKS TO THE INDUSTRY
+
+On Demand Webcast: Policy compliance for end-point devices
+The age of virtual computing and the increasingly remote, distributed
+workforce means there are many untrustworthy devices trying to access
+the network every day. Listen to this webcast for tips on securing
+your end-point systems.
+http://searchsecurity.techtarget.com/webcastRegister/0,295011,sid14_gci969449,00.html?track=NL-358&ad=489365
+
+Summer Security Quiz: Are you ready to go on vacation?
+Summer is in full swing. That means lots of vacation time, and
+thinned security staff and resources. So, before you hit the road and
+leave your security worries to co-workers, make sure you have all
+your firewalls in a row. Take this short quiz to find out if you're
+really ready for the worst-case scenario.
+http://searchsecurity.techtarget.com/tip/1,289483,sid14_gci992028,00.html?track=NL-358&ad=489365
+
+Security Tip: Best practices for writing an information
+classification policy
+When developing your organization's information classification
+policy, there are three best practices that you should keep in mind.
+http://searchsecurity.techtarget.com/tip/1,289483,sid14_gci995256,00.html?track=NL-358&ad=489365
+
+Market Monitor
+Current security company stock prices:
+http://searchSecurity.com/r/0,,22258,00.htm?track=NL-358&ad=489365&n/a
+
+SearchSecurity.com Top 10 Clicks
+Each week the editors of SearchSecurity.com gather up the top five
+tips and news articles that our users visited the most. If you missed
+them the first time around, here's your chance to take advantage of
+the resources your peers have pre-screened and deemed most valuable.
+We update this page weekly, so don't forget to come back or -- better
+yet -- bookmark the page.
+http://searchsecurity.techtarget.com/originalContent/0,289142,sid14_gci913161,00.html?track=NL-358&ad=489365
+
+=====================================================
+
+YOUR TWO CENTS
+Readers sound off
+
+*COPPA likely would be as ineffective as CAN-SPAM
+http://searchsecurity.techtarget.com/tip/1,289483,sid14_gci992347,00.html?track=NL-358&ad=489365
+
+One thing that seems to be left out is that you cannot tell who or
+what age a person is that owns an e-mail address.  The name of the
+e-mail address itself does not denote the age of its owner. Hence,
+how can it even be considered that Internet content of any nature be
+restricted to where it can be sent?  
+
+I cannot agree more that we need to stop allowing children to access
+pornographic material, yet the place for this is the home. E-mail
+client filters, as well as browser software, can be deployed on home
+users' computers to block such material from children or entire
+families. Hold parents accountable for what their kids are accessing
+instead of trying to create some worldwide or nationwide ban on
+material being e-mailed. Users need to educate themselves about how
+to handle e-mail messages they wish not to receive instead of trying
+to legislate the actions of others.
+
+It is no different than an advertisement sent to their home mailbox
+that they do not wish to receive. They can intercept it before their
+child sees it and shred it or write their Congressman demanding that
+they not receive such mail -- the latter being a wasted effort. They
+can also try to get in touch with the company that sent it and ask
+that their address be removed. On an individual basis, this is far
+more effective and in the interim, they can retrieve their own
+physical mail and filter it from their children by disposing of
+unwanted advertisements or the like. The same should apply to e-mail.
+
+Therefore, I agree with Ira Winkler's statement, "Parents also can
+purchase a personal firewall, antivirus, antispam, pop-up blocker and
+net filter and install them on the computers children use. Frankly,
+with the exception of the 'Net filter, you should have all of it
+loaded on your PC." I hope that parents will be held accountable for
+what their children are doing, seeing, reading, accessing, etc., up
+to age 18 instead of relying on the rest of the world.
+
+--Dan LoPresto, CISSP, an information security and access management
+administrator for a national financial services company
+
+:::::::::::::::::::::  ABOUT THIS NEWSLETTER  ::::::::::::::::::::::
+
+Security Wire Perspectives (BPA E-Mail Audit Report, June 2002*) is
+an e-mail newsletter brought to you on Mondays and Thursdays by
+Information Security magazine, a TechTarget publication. Copyright
+(c) 2004, Information Security and TechTarget. No reuse or
+redistribution without the express written authorization of
+Information Security and TechTarget.
+
+Permission requests, questions or comments should be e-mailed to
+Shawna McAlearney, news editor,
+mailto:smcalearney@infosecuritymag.com.
+
+*A copy of the BPA Audit is available for download at:
+http://www.bpai.com/library/statement_files/s343h0j2.pdf
+
+_____________________________________________________________________
+
+To unsubscribe from "Security Wire Perspectives":
+
+Go to unsubscribe: http://SearchSecurity.com/u?cid=489365&lid=559334&track=NL-358
+
+Please note, unsubscribe requests may take up to 24 hours to process;
+you may receive additional mailings during that time. A confirmation
+e-mail will be sent when your request has been successfully
+processed.
+
+Contact us:
+SearchSecurity
+Member Services
+117 Kendrick Street, Suite 800
+Needham, MA 02494
