@@ -81,6 +81,15 @@ challenges:
     category: binary
     description: "L4 service (highest difficulty). Original deb: uranus_12_i386.deb"
 
+  - name: yeesbutno
+    title: "yeesbutno"
+    category: binary
+    description: >
+      Service created for ictf13 and reused in ictf14 (confirmed from ictf14
+      service-assignment list: "ictf-2013-yeesbutno" assigned to Aravind,
+      March 2015). Not in the 10 services documented from the ictf13 IRC log;
+      may have been a reserve service or deployed separately.
+
 results:
   winner: "Bushwhackers (Russia)"
   notes: >

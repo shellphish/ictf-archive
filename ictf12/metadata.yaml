@@ -90,6 +90,15 @@ challenges:
       ("Take my old service 'nuclearboom' as reference"). Fits SCADA theme
       — nuclear plants are critical infrastructure.
 
+  - name: traintrain
+    title: "Train Train"
+    category: binary
+    description: >
+      Railway/transportation SCADA service. Confirmed from ictf14 service
+      assignment email (March 3, 2015): "ictf-2012-traintrain" assigned to
+      Antonio Bianchi for the large-scale reuse competition. Exact mechanics
+      not preserved.
+
 data:
   - type: media
     path: "pictures/"
@@ -116,9 +125,10 @@ resources:
 notes: >
   The 2012-2013 iCTF (directory ictf12) ran on March 22, 2013 from 8am to 5pm
   PDT. The theme was "SCADA Breakdown" — teams attacked critical infrastructure
-  SCADA components. 8+ confirmed services from ctf-admin mailing list emails:
+  SCADA components. 9 confirmed services from ctf-admin mailing list emails:
   powerplan (Kyle MacNamara), water (Gianluca Stringhini), airplane,
-  curiosityblogging, pesticides, pewpew_smartgrid, stockjobber, nuclearboom.
+  curiosityblogging, pesticides, pewpew_smartgrid, stockjobber, nuclearboom,
+  and traintrain (confirmed from ictf14 service-assignment list, March 2015).
   Note: "irs" was drafted but dropped the night before the competition.
   The competition used the "National Cyberdefense Corps" narrative: teams were
   hired to secure their country's infrastructure against Sicilian hackers.
