@@ -18,15 +18,102 @@ participation:
 
 results:
   winner: "SpamAndHex (Hungary)"
-  score: 92.744
-  score_breakdown:
-    timeliness: 88
-    leetness: 593.037
-    diversity: 6300
+  # Scoreboard columns: Timeliness, Leetness, Diversity, SLA(%), Score
+  # Source: scoreboard screenshots (iCTF scoreboard/ dir, April 11, 2015)
+  final_scoreboard:
+    - {rank: 0,  team: "SpamAndHex",              timeliness: 88,  leetness: 593.037, diversity: 6300, sla: 62.538, score: 92.744}
+    - {rank: 1,  team: "Bushwhackers",             timeliness: 115, leetness: 532.551, diversity: 5280, sla: 64.264, score: 89.444}
+    - {rank: 2,  team: "We0wny0u",                 timeliness: 86,  leetness: 561.518, diversity: 5610, sla: 63.264, score: 87.073}
+    - {rank: 3,  team: "FAUST",                    timeliness: 83,  leetness: 427.698, diversity: 5610, sla: 63.972, score: 78.543}
+    - {rank: 4,  team: "FluxFingers",              timeliness: 65,  leetness: 348.587, diversity: 4650, sla: 63.509, score: 63.585}
+    - {rank: 5,  team: "MoreSmokedLeetChicken",    timeliness: 57,  leetness: 418.496, diversity: 4350, sla: 61.047, score: 62.468}
+    - {rank: 6,  team: "CInsects",                 timeliness: 82,  leetness: 361.960, diversity: 2760, sla: 57.500, score: 50.283}
+    - {rank: 7,  team: "H4x0rPsch0rr",             timeliness: 34,  leetness: 238.906, diversity: 2760, sla: 62.736, score: 38.610}
+    - {rank: 8,  team: "TowerofHanoi",             timeliness: 30,  leetness: 149.656, diversity: 2760, sla: 62.189, score: 31.775}
+    - {rank: 9,  team: "saarsec",                  timeliness: 15,  leetness: 161.599, diversity: 2530, sla: 62.123, score: 28.587}
+    - {rank: 10, team: "Squareroots",              timeliness: 14,  leetness: 141.589, diversity: 2310, sla: 60.179, score: 24.957}
+    - {rank: 11, team: "HacknamStyle",             timeliness: 29,  leetness: 193.519, diversity: 1200, sla: 60.877, score: 24.360}
+    - {rank: 12, team: "SiBears",                  timeliness: 15,  leetness: 114.597, diversity: 2310, sla: 61.019, score: 23.742}
+    - {rank: 13, team: "CISSPGroupies",            timeliness: 17,  leetness: 128.488, diversity: 2100, sla: 61.038, score: 23.703}
+    - {rank: 14, team: "c00kiesvenice",            timeliness: 21,  leetness: 127.396, diversity: 1900, sla: 58.642, score: 22.182}
+    - {rank: 15, team: "dcua",                     timeliness: 9,   leetness: 133.144, diversity: 1710, sla: 60.198, score: 20.049}
+    - {rank: 16, team: "vubar",                    timeliness: 25,  leetness: 129.585, diversity: 1050, sla: 57.877, score: 17.792}
+    - {rank: 17, team: "Noobs4Win",                timeliness: 5,   leetness: 156.711, diversity: 550,  sla: 57.066, score: 13.259}
+    - {rank: 18, team: "WizardsOfDos",             timeliness: 6,   leetness: 68.839,  diversity: 1050, sla: 59.500, score: 11.438}
+    - {rank: 19, team: "SecDawgs",                 timeliness: 22,  leetness: 75.164,  diversity: 550,  sla: 58.472, score: 11.271}
+    - {rank: 20, team: "DSNS",                     timeliness: 5,   leetness: 106.525, diversity: 660,  sla: 58.472, score: 11.141}
+    - {rank: 21, team: "iamaturtle",               timeliness: 0,   leetness: 66.351,  diversity: 1200, sla: 58.651, score: 11.038}
+    - {rank: 22, team: "1338offbyone",             timeliness: 4,   leetness: 66.752,  diversity: 1050, sla: 58.717, score: 10.841}
+    - {rank: 23, team: "EpicLyons",                timeliness: 6,   leetness: 75.851,  diversity: 910,  sla: 57.387, score: 10.660}
+    - {rank: 24, team: "IngloriousMonkeys",        timeliness: 8,   leetness: 68.269,  diversity: 910,  sla: 57.953, score: 10.617}
+    - {rank: 25, team: "AFiniteNumberOfMonkeys",   timeliness: 8,   leetness: 64.527,  diversity: 910,  sla: 57.934, score: 10.386}
+    - {rank: 26, team: "MIST",                     timeliness: 11,  leetness: 45.891,  diversity: 780,  sla: 58.642, score: 9.089}
+    - {rank: 27, team: "bluelotus",                timeliness: 16,  leetness: 74.263,  diversity: 360,  sla: 57.387, score: 8.999}
+    - {rank: 28, team: "WeAreScientists",          timeliness: 2,   leetness: 55.409,  diversity: 910,  sla: 58.368, score: 8.958}
+    - {rank: 29, team: "DelusionsofGrandeur",      timeliness: 16,  leetness: 53.627,  diversity: 550,  sla: 58.009, score: 8.929}
+    - {rank: 30, team: "KHCZUULabs",              timeliness: 1,   leetness: 50.408,  diversity: 780,  sla: 59.000, score: 7.828}
+    - {rank: 31, team: "keva",                     timeliness: 12,  leetness: 52.503,  diversity: 450,  sla: 54.679, score: 7.220}
+    - {rank: 32, team: "Syper",                    timeliness: 2,   leetness: 42.237,  diversity: 550,  sla: 58.321, score: 6.070}
+    - {rank: 33, team: "BatmansKitchen",           timeliness: 0,   leetness: 50.614,  diversity: 450,  sla: 59.434, score: 5.800}
+    - {rank: 34, team: "Honeypot",                 timeliness: 4,   leetness: 28.545,  diversity: 550,  sla: 53.849, score: 5.122}
+    - {rank: 35, team: "UlmSecuritySparrows",      timeliness: 6,   leetness: 35.309,  diversity: 280,  sla: 58.925, score: 4.771}
+    - {rank: 36, team: "pwndevils",                timeliness: 1,   leetness: 33.937,  diversity: 450,  sla: 57.208, score: 4.736}
+    - {rank: 37, team: "Peterpen",                 timeliness: 6,   leetness: 34.419,  diversity: 280,  sla: 58.991, score: 4.721}
+    - {rank: 38, team: "BUILDS",                   timeliness: 0,   leetness: 23.802,  diversity: 780,  sla: 46.066, score: 4.701}
+    - {rank: 39, team: "heks",                     timeliness: 0,   leetness: 25.361,  diversity: 450,  sla: 58.953, score: 4.190}
+    - {rank: 40, team: "Colonelx20",               timeliness: 0,   leetness: 23.990,  diversity: 450,  sla: 59.255, score: 4.126}
+    - {rank: 41, team: "PeakChaos",                timeliness: 6,   leetness: 26.223,  diversity: 280,  sla: 56.755, score: 4.054}
+    - {rank: 42, team: "in23canation",             timeliness: 0,   leetness: 24.193,  diversity: 450,  sla: 57.991, score: 4.051}
+    - {rank: 43, team: "AFTIUPMC",                 timeliness: 0,   leetness: 20.249,  diversity: 360,  sla: 58.264, score: 3.311}
+    - {rank: 44, team: "wolfpack",                 timeliness: 10,  leetness: 15.290,  diversity: 150,  sla: 56.991, score: 3.301}
+    - {rank: 45, team: "UFOlogists",               timeliness: 0,   leetness: 29.386,  diversity: 210,  sla: 55.623, score: 2.870}
+    - {rank: 46, team: "HTWG",                     timeliness: 0,   leetness: 11.205,  diversity: 360,  sla: 58.906, score: 2.788}
+    - {rank: 47, team: "GeeksSpeak",               timeliness: 1,   leetness: 16.618,  diversity: 280,  sla: 56.311, score: 2.692}
+    - {rank: 48, team: "Hackademics",              timeliness: 0,   leetness: 24.217,  diversity: 210,  sla: 56.623, score: 2.614}
+    - {rank: 49, team: "Norserg3",                 timeliness: 3,   leetness: 25.045,  diversity: 100,  sla: 58.170, score: 2.576}
+    - {rank: 50, team: "SIGINT",                   timeliness: 1,   leetness: 23.199,  diversity: 100,  sla: 58.340, score: 2.155}
+    - {rank: 51, team: "LearningByDoing",          timeliness: 1,   leetness: 18.130,  diversity: 150,  sla: 55.802, score: 2.040}
+    - {rank: 52, team: "ANeSeC",                   timeliness: 0,   leetness: 23.908,  diversity: 150,  sla: 45.708, score: 1.824}
+    - {rank: 53, team: "d4rkc0de",                 timeliness: 0,   leetness: 14.349,  diversity: 150,  sla: 58.075, score: 1.735}
+    - {rank: 54, team: "FCUP",                     timeliness: 0,   leetness: 13.784,  diversity: 150,  sla: 58.689, score: 1.719}
+    - {rank: 55, team: "STT",                      timeliness: 0,   leetness: 10.724,  diversity: 280,  sla: 41.585, score: 1.618}
+    - {rank: 56, team: "FoxHound",                 timeliness: 0,   leetness: 9.727,   diversity: 100,  sla: 53.179, score: 1.068}
+    - {rank: 57, team: "7HxzZ",                    timeliness: 0,   leetness: 7.778,   diversity: 100,  sla: 58.292, score: 1.052}
+    - {rank: 58, team: "Tasteless",                timeliness: 0,   leetness: 15.237,  diversity: 60,   sla: 32.811, score: 0.719}
+    - {rank: 59, team: "WhiteHat",                 timeliness: 0,   leetness: 5.196,   diversity: 60,   sla: 50.858, score: 0.579}
+    - {rank: 60, team: "GMUCTF",                   timeliness: 0,   leetness: 8.513,   diversity: 10,   sla: 53.557, score: 0.531}
+    - {rank: 61, team: "ituGM",                    timeliness: 0,   leetness: 4.819,   diversity: 30,   sla: 51.123, score: 0.410}
+    - {rank: 62, team: "rentjong",                 timeliness: 0,   leetness: 2.820,   diversity: 30,   sla: 58.792, score: 0.348}
+    - {rank: 63, team: "XORcists",                 timeliness: 0,   leetness: 1.694,   diversity: 30,   sla: 46.292, score: 0.220}
+    - {rank: 64, team: "Linfield",                 timeliness: 0,   leetness: 2.728,   diversity: 10,   sla: 55.113, score: 0.212}
+    - {rank: 65, team: "LovableSecurityCrackers",  timeliness: 0,   leetness: 2.269,   diversity: 10,   sla: 57.811, score: 0.195}
+    - {rank: 66, team: "Layer8",                   timeliness: 0,   leetness: 1.070,   diversity: 10,   sla: 39.009, score: 0.082}
+    - {rank: 67, team: "49thSecurityDivision",     timeliness: 0,   leetness: 0,       diversity: 0,    sla: 32.868, score: 0.000}
+    - {rank: 68, team: "mlp",                      timeliness: 0,   leetness: 0,       diversity: 0,    sla: 56.472, score: 0.000}
+    - {rank: 69, team: "ENOFLAG",                  timeliness: 0,   leetness: 0,       diversity: 0,    sla: 33.094, score: 0.000}
+    - {rank: 70, team: "RPISEC",                   timeliness: 0,   leetness: 0,       diversity: 0,    sla: 32.981, score: 0.000}
+    - {rank: 71, team: "RavenSec",                 timeliness: 0,   leetness: 0,       diversity: 0,    sla: 32.925, score: 0.000}
+    - {rank: 72, team: "Luckers",                  timeliness: 0,   leetness: 0,       diversity: 0,    sla: 33.000, score: 0.000}
+    - {rank: 73, team: "CSWAT",                    timeliness: 0,   leetness: 0,       diversity: 0,    sla: 52.038, score: 0.000}
+    - {rank: 74, team: "Churchof0x41414141",       timeliness: 0,   leetness: 0,       diversity: 0,    sla: 36.736, score: 0.000}
+    - {rank: 75, team: "PPP",                      timeliness: 0,   leetness: 0,       diversity: 0,    sla: 32.849, score: 0.000}
+    - {rank: 76, team: "7U53c",                    timeliness: 0,   leetness: 0,       diversity: 0,    sla: 32.849, score: 0.000}
+    - {rank: 77, team: "Gallopsled",               timeliness: 0,   leetness: 0,       diversity: 0,    sla: 33.019, score: 0.000}
+    - {rank: 78, team: "n00ber",                   timeliness: 0,   leetness: 0,       diversity: 0,    sla: 32.981, score: 0.000}
+    - {rank: 79, team: "SDSLabs",                  timeliness: 0,   leetness: 0,       diversity: 0,    sla: 32.811, score: 0.000}
+    - {rank: 80, team: "bucsec",                   timeliness: 0,   leetness: 0,       diversity: 0,    sla: 32.868, score: 0.000}
+    - {rank: 81, team: "desteam",                  timeliness: 0,   leetness: 0,       diversity: 0,    sla: 32.981, score: 0.000}
+    - {rank: 82, team: "ChrisSheep",               timeliness: 0,   leetness: 0,       diversity: 0,    sla: 32.887, score: 0.000}
+    - {rank: 83, team: "Redacted",                 timeliness: 0,   leetness: 0,       diversity: 0,    sla: 32.868, score: 0.000}
+    - {rank: 84, team: "WildHatz",                 timeliness: 0,   leetness: 0,       diversity: 0,    sla: 57.198, score: 0.000}
+    - {rank: 85, team: "OlinCyberDefenders",       timeliness: 0,   leetness: 0,       diversity: 0,    sla: 32.943, score: 0.000}
+    - {rank: 86, team: "WCSC",                     timeliness: 0,   leetness: 0,       diversity: 0,    sla: 32.925, score: 0.000}
+    - {rank: 87, team: "FakeTeam",                 timeliness: 0,   leetness: 0,       diversity: 0,    sla: 57.726, score: 0.000}
   notes: >
-    From MySQL dump (2014-2015.mysql.gz): SpamAndHex scored 92.744 on the novel
-    four-component formula: SLA × (Timeliness 20% + Diversity 40% + Leetness 40%).
-    Scoreboard screenshots preserved in iCTF scoreboard/ directory.
+    Full 88-team scoreboard recovered from scoreboard screenshots (April 11, 2015).
+    SpamAndHex (Hungary) won with score 92.744 using the four-component formula:
+    SLA × (Timeliness×20% + Diversity×40% + Leetness×40%). Ranks 0-66 scored > 0;
+    ranks 67-87 scored 0 (did not successfully exploit any services).
 
 challenges:
   # 52 services total: recycled from ictf04/04-05, ictf05, ictf07, ictf11, ictf12, ictf13.
