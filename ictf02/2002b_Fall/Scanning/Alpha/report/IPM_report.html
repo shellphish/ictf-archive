@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+
+<html>
+  <head>
+    <meta name="generator" content=
+    "HTML Tidy for Linux/x86 (vers 1st February 2002), see www.w3.org">
+
+    <title>CS 279: Network Security and Intrusion Detection - Team Alpha - IP Mapping
+    </title>
+  </head>
+
+  <body>
+    <h1>Blue Team/Red Team Exercise Report</h1>
+
+    <h2>Team/Subgroup</h2>
+	<p><b>IP Mapping</b></p>
+	<p>Host discovery and prevention, detection of opponent's host discovery.</p>
+	<p>Members:
+	<ul>
+		<li>Ryan Bane - sporky@cs - snakebyte</li>
+		<li>Gilad Benjamin - gilad@cs - pointer</li>
+		<li>Subhra Bhattacharya - subhra@umail - secrecyisthekey</li>
+		<li>Bryan Cassell (leader) - bryanc@cs - tacogimp</li>
+		<li>Qiang Fan - qfan@cs - topgear</li>
+		<li>Dave Fayram - dfayram@cs - paradox</li>
+	</ul>
+	</p>
+
+    <h2>Mission</h2>
+	<p>IP Mapping's mission involved three things:</p>
+	<p><b>Host discovery</b> - IP Mapping had the task of identifying which
+		hosts existed on the oponnent's network. This task needed to be completed
+		accurately and extremely quickly in order for other members of our team
+		to proceed.</p>
+	<p><b>Detection</b> - IP Mapping was responsible for detecting when the 
+		oponnent attempted to discover our hosts.</p>
+	<p><b>Prevention</b> - IP Mapping attempted to prevent the oponnents from
+		discovering our hosts. We attempted to emulate hosts on the entirety of
+		our network, making it impossible for automated techniques to identify 
+		our real hosts.</p>
+
+	<p>Responsibilities:
+	<ul>
+		<li>Ryan Bane - Prevention of host detection through IP fragmentation emulation.</li>
+		<li>Gilad Benjamin - Prevention of host detection through UDP emulation.</li>
+		<li>Subhra Bhattacharya - IP Mapping detection</li>
+		<li>Bryan Cassell - Prevention of host detection through TCP and ICMP emulation.</li>
+		<li>Qiang Fan - IP Mapping detection</li>
+		<li>Dave Fayram - Discovery of hosts without detection.</li>
+	</ul>
+	</p>
+
+    <h2>Preparation</h2>
+
+	<p>Preperation falls into three categories:</p>
+	<p><b>Host discovery</b> - Several custom tools were developed to perform host discovery.
+		An ICMP timestamp sweep tool was developed by Dave Fayram. This performed a sweep of
+		a destination network with ICMP timestamp requests. It also used these packets to
+		check latency on the target hosts and perform very primitive OS fingerprinting. A UDP
+		sweep tool was also developed by Dave Fayram. This tool swept the target network with
+		UDP packets to a closed port and watched for ICMP port unreachable messages. It also
+		performed very primitive OS fingerprinting (useful when passing on host information to
+		the OS fingerprinting group). Finally, an IP fragmentation sweep tool was developed by
+		Dave Fayram which was ultimately not used. It sent out one fragment of a fragmented 
+		packet and waited for an ICMP Fragmentation time exceeded response. Due to poor communication, 
+		Subhra also developed an ICMP timestamp sweep utility, which, while it worked, was 
+		ultimately not used.</p>
+	<p><b>Detection</b> - Both Snort and netstat were prepared for IP Mapping detection. 
+		Netstat scenarios were developed to detect various sweep attempts, and snort rules
+		were developed to detect slow sweeps.</p>
+	<p><b>Prevention</b> - Several tools were developed to emulate hosts and make locating
+		our real hosts extremely difficult. The biggest part of our prevention involved the
+		extension of the software package <a href="http://www.hackbusters.net/LaBrea/">LaBrea</a>
+		by Bryan Cassell to accurately emulate hosts. The software was heavily extended into
+		three different branches - a linux 2.4 branch, a linux 2.2 branch, and a windows 2000
+		branch. Each of these branches emulated the respective host type very accurately with
+		regards to TCP and ICMP traffic. Two other tools were developed which were ultimately
+		not used due to minor bugs that couldn't be fixed in time for the exercise. The first
+		was a UDP emulation tool developed by Gilad Benjamin that would send out ICMP port 
+		unreachable messages when a udp packet was sent to a "closed" port on an emulated host.
+		The second was an IP fragmentation emulation tool developed by Ryan Bane that would send
+		an ICMP Fragmentation time exceeded packet back to a host if all fragments of a fragmented
+		packet were not sent. </p>
+	</p>In addition, 2 laptops were prepared by Dave Fayram and Bryan Cassell to launch attacks
+		and detect traffic from. These machines were prepared in such a way (using firewall rules
+		and disabling ARP) that they would be invisible on the network while still being able to
+		send spoofed packets and watch the network in promiscuous mode.</p>
+		
+
+    <h2>Execution</h2>
+
+	<p>Member's activites:
+	<ul>
+		<li>Ryan Bane - Ryan attempted to get the IP Fragmentation tool up and running, but 
+			ultimately libnet defeated his efforts and we were not able to use the tool for
+			the exercise.</li>
+		<li>Gilad Benjamin - Gilad attempted to get the UDP emulation tool up and running, but,
+			although it was working in the end, we ultimately ran out of time to put it in place 
+			before the exercise began.</li>
+		<li>Subhra Bhattacharya - Subhra assisted others in the group when needed. Subhra's
+			ICMP timestamp sweep utility was tested and was working, but wasn't used due
+			to the fact that a duplicate utility had been developed.</li>
+		<li>Bryan Cassell - Bryan installed the custom LaBrea modifications on alpha. Next
+			he proceeded to identify the operating systems and open ports of the machines on
+			our network (which, convienently were linux2.4, linux2.2, and win2k). Next he 
+			configured each branch of his tool to open the same ports as their respective
+			system types on the network. He then configured his tool to emulate all hosts on 
+			the network that did not exist, placing roughly equal numbers of "linux2.2", 
+			"linux2.4" and "win2k" hosts throughout the network. Halfway through the exercise,
+			alpha went down and had to be restarted. Bryan then restarted his emulation tool
+			as quickly as possible.</li>
+		<li>Qiang Fan - Qiang set up snort and netstat to detect IP mapping attempts by the
+			opponent. Unfortunately netstat had issues with memory consumption and had to be
+			shut down, so we were not able to use netstat for detection.</li>
+		<li>Dave Fayram - First, Dave set up the two laptops to be invisible to the network.
+			Dave then used his custom tools to discover the hosts that existed on the
+			opponent's network and the external network. First, Dave ran his ICMP timestamp 
+			scan and UDP sweep against the opponent's network, discovering their hosts
+			immediatly. He was also able to determine the rough OS classification of the remote
+			hosts (Linux/Windows/etc). Next Dave ran his ICMP and UDP sweeps against the
+			external network, discovering the two hosts there immediatly. He was also able
+			to determine that those hosts were not Linux, Windows, FreeBSD, or one of
+			several obscure systems.</li>
+	</ul>
+	</p>
+			
+
+    <h2>Evaluation</h2>
+
+	<p>Overall our team performed very well:</p>
+	<p><b>Host Discovery</b> Host discovery went incredibly well. We were able to find their
+		hosts immediately. We only had one mis-identification of a real host, which was quickly
+		remedied. We were also able to find the hosts on the external network immediately. We
+		were able to pass this information on to the other teams right away, and our rough
+		OS detection was a great help to the OS fingerprinting group.</p>
+	<p><b>Detection</b> As of the writing of this report, our detection is still under evaluation.</p>
+	<p><b>Prevention</b> Our tool for host emulation worked exceptionally well. For half an hour, the
+		other team could not determine what hosts on our network were real. Unfortunately, about 30
+		minutes into the exercise, alpha, the machine that was running our host emulation software, froze
+		and had to be restarted. For about a minute and a half alpha was down, and the only hosts
+		responding on our network were the three real hosts. In that time, the omega team scanned
+		our network, saw only three hosts, and determined those were the real hosts. It is unclear
+		how long our prevention techniques would have worked, but judging by our success in the
+		first 30 minutes, it is VERY dissapointing that alpha crashed. The fake hosts were brought
+		back up as soon as possible, but it was too late to stop omega team from discovering our
+		hosts while alpha was down. This was definitely the greatest dissapointment for
+		the IP mapping group.</p>
+	<p>Overall the IP Mapping group performed very well. All of our tools were very effective,
+		and there isn't much we could have done better. If alpha hadn't crashed, our setup
+		might have been near perfect.</p>
+	<p>As for suggestions for the exercise itself, some people feel that there should have
+		been more numerous or more varies hosts. Also, the exercise itself was somewhat 
+		disorganized, which is somewhat understandable considering the complexity, though
+		it would have been nice to have more of a reserved area in CSIL.</p>
+
+    <h2>Miscellaneous</h2>
+
+	<p>First of all, it REALLY sucks that alpha crashed. Second, Dave feels he should have
+		had more of a challenge. Third, don't name your custom utilities "netstat".
+	</p>
+
+    <h2>References</h2>
+
+	<p>We found <a href="http://www.sys-security.com/archive/papers/ICMP_Usage_v3.0.pdf">Ofir's ICMP usage paper</a>
+		very useful.</p>
+	
+  </body>
+</html>
+

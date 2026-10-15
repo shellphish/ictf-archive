@@ -1,0 +1,1294 @@
+<IDMEF-Message version="1.0">
+  <Alert ident="omega300">
+    <Analyzer>
+    </Analyzer>   
+      
+    <CreateTime ntpstamp=".">
+    unknown due to corrupted data</CreateTime>
+          
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.64</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.210</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.104</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.164</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.206</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.59</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.65</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.74</address>
+        </Address>
+      </Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.182</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.73</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.160</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.75</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.116</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.112</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.234</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.201</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.11</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.144</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.82</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.63</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.236</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.61</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.123</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.45</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.166</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.150</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.22</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.220</address>
+        </Address>
+      </Node>
+      <Node>
+    </Source>
+        
+    <Target> 
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.11.1</address>  
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>80, 21, 139</portlist>   
+      </Service>  
+    </Target>
+     
+    <Classification origin="vendor-specific">
+      <name>SYN ipsweep</name>
+        
+    <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+        
+    <AdditionalData type="string" meaning="tcpdump-filter">
+        
+    </AdditionalData>
+  </Alert>  
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega301">
+    <Analyzer>
+    </Analyzer>   
+      
+    <CreateTime ntpstamp=".">
+    2002-11-15T16:16:12.580733</CreateTime>
+          
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.64</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.210</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.104</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.164</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.206</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.59</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.65</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.74</address>
+        </Address>
+      </Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.182</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.73</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.160</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.75</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.116</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.112</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.234</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.201</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.11</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.144</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.82</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.63</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.236</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.61</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.123</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.45</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.166</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.150</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.22</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.220</address>
+        </Address>
+      </Node>
+      <Node>
+    </Source>
+        
+    <Target> 
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.11.1</address>  
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>80, 21, 139</portlist>   
+      </Service>  
+     </target>
+    <Classification origin="vendor-specific">
+      <name>SYN ipsweep</name>
+        
+    <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+        
+    <AdditionalData type="string" meaning="tcpdump-filter">
+        
+    </AdditionalData>
+  </Alert>  
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega302">
+    <Analyzer>
+    </Analyzer>   
+      
+    <CreateTime ntpstamp=".">
+    2002-11-15T16:25:30.541836</CreateTime>
+          
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.64</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.210</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.104</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.164</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.206</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.59</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.65</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.74</address>
+        </Address>
+      </Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.182</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.73</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.160</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.75</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.116</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.112</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.234</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.201</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.11</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.144</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.82</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.63</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.236</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.61</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.123</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.45</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.166</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.150</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.22</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.220</address>
+        </Address>
+      </Node>
+      <Node>
+    </Source>
+        
+    <Target> 
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.11.1</address>  
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>80, 21, 139</portlist>   
+      </Service>  
+    </Target>
+
+      
+    <Classification origin="vendor-specific">
+      <name>SYN ipsweep</name>
+        
+    <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+        
+    <AdditionalData type="string" meaning="tcpdump-filter">
+        
+    </AdditionalData>
+  </Alert>  
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega303">
+    <Analyzer>
+    </Analyzer>   
+      
+    <CreateTime ntpstamp=".">
+    2002-11-15T16:39:42.145389</CreateTime>
+          
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.64</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.210</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.104</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.164</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.206</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.59</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.65</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.74</address>
+        </Address>
+      </Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.182</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.73</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.160</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.75</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.116</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.112</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.234</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.201</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.11</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.144</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.82</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.63</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.236</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.61</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.123</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.45</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.166</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.150</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.22</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.220</address>
+        </Address>
+      </Node>
+      <Node>
+    </Source>
+        
+    <Target> 
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.11.1</address>  
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>80, 21, 139</portlist>   
+      </Service>  
+    </Target>
+
+      
+    <Classification origin="vendor-specific">
+      <name>SYN ipsweep</name>
+        
+    <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+        
+    <AdditionalData type="string" meaning="tcpdump-filter">
+        
+    </AdditionalData>
+  </Alert>  
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega306">
+    <Analyzer>
+    </Analyzer>   
+      
+    <CreateTime ntpstamp=".">
+    2002-11-15T17:11:39.435668</CreateTime>
+          
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.64</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.210</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.104</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.164</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.206</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.59</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.65</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.74</address>
+        </Address>
+      </Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.182</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.73</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.160</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.75</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.116</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.112</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.234</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.201</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.11</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.144</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.82</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.63</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.236</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.61</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.123</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.45</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.166</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.150</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.22</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.220</address>
+        </Address>
+      </Node>
+      <Node>
+    </Source>
+        
+    <Target> 
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.11.1</address>  
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>22</portlist>   
+      </Service>  
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SYN ipsweep</name>
+        
+    <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+        
+    <AdditionalData type="string" meaning="tcpdump-filter">
+        
+    </AdditionalData>
+  </Alert>  
+</IDMEF-Message>
+<IDMEF-Message version="1.0">
+  <Alert ident="omega307">
+    <Analyzer>
+    </Analyzer>   
+      
+    <CreateTime ntpstamp=".">
+    2002-11-15T16:53:26.994061</CreateTime>
+          
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.64</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.210</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.104</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.164</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.206</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.59</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.65</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.74</address>
+        </Address>
+      </Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.182</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.73</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.160</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.75</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.116</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.112</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.234</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.201</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.11</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.144</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.82</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.63</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.236</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.61</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.123</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.45</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.166</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.150</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.22</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.220</address>
+        </Address>
+      </Node>
+      <Node>
+    </Source>
+        
+    <Target> 
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.3.1</address>  
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>80, 21, 139</portlist>   
+      </Service>  
+    </Target>
+    
+    <Classification origin="vendor-specific">
+      <name>SYN ipsweep</name>
+        
+    <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+        
+    <AdditionalData type="string" meaning="tcpdump-filter">
+        
+    </AdditionalData>
+  </Alert>  
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega308">
+    <Analyzer>
+    </Analyzer>   
+      
+    <CreateTime ntpstamp=".">
+    2002-11-15T17.19.28.177737</CreateTime>
+          
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.64</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.210</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.104</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.164</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.206</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.59</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.65</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.74</address>
+        </Address>
+      </Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.182</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.73</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.160</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.75</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.116</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.112</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.234</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.201</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.11</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.144</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.82</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.63</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.236</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.61</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.123</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.45</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.166</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.150</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.22</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.220</address>
+        </Address>
+      </Node>
+      <Node>
+    </Source>
+        
+    <Target> 
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.3.1</address>  
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>22</portlist>   
+      </Service>  
+    </Target>
+     
+    <Classification origin="vendor-specific">
+      <name>SYN ipsweep</name>
+        
+    <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+        
+    <AdditionalData type="string" meaning="tcpdump-filter">
+        
+    </AdditionalData>
+  </Alert>  
+</IDMEF-Message>

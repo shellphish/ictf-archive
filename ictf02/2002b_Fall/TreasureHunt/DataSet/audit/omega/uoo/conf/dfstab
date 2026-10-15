@@ -1,0 +1,12 @@
+
+#	Place share(1M) commands here for automatic execution
+#	on entering init state 3.
+#
+#	Issue the command '/etc/init.d/nfs.server start' to run the NFS
+#	daemon processes and the share commands, after adding the very
+#	first entry to this file.
+#
+#	share [-F fstype] [ -o options] [-d "<text>"] <pathname> [resource]
+#	.e.g,
+#	share  -F nfs  -o rw=engineering  -d "home dirs"  /export/home2
+share -F nfs -o rw /export/home

@@ -1,0 +1,306 @@
+<IDMEF-Message version="1.0">
+ <Alert ident="alpha22001">
+   <Analyzer analyzerid="davef@alpha">
+    <Node>
+     <Address category="ipv4-addr">
+       <address>192.168.11.247</address>
+     </Address>
+    </Node>
+   </Analyzer>
+
+ <CreateTime ntpstamp="0xC17FFFC8.0xC17FFFC9">
+ 2002-11-15T15:20:40.648379-15:15:20:41.0
+ </CreateTime>
+
+ <Source>
+   <Node>
+	<Address category="ipv4-addr">
+	 <address>192.168.11.73</address>
+	</Address>
+   </Node>
+</Source>
+
+   <Target>
+    <Node>
+      <Address category="ipv4-addr">
+       <address>192.168.3.0</address>
+      </Address>
+    </Node>
+   <Service>
+	<protocol>ICMP Timestamp</protocol>
+   </Service>
+   </Target>
+
+   <Classification origin="vendor_specific">
+     <name>ICMP Timestamp Scan</name>
+   </Classification>
+
+   <Assessment>
+	<Impact severity="low" completion="failed" impacttype="recon"/>
+   </Assessment>
+
+   <AdditionalData type="string" meaning="tcpdump-filter">
+    (src 192.168.11.73 and icmp[0] = 13) or (dst 192.168.11.73 and 
+icmp[0]=14)
+   </AdditionalData>
+ </Alert>
+
+</IDMEF-Message>
+
+
+
+<IDMEF-Message version="1.0">
+ <Alert ident="alpha22002">
+   <Analyzer analyzerid="davef@alpha">
+    <Node>
+     <Address category="ipv4-addr">
+       <address>192.168.11.247</address>
+     </Address>
+    </Node>
+   </Analyzer>
+
+ <CreateTime ntpstamp="0xC18000F9-0xC18000F9">
+ 2002-11-15T15:25:45.855106-15:25:45.873339
+ </CreateTime>
+
+ <Source>
+   <Node>
+	<Address category="ipv4-addr">
+	 <address>192.168.11.72</address>
+	</Address>
+   </Node>
+</Source>
+
+   <Target>
+    <Node>
+      <Address category="ipv4-addr">
+       <address>192.168.22.0</address>
+      </Address>
+    </Node>
+   <Service>
+        <portlist>2001</portlist>
+	<protocol>UDP Service Unreachable</protocol>
+   </Service>
+   </Target>
+
+   <Classification origin="vendor_specific">
+     <name>Closed Port UDP Sweep</name>
+   </Classification>
+
+   <Assessment>
+	<Impact severity="low" completion="succeeded" impacttype="recon"/>
+   </Assessment>
+
+   <AdditionalData type="string" meaning="tcpdump-filter">
+    (src 192.168.11.72 and udp port 2001) or (dst 192.168.11.72 and 
+icmp[0]=3 and icmp[1]=3)
+   </AdditionalData>
+ </Alert>
+
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+ <Alert ident="alpha22002">
+   <Analyzer analyzerid="davef@alpha">
+    <Node>
+     <Address category="ipv4-addr">
+       <address>192.168.11.247</address>
+     </Address>
+    </Node>
+   </Analyzer>
+
+ <CreateTime ntpstamp="0xC180035A.0xC180035B">
+ 2002-11-15T15:35:54.873129-15:36:35.832481
+ </CreateTime>
+
+ <Source>
+   <Node>
+	<Address category="ipv4-addr">
+	 <address>192.168.11.72</address>
+	</Address>
+   </Node>
+</Source>
+
+   <Target>
+    <Node>
+      <Address category="ipv4-addr">
+       <address>192.168.22.0</address>
+      </Address>
+    </Node>
+   <Service>
+        <portlist>2001</portlist>
+	<protocol>UDP Service Unreachable</protocol>
+   </Service>
+   </Target>
+
+   <Classification origin="vendor_specific">
+     <name>Closed Port UDP Sweep</name>
+   </Classification>
+
+   <Assessment>
+	<Impact severity="low" completion="succeeded" impacttype="recon"/>
+   </Assessment>
+
+   <AdditionalData type="string" meaning="tcpdump-filter">
+    (src 192.168.11.79 and udp port 2001) or (dst 192.168.11.79 and 
+icmp[0]=3 and icmp[1]=3)
+   </AdditionalData>
+ </Alert>
+
+</IDMEF-Message>
+
+
+
+<IDMEF-Message version="1.0">
+ <Alert ident="alpha22001">
+   <Analyzer analyzerid="davef@alpha">
+    <Node>
+     <Address category="ipv4-addr">
+       <address>192.168.11.247</address>
+     </Address>
+    </Node>
+   </Analyzer>
+
+ <CreateTime ntpstamp="0xC18003F6.0xC18003F7">
+ 2002-11-15T15:38:30.405322-15:38:31.262685
+ </CreateTime>
+
+ <Source>
+   <Node>
+	<Address category="ipv4-addr">
+	 <address>192.168.11.79</address>
+	</Address>
+   </Node>
+</Source>
+
+   <Target>
+    <Node>
+      <Address category="ipv4-addr">
+       <address>192.168.3.0</address>
+      </Address>
+    </Node>
+   <Service>
+	<protocol>ICMP Timestamp</protocol>
+   </Service>
+   </Target>
+
+   <Classification origin="vendor_specific">
+     <name>ICMP Timestamp Scan</name>
+   </Classification>
+
+   <Assessment>
+	<Impact severity="low" completion="failed" impacttype="recon"/>
+   </Assessment>
+
+   <AdditionalData type="string" meaning="tcpdump-filter">
+    (src 192.168.11.79 and icmp[0] = 13) or (dst 192.168.11.79 and 
+icmp[0]=14)
+   </AdditionalData>
+ </Alert>
+
+</IDMEF-Message>
+
+
+
+
+<IDMEF-Message version="1.0">
+ <Alert ident="alpha22002">
+   <Analyzer analyzerid="davef@alpha">
+    <Node>
+     <Address category="ipv4-addr">
+       <address>192.168.11.247</address>
+     </Address>
+    </Node>
+   </Analyzer>
+
+ <CreateTime ntpstamp="0xC1800B42.0xC1800B42">
+ 2002-11-15T16:09:38.492098-16:09:38.510147
+ </CreateTime>
+
+ <Source>
+   <Node>
+	<Address category="ipv4-addr">
+	 <address>192.168.11.72</address>
+	</Address>
+   </Node>
+</Source>
+
+   <Target>
+    <Node>
+      <Address category="ipv4-addr">
+       <address>192.168.22.0</address>
+      </Address>
+    </Node>
+   <Service>
+        <portlist>2001</portlist>
+	<protocol>UDP Service Unreachable</protocol>
+   </Service>
+   </Target>
+
+   <Classification origin="vendor_specific">
+     <name>Closed Port UDP Sweep</name>
+   </Classification>
+
+   <Assessment>
+	<Impact severity="low" completion="succeeded" impacttype="recon"/>
+   </Assessment>
+
+   <AdditionalData type="string" meaning="tcpdump-filter">
+    (src 192.168.11.79 and udp port 2001) or (dst 192.168.11.79 and 
+icmp[0]=3 and icmp[1]=3)
+   </AdditionalData>
+ </Alert>
+
+</IDMEF-Message>
+
+
+
+
+<IDMEF-Message version="1.0">
+ <Alert ident="alpha22001">
+   <Analyzer analyzerid="davef@alpha">
+    <Node>
+     <Address category="ipv4-addr">
+       <address>192.168.11.247</address>
+     </Address>
+    </Node>
+   </Analyzer>
+
+ <CreateTime ntpstamp="0xC1800B64.0xC1800B64">
+ 2002-11-15T16:10:12.739156-16:10:12.757565
+ </CreateTime>
+
+ <Source>
+   <Node>
+	<Address category="ipv4-addr">
+	 <address>192.168.11.76</address>
+	</Address>
+   </Node>
+</Source>
+
+   <Target>
+    <Node>
+      <Address category="ipv4-addr">
+       <address>192.168.22.0</address>
+      </Address>
+    </Node>
+   <Service>
+	<protocol>ICMP Timestamp</protocol>
+   </Service>
+   </Target>
+
+   <Classification origin="vendor_specific">
+     <name>ICMP Timestamp Scan</name>
+   </Classification>
+
+   <Assessment>
+	<Impact severity="low" completion="succeeded" impacttype="recon"/>
+   </Assessment>
+
+   <AdditionalData type="string" meaning="tcpdump-filter">
+    (src 192.168.11.76 and icmp[0] = 13) or (dst 192.168.11.76 and 
+icmp[0]=14)
+   </AdditionalData>
+ </Alert>
+
+</IDMEF-Message>

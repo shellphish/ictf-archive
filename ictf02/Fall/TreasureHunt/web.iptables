@@ -1,0 +1,5 @@
+www1:
+iptables -A INPUT -s www2 -j DROP
+
+www2:
+iptables -A INPUT -s www1 -j DROP

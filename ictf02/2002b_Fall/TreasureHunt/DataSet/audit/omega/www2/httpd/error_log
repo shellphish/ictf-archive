@@ -1,0 +1,8 @@
+[Tue Dec 17 13:56:29 2002] [notice] Apache/1.3.23 (Unix)  (Red-Hat/Linux) mod_ssl/2.8.7 OpenSSL/0.9.6b DAV/1.0.3 PHP/4.1.2 mod_perl/1.26 configured -- resuming normal operations
+[Tue Dec 17 13:56:29 2002] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Tue Dec 17 13:56:29 2002] [notice] Accept mutex: sysvsem (Default: sysvsem)
+[Tue Dec 17 14:44:03 2002] [notice] caught SIGTERM, shutting down
+[Tue Dec 17 14:47:54 2002] [alert] httpd: Could not determine the server's fully qualified domain name, using 127.0.0.1 for ServerName
+[Tue Dec 17 14:47:54 2002] [notice] Apache/1.3.23 (Unix)  (Red-Hat/Linux) mod_ssl/2.8.7 OpenSSL/0.9.6b DAV/1.0.3 PHP/4.1.2 mod_perl/1.26 configured -- resuming normal operations
+[Tue Dec 17 14:47:54 2002] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Tue Dec 17 14:47:54 2002] [notice] Accept mutex: sysvsem (Default: sysvsem)

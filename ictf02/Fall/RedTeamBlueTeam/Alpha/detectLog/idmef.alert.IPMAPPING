@@ -1,0 +1,461 @@
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha400010">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0x89D97806.0x0">
+    2002-11-15T18:14:56.281838-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.7</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>80</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>IP Sweeping</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.22.78 and dst host 192.168.11.7 and port
+    80</AdditionalData>
+     </Alert>
+
+
+     <Alert ident="alpha400020">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0x89D9768F.0x0">
+    2002-11-15T18:14:56.281838-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.7</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>80</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>IP Sweeping</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.22.78 and dst host 192.168.11.7and port
+    80</AdditionalData>
+     </Alert>
+
+     
+      <Alert ident="alpha400030">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0x89D976A6.0x0">
+    2002-11-15T18:14:56.318795-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.22</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>80</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>IP Sweeping</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.22.78 and dst host 192.168.11.22and port
+    80</AdditionalData>
+     </Alert>
+
+      <Alert ident="alpha400040">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0x89D9772C.0x0">
+    2002-11-15T18:14:56.318795-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.22</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>80</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>IP Sweeping</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.22.78 and dst host 192.168.11.22and port
+    80</AdditionalData>
+     </Alert>
+
+  <Alert ident="alpha400010">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0x89D97806.0x0">
+    2002-11-15T18:15:50.156579-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.112</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.203</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>21</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>IP Sweeping</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.22.112 and dst host 192.168.11.203 and port
+    21</AdditionalData>
+     </Alert>
+
+  <Alert ident="alpha400010">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0x89D97806.0x0">
+    2002-11-15T18:16:51.456632-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.82</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.192</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>21</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>IP Sweeping</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.22.82 and dst host 192.168.11.192 and port
+    21</AdditionalData>
+     </Alert>
+
+  <Alert ident="alpha400010">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0x89D97806.0x0">
+    2002-11-15T18:25:48.635881-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.231</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>139</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>IP Sweeping</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.22.187 and dst host 192.168.11.231 and port
+    139</AdditionalData>
+     </Alert>
+
+  <Alert ident="alpha400010">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0x89D97806.0x0">
+    2002-11-15T18:33:41.095126-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.222</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>784</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>IP Sweeping</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.22.107 and dst host 192.168.11.222 and port
+    80</AdditionalData>
+     </Alert>
+
+  <Alert ident="alpha400010">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0x89D97806.0x0">
+    2002-11-15T18:25:48.635881-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.231</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>139</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>IP Sweeping</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.22.187 and dst host 192.168.11.231 and port
+    139</AdditionalData>
+     </Alert>
+
+  <Alert ident="alpha400010">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0x89D97806.0x0">
+    2002-11-15T18:33:41.095126-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.222</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>80</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>IP Sweeping</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.22.107 and dst host 192.168.11.222 and port
+    80</AdditionalData>
+     </Alert>
+
+  <Alert ident="alpha400010">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0x89D97806.0x0">
+    2002-11-15T18:26:39.545429-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.220</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.231</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>21</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>IP Sweeping</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.22.220 and dst host 192.168.11.231 and port
+    21</AdditionalData>
+     </Alert>
+
+  <Alert ident="alpha400010">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0x89D97806.0x0">
+    2002-11-15T18:33:41.095126-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.222</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>80</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>IP Sweeping</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.22.107 and dst host 192.168.11.222 and port
+    80</AdditionalData>
+     </Alert>
+
+</IDMEF-Message>
+

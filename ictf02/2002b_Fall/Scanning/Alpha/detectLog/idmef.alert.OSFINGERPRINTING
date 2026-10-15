@@ -1,0 +1,334 @@
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha200015">
+    <Analyzer analyzerid="os-fingerprint-netstat@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="">
+    2000-11-15T15:49:34-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.37</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>23</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>Banner-grab</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter"> srchost
+    192.168.22.78 port 4955</AdditionalData>
+  </Alert>
+
+  <Alert ident="alpha200016">
+    <Analyzer analyzerid="os-fingerprint-netstat@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="">
+    2000-11-15T15:49:45-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>23</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>Banner-grab</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter"> srchost
+    192.168.22.78 port 4956</AdditionalData>
+  </Alert>
+
+
+  <Alert ident="alpha200017">
+    <Analyzer analyzerid="os-fingerprint-netstat@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="">
+    2000-11-15T15:55:01-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>23</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>Banner-grab</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter"> srchost
+    192.168.22.78 port 1038</AdditionalData>
+  </Alert>
+
+
+  <Alert ident="alpha200018">
+    <Analyzer analyzerid="os-fingerprint-netstat@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="">
+    2000-11-15T15:58:01-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>21</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>Banner-grab</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter"> srchost
+    192.168.22.78 port 1051</AdditionalData>
+  </Alert>
+
+  <Alert ident="alpha200019">
+    <Analyzer analyzerid="os-fingerprint-netstat@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="">
+    2000-11-15T15:58:39-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.81</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>21</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>Banner-grab</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter"> srchost
+    192.168.22.78 port 1055</AdditionalData>
+  </Alert>
+
+ <Alert ident="alpha200020">
+    <Analyzer analyzerid="os-fingerprint-netstat@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="">
+    2000-11-15T15:59:02-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.81</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>21</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>Banner-grab</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter"> srchost
+    192.168.22.78 port 1056</AdditionalData>
+  </Alert>
+
+<Alert ident="alpha200021">
+    <Analyzer analyzerid="os-fingerprint-netstat@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="">
+    2000-11-15T15:59:43-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.37</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>21</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>Banner-grab</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter"> srchost
+    192.168.22.78 port 1066</AdditionalData>
+  </Alert>
+
+
+</IDMEF-Message>

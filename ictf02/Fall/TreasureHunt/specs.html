@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+
+    <title>CS 279: Network Security and Intrusion Detection -
+    Treasure Hunt</title>
+    <meta name="Author" content="Giovanni Vigna">
+    <link href="cs279.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <h1>Treasure Hunt Specs</h1>
+
+    <p>This is a description of the treasure hunt exercise for the
+    TAs, and the RSG students that may want to help in setting up
+    the exercise.</p>
+
+    <h2>Description</h2>
+
+    <p>The two teams (Alpha and Omega) will compete in a treasure
+    hunt. Each team will have to complete a number of tasks. The
+    ultimate goal is to break into the security of a semi-realistic
+    payroll system and perform banking transactions that will
+    transfer money to an account of their choosing.</p>
+
+    <h2>Network Topology and Setup</h2>
+
+    <p>Each team will attack a separate network. It is important to
+    keep the two team's traffic separate so that we obtain cleaner
+    datasets.</p>
+
+    <p>This is the network topology</p>
+<pre> 
+                                           +-----------------
+     RSL DMZ        +------+     +-------+ |CISL (128.111.43)
+     ---------+-----|RSLFWL|-----|CSWORLD|-| 
+              |     +------+     +-------+ |GSL  (128.111.49)
+              |                            +-----------------
+              |
+              |
+              |   192.168.10.80  192.168.10.90 
+              |  (128.111.48.15)(128.111.48.35)
+              |    +---------+    +---------+
+              |    |WEB_ALPHA|    |WEB_OMEGA| 
+          eth0|    +---------+    +---------+
+            +---+eth1   |              |           192.168.10
+            |   |-------------------------------------------- 
+            |FWL|                                  192.168.20 (Alpha)
+            |   |--------------------------------------------
+            +---+eth2    |             |             | 
+          eth3|        +---+         +---+         +---+
+              |        |SQL|         |NFS|         |TRN|
+              |        +---+         +---+         +---+
+              |    192.168.20.6  192.168.20.49 192.168.20.157
+              |        (saa)                       (taa) 
+              |
+              |
+              |        (soo)                       (too)
+              |    192.168.70.6  192.168.70.49 192.168.70.157
+              |        +---+         +---+         +---+
+              |        |SQL|         |NFS|         |TRN|
+              |        +---+         +---+         +---+
+              |          |             |             |
+              +----------------------------------------------
+                                                   192.168.70 (Omega)
+</pre>
+
+    <p>The following describes one network target that will be attacked by one
+    team. Two separate instances of this setup must be created.</p>
+
+    <p>The web server is placed on a DMZ network. The MySQL server
+    (SQL host), the file server (NFS host), and the transaction
+    server (TRN host) are placed on a separate network, accessible
+    only by the web server host.</p>
+
+    <p>The web server is an Apache server, running as user
+    <tt>apache</tt>. A number of broken CGI scripts allow one to
+    view the source code of all the CGI scripts installed on the
+    server. One CGI script is vulnerable to a phf-style attack.
+    Another CGI script contains information about how to log into
+    the MySQL database.</p>
+
+    <p>The file server exports the filesystem <tt>/home</tt> to
+    everyone. In addition, it provides password files through
+    NIS.</p>
+
+    <p>The MySQL server provides remote access to user
+    <tt>dbuser</tt> with password <tt>bsecret</tt>. The server
+    mounts <tt>/home</tt> from the fileserver. The team is supposed
+    to modify the database so that the account associated with all
+    the emlpoyees is actually one of their choosing.</p>
+
+    <p>The transaction server has a <tt>transaction</tt> account,
+    whose encrypted password is included in the NIS password file.
+    The password is <tt>banana</tt>. When connecting to port
+    7979, the user is dropped in a simple shell application. Typing
+    <tt>HELP</tt> will show a list of commands one of which is
+    <tt>PAYCHECK</tt>. The team is supposed to invoke that function
+    to transfer all the employees paycheck to the attacker's
+    account.</p>
+
+    <h3>Detailed Configuration</h3>
+
+    <p>The root password is "dyrwthm".</p>
+
+
+    <p>This network testbed requires:</p>
+
+    <ul>
+      <li>Three Ethernet hubs and 12 Ethernet Cables</li>
+
+      <li>A PC (FWL) with 4 network cards and Linux RedHat 7.3
+      (server configuration). Tcpudmp logs will be collected at
+      each of the 4 interfaces.</li>
+
+      <li>Two PCs (WEB_ALPHA and WEB_OMEGA) with Linux RedHat 7.3 (server
+      configuration) and Apache, Snare, and MySQL client installed.</li>
+
+      <li>Two PCs (SQL_ALPHA and SQL_OMEGA) with Linux RedHat 7.3
+      (server configuration), and MySQL and Snare installed.</li>
+
+      <li>Two SparcStations (NFS_ALPHA and NFS_OMEGA) with Solaris
+      2.6 and the BSM audit system installed.</li>
+
+      <li>Two PCs (TRN_ALPHA and TRN_OMEGA) with Windows 2000
+      server and the Cygwin development environment.</li>
+    </ul>
+
+    <h4>Firewall host configuration</h4>
+
+    <p>We assume that each interface is assigned with host address
+    1 of the respective subnet</p>
+
+    <p>The firewall host must be configured to enforce the
+    following:</p>
+
+    <ul>
+      <li>Perform NAT for hosts WEB_ALPHA and WEB_OMEGA</li>
+
+      <li>Route packets from eth0 to eth1 so that hosts WEB_ALPHA
+      and WEB_OMEGA are visible from only CISL and GSL,
+      respectively.</li>
+
+      <li>Route packets between WEB_ALPHA and eth2 and between
+      WEB_OMEGA and eth3</li>
+
+      <li>A tcpdump process should be start on each interface. If
+      possible, a script should be created so that if tcpdump
+      processes die, they are automatically restarted</li>
+    </ul>
+
+    <h4>Web Server Configuration</h4>
+
+    <ul>
+      <li>Enable snare</li>
+
+      <li>WEB should be configured so that it accepts only traffic coming from
+      one of the external network (CISL or GSL) and one of the internal
+      networks (e.g., 192.168.20/24).</li>
+
+      <li>The Apache web server should be configured to run as user "apache"
+      (the default). The doc directory should be /var/www/html.  The CGI
+      directory will be /var/www/cgi-bin.  The apache account has been
+      modified to have a valid login shell.  The documents to be served are
+      contained in the following <a href= "webdocs.tgz">archive</a>. There are
+      a number of CGI scripts to be installed on the web server. They can be
+      find in this <a href="cgiscripts.tgz">archive</a>.</li>
+
+      <li>The home directory of the web server is chown-ed to
+      apache:root</li>
+
+      <li>The password file on the web server should contain a normal
+      /etc/passwd with a breakable user account password, namely
+      leonardo:pizza.</li>
+
+      <li>Make sure that the web server does NOT mount /home/exports.</li>
+
+      <li>Make sure that a setuid version of grepshadow (with source) is in
+      /tmp.</li>
+
+      <li>Make sure that <tt>mysql</tt> (the client) is installed.</li>
+
+      <li>Make sure that a directory called .ssh exists under /var/www with
+      permission 700 and owned by apache.</li>
+
+      <li>The save_message.pl feedback script can be used to write
+      to any file in the system (as user apache). Including other
+      CGI scripts in the cgi-bin directory.</li>
+
+      <li>The checkperl.pl script can be used to read any file in
+      the system</li>
+
+      <li>The query_extension.pl script contains a username and
+      password for the database host.</li>
+
+      <li>The guestbook.pl script can be used to execute arbitrary
+      commands</li>
+    </ul>
+
+    <h4>SQL Server Configuration</h4>
+
+    <ul>
+      <li>Enable snare</li>
+
+      <li>Install MySQL, create the dbuser user, and create the DB
+      schema</li>
+
+      <li>Populate the DB schema with a number of users (include
+      Dr. Christopher Schmidt)</li>
+
+      <li>Install and make setuid the timetracker program and the
+      corresponding source, Both should go under /tmp.</li>
+
+    </ul>
+
+    <h4>NFS Server Configuration</h4>
+
+    <ul>
+      <li>Enable BSM</li>
+
+      <li>Configure the NIS system so that the following <a href=
+      "passwords.nis">password file</a> is distributed. The file contain a
+      breakable password for user "transaction" (banana).</li>
+
+      <li>Configure NFS so that the file system /home is exported
+      to the world</li>
+
+      <li>Modify SQL and TRN so that they mount /home from host
+      NFS</li>
+
+      <li>Modify SQL and TRN so that they use host NFS as the NIS
+      server</li>
+    </ul>
+
+    <h4>Transaction Server Configuration</h4>
+
+    <ul>
+      <li>Install Windows 2000 server and Cygwin</li>
+
+      <li>Enable event logging</li>
+
+      <li>Configure ssh</li>
+
+      <li>Install transaction.c and transaction.pl</li>
+
+      <li>Run transaction.exe 7979 and logout (you will
+      have to do a ESC-RET-RET-TILDE-DOT)</li>
+    </ul>
+
+    <h2>Tasks</h2>
+
+    <p>In the following, the different tasks that are part of the
+    treasure hunt are described, in the order in which they will
+    be presented to the two teams.</p>
+
+    <p>For each tasks the section <i>Assignment</i> specifies the
+    information that will be given to the team. Every other
+    information is for the organizers only.</p>
+
+    <h3>Task 1: Network scanning</h3>
+
+    <h4>Assignment</h4>
+
+    <p>Determine the active hosts in subnet 128.111.48/24.
+    Determine also the hosts OSs, and the services/applications
+    that are remotely accessible. Scanning techniques that will
+    evade detection by the Snort system will receive additional
+    bonus points. You have 20 minutes to complete this task.</p>
+
+    <h4>Cheat Sheet</h4>
+
+    <p>The firewall will drop scan packets causing long delays in
+    portscans. Use a "horizontal" approach were you first try to
+    ping all the hosts (maybe using TCP) and then focus only on the
+    hosts that respond to the query.</p>
+
+    <h4>Solution Sheet</h4>
+
+    <p>The host is a PC with Linux RedHat 7.3 that is the web server of
+    the Bass Tard Corporation.</p>
+
+    <h3>Task 2: Web server remote-to-local</h3>
+
+    <h4>Assignment</h4>
+
+    <p>Get interactive access to the web server host, by exploiting
+    a web-based vulnerability. You must be able to login into the
+    host as a user account other than root. You have 30 minutes to
+    complete this task.</p>
+
+    <h4>Cheat Sheet</h4>
+
+    <p>The source code of contact.html contains a reference to a
+    shell script that can be used to read the contents of other
+    files (including other shell scripts).</p>
+
+    <h4>Solution Sheet</h4>
+
+    <p>Use /cgi-bin/guestbook.pl?/etc/passwd to get the password
+    file and run John the Ripper. You can also use save_message.pl
+    to create a .shosts in the apache web server home directory
+    (/var/www)
+    http://localhost/cgi-bin/save_message.pl?last=/var/www&amp;first=/.ssh/authorized_keys2&amp;comment=ssh-dss
+    AAAAB3NzaC1kc3MAAACBALq4fkLEpxQWS9LJsu+vSxWbd4ICMOEEyGfV5hpWQ1pnPMOE2EAhT6AOc3B9fX9ClaGFfMdOBqsP5cJLsoHYLcQIMlRy3byb7k2ZhixVuzmDvst2E41En9mOo28vCuIx+0QwSMFgDIhOFbk3+JrjOUOc4VeF6+JGYmQKZz7K5T4ZAAAAFQCXrA1jpOQUXge34uMCGQKn7/2vaQAAAIEAtpVHLbmogJ3U7y3ABk7+YwkSHfOlDbMG4bZXq6z17K5ufFv9G+nJiGid7tHT6hTv88mUmdmwtOO8DgEu1GwspmOBMFuvyNkQkVTU/UfcpSFuooh884PWrj5YAAQSaPrYJOSEds39IT/Qd68+F0wI6ECvaAENZN5pSD9B0mDYQ5oAAACABfGQAusR9oHqQMwBAUAzbqvEBGiuFND5z1N6lGvuz51WjkRCHOP3yka9xcGp2a+3ma1FUz6dJlk8F2E6y5PZRRBsUmxVoxiiWkIv+Z07cQ/1nedl2rTYc3k8WkrKqlsSLZl9go59dnpBFy42Q8OP9aB4+cS/n8oS9ou+LNd9HM8=
+    yourname@cs.ucsb.edu</p>
+
+    <h3>Task 3: Web server user-to-root</h3>
+
+    <h4>Assignment</h4>
+
+    <p>Get root privileges on the web server host. You have 30
+    minutes to complete this task.</p>
+
+    <h4>Cheat Sheet</h4>
+
+    <p>There is a setuid program exploitable which appears in both source and
+    binary forms.</p>
+
+    <h4>Solution Sheet</h4>
+
+    <p>The program grepshadow.c in ~root/ is exploitable.  ./grepshadow 11937
+    pippo\ pluto\;echo\ rot::0:0::/tmp:/bin/sh\&gt;\&gt;\ /etc/passwd\;</p>
+
+    <h3>Task 4: Internal scanning</h3>
+
+    <h4>Assignment</h4>
+
+    <p>Determine the hosts that are located in a specified subnet. Determine
+    also their OSs, and the services/applications that are remotely
+    accessible. Scanning techniques that will evade detection by the Snort
+    system will receive additional bonus points. You have 20 minutes to
+    complete this task.</p>
+
+    <h4>Cheat Sheet</h4>
+
+    <p>You gotta be kidding.</p>
+
+    <h4>Solution Sheet</h4>
+
+    <p>The three hosts are SQL, TRN, and NFS.</p>
+
+    <h3>Task 5: Access MySQL database</h3>
+
+    <h4>Assignment</h4>
+
+    <p>Access the MySQL database on host SQL and obtain the content
+    of the table <tt>Employees</tt>. You have 20 minutes to
+    complete this task.</p>
+
+     <h4>Cheat Sheet</h4>
+
+    <p>Check the contact.html source file.</p>
+
+    <h4>Solution Sheet</h4>
+
+    <p>The contact.html file has the username password that are needed to
+    access the database, dbuser and dbsecret, respectively.</p>
+
+    <h3>Task 6: MySQL database remote-to-local</h3>
+
+    <h4>Assignment</h4>
+
+    <p>Get interactive access to the MySQL server host. You have to
+    be able to login with an account that is not root. You have 20
+    minutes to complete this task.</p>
+
+    <h4>Cheat Sheet</h4>
+
+    <p>SQL mounts /home from NFS.</p>
+
+    <h4>Solution Sheet</h4>
+
+    <p>Mount /home and modify the .ssh directory of a user so that
+    you can login without having to provide a password.</p>
+
+    <h3>Task 7: MySQL database user-to-root</h3>
+
+    <h4>Assignment</h4>
+
+    <p>Get root access to the MySQL server host. You have 20
+    minutes to complete this task.</p>
+
+    <h4>Cheat Sheet</h4>
+
+    <p>There is a setuid program exploitable which appears in both
+    source and binary forms.</p>
+
+    <h4>Solution Sheet</h4>
+
+    <p>/tmp/setuidtest contains an exploitable setuid program.</p>
+
+    <h3>Task 8: MySQL database modification</h3>
+
+    <h4>Assignment</h4>
+
+    <p>Modify the database table <tt>Employees</tt>, setting the
+    account number of each employee to an account number of your
+    choosing. You have 10 minutes to complete this task.</p>
+
+    <h4>Cheat Sheet</h4>
+
+    <p>Just do it.</p>
+
+    <h4>Solution Sheet</h4>
+
+    <p>Just do it.</p>
+
+    <h3>Task 9: Transaction execution</h3>
+
+    <h4>Assignment</h4>
+
+    <p>Obtain access to the transaction service on host TRN.
+    Schedule a paycheck payment that will trasnfer the paycheck to
+    your account. You have 30 minutes to complete this task.</p>
+
+    <h4>Cheat Sheet</h4>
+
+    <p>The password file distributed with NIS contains a
+    <tt>transaction</tt> account.</p>
+
+    <h4>Solution</h4>
+
+    <p>If you perform a "strings" on the binary you'll see the
+    password in the clear.</p>
+  </body>
+</html>
+

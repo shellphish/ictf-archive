@@ -1,0 +1,544 @@
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha200001">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1802CF5.0x">
+    2000-11-15T18:30:36.617845-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.111</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>22</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>OS-fingerprint</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+     192.168.11.111 and dst host 192.168.22.78 and port
+     6752</AdditionalData>
+  </Alert>
+
+
+
+  <Alert ident="alpha200002">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1802F53.0x0">
+    2000-11-15T18:42:40.300359-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.135</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.31</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>22</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>OS-fingerprint</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+      192.168.11.135 and dst host 192.168.22.31 and port
+     2489</AdditionalData>
+  </Alert>
+
+
+
+  <Alert ident="alpha200003">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18030B2.0x0">
+    2000-11-15T18:49:16.189201-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.160</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.31</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>22</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>OS-fingerprint</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+     192.168.11.160 and dst host 192.168.22.31 and port
+     4875</AdditionalData>
+  </Alert>
+
+
+
+  <Alert ident="alpha200004">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC180314C.0x0">
+    2000-11-15T18:51:51.790823-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.111</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.10</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>22</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>OS-fingerprint</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+      192.168.11.111 and dst host 192.168.3.10 and port
+     4875</AdditionalData>
+  </Alert>
+
+
+
+  <Alert ident="alpha200005">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1803212.0x0">
+    2000-11-15T18:54:40.815428-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.111</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.10</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>53</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>OS-fingerprint</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+      192.168.11.111 and dst host 192.168.3.10 and port
+     5678</AdditionalData>
+  </Alert>
+
+
+  <Alert ident="alpha200006">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC180333E.0x0">
+    2000-11-15T19:00:04.920533-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.160</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.93</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>80</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>OS-fingerprint</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+      192.168.11.160 and dst host 192.168.22.93 and port
+     3541</AdditionalData>
+  </Alert>
+
+  <Alert ident="alpha200007">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18034CF.0x0">
+    2000-11-15T19:06:36.880463-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.160</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.93</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>6002</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>OS-fingerprint</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+      192.168.11.160 and dst host 192.168.22.93 and port
+     3541</AdditionalData>
+  </Alert>
+
+  <Alert ident="alpha200008">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1803579.0x0">
+    2000-11-15T19:09:15.452472-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.135</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.40</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>80</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>OS-fingerprint</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+      192.168.11.135 and dst host 192.168.3.40 and port
+     1897</AdditionalData>
+  </Alert>
+
+ <Alert ident="alpha200009">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1803725.0x0">
+    2000-11-15T19:16:38.036399-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.135</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.29</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>80,21</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>OS-fingerprint</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+      192.168.11.135 and dst host 192.168.22.29 and port
+     2461</AdditionalData>
+  </Alert>
+
+  <Alert ident="alpha200010">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1803875.0x0">
+    2000-11-15T16:26:04.992909-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.10</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>23</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>Banner-grab</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+      192.168.11.56 and dst host 192.168.3.10 and port
+     1196</AdditionalData>
+  </Alert>
+
+ <Alert ident="alpha200011">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18038E5.0x0">
+    2000-11-15T16:28:00.279952-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.40</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>23</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>Banner-grab</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+      192.168.11.56 and dst host 192.168.3.40 and port
+     1208</AdditionalData>
+  </Alert>
+
+<Alert ident="alpha200012">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1803A43.0x0">
+    2000-11-15T16:32:42.600135-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.40</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>21</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>Banner-grab</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+      192.168.11.56 and dst host 192.168.3.40 and port
+     1209</AdditionalData>
+  </Alert>
+
+  <Alert ident="alpha200013">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1803C22.0x0">
+    2000-11-15T19:37:58.964550-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.111</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.40</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>21</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>OS-fingerprint</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+      192.168.11.111 and dst host 192.168.3.40 and port
+     5846</AdditionalData>
+  </Alert>
+
+  <Alert ident="alpha200014">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC180404F.0x0">
+    2000-11-15T16:55:13.740746-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.40</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>21,53</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>NMap-OS-fingerprint</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+      192.168.11.56 and dst host 192.168.3.40 and port
+     484321</AdditionalData>
+  </Alert>
+
+
+</IDMEF-Message>

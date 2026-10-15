@@ -1,0 +1,767 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>CS 279: Network Security and Intrusion Detection - Omega Team Report</TITLE>
+<BODY>
+<H1><font color="black" face="helvetica">Blue Team/Red Team Exercise Report</font></H1>
+<BR>
+<h2><font color="darkblue" face="helvetica" style="background:#DDDDDD">Host Detection and Identification Group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></h2>
+
+<h3><font face="verdana"><b>Goal</b></font></h3>
+Detect all hosts in enemy's network and in Instructor's network and identify what kind of Operating System each Host runs.
+
+<h4><font face="verdana"><b>Members</b></font></h4>
+
+<ul>
+<table>
+ <tr>
+  <td bgcolor="DDDDDD"><font face="verdana" color="555555">"gwbush"&nbsp;&nbsp;
+  <td bgcolor="DDDDDD"><font face="verdana"><b>Donnie Tognazzini&nbsp;&nbsp;
+  <td bgcolor="DDDDDD"><font face="Courier New">dirt@cs.ucsb.edu&nbsp;&nbsp;
+ </tr>
+ <tr>
+  <td><font face="verdana" color="555555">"fiiiffffth"&nbsp;&nbsp;
+  <td><font face="verdana"><b>Qian Su&nbsp;&nbsp;
+  <td><font face="Courier New">suqian@cs.ucsb.edu&nbsp;&nbsp;
+ </tr>
+ <tr>
+  <td><font face="verdana" color="555555">"redvader"&nbsp;&nbsp;
+  <td><font face="verdana"><b>Christos Psaroudis&nbsp;&nbsp;
+  <td><font face="Courier New">christos@cs.ucsb.edu&nbsp;&nbsp;
+ </tr>
+ <tr>
+  <td><font face="verdana" color="555555">"mstud"&nbsp;&nbsp;
+  <td><font face="verdana"><b>Anand Meka&nbsp;&nbsp;
+  <td><font face="Courier New">meka@cs.ucsb.edu&nbsp;&nbsp;
+ </tr>
+</table>
+</ul>
+
+<h3><font color="darkgreen" face="verdana">Mission</font></h3>
+<p>Detect non-spoofed machines on remote networks and gather machine information on each machine detected. Research methods on reducing detection of scans. Complete mission in a timely matter in order to give list of non-spoofed IP addresses to the rest of the team.</p>
+
+<p><u>General responsibilities for every member:</u>
+ <ul>
+    <li>Research methods of detecting remote machines.</li>
+    <li>Research attack methods to avoid detection.</li>
+    <li>Research various virtual machines to be used in protection.</li>
+    <li>Research methods to fool common virtual machines.</li>
+    <li>Research existing packages.</li>
+    <li>Develop scripts to aid in mission.</li>
+ </ul>
+</p>
+
+<p><u>Extra Member Responsibilities:</u>
+ <ul>
+    <li>gwbush - Organize group meetings. Research FTP Bounce. Research fragmentation.</li>
+    <li>fiiiffffth - Research packages to write custom packets.</li>
+    <li>Redvader - Research OS fingerprinting. Research fragmentation.</li>
+    <li>mstud - Research OS fingerprinting. Research fragmentation.</li>
+ </ul>
+    </p>
+
+<h3><font color="darkgreen" face="verdana">Preparation</font></h3>
+<p><u>Planned Activities:</u>
+    <ol>
+    <li>Use passive devices to detect remote host information.</li>
+    <li>Use scripts developed by members to scan remote hosts and detect scans on local hosts.</li>
+    <li>Use publicly available packages in scans on remote networks.</li>
+    <li>Attempt to perform an FTP bounce scan to scan remote hosts with no detection.</li>
+    <li>Employ banner scans as a last resort for otherwise unattainable information.</li>
+    </ol>
+</p>
+<p>
+<u>Software Used:</u>
+<ul>
+    <li>Siphon:  Passively determine host information by fingerprinting IP packets sent by the host.</li>
+    <li>Fragroute: Fragment all egress traffic from our IP address.</li>
+    <li>LaBrea: Virtual machine designed to accept TCP connections on specific IP addresses.</li>
+    <li>Nmap: Used in developed scripts and independently for various scans</li>
+    <li>RING: Actively scans remote host and determines OS information.</li>
+    <li>xProbe2: Actively scans remote host and determines OS information.</li>
+    <li>ippacket: Library used to inject custom IP packets into network.</li>
+    <li>telnet: Used to connect to remote machines for banner scans.</li>
+</ul>
+</p>
+
+<p>
+<u>Additional Software Produced for Exercise:</u>
+<ul>
+    <li>Script written by fiiiffffth:<br>
+        After some research with LaBrea, Qian developed a script with a 3-packet algorithm for determining whether a host is really up, the results of which may also aid in OS identification.
+    </li>
+    <li>Scripts written by Redvader:
+        <ol>
+        <li>"Defender"<br>
+            Detect enemy attacks that tried to map our network.
+            The first script, called "Defender", was maintaining a list of the different IP's of the local sub-network that were scanned by a different sub-network (using ICMP or TCP packets). If the number of IP's scanned was bigger than a MAX-NUM in a certain time period TIME-MAX then, an alert was logged into a Logfile.</li>
+
+        <li>"Attacker"<br>
+            Identifies all hosts in a given sub-network. Sends SYN packets to all 255 IP addresses on a subnetwork in a random order to one or more predefined ports that were pre-determined to have the greatest probability of being open ( 21, 80, and 139. Port 22 was used for hosts with firewalls (ie. alpha machine) ). Each packet sent contained a source IP address of a different non-existent local machine. Replies from remote hosts are counted in a scoring table. Real machines are identified by counting SYN/ACKs resulting from expiring timeouts on the remote machine.</li>
+        </ol>
+    </li>
+</ul>
+</p>
+
+<p>The above scripts were developed with the following observations:
+ <ol>
+    <li>IP sweeping from a range of IP addresses from different ports is not easily detectable by a standard install of Snort.</li>
+    <li>Simple confusers treat requests at different ports uniformly.</li>
+    <li>After receiving a SYN, simple confusers will respond with a single SYN/ACK while a normal host will keep sending SYN/ACKs multiple times until timeout.</li>
+    <li>Sending a SYN to confusers causes a SYN/ACK response. With some confusers sending a subsequent ACK results in another SYN/ACK.</li>
+ </ol>
+</p>
+
+<h3><font color="darkgreen" face="verdana">Execution</font></h3>
+
+<p>
+<u>Setup Phase Activities:</u>
+ <ul>
+    <li>mstud - Installed RING. Prepared attack/detection environment.</li>
+    <li>fiiiffffth - Prepared scripts and attack/detection environment.</li>
+    <li>Redvader - Prepared scripts and attack/detection environment. Installed xProbe2 and Siphon.</li>
+    <li>gwbush - Worked on last minute details in scripts. Prepared attack/detection environment.</li>
+ </ul>
+</p>
+
+<p>
+<u>Attack Phase Activities:</u>
+<ul>
+    <li><b>Redvader</b>:
+        <p>Used developed scripts to perform and detect attacks. During the execution of the exercise, due to incompatibilities of different versions of Perl, the "Attacker" failed to log the results of the first three attacks against the enemy's sub-network. After fixing the problem, the next two attacks were enough to detect all real Hosts in enemy's sub-network. Then, with only one attack, all hosts in the Instructor's sub-network were detected. A second one was performed though, in order to detect any hosts that were using a firewall. The "Defender" worked fine during the whole exercise, and logged attacks that were performed by the enemy. Then, xProbe2 and Nmap, were used against all detected hosts, in order to identify the OS that each one was running.</p></li>
+
+    <li><b>fiiiffffth</b>:
+        <p>We first ran a round of simple nmap ping scanning with TCP SYN packets, but the result is ineffective with a whole range of unfiltered IP addresses.  Then, we tested the behavior of their confusers by sending SYN requests to different ports (some are most likely to be open, some are most unlikely to be open) of a subset of IP addresses to see if the returned messages have uniform responses, i.e. either all SYN/ACK, or all RST.  If the behavior is uniform, then the host is most likely a spoofed one.  However, it turned out that Alpha's confusers can distinguish requests targeted at different ports and respond correspondingly, instead of uniformly, so we tried our plan C which detects up hosts according to observation 3 and 4 above, and it works!</p></li>
+
+    <li><b>gwbush</b>:
+        <p>Probed IP addresses at specified ports using nmap and telnet to further determine remote host information for hosts on both Vigna's and Alpha's network. Performed banner scans on all hosts determined to be up by previous scans. Attempted FTP bounce attack on every running host (with no luck). Performed SSH timeout scans. Monitored tcpdump files.</p></li>
+
+    <li><b>mstud</b>:
+        <p>Used RING to detect host information, although RING's performance suffered from the large amount of outgoing traffic versus the small amount of incoming traffic. Performed SSH timeout scans. Performed banner scans. Monitored tcpdump files.</p></li>
+</ul>
+<p>
+ Here are the results gathered from our scans:
+</p>
+<ul>
+<b>Enemy's Sub-network: (Gateway: 192.168.11.1)</b>
+<BR>
+<ul>
+ <li>Host: 192.168.11.37 was up. It was running Linux RH6.2(Kernel
+2.2.14-5.0)
+ <li>Host: 192.168.11.56 was up. It was running Linux RH6.2(Kernel
+2.2.14-5.0)
+ <li>Host: 192.168.11.81 was up. It was running Windows2000
+ <li>Host: 192.168.11.67 was up. It was running Linux RH7.3(Kernel
+2.4.18-3).
+<ul>
+This was probably the alpha machine because it was using
+a firewall to prevent almost all ports from answering to SYN packets
+except
+from port 22. Some other ports that 
+appeared to be open, were actually fake replies from the enemy's decoy
+program
+</ul>
+</ul>
+<BR>
+<b>Instructor's Sub-network: (Gateway: 192.168.3.1)</b>
+<ul>
+<li>Host: 192.168.3.10 was up. It was running DARWIN/OSX 1.5
+<li>Host: 192.168.3.40 was up. It was running FreeBSD 4.5
+</ul>
+</ul>
+
+</p>
+
+<p>
+<u>Analysis Phase Activities:</u>
+<p>All members constructed IDMEF messages describing carried out attacks. Unfortunately, the attacks that were detected by Redvader's detection script were not reported because of time constraints, however, the IDS team noted the attacks.</p>
+
+<h3><font color="darkgreen" face="verdana">Evaluation</font></h3>
+
+<p>During execution we completed our mission by providing the rest of the Omega team with the IP addresses of the running machines on both of the remote networks. The execution of the attack was somewhat hectic due to last minute changes and decisions, however, we were still able to complete our mission in a timely matter. Having a tool to produce IDMEF output of attacks from dump files or making tools output their activities in IDMEF format would have been extremely useful.</p>
+
+<p>The host information group's responsibilities were clear-cut, yet some members of adjacent groups also executed some host information gathering scans.</p>
+
+<p>The most useful tool used by this group was Nmap. Without Nmap, creating the scripts (which produced the majority of our results) would have been much more difficult.</p>
+
+<p>This exercise was flat-out fun. However, having the exercise earlier in the quarter would allow more time for projects and other exercises near the end of the quarter.</p>
+
+<h3><font color="darkgreen" face="verdana">References</font></h3>
+
+<ul>
+ <li><a href="http://www.hackbusters.net/LaBrea">LaBrea confuser</a></li>
+ <li><a href="http://siphon.datanerds.net/">Siphon project - Passive OS Fingerprinting</a></li>
+ <li><a href="http://www.planb-security.net/wp/ring.html">RING - OS Fingerprinting through RTOs</a></li>
+ <li><a href="http://www.insecure.org/nmap">Nmap scanner</a></li>
+ <li><a href="http://www.sys-security.com/html/projects/X.html">xProbe2 Active OS Fingerprinting</a></li>
+ <li><a href="http://www.freshports.org/security/fragroute">Fragroute</a></li>
+ <li><a href="http://www.linuxboy.org/~sean">ippacket</a></li>
+</ul>
+
+<BR>
+<BR>
+<BR>
+<h2><font color="darkblue" face="helvetica" style="background:#DDDDDD">TCP Port Scan Group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></h2>
+
+<h3><font face="verdana"><b>Goal</b></font></h3>
+Scan open ports in hosts of Alpha Team
+
+<h4><font face="verdana"><b>Members</b></font></h4>
+
+<ul>
+<table>
+ <tr>
+  <td bgcolor="DDDDDD"><font face="verdana" color="555555">"monalisa"&nbsp;&nbsp;
+  <td bgcolor="DDDDDD"><font face="verdana"><b>Vrishali Wagle&nbsp;&nbsp;
+  <td bgcolor="DDDDDD"><font face="Courier New">vrishali@cs.ucsb.edu&nbsp;&nbsp;
+ </tr>
+ <tr>
+  <td><font face="verdana" color="555555">"Tarantula"&nbsp;&nbsp;
+  <td><font face="verdana"><b>Kavitha Srinivasan&nbsp;&nbsp;
+  <td><font face="Courier New">kavitha@cs.ucsb.edu&nbsp;&nbsp;
+ </tr>
+ <tr>
+  <td><font face="verdana" color="555555">"touchmoon"&nbsp;&nbsp;
+  <td><font face="verdana"><b>Hangjin Zhang&nbsp;&nbsp;
+  <td><font face="Courier New">hangjin@cs.ucsb.edu&nbsp;&nbsp;
+ </tr>
+</table>
+
+</ul>
+
+<h3>
+<font color="darkgreen" face="verdana">Mission</font></h3>
+Try to find all the open ports in the Alpha Team's hosts. Meanwhile, we
+try the best to make our scans stealth, reduce the possibility of being
+detected by Alpha Team, or make IDS generates many false postive.
+<h3>
+<font color="darkgreen" face="verdana">Preparation</font></h3>
+We choose nmap as the basic tool. A shell script is written to carry out
+the scan automatically, given a list of target hosts.
+<p>Because most scan mode will be easily detected by snort,&nbsp; we changed
+the normal usage of nmap. To somewhat "cheat" the IDS, such as snort, we
+use nmap with -S option, however, the source addresses used are all "virtual
+IP" -- none of these hosts exist in our subnet. The confuser group developed
+a tool to make these virtual hosts look like alive.
+
+<p>The current version of Snort detects only (single-single) or (single-multiple)types of portscans.
+To take advantage of this, "monalisa" and "Tarantula" wrote programs to scan every port from a different "virtual IP" on our subnet.This will be regarded as different clients setting connections to various ports and not as a portscan.However we come to know about the openports on those machines.
+
+<p>Also, In default snort.conf, the port-limit is set to 20 in 60 seconds. As a effort of reducing
+possibility of being dectected by snort, "touchmoon" scanned only 19 ports for every
+nmap run, i.e, use -p option to limit the port range from &lt;$low>-&lt;$low+18>.
+
+<p>The scanning is performed in two steps. First, we scan the well known ports that
+probably will be open in a default system. Then, we start another scan
+process trying to detect other ports.
+
+<p> In addition, "monalisa" and "Tarantula" had also written a script for UDP portscan on similar lines, and a portscan detector that detects precisely the kind of attack we used (portscan from multiple hosts on a single subnet) but these were not used in the actual exercise.
+
+<h3>
+<font color="darkgreen" face="verdana">Execution</font></h3>
+
+<p>Right at the beginning of the exercise, "monalisa" and "Tarantula" disabled Telnet, finger and anonymous ftp on the omega machine.
+
+<p>During the setup of the exercise, "touchmoon" generated some files which
+was feed to the scan script as arguments. First is the target host list,
+reported by the host-info group. Second is the virtual machine list, copied
+from "yourbases". The scan script starts n(number of target hosts) processes
+to scan&nbsp; hosts, 19 ports each time, using one of the virtual IP as
+source IP. And using another virtual IP for the next 19 ports.
+
+<p>"monalisa" and "Tarantula" first carried out portscan on the well-known ports on hosts reported to be alive on the alpha team subnet as well as the external subnet. Each port was scanned from a differnt virtual machine so this portscan was not detected by Snort. The result was obtained quickly and we got to know that Telnet was open on 3 outof the 4 machines on the alpha team's subnet. We then used Telnet to find the Operating systems running on those machinies to verify the results obtained by the hosts-info team. FTP servers were open too, and we established anonymous FTP connections on each of their host.
+
+<p>The results of the portscans are
+
+<ul>
+
+<li><a href="http://www.cs.ucsb.edu/~vrishali/11.37.html">Initial Scan on 192.168.11.37</a></li>
+<li><a href="http://www.cs.ucsb.edu/~vrishali/11.56.html">Initial Scan on 192.168.11.56</a></li>
+<li><a href="http://www.cs.ucsb.edu/~vrishali/11.67.html">Initial Scan on 192.168.11.67</a></li>
+<li><a href="http://www.cs.ucsb.edu/~vrishali/11.81.html">Initial Scan on 192.168.11.81</a></li>
+<li><a href="http://www.cs.ucsb.edu/~vrishali/11.37-all1500">Scan of first 1500 ports on 192.168.11.37</a></li>
+<li><a href="http://www.cs.ucsb.edu/~vrishali/11.56-all1500">Scan of first 1500 ports on 192.168.11.56</a></li>
+<li><a href="http://www.cs.ucsb.edu/~vrishali/11.67-all1500">Scan of first 1500 ports on 192.168.11.67</a></li>
+<li><a href="http://www.cs.ucsb.edu/~vrishali/11.81-all1500">Scan of first 1500 ports on 192.168.11.81</a></li>
+
+<li><a href="http://www.cs.ucsb.edu/~vrishali/3.10.html">Initial Scan on 192.168.3.10</a></li>
+<li><a href="http://www.cs.ucsb.edu/~vrishali/3.40.html">Initial Scan on 192.168.3.40</a></li>
+</ul>
+
+
+<h3>
+<font color="darkgreen" face="verdana">Evalutation</font></h3>
+The plan of TCP port scan was executed without a hitch. We got a lot of
+open ports on each targert host.
+<p>However, virtual machine mechanism does not seems to be effecient enough in brute
+force scan. We didn't finish scanning the entire port range. Within 2 hours,
+only about 20K ports are scaned for each host.
+<p>In brute force scan, maybe choosing port range randomly helps, but we did not test that.
+
+<h3>
+<font color="darkgreen" face="verdana">Miscellaneous</font></h3></h3>
+<h3>
+<font color="darkgreen" face="verdana">References</font></h3></h3>
+
+<ul>
+<li>
+<a href="http://www.inscure.org/nmap">nmap</a></li>
+
+<li>
+<a href="http://www.snort.org">Snort.org</a></li>
+
+<li>
+<a href="http://www.ietf.org/internet-drafts/draft-ietf-idwg-idmef-xml-07.txt">IDMEF
+DTD</a></li>
+</ul>
+
+
+
+<BR>
+<BR>
+<BR>
+<h2><font color="darkblue" face="helvetica" style="background:#DDDDDD">UDP Port Scan Group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></h2>
+
+    <h3><font face="verdana"><b>Goal</b></font></h3>
+    Creation of a UDP Port Scanner that executes covert scans from the
+Omega Team Subnet, to
+collect information about the UDP ports on Alpha Team Subnet.
+
+<h4><font face="verdana"><b>Members</b></font></h4>
+<ul>
+<table>
+ <tr>
+  <td bgcolor="DDDDDD"><font face="verdana" color="555555">"joe"&nbsp;&nbsp;
+  <td bgcolor="DDDDDD"><font face="verdana"><b>Ashwin Murthy&nbsp;&nbsp;
+  <td bgcolor="DDDDDD"><font face="Courier New">ashwin@cs.ucsb.edu&nbsp;&nbsp;
+ </tr>
+ <tr>
+  <td><font face="verdana" color="555555">"danger"&nbsp;&nbsp;
+  <td><font face="verdana"><b>Perumal Sambasivam&nbsp;&nbsp;
+  <td><font face="Courier New">peru@cs.ucsb.edu&nbsp;&nbsp;
+ </tr>
+</table>
+</ul>
+     </p>
+
+    <h3><font color="darkgreen" face="verdana">Mission</font></h3>
+
+    <p>Setup and deployment of a UDP Scan Tool. The goal of the program
+was to scan a number of important ports on the alpha subnet and evade
+detection by any Intrusion Detection System that might have
+been present on that subnet. Both the team members were involved with all aspects
+of the mission's accomplishment.</p>
+
+    <h3><font color="darkgreen" face="verdana">Preparation</font></h3>
+
+    <p>We basically studied the manner in which snort detects the UDP
+port scans. We observed that if udp scans are performed at a fast rate
+( above a configurable threshold), they get detected by snort. So, our
+basic goal was to overcome this and bypass snort on alpha.</p>
+
+    <p>Initially, we attempted to do the scans using nmap. But, we soon
+found that nmap gets detected easily by snort since it scans ports at a
+very fast rate. Though it has an option where we can specify a delay, this
+delay is per-packet delay rather than a per-host delay, which is what we
+want. Hence usage of this option in nmap results in scanning of a very few ports
+in the given time of 2 hours. </p>
+
+<h4> Strategy for Stealth UDP scans </h4>
+   <p>Our main strategy to avoid detection and at the same time scan
+as
+many ports as possible was to first divide the port range into two: the
+most common ones in [1-1500] (which is all nmap does) and the remaining
+ports which are less important to us. Inorder to achieve this, we
+first had to develop our own UDP port scan tool</p>
+
+    <p><b>The UDP port scan tool</b> developed by us consisted of two
+parts.
+One was the packet sending module, written using libnet, other was the
+packet capture module, written using libpcap. The packet sending
+module basically sent out UDP data to the different ports on the alpha
+subnet. The packet capture module took care of capturing ICMP replies.
+The scanner tool is available
+<a href="http://www.cs.ucsb.edu/~ashwin/code.txt"><b>here</b></a>.
+The capture tool is
+<a href="http://www.cs.ucsb.edu/~ashwin/capture.txt"><b>here</b></a>.</p>
+
+    <p> In order to go undetected, we basically scan multiple hosts on
+alpha in a cyclic manner. That is, instead of scanning all ports in
+one host before scanning another host, we scan one port on one host and
+then another port on another host etc. The source address of each scan was
+spoofed to be different virtual IP addresses in the omega subnet.Also,
+each time the ports to be scanned were randomly selected. The above two
+features enabled us to avoid any kind of noticable scan pattern so that we
+could  go undetected even if the target subnet used an IDS based on these
+patterns rather than timers. </p>
+
+    <h3><font color="darkgreen" face="verdana">Execution</font></h3>
+
+    <p> During the exercise, the <i>host information</i> team provided us
+with the list of IP addresses on alpha subnet. The <i>confuser</i> team
+provided us with the list of virtual ip addresses that they had created.
+We used these virtual addresses as spoofed source ip addresses for our udp
+port scans.</p>
+
+     <p> We first scanned the first 1500 ports (and randomly chosen in
+[1-1500]) in each of the 4 alpha hosts. We then repeated the same for the
+remaining ports in the remaining time. As the packet sender module was
+sending udp packets, the packet capture module was simultaneously
+listening to capture ICMP port unreachable messages. Its final output
+was a list of open ports, in each host. The list of open ports is available
+<a href="http://www.cs.ucsb.edu/~ashwin/openports.txt"><b>here</b></a>.
+</p>
+
+    <h3><font color="darkgreen" face="verdana">Evalutation</font></h3>
+ <p> From the output, we could identify a number of open ports on each of
+alpha's hosts. But there is also a possibility that several udp packets
+might have been lost (due to firewall etc.) Hence our results may show
+slightly more ports as being open than what may be actually true. But we
+believe
+that to large extent, the results obtained are valid.
+
+    <h3><font color="darkgreen" face="verdana">Miscellaneous</font></h3></h3>
+
+<p> By deafult snort detects scans on ports if the packet arrival rate
+is more than 20 ports per minute. We safely assumed that the alpha team would not reduce this
+to less than 10 ports per minute. Beacuse such a low limit is highly
+impractical and would result in a large number of false positives.</p>
+
+    <h3><font color="darkgreen" face="verdana">References</font></h3></h3>
+
+    <ul>
+     <li><a href="http://www.tcpdump.org">tcpdump.org,</a>
+     <li><a href="http://www.packetfactory.net/Projects/Libnet">Libnet</a>
+     <li><a href="http://www.snort.org">Snort IDS</a>
+    </ul>
+
+<BR>
+<BR>
+<BR>
+<h2><font color="darkblue" face="helvetica" style="background:#DDDDDD">Intrusion Detection Group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></h2>
+
+<h3><font face="verdana"><b>Goal</b></font></h3>
+Set up effective IDS to detect and log covert scans from Alpha
+Team.
+<h4><font face="verdana"><b>Members</b></font></h4>
+<ul>
+<table>
+ <tr>
+  <td bgcolor="DDDDDD"><font face="verdana" color="555555">"yourbases"&nbsp;&nbsp;
+  <td bgcolor="DDDDDD"><font face="verdana"><b>William Strathearn&nbsp;&nbsp;
+  <td bgcolor="DDDDDD"><font face="Courier New">bill@cs.ucsb.edu&nbsp;&nbsp;
+ </tr>
+</table>
+</ul>
+    <h3><font color="darkgreen" face="verdana">Mission</font></h3>
+<P>Setup and deployment of one or more Intrusion Detection Systems tuned to
+detect and report on the port scans and fingerprinting traffic sent by the Alpha
+Team. Experiment and modify base installation to better detect random multi-host
+to multi-host port scans.If necessary, offline analysis of tcpdump files
+collected to discover more fine-grained attacks. All attacks discovered were to
+be automatically logged in IDMEF XML format without human intervention. </P>
+    <h3><font color="darkgreen" face="verdana">Preparation</font></h3>
+<P>Many Intrusion detection systems were downloaded installed and tested for
+thier ability to effectivly detect the scans launched during this exercise. The
+IDS's choosen were then installed and the configurations fine tuned to detect
+slow many to many port scans.</P>
+<P>We choose <A href="http://www.snort.org/">Snort</A> version <A
+href="http://www.snort.org/dl/snort-1.9.0.tar.gz">1.9.0</A> as our primary
+online IDS. Snort was primarly written by <A
+href="mailto:roesch@sourcefire.com">Marty Roesch.</A>, but has many other
+contributers and points of inspiration. Excess rules and other unecessary cruft
+were removed to provide for fast effecient setup and operation. New rules were
+found and donloaded from <A href="http://www.whitehat.com/">Whitehat</A>
+<P>For offline analysis of smaller tcpdump files, <A
+href="http://www.cs.ucsb.edu/~rsg/STAT/index.html">NetSTAT</A> was choosen as a
+more effective means of detected attacks requiring statefull analysis. NetSTAT
+was written by the <A href="http://www.cs.ucsb.edu/~rsg/">Reliable Software
+Group</A> at the University of California, Santa Barbara.
+<P>In order to provide IDMEF alert messgaes without hours of manual labor, a
+perlscript was developed that converted the scans reported in the scan.log file
+created by SNORT into full IDMEF XML format alerts. Scan.log files have scans it
+deams similar, tagged with a unique ID. The perl script written goes through
+each scanned port for each unique ID and collects a list of sources of the
+attack, target hosts and target ports. It then builds an attack alert for each
+unique ID. The attack is profiled and described based on the IP flags of the
+packets recieved. A TCP filter is then built so that effective extraction of the
+attack from a large TCP dump file may be peformed. Log converter was written by
+William Strathearn (yourbases) and can be found at: <A
+href="http://www.cs.ucsb.edu/~bill/courses/cmps279/scanLog2IDMEF/">cs.ucsb.edu/bill/courses/cmps279/scanLog2IDMEF/</A>
+
+    <h3><font color="darkgreen" face="verdana">Execution</font></h3>
+<P>During the setup of the exercise, "yourbases" downloaded and installed the
+IDS's choosen, and used pre-modified configuration files for ease of setup. An
+xterm to monitor alerts as they were reported was set up. This allowed the team
+to monitor the activity of Alpha team and report on thier progress as the alerts
+were reported. Omega team could then adjust it's strategy based on the progress
+of the other team.</P>
+<P>During the execution of the exercise, the realtime alerts were examined and
+reported upon to the the other team members.</P>
+<P>After the execution of the exercise, the IDMEF messages were collected and
+put into a detection summary. Offline analysis of the logs were planned, but the
+offline analysis tool (NetSTAT), was installed only on our attack machine which
+was made unavailable after the close of the attack.</P>
+    <h3><font color="darkgreen" face="verdana">Evaluation</font></h3>
+<P>The plan of detection was executed without a hitch. However, more extensive
+testing should have been performed to allow the detection of slower attacks.
+Although the default settings in the IDS were modified, I have a feeling that
+the Alpha team indeed scanned more than 100 ports on each of our live machines.
+Also, Netstat should have been installed on a local cs account so that the
+attack machine was not relied upon after the exercise was over. However, as a
+critisism of the exercise itself, it was not known in advance that the analysis
+would have to be performed on our local accounts.</P>
+<P>Also, more time should have been allocated to write the scan.log converter.
+Despite the fact that it works very well, I did not have time to implement an
+NTP time converter.</P>
+<h3><font color="darkgreen" face="verdana">Miscellaneous</font></h3>
+Some of my responsibilites in this group were light, as a
+significant amount of time was spent organizing, and leading the Omega Team.
+<h3><font color="darkgreen" face="verdana">References</font></h3>
+<UL>
+  <LI><A href="http://www.snort.org/">Snort.org</A>
+  <LI><A
+  href="http://www.ietf.org/internet-drafts/draft-ietf-idwg-idmef-xml-07.txt">IDMEF
+  DTD</A>
+  <LI><A href="http://www.cs.ucsb.edu/~rsg">Reliable Software Group</A>
+</LI></UL>
+
+<BR>
+<BR>
+<BR>
+<h2><font color="darkblue" face="helvetica" style="background:#DDDDDD">Scan Confuser Group - A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></h2>
+<h3><font face="verdana"><b>Goal</b></font></h3>
+The subgroup developed a confuser which acts as a virtual machine. This confuser can
+be used as a defense to counter various scans and attacks. Its basic idea is
+to show -> DOWN hosts as UP and CLOSED ports as OPEN.
+
+
+<h4><font face="verdana"><b>Members</b></font></h4>
+
+<ul>
+<table>
+ <tr>
+  <td bgcolor="DDDDDD"><font face="verdana" color="555555">"topgun"&nbsp;&nbsp;
+  <td bgcolor="DDDDDD"><font face="verdana"><b>Nisheeth Shrivastava&nbsp;&nbsp;
+  <td bgcolor="DDDDDD"><font face="Courier New">nisheeth@cs.ucsb.edu&nbsp;&nbsp;
+ </tr>
+ <tr>
+  <td><font face="verdana" color="555555">"adythemaddy"&nbsp;&nbsp;
+  <td><font face="verdana"><b>Aditya Thyagarajan&nbsp;&nbsp;
+  <td><font face="Courier New">adityat@cs.ucsb.edu&nbsp;&nbsp;
+ </tr>
+</table>
+</ul>
+
+<h3><font color="darkgreen" face="verdana">Mission</font></h3>
+<p>
+As part of defense, our mission was to make the confuser work for as many
+port scans as
+possible. The confuser works for all (except OS finger printing) nmap port scan options.
+It also works for pingscan and telnet. We also had an automated perl script running to 
+check for port scans against the confuser. The confuser replies OPEN only for a subset of 
+common open ports on machines. Eg: port 80. 
+The confuser works for TCP Connect scan, TCP Syn Scan, TCP FIN, Null and XMas Scans, UDP scan,
+Ack Scan, RPC Scan and Ping scans. We also implemented the TCP Ping Scan (-PT option) where Ack
+packets are spewed throughout the network to attack target hosts and monitor their responses.
+The confuser also helped TCP/UDP attack teams by providing them with arp-replies for their spoofed
+attacks.
+</p>
+
+<h3><font color="darkgreen" face="verdana">Preparation</font></h3>
+<p>We planned on writing a complete confuser which would work for all/most TCP and UDP port
+scans. We referred to some material on the internet. Also, we had to install libnet and 
+libpcap libraries on where we ran the confuser. We had a automated perl scrip to test the
+confuser against various scans to make things faster and easier.  
+</p>
+
+<h3><font color="darkgreen" face="verdana">Execution</font></h3>
+<p>
+The confuser was running on 192.168.22.78 (MAC addr: 0:60:8:11:cb:d4)
+From the log file, we can see that the alpha team scanned across the
+potential hosts in our subnet:
+</p>
+<pre>
+16:17:31.266818 arp who-has 192.168.22.2 tell 192.168.22.1
+16:17:31.266880 arp who-has 192.168.22.3 tell 192.168.22.1
+16:17:31.266949 arp who-has 192.168.22.4 tell 192.168.22.1
+16:17:31.267015 arp who-has 192.168.22.5 tell 192.168.22.1
+16:17:31.267087 arp who-has 192.168.22.6 tell 192.168.22.1
+16:17:31.267160 arp who-has 192.168.22.7 tell 192.168.22.1
+16:17:31.267225 arp who-has 192.168.22.8 tell 192.168.22.1
+16:17:31.267297 arp who-has 192.168.22.9 tell 192.168.22.1
+</pre
+<BR>
+The confuser would reply for the addresses it was supposed to protect:
+<BR>
+<pre>
+16:17:31.268363 arp reply 192.168.22.2 is-at 0:60:8:11:cb:d4
+16:17:31.268515 arp reply 192.168.22.3 is-at 0:60:8:11:cb:d4
+16:17:31.268602 arp reply 192.168.22.4 is-at 0:60:8:11:cb:d4
+16:17:31.268726 arp reply 192.168.22.5 is-at 0:60:8:11:cb:d4
+16:17:31.268820 arp reply 192.168.22.6 is-at 0:60:8:11:cb:d4
+16:17:31.268944 arp reply 192.168.22.7 is-at 0:60:8:11:cb:d4
+16:17:31.269128 arp reply 192.168.22.8 is-at 0:60:8:11:cb:d4
+16:17:31.269224 arp reply 192.168.22.9 is-at 0:60:8:11:cb:d4
+</pre>
+<p>
+We can see that the confuser replied with its own MAC address
+(0:60:8:11:cb:d4) whenever an arp request was made to one of the IP
+addresses it was trying to protect.  
+</p>
+
+<h3><font color="darkgreen" face="verdana">Evaluation</font></h3>
+<p>
+We first started by installing libnet and libpcap libraries. Then, we compiled
+the confuser and ran it for a set of IP addresses and a particular set of ports.
+The confuser reported IP addresses open and ports open for machines which were
+actually down. 
+</p>
+
+<h3><font color="darkgreen" face="verdana">References</font></h3>
+<ul>
+ <li><a href="http://www.packetfactory.net/Projects/Libnet/">Packetfactory</a>
+ <li><a href="http://www.tcpdump.org/">Tcpdump.org</a>
+</ul>
+
+
+<BR>
+<BR>
+<BR>
+<h2><font color="darkblue" face="helvetica" style="background:#DDDDDD">Scan Confuser Group - B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></h2>
+
+    <h3><font face="verdana"><b>Goal</b></font></h3>
+    Write a Scan Confuser to deter OS Fingerprinting and Port scans.
+<h4><font face="verdana"><b>Members</b></font></h4>
+<ul>
+<table>
+ <tr>
+  <td bgcolor="DDDDDD"><font face="verdana" color="555555">"blitzkrieg"&nbsp;&nbsp;
+  <td bgcolor="DDDDDD"><font face="verdana"><b>Vineet Thanedar&nbsp;&nbsp;
+  <td bgcolor="DDDDDD"><font face="Courier New">vineet@cs.ucsb.edu&nbsp;&nbsp;
+ </tr>
+ <tr>
+  <td><font face="verdana" color="555555">"sepultura"&nbsp;&nbsp;
+  <td><font face="verdana"><b>Amit Jardosh&nbsp;&nbsp;
+  <td><font face="Courier New">amitj@cs.ucsb.edu&nbsp;&nbsp;
+ </tr>
+ <tr>
+  <td><font face="verdana" color="555555">"protector"&nbsp;&nbsp;
+  <td><font face="verdana"><b>Saranyan Rajagopalan&nbsp;&nbsp;
+  <td><font face="Courier New">saranvr@cs.ucsb.edu&nbsp;&nbsp;
+ </tr>
+
+</table>
+</ul>
+      </p>
+
+    <h3><font color="darkgreen" face="verdana">Mission</font></h3>
+    <p>To write a Scan Confuser that detects scans like NULL scan, FIN scan, XMAS scan & ACK scan and sends replies which would confuse the opposite team without any violation of the exercise rules. The primary motive of the Confuser is to thwart OS fingerprinting attempts done by using the above scans.
+</p>
+
+    <h3><font color="darkgreen" face="verdana">Preparation</font></h3>
+
+    <p>The preparation for the Scan Confuser included the following tasks:
+	<ul>
+		<li>Understand Concerned scans.
+<p>
+Since the primary task of our subgroup was to thwart OS fingerprinting attacks by the Alpha team, we concentrated on those scans which are typically used for OS fingerprinting, e.g. NULL, XMAS, FIN scans. We then studied the packet format and various flags associated with these scans.
+</p>
+		<li>Determine replies to be sent.
+<p> The next step was to determine a suitable reply to these scans so that the opposition team can be confused. For eg. for an XMAS scan, linux responds by dropping the packet on an open port, whereas a windows machine sends a RST. This kind of a reply can be used to determine the OS of the target machine. We designed our ScanConfuser to send RST packets no matter what the target OS is. This gives wrong information to the opposition team. </p>
+		<li>Packet Capturing.
+<p> The basis for the entire work is to capture the packets from the network. We used the 'libpcap' library to do this. Each packet is sniffed from the network and immediately processed for determining any possible scans. <p>
+		<li>Reading IP File.
+<p> The ScanConfuser had an option of reading the IP addresses on the Omega Team subnet for whom replies were to be sent. This file was to be supplied by the team before the execution of the ScanConfuser. <p>
+
+		<li>Packet injecting.
+<p>After determining the reply, the next task is to send it to the attacker. We used the 'libnet' library to inject the reply packets into the network. Appropriate flags were set in the reply packets sent. Also, we trie to optimize the code to make sure that our replies reach earlier than the system's replies.</p>
+
+		<li>Packet Logging.
+<p>The ScanConfuser displayed the logs of the 'attack' packets that have been sent to our subnet and the replies that the ScanConfuser sent as a response</p>
+
+</ul>
+    <h3><font color="darkgreen" face="verdana">Execution</font></h3>
+
+    <p>During the first half of the exercise a ScanConfuser developed by the Omega team was used. The Scan Confuser we wrote was to be used in the latter half of the exercise so that the opposition gets a different set of replies and thus would not be able to infer much from their attacks. However, during the exercise, the entire team decided to use ScanConfuser as the team strategy was working as planned and was giving positive results.
+</p>
+<p>
+
+During the exercise our team was involved with analysis of the dumps and carrying out Banner Grabbing functionalities for a set of ports on a set of IP addresses.
+</p>
+
+    <h3><font color="darkgreen" face="verdana">Evalutation</font></h3>
+<p>
+	We have tested our ScanConfuser against all the intended scans and the ScanConfuser sent replies. We used the NMAP tool to generate scans with different options.
+</p>
+    <h3><font color="darkgreen" face="verdana">Miscellaneous</font></h3></h3>
+<p>
+Each member of the group contributed equally. We divided work amongst ourselves and finally integrated the individual programs. The tool that has been developed by our group is <a href="http://www.cs.ucsb.edu/amitj/public_html/ScanConfuserWithFile.c">ScanConfuser</a>
+
+</p>
+    <h3><font color="darkgreen" face="verdana">References</font></h3></h3>
+
+    <ul>
+	<li><a href="http://www.insecure.com/nmap">NMAP</a>
+	<li><a href="http://www.cs.ucsb.edu/~rsg">Reliable Software Group</a>
+    </ul>
+
+
+<BR>
+<BR>
+<BR>
+<h2><font color="darkblue" face="helvetica" style="background:#DDDDDD">TCPDump Analysis Group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></h2>
+
+    <h3><font face="verdana"><b>Goal</b></font></h3>
+    Write Scripts to generate segments of tcpdump files online.
+
+<h4><font face="verdana"><b>Members</b></font></h4>
+<ul>
+<table>
+ <tr>
+  <td bgcolor="DDDDDD"><font face="verdana" color="555555">"blitzkrieg"&nbsp;&nbsp;
+  <td bgcolor="DDDDDD"><font face="verdana"><b>Vineet Thanedar&nbsp;&nbsp;
+  <td bgcolor="DDDDDD"><font face="Courier New">vineet@cs.ucsb.edu&nbsp;&nbsp;
+ </tr>
+ <tr>
+  <td><font face="verdana" color="555555">"sepultura"&nbsp;&nbsp;
+  <td><font face="verdana"><b>Amit Jardosh&nbsp;&nbsp;
+  <td><font face="Courier New">amitj@cs.ucsb.edu&nbsp;&nbsp;
+ </tr>
+ <tr>
+  <td><font face="verdana" color="555555">"protector"&nbsp;&nbsp;
+  <td><font face="verdana"><b>Saranyan Rajagopalan&nbsp;&nbsp;
+  <td><font face="Courier New">saranvr@cs.ucsb.edu&nbsp;&nbsp;
+ </tr>
+
+</table>
+</ul>
+
+      </p>
+
+    <h3><font color="darkgreen" face="verdana">Mission</font></h3>
+    <p>To generate a Script that would take a specified number of packets in a dumpfile during the exercise. The files were then converted to a readable format, so that the subgroups could read the files if they need to.</p>
+
+    <h3><font color="darkgreen" face="verdana">Preparation</font></h3>
+
+    <p>The preparation for the Dump File Generator included the generation of two files that are required to collect dumps.  These dumps were collected with a BPF filter to filter off <code>ssh</code> traffic to decrease the amount of tcpdumps that are created.
+
+    <h3><font color="darkgreen" face="verdana">Execution</font></h3>
+
+    <p>The Dump Generator and Converter Scripts were started when the exercise began. The dumpfiles could then be analyzed by the sub-groups. if required</p>
+
+    <h3><font color="darkgreen" face="verdana">Evalutation</font></h3>
+<p>
+	72 dumpfiles were created during the exercise, and converted to readable format.  A few packets were lost due to shifts between the closing of one file and the opening of the sequential next; but that was a negligible loss.
+</p>
+    <h3><font color="darkgreen" face="verdana">Miscellaneous</font></h3></h3>
+<p>
+The tool that has been developed by our group are <a href="http://www.cs.ucsb.edu/~amitj/dumptracker.c">DumpGenerator</a> and <a href="http://www.cs.ucsb.edu/~amitj/dumpfileconverter.c">DumpConverter</a>
+
+</p>
+    <h3><font color="darkgreen" face="verdana">References</font></h3></h3>
+
+    <ul>
+	<li><a href="http://www.tcpdump.org">TCPDUMP</a>
+    </ul>
+
+</body>
+</html>

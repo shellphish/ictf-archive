@@ -1,0 +1,317 @@
+<!-- Guidelines:
+- Use unique Alert ident tags
+- Use IP addresses as shown in this example for the node associated 
+with 
+  Analyzer, Sources, and Targets
+- You HAVE to use NTP timestamps. If you do not know what they are,
+  check the IDMEF extension in the STAT distribution. There are 
+functions
+  for the creation of NTP timestamps
+- Use the Classification as specified in the example alert
+- The Assessment tag is important, even though it will be of low 
+severity,
+  and of "recon" type 
+- Truth file alerts will have an empty Analyzer tag
+- Truth file alerts will have an empty Assessment tag 
+-->
+<!-- Example of detection alert -->
+<IDMEF-Message version="1.0">
+  <Alert ident="alphaJ01">
+    <Analyzer analyzerid="jayWTcpdump@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1800637.0x0">
+    2002-11-15T15:48:07.870417-08:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.33</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.78</address>
+        </Address>
+      </Node>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>TCP connect() scan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host 192.168.22.33 and dst host 192.168.11.78 and src port 37753</AdditionalData>
+  </Alert>
+
+<Alert ident="alphaJ02">
+    <Analyzer analyzerid="jayWTcpdump@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18011B2.0x0">
+    2002-11-15T16:37:06.416331-08:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.184</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.37</address>
+        </Address>
+      </Node>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>TCP connect() portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host 192.168.22.184 and dst host 192.168.11.37 and src port 41003</AdditionalData>
+  </Alert>
+
+<Alert ident="alphaJ03">
+    <Analyzer analyzerid="jayWTcpdump@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1801481.0x0">
+    2002-11-15T16:49:05.909103-08:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.184</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.81</address>
+        </Address>
+      </Node>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>TCP connect() portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host 192.168.22.184 and dst host 192.168.11.81 and src port 47877</AdditionalData>
+  </Alert>
+
+<Alert ident="alphaJ04">
+    <Analyzer analyzerid="jayWTcpdump@alpha">
+      <Node>  
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node> 
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1801496.0x0">
+    2002-11-15T16:49:26.515934-08:00</CreateTime>
+
+    <Source>
+      <Node>  
+        <Address category="ipv4-addr">
+          <address>192.168.22.184</address>
+        </Address>
+      </Node> 
+    </Source>
+
+    <Target>
+      <Node>  
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node> 
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>TCP connect() portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host 192.168.22.184 and dst host 192.168.11.56 and src port 57655</AdditionalData>
+  </Alert>
+
+<Alert ident="alphaJ05">
+    <Analyzer analyzerid="jayWTcpdump@alpha">
+      <Node>  
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node> 
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1801326.0x0">
+    2002-11-15T16:43:18.615397-08:00</CreateTime>
+
+    <Source>
+      <Node>  
+        <Address category="ipv4-addr">
+          <address>192.168.22.156</address>
+        </Address>
+      </Node> 
+    </Source>
+
+    <Target>
+      <Node>  
+        <Address category="ipv4-addr">
+          <address>192.168.11.37</address>
+        </Address>
+      </Node> 
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>TCP connect() portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host 192.168.22.156 and dst host 192.168.11.37 and src port 48203</AdditionalData>
+  </Alert>
+
+<Alert ident="alphaJ06">
+    <Analyzer analyzerid="jayWTcpdump@alpha">
+      <Node>  
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node> 
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18009C2.0x0">
+    2002-11-15T16:03:14.611344-08:00</CreateTime>
+
+    <Source>
+      <Node>  
+        <Address category="ipv4-addr">
+          <address>192.168.22.137</address>
+        </Address>
+      </Node> 
+    </Source>
+
+    <Target>
+      <Node>  
+        <Address category="ipv4-addr">
+          <address>192.168.11.37</address>
+        </Address>
+      </Node> 
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>TCP connect() portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host 192.168.22.137 and dst host 192.168.11.37 and src port 52960</AdditionalData>
+  </Alert>
+
+<Alert ident="alphaJ07">
+    <Analyzer analyzerid="jayWTcpdump@alpha">
+      <Node>  
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node> 
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1800820.0x0">
+    2002-11-15T15:56:16.086739-08:00</CreateTime>
+
+    <Source>
+      <Node>  
+        <Address category="ipv4-addr">
+          <address>192.168.22.73</address>
+        </Address>
+      </Node> 
+    </Source>
+
+    <Target>
+      <Node>  
+        <Address category="ipv4-addr">
+          <address>192.168.11.37</address>
+        </Address>
+      </Node> 
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>UDP portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host 192.168.22.73 and dst host 192.168.11.37 and udp</AdditionalData>
+  </Alert>
+
+
+</IDMEF-Message>
+
+
+

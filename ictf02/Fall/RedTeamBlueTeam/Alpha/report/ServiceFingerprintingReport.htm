@@ -1,0 +1,129 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en"><html><head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18-17.7.x i686) [Netscape]"></head>
+
+<body>
+<b><u>Team:</u></b>     Alpha
+<p><b><u>Group:</u></b>     Service Fingerprinting
+</p><p><b><u>Jobs:</u></b>      Service FingerPrinting
+</p><p><b><u>Members:</u></b>     Rachit Chawla (email:
+chawla@engr.ucsb.edu, handle: rachitchawla)
+<br>                      
+Ted Huffmire (emaiil: huffmire@cs.ucsb.edu, handle: cessna)
+</p><p><b><u>Mission:</u></b>       The mission
+of the group was to attack the hosts that are found to be alive by the
+IP mapping Group and to target the attack only to those ports that are
+found to be open on those machines.
+</p><p>                     
+The aim of the attack is to gather extra information about the open ports
+and the daemons running on them, such as the version of sshd running on
+port 22, the web server running on port 80, and, if possible, the website
+which it is hosting.
+</p><p>                      
+We were to attack/defend/detect the attacks. We were also to detect the
+IP Frag attack launched against us to scan the ports open on our machines.
+</p><p><b><u>Preparation:</u></b>
+</p><p>We used NMAP to do that. We obtained the version scanning NMAP 
+tool which was developed by Jay (another member of the Alpha team), that
+does version scanning.
+</p><p><b><u> Attack:</u></b>
+</p><p>We were to find out a stealthier way of doing that. We started looking
+at SNORT and NMAP options. We did a few things:
+</p><p>            
+(1) We found that if we distribute our scans over a long period of time,
+they are less detectable. Therefore, we used the --scan_delay option of
+NMAP.
+</p><p>             
+(2) We found that in Snort, the default value of MAX_DEFAULT_PORTS is 20,
+so we did our version scanning by scanning 5 ports per run. We used the
+-p option to specify the ports, and we used only those ports that were
+found to be open by the Port  mapping group.
+</p><p>            
+(3) Since we already know which ports are open and since we only try to
+attack those ports, we used -sT, which is the best option for version scanning
+in terms of traffic/speed.
+</p><p>             
+(4) To make our attack stealthier, we used NMAP's version  scanning
+with the -sV option, which tries to do scanning with as little traffic
+as possible. If we don't find any information, we try -sVV and then -sVVV.
+</p><p>             
+(5) We had written automated scripts/programs that read the open ports
+from a file and performed the stealthier version scan on those ports and
+on each alive machine, storing the results in a file.
+</p><p>               
+(6) We passed the gathered information to the OS FingerPrinting Group,
+if it helps, (in some cases, it does), to get the OS of the target machine.
+</p><p><b><u> Defense/Detection:</u></b>
+</p><p>            
+(1) We modified Snort's default variable for the number of target ports
+by setting it to 5, so that even an attack with few ports in each attack
+run can be detected.
+</p><p>            
+(2) We added a rule in SNORT that generates an alert each time an ICMP
+Fragmentation Time Exceeded is sent back, i.e. considering it as a probable
+attack.
+</p><p>            
+(3) If the other team is using the same version of NMAP that does version
+scanning, their host's IP can be easily caught because the decoy option
+is not supported in NMAP.
+</p><p>             
+(4) There is not much we could do to stop the other team from doing version
+scanning, and most of it can be detected by analysing the tcpdump files.
+</p><p><b><u>Execution:</u></b>
+</p><p>The output of the Version Scan can be seen here. The scan was done on
+the machine 192.168.22.31
+<br>We got the versions of daemons running on port 22 (sshd) as 1.99-OpenSSH_3.4p1
+and that of httpd as Microsoft-IIS/5.0. From this, we can also make a guess,
+which is very much likely to be true, that th targe machine is Windows
+200.
+</p><p>****************************************************************
+<br>Starting nmap V. 3.00+V ( www.insecure.org/nmap/ )
+<br>Interesting ports on  (192.168.22.31):
+<br>Port       State      
+Service            
+Protocol     Version
+<br>22/tcp     open       
+ssh                
+SSH          1.99-OpenSSH_3.4p1
+<br>80/tcp     open       
+http               
+HTTP         Microsoft-IIS/5.0
+<br>1025/tcp   open       
+NFS-or-IIS
+<br>1026/tcp   open       
+LSA-or-nterm
+</p><p>Nmap run completed -- 1 IP address (1 host up) scanned in 17 seconds
+<br>****************************************************************
+<br> 
+</p><p><b><u>Evaluation:</u></b>
+</p><p>               
+(1) We were able to gather information on the hosts and about all the daemons
+running on the open ports. We were also able to gather some OS Fingerprinting
+information from the results.
+</p><p>               
+(2) We were also able to detect portscans on our machines. As we changed
+the MAX_DEFAULT_PORTS to 5 from 20, we detected more port scans.
+</p><p>               
+(3) We tried to be detected as less as possible, i.e. we tried to do it
+stealthily and we tried to generate as less traffic as possible.
+</p><p><b><u>Outputs:</u></b>
+</p><p><a name="portcheck.22.29"></a><a href="http://www.cs.ucsb.edu/%7Ehuffmire/outdir/portcheck.22.29">portcheck.22.29</a>
+<br><a name="portcheck.22.31"></a><a href="http://cs.ucsb.edu/%7Ehuffmire/outdir/portcheck.22.31">portcheck.22.31</a>
+<br><a name="portcheck.22.78"></a><a href="http://cs.ucsb.edu/%7Ehuffmire/outdir/portcheck.22.78">portcheck.22.78</a>
+<br><a name="portcheck.22.93"></a><a href="http://cs.ucsb.edu/%7Ehuffmire/outdir/portcheck.22.93">portcheck.22.93</a>
+<br><a name="portcheck.3.10"></a><a href="http://cs.ucsb.edu/%7Ehuffmire/outdir/portcheck.3.10">portcheck.3.10</a>
+<br><a name="portcheck.3.40"></a><a href="http://cs.ucsb.edu/%7Ehuffmire/outdir/portcheck.3.40">portcheck.3.40</a>
+</p><p><b><u>Miscellaneous:</u></b>
+</p><p>We planned to use NMAP's spoofing options while doing version scanning,
+but the decoy option of nmap+version does not work with the decoy option.
+Furthermore, we thought of doing a run of scans, changing the IP address
+of the machine from which the attack is being launched. However, as we
+usually have very few ports open on a machine, we determined that it won't
+be effective. Moreover, we didn't want any disruption by doing this on
+the only machine over which we have full control.
+</p><p><b><u>References:</u></b>
+</p><p><a name="http://lists.insecure.org/nmap-hackers/2000/Apr-Jun/0080.html"></a><a href="http://lists.insecure.org/nmap-hackers/2000/Apr-Jun/0080.html">http://lists.insecure.org/nmap-hackers/2000/Apr-Jun/0080.html</a>
+<br><a name="http://www.snort.org"></a><a href="http://www.snort.org/">http://www.snort.org</a>
+<br><a name="http://www.ietf.org/rfc/rfc0792.txt?number=792"></a><a href="http://www.ietf.org/rfc/rfc0792.txt?number=792">http://www.ietf.org/rfc/rfc0792.txt?number=792</a>
+<br> 
+</p></body></html>

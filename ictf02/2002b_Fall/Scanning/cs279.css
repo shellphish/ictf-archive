@@ -1,0 +1,14 @@
+BODY {background: white; font-family: courier;}
+TD {font-family: courier; color: #0c4a73; font-size: 12pt;}
+A:link {color: #0c4a73}
+A:visited {color: darkred}
+A:active {color: #0c4a73}
+H1 {text-align: center; color: #0c4a73; font-family: courier; font-size: 16pt;font-weight: 900}
+H2 {text-align: left; color: #0c4a73; font-family: courier; font-size: 16pt;font-weight: 900}
+H3 {text-align: left; color: #0c4a73; font-family: courier; font-size: 14pt;font-weight: 900}
+H4 {text-align: left; color: #0c4a73; font-family: courier; font-size: 12pt;font-weight: 900}
+P {font-family: courier; color: #0c4a73;font-size: 12pt;}
+ul {font-family: courier; color: #0c4a73;font-size: 12pt;}
+ol {font-family: courier; color: #0c4a73;font-size: 12pt;}
+dl {font-family: courier; color: #0c4a73;font-size: 12pt;}
+

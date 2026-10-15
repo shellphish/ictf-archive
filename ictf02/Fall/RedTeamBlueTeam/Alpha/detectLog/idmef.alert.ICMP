@@ -1,0 +1,237 @@
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha427700">
+    <Analyzer analyzerid="jayAndRyanWTcpdump@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime 
+ntpstamp="0xC17FFF78.0x0">2002-11-15T15:19:20.759930-08:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.0</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>139</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>NetBIOS port sweep</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host 192.168.22.187 and port 139</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha562144">
+    <Analyzer analyzerid="jayAndRyanWTcpdump@alpha">
+      <Node>  
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node> 
+    </Analyzer>
+
+    <CreateTime 
+ntpstamp="0xC18001AA.0x0">2002-11-15T15:28:42.948229-08:00</CreateTime>
+
+    <Source>
+      <Node>  
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node> 
+    </Source>
+
+    <Target>
+      <Node>  
+        <Address category="ipv4-addr">
+          <address>192.168.11.0</address>
+        </Address>
+      </Node> 
+
+      <Service>
+        <portlist>139</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>NetBIOS port sweep</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host 192.168.22.187 and port 139</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha427700">
+    <Analyzer analyzerid="snort@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime 
+ntpstamp="0xC180035A.0x0">2002-11-15T15:35:54.594170-08:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.33</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.78</address>
+        </Address>
+      </Node>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host 192.168.22.33 and dst host 192.168.11.78 and port 37750</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha427700">
+    <Analyzer analyzerid="JayAndRyanWTcpdump@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime 
+ntpstamp="0xC17FFF78.0x0">2002-11-15T15:19:20.360008-08:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.116</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.0</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>80</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>HTTP port sweep</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host 192.168.22.116 and port 80</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha427700">
+    <Analyzer analyzerid="jayAndRyanWTcpdump@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime 
+ntpstamp="0xC17FFF78.0x0">2002-11-15T15:19:20.788790-08:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.104</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.247</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>21</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>FTP port sweep</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host 192.168.22.104 and port 21</AdditionalData>
+	<AdditionalData type="string" meaning="extraneous">there is a missing packet when this scan starts...</AdditionalData>
+  </Alert>
+</IDMEF-Message>

@@ -1,0 +1,4 @@
+pwd
+cd suqian
+nmap -O 192.168.70.157
+ssh chuck@192.168.70.6

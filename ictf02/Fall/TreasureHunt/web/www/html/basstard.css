@@ -1,0 +1,14 @@
+BODY {background: white; font-family: helvetica;}
+
+A:link {color: black}
+A:visited {color: darkred}
+A:active {color: red}
+H1 {text-align: left; color: black; font-family: helvetica; font-size: 30pt;font-weight: 900}
+H2 {text-align: left; color: black; font-family: helvetica; font-size: 26pt;font-weight: 900}
+H3 {text-align: left; color: black; font-family: helvetica; font-size: 24pt;font-weight: 900}
+H4 {text-align: left; color: black; font-family: helvetica; font-size: 22pt;font-weight: 900}
+P {font-family: helvetica; color: black;font-size: 20pt;}
+ul {font-family: helvetica; color: black;font-size: 20pt;}
+ol {font-family: helvetica; color: black;font-size: 20pt;}
+dl {font-family: helvetica; color: black;font-size: 20pt;}
+TD {font-family: helvetica; color: black; font-size: 20pt;}

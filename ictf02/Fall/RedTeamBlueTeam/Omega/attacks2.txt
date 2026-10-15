@@ -1,0 +1,38 @@
+Yesterday during the exercise I lost my Ethernet cable (in GSL). 
+Did someone take it by mistake when he removed the hub?
+
+
+It seems that I have made many mistakes in my reported attacks.
+The following are some corrections to omega's truth file for the attacks I performed:
+(I attached a file that contains my corrected attacks)
+
+omega300:
+  time: unknown because of corrupted tcpdump file (omega's first dump file), instead of 2002-11-15T16:16:12:180769.
+  ports: 80, 21, 139 instead of 80, 21, 169
+
+omega301:
+  time: initial time unknown because of the same reason. But the attack was already in progress at 2002-11-15T16:16:12.580733
+  ports: 80, 21, 139 instead of 80, 21, 169
+
+omega302:
+  time: 2002-11-15T16:25:30.541836 instead of 2002-11-15T16:25:05.934066
+  ports: 80, 21, 139 instead of 80, 21, 169
+
+omega303:
+  time: 2002-11-15T16:39:42.145389 instead of 2002-11-15T16:33:49.602562
+  ports: 80, 21, 139 instead of 80, 21, 169
+
+omega304: INVALID, test against our network. The attack was never performed.
+
+omega305: INVALID, test against our network. The attack was never performed.
+
+omega306:
+  time: 2002-11-15T17:11:39.435668 instead of 2002-11-15T16:39:41.053070
+  ports: 22 instead of 80, 21, 169
+
+omega307:
+  time: 2002-11-15T16:53:26.994061 instead of unknown
+  ports: 80, 21, 139 instead of 80, 21, 169
+
+omega308:
+  time 2002-11-15T17:19:28.177737 instead of unknown 

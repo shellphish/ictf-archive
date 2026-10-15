@@ -1,0 +1,40 @@
+cd /var/log/snare
+ls
+ls -lh
+date
+ls /var/log/snare -lh
+date
+cd /var/log/snare
+ls
+ls -lh
+date
+ls -lh
+whoami
+ls
+cd /root
+ls
+id
+ls
+ls
+pwd
+cd /tmp
+ls
+vi code.c 
+lsa
+ls
+vi t1.c
+ls
+cat testing/
+ls -L
+ls -F
+cd testing/
+ls
+cd ..
+cd exploits/
+ls
+cd ..
+ls
+ls
+pico timetracker.c
+ls
+pico timetracker.c
