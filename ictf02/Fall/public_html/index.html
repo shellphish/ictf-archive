@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <meta name="generator" content=
+    "HTML Tidy for Linux/x86 (vers 1st February 2002), see www.w3.org">
+
+    <title>CS 279 - Network Security and Intrusion
+    Detection</title>
+    <meta name="Author" content="Giovanni Vigna">
+    <link href="cs279.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <h1>CS279 - Network Security and Intrusion Detection</h1>
+
+    <h2>News</h2>
+
+    <ul>
+
+      <li>Dec 9: Slides with the Red Team/Blue Team results are out. In
+      addition, the pictures for both the <a
+      href="RedTeamBlueTeam/Pictures">Red Team/Blue Team</a> and the <a
+      href="TreasureHunt/Pictures">Treasure Hunt</a> are on the web site.</li>
+
+      <li>Dec 4: The slides on the Web security lecture are out. I also add
+      the slides on firewalls, for the sake of completeness.</li>
+
+      <li>Dec 4: Apparently the Alpha team won the "least traffic" prize!
+      Congratulations! Now let's see who wins the "most detecting" one...</li>
+
+      <li>The slides up to the "Distributed System" part are now available</li>
+
+      <li>Nov 19: The last "live" exercise will be held Dec 6th (tentatively),
+      Friday from 11am to 7pm. The exercise will be a <a
+      href="ScavengeHunt">scavenge hunt</a> in cyberspace!</li>
+
+      <li>Nov 19: The last homework is out. You can find it <a
+      href="HW5">here</a>.</li>
+
+
+      <li>Nov 15: The first Red Team/Blue Team exercise went great! Congrats
+      to everyone!</li>
+
+      <li>Nov 6: The deadline for HW3 has been moved to Nov 13th.
+      The deadline for HW4 has been moved to Nov 27th.</li>
+
+      <li>Nov 4: Please send an email before Nov 21 to cs279-admin specifying
+      what project you plan to carry out for your final requirement and what
+      is the composition of your group.</li>
+
+      <li>Nov 4: Homeworks 3 and 4 are out! Please note that <a
+      href="HW3/index.html">homework 3</a> is an individual effort (no
+      exceptions!) while <a href="HW4/index.html">homework 4</a> can be done
+      in groups.</li>
+
+      <li>Oct 31: The class of Nov 1st will be held in 
+      the Digital Classroom (CTL) so that we can take advantage
+      of the video recording equipment.</li>
+
+      <li>Oct 30: The deadline to drop the class is Nov 9. This is
+      for ANY student. Grad, undergrad, supergrad, I don't care. If
+      you stay, you'll get a grade, whatever that is.</li>
+
+      <li>Oct 30: Homework 2 was supposed to be an individual
+      effort. For some unspecified reason, it has been widely
+      regarded as a team effort. You have three days (until
+      Saturday at 5pm) to send a message to cs279-admin telling who
+      you developed you assignment with. Please send a message with
+      the subject <tt>CS279: Team Spec: Name1, Name2, ...</tt> If
+      you have developed your code independently from other people,
+      please send a message with the subject <tt>CS279: No
+      Team</tt>. Note that, in that case, if we find that your code
+      is strikingly similar to the code of others we will start an
+      investigation that may result in a cheating charge.</li>
+
+      <li>Oct 30: The Red Team/Blue Team craze started! Check the
+      teams and a draft of the rules <a href=
+      "RedTeamBlueTeam/index.html">here</a>.</li>
+
+      <li>Friday, Nov 1st a make-up class will be held in Phelps
+      1401 from 1 to 3pm.</li>
+
+      <li><a href="HW2">Homework 2</a> is out! It is due October
+      30, before class</li>
+
+      <li>
+        We've been getting many questions about MIME attachments: 
+
+        <ul>
+          <li>Most email clients (Pine, Eudora, Outlook, mh, etc.)
+          can do MIME encoding.</li>
+
+          <li>This tells you how to send stuff as MIME encoded through
+          Pine:
+          http://www.cs.unca.edu/~edmiston/handouts/mime.html</li>
+
+          <li>If you want to know more about MIME, here's RFC 1341:
+          http://www.ietf.org/rfc/rfc1341.txt</li>
+
+          <li>Also, for Assignment 1, the two parts must be sent as
+          MIME attachments to the same email with the specified
+          subject line. Please refer to the <a href=
+          "http://www.cs.ucsb.edu/~vigna/courses/CS279/HW1/index.html">
+          homework web page</a>.</li>
+
+          <li>The second part of Assignment 1 must be encrypted.
+          The first part must be in the clear i.e.
+          unencrypted.</li>
+        </ul>
+      </li>
+
+      <li>Oct 4 Friday, 2-4pm: Make-up class in Phelps 1401</li>
+
+      <li>Oct 2, 4:30pm: <a href="HW1/index.html">Homework 1</a>
+      has been updated! Check out the last version. Each MIME part
+      must be signed separately. No overall signature.</li>
+
+      <li>Oct 2, 3:30pm: <a href="HW1/index.html">Homework 1</a> is
+      out!</li>
+
+      <li>Oct 2, 3:30: Slides for the first two classes are out!
+      Check the links in the <a href="#Topics">Topics</a>
+      section</li>
+    </ul>
+
+    <h2>Abstract</h2>
+
+    <p>Network security has become part of everyday life. Security
+    problems may impact practical aspects of our lives. Even though
+    there is a considerable corpus of knowledge about tools and
+    techniques to protect networks, information about what are the
+    actual vulnerabilities and how they are exploited is not
+    generally available. This situation hampers the effectiveness
+    of security research and practice. Understanding the details of
+    network attacks is a prerequisite for the design and
+    implementation of secure systems.</p>
+
+    <p>This course presents the principal protocols and
+    applications that are used in the Internet today, discussing in
+    detail the related vulnerabilities and how they are exploited.
+    For each vulnerability, possible protection and detection
+    techniques are examined.</p>
+
+    <p>The course mixes a practical character, with a hands-on
+    approach, with a discussion of the current research in the
+    field. Participants will learn how the security of networks can
+    be violated and how such violations can be detected and
+    prevented. The course includes also red-team/blue-team
+    exercises in a protected environment, where the knowledge about
+    attacks and defenses will be validated in the field.</p>
+
+    <p>Ethical issues will also be discussed.</p>
+
+    <h2>Prerequisites</h2>
+
+    <p>The course requires <i>very good</i> programming/development
+    skills (C, C++, Unix), a basic background in operating systems,
+    and some basic knowledge about networks.</p>
+
+    <h2>Instructor</h2>
+
+    <p><b>Giovanni Vigna</b></p>
+
+    <p>Engineering I, Room 2109</p>
+
+    <p>Phone: 893-7565</p>
+
+    <h2>Class hours</h2>
+
+    <p>Mondays and Wednesdays 1-2:50pm, Phelps 1401</p>
+
+    <h2>Office hours</h2>
+
+    <p>Tuesdays 2pm-4pm and by appointment</p>
+
+    <h2>Teaching Assistants</h2>
+
+    <p>Swaminathan Sundaramurthy (<tt>swami@cs.ucsb.edu</tt>)</p>
+
+    <p>Office hours: Mondays and Wednesdays 3:30pm-6:30pm at the
+    MOMENT lab (room 2116, Engineering I, second floor).</p>
+
+    <p>Sunil Soman (<tt>sunils@cs.ucsb.edu</tt>)</p>
+
+    <p>Office hours: Tuesdays and Thursdays 1pm-4pm at the RACE lab
+    - Trailer 935-101C - the first one on the right (next to the
+    bike racks) when you stand outside Phelps 1401.</p>
+
+    <h2>Contacting the Instructor/TAs</h2>
+
+    <p>Every email message sent to either the Instructor or the TAs
+    <u><b>MUST</b></u> have the <tt>subject</tt> prepended by
+    "<tt>CS279:&nbsp;</tt> ". Messages whose subject line does not
+    conform to this format will be discarded.</p>
+
+    <p>Every student must have a CS account and must subscribe to
+    the <tt>cs279-users</tt> mailing list. The mailing list will be
+    used to distribute last-minute information about the class. In
+    addition, the list <tt>cs279-admin</tt> can be used to contact
+    the TAs and the instructors about problems with the testbed
+    network.</p>
+
+    <h2><a id="Topics">Topics</a></h2>
+
+    <ul>
+      <li><a href="01_Introduction">Introduction, history,
+      ethics</a></li>
+
+      <li><a href="02_Cryptography">Crash course on
+      cryptography</a></li>
+
+      <li><a href="03_IntrusionDetection">Intrusion detection
+      techniques</a></li>
+
+      <li><a href="04_STAT">STAT</a></li>
+
+      <li><a href="05_TCPIP">TCP/IP security (spoofing, hijacking,
+      sequence number guessing, denial-of-service attacks, port
+      scanning)</a></li>
+
+      <li><a href="06_Protocols">Application protocols and related vulnerabilities</a></li>
+
+      <li><a href="07_NetworkIntrusionDetection">Network-based intrusion detection</a></li>
+
+
+      <li><a href="RedTeamBlueTeam">Red Team/Blue Team</a> Exercise 1</li>
+
+      <li><a href="08_OperatingSystems">Operating system security (UNIX,
+      Windows NT/2000) and vulnerabilities (buffer overflows, format string
+      vulnerabilities)</a></li>
+
+      <li><a href ="09_HostIntrusionDetection">Host-based intrusion detection</a></li>
+
+      <li><a href ="10_DistributedSystems">Distributed systems security (RPC, NIS, Kerberos)</a></li>
+
+      <li><a href="11_WebSecurity">World Wide Web security</a></li>
+
+      <li><a href="12_InternetSecurity">Firewalls and Internet security</a></li>
+
+      <li><a href="13_Conclusions">Conclusions</a></li>
+
+    </ul>
+
+    <h2>Course Material</h2>
+
+    <p>Several topics covered during the course will be supported
+    by material distributed by the instructor.</p>
+
+    <p>The course will not adopt a text book, but several will be
+    suggested during the class.</p>
+
+    <h2>Course requirements</h2>
+
+    <p>There will be homework assignments. In addition, students
+    will participate in red-team/blue-team exercises, and may opt
+    for a research project. The project will be carried out
+    by groups of three people, or smaller.</p>
+
+    <p>The final grade will be determined according to the
+    following weight:</p>
+
+    <ul>
+      <li>Homework 1:  5%</li>
+      <li>Homework 2: 25%</li>
+      <li>Homework 3: 10%</li>
+      <li>Homework 4: 20%</li>
+      <li>Homework 5: 10%</li>
+      <li>Red Team/Blue Team: 15%</li>
+      <li>Scavenge Hunt: 15%</li>
+      <li>Project: 20%</li>
+    </ul>
+
+    <h2>Assignments</h2>
+
+    <ul>
+      <li><a href="HW1/index.html">Homework 1</a></li>
+
+      <li><a href="HW2/index.html">Homework 2</a></li>
+
+      <li><a href="HW3/index.html">Homework 3</a></li>
+
+      <li><a href="HW4/index.html">Homework 4</a></li>
+
+      <li><a href="HW5/index.html">Homework 5</a></li>
+
+    </ul>
+
+    <hr />
+
+  </body>
+</html>
+

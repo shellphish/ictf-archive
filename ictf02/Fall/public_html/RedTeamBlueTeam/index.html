@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <meta name="generator" content=
+    "HTML Tidy for Linux/x86 (vers 1st February 2002), see www.w3.org">
+
+    <title>CS 279: Network Security and Intrusion Detection - Red
+    Team / Blue Team Exercise 1</title>
+    <meta name="Author" content="Giovanni Vigna">
+    <link href="cs279.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <h1>CS 279: Network Security and Intrusion Detection - Red Team
+    / Blue Team Exercise</h1>
+
+    <p>The class is divided into two teams. The Alpha team is
+    composed of the students whose last name starts with a letter
+    between A and I. The Omega team is compose of students whose
+    last name starts with a letter between J and Z.</p>
+
+    <h2>Alpha Team</h2>
+
+    <ul>
+      <li>Bane,Ryan,_sporky_@yahoo.com,snakebyte</li>
+
+      <li>benjamin,gilad,gilad@cs.ucsb.edu,pointer</li>
+
+      <li>Bhattacharya,Arnab,arnab@cs.ucsb.edu,bidyasagar</li>
+
+      <li>
+      Bhattacharya,Subhra,subhra@umail.ucsb.edu,secrecyisthekey</li>
+
+      <li>Cassell,Bryan,bryanc@cs.ucsb.edu,tacogimp</li>
+
+      <li>Chawla,Rachit,chawla@engr.ucsb.edu,rachitchawla</li>
+
+      <li>Cherian,Alex,alex_c@cs.ucsb.edu,rishimathew</li>
+
+      <li>DiVerdi,Stephen,sdiverdi@cs.ucsb.edu,sdiverdi</li>
+
+      <li>Ebrahimi,Joel,joel@cs.ucsb.edu,Xcifer</li>
+
+      <li>Fan,Qiang,qfan@cs.ucsb.edu,topgear</li>
+
+      <li>Fayram,Dave,dfayram@cs.ucsb.edu,paradox</li>
+
+      <li>Golshan,Golnaz,golnaz@cs.ucsb.edu,boba</li>
+
+      <li>Gong,Wenrui,gong@engr.ucsb.edu,redalert</li>
+
+      <li>Graver,Rasmus,graver@cs.ucsb.edu,norge</li>
+
+      <li>Gulbeden,Aziz,gulbeden@cs.ucsb.edu,aziz</li>
+
+      <li>Han,Jian,jh@cs.ucsb.edu,coolkid</li>
+
+      <li>Hesby,Nina,hesby@cs.ucsb.edu,hacktraq</li>
+
+      <li>Ho,Camden,camdenho@cs.ucsb.edu,cap5ule</li>
+
+      <li>huang,xiuzhen,xiuzhen@cs.ucsb.edu</li>
+
+      <li>Huffmire,Ted,huffmire@cs.ucsb.edu,cessna</li>
+
+      <li>Hughes,Graham,graham@cs.ucsb.edu,goemon</li>
+    </ul>
+
+    <h2>Omega Team</h2>
+
+    <ul>
+      <li>Jardosh,Amit,amitj@cs.ucsb.edu,sepultura</li>
+
+      <li>Kencke,Peter,peter@cs.ucsb.edu,monsoon</li>
+
+      <li>Kwee,Helly,helly@cs.ucsb.edu,mjfrog</li>
+
+      <li>Meka,Anand,meka@cs.ucsb.edu,mstud</li>
+
+      <li>Montgomery,Daniel,dwm@umail.ucsb.edu,danopato</li>
+
+      <li>murthy,ashwin,ashwin@cs.ucsb.edu,joe</li>
+
+      <li>Psaroudis,Christos,christos@cs.ucsb.edu,redvader</li>
+
+      <li>Rajagopalan,Saranyan,saranvr@cs.ucsb.edu,protector</li>
+
+      <li>Sahin,Ozgur,odsahin@cs.ucsb.edu</li>
+
+      <li>Sambasivam,Perumal,peru@cs.ucsb.edu,danger</li>
+
+      <li>Shrivastava,Nisheeth,nisheeth@cs.ucsb.edu,topgun</li>
+
+      <li>Srinivasan,Kavitha,kavitha@cs.ucsb.edu,Tarantula</li>
+
+      <li>Strathearn,William ,bill@cs.ucsb.edu,yourbases</li>
+
+      <li>Su,Qian,suqian@cs.ucsb.edu,fiiiffffth</li>
+
+      <li>Thanedar,Vineet,vineet@cs.ucsb.edu,blitzkrieg</li>
+
+      <li>Thyagarajan,Aditya,adityat@cs.ucsb.edu,adythemaddy</li>
+
+      <li>Tognazzini,Donnie,dirt@cs.ucsb.edu,gwbush</li>
+
+      <li>Tucker,Sean,stucker@cs.ucsb.edu,sman</li>
+
+      <li>Wagle,Vrishali,vrishali@cs.ucsb.edu,monalisa</li>
+
+      <li>Zhang,Hangjin,hangjin@cs.ucsb.edu,touchmoon</li>
+    </ul>
+
+    <h2>Description and rules</h2>
+
+    <p>In this exercise, the goal of each team is to obtain the
+    maximum amount of information about a number of hosts. No
+    attacks that will compromise the hosts can be performed. The
+    goal of this exercise is to focus on scanning and scanning
+    detection.</p>
+
+    <p>Some of the hosts to be scanned will be placed in a
+    subnetwork under the instructor's control. Other hosts will be
+    placed in parts of the testbed that are accessible to one team
+    or the other.</p>
+
+    <p>Each team has the goal of scanning both the instructor hosts
+    and the hosts of the other team. In addition, each team has to
+    detect the attacks against the hosts under their control.</p>
+
+    <p>At the beginning of the exercise, the teams will have two
+    hours of "truce" to prepare their hosts for the exercise
+    (installation of attack/defense software, clock
+    synchronization, etc). The actual attacks will be carried out
+    in the following two hours.</p>
+
+    <p>At the end of the exercise each team has to submit the
+    following information:</p>
+
+    <ol>
+      <li>For each group a short report on the exercise</li>
+
+      <li>A single time-ordered truth file containing IDMEF alerts
+      describing the attacks that have been <i>performed</i>.</li>
+
+      <li>A single time-ordered detection file containing IDMEF
+      alerts that represent the attacks that have been
+      <i>detected</i>. For both the truth file and the detection
+      file the <tt>AdditionalData</tt> tag in the alerts has to
+      contain a tcpdump filter that can be used to extract the
+      packets corresponding to the attack from a dump collected on
+      the network.</li>
+    </ol>
+
+    <p>The leader of the Alpha Team is TBD.</p>
+
+    <p>The leader of the Omega Team is TBD.</p>
+
+    <p>The leaders will coordinate the activities of their teams
+    and will report to the instructor/TAs possible problems.</p>
+
+    <p>The actual exercise will be carried out sometimes in
+    November from 1pm to 5pm. We will reserve part of the CSIL for
+    the exercise.</p>
+
+    <h2>Rules</h2>
+
+    <p>There are several rules that must be followed prior and
+    during the exercise. These rules are subject to change during
+    the next couple of weeks to adjust to the requests and the
+    requirements posed by the two teams.</p>
+
+    <ul>
+      <li>The teams cannot use a priori knowledge about the testbed
+      network.</li>
+
+      <li>The teams cannot disrupt services, bring down hosts, and
+      delete files.</li>
+
+      <li>The teams cannot filter/block network traffic.</li>
+
+      <li>The teams cannot patch vulnerable software.</li>
+
+      <li>The team that uses the largest amount of traffic will be
+      penalized.</li>
+
+      <li>Only the hosts that will be given to you at the beginning
+      of the exercise can be attacked by the teams. Attacking other
+      host will penalize SEVERELY a team.</li>
+    </ul>
+
+    <h2>Evaluation</h2>
+
+    <p>Participation in the Blue Team/Red Team exercise is 20% of
+    the final grade. Note that being able to successfully detect or
+    carry out an attack is not the only important thing. Other
+    aspects are evaluated:</p>
+
+    <ul>
+      <li>Ability to plan in advance both attack and defense</li>
+
+      <li>Ability to deploy protection/detection systems and to
+      prepare automated attack scripts</li>
+
+      <li>Ability to maintain a log of the activities (both attacks
+      and detections). These logs will be gathered by the Team
+      leaders and submitted in a final report.</li>
+
+      <li>Ability to detect attacks reliably.</li>
+    </ul>
+
+    <h2>Exercise Final Report</h2>
+
+    <h3>Format Overview</h3>
+
+    <p>The Team Report for the Red-Blue Exercise MUST contain the
+    following sections in the given order. The report MUST not
+    exceed 6 pages in length.</p>
+
+    <ol>
+      <li>Team/Subgroup</li>
+
+      <li>Mission</li>
+
+      <li>Preparation</li>
+
+      <li>Execution</li>
+
+      <li>Evaluation</li>
+
+      <li>Miscellaneous</li>
+
+      <li>References</li>
+    </ol>
+
+    <p>The report must conform to the structure described in the
+    example report available <a href="report.html">here</a>. Please
+    use HTML. MS Word documents (or equivalent garbage) will be
+    discarded.</p>
+
+    <h3>Content</h3>
+
+    <p>The following descriptions explain what MUST, MAY, or SHOULD
+    be included in each section.</p>
+
+    <p>The Subgroup section MUST include the following things: the
+    group name, a one line description of what the subgroup was
+    supposed to do, the name of the group members, the email
+    addresses of the group members, and the handles of the group
+    members (on the test bed network). The subgroup leader should
+    be clearly marked.</p>
+
+    <p>The Mission section MUST include the following things: a
+    paragraph giving a more detailed description of what the
+    subgroup was supposed to accomplish, a concise list of
+    responsibilities that each subgroup member had in achieving the
+    subgroup's mission.</p>
+
+    <p>The Preparation section MUST include a description of the
+    activities that were planned. In addition, The Preparation
+    section MUST include a list of tools, software, methods,
+    procedures, etc., that were used or independently produced by
+    the subgroup to prepare for the exercise. Each contribution
+    should be described briefly (1-2 sentences) and credit the
+    specific author(s) if developed independently.</p>
+
+    <p>The Execution section MUST include a (course-grained) log of
+    each member's activities,</p>
+
+    <p>The Evaluation section MUST include: an evaluation of how
+    well the subgroup accomplished its mission, an evaluation of
+    how well the subgroup executed the plan of attack, a
+    description of what could have been done better, an evaluation
+    of how well the subgroup interacted with any adjacent
+    subgroups, an evaluation of the tools that were available for
+    performing the subgroup's mission, and SHOULD contain an
+    evaluation of the exercise itself (e.g., suggestions for
+    improving the Red-Blue exercise).</p>
+
+    <p>The Miscellaneous section MAY contain any other information
+    that the subgroup feels is pertinent.</p>
+
+    <p>The References section SHOULD contain a list of sources (eg,
+    URLs, articles, books) that were most helpful in preparing for
+    the Red-Blue exercise.</p>
+
+    <p>Please use Tidy (www.w3.org) to check the correctness of
+    your HTML. Tidy is a useful tool and you should use everytime
+    you write any HTML</p>
+
+    <h3>Due Date</h3>
+
+    <p>The Due Date for the Red-Blue Exercise Reports is TBD.</p>
+  </body>
+</html>
+

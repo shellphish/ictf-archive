@@ -1,0 +1,49 @@
+Amount of traffic for Alpha
+
+* Check if there is traffic other than arp and IP
+
+tcpdump -nn -r t1ens.dump not ip and not arp
+
+result = 0
+
+* Extract the traffic involving subnets other than 192.168.11 and 192.168.22
+
+tcpdump -s 0 -w t1ens_not192.dump -r t1ens.dump not net 192.168.22/24 and not net 192.168.11/24
+
+result = 0
+
+* Extract the arp, icmp, udp, tcp, and other traffic
+
+tcpdump -s 0 -r t1ens.dump -w t1ens_arp.dump arp
+
+(result = 651918)
+
+tcpdump -s 0 -r t1ens.dump -w t1ens_icmp.dump icmp
+
+(result = 1509119)
+
+tcpdump -s 0 -r t1ens.dump -w t1ens_udp.dump udp
+
+(result = 1149803)
+
+tcpdump -s 0 -r t1ens.dump -w t1ens_tcp.dump tcp
+
+(result = 60649963)
+
+tcpdump -s 0 -r t1ens.dump -w t1ens_other.dump not udp and not icmp and not arp and not tcp
+
+(result = 0)
+
+* Analyze ICMP using ethereal
+
+Message types that account for the generated:
+	Address mask request (type 17)
+	Timestamp request (type 13)
+	Ping request (type 8)
+
+
+
+1) All the outgoing session
+tcpdump -nn -r t1ens.dump tcp[13] \| 2 = 2 and src net 192.168.11/24
+
+2) Determine all the incoming UDP traffic from 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+    <title>The Bass Tard Corporation - Home Page</title>
+    <meta name="Author" content="The Web Admin">
+    <link href="basstard.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <img src="basstard_title.png"> 
+
+    <h1>Feedback</h1>
+
+    <p>We do not really care about what you think, but in case you
+    want to support our cause you can leave a message that will be
+    included in our <a
+    href="/cgi-bin/guestbook.pl?guestbook.txt">guestbook</a>.  Note
+    that we perform rigorous censorship of the messages and we will
+    include only comments that are overly positive.</p>
+
+    <form action="/cgi-bin/save_message.pl" method="post">
+      <!-- This form will save the information in a file called LastFirst for later review and publishing -->
+
+      <p>First Name <input type="text" name="first"></p>
+
+      <p>Last Name: <input type="text" name="last"></p>
+
+      <p>Comments: <textarea name="comment" rows="20" cols="80">
+           Your comments here
+      </textarea></p>
+
+      <p><input type="submit" value="Submit Comments"></p>
+    </form>
+  </body>
+</html>
+

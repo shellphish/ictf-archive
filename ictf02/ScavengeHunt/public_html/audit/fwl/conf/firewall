@@ -1,0 +1,77 @@
+#!/bin/bash
+PATH=/sbin:/bin
+
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+# Set default policies
+iptables -P INPUT DROP
+iptables -P OUTPUT ACCEPT
+iptables -P FORWARD DROP
+
+# Flush all chains, delete user defined chains
+iptables -F
+iptables -X
+iptables -Z
+
+##### CHAIN LDROP #####
+# Logs, the drops a packet
+iptables -N LDROP
+iptables -A LDROP -m limit --limit 10/minute --limit-burst 20 -j LOG --log-prefix "Firewall LDROP:"
+iptables -A LDROP -j DROP
+
+
+##### CHAIN INPUT #####
+# Opens loopback interface
+iptables -A INPUT -i lo -j ACCEPT
+
+# Hide Inside ifaces - Avoid confusion
+#iptables -A INPUT -d 192.168.0.0/16 -j DROP
+
+# Open DNS to inside
+iptables -A INPUT -s 192.168.0.0/16 -p udp --dport 53 -j ACCEPT
+
+# Drop and log invalid packets, allow nonsetup and related packets
+iptables -A INPUT -m state --state INVALID -j LDROP
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Allow ping requests
+iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
+
+# Open ssh
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+
+
+##### CHAIN FORWARD #####
+
+# Everything out is OK
+iptables -A FORWARD -o eth0 -j ACCEPT
+
+# Webserver - Alpha
+iptables -A FORWARD -i eth0 -o eth1 -s 128.111.49.0/24 -d 192.168.10.80 -j DROP
+iptables -A FORWARD -i eth0 -o eth1 -d 192.168.10.80 -j ACCEPT
+iptables -A FORWARD -i eth2 -o eth1 -d 192.168.10.80 -j ACCEPT
+iptables -A FORWARD -i eth1 -o eth2 -s 192.168.10.80 -j ACCEPT
+
+# Webserver - Omega
+iptables -A FORWARD -i eth0 -o eth1 -s 128.111.43.0/24 -d 192.168.10.90 -j DROP
+iptables -A FORWARD -i eth0 -o eth1 -d 192.168.10.90 -j ACCEPT
+iptables -A FORWARD -i eth3 -o eth1 -d 192.168.10.90 -j ACCEPT
+iptables -A FORWARD -i eth1 -o eth3 -s 192.168.10.90 -j ACCEPT
+
+# Established in
+iptables -A FORWARD -i eth0 -o eth2 -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A FORWARD -i eth0 -o eth3 -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+
+iptables -A FORWARD -j LDROP
+
+
+##### CHAIN NAT #####
+
+iptables -t nat -A POSTROUTING  -o eth0 -s 192.168.10.80 -j SNAT --to 128.111.48.15
+iptables -t nat -A PREROUTING   -i eth0 -d 128.111.48.15 -j DNAT --to 192.168.10.80
+
+iptables -t nat -A POSTROUTING -o eth0 -s 192.168.10.90 -j SNAT --to 128.111.48.35
+iptables -t nat -A PREROUTING  -i eth0 -d 128.111.48.35 -j DNAT --to 192.168.10.90
+
+iptables -t nat -A POSTROUTING -o eth0 -s 192.168.0.0/16 -j SNAT --to 128.111.48.101

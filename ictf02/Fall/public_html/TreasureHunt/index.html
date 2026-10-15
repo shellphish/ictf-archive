@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <title>CS 279: Network Security and Intrusion Detection - Treasure
+    Hunt</title>
+    <meta name="Author" content="Giovanni Vigna">
+    <link href="cs279.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <h1>CS279: Network Security and Intrusion Detection - Treasure Hunt</h1>
+
+    <h2>Description</h2>
+
+    <p>In this exercise, the Alpha and Omega team will compete in a treasure
+    hunt. The treasure hunt goal is to break into a (simulated, yet realistic)
+    payroll system and perform a money transfer transaction.</p>
+
+    <p>Each team will have to perform a number of tasks (e.g., scan a network
+    or break into a host). Each task must be completed in a limited amount of
+    time (e.g., 30 minutes). The first team that achieves the task gets 5
+    points. If the other team completes the task within the specified time, it
+    gets 3 points. If the time elapses and the team is not able to complete
+    the task, then a cheat-sheet will be provided so that the task can be
+    completed, but no points will be assigned.</p>
+
+    <p>A task is disclosed only after the previous one has been completed by
+    <i>both</i> teams. The teams will have to attack separate hosts/networks
+    and therefore there is no gain in creating obstacles to each other.</p>
+
+    <p>Bonus points may be assigned for particularly clever exploits/solutions
+    to the tasks.</p>
+
+    <p>No detection task will be required. Intrusion detection evasion may
+    grant additional bonus points, though. At the end of the exercise, each
+    team must provide a truth file in IDMEF form. Each attack that is carried
+    out during the treasure hunt should have a description in terms of IDMEF
+    alerts.</p>
+
+    <p>You will have a supervisor (one of the TAs) that will follow your
+    action and may give you advice/suggestions about the correctness and
+    fairness of your approaches.</p>
+
+    <p>The team should organize into subgroups to explore and be
+    proficient in the following tasks:</p>
+
+    <ul>
+
+      <li>Network scanning techniques, in particular stealth ones</li>
+
+      <li>Attacks against MySQL servers, both locally and
+      remotely. Also ability to change data in a MySQL database</li>
+
+      <li>NIS-based and NFS-based attacks</li>
+
+      <li>Buffer overflows (local, remote) and privilege escalation techniques
+      in general</li>
+
+      <li>Password cracking techniques</li>
+
+      <li>Attacks against Apache web servers, CGI applications</li> 
+
+      <li>Vulnerability scanning</li>
+
+    </ul>
+
+    <p>Creating obstacles to the other team is considered cheating.  Spying on
+    the other team is considered cheating. Generating huge amounts of traffic
+    will be penalized.</p>
+
+
+    <h2>Teams</h2>
+
+    <p>Just as a reminder, the Alpha team is composed of the students whose
+    last name starts with a letter between A and I. The Omega team is composed
+    of students whose last name starts with a letter between J and Z.</p>
+    
+    <p>The leader of the Alpha Team is Ryan Bane.</p>
+
+    <p>The leader of the Omega Team is William Strathearn.</p>
+
+    <h3>Alpha Team</h3>
+
+    <ul>
+      <li>Bane,Ryan,_sporky_@yahoo.com,snakebyte</li>
+
+      <li>benjamin,gilad,gilad@cs.ucsb.edu,pointer</li>
+
+      <li>Bhattacharya,Arnab,arnab@cs.ucsb.edu,bidyasagar</li>
+
+      <li>
+      Bhattacharya,Subhra,subhra@umail.ucsb.edu,secrecyisthekey</li>
+
+      <li>Cassell,Bryan,bryanc@cs.ucsb.edu,tacogimp</li>
+
+      <li>Chawla,Rachit,chawla@engr.ucsb.edu,rachitchawla</li>
+
+      <li>Cherian,Alex,alex_c@cs.ucsb.edu,rishimathew</li>
+
+      <li>DiVerdi,Stephen,sdiverdi@cs.ucsb.edu,sdiverdi</li>
+
+      <li>Ebrahimi,Joel,joel@cs.ucsb.edu,Xcifer</li>
+
+      <li>Fan,Qiang,qfan@cs.ucsb.edu,topgear</li>
+
+      <li>Fayram,Dave,dfayram@cs.ucsb.edu,paradox</li>
+
+      <li>Golshan,Golnaz,golnaz@cs.ucsb.edu,boba</li>
+
+      <li>Gong,Wenrui,gong@engr.ucsb.edu,redalert</li>
+
+      <li>Graver,Rasmus,graver@cs.ucsb.edu,norge</li>
+
+      <li>Gulbeden,Aziz,gulbeden@cs.ucsb.edu,aziz</li>
+
+      <li>Han,Jian,jh@cs.ucsb.edu,coolkid</li>
+
+      <li>Hesby,Nina,hesby@cs.ucsb.edu,hacktraq</li>
+
+      <li>Ho,Camden,camdenho@cs.ucsb.edu,cap5ule</li>
+
+      <li>huang,xiuzhen,xiuzhen@cs.ucsb.edu</li>
+
+      <li>Huffmire,Ted,huffmire@cs.ucsb.edu,cessna</li>
+
+      <li>Hughes,Graham,graham@cs.ucsb.edu,goemon</li>
+    </ul>
+
+    <h3>Omega Team</h3>
+
+    <ul>
+      <li>Jardosh,Amit,amitj@cs.ucsb.edu,sepultura</li>
+
+      <li>Kencke,Peter,peter@cs.ucsb.edu,monsoon</li>
+
+      <li>Kwee,Helly,helly@cs.ucsb.edu,mjfrog</li>
+
+      <li>Meka,Anand,meka@cs.ucsb.edu,mstud</li>
+
+      <li>Montgomery,Daniel,dwm@umail.ucsb.edu,danopato</li>
+
+      <li>murthy,ashwin,ashwin@cs.ucsb.edu,joe</li>
+
+      <li>Psaroudis,Christos,christos@cs.ucsb.edu,redvader</li>
+
+      <li>Rajagopalan,Saranyan,saranvr@cs.ucsb.edu,protector</li>
+
+      <li>Sahin,Ozgur,odsahin@cs.ucsb.edu</li>
+
+      <li>Sambasivam,Perumal,peru@cs.ucsb.edu,danger</li>
+
+      <li>Shrivastava,Nisheeth,nisheeth@cs.ucsb.edu,topgun</li>
+
+      <li>Srinivasan,Kavitha,kavitha@cs.ucsb.edu,Tarantula</li>
+
+      <li>Strathearn,William ,bill@cs.ucsb.edu,yourbases</li>
+
+      <li>Su,Qian,suqian@cs.ucsb.edu,fiiiffffth</li>
+
+      <li>Thanedar,Vineet,vineet@cs.ucsb.edu,blitzkrieg</li>
+
+      <li>Thyagarajan,Aditya,adityat@cs.ucsb.edu,adythemaddy</li>
+
+      <li>Tognazzini,Donnie,dirt@cs.ucsb.edu,gwbush</li>
+
+      <li>Tucker,Sean,stucker@cs.ucsb.edu,sman</li>
+
+      <li>Wagle,Vrishali,vrishali@cs.ucsb.edu,monalisa</li>
+
+      <li>Zhang,Hangjin,hangjin@cs.ucsb.edu,touchmoon</li>
+    </ul>
+
+    <h2>Rationale</h2>
+
+    <p>It is important that the rationale for this exercise be made clear.</p>
+
+    <p>The ultimate goal is to perform a multi-step attack that is as
+    realistic as possible. This means that using any domain knowledge or
+    trying to bypass tasks will impact a team's score.</p>
+
+    <p>The setting in which you will have to operate is mostly unknown but
+    will contain standard services, sometimes secured, sometimes
+    unpatched. You may be required to analyze small snippets of code to find
+    vulnerabilities on the fly.</p>
+
+    <p>Tcpdump data, BSM data, Windows event logs, and Snare events will be
+    collected during the treasure hunt. Combined with your truth file this
+    will be an invaluable resource for other researchers in the field of
+    intrusion detection and attack correlation. I'm not overestimating the
+    impact of this exercise: if everything goes well, this will be the first
+    realistic dataset of this kind.</p> 
+
+    <p>Nothing like this has been tried before. I encourage your constructive
+    critiques.</p>
+
+    <hr />
+  </body>
+</html>
+

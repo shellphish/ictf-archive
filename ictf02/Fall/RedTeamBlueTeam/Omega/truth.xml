@@ -1,0 +1,4265 @@
+
+<!-- decoy scan -->
+<IDMEF-Message version="1.0">
+
+  <Alert ident="omega100">
+    <Analyzer>
+    </Analyzer>
+    
+    <CreateTime></CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+        <Address category="ipv4-addr">
+          <address>128.111.49.43</address>
+        </Address>
+        <Address category="ipv4-addr">
+          <address>128.111.49.145</address>
+        </Address>
+        <Address category="ipv4-addr">
+          <address>128.111.43.122</address>
+        </Address>
+        <Address category="ipv4-addr">
+          <address>128.111.43.60</address>
+        </Address>
+        <Address category="ipv4-addr">
+          <address>128.111.43.61</address>
+        </Address>
+        <Address category="ipv4-addr">
+          <address>128.111.43.62</address>
+        </Address>
+        <Address category="ipv4-addr">
+          <address>128.111.43.63</address>
+        </Address>
+        <Address category="ipv4-addr">
+          <address>128.111.49.42</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.1</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+        <Address category="ipv4-addr">
+          <address>128.111.43.32</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>80</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>ip scan</name>
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter"> ( src net 128.111 and dst net 192.168.11 and src port 49920 ) or ( host 192.168.22.78 and port 49920 and sub net 192.168.11 )</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+
+<!-- Banner Scans -->
+<IDMEF-Message version="1.0">
+
+  <Alert ident="omega111">
+    <Analyzer>
+    </Analyzer>
+    
+    <CreateTime></CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.37</address>
+        </Address>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+        <Address category="ipv4-addr">
+          <address>192.168.11.81</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>21, 22, 23, 80</portlist>
+      </Service>
+    </Target>
+
+
+    <Classification origin="vendor-specific">
+      <name>banner search</name>
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter"> "src host 192.168.22.78 and ( dst port 21 or dst port 23 or dst port 25 or dst port 80 or dst port 21 or dst port 22 or dst port 79 ) and ( dst host 192.168.11.37 or dst host 192.168.11.56 or dst host 192.168.11.81 ) "</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<!-- ip scan on thirdparty network -->
+<IDMEF-Message version="1.0">
+
+  <Alert ident="omega101">
+    <Analyzer>
+    </Analyzer>
+    
+    <CreateTime></CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.1</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>80</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>ip scan</name>
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter"> "src host 192.168.22.78 and net 192.168.3"</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega1401">
+    <Analyzer>
+    </Analyzer>
+    <CreateTime ntpstamp="0xbc723b45.0xef449129">2002-11-15T15:32</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.11</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.69</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.85</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.25</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.192</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.155</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>      
+    </Source>
+    
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.11.1</address> 
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>80</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SYN ipsweep</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+	use -PT nmap calls to collect unfiltered initial ip addresses    
+    </AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega1402">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xbc723b45.0xef449129">
+    2002-11-15T16:20</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.93</address>
+        </Address>
+      </Node>      
+    </Source>
+    
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.11.1</address> 
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>55555</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SYN probing</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">source
+    ip 192.168.22.93 from port above 55555 sends SYN packets
+    to port 55555 of a range of unfiltered ip addresses    
+    </AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega1403">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xbc723b45.0xef449129">
+    2000-03-09T10:01:25.93464-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.93</address>
+        </Address>
+      </Node>      
+    </Source>
+    
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.11.1</address> 
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>139</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SYN probing</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    source ip 192.168.22.93 from port above 55555 sends SYN packets
+    to port 139 of a range of unfiltered ip addresses
+    </AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega1404">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xbc723b45.0xef449129">
+    </CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.93</address>
+        </Address>
+      </Node>      
+    </Source>
+    
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.11.1</address> 
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>111</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SYN probing</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    source ip 192.168.22.93 from port above 55555 sends SYN packets
+    to port 111 of a range of unfiltered ip addresses.  joined
+    replies are these SYN requests and identify real up hosts
+    </AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega1405">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xbc723b45.0xef449129">
+    2002-11-15T16:53:01.757593</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>      
+    </Source>
+    
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.3.1</address> 
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>http</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>ACK probing</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    scan the topology of 192.168.3.0/24 by sending ACK packets
+    to all of them.
+    </AdditionalData>
+  </Alert>
+</IDMEF-Message> 
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega200">
+   
+    <CreateTime>2002-11-15T17:29:41.501216</CreateTime>
+     <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.99</address>
+        </Address>
+      </Node>
+        <portlist>80</portlist>
+    </Source>
+     <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.1</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+      <Service>
+        <portlist>ssh</portlist>
+      </Service>
+    </Target>
+    
+    <Classification origin="omega">
+      <name>TCP Syn portscan</name>
+    
+   <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+    
+    <AdditionalData type="string" meaning="tcpdump- r 'src net 192.168.22 and dst host 192.168.11.2 and src port 80 and dst port 22'"</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega300">
+    <Analyzer>
+    </Analyzer>   
+      
+    <CreateTime ntpstamp="0xbc723b45.0xef449129">
+    2000-11-15T16:16:12.180769</CreateTime>
+          
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.64</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.210</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.104</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.164</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.206</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.59</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.65</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.74</address>
+        </Address>
+      </Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.182</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.73</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.160</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.75</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.116</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.112</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.234</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.201</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.11</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.144</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.82</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.63</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.236</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.61</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.123</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.45</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.166</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.150</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.22</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.220</address>
+        </Address>
+      </Node>
+      <Node>
+    </Source>
+        
+    <Target> 
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.11.1</address>  
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>80, 21, 169</portlist>   
+      </Service>  
+    </Target>
+     
+    <Classification origin="vendor-specific">
+      <name>SYN ipsweep</name>
+        
+    <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+        
+    <AdditionalData type="string" meaning="tcpdump-filter">
+        
+    </AdditionalData>
+  </Alert>  
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega301">
+    <Analyzer>
+    </Analyzer>   
+      
+    <CreateTime ntpstamp="0xbc723b45.0xef449129">
+    2002-11-15T16:19:29.007450</CreateTime>
+          
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.64</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.210</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.104</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.164</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.206</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.59</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.65</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.74</address>
+        </Address>
+      </Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.182</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.73</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.160</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.75</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.116</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.112</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.234</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.201</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.11</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.144</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.82</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.63</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.236</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.61</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.123</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.45</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.166</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.150</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.22</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.220</address>
+        </Address>
+      </Node>
+      <Node>
+    </Source>
+        
+    <Target> 
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.11.1</address>  
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>80, 21, 169</portlist>   
+      </Service>  
+     </target>
+    <Classification origin="vendor-specific">
+      <name>SYN ipsweep</name>
+        
+    <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+        
+    <AdditionalData type="string" meaning="tcpdump-filter">
+        
+    </AdditionalData>
+  </Alert>  
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega302">
+    <Analyzer>
+    </Analyzer>   
+      
+    <CreateTime ntpstamp="0xbc723b45.0xef449129">
+    2002-11-15T16:25:05.934066</CreateTime>
+          
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.64</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.210</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.104</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.164</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.206</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.59</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.65</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.74</address>
+        </Address>
+      </Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.182</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.73</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.160</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.75</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.116</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.112</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.234</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.201</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.11</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.144</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.82</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.63</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.236</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.61</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.123</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.45</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.166</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.150</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.22</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.220</address>
+        </Address>
+      </Node>
+      <Node>
+    </Source>
+        
+    <Target> 
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.11.1</address>  
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>80, 21, 169</portlist>   
+      </Service>  
+    </Target>
+
+      
+    <Classification origin="vendor-specific">
+      <name>SYN ipsweep</name>
+        
+    <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+        
+    <AdditionalData type="string" meaning="tcpdump-filter">
+        
+    </AdditionalData>
+  </Alert>  
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega303">
+    <Analyzer>
+    </Analyzer>   
+      
+    <CreateTime ntpstamp="0xbc723b45.0xef449129">
+    2002-11-15T16:33:49.002562</CreateTime>
+          
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.64</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.210</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.104</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.164</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.206</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.59</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.65</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.74</address>
+        </Address>
+      </Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.182</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.73</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.160</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.75</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.116</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.112</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.234</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.201</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.11</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.144</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.82</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.63</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.236</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.61</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.123</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.45</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.166</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.150</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.22</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.220</address>
+        </Address>
+      </Node>
+      <Node>
+    </Source>
+        
+    <Target> 
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.11.1</address>  
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>80, 21, 169</portlist>   
+      </Service>  
+    </Target>
+
+      
+    <Classification origin="vendor-specific">
+      <name>SYN ipsweep</name>
+        
+    <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+        
+    <AdditionalData type="string" meaning="tcpdump-filter">
+        
+    </AdditionalData>
+  </Alert>  
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega304">
+    <Analyzer>
+    </Analyzer>   
+      
+    <CreateTime ntpstamp="0xbc723b45.0xef449129">
+    2002-11-15T16:39:41.053070</CreateTime>
+          
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.64</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.210</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.104</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.164</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.206</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.59</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.65</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.74</address>
+        </Address>
+      </Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.182</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.73</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.160</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.75</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.116</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.112</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.234</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.201</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.11</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.144</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.82</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.63</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.236</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.61</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.123</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.45</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.166</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.150</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.22</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.220</address>
+        </Address>
+      </Node>
+      <Node>
+    </Source>
+        
+    <Target> 
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.11.1</address>  
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>80, 21, 169</portlist>   
+      </Service>  
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SYN ipsweep</name>
+        
+    <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+        
+    <AdditionalData type="string" meaning="tcpdump-filter">
+        
+    </AdditionalData>
+  </Alert>  
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega305">
+    <Analyzer>
+    </Analyzer>   
+      
+    <CreateTime ntpstamp="0xbc723b45.0xef449129">
+    2002-11-15T16:44:21.033747</CreateTime>
+          
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.64</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.210</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.104</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.164</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.206</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.59</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.65</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.74</address>
+        </Address>
+      </Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.182</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.73</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.160</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.75</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.116</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.112</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.234</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.201</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.11</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.144</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.82</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.63</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.236</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.61</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.123</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.45</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.166</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.150</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.22</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.220</address>
+        </Address>
+      </Node>
+      <Node>
+    </Source>
+        
+    <Target> 
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.11.1</address>  
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>80, 21, 169</portlist>   
+      </Service>  
+    </Target>
+      <Service>
+ 
+      
+    <Classification origin="vendor-specific">
+      <name>SYN ipsweep</name>
+        
+    <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+        
+    <AdditionalData type="string" meaning="tcpdump-filter">
+        
+    </AdditionalData>
+  </Alert>  
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega306">
+    <Analyzer>
+    </Analyzer>   
+      
+    <CreateTime ntpstamp="0xbc723b45.0xef449129">
+    2002-11-15T16:56:23.270449</CreateTime>
+          
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.64</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.210</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.104</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.164</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.206</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.59</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.65</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.74</address>
+        </Address>
+      </Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.182</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.73</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.160</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.75</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.116</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.112</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.234</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.201</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.11</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.144</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.82</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.63</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.236</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.61</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.123</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.45</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.166</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.150</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.22</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.220</address>
+        </Address>
+      </Node>
+      <Node>
+    </Source>
+        
+    <Target> 
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.11.1</address>  
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>80, 21, 169</portlist>   
+      </Service>  
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SYN ipsweep</name>
+        
+    <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+        
+    <AdditionalData type="string" meaning="tcpdump-filter">
+        
+    </AdditionalData>
+  </Alert>  
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega307">
+    <Analyzer>
+    </Analyzer>   
+      
+    <CreateTime ntpstamp="0xbc723b45.0xef449129">
+    unknown</CreateTime>
+          
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.64</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.210</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.104</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.164</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.206</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.59</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.65</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.74</address>
+        </Address>
+      </Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.182</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.73</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.160</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.75</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.116</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.112</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.234</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.201</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.11</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.144</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.82</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.63</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.236</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.61</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.123</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.45</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.166</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.150</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.22</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.220</address>
+        </Address>
+      </Node>
+      <Node>
+    </Source>
+        
+    <Target> 
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.3.1</address>  
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>80, 21, 169</portlist>   
+      </Service>  
+    </Target>
+    
+    <Classification origin="vendor-specific">
+      <name>SYN ipsweep</name>
+        
+    <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+        
+    <AdditionalData type="string" meaning="tcpdump-filter">
+        
+    </AdditionalData>
+  </Alert>  
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega308">
+    <Analyzer>
+    </Analyzer>   
+      
+    <CreateTime ntpstamp="0xbc723b45.0xef449129">
+    unknown</CreateTime>
+          
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.64</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.210</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.104</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.164</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.107</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.206</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.59</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.65</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.74</address>
+        </Address>
+      </Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.182</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.73</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.160</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.75</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.116</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.112</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.187</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.234</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.201</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.11</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.144</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.82</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.63</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.236</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.61</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.123</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.45</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.166</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.150</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.22</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.220</address>
+        </Address>
+      </Node>
+      <Node>
+    </Source>
+        
+    <Target> 
+      <Node>
+        <Address category="ipv4-addr">
+         <address>192.168.3.1</address>  
+         <netmask>255.255.255.0</netmask>
+      </Node>
+      
+      <Service>
+        <portlist>22</portlist>   
+      </Service>  
+    </Target>
+     
+    <Classification origin="vendor-specific">
+      <name>SYN ipsweep</name>
+        
+    <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+        
+    <AdditionalData type="string" meaning="tcpdump-filter">
+        
+    </AdditionalData>
+  </Alert>  
+</IDMEF-Message>
+ <!-- ATTACKS FROM OMEGA!!! -->
+
+
+<!-- UDP Port Scans carried out by UDP Scan Team of Omega -->
+ 
+<IDMEF-Message version="1.0">
+  <Alert ident="omega12000">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp=".">
+    2002-11-15T16:52:50.596668-08:00</CreateTime>
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.64</address>
+          <address>192.168.22.210</address>
+          <address>192.168.22.104</address>
+          <address>192.168.22.164</address>
+          <address>192.168.22.107</address>
+          <address>192.168.22.206</address>
+          <address>192.168.22.59</address>
+          <address>192.168.22.65</address>
+          <address>192.168.22.74</address>
+          <address>192.168.22.182</address>
+          <address>192.168.22.73</address>
+          <address>192.168.22.160</address>
+          <address>192.168.22.75</address>
+          <address>192.168.22.116</address>
+          <address>192.168.22.112</address>
+          <address>192.168.22.187</address>
+          <address>192.168.22.234</address>
+          <address>192.168.22.201</address>
+          <address>192.168.22.11</address>
+          <address>192.168.22.144</address>
+	  <address>192.168.22.82</address>
+	  <address>192.168.22.63</address>
+	  <address>192.168.22.236</address>
+	  <address>192.168.22.61</address>
+	  <address>192.168.22.123</address>
+	  <address>192.168.22.45</address>
+	  <address>192.168.22.166</address>
+	  <address>192.168.22.150</address>
+	  <address>192.168.22.22</address>
+	  <address>192.168.22.220</address>
+	  <address>192.168.22.251</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.37</address>
+          <address>192.168.11.56</address>
+          <address>192.168.11.81</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>random in range:1-1500</portlist>
+      </Service>
+    </Target>
+
+
+    <Classification origin="vendor-specific">
+      <name>UDP portscan with our software developed using libnet and libpcap</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+	src host 192.168.22.64 and dst host 192.168.11.37 and port 886</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega12001">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp=".">
+    2002-11-15T17:12:49.987012-08:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.64</address>
+          <address>192.168.22.210</address>
+          <address>192.168.22.104</address>
+          <address>192.168.22.164</address>
+          <address>192.168.22.107</address>
+          <address>192.168.22.206</address>
+          <address>192.168.22.59</address>
+          <address>192.168.22.65</address>
+          <address>192.168.22.74</address>
+          <address>192.168.22.182</address>
+          <address>192.168.22.73</address>
+          <address>192.168.22.160</address>
+          <address>192.168.22.75</address>
+          <address>192.168.22.116</address>
+          <address>192.168.22.112</address>
+          <address>192.168.22.187</address>
+          <address>192.168.22.234</address>
+          <address>192.168.22.201</address>
+          <address>192.168.22.11</address>
+          <address>192.168.22.144</address>
+	  <address>192.168.22.82</address>
+	  <address>192.168.22.63</address>
+	  <address>192.168.22.236</address>
+	  <address>192.168.22.61</address>
+	  <address>192.168.22.123</address>
+	  <address>192.168.22.45</address>
+	  <address>192.168.22.166</address>
+	  <address>192.168.22.150</address>
+	  <address>192.168.22.22</address>
+	  <address>192.168.22.220</address>
+	  <address>192.168.22.251</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.37</address>
+          <address>192.168.11.56</address>
+          <address>192.168.11.81</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>random in range:1501-65000</portlist>
+      </Service>
+    </Target>
+
+
+    <Classification origin="vendor-specific">
+
+     <name>UDP portscan with our software developed using libnet and libpcap</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+	src host 192.168.22.206 and dst host 192.168.11.37 and port 60089
+    </AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega12002">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp=".">
+    2002-11-15T17:01:08.753728-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.10</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>random in range:1-1500</portlist>
+      </Service>
+    </Target>
+
+
+    <Classification origin="vendor-specific">
+      <name>UDP portscan using nmap</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+	src host 192.168.22.78 and dst host 192.168.3.10 and port 466
+    </AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega12003">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp=".">
+    2002-11-15T17:01:47.124874-08:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.40</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>random in range:1-1500</portlist>
+      </Service>
+    </Target>
+
+
+    <Classification origin="vendor-specific">
+      <name>UDP portscan using nmap</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+	src host 192.168.22.78 and dst host 192.168.3.40 and port 665
+    </AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega13000">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xbc723b45.0xef449129">
+    2002-11-15T15:51:26.93464-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.200-254</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>13,21,23,7</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>BANNER GRABBING</name>
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData >
+    </AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega13001">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xbc723b45.0xef449129">
+    2002-11-15T16:20:25.93464-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>random in the range 192.168.3.1-254</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>13,21,23,7</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>BANNER GRABBING</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData>
+    </AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="omega13002">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xbc723b45.0xef449129">
+    2002-11-15T16:33:25.93464-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.1-254</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-65535</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>TCP PING</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="10000">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime>2002-11-15T16:47:22.644155-05:00
+    </CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+	<address>192.168.22.1</address>
+	<address>192.168.22.2</address>
+	<address>192.168.22.3</address>
+	<address>192.168.22.4</address>
+	<address>192.168.22.5</address>
+	<address>192.168.22.6</address>
+	<address>192.168.22.7</address>
+	<address>192.168.22.8</address>
+	<address>192.168.22.9</address>
+	<address>192.168.22.10</address>
+	<address>192.168.22.11</address>
+	<address>192.168.22.12</address>
+	<address>192.168.22.13</address>
+	<address>192.168.22.14</address>
+	<address>192.168.22.15</address>
+	<address>192.168.22.17</address>
+	<address>192.168.22.19</address>
+	<address>192.168.22.20</address>
+	<address>192.168.22.21</address>
+	<address>192.168.22.23</address>
+	<address>192.168.22.24</address>
+	<address>192.168.22.25</address>
+	<address>192.168.22.26</address>
+	<address>192.168.22.27</address>
+	<address>192.168.22.28</address>
+	<address>192.168.22.30</address>
+	<address>192.168.22.32</address>
+	<address>192.168.22.33</address>
+	<address>192.168.22.34</address>
+	<address>192.168.22.35</address>
+	<address>192.168.22.36</address>
+	<address>192.168.22.37</address>
+	<address>192.168.22.38</address>
+	<address>192.168.22.39</address>
+	<address>192.168.22.40</address>
+	<address>192.168.22.41</address>
+	<address>192.168.22.42</address>
+	<address>192.168.22.43</address>
+	<address>192.168.22.44</address>
+	<address>192.168.22.46</address>
+	<address>192.168.22.47</address>
+	<address>192.168.22.48</address>
+	<address>192.168.22.49</address>
+	<address>192.168.22.50</address>
+	<address>192.168.22.111</address>
+	<address>192.168.22.134</address>
+	<address>192.168.22.146</address>
+	<address>192.168.22.167</address>
+	<address>192.168.22.178</address>
+	<address>192.168.22.212</address>
+	<address>192.168.22.233</address>
+	<address>192.168.22.245</address>
+	<address>192.168.22.77</address>
+	<address>192.168.22.177</address>
+	<address>192.168.22.192</address>
+	<address>192.168.22.87</address>
+	<address>192.168.22.91</address>
+	<address>192.168.22.223</address>
+	<address>192.168.22.185</address>
+	<address>192.168.22.93</address>
+	<address>192.168.22.202</address>
+	<address>192.168.22.214</address>
+	<address>192.168.22.233</address>
+	<address>192.168.22.118</address>
+	<address>192.168.22.171</address>
+	<address>192.168.22.155</address>
+	<address>192.168.22.145</address>
+	<address>192.168.22.132</address>
+	<address>192.168.22.139</address>
+	<address>192.168.22.149</address>
+
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+        <address>192.168.11.37</address>
+	<address>192.168.11.56</address>
+	<address>192.168.11.67</address>
+	<address>192.168.11.81</address>
+	<address>192.168.3.10</address>
+	<address>192.168.3.40</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>7,13,19,21,22,23,37,53,79,80,	111,113,139,199,512,513,514,624,873,955,957,1024,1026,3128,5987,36332,32782,949,7100,22273,8060,2119,2200,2201,6012,3456,445,1047,1083,1084,1085,1086,6103,3859,3560</portlist>
+      </Service>
+    </Target>
+
+    <Classification>
+      <name>portscan</name>
+
+    <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">(port 7 or 13 or 19 or 21 or 22 or 23 or 37 or 53 or 79 or 80 or 111 or 113 or 139 or 199 or 512 or 				513 or 514 or 624 or 873 or 955 or 957 or 1024 or 1026 or 3128 or 5987 or 36332 or 32782 or 949 or 7100 or 22273 or 8060 or 2119 or 2200 or 2201 or 6012 or 3456 or 445 or 1047 or 1083 or 1084 or 1085 or 1086 or 6103 or 3859 or 3560)
+    </AdditionalData>
+  </Alert>
+
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="10001">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime>2002-11-15T16:53:41.210572-05:00
+    </CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+	<address>192.168.22.1</address>
+	<address>192.168.22.2</address>
+	<address>192.168.22.3</address>
+	<address>192.168.22.4</address>
+	<address>192.168.22.5</address>
+	<address>192.168.22.6</address>
+	<address>192.168.22.7</address>
+	<address>192.168.22.8</address>
+	<address>192.168.22.9</address>
+	<address>192.168.22.10</address>
+	<address>192.168.22.11</address>
+	<address>192.168.22.12</address>
+	<address>192.168.22.13</address>
+	<address>192.168.22.14</address>
+	<address>192.168.22.15</address>
+	<address>192.168.22.17</address>
+	<address>192.168.22.19</address>
+	<address>192.168.22.20</address>
+	<address>192.168.22.21</address>
+	<address>192.168.22.23</address>
+	<address>192.168.22.24</address>
+	<address>192.168.22.25</address>
+	<address>192.168.22.26</address>
+	<address>192.168.22.27</address>
+	<address>192.168.22.28</address>
+	<address>192.168.22.30</address>
+	<address>192.168.22.32</address>
+	<address>192.168.22.33</address>
+	<address>192.168.22.34</address>
+	<address>192.168.22.35</address>
+	<address>192.168.22.36</address>
+	<address>192.168.22.37</address>
+	<address>192.168.22.38</address>
+	<address>192.168.22.39</address>
+	<address>192.168.22.40</address>
+	<address>192.168.22.41</address>
+	<address>192.168.22.42</address>
+	<address>192.168.22.43</address>
+	<address>192.168.22.44</address>
+	<address>192.168.22.46</address>
+	<address>192.168.22.47</address>
+	<address>192.168.22.48</address>
+	<address>192.168.22.49</address>
+	<address>192.168.22.50</address>
+	<address>192.168.22.111</address>
+	<address>192.168.22.134</address>
+	<address>192.168.22.146</address>
+	<address>192.168.22.167</address>
+	<address>192.168.22.178</address>	
+	<address>192.168.22.212</address>
+	<address>192.168.22.233</address>
+	<address>192.168.22.245</address>
+	<address>192.168.22.77</address>
+	<address>192.168.22.177</address>
+	<address>192.168.22.192</address>
+	<address>192.168.22.87</address>
+	<address>192.168.22.91</address>
+	<address>192.168.22.223</address>
+	<address>192.168.22.185</address>
+	<address>192.168.22.93</address>
+	<address>192.168.22.202</address>
+	<address>192.168.22.214</address>
+	<address>192.168.22.233</address>
+	<address>192.168.22.118</address>
+	<address>192.168.22.171</address>
+	<address>192.168.22.155</address>
+	<address>192.168.22.145</address>
+	<address>192.168.22.132</address>
+	<address>192.168.22.139</address>
+	<address>192.168.22.149</address>
+
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.37</address>
+	  <address>192.168.11.56</address>
+	  <address>192.168.11.67</address>
+  	  <address>192.168.11.81</address>
+		
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-1500</portlist>
+      </Service>
+    </Target>
+
+    <Classification>
+      <name>portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">(port 1-1500)</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="10500">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime>
+      2002-11-15T16:53:08.299993
+    </CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+	  <address>192.168.22.251</address>
+	  <address>192.168.22.60</address>
+	  <address>192.168.22.154</address>
+	  <address>192.168.22.247</address>
+	  <address>192.168.22.94</address>
+	  <address>192.168.22.176</address>
+	  <address>192.168.22.194</address>
+	  <address>192.168.22.27</address>
+	  <address>192.168.22.196</address>
+	  <address>192.168.22.108</address>
+	  <address>192.168.22.97</address>
+	  <address>192.168.22.184</address>
+	  <address>192.168.22.226</address>
+	  <address>192.168.22.95</address>
+	  <address>192.168.22.186</address>
+	  <address>192.168.22.44</address>
+	  <address>192.168.22.155</address>
+	  <address>192.168.22.161</address>
+	  <address>192.168.22.185</address>
+	  <address>192.168.22.198</address>
+	  <address>192.168.22.223</address>
+	  <address>192.168.22.124</address>
+	  <address>192.168.22.126</address>
+	  <address>192.168.22.2</address>
+	  <address>192.168.22.25</address>
+	  <address>192.168.22.133</address>
+	  <address>192.168.22.172</address>
+	  <address>192.168.22.199</address>
+	  <address>192.168.22.114</address>
+	  <address>192.168.22.171</address>
+	  <address>192.168.22.38</address>
+	  <address>192.168.22.7</address>
+	  <address>192.168.22.179</address>
+	  <address>192.168.22.163</address>
+	  <address>192.168.22.145</address>
+	  <address>192.168.22.42</address>
+	  <address>192.168.22.237</address>
+	  <address>192.168.22.56</address>
+	  <address>192.168.22.30</address>
+	  <address>192.168.22.195</address>
+	  <address>192.168.22.102</address>
+	  <address>192.168.22.136</address>
+	  <address>192.168.22.98</address>
+	  <address>192.168.22.191</address>
+	  <address>192.168.22.122</address>
+	  <address>192.168.22.53</address>
+	  <address>192.168.22.168</address>
+	  <address>192.168.22.140</address>
+	  <address>192.168.22.240</address>
+	  <address>192.168.22.146</address>
+	  <address>192.168.22.49</address>
+	  <address>192.168.22.246</address>
+	  <address>192.168.22.80</address>
+	  <address>192.168.22.87</address>
+	  <address>192.168.22.92</address>
+	  <address>192.168.22.99</address>
+	  <address>192.168.22.167</address>
+	  <address>192.168.22.91</address>
+	  <address>192.168.22.232</address>
+	  <address>192.168.22.192</address>
+	  <address>192.168.22.141</address>
+	  <address>192.168.22.12</address>
+	  <address>192.168.22.147</address>
+	  <address>192.168.22.10</address>
+	  <address>192.168.22.132</address>
+	  <address>192.168.22.6</address>
+	  <address>192.168.22.19</address>
+	  <address>192.168.22.242</address>
+	  <address>192.168.22.23</address>
+	  <address>192.168.22.79</address>
+	  <address>192.168.22.129</address>
+	  <address>192.168.22.68</address>
+	  <address>192.168.22.111</address>
+	  <address>192.168.22.76</address>
+	  <address>192.168.22.21</address>
+	  <address>192.168.22.165</address>
+	  <address>192.168.22.131</address>
+	  <address>192.168.22.84</address>
+	  <address>192.168.22.162</address>
+	  <address>192.168.22.135</address>
+	  <address>192.168.22.118</address>
+	  <address>192.168.22.69</address>
+	  <address>192.168.22.89</address>
+	  <address>192.168.22.34</address>
+	  <address>192.168.22.26</address>
+	  <address>192.168.22.119</address>
+	  <address>192.168.22.70</address>
+	  <address>192.168.22.142</address>
+	  <address>192.168.22.113</address>
+	  <address>192.168.22.40</address>
+	  <address>192.168.22.169</address>
+	  <address>192.168.22.13</address>
+	  <address>192.168.22.103</address>
+	  <address>192.168.22.238</address>
+	  <address>192.168.22.148</address>
+	  <address>192.168.22.128</address>
+	  <address>192.168.22.252</address>
+	  <address>192.168.22.222</address>
+	  <address>192.168.22.106</address>
+	  <address>192.168.22.17</address>
+	  <address>192.168.22.214</address>
+	  <address>192.168.22.72</address>
+	  <address>192.168.22.77</address>
+	  <address>192.168.22.215</address>
+	  <address>192.168.22.212</address>
+	  <address>192.168.22.20</address>
+	  <address>192.168.22.43</address>
+	  <address>192.168.22.55</address>
+	  <address>192.168.22.110</address>
+	  <address>192.168.22.85</address>
+	  <address>192.168.22.239</address>
+	  <address>192.168.22.229</address>
+	  <address>192.168.22.9</address>
+	  <address>192.168.22.211</address>
+	  <address>192.168.22.47</address>
+	  <address>192.168.22.188</address>
+	  <address>192.168.22.46</address>
+	  <address>192.168.22.249</address>
+	  <address>192.168.22.5</address>
+	  <address>192.168.22.241</address>
+	  <address>192.168.22.16</address>
+	  <address>192.168.22.193</address>
+	  <address>192.168.22.117</address>
+	  <address>192.168.22.125</address>
+	  <address>192.168.22.54</address>
+	  <address>192.168.22.88</address>
+	  <address>192.168.22.0</address>
+	  <address>192.168.22.81</address>
+	  <address>192.168.22.207</address>
+	  <address>192.168.22.58</address>
+	  <address>192.168.22.170</address>
+	  <address>192.168.22.156</address>
+	  <address>192.168.22.152</address>
+	  <address>192.168.22.205</address>
+	  <address>192.168.22.217</address>
+	  <address>192.168.22.149</address>
+	  <address>192.168.22.231</address>
+	  <address>192.168.22.183</address>
+	  <address>192.168.22.181</address>
+	  <address>192.168.22.180</address>
+	  <address>192.168.22.32</address>
+	  <address>192.168.22.245</address>
+	  <address>192.168.22.224</address>
+	  <address>192.168.22.14</address>
+	  <address>192.168.22.197</address>
+	  <address>192.168.22.230</address>
+	  <address>192.168.22.50</address>
+	  <address>192.168.22.221</address>
+	  <address>192.168.22.219</address>
+	  <address>192.168.22.209</address>
+	  <address>192.168.22.208</address>
+	  <address>192.168.22.33</address>
+	  <address>192.168.22.138</address>
+	  <address>192.168.22.143</address>
+	  <address>192.168.22.48</address>
+	  <address>192.168.22.159</address>
+	  <address>192.168.22.151</address>
+	  <address>192.168.22.90</address>
+	  <address>192.168.22.213</address>
+	  <address>192.168.22.66</address>
+	  <address>192.168.22.4</address>
+	  <address>192.168.22.250</address>
+	  <address>192.168.22.190</address>
+	  <address>192.168.22.109</address>
+	  <address>192.168.22.216</address>
+	  <address>192.168.22.173</address>
+	  <address>192.168.22.24</address>
+	  <address>192.168.22.202</address>
+	  <address>192.168.22.35</address>
+	  <address>192.168.22.101</address>
+	  <address>192.168.22.218</address>
+	  <address>192.168.22.62</address>
+	  <address>192.168.22.36</address>
+	  <address>192.168.22.254</address>
+	  <address>192.168.22.39</address>
+	  <address>192.168.22.83</address>
+	  <address>192.168.22.243</address>
+	  <address>192.168.22.203</address>
+	  <address>192.168.22.96</address>
+	  <address>192.168.22.105</address>
+	  <address>192.168.22.225</address>
+	  <address>192.168.22.178</address>
+	  <address>192.168.22.67</address>
+	  <address>192.168.22.189</address>
+	  <address>192.168.22.139</address>
+	  <address>192.168.22.71</address>
+	  <address>192.168.22.253</address>
+	  <address>192.168.22.86</address>
+	  <address>192.168.22.120</address>
+	  <address>192.168.22.37</address>
+	  <address>192.168.22.158</address>
+	  <address>192.168.22.137</address>
+	  <address>192.168.22.130</address>
+	  <address>192.168.22.100</address>
+	  <address>192.168.22.57</address>
+	  <address>192.168.22.235</address>
+	  <address>192.168.22.157</address>
+	  <address>192.168.22.228</address>
+	  <address>192.168.22.115</address>
+	  <address>192.168.22.175</address>
+	  <address>192.168.22.200</address>
+	  <address>192.168.22.233</address>
+	  <address>192.168.22.204</address>
+	  <address>192.168.22.41</address>
+	  <address>192.168.22.121</address>
+	  <address>192.168.22.227</address>
+	  <address>192.168.22.51</address>
+	  <address>192.168.22.127</address>
+	  <address>192.168.22.15</address>
+	  <address>192.168.22.177</address>
+	  <address>192.168.22.28</address>
+	  <address>192.168.22.244</address>
+	  <address>192.168.22.174</address>
+	  <address>192.168.22.18</address>
+	  <address>192.168.22.1</address>
+	  <address>192.168.22.134</address>
+	  <address>192.168.22.153</address>
+	  <address>192.168.22.8</address>
+	  <address>192.168.22.3</address>
+	  <address>192.168.22.52</address>
+	  <address>192.168.22.248</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.37</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-27835</portlist>
+      </Service>
+    </Target>
+
+
+    <Classification origin="vendor-specific">
+      <name>SYN portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="nmap command">
+	  nmap -sS  192.168.11.37 -p<i>-<i+18> -S <virtualip> -e eth0 -PT -p0
+	  virtualip is a random IP chosed from fake IP address list above
+	  After scaning 19 ports, a new fake IP is used to scan the next 19 ports.
+    </AdditionalData>
+  </Alert>
+
+
+
+  
+  <Alert ident="10501">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime>
+      2002-11-15T16:54:17.333739
+    </CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+	  <address>192.168.22.251</address>
+	  <address>192.168.22.60</address>
+	  <address>192.168.22.154</address>
+	  <address>192.168.22.247</address>
+	  <address>192.168.22.94</address>
+	  <address>192.168.22.176</address>
+	  <address>192.168.22.194</address>
+	  <address>192.168.22.27</address>
+	  <address>192.168.22.196</address>
+	  <address>192.168.22.108</address>
+	  <address>192.168.22.97</address>
+	  <address>192.168.22.184</address>
+	  <address>192.168.22.226</address>
+	  <address>192.168.22.95</address>
+	  <address>192.168.22.186</address>
+	  <address>192.168.22.44</address>
+	  <address>192.168.22.155</address>
+	  <address>192.168.22.161</address>
+	  <address>192.168.22.185</address>
+	  <address>192.168.22.198</address>
+	  <address>192.168.22.223</address>
+	  <address>192.168.22.124</address>
+	  <address>192.168.22.126</address>
+	  <address>192.168.22.2</address>
+	  <address>192.168.22.25</address>
+	  <address>192.168.22.133</address>
+	  <address>192.168.22.172</address>
+	  <address>192.168.22.199</address>
+	  <address>192.168.22.114</address>
+	  <address>192.168.22.171</address>
+	  <address>192.168.22.38</address>
+	  <address>192.168.22.7</address>
+	  <address>192.168.22.179</address>
+	  <address>192.168.22.163</address>
+	  <address>192.168.22.145</address>
+	  <address>192.168.22.42</address>
+	  <address>192.168.22.237</address>
+	  <address>192.168.22.56</address>
+	  <address>192.168.22.30</address>
+	  <address>192.168.22.195</address>
+	  <address>192.168.22.102</address>
+	  <address>192.168.22.136</address>
+	  <address>192.168.22.98</address>
+	  <address>192.168.22.191</address>
+	  <address>192.168.22.122</address>
+	  <address>192.168.22.53</address>
+	  <address>192.168.22.168</address>
+	  <address>192.168.22.140</address>
+	  <address>192.168.22.240</address>
+	  <address>192.168.22.146</address>
+	  <address>192.168.22.49</address>
+	  <address>192.168.22.246</address>
+	  <address>192.168.22.80</address>
+	  <address>192.168.22.87</address>
+	  <address>192.168.22.92</address>
+	  <address>192.168.22.99</address>
+	  <address>192.168.22.167</address>
+	  <address>192.168.22.91</address>
+	  <address>192.168.22.232</address>
+	  <address>192.168.22.192</address>
+	  <address>192.168.22.141</address>
+	  <address>192.168.22.12</address>
+	  <address>192.168.22.147</address>
+	  <address>192.168.22.10</address>
+	  <address>192.168.22.132</address>
+	  <address>192.168.22.6</address>
+	  <address>192.168.22.19</address>
+	  <address>192.168.22.242</address>
+	  <address>192.168.22.23</address>
+	  <address>192.168.22.79</address>
+	  <address>192.168.22.129</address>
+	  <address>192.168.22.68</address>
+	  <address>192.168.22.111</address>
+	  <address>192.168.22.76</address>
+	  <address>192.168.22.21</address>
+	  <address>192.168.22.165</address>
+	  <address>192.168.22.131</address>
+	  <address>192.168.22.84</address>
+	  <address>192.168.22.162</address>
+	  <address>192.168.22.135</address>
+	  <address>192.168.22.118</address>
+	  <address>192.168.22.69</address>
+	  <address>192.168.22.89</address>
+	  <address>192.168.22.34</address>
+	  <address>192.168.22.26</address>
+	  <address>192.168.22.119</address>
+	  <address>192.168.22.70</address>
+	  <address>192.168.22.142</address>
+	  <address>192.168.22.113</address>
+	  <address>192.168.22.40</address>
+	  <address>192.168.22.169</address>
+	  <address>192.168.22.13</address>
+	  <address>192.168.22.103</address>
+	  <address>192.168.22.238</address>
+	  <address>192.168.22.148</address>
+	  <address>192.168.22.128</address>
+	  <address>192.168.22.252</address>
+	  <address>192.168.22.222</address>
+	  <address>192.168.22.106</address>
+	  <address>192.168.22.17</address>
+	  <address>192.168.22.214</address>
+	  <address>192.168.22.72</address>
+	  <address>192.168.22.77</address>
+	  <address>192.168.22.215</address>
+	  <address>192.168.22.212</address>
+	  <address>192.168.22.20</address>
+	  <address>192.168.22.43</address>
+	  <address>192.168.22.55</address>
+	  <address>192.168.22.110</address>
+	  <address>192.168.22.85</address>
+	  <address>192.168.22.239</address>
+	  <address>192.168.22.229</address>
+	  <address>192.168.22.9</address>
+	  <address>192.168.22.211</address>
+	  <address>192.168.22.47</address>
+	  <address>192.168.22.188</address>
+	  <address>192.168.22.46</address>
+	  <address>192.168.22.249</address>
+	  <address>192.168.22.5</address>
+	  <address>192.168.22.241</address>
+	  <address>192.168.22.16</address>
+	  <address>192.168.22.193</address>
+	  <address>192.168.22.117</address>
+	  <address>192.168.22.125</address>
+	  <address>192.168.22.54</address>
+	  <address>192.168.22.88</address>
+	  <address>192.168.22.0</address>
+	  <address>192.168.22.81</address>
+	  <address>192.168.22.207</address>
+	  <address>192.168.22.58</address>
+	  <address>192.168.22.170</address>
+	  <address>192.168.22.156</address>
+	  <address>192.168.22.152</address>
+	  <address>192.168.22.205</address>
+	  <address>192.168.22.217</address>
+	  <address>192.168.22.149</address>
+	  <address>192.168.22.231</address>
+	  <address>192.168.22.183</address>
+	  <address>192.168.22.181</address>
+	  <address>192.168.22.180</address>
+	  <address>192.168.22.32</address>
+	  <address>192.168.22.245</address>
+	  <address>192.168.22.224</address>
+	  <address>192.168.22.14</address>
+	  <address>192.168.22.197</address>
+	  <address>192.168.22.230</address>
+	  <address>192.168.22.50</address>
+	  <address>192.168.22.221</address>
+	  <address>192.168.22.219</address>
+	  <address>192.168.22.209</address>
+	  <address>192.168.22.208</address>
+	  <address>192.168.22.33</address>
+	  <address>192.168.22.138</address>
+	  <address>192.168.22.143</address>
+	  <address>192.168.22.48</address>
+	  <address>192.168.22.159</address>
+	  <address>192.168.22.151</address>
+	  <address>192.168.22.90</address>
+	  <address>192.168.22.213</address>
+	  <address>192.168.22.66</address>
+	  <address>192.168.22.4</address>
+	  <address>192.168.22.250</address>
+	  <address>192.168.22.190</address>
+	  <address>192.168.22.109</address>
+	  <address>192.168.22.216</address>
+	  <address>192.168.22.173</address>
+	  <address>192.168.22.24</address>
+	  <address>192.168.22.202</address>
+	  <address>192.168.22.35</address>
+	  <address>192.168.22.101</address>
+	  <address>192.168.22.218</address>
+	  <address>192.168.22.62</address>
+	  <address>192.168.22.36</address>
+	  <address>192.168.22.254</address>
+	  <address>192.168.22.39</address>
+	  <address>192.168.22.83</address>
+	  <address>192.168.22.243</address>
+	  <address>192.168.22.203</address>
+	  <address>192.168.22.96</address>
+	  <address>192.168.22.105</address>
+	  <address>192.168.22.225</address>
+	  <address>192.168.22.178</address>
+	  <address>192.168.22.67</address>
+	  <address>192.168.22.189</address>
+	  <address>192.168.22.139</address>
+	  <address>192.168.22.71</address>
+	  <address>192.168.22.253</address>
+	  <address>192.168.22.86</address>
+	  <address>192.168.22.120</address>
+	  <address>192.168.22.37</address>
+	  <address>192.168.22.158</address>
+	  <address>192.168.22.137</address>
+	  <address>192.168.22.130</address>
+	  <address>192.168.22.100</address>
+	  <address>192.168.22.57</address>
+	  <address>192.168.22.235</address>
+	  <address>192.168.22.157</address>
+	  <address>192.168.22.228</address>
+	  <address>192.168.22.115</address>
+	  <address>192.168.22.175</address>
+	  <address>192.168.22.200</address>
+	  <address>192.168.22.233</address>
+	  <address>192.168.22.204</address>
+	  <address>192.168.22.41</address>
+	  <address>192.168.22.121</address>
+	  <address>192.168.22.227</address>
+	  <address>192.168.22.51</address>
+	  <address>192.168.22.127</address>
+	  <address>192.168.22.15</address>
+	  <address>192.168.22.177</address>
+	  <address>192.168.22.28</address>
+	  <address>192.168.22.244</address>
+	  <address>192.168.22.174</address>
+	  <address>192.168.22.18</address>
+	  <address>192.168.22.1</address>
+	  <address>192.168.22.134</address>
+	  <address>192.168.22.153</address>
+	  <address>192.168.22.8</address>
+	  <address>192.168.22.3</address>
+	  <address>192.168.22.52</address>
+	  <address>192.168.22.248</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-21698</portlist>
+      </Service>
+    </Target>
+
+
+    <Classification origin="vendor-specific">
+      <name>SYN portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="nmap command">
+	  nmap -sS 192.168.11.56 -p<i>-<i+18> -S <virtualip> -e eth0 -PT -p0
+	  virtualip is a random IP chosed from fake IP address list above
+	  After scaning 19 ports, a new fake IP is used to scan the next 19 ports.
+    </AdditionalData>
+  </Alert>
+
+  
+
+  <Alert ident="10502">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime>
+      2002-11-15T16:58:10.022754
+    </CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+	  <address>192.168.22.251</address>
+	  <address>192.168.22.60</address>
+	  <address>192.168.22.154</address>
+	  <address>192.168.22.247</address>
+	  <address>192.168.22.94</address>
+	  <address>192.168.22.176</address>
+	  <address>192.168.22.194</address>
+	  <address>192.168.22.27</address>
+	  <address>192.168.22.196</address>
+	  <address>192.168.22.108</address>
+	  <address>192.168.22.97</address>
+	  <address>192.168.22.184</address>
+	  <address>192.168.22.226</address>
+	  <address>192.168.22.95</address>
+	  <address>192.168.22.186</address>
+	  <address>192.168.22.44</address>
+	  <address>192.168.22.155</address>
+	  <address>192.168.22.161</address>
+	  <address>192.168.22.185</address>
+	  <address>192.168.22.198</address>
+	  <address>192.168.22.223</address>
+	  <address>192.168.22.124</address>
+	  <address>192.168.22.126</address>
+	  <address>192.168.22.2</address>
+	  <address>192.168.22.25</address>
+	  <address>192.168.22.133</address>
+	  <address>192.168.22.172</address>
+	  <address>192.168.22.199</address>
+	  <address>192.168.22.114</address>
+	  <address>192.168.22.171</address>
+	  <address>192.168.22.38</address>
+	  <address>192.168.22.7</address>
+	  <address>192.168.22.179</address>
+	  <address>192.168.22.163</address>
+	  <address>192.168.22.145</address>
+	  <address>192.168.22.42</address>
+	  <address>192.168.22.237</address>
+	  <address>192.168.22.56</address>
+	  <address>192.168.22.30</address>
+	  <address>192.168.22.195</address>
+	  <address>192.168.22.102</address>
+	  <address>192.168.22.136</address>
+	  <address>192.168.22.98</address>
+	  <address>192.168.22.191</address>
+	  <address>192.168.22.122</address>
+	  <address>192.168.22.53</address>
+	  <address>192.168.22.168</address>
+	  <address>192.168.22.140</address>
+	  <address>192.168.22.240</address>
+	  <address>192.168.22.146</address>
+	  <address>192.168.22.49</address>
+	  <address>192.168.22.246</address>
+	  <address>192.168.22.80</address>
+	  <address>192.168.22.87</address>
+	  <address>192.168.22.92</address>
+	  <address>192.168.22.99</address>
+	  <address>192.168.22.167</address>
+	  <address>192.168.22.91</address>
+	  <address>192.168.22.232</address>
+	  <address>192.168.22.192</address>
+	  <address>192.168.22.141</address>
+	  <address>192.168.22.12</address>
+	  <address>192.168.22.147</address>
+	  <address>192.168.22.10</address>
+	  <address>192.168.22.132</address>
+	  <address>192.168.22.6</address>
+	  <address>192.168.22.19</address>
+	  <address>192.168.22.242</address>
+	  <address>192.168.22.23</address>
+	  <address>192.168.22.79</address>
+	  <address>192.168.22.129</address>
+	  <address>192.168.22.68</address>
+	  <address>192.168.22.111</address>
+	  <address>192.168.22.76</address>
+	  <address>192.168.22.21</address>
+	  <address>192.168.22.165</address>
+	  <address>192.168.22.131</address>
+	  <address>192.168.22.84</address>
+	  <address>192.168.22.162</address>
+	  <address>192.168.22.135</address>
+	  <address>192.168.22.118</address>
+	  <address>192.168.22.69</address>
+	  <address>192.168.22.89</address>
+	  <address>192.168.22.34</address>
+	  <address>192.168.22.26</address>
+	  <address>192.168.22.119</address>
+	  <address>192.168.22.70</address>
+	  <address>192.168.22.142</address>
+	  <address>192.168.22.113</address>
+	  <address>192.168.22.40</address>
+	  <address>192.168.22.169</address>
+	  <address>192.168.22.13</address>
+	  <address>192.168.22.103</address>
+	  <address>192.168.22.238</address>
+	  <address>192.168.22.148</address>
+	  <address>192.168.22.128</address>
+	  <address>192.168.22.252</address>
+	  <address>192.168.22.222</address>
+	  <address>192.168.22.106</address>
+	  <address>192.168.22.17</address>
+	  <address>192.168.22.214</address>
+	  <address>192.168.22.72</address>
+	  <address>192.168.22.77</address>
+	  <address>192.168.22.215</address>
+	  <address>192.168.22.212</address>
+	  <address>192.168.22.20</address>
+	  <address>192.168.22.43</address>
+	  <address>192.168.22.55</address>
+	  <address>192.168.22.110</address>
+	  <address>192.168.22.85</address>
+	  <address>192.168.22.239</address>
+	  <address>192.168.22.229</address>
+	  <address>192.168.22.9</address>
+	  <address>192.168.22.211</address>
+	  <address>192.168.22.47</address>
+	  <address>192.168.22.188</address>
+	  <address>192.168.22.46</address>
+	  <address>192.168.22.249</address>
+	  <address>192.168.22.5</address>
+	  <address>192.168.22.241</address>
+	  <address>192.168.22.16</address>
+	  <address>192.168.22.193</address>
+	  <address>192.168.22.117</address>
+	  <address>192.168.22.125</address>
+	  <address>192.168.22.54</address>
+	  <address>192.168.22.88</address>
+	  <address>192.168.22.0</address>
+	  <address>192.168.22.81</address>
+	  <address>192.168.22.207</address>
+	  <address>192.168.22.58</address>
+	  <address>192.168.22.170</address>
+	  <address>192.168.22.156</address>
+	  <address>192.168.22.152</address>
+	  <address>192.168.22.205</address>
+	  <address>192.168.22.217</address>
+	  <address>192.168.22.149</address>
+	  <address>192.168.22.231</address>
+	  <address>192.168.22.183</address>
+	  <address>192.168.22.181</address>
+	  <address>192.168.22.180</address>
+	  <address>192.168.22.32</address>
+	  <address>192.168.22.245</address>
+	  <address>192.168.22.224</address>
+	  <address>192.168.22.14</address>
+	  <address>192.168.22.197</address>
+	  <address>192.168.22.230</address>
+	  <address>192.168.22.50</address>
+	  <address>192.168.22.221</address>
+	  <address>192.168.22.219</address>
+	  <address>192.168.22.209</address>
+	  <address>192.168.22.208</address>
+	  <address>192.168.22.33</address>
+	  <address>192.168.22.138</address>
+	  <address>192.168.22.143</address>
+	  <address>192.168.22.48</address>
+	  <address>192.168.22.159</address>
+	  <address>192.168.22.151</address>
+	  <address>192.168.22.90</address>
+	  <address>192.168.22.213</address>
+	  <address>192.168.22.66</address>
+	  <address>192.168.22.4</address>
+	  <address>192.168.22.250</address>
+	  <address>192.168.22.190</address>
+	  <address>192.168.22.109</address>
+	  <address>192.168.22.216</address>
+	  <address>192.168.22.173</address>
+	  <address>192.168.22.24</address>
+	  <address>192.168.22.202</address>
+	  <address>192.168.22.35</address>
+	  <address>192.168.22.101</address>
+	  <address>192.168.22.218</address>
+	  <address>192.168.22.62</address>
+	  <address>192.168.22.36</address>
+	  <address>192.168.22.254</address>
+	  <address>192.168.22.39</address>
+	  <address>192.168.22.83</address>
+	  <address>192.168.22.243</address>
+	  <address>192.168.22.203</address>
+	  <address>192.168.22.96</address>
+	  <address>192.168.22.105</address>
+	  <address>192.168.22.225</address>
+	  <address>192.168.22.178</address>
+	  <address>192.168.22.67</address>
+	  <address>192.168.22.189</address>
+	  <address>192.168.22.139</address>
+	  <address>192.168.22.71</address>
+	  <address>192.168.22.253</address>
+	  <address>192.168.22.86</address>
+	  <address>192.168.22.120</address>
+	  <address>192.168.22.37</address>
+	  <address>192.168.22.158</address>
+	  <address>192.168.22.137</address>
+	  <address>192.168.22.130</address>
+	  <address>192.168.22.100</address>
+	  <address>192.168.22.57</address>
+	  <address>192.168.22.235</address>
+	  <address>192.168.22.157</address>
+	  <address>192.168.22.228</address>
+	  <address>192.168.22.115</address>
+	  <address>192.168.22.175</address>
+	  <address>192.168.22.200</address>
+	  <address>192.168.22.233</address>
+	  <address>192.168.22.204</address>
+	  <address>192.168.22.41</address>
+	  <address>192.168.22.121</address>
+	  <address>192.168.22.227</address>
+	  <address>192.168.22.51</address>
+	  <address>192.168.22.127</address>
+	  <address>192.168.22.15</address>
+	  <address>192.168.22.177</address>
+	  <address>192.168.22.28</address>
+	  <address>192.168.22.244</address>
+	  <address>192.168.22.174</address>
+	  <address>192.168.22.18</address>
+	  <address>192.168.22.1</address>
+	  <address>192.168.22.134</address>
+	  <address>192.168.22.153</address>
+	  <address>192.168.22.8</address>
+	  <address>192.168.22.3</address>
+	  <address>192.168.22.52</address>
+	  <address>192.168.22.248</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.81</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-22268</portlist>
+      </Service>
+    </Target>
+
+
+    <Classification origin="vendor-specific">
+      <name>SYN portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="nmap command">
+	  nmap -sS 192.168.11.81 -p<i>-<i+18> -S <virtualip> -e eth0 -PT -p0
+	  virtualip is a random IP chosed from fake IP address list above
+	  After scaning 19 ports, a new fake IP is used to scan the next 19 ports.
+    </AdditionalData>
+  </Alert>
+
+
+
+  <Alert ident="10503">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime>
+      2002-11-15T17:24:09.766891
+    </CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+	  <address>192.168.22.251</address>
+	  <address>192.168.22.60</address>
+	  <address>192.168.22.154</address>
+	  <address>192.168.22.247</address>
+	  <address>192.168.22.94</address>
+	  <address>192.168.22.176</address>
+	  <address>192.168.22.194</address>
+	  <address>192.168.22.27</address>
+	  <address>192.168.22.196</address>
+	  <address>192.168.22.108</address>
+	  <address>192.168.22.97</address>
+	  <address>192.168.22.184</address>
+	  <address>192.168.22.226</address>
+	  <address>192.168.22.95</address>
+	  <address>192.168.22.186</address>
+	  <address>192.168.22.44</address>
+	  <address>192.168.22.155</address>
+	  <address>192.168.22.161</address>
+	  <address>192.168.22.185</address>
+	  <address>192.168.22.198</address>
+	  <address>192.168.22.223</address>
+	  <address>192.168.22.124</address>
+	  <address>192.168.22.126</address>
+	  <address>192.168.22.2</address>
+	  <address>192.168.22.25</address>
+	  <address>192.168.22.133</address>
+	  <address>192.168.22.172</address>
+	  <address>192.168.22.199</address>
+	  <address>192.168.22.114</address>
+	  <address>192.168.22.171</address>
+	  <address>192.168.22.38</address>
+	  <address>192.168.22.7</address>
+	  <address>192.168.22.179</address>
+	  <address>192.168.22.163</address>
+	  <address>192.168.22.145</address>
+	  <address>192.168.22.42</address>
+	  <address>192.168.22.237</address>
+	  <address>192.168.22.56</address>
+	  <address>192.168.22.30</address>
+	  <address>192.168.22.195</address>
+	  <address>192.168.22.102</address>
+	  <address>192.168.22.136</address>
+	  <address>192.168.22.98</address>
+	  <address>192.168.22.191</address>
+	  <address>192.168.22.122</address>
+	  <address>192.168.22.53</address>
+	  <address>192.168.22.168</address>
+	  <address>192.168.22.140</address>
+	  <address>192.168.22.240</address>
+	  <address>192.168.22.146</address>
+	  <address>192.168.22.49</address>
+	  <address>192.168.22.246</address>
+	  <address>192.168.22.80</address>
+	  <address>192.168.22.87</address>
+	  <address>192.168.22.92</address>
+	  <address>192.168.22.99</address>
+	  <address>192.168.22.167</address>
+	  <address>192.168.22.91</address>
+	  <address>192.168.22.232</address>
+	  <address>192.168.22.192</address>
+	  <address>192.168.22.141</address>
+	  <address>192.168.22.12</address>
+	  <address>192.168.22.147</address>
+	  <address>192.168.22.10</address>
+	  <address>192.168.22.132</address>
+	  <address>192.168.22.6</address>
+	  <address>192.168.22.19</address>
+	  <address>192.168.22.242</address>
+	  <address>192.168.22.23</address>
+	  <address>192.168.22.79</address>
+	  <address>192.168.22.129</address>
+	  <address>192.168.22.68</address>
+	  <address>192.168.22.111</address>
+	  <address>192.168.22.76</address>
+	  <address>192.168.22.21</address>
+	  <address>192.168.22.165</address>
+	  <address>192.168.22.131</address>
+	  <address>192.168.22.84</address>
+	  <address>192.168.22.162</address>
+	  <address>192.168.22.135</address>
+	  <address>192.168.22.118</address>
+	  <address>192.168.22.69</address>
+	  <address>192.168.22.89</address>
+	  <address>192.168.22.34</address>
+	  <address>192.168.22.26</address>
+	  <address>192.168.22.119</address>
+	  <address>192.168.22.70</address>
+	  <address>192.168.22.142</address>
+	  <address>192.168.22.113</address>
+	  <address>192.168.22.40</address>
+	  <address>192.168.22.169</address>
+	  <address>192.168.22.13</address>
+	  <address>192.168.22.103</address>
+	  <address>192.168.22.238</address>
+	  <address>192.168.22.148</address>
+	  <address>192.168.22.128</address>
+	  <address>192.168.22.252</address>
+	  <address>192.168.22.222</address>
+	  <address>192.168.22.106</address>
+	  <address>192.168.22.17</address>
+	  <address>192.168.22.214</address>
+	  <address>192.168.22.72</address>
+	  <address>192.168.22.77</address>
+	  <address>192.168.22.215</address>
+	  <address>192.168.22.212</address>
+	  <address>192.168.22.20</address>
+	  <address>192.168.22.43</address>
+	  <address>192.168.22.55</address>
+	  <address>192.168.22.110</address>
+	  <address>192.168.22.85</address>
+	  <address>192.168.22.239</address>
+	  <address>192.168.22.229</address>
+	  <address>192.168.22.9</address>
+	  <address>192.168.22.211</address>
+	  <address>192.168.22.47</address>
+	  <address>192.168.22.188</address>
+	  <address>192.168.22.46</address>
+	  <address>192.168.22.249</address>
+	  <address>192.168.22.5</address>
+	  <address>192.168.22.241</address>
+	  <address>192.168.22.16</address>
+	  <address>192.168.22.193</address>
+	  <address>192.168.22.117</address>
+	  <address>192.168.22.125</address>
+	  <address>192.168.22.54</address>
+	  <address>192.168.22.88</address>
+	  <address>192.168.22.0</address>
+	  <address>192.168.22.81</address>
+	  <address>192.168.22.207</address>
+	  <address>192.168.22.58</address>
+	  <address>192.168.22.170</address>
+	  <address>192.168.22.156</address>
+	  <address>192.168.22.152</address>
+	  <address>192.168.22.205</address>
+	  <address>192.168.22.217</address>
+	  <address>192.168.22.149</address>
+	  <address>192.168.22.231</address>
+	  <address>192.168.22.183</address>
+	  <address>192.168.22.181</address>
+	  <address>192.168.22.180</address>
+	  <address>192.168.22.32</address>
+	  <address>192.168.22.245</address>
+	  <address>192.168.22.224</address>
+	  <address>192.168.22.14</address>
+	  <address>192.168.22.197</address>
+	  <address>192.168.22.230</address>
+	  <address>192.168.22.50</address>
+	  <address>192.168.22.221</address>
+	  <address>192.168.22.219</address>
+	  <address>192.168.22.209</address>
+	  <address>192.168.22.208</address>
+	  <address>192.168.22.33</address>
+	  <address>192.168.22.138</address>
+	  <address>192.168.22.143</address>
+	  <address>192.168.22.48</address>
+	  <address>192.168.22.159</address>
+	  <address>192.168.22.151</address>
+	  <address>192.168.22.90</address>
+	  <address>192.168.22.213</address>
+	  <address>192.168.22.66</address>
+	  <address>192.168.22.4</address>
+	  <address>192.168.22.250</address>
+	  <address>192.168.22.190</address>
+	  <address>192.168.22.109</address>
+	  <address>192.168.22.216</address>
+	  <address>192.168.22.173</address>
+	  <address>192.168.22.24</address>
+	  <address>192.168.22.202</address>
+	  <address>192.168.22.35</address>
+	  <address>192.168.22.101</address>
+	  <address>192.168.22.218</address>
+	  <address>192.168.22.62</address>
+	  <address>192.168.22.36</address>
+	  <address>192.168.22.254</address>
+	  <address>192.168.22.39</address>
+	  <address>192.168.22.83</address>
+	  <address>192.168.22.243</address>
+	  <address>192.168.22.203</address>
+	  <address>192.168.22.96</address>
+	  <address>192.168.22.105</address>
+	  <address>192.168.22.225</address>
+	  <address>192.168.22.178</address>
+	  <address>192.168.22.67</address>
+	  <address>192.168.22.189</address>
+	  <address>192.168.22.139</address>
+	  <address>192.168.22.71</address>
+	  <address>192.168.22.253</address>
+	  <address>192.168.22.86</address>
+	  <address>192.168.22.120</address>
+	  <address>192.168.22.37</address>
+	  <address>192.168.22.158</address>
+	  <address>192.168.22.137</address>
+	  <address>192.168.22.130</address>
+	  <address>192.168.22.100</address>
+	  <address>192.168.22.57</address>
+	  <address>192.168.22.235</address>
+	  <address>192.168.22.157</address>
+	  <address>192.168.22.228</address>
+	  <address>192.168.22.115</address>
+	  <address>192.168.22.175</address>
+	  <address>192.168.22.200</address>
+	  <address>192.168.22.233</address>
+	  <address>192.168.22.204</address>
+	  <address>192.168.22.41</address>
+	  <address>192.168.22.121</address>
+	  <address>192.168.22.227</address>
+	  <address>192.168.22.51</address>
+	  <address>192.168.22.127</address>
+	  <address>192.168.22.15</address>
+	  <address>192.168.22.177</address>
+	  <address>192.168.22.28</address>
+	  <address>192.168.22.244</address>
+	  <address>192.168.22.174</address>
+	  <address>192.168.22.18</address>
+	  <address>192.168.22.1</address>
+	  <address>192.168.22.134</address>
+	  <address>192.168.22.153</address>
+	  <address>192.168.22.8</address>
+	  <address>192.168.22.3</address>
+	  <address>192.168.22.52</address>
+	  <address>192.168.22.248</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.67</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-14326</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name> SYN portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="nmap command">
+	  nmap -sS 192.168.11.67 -p<i>-<i+18> -S <virtualip> -e eth0 -PT -p0
+	  virtualip is a random IP chosed from fake IP address list above
+	  After scaning 19 ports, a new fake IP is used to scan the next 19 ports.
+    </AdditionalData>
+  </Alert>
+
+  
+  
+  
+  
+  <Alert ident="10504">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime>
+      2002-11-15T17:09:46.934644
+    </CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+	  <address>192.168.22.251</address>
+	  <address>192.168.22.60</address>
+	  <address>192.168.22.154</address>
+	  <address>192.168.22.247</address>
+	  <address>192.168.22.94</address>
+	  <address>192.168.22.176</address>
+	  <address>192.168.22.194</address>
+	  <address>192.168.22.27</address>
+	  <address>192.168.22.196</address>
+	  <address>192.168.22.108</address>
+	  <address>192.168.22.97</address>
+	  <address>192.168.22.184</address>
+	  <address>192.168.22.226</address>
+	  <address>192.168.22.95</address>
+	  <address>192.168.22.186</address>
+	  <address>192.168.22.44</address>
+	  <address>192.168.22.155</address>
+	  <address>192.168.22.161</address>
+	  <address>192.168.22.185</address>
+	  <address>192.168.22.198</address>
+	  <address>192.168.22.223</address>
+	  <address>192.168.22.124</address>
+	  <address>192.168.22.126</address>
+	  <address>192.168.22.2</address>
+	  <address>192.168.22.25</address>
+	  <address>192.168.22.133</address>
+	  <address>192.168.22.172</address>
+	  <address>192.168.22.199</address>
+	  <address>192.168.22.114</address>
+	  <address>192.168.22.171</address>
+	  <address>192.168.22.38</address>
+	  <address>192.168.22.7</address>
+	  <address>192.168.22.179</address>
+	  <address>192.168.22.163</address>
+	  <address>192.168.22.145</address>
+	  <address>192.168.22.42</address>
+	  <address>192.168.22.237</address>
+	  <address>192.168.22.56</address>
+	  <address>192.168.22.30</address>
+	  <address>192.168.22.195</address>
+	  <address>192.168.22.102</address>
+	  <address>192.168.22.136</address>
+	  <address>192.168.22.98</address>
+	  <address>192.168.22.191</address>
+	  <address>192.168.22.122</address>
+	  <address>192.168.22.53</address>
+	  <address>192.168.22.168</address>
+	  <address>192.168.22.140</address>
+	  <address>192.168.22.240</address>
+	  <address>192.168.22.146</address>
+	  <address>192.168.22.49</address>
+	  <address>192.168.22.246</address>
+	  <address>192.168.22.80</address>
+	  <address>192.168.22.87</address>
+	  <address>192.168.22.92</address>
+	  <address>192.168.22.99</address>
+	  <address>192.168.22.167</address>
+	  <address>192.168.22.91</address>
+	  <address>192.168.22.232</address>
+	  <address>192.168.22.192</address>
+	  <address>192.168.22.141</address>
+	  <address>192.168.22.12</address>
+	  <address>192.168.22.147</address>
+	  <address>192.168.22.10</address>
+	  <address>192.168.22.132</address>
+	  <address>192.168.22.6</address>
+	  <address>192.168.22.19</address>
+	  <address>192.168.22.242</address>
+	  <address>192.168.22.23</address>
+	  <address>192.168.22.79</address>
+	  <address>192.168.22.129</address>
+	  <address>192.168.22.68</address>
+	  <address>192.168.22.111</address>
+	  <address>192.168.22.76</address>
+	  <address>192.168.22.21</address>
+	  <address>192.168.22.165</address>
+	  <address>192.168.22.131</address>
+	  <address>192.168.22.84</address>
+	  <address>192.168.22.162</address>
+	  <address>192.168.22.135</address>
+	  <address>192.168.22.118</address>
+	  <address>192.168.22.69</address>
+	  <address>192.168.22.89</address>
+	  <address>192.168.22.34</address>
+	  <address>192.168.22.26</address>
+	  <address>192.168.22.119</address>
+	  <address>192.168.22.70</address>
+	  <address>192.168.22.142</address>
+	  <address>192.168.22.113</address>
+	  <address>192.168.22.40</address>
+	  <address>192.168.22.169</address>
+	  <address>192.168.22.13</address>
+	  <address>192.168.22.103</address>
+	  <address>192.168.22.238</address>
+	  <address>192.168.22.148</address>
+	  <address>192.168.22.128</address>
+	  <address>192.168.22.252</address>
+	  <address>192.168.22.222</address>
+	  <address>192.168.22.106</address>
+	  <address>192.168.22.17</address>
+	  <address>192.168.22.214</address>
+	  <address>192.168.22.72</address>
+	  <address>192.168.22.77</address>
+	  <address>192.168.22.215</address>
+	  <address>192.168.22.212</address>
+	  <address>192.168.22.20</address>
+	  <address>192.168.22.43</address>
+	  <address>192.168.22.55</address>
+	  <address>192.168.22.110</address>
+	  <address>192.168.22.85</address>
+	  <address>192.168.22.239</address>
+	  <address>192.168.22.229</address>
+	  <address>192.168.22.9</address>
+	  <address>192.168.22.211</address>
+	  <address>192.168.22.47</address>
+	  <address>192.168.22.188</address>
+	  <address>192.168.22.46</address>
+	  <address>192.168.22.249</address>
+	  <address>192.168.22.5</address>
+	  <address>192.168.22.241</address>
+	  <address>192.168.22.16</address>
+	  <address>192.168.22.193</address>
+	  <address>192.168.22.117</address>
+	  <address>192.168.22.125</address>
+	  <address>192.168.22.54</address>
+	  <address>192.168.22.88</address>
+	  <address>192.168.22.0</address>
+	  <address>192.168.22.81</address>
+	  <address>192.168.22.207</address>
+	  <address>192.168.22.58</address>
+	  <address>192.168.22.170</address>
+	  <address>192.168.22.156</address>
+	  <address>192.168.22.152</address>
+	  <address>192.168.22.205</address>
+	  <address>192.168.22.217</address>
+	  <address>192.168.22.149</address>
+	  <address>192.168.22.231</address>
+	  <address>192.168.22.183</address>
+	  <address>192.168.22.181</address>
+	  <address>192.168.22.180</address>
+	  <address>192.168.22.32</address>
+	  <address>192.168.22.245</address>
+	  <address>192.168.22.224</address>
+	  <address>192.168.22.14</address>
+	  <address>192.168.22.197</address>
+	  <address>192.168.22.230</address>
+	  <address>192.168.22.50</address>
+	  <address>192.168.22.221</address>
+	  <address>192.168.22.219</address>
+	  <address>192.168.22.209</address>
+	  <address>192.168.22.208</address>
+	  <address>192.168.22.33</address>
+	  <address>192.168.22.138</address>
+	  <address>192.168.22.143</address>
+	  <address>192.168.22.48</address>
+	  <address>192.168.22.159</address>
+	  <address>192.168.22.151</address>
+	  <address>192.168.22.90</address>
+	  <address>192.168.22.213</address>
+	  <address>192.168.22.66</address>
+	  <address>192.168.22.4</address>
+	  <address>192.168.22.250</address>
+	  <address>192.168.22.190</address>
+	  <address>192.168.22.109</address>
+	  <address>192.168.22.216</address>
+	  <address>192.168.22.173</address>
+	  <address>192.168.22.24</address>
+	  <address>192.168.22.202</address>
+	  <address>192.168.22.35</address>
+	  <address>192.168.22.101</address>
+	  <address>192.168.22.218</address>
+	  <address>192.168.22.62</address>
+	  <address>192.168.22.36</address>
+	  <address>192.168.22.254</address>
+	  <address>192.168.22.39</address>
+	  <address>192.168.22.83</address>
+	  <address>192.168.22.243</address>
+	  <address>192.168.22.203</address>
+	  <address>192.168.22.96</address>
+	  <address>192.168.22.105</address>
+	  <address>192.168.22.225</address>
+	  <address>192.168.22.178</address>
+	  <address>192.168.22.67</address>
+	  <address>192.168.22.189</address>
+	  <address>192.168.22.139</address>
+	  <address>192.168.22.71</address>
+	  <address>192.168.22.253</address>
+	  <address>192.168.22.86</address>
+	  <address>192.168.22.120</address>
+	  <address>192.168.22.37</address>
+	  <address>192.168.22.158</address>
+	  <address>192.168.22.137</address>
+	  <address>192.168.22.130</address>
+	  <address>192.168.22.100</address>
+	  <address>192.168.22.57</address>
+	  <address>192.168.22.235</address>
+	  <address>192.168.22.157</address>
+	  <address>192.168.22.228</address>
+	  <address>192.168.22.115</address>
+	  <address>192.168.22.175</address>
+	  <address>192.168.22.200</address>
+	  <address>192.168.22.233</address>
+	  <address>192.168.22.204</address>
+	  <address>192.168.22.41</address>
+	  <address>192.168.22.121</address>
+	  <address>192.168.22.227</address>
+	  <address>192.168.22.51</address>
+	  <address>192.168.22.127</address>
+	  <address>192.168.22.15</address>
+	  <address>192.168.22.177</address>
+	  <address>192.168.22.28</address>
+	  <address>192.168.22.244</address>
+	  <address>192.168.22.174</address>
+	  <address>192.168.22.18</address>
+	  <address>192.168.22.1</address>
+	  <address>192.168.22.134</address>
+	  <address>192.168.22.153</address>
+	  <address>192.168.22.8</address>
+	  <address>192.168.22.3</address>
+	  <address>192.168.22.52</address>
+	  <address>192.168.22.248</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.10</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-19209</portlist>
+      </Service>
+    </Target>
+
+
+    <Classification origin="vendor-specific">
+      <name>SYN portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="nmap command">
+	  nmap -sS 192.168.3.10 -p<i>-<i+18> -S <virtualip> -e eth0 -PT -p0
+	  virtualip is a random IP chosed from fake IP address list above
+	  After scaning 19 ports, a new fake IP is used to scan the next 19 ports.
+    </AdditionalData>
+  </Alert>
+
+  
+   <Alert ident="10505">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime>
+      2002-11-15T17:10:35.933641
+    </CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+	  <address>192.168.22.251</address>
+	  <address>192.168.22.60</address>
+	  <address>192.168.22.154</address>
+	  <address>192.168.22.247</address>
+	  <address>192.168.22.94</address>
+	  <address>192.168.22.176</address>
+	  <address>192.168.22.194</address>
+	  <address>192.168.22.27</address>
+	  <address>192.168.22.196</address>
+	  <address>192.168.22.108</address>
+	  <address>192.168.22.97</address>
+	  <address>192.168.22.184</address>
+	  <address>192.168.22.226</address>
+	  <address>192.168.22.95</address>
+	  <address>192.168.22.186</address>
+	  <address>192.168.22.44</address>
+	  <address>192.168.22.155</address>
+	  <address>192.168.22.161</address>
+	  <address>192.168.22.185</address>
+	  <address>192.168.22.198</address>
+	  <address>192.168.22.223</address>
+	  <address>192.168.22.124</address>
+	  <address>192.168.22.126</address>
+	  <address>192.168.22.2</address>
+	  <address>192.168.22.25</address>
+	  <address>192.168.22.133</address>
+	  <address>192.168.22.172</address>
+	  <address>192.168.22.199</address>
+	  <address>192.168.22.114</address>
+	  <address>192.168.22.171</address>
+	  <address>192.168.22.38</address>
+	  <address>192.168.22.7</address>
+	  <address>192.168.22.179</address>
+	  <address>192.168.22.163</address>
+	  <address>192.168.22.145</address>
+	  <address>192.168.22.42</address>
+	  <address>192.168.22.237</address>
+	  <address>192.168.22.56</address>
+	  <address>192.168.22.30</address>
+	  <address>192.168.22.195</address>
+	  <address>192.168.22.102</address>
+	  <address>192.168.22.136</address>
+	  <address>192.168.22.98</address>
+	  <address>192.168.22.191</address>
+	  <address>192.168.22.122</address>
+	  <address>192.168.22.53</address>
+	  <address>192.168.22.168</address>
+	  <address>192.168.22.140</address>
+	  <address>192.168.22.240</address>
+	  <address>192.168.22.146</address>
+	  <address>192.168.22.49</address>
+	  <address>192.168.22.246</address>
+	  <address>192.168.22.80</address>
+	  <address>192.168.22.87</address>
+	  <address>192.168.22.92</address>
+	  <address>192.168.22.99</address>
+	  <address>192.168.22.167</address>
+	  <address>192.168.22.91</address>
+	  <address>192.168.22.232</address>
+	  <address>192.168.22.192</address>
+	  <address>192.168.22.141</address>
+	  <address>192.168.22.12</address>
+	  <address>192.168.22.147</address>
+	  <address>192.168.22.10</address>
+	  <address>192.168.22.132</address>
+	  <address>192.168.22.6</address>
+	  <address>192.168.22.19</address>
+	  <address>192.168.22.242</address>
+	  <address>192.168.22.23</address>
+	  <address>192.168.22.79</address>
+	  <address>192.168.22.129</address>
+	  <address>192.168.22.68</address>
+	  <address>192.168.22.111</address>
+	  <address>192.168.22.76</address>
+	  <address>192.168.22.21</address>
+	  <address>192.168.22.165</address>
+	  <address>192.168.22.131</address>
+	  <address>192.168.22.84</address>
+	  <address>192.168.22.162</address>
+	  <address>192.168.22.135</address>
+	  <address>192.168.22.118</address>
+	  <address>192.168.22.69</address>
+	  <address>192.168.22.89</address>
+	  <address>192.168.22.34</address>
+	  <address>192.168.22.26</address>
+	  <address>192.168.22.119</address>
+	  <address>192.168.22.70</address>
+	  <address>192.168.22.142</address>
+	  <address>192.168.22.113</address>
+	  <address>192.168.22.40</address>
+	  <address>192.168.22.169</address>
+	  <address>192.168.22.13</address>
+	  <address>192.168.22.103</address>
+	  <address>192.168.22.238</address>
+	  <address>192.168.22.148</address>
+	  <address>192.168.22.128</address>
+	  <address>192.168.22.252</address>
+	  <address>192.168.22.222</address>
+	  <address>192.168.22.106</address>
+	  <address>192.168.22.17</address>
+	  <address>192.168.22.214</address>
+	  <address>192.168.22.72</address>
+	  <address>192.168.22.77</address>
+	  <address>192.168.22.215</address>
+	  <address>192.168.22.212</address>
+	  <address>192.168.22.20</address>
+	  <address>192.168.22.43</address>
+	  <address>192.168.22.55</address>
+	  <address>192.168.22.110</address>
+	  <address>192.168.22.85</address>
+	  <address>192.168.22.239</address>
+	  <address>192.168.22.229</address>
+	  <address>192.168.22.9</address>
+	  <address>192.168.22.211</address>
+	  <address>192.168.22.47</address>
+	  <address>192.168.22.188</address>
+	  <address>192.168.22.46</address>
+	  <address>192.168.22.249</address>
+	  <address>192.168.22.5</address>
+	  <address>192.168.22.241</address>
+	  <address>192.168.22.16</address>
+	  <address>192.168.22.193</address>
+	  <address>192.168.22.117</address>
+	  <address>192.168.22.125</address>
+	  <address>192.168.22.54</address>
+	  <address>192.168.22.88</address>
+	  <address>192.168.22.0</address>
+	  <address>192.168.22.81</address>
+	  <address>192.168.22.207</address>
+	  <address>192.168.22.58</address>
+	  <address>192.168.22.170</address>
+	  <address>192.168.22.156</address>
+	  <address>192.168.22.152</address>
+	  <address>192.168.22.205</address>
+	  <address>192.168.22.217</address>
+	  <address>192.168.22.149</address>
+	  <address>192.168.22.231</address>
+	  <address>192.168.22.183</address>
+	  <address>192.168.22.181</address>
+	  <address>192.168.22.180</address>
+	  <address>192.168.22.32</address>
+	  <address>192.168.22.245</address>
+	  <address>192.168.22.224</address>
+	  <address>192.168.22.14</address>
+	  <address>192.168.22.197</address>
+	  <address>192.168.22.230</address>
+	  <address>192.168.22.50</address>
+	  <address>192.168.22.221</address>
+	  <address>192.168.22.219</address>
+	  <address>192.168.22.209</address>
+	  <address>192.168.22.208</address>
+	  <address>192.168.22.33</address>
+	  <address>192.168.22.138</address>
+	  <address>192.168.22.143</address>
+	  <address>192.168.22.48</address>
+	  <address>192.168.22.159</address>
+	  <address>192.168.22.151</address>
+	  <address>192.168.22.90</address>
+	  <address>192.168.22.213</address>
+	  <address>192.168.22.66</address>
+	  <address>192.168.22.4</address>
+	  <address>192.168.22.250</address>
+	  <address>192.168.22.190</address>
+	  <address>192.168.22.109</address>
+	  <address>192.168.22.216</address>
+	  <address>192.168.22.173</address>
+	  <address>192.168.22.24</address>
+	  <address>192.168.22.202</address>
+	  <address>192.168.22.35</address>
+	  <address>192.168.22.101</address>
+	  <address>192.168.22.218</address>
+	  <address>192.168.22.62</address>
+	  <address>192.168.22.36</address>
+	  <address>192.168.22.254</address>
+	  <address>192.168.22.39</address>
+	  <address>192.168.22.83</address>
+	  <address>192.168.22.243</address>
+	  <address>192.168.22.203</address>
+	  <address>192.168.22.96</address>
+	  <address>192.168.22.105</address>
+	  <address>192.168.22.225</address>
+	  <address>192.168.22.178</address>
+	  <address>192.168.22.67</address>
+	  <address>192.168.22.189</address>
+	  <address>192.168.22.139</address>
+	  <address>192.168.22.71</address>
+	  <address>192.168.22.253</address>
+	  <address>192.168.22.86</address>
+	  <address>192.168.22.120</address>
+	  <address>192.168.22.37</address>
+	  <address>192.168.22.158</address>
+	  <address>192.168.22.137</address>
+	  <address>192.168.22.130</address>
+	  <address>192.168.22.100</address>
+	  <address>192.168.22.57</address>
+	  <address>192.168.22.235</address>
+	  <address>192.168.22.157</address>
+	  <address>192.168.22.228</address>
+	  <address>192.168.22.115</address>
+	  <address>192.168.22.175</address>
+	  <address>192.168.22.200</address>
+	  <address>192.168.22.233</address>
+	  <address>192.168.22.204</address>
+	  <address>192.168.22.41</address>
+	  <address>192.168.22.121</address>
+	  <address>192.168.22.227</address>
+	  <address>192.168.22.51</address>
+	  <address>192.168.22.127</address>
+	  <address>192.168.22.15</address>
+	  <address>192.168.22.177</address>
+	  <address>192.168.22.28</address>
+	  <address>192.168.22.244</address>
+	  <address>192.168.22.174</address>
+	  <address>192.168.22.18</address>
+	  <address>192.168.22.1</address>
+	  <address>192.168.22.134</address>
+	  <address>192.168.22.153</address>
+	  <address>192.168.22.8</address>
+	  <address>192.168.22.3</address>
+	  <address>192.168.22.52</address>
+	  <address>192.168.22.248</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.40</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-19019</portlist>
+      </Service>
+    </Target>
+
+
+    <Classification origin="vendor-specific">
+      <name>SYN portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="nmap command">
+	  nmap -sS 192.168.3.40 -p<i>-<i+18> -S <virtualip> -e eth0 -PT -p0
+	  virtualip is a random IP chosed from fake IP address list above
+	  After scaning 19 ports, a new fake IP is used to scan the next 19 ports.
+    </AdditionalData>
+  </Alert>
+
+
+</IDMEF-Message>
+

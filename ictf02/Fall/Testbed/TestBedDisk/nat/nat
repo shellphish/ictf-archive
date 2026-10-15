@@ -1,0 +1,20 @@
+#!/bin/bash
+PATH=/sbin:/bin
+
+iptables -t nat -F
+
+iptables -t nat -A POSTROUTING -o eth0 -s 192.168.1.0/24 -j SNAT --to 128.111.48.48
+
+#Don't spoof inside addresses, allow kurosawa to access inside hosts directly
+iptables -t nat -A PREROUTING -i eth1 -s ! 192.168.1.0/24 -j DROP
+
+
+# SSH-forwarding
+iptables -t nat -A PREROUTING -i eth0 -p tcp -d 128.111.48.48 --dport 30 -j DNAT --to 192.168.1.10:22
+iptables -t nat -A PREROUTING -i eth0 -p tcp -d 128.111.48.48 --dport 31 -j DNAT --to 192.168.1.20:22
+iptables -t nat -A PREROUTING -i eth0 -p tcp -d 128.111.48.48 --dport 32 -j DNAT --to 192.168.1.30:22
+iptables -t nat -A PREROUTING -i eth0 -p tcp -d 128.111.48.48 --dport 33 -j DNAT --to 192.168.1.40:22
+iptables -t nat -A PREROUTING -i eth0 -p tcp -d 128.111.48.48 --dport 34 -j DNAT --to 192.168.1.50:22
+iptables -t nat -A PREROUTING -i eth0 -p tcp -d 128.111.48.48 --dport 35 -j DNAT --to 192.168.1.60:22
+iptables -t nat -A PREROUTING -i eth0 -p tcp -d 128.111.48.48 --dport 36 -j DNAT --to 192.168.1.70:22
+iptables -t nat -A PREROUTING -i eth0 -p tcp -d 128.111.48.48 --dport 37 -j DNAT --to 192.168.1.80:22

@@ -1,0 +1,121 @@
+<html>
+<body>
+<b> 1.  Team/Subgroup</b><br>
+False Positive,<br>
+In charge of makeing omega's snort go off with as much normal 
+traffic as possible;<br>
+group members are :<br>
+JOEL EBRAHIMI  joel@cs   XCifer		LEADER<br>
+STEVE DIVERDI  sdiverdi@cs  sdiverdi<br>
+GOLNAZ GOLSHAN  golnaz@cs   boba<br>
+
+<b>2.Mission</b><br>
+Our tak was to make omega team's snort give alarts for attacks that<br>
+were not really attacks.  So it is something that looks absolutely <br>
+normal, contains no attacks/weirdness, and it is still detected as an <br>
+attack.  So we wanted to trigger as mucn snort rules as possible with <br>
+without generating abnormal traffic.<br>
+
+we divided up the snort rules, and each group member was in charge of 
+finding some false positives in that area.<br>
+
+golnaz's Rules:<br>
+	-web-cgi<br>
+	-web-iis<br>
+	-web-misc<br>
+	-web-client<br>
+
+joel's Rules:<br>
+	-bad-traffic<br>
+	-exploid<br>
+	-scan<br>
+	-finger<br>
+	-ftp<br>
+	-telnet<br>
+	-rpc<br>
+	-dns<br>
+	-tftp<br>	
+
+Steve's Rules:<br>
+	-icmp<br>
+	-netbios<br>
+	-misc<br>
+	-snmp<br>
+	-smtp<br>
+	-imap<br>
+	-pop3<br>
+	-nntp<br>
+	-other-ids<br>
+	-experimental<br>
+	-x11<br>
+
+<br>
+<br>
+<b>3. Preparation</b><br>
+
+we each came up with about 10 things that was false positive in our <br>
+area.  and then at the end we picked 5 from each one of us that we <br>
+thought was good.(i.e. we did not use the following:  "telnet.exe", <br>
+"smtp client script to trigger smtp rules")  and then after trying <br>
+them on the test bed, we were left with only 6 <br>
+good, actual false positives.these attacks included:<br>
+
+-webcalender 19:03<br>
+-webcalender 1900<br>
+-webmail	1037417018<br>
+-hping		1037418624<br>
+-hping		1037418833<br>
+
+tools, software, methods, procedures that were used:<br>
+snort, hping, ftp, http, smtp , etc ....<br>
+<br>
+<b>4. Execution</b><br>
+steve:<br>
+set up the sencers, tracked and analysed the alerts that came through.<br>
+<br>
+golnaz:<br>
+ran attackes and analysed the alerts that came through.<br>
+<br>
+joel:<br>
+ran attacks and analysed the alerts that came through.<br>
+<br>
+our group also:<br>
+we also did the 'time stamp" program that the team used.<br>
+<br>
+<b>5. Evaluation </b><br>
+we accomplished our mission pretty well.  all the planed attacks seemed<br>
+to work fine.  except, the last scan in scan.rules one. it was called <br>
+"/nhelp/nquite/n" ...we had tried that one on <br>
+joels home machine and it worked perfectly.  but then during the excersise<br>
+it would run on the testbed, but it wouldn't say anything.  so we <br>
+don't actually know if it worked or not.  we think it did probably<br>
+set off their aterts, we just couldn't see it on the network.<br>
+nothing could have been done better, we worked hard, and we pretty much<br>
+got what we wanted.  originally we thought that we couldn't come up<br>
+with any false positived, but we found some good ones and executed them.<br>
+<br>
+the subgroup that we needed to intract the most with was finger priting<br>
+we needed the live ip ports from them to do some damage on it.  it went <br>
+fine, and we got the port numbers in a good timely manner.<br>
+<br>
+the tools that we used was snort and netstat.  snort worked great, it did<br>
+what we wanted from it.  the netstat was running, but we didn't use it<br>
+that much, we didn't even look at the log files from netstat.<br>
+<br>
+evalutation of the excersie:  it would have been nice if the fp's have been<br>
+clearified earlier.  over all it was a tense excersise, a lot of unexpected <br>
+happened.  lesson learned:  have more than one or two plans in hand, since <br>
+we never know what's going to happen.  <br>
+<br>
+<b>6. Miscellaneous </b><br>
+Others: none.<br>
+<br>
+<b>7. References </b><br>
+The References: URLs: <br>
+		-www.snort.org:  this one was our most used source,<br>
+		we looked at the rules section (both documented and <br>
+		undoc.) and there we were able to read about some <br>
+		false positives strategies.<br>
+
+</body>
+<html>

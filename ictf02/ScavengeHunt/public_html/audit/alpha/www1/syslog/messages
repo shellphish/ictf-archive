@@ -1,0 +1,10 @@
+Dec 17 14:57:54 www1 syslogd 1.4.1: restart.
+Dec 17 15:42:23 www1 /sbin/mingetty[1137]: tty1: invalid character ^[ in login name
+Dec 17 15:42:55 www1 login(pam_unix)[10058]: session opened for user root by LOGIN(uid=0)
+Dec 17 15:42:56 www1  -- root[10058]: ROOT LOGIN ON tty1
+Dec 17 15:43:40 www1 kernel: AUDITMODULE: Audit daemon has closed /proc/audit.
+Dec 17 15:43:40 www1 kernel: AUDITMODULE: Events lost due low memory this session: 0
+Dec 17 15:43:40 www1 kernel: AUDITMODULE: Total Events processed this session: 294768
+Dec 17 15:43:40 www1 kernel: AUDITMODULE: Other stats: kmalloc: 294768, kfreed: 294768, sleep: 280400, gfp: 294768, fp: 294768, max_pending_events: 4208)
+Dec 17 15:43:40 www1 kernel: SNARE Audit Module: Exiting
+Dec 17 15:43:40 www1 audit:  succeeded

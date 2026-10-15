@@ -1,0 +1,17 @@
+Dec 17 13:56:23 saa syslogd 1.4.1: restart.
+Dec 17 14:00:36 saa su(pam_unix)[1688]: session opened for user news by (uid=0)
+Dec 17 14:00:37 saa su(pam_unix)[1688]: session closed for user news
+Dec 17 14:12:03 saa kernel: keyboard: unrecognized scancode (7f) - ignored
+Dec 17 14:12:12 saa kernel: keyboard: unrecognized scancode (7f) - ignored
+Dec 17 14:13:27 saa login(pam_unix)[1366]: authentication failure; logname=LOGIN uid=0 euid=0 tty=tty1 ruser= rhost=  user=root
+Dec 17 14:13:29 saa login[1366]: FAILED LOGIN 1 FROM (null) FOR root, Authentication failure
+Dec 17 14:13:34 saa login(pam_unix)[1366]: session opened for user root by LOGIN(uid=0)
+Dec 17 14:13:35 saa  -- root[1366]: ROOT LOGIN ON tty1
+Dec 17 14:16:21 saa kernel: AUDITMODULE: Audit daemon has closed /proc/audit.
+Dec 17 14:16:21 saa kernel: AUDITMODULE: Events lost due low memory this session: 0
+Dec 17 14:16:21 saa kernel: AUDITMODULE: Total Events processed this session: 433513
+Dec 17 14:16:21 saa kernel: AUDITMODULE: Other stats: kmalloc: 433513, kfreed: 433513, sleep: 431789, gfp: 433513, fp: 433513, max_pending_events: 143)
+Dec 17 14:16:21 saa kernel: SNARE Audit Module: Exiting
+Dec 17 14:16:22 saa audit:  succeeded
+Dec 17 14:17:16 saa login(pam_unix)[1367]: session opened for user root by LOGIN(uid=0)
+Dec 17 14:17:16 saa  -- root[1367]: ROOT LOGIN ON tty2

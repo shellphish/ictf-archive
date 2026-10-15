@@ -1,0 +1,245 @@
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha541">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1803092.0x0">
+    Fri Nov 15 18:48:50 2002</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+
+      <Service>
+        
+<portlist>7,13,19,21-22,37,53,80,111,139,199,512,514,609,940,1024,1026,3128</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>Version Scan</name>
+
+      <url>http://www.cs.ucsb.edu/~huffmire/Report.htm</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.22.78 and port 
+7</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha542">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC180325B.0x0">
+    Fri Nov 15 18:56:21 2002</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.10</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>21-22,37,79,512-514</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>Version Scan</name>
+
+      <url>http://www.cs.ucsb.edu/~huffmire/Report.htm</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.3.10 and port 
+21</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha543">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18032D0.0x0">
+    Fri Nov 15 18:58:24 2002</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.93</address>
+        </Address>
+      </Node>
+
+      <Service>
+        
+<portlist>7,13,19,21-22,37,53,79-80,111,113,199,512-514,873,1024,1026,3128</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>Version Scan</name>
+
+      <url>http://www.cs.ucsb.edu/~huffmire/Report.htm</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.22.93 and port 
+7</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha544">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18036B5.0x0">
+    Fri Nov 15 19:15:01 2002</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.40</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>7,13,19,111,113,513,515,587,3128</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>Version Scan</name>
+
+      <url>http://www.cs.ucsb.edu/~huffmire/Report.htm</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.3.40 and port 7</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha545">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1803878.0x0">
+    Fri Nov 15 19:22:32 2002</CreateTime>
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.29</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>21-22,53,79,111,513-515,1024</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>Version Scan</name>
+
+      <url>http://www.cs.ucsb.edu/~huffmire/Report.htm</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.22.29 and port 
+21</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha546">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1803AE0.0x0">
+    Fri Nov 15 19:32:48 2002</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.31</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>22,80,1025-1026</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>Version Scan</name>
+
+      <url>http://www.cs.ucsb.edu/~huffmire/Report.htm</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.22.31 and port 
+22</AdditionalData>
+  </Alert>
+</IDMEF-Message>

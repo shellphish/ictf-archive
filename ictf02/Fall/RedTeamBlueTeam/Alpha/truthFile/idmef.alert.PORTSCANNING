@@ -1,0 +1,560 @@
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha400000">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18029B2.0x0">
+    2002-11-15T10:01:25.93464-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.93</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>512,21,79,514,22,37,513,80,53</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>TCP SYN portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.105 and dst host 192.168.22.93 and src port 
+47421
+    </AdditionalData>
+  </Alert>
+
+  <Alert ident="alpha400001">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18029FA.0x0">
+    2002-11-15T10:01:25.93464-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.93</address>
+        </Address>
+      </Node>
+
+      <Service>
+    <portlist>7,19,13,20,24,111,112,113,199,
+          626,873,953,957,1024,1025,1026,3128,515,
+          587,615,6000,6001,6002</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>TCP SYN Portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.105 and dst host 192.168.22.93 and src port 47421
+    </AdditionalData>
+  </Alert>
+
+
+  <Alert ident="alpha400002">
+    <Analyzer>
+    </Analyzer>
+    <CreateTime ntpstamp="0xC1802BBE.0x0">
+    2002-11-15T10:01:25.93464-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.63</address>
+        </Address>
+      </Node>
+
+      <Service>
+
+<portlist>512,21,79,514,22,37,513,80,53
+          
+          </portlist>
+      </Service>
+    </Target>
+
+ <Classification origin="vendor-specific">
+      <name>TCP SYN portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.100 and dst host 192.168.22.63 and src port
+44444
+    </AdditionalData>
+  </Alert>
+
+<Alert ident="alpha400004">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1802C95.0x0">
+    2002-11-15T10:01:25.93464-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+
+      <Service>
+
+<portlist>512,21,79,514,22,37,513,80,53
+
+          </portlist>
+      </Service>
+    </Target>
+
+ <Classification origin="vendor-specific">
+      <name>TCP SYN portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.34 and dst host 192.168.22.78 and src port
+47897
+    </AdditionalData>
+  </Alert>
+
+<Alert ident="alpha400010">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0x89D97806.0x0">
+    2000-03-09T10:01:25.93464-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>128.111.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>128.111.22.31</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-6, 8-12, 14-18, 26-36, 38-78, 81-110, 114-138, 140-198, 200-511, 516-586, 588-614, 616-625, 627-872, 874-952, 954-956, 958-1023</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>TCP SYN SCAN</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.33 and dst host 192.168.22.31 and src port
+    45332</AdditionalData>
+     </Alert>
+
+ <Alert ident="alpha400020">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0x89D9768F.0x0">
+    2000-03-09T10:01:25.93464-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>128.111.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>128.111.22.31</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>7, 13,19,20, 24,111,112,113,199,626,873,953,957,1024,1025,1028,3128,515, 587, 615, 6000, 6001, 6002</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>TCP SYN SCAN</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.33 and dst host 192.168.22.31 and src port
+    45332</AdditionalData>
+     </Alert>
+
+<Alert ident="alpha400030">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0x89D976A6.0x0">
+    2000-03-09T10:01:25.93464-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>128.111.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>128.111.3.10</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist> 512, 21, 79 514, 22, 37, 513, 80, 53</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>TCP SYN SCAN</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.31 and dst host 192.168.3.10 and src port 44323
+    </AdditionalData>
+     </Alert>
+<Alert ident="alpha400040">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0x89D9772C.0x0">
+    2000-03-09T10:01:25.93464-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>128.111.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>128.111.11.29</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist> 512, 21, 79 514, 22, 37, 513, 80, 53</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>TCP SYN SCAN</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.24 and dst host 192.22.29 and src port 43706
+        </AdditionalData>
+     </Alert>
+ <Alert ident="alpha400050">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0x89D97736.0x0">
+    2000-03-09T10:01:25.93464-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>128.111.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>128.111.11.29</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>7,13,19,20, 24,111,112,113,119,626,873,953, 957, 1024, 1025, 1026,3128,515, 587, 615, 6000, 6001, 6002</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>TCP SYN SCAN</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.31 and dst host 192.168.3.10 and src port
+    43706</AdditionalData>
+     </Alert>
+<Alert ident="alpha400060">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1803A7E.0x0">
+    2000-03-09T10:01:25.93464-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>128.111.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>128.111.22.93</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-6, 8-12, 14-18, 26-36, 38-78, 81-110, 114-138, 140-198, 200-511, 516-586, 588-614, 616-625, 627-872, 874-952, 954-956, 958-1023</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>TCP SYN SCAN</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.105 and dst host 192.168.22.93 and  port 47421
+    </AdditionalData>
+     </Alert>
+
+
+<Alert ident="alpha400005">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC180327C.0x0">
+    2002-11-15T10:01:25.93464-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.40</address>
+        </Address>
+      </Node>
+
+      <Service>
+
+<portlist>512,21,79,514,22,37,513,80,53
+
+          </portlist>
+      </Service>
+    </Target>
+
+ <Classification origin="vendor-specific">
+      <name>TCP SYN portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.28 and dst host 192.168.3.40 and src port
+43243
+    </AdditionalData>
+  </Alert>
+<Alert ident="alpha400006">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1803342.0x0">
+    2002-11-15T10:01:25.93464-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.40</address>
+        </Address>
+      </Node>
+
+      <Service>
+
+<portlist>7,13,19,20,24,111,112,113,199,626,873,953,957,1024,1025,1026,3128,515,587,615,6000,6001,6002
+
+          </portlist>
+      </Service>
+    </Target>
+
+ <Classification origin="vendor-specific">
+      <name>TCP SYN portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.28 and dst host 192.168.3.40 and src port
+43243
+    </AdditionalData>
+  </Alert>
+
+<Alert ident="alpha400007">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18039BA.0x0">
+    2002-11-15T10:01:25.93464-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.31</address>
+        </Address>
+      </Node>
+
+      <Service>
+
+<portlist>
+512,21,79,514,22,37,513,80,53
+          </portlist>
+      </Service>
+    </Target>
+
+ <Classification origin="vendor-specific">
+      <name>TCP SYN portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.33 and dst host 192.168.22.31 and src port
+45332
+    </AdditionalData>
+  </Alert>
+
+<Alert ident="alpha400008">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18039CA.0x0">
+    2002-11-15T10:01:25.93464-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.31</address>
+        </Address>
+      </Node>
+
+      <Service>
+
+<portlist>7,13,19,20,24,111,112,113,199,626,873,953,957,1024,1025,1026,3128,515,
+587,615,6000,6001,6002
+          </portlist>
+      </Service>
+    </Target>
+
+ <Classification origin="vendor-specific">
+      <name>TCP SYN portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.33 and dst host 192.168.22.31 and src port
+45332
+    </AdditionalData>
+  </Alert>
+
+</IDMEF-Message>
+
+

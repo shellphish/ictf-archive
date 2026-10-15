@@ -1,0 +1,18 @@
+vi .bash_history 
+ssh administrator@taa
+ssh administrator@taa
+ssh administrator@uaa
+ssh uaa
+telnet uaa
+ls /var/log/snare
+lsmod
+ls
+ls /var/log/snare
+praudit /var/log/snare/audit
+crontab -l
+cat /root/.bash_profile 
+ls -lh /var/log/snare/
+date
+ls /var/log/snare -hl
+date
+ypcat passwd

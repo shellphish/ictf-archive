@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+
+<html>
+  <head>
+    <title>CS 279: Network Security and Intrusion Detection - Team
+    Report</title>
+  </head>
+
+  <body>
+    <h1>Blue Team/Red Team Exercise Report</h1>
+
+    <h2>Team/Subgroup</h2>
+
+<b>Name:</b> Etcetera<br>
+<b>Focus:</b> To work on Operating System fingerprinting, and miscellaneous defense utilities that didn't fall under one of the other established categories.<br>
+<br>
+<table>
+    <tr><th>Name</th><th>E-Mail</th><th>Handle</th></tr>
+    <tr><td><i>Freeman, Jay (Leader)</i></td><td>saurik@saurik.com</td><td>orasi</td></tr>
+    <tr><td>Graver, Rasmus</td><td>graver@cs.ucsb.edu</td><td>norge</td></tr>
+    <tr><td>Hesby, Nina</td><td>hesby@cs.ucsb.edu</td><td>hacktraq</td></tr>
+    <tr><td>Ho, Camden</td><td>camdenho@cs.ucsb.edu</td><td>cap5ule</td></tr>
+</table>
+
+    <h2>Mission</h2>
+
+The Etcetera subteam was formed in order to accommodate a number of small projects that didn't really fall under any banner.<br>
+<br>
+Nina and Rasmus: OS Fingerprinting<br>
+Jay: Network Traffic Analysis, ICMP TTL Sweep, nmap OS Detection Obfuscation were working on a method of OS fingerprinting.<br>
+Camden: SNMP Reconnaissance<br>
+<br>
+Jay was working on a project related to Nina and Rasmus's (although also falling slightly as an extension of the IP Mapping group) to do an ICMP ping sweep of the Omega network and attempt some simple OS fingerprinting from the TTL information (mainly for usage as a low-traffic utilization decoy that doesn't look like it is getting OS information).  Jay also worked on a tool to do network traffic analysis (updating little bar graphs with the amount of traffic being sent to any given host) in order to determine what information they might currently be working on (with the assumption that, as they understand more about our network, their network traffic 
+
+    <h2>Preparation</h2>
+
+Nina and Rasmus spent time using hping2 with various relatively unused TCP flags set on various computers in the test bed to see how they responded.  From this, they compiled a fingerprint of the various systems.  Doing so, this would hopefully avoid detections that were based specifically on the existing defacto tools for this purpose. A snort rule was also constructed from this (looking for esoteric packets using unused fields) to attempt to have better detection abilities than these other methods.<br>
+Nina and Rasmus also constructed a NetSTAT scenario that detected banner grabbing (based on connections to ports among multiple hosts that measured the amount of data sent on the connection before it was closed).<br>
+
+Jay wrote a tool related to Nina and Rasmus's (although also falling slightly as an extension of the IP Mapping group) to do an ICMP ping sweep of the Omega network and attempt some simple OS fingerprinting from the TTL information (mainly for usage as a low-traffic utilization decoy that doesn't look like it is getting OS information).<br>
+Jay also worked on a tool to do network traffic analysis (updating little bar graphs with the amount of traffic being sent to any given host) in order to determine what information they might currently be working on (with the assumption that, as they understand more about our network, their network traffic would converge on the hosts they thought were real/up).<br>
+Jay also wrote a small program with a regex based heuristic designed to notice nmap OS scans and send confusing traffic as responses to it.<br>
+
+Camden learned how to use a set of tools called net-snmp to discover as much information as possible from hosts with badly secured SNMP installations.<br>
+
+    <h2>Execution</h2>
+
+Nina and Rasmus performed the same kinds of operations using hping2 on the Omega network during the exercise in order to compare against the information they had gathered during their work on the testbed.<br>
+
+Jay ended up not needing to use his TTL scan (as David's amazing detector ended up superseding it), however, he did manage to get working and perform a small test (on a network of his in Chicago) that his nmap OS fingerprint obfuscator worked.  This was then run on the test bed, although no nmap OS scans were detected.  Jay also maintained his network traffic analyzer for most of the round, tweaking small things as time went.  He also made a modification to it to be able to work on where packets were coming from.  Some time just before the round and just as the round began went toward helping the service mapping group use his nmap+V extension.<br>
+
+Near the end of the exercise, after it was somewhat determined what OSs were running on what hosts and what services they had, Camden ran net-snmp.  Camden also manually examined the dump file at the end of exercise in order to determine whether or not SNMP was used by the opponent against us.<br>
+
+    <h2>Evaluation</h2>
+
+Nina and Rasmus's STAT scenario detected 7 banner grabbing attempts.  These seem to have come from one of their machines (as they did not spoof their IP address).<br>
+Nina and Rasmus's OS detection work determined that 192.168.22.78 was running RedHat 7.3, 192.168.22.31 was running Windows 2000, 192.168.22.193 was running RedHat 7.3, and 192.168.22.29 was running RedHat 6.2.  On Giovanni's network, 192.168.3.10 was found to be running MacOS X, and another computer was found (192.168.3.40), but nothing was known about it.  It didn't seem like any of the other OSs mentioned in this report, however.  Nina and Rasmus then ran nmap's OS detection against the computer, which returned an unknown fingerprint result (although it seemed closest to FreeBSD).<br>
+
+No one seemed to use an nmap OS scan, so Jay's obfuscation tool didn't flag anything.<br>
+Jay's traffic analysis tool was quite helpful in determining when Omega team found our hosts (which seemed to be during the memory outage).  The adapted version noticed a spike on 192.168.22.78 (which turned out to be one of their hosts).<br>
+
+Camden found some information from the RedHat 7.3 box, which was apparently serving SNMP information.  Camden determined that from this box (192.168.22.78), it had the hostname omega, was running the Linux kernel 2.4.18-3 (i686), and has been online for 3:20:22.66.  On 192.168.22.93, Camden determined that the computer name was psi, was running Linux 2.4.18-3, and had been online for 3:26:56.81.  Both computers were using enterprises.ucdavis.ucdSnmpAgent.linux for their SNMP agent.<br>
+Camden's manual sweep over the dump file determined that SNMP was not likely used by the opponent in order to obtain information from us.<br>
+
+<br>
+More time could have been spent on Jay's nmap OS fingerprint detector to make it be able to better simulate different kinds of nmap failures (although this was obviously not an issue).<br>
+<br>
+There was a lot of information going back and forth between etc and other groups.  Jay helped the service mapping group use his nmap+V tool, and also spent time conferring with David on the host simulator and how it would be affected by his OS obfuscation tool.  Nina and Rasmus got a list of running IP addresses and a list of closed/open ports from the IP Mapping group and the portscanning group.  Camden also got a list of running hosts from IP Mapping.<br>
+
+<br>
+Camden reports that net-snmp worked as advertised.  Nina and Rasmus found hping2 very powerful and quite helpful in their work.<br>
+
+    <h2>Miscellaneous</h2>
+
+    <h2>References</h2>
+  </body>
+</html>

@@ -1,0 +1,1405 @@
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210001">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F47A4.0x0">
+    2002-11-15T17:15:00.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-1024</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>ipmap / portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src net 192.168.22.0/24 and dst net 192.168.11.0/24 and tcp
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T17:15:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T17:17:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+slow scan over multiple minutes from random ips / ports to random ips 
+/ ports - filtering isn't too useful, must look at SYN packets between 
+start and stop time.
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210002">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F49C0.0x0">
+    2002-11-15T17:24:00.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-1024</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>ipmap / portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src net 192.168.22.0/24 and dst net 192.168.11.0/24 and tcp
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T17:24:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T17:28:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+slow scan over multiple minutes from random ips / ports to random ips 
+/ ports - filtering isn't too useful, must look at SYN packets between 
+start and stop time.
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210003">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F4BAF.0x0">
+    2002-11-15T17:32:15.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.33</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.78</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-1024</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src host 192.168.22.33 and dst host 192.168.11.78
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T17:32:15.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T17:32:15.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210004">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F4BDC.0x0">
+    2002-11-15T17:33:00.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-1024</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>ipmap / portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src net 192.168.22.0/24 and dst net 192.168.11.0/24 and tcp
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T17:33:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T17:35:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+slow scan over multiple minutes from random ips / ports to random ips 
+/ ports - filtering isn't too useful, must look at SYN packets between 
+start and stop time.
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210005">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F4C5B.0x0">
+    2002-11-15T17:35:07.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.33</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.78</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-10000</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src host 192.168.22.33 and dst host 192.168.11.78
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T17:35:07.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T17:36:07.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210006">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F4E55.0x0">
+    2002-11-15T17:43:33.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.33</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.78</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-2048</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src host 192.168.22.33 and dst host 192.168.11.78
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T17:43:33.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T17:43:33.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210007">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F4E34.0x0">
+    2002-11-15T17:43:00.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-1024</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>ipmap / portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src net 192.168.22.0/24 and dst net 192.168.11.0/24 and tcp
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T17:43:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T17:45:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+slow scan over multiple minutes from random ips / ports to random ips 
+/ ports - filtering isn't too useful, must look at SYN packets between 
+start and stop time.
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210008">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F4E91.0x0">
+    2002-11-15T17:44:33.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.33</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.78</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-1024</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src host 192.168.22.33 and dst host 192.168.11.78
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T17:44:33.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T17:44:33.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210009">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F4EE8.0x0">
+    2002-11-15T17:46:00.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>22</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>ipmap / service fingerprint</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src host 192.168.22.78 and dst net 192.168.11.0/24 and dst port 22
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T17:46:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T17:46:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210010">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F4F24.0x0">
+    2002-11-15T17:47:00.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.37</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.47</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.81</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-1024</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>portscan / service fingerprint</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src net 192.168.22.0/24 and \( dst host 192.168.11.37 or dst host 
+192.168.11.47 or dst host 192.168.11.56 or dst host 192.168.11.81 \)
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T17:47:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T17:48:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+port scan / service finger printing on four hosts.
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210011">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F5104.0x0">
+    2002-11-15T17:55:00.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>23</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>ip map / service fingerprint</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src host 192.168.22.78 and dst net 192.168.11.0/24 and dst port 23
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T17:55:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T17:55:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210012">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F535C.0x0">
+    2002-11-15T18:05:00.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.81</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-1024</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src net 192.168.22.0/24 and dst host 192.168.11.81
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T18:05:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T18:05:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210013">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F53D4.0x0">
+    2002-11-15T18:07:00.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.93</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>139</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>ip map / service fingerprint</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src host 192.168.22.78 and dst net 192.168.11.0/24 and dst port 23
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T18:07:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T18:07:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210014">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F544C.0x0">
+    2002-11-15T18:09:00.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-1024</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src net 192.168.22.0/24 and dst host 192.168.11.56
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T18:09:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T18:09:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210015">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F544C.0x0">
+    2002-11-15T18:09:00.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.81</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.37</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-1024</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src net 192.168.22.0/24 and \( dst host 192.168.11.81 or dst host 
+192.168.11.37 \)
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T18:12:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T18:12:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+port scan against two hosts
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210015">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F55B4.0x0">
+    2002-11-15T18:15:00.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-1024</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>ipmap / portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src net 192.168.22.0/24 and dst net 192.168.11.0/24 and tcp
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T18:15:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T18:17:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+slow scan over multiple minutes from random ips / ports to random ips 
+/ ports - filtering isn't too useful, must look at SYN packets between 
+start and stop time.
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210016">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F4BAF.0x0">
+    2002-11-15T17:32:15.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-1024</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src net 192.168.22.0/24 and dst host 192.168.11.56
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T18:17:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T18:17:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210017">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F5668.0x0">
+    2002-11-15T18:18:00.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.93</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>139</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>ip map / service fingerprint</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src host 192.168.22.78 and dst net 192.168.11.0/24 and dst port 23
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T18:18:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T18:20:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210018">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F57D0.0x0">
+    2002-11-15T18:24:00.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.67</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.81</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-1024</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>portscan / service fingerprint</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src net 192.168.22.0/24 and \( dst host 
+192.168.11.67 or dst host 192.168.11.56 or dst host 192.168.11.81 \)
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T18:24:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T18:26:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+port scan / service finger printing on three hosts.
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+
+
+
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha4210019">
+    <Analyzer analyzerid="snort-midlevel@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC17F58FC.0x0">
+    2002-11-15T18:29:00.0</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.0</address>
+          <netmask>255.255.255.0</netmask>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.67</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.81</address>
+        </Address>
+      </Node>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.37</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1-1024</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>portscan / service fingerprint</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">
+    src net 192.168.22.0/24 and \( dst host 
+192.168.11.67 or dst host 192.168.11.56 or dst host 192.168.11.81 \)
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="start-time">
+    2002-11-15T18:29:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="stop-time">
+    2002-11-15T18:36:00.0
+    </AdditionalData>
+
+    <AdditionalData type="string" meaning="comments">
+port scan / service finger printing on four hosts.
+    </AdditionalData>
+
+  </Alert>
+</IDMEF-Message>
+
+
+
+
+
+

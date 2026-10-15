@@ -1,0 +1,140 @@
+<!-- FALSE POSITIVE ALERT FILE -->
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha42">
+    <Analyzer analyzerid="snort-default-alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.57</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18012F2.0x0">
+    2002-11-15T16:42:26.135852 </CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.156</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.81</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>15104</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>DDOS</name>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">host 192.168.11.81 and port 15104</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<!-- FALSE POSITIVE ALERT FILE -->
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha42">
+    <Analyzer analyzerid="snort-default-alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.57</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1801326.0x0">
+    2002-11-15T16:43:18.614888 </CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.137</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.37</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>20432</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vender-specific">
+      <name>DDOS shaft client to handler</name>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">host 192.168.11.37 and port 20432</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<!-- FALSE POSITIVE ALERT FILE -->
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha42">
+    <Analyzer analyzerid="snort-default-alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.67</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1801326.0x0">
+   2002-11-15T16:43:18.614888 </CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.73</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.37</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>1368</portlist>
+      </Service>
+    </Target>
+
+    <Classification origin="vender-specific">
+      <name>DOS Bay/Nortel Nautica Marlin</name>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">host 192.168.11.37 and port 1368</AdditionalData>
+  </Alert>
+</IDMEF-Message>

@@ -1,0 +1,629 @@
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha2345678">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1800F09.0x0">
+    2002-11-15T16:25:04.117378-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>161, 162, 391, 1993</portlist>
+        <SNMPService>
+           <oid>system.sysUpTime.0</oid> 
+           <community>public</community> 
+           <command>GET</command>
+        </SNMPService>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SNMPrecon(GET)</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.22.78 and port
+    161 and port 1032</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha2345678">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1800F71.0x0">
+    2002-11-15T16:27:01.371187-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.93</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>161, 162, 391, 1993</portlist>
+        <SNMPService>
+           <oid>system.sysDescr.0</oid> 
+           <community>public</community> 
+           <command>GET</command>
+        </SNMPService>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SNMPrecon(GET)</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.22.93 and port
+    161 and port 1032</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha2345678">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1800FB6.0x0">
+    2002-11-15T16:28:07.584387-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.29</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>161, 162, 391, 1993</portlist>
+        <SNMPService>
+           <oid>system.sysDescr.0</oid> 
+           <community>public</community> 
+           <command>GET</command>
+        </SNMPService>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SNMPrecon(GET)</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.22.29 and port
+    161 and port 1032</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha2345678">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1801003.0x0">
+    2002-11-15T16:29:23.437099-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.31</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>161, 162, 391, 1993</portlist>
+        <SNMPService>
+           <oid>system.sysDescr.0</oid> 
+           <community>public</community> 
+           <command>GET</command>
+        </SNMPService>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SNMPrecon(GET)</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.22.31 and port
+    161 and port 1032</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha2345678">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1801043.0x0">
+    2002-11-15T16:30:28.723986-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>161, 162, 391, 1993</portlist>
+        <SNMPService>
+           <oid>system.sysDescr.0</oid> 
+           <community>public</community> 
+           <command>GET</command>
+        </SNMPService>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SNMPrecon(GET)</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.22.78 and port
+    161 and port 1032</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha2345678">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC180108B.0x0">
+    2002-11-15T16:31:40.796175-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.93</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>161, 162, 391, 1993</portlist>
+        <SNMPService>
+           <oid>system.sysUpTime.0</oid> 
+           <community>public</community> 
+           <command>GET</command>
+        </SNMPService>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SNMPrecon(GET)</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.22.93 and port
+    161 and port 1032</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha2345678">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18010EA.0x0">
+    2002-11-15T16:33:14.664777-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>161, 162, 391, 1993</portlist>
+        <SNMPService>
+           <oid>system.sysContact.0</oid> 
+           <community>public</community> 
+           <command>GET</command>
+        </SNMPService>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SNMPrecon(GET)</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.22.78 and port
+    161 and port 1032</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha2345678">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1801151.0x0">
+    2002-11-15T16:34:58.664008-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.93</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>161, 162, 391, 1993</portlist>
+        <SNMPService>
+           <oid>system.sysLocation.0</oid> 
+           <community>public</community> 
+           <command>GET</command>
+        </SNMPService>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SNMPrecon(GET)</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.22.93 and port
+    161 and port 1032</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha2345678">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18011E6.0x0">
+    2002-11-15T16:37:09.377821-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.40</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>161, 162, 391, 1993</portlist>
+        <SNMPService>
+           <oid>system.sysDescr.0</oid> 
+           <community>public</community> 
+           <command>GET</command>
+        </SNMPService>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SNMPrecon(GET)</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.3.40 and port
+    161 and port 1032</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha2345678">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18012B9.0x0">
+    2002-11-15T16:40:57.940824-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.78</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>161, 162, 391, 1993</portlist>
+        <SNMPService>
+           <oid>system.sysObjectID.0</oid> 
+           <community>public</community> 
+           <command>GET</command>
+        </SNMPService>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SNMPrecon(GET)</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.3.78 and port
+    161 and port 1032</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha2345678">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18012DB.0x0">
+    2002-11-15T16:41:31.893390-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.93</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>161, 162, 391, 1993</portlist>
+        <SNMPService>
+           <oid>system.sysObjectID.0</oid> 
+           <community>public</community> 
+           <command>GET</command>
+        </SNMPService>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SNMPrecon(GET)</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.3.93 and port
+    161 and port 1032</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha2345678">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1801306.0x0">
+    2002-11-15T16:42:15.305540-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.93</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>161, 162, 391, 1993</portlist>
+        <SNMPService>
+           <oid>system.sysObjectID.0</oid> 
+           <community>public</community> 
+           <command>GET</command>
+        </SNMPService>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SNMPrecon(GET)</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.22.93 and port
+    161 and port 1032</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha2345678">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC1801361.0x0">
+    2002-11-15T16:43:45.118212-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.78</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>161, 162, 391, 1993</portlist>
+        <SNMPService>
+           <oid>system.sysObjectID.0</oid> 
+           <community>public</community> 
+           <command>GET</command>
+        </SNMPService>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SNMPrecon(GET)</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.22.78 and port
+    161 and port 1032</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha2345678">
+    <Analyzer>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18013A8.0x0">
+    2002-11-15T16:44:49.101125-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.3.10</address>
+        </Address>
+      </Node>
+
+      <Service>
+        <portlist>161, 162, 391, 1993</portlist>
+        <SNMPService>
+           <oid>system.sysDescr.0</oid> 
+           <community>public</community> 
+           <command>GET</command>
+        </SNMPService>
+      </Service>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>SNMPrecon(GET)</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.11.56 and dst host 192.168.3.10 and port
+    161 and port 1032</AdditionalData>
+  </Alert>
+</IDMEF-Message>

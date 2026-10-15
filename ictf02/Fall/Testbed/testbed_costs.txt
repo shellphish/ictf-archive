@@ -1,0 +1,27 @@
+For testbed
+
+CompUSA:
+CDROM drives		4 x  29.99 plus taxes = 129.26
+Ethernet HUB 16 ports	1 x 139.99 plus taxes = 150.84
+Network cables		8 x  14.99 plus taxes = 129.21
+					      --------
+						409.31
+Costco:
+Power strip		1 x  14.69 plus taxes =  15.83
+80G Hard Drive		1 x 169.99 plus taxes = 183.16
+					      --------
+					        198.99
+
+On DARPA/Kemmerer
+
+CompUSA:
+KVM cables		3 x  29.99 plus taxes =  96.94
+					      --------
+						 96.94
+
+Costco:
+Power strip		2 x  14.69 plus taxes =  31.66
+80G Hard Drive		1 x 169.99 plus taxes = 183.16
+					      --------
+						214.82
+

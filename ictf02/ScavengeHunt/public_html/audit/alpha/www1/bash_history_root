@@ -1,0 +1,60 @@
+vi .bash_history 
+cd /var/www/
+ls
+vi .bash_history 
+rm .bash_history 
+ssh saa
+ssh saa
+vi .bash
+vi .bash_
+vi .bash_history 
+ls
+ping www2
+ping www2
+iptables -A INPUT -s www1 -j DROP
+iptables -F
+iptables -L
+iptables -A INPUT -s www2 -j DROP
+iptables -L
+/sbin/service iptables save
+/sbin/chkconfig --level 0123456 ipchains off
+date
+date
+date
+ssh root@saa
+ssh root@taa
+ssh administrator@taa
+telnet wweasel
+telnet uaa
+ssh 192.168.20.49
+telnet 192.168.20.49
+ls
+ssh 192.168.20.6
+ssh 192.168.20.6
+ls
+/etc/init.d/audit stop
+cd /var/log/snare
+ls
+rm *
+/etc/init.d/audit start
+ls /var/log/snare
+ls -l /var/log/snare
+cat /root/.bash_profile 
+ls /home
+cat /home/leonardo/.bash_profile 
+cd /var/log/snare
+ls
+ls -l
+date
+ls -lh *
+date
+ls -lh *
+cd /var/log/snare
+ls -lh
+date
+ps
+whoami
+exit
+ls
+ls
+ls -l

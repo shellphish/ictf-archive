@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="HTML Tidy for Mac OS X (vers 1st December 2002), see www.w3.org"
+          name="generator" />
+    <meta name="Author" content="Giovanni Vigna" />
+    <meta name="keywords"
+    content="Treasure Hunt, Datasets, Intrusion detection, Correlation" />
+    <link href="vigna.css" rel="stylesheet" type="text/css" />
+    <title>
+      The Treasure Hunt Dataset
+    </title>
+  </head>
+  <body>
+    <div class="main">
+      <h1>
+        The Treasure Hunt Dataset
+      </h1>
+      <p>
+        This dataset is the result of a class exercise in a
+        graduate security class taught at UC Santa Barbara by
+        Giovanni Vigna. If you find this dataset useful, please
+        send an email message to <tt>vigna@cs.ucsb.edu</tt>,
+        describing how you used it.
+      </p>
+      <h2>
+        Description of the Exercise
+      </h2>
+      <p>
+        The class was divided into two teams, Alpha and Omega,
+        competing against each other in a treasure hunt. The goal
+        of the treasure hunt was to break into a simulated (yet
+        realistic) payroll system and perform a money transfer
+        transaction. Each team had to perform a number of tasks
+        (e.g., scan a network or break into a host). Each task had
+        to be completed in a limited amount of time (e.g., 30
+        minutes). The first team that achieved the task got 5
+        points. If the other team completed the task within the
+        specified time, it received 3 points. If the time elapsed
+        and the team was not able to complete the task, then a
+        cheat-sheet was provided so that the task could be
+        completed, but no points were given. A task was disclosed
+        only after the previous one was completed by both teams.
+        The list of tasks is presented in Table 1.
+      </p>
+      <p>
+        In preparation for the exercise it was suggested that each
+        team build expertise in a list of topics: network scanning
+        techniques, attacks against SQL servers (both local and
+        remote), NIS-based and NFS-based attacks, buffer overflow
+        attacks (both local and remote), privilege escalation
+        techniques, password cracking techniques, attacks against
+        Apache web servers, attacks against CGI applications. This
+        list was provided to focus the energy of the teams on
+        techniques that would be useful during the exercise.
+      </p>
+      <p>
+        It was made very clear to the students that the ultimate
+        goal of the exercise was to perform a multi-step attack
+        that was as realistic as possible. This is particularly
+        useful for alert correlation purposes. Therefore, an
+        important by-product of this exercise was the Tcpdump data,
+        BSM data, Windows event logs, and Snare events collected on
+        the networks and hosts used during the exercise.
+      </p>
+      <table width="75%" summary="Tasks">
+        <caption>
+          Table 1: List of tasks used during the treasure hunt
+          exercise
+        </caption>
+        <thead>
+          <tr>
+            <td>
+              Task
+            </td>
+            <td>
+              Description
+            </td>
+            <td>
+              Max Duration
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              1
+            </td>
+            <td>
+              Determine the active hosts in subnet X.Y.Z. Also
+              determine each host's OS and the
+              services/applications that are remotely accessible.
+              Scanning techniques that will evade detection by the
+              Snort system will receive additional bonus points.
+            </td>
+            <td>
+              20 minutes
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2
+            </td>
+            <td>
+              Get interactive access to the web server host by
+              exploiting a web-based vulnerability. You must be
+              able to login into the host as a user account other
+              than root.
+            </td>
+            <td>
+              30 minutes
+            </td>
+          </tr>
+          <tr>
+            <td>
+              3
+            </td>
+            <td>
+              Get root privileges on the web server host.
+            </td>
+            <td>
+              30 minutes
+            </td>
+          </tr>
+          <tr>
+            <td>
+              4
+            </td>
+            <td>
+              Determine the hosts that are located in the specified
+              internal subnet. Also determine their OSs and the
+              services/applications that are remotely accessible.
+              Scanning techniques that will evade detection by the
+              Snort system will receive additional bonus points.
+            </td>
+            <td>
+              20 minutes
+            </td>
+          </tr>
+          <tr>
+            <td>
+              5
+            </td>
+            <td>
+              Access the MySQL database on host SQL and obtain the
+              content of the table Employees.
+            </td>
+            <td>
+              20 minutes
+            </td>
+          </tr>
+          <tr>
+            <td>
+              6
+            </td>
+            <td>
+              Get interactive access to the MySQL server host. You
+              have to be able to login with an account that is not
+              root
+            </td>
+            <td>
+              20 minutes
+            </td>
+          </tr>
+          <tr>
+            <td>
+              7
+            </td>
+            <td>
+              Get root access to the MySQL server host.
+            </td>
+            <td>
+              20 minutes
+            </td>
+          </tr>
+          <tr>
+            <td>
+              8
+            </td>
+            <td>
+              Modify the database table Employees, setting the
+              account number of each employee to an account number
+              of your choice.
+            </td>
+            <td>
+              10 minutes
+            </td>
+          </tr>
+          <tr>
+            <td>
+              9
+            </td>
+            <td>
+              Obtain access to the transaction service on host TRN.
+              Schedule a paycheck payment that will transfer the
+              employee paychecks to your account.
+            </td>
+            <td>
+              30 minutes
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>
+        Network Topology
+      </h2>
+      <p>
+        In order to prevent the two teams from interfering with
+        each other, two identical target networks were setup. The
+        topology of the networks used in the exercise is shown in
+        Figure 1. In the following, we describe a single target
+        network. The web server was placed on a DMZ network. The
+        MySQL server (host SAA/SOO), the file server (host
+        UAA/UOO), and the transaction server (host TAA/TOO) were
+        placed on a separate network, accessible only by the web
+        server host. The web server was an Apache server, running
+        as user <tt>apache</tt>, as per default installation. In
+        addition to a fake corporation site, a number of broken CGI
+        scripts were installed on the web server. One CGI script
+        was vulnerable to a phf-style attack. Another CGI script
+        contained information about how to log into the MySQL
+        database, namely a clear text password. A program for
+        checking the syntax of Perl files was 'erroneously' left
+        around in the CGI directory. This program could be invoked
+        through the web server. The program allowed one to view the
+        source code of all the CGI scripts installed on the server,
+        disclosing important information, such as embedded MySQL
+        passwords. The file server was configured to export the
+        file system <tt>/home</tt> to the world. This is a security
+        mistake often present in internal networks, where security
+        is more relaxed. In addition, the host NFS was configured
+        to provide password files through NIS. The MySQL server
+        provided remote access to user <tt>dbuser</tt> with
+        password <tt>bsecret</tt>. Note that by default MySQL
+        allows local access to root without having to provide a
+        password. The server mounted the <tt>/home</tt> file system
+        from the file server. The transaction server had a service
+        running on port 7979. The transaction application was
+        developed ad hoc for this exercise by the instructor. When
+        connecting to port 7979, the user was dropped into a simple
+        shell application. Typing HELP would show a list of
+        commands, one of which was <tt>PAYCHECK</tt>. The team was
+        supposed to invoke that function to transfer all the
+        employee paychecks to the attacker's account. That function
+        required a password. The encrypted (but very guessable)
+        password was stored in the password file distributed
+        through NIS.
+      </p>
+      <table summary="topology" width="75%">
+        <caption>
+          Figure 1: Network topology
+        </caption>
+        <tr>
+          <td>
+            <img alt="Topology" src="img/scavengenet.png" />
+          </td>
+        </tr>
+      </table>
+      <h2>
+        Included Files
+      </h2>
+      <table summary="files">
+        <thead>
+          <tr>
+            <td align="left">
+              File
+            </td>
+            <td align="left">
+              Description
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="index.html">index.html</a>
+            </td>
+            <td>
+              This file
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/hosts">audit/hosts</a>
+            </td>
+            <td>
+              Mapping form IP addresses to hostnames
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/alpha/saa/bash_history_root">audit/alpha/saa/bash_history_root</a>
+            </td>
+            <td>
+              Bash history of the root user on saa
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/alpha/saa/conf/mysql.dbinit.tgz">audit/alpha/saa/conf/mysql.dbinit.tgz</a>
+            </td>
+            <td>
+              Scripts to initialize mysql
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/alpha/saa/conf/timetracker.tar">audit/alpha/saa/conf/timetracker.tar</a>
+            </td>
+            <td>
+              The timetracker application (vulnerable suid)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/alpha/saa/snare/">audit/alpha/saa/snare/</a>
+            </td>
+            <td>
+              Snare audit data for saa
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/alpha/saa/syslog/">audit/alpha/saa/syslog/</a>
+            </td>
+            <td>
+              Syslog files from saa
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/alpha/taa/logs/">audit/alpha/taa/logs/</a>
+            </td>
+            <td>
+              Windows event logs from taa
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/alpha/uaa/audit/">audit/alpha/uaa/audit/</a>
+            </td>
+            <td>
+              Solaris BSM files from uaa
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/alpha/uaa/conf/dfstab">audit/alpha/uaa/conf/dfstab</a>
+            </td>
+            <td>
+              dfstab file used to mount home directories through
+              NFS
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/alpha/uaa/conf/yp.tar.gz">audit/alpha/uaa/conf/yp.tar.gz</a>
+            </td>
+            <td>
+              YP(NIS) configuration including all users and
+              passwords
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/alpha/uaa/home/">audit/alpha/uaa/home/</a>
+            </td>
+            <td>
+              Home directories of all users on uaa
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/alpha/uaa/syslog/messages">audit/alpha/uaa/syslog/messages</a>
+            </td>
+            <td>
+              Syslog file from uaa
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/alpha/www1/bash_history_root">audit/alpha/www1/bash_history_root</a>
+            </td>
+            <td>
+              Bash history of the root user on www1
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/alpha/www1/conf/www1.etc.passwd.tgz">audit/alpha/www1/conf/www1.etc.passwd.tgz</a>
+            </td>
+            <td>
+              Passwd file from www1
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/alpha/www1/conf/www1.var.www.tgz">audit/alpha/www1/conf/www1.var.www.tgz</a>
+            </td>
+            <td>
+              Web root of www1
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/alpha/www1/httpd/">audit/alpha/www1/httpd/</a>
+            </td>
+            <td>
+              Apache logs from www1
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/alpha/www1/snare/">audit/alpha/www1/snare/</a>
+            </td>
+            <td>
+              Snare logs from www1
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/alpha/www1/syslog/">audit/alpha/www1/syslog/</a>
+            </td>
+            <td>
+              Syslog files from www1
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/fwl/conf/firewall">audit/fwl/conf/firewall</a>
+            </td>
+            <td>
+              IP tables configuration file for firewall host
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/fwl/tcpdump/eth1/">audit/fwl/tcpdump/eth1/</a>
+            </td>
+            <td>
+              TCP dump from eth1 on firewall (DMZ)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/fwl/tcpdump/eth2/">audit/fwl/tcpdump/eth2/</a>
+            </td>
+            <td>
+              TCP dump from eth1 on firewall (Alpha network)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/fwl/tcpdump/eth3/">audit/fwl/tcpdump/eth3/</a>
+            </td>
+            <td>
+              TCP dump from eth1 on firewall (Omega network)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/omega/soo/bash_history_root">audit/omega/soo/bash_history_root</a>
+            </td>
+            <td>
+              Bash history of the root user on soo
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/omega/soo/conf/mysql.dbinit.tgz">audit/omega/soo/conf/mysql.dbinit.tgz</a>
+            </td>
+            <td>
+              Scripts to initialize mysql
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/omega/soo/conf/timetracker.tar">audit/omega/soo/conf/timetracker.tar</a>
+            </td>
+            <td>
+              The timetracker application (vulnerable suid)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/omega/soo/snare/">audit/omega/soo/snare/</a>
+            </td>
+            <td>
+              Snare audit data for soo
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/omega/soo/syslog/">audit/omega/soo/syslog/</a>
+            </td>
+            <td>
+              Syslog files from soo
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/omega/too/conf/too.transact.tgz">audit/omega/too/conf/too.transact.tgz</a>
+            </td>
+            <td>
+              Source for the transaction server
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/omega/too/logs/">audit/omega/too/logs/</a>
+            </td>
+            <td>
+              Windows event logs from too
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/omega/uoo/audit/">audit/omega/uoo/audit/</a>
+            </td>
+            <td>
+              Solaris BSM files from uoo
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/omega/uoo/conf/dfstab">audit/omega/uoo/conf/dfstab</a>
+            </td>
+            <td>
+              dfstab file used to mount home directories through
+              NFS
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/omega/uoo/conf/yp.tar.gz">audit/omega/uoo/conf/yp.tar.gz</a>
+            </td>
+            <td>
+              YP(NIS) configuration including all users and
+              passwords
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/omega/uoo/home/">audit/omega/uoo/home/</a>
+            </td>
+            <td>
+              Home directories of all users on uoo
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/omega/uoo/syslog/messages">audit/omega/uoo/syslog/messages</a>
+            </td>
+            <td>
+              Syslog file from uoo
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/omega/www2/bash_history_root">audit/omega/www2/bash_history_root</a>
+            </td>
+            <td>
+              Bash history of the root user on www2
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/omega/www2/conf/www2.etc.passwd.tgz">audit/omega/www2/conf/www2.etc.passwd.tgz</a>
+            </td>
+            <td>
+              Passwd file from www2
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/omega/www2/conf/www2.var.www.tgz">audit/omega/www2/conf/www2.var.www.tgz</a>
+            </td>
+            <td>
+              Web root of www2
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/omega/www2/httpd/">audit/omega/www2/httpd/</a>
+            </td>
+            <td>
+              Apache logs from www2
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/omega/www2/snare/">audit/omega/www2/snare/</a>
+            </td>
+            <td>
+              Snare logs from www2
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="audit/omega/www2/syslog/">audit/omega/www2/syslog/</a>
+            </td>
+            <td>
+              Syslog files from www2
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        <b>NB:</b> The Snare files in this dataset are generated by
+        the LinSTAT audit daemon and have a slightly different
+        format than standard Snare records. The files can be read
+        with the 'praudit' tool included with the LinSTAT sensor.
+        LinSTAT can be downloaded
+        <a href="http://www.cs.ucsb.edu/~rsg/STAT/software/linstat.html">
+        here</a>.
+      </p>
+      <h2>
+        Possible Ways of Generating IDMEF alerts from this dataset
+      </h2>
+      <p>
+        To generate IDMEF alerts from this dataset, suitable IDS
+        sensors have to be run on the different log files. We have
+        successfully generated IDMEF alerts from this dataset using
+        the following sensors:
+      </p>
+      <table summary="sensors">
+        <thead>
+          <tr>
+            <td align="left">
+              Audit type
+            </td>
+            <td align="left">
+              IDS sensor name
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Tcpdump data
+            </td>
+            <td>
+              Snort
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Snare (Linux kernel audit data)
+            </td>
+            <td>
+              LinSTAT
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Solaris BSM (Solaris kernel audit data)
+            </td>
+            <td>
+              USTAT
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Windows Event Log
+            </td>
+            <td>
+              WinSTAT
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Syslog files
+            </td>
+            <td>
+              LogSTAT
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Apache logs
+            </td>
+            <td>
+              WebSTAT
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Other sensors could be used if they are able to process the
+        data format used.
+      </p>
+    </div>
+    <div class="footer">
+      <hr />
+      Giovanni Vigna,
+      <a href="http://www.cs.ucsb.edu/~vigna">http://www.cs.ucsb.edu/~vigna</a>
+    </div><!--  LocalWords:  NIS XHTML lang en vers css UC fwl
+     -->
+    </body>
+</html>

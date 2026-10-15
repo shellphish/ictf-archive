@@ -1,0 +1,150 @@
+<!-- Guidelines:
+- Use unique Alert ident tags
+- Use IP addresses as shown in this example for the node associated 
+with 
+  Analyzer, Sources, and Targets
+- You HAVE to use NTP timestamps. If you do not know what they are,
+  check the IDMEF extension in the STAT distribution. There are 
+functions
+  for the creation of NTP timestamps
+- Use the Classification as specified in the example alert
+- The Assessment tag is important, even though it will be of low 
+severity,
+  and of "recon" type 
+- Truth file alerts will have an empty Analyzer tag
+- Truth file alerts will have an empty Assessment tag 
+-->
+<!-- Example of detection alert -->
+<IDMEF-Message version="1.0">
+  <Alert ident="alpha555">
+    <Analyzer analyzerid="snort@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18014C4.0x0">
+    2002-11-15T16:50:12.595628-05:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.99</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.91</address>
+        </Address>
+      </Node>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.22.99 and src port 59806</AdditionalData>
+  </Alert>
+
+<Alert ident="alpha556">
+    <Analyzer analyzerid="snort@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18010CD.0x0">
+    2002-11-15T16:33:17.988503-08:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.24</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.37</address>
+        </Address>
+      </Node>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.22.24 and src port 46702</AdditionalData>
+  </Alert>
+
+<Alert ident="alpha557">
+    <Analyzer analyzerid="snort@alpha">
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.56</address>
+        </Address>
+      </Node>
+    </Analyzer>
+
+    <CreateTime ntpstamp="0xC18010CE.0x0">
+    2002-11-15T16:33:18.412039-08:00</CreateTime>
+
+    <Source>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.22.47</address>
+        </Address>
+      </Node>
+    </Source>
+
+    <Target>
+      <Node>
+        <Address category="ipv4-addr">
+          <address>192.168.11.37</address>
+        </Address>
+      </Node>
+    </Target>
+
+    <Classification origin="vendor-specific">
+      <name>portscan</name>
+
+      <url>http://www.cs.ucsb.edu/~vigna/courses/CS279</url>
+    </Classification>
+
+    <Assessment>
+      <Impact severity="low" completion="succeeded"
+      impacttype="recon" />
+    </Assessment>
+
+    <AdditionalData type="string" meaning="tcpdump-filter">src host
+    192.168.22.47 and src port 38546</AdditionalData>
+  </Alert>
+</IDMEF-Message>
+
+
+
