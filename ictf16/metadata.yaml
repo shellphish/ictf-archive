@@ -42,9 +42,27 @@ results:
     (barely ahead at time of DDoS). LC/BC was disqualified.
     CTFtime weight: 62.63 (high-prestige event).
 
-challenges: []
-# Known service: "flasking_unicorns" visible in DDoS post exploit traffic.
-# 12 service ports (20001-20012) referenced in DDoS analysis.
+challenges:
+  # 12 services on ports 20001-20012. Only 2 names confirmed.
+  - name: flasking_unicorns
+    title: "Flasking Unicorns"
+    category: web
+    description: >
+      Flask web service with a Server-Side Template Injection (SSTI) vulnerability
+      at the /nice_try endpoint. Confirmed from DDoS post-mortem: LC/BC used this
+      vulnerability to install a backdoor on team VMs during the competition,
+      then pivoted to DDoS Bushwhackers. Flask Jinja2 SSTI via Python 2.7 eval.
+      Service logs were used as evidence in the DDoS forensic analysis.
+
+  - name: turing_award
+    title: "Turing Award"
+    category: binary
+    description: >
+      Service at port 20006. Name confirmed from an editor's note in the DDoS
+      forensic analysis (DDOS.md): the smoking-gun DDoS payload connected to
+      "2887745995" (172.31.129.203 = Bushwhackers, team 203) on port 20006, with
+      the comment "# EDITOR'S NOTE: turing_award@bushwhackers". Nature of the
+      service not otherwise documented in the archive.
 
 data:
   - type: other

@@ -8,7 +8,9 @@ dates:
   start: "2015-12-04"
   end: "2015-12-04"
   # Competition ran December 4-5, 2015, 8 hours (winner declared at 5pm Dec 4)
-  # Note: database/last_db.sql.xz contains April 2015 (ictf14) data, not Dec 2015 data.
+  # Note: database/last_db.sql.xz has MySQL header "Database: ictf14" and timestamp 2015-04-10.
+  # This appears to be the ictf14 services database (April 10, 2015 competition) mis-archived here.
+  # The 42 services listed were deployed in ictf14; ictf15 reused them plus notecxx (43 total).
 
 participation:
   num_teams: 35
