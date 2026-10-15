@@ -21,6 +21,18 @@ other/
 # Re-include the scorebot archive (428 KB — fits in git)
 !ictf10/ucsb_ctfscorebot5.tar.gz
 
+# Re-include all GPG-encrypted files (service archives, encrypted DBs)
+!*.gpg
+# ...except the original competition VM images (> 100 MB; no LFS available)
+ictf05/ctf05-final.tar.gz.gpg
+ictf05/**/ctf05-final.tar.gz.gpg
+ictf04/**/iCTF.tgz.gpg
+ictf04-05/**/iCTF.tgz.gpg
+ictf04-05/**/iCTF2.tgz.gpg
+ictf05/**/iCTF2.tgz.gpg
+ictf07/**/iCTF2007.tgz.gpg
+ictf08/**/ucsb-ictf-08-final.tar.gz.gpg
+
 # Re-include challenge attachments (tracked via Git LFS)
 !**/challenges/**/attachments/*.tar.gz
 !**/challenges/**/attachments/*.gz
