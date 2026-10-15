@@ -1,0 +1,18 @@
+# Initialization
+AC_INIT(libmydiag, 1.0, vigna@cs.ucsb.edu)
+AM_INIT_AUTOMAKE(libmydiag, 1.0)
+
+# Check for programs
+AC_PROG_CC
+AC_PROG_INSTALL
+AC_PROG_RANLIB
+
+# Checks for headers
+AC_CHECK_HEADERS(stdarg.h varargs.h, break)
+
+# Checks for library functions.
+AC_FUNC_VPRINTF
+
+# Output functions
+AC_CONFIG_FILES(Makefile)
+AC_OUTPUT

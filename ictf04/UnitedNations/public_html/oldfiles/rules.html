@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta content="HTML Tidy for Linux/x86 (vers 1st April 2003), see www.w3.org"
+        name="generator" />
+  <link href="netsec.css" rel="stylesheet" type="text/css" />
+
+  <title>Capture The Flag - Rules</title>
+</head>
+
+<body>
+  <h1>Capture The Flag - Rules</h1>
+
+  <p>This is a set of rules for the CTF competition. It is not
+  possible/feasible to list all the rules and the exceptions to rules that
+  apply. When deciding if an attack/protection technique is fair or not, try
+  to think about the fact that the goal of this exercise in not to determine
+  who is <tt>1337</tt> and who is <tt>l4m3r</tt>, but, instead, to learn about
+  protecting/attacking a system in a live situation. Try not to focus on
+  &quot;breaking&quot; the scoring system and instead concentrate on
+  developing/deploying effective (and realistic) defense and attack
+  techniques.</p>
+
+  <p>Below, you'll find the current list of rules. These may change as more
+  issues are raised by the participants.</p>
+
+  <ul>
+    <li>It is forbidden to launch denial-of-service (DOS) attacks. This is
+    particularly critical, given the limited duration of the exercise. Please
+    no floods, no DNS poisoning, no obviously destructive behavior.</li>
+
+    <li>Traffic generation will be penalized, regardless of the fact that the
+    traffic is part of a DOS attack or not. Generating traffic from a host
+    that a team has compromised to penalized the owner team is considered
+    unfair practice. Please don't do it.</li>
+
+    <li>It is possible to patch the services, provided that the patch is made
+    available to the organizers by sending an email to <a
+    href="ctf-admin@cs.ucsb.edu">ctf-admin@cs.ucsb.edu</a>. This will allow
+    the organizers to make sure that a patch will not block the scoring
+    system, otherwise the service will be considered as non-functional.</li>
+
+    <li>The scoring mechanism will access random pages at random times, in
+    addition to checking for the flag values. Blocking access to the service
+    functionality that is not associated with flag verification is equivalent
+    to having the service not available.</li>
+
+    <li>It is not possible to perform attacks <b>outside</b> the VPN. For
+    example, attacking a site box using its routable address is not
+    allowed. All the traffic for the CTF must be contained within the
+    VPN.</li>
+
+    <li>It is allowed to attack any host of a team's subnetwork. The attacks
+    are not necessarily limited to the OS image. For example, if you compromise 
+    the OS image of Team 1 you may try to compromise the host that is running
+    the VMware application.</li>
+    
+  </ul>
+  <hr />
+  <!--  LocalWords:  Arial Helvetica FFFFFF px Trebuchet OL THEAD TBODY TFOOT
+     -->
+  <!--  LocalWords:  html CTF DNS VPN routable VMware
+     -->
+</body>
+</html>

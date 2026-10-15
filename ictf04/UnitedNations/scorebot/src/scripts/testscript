@@ -1,0 +1,20 @@
+#!/bin/bash
+echo "Hello"
+echo "Arg1: $1" # IP
+echo "Arg2: $2" # newflag
+echo "Arg3: $3" # Cookie
+echo "Arg4: $4" # extra conf
+echo "Arg5: $5" # extra conf
+echo
+
+echo "COOKIE:$2"
+echo "FLAG:$3";
+
+if [ "$4" = "hack" ] ; then
+  echo "Hacking"
+  /home/fredrik/src/ctfscratch/validate $5 $2;
+else
+ echo "FLAG:$3";
+fi
+
+exit 0

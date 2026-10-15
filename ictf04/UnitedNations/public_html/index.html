@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="HTML Tidy for Mac OS X (vers 1st December 2002), see www.w3.org"
+          name="generator" />
+    <link href="netsec.css" rel="stylesheet" type="text/css" />
+    <title>
+      The 2004 UCSB Capture The Flag
+    </title>
+  </head>
+  <body>
+    <div class="banner">
+      <h1>
+        The 2004 UCSB Capture The Flag
+      </h1>
+    </div>
+    <div class="main">
+      <p>
+        The UCSB Capture The Flag is a distributed, wide-area
+        security exercise, whose goal is to test the security
+        skills of students from both the attack and defense
+        viewpoints.
+      </p>
+      <p>
+        The CTF evolved from four previous security "live
+        exercises" that were carried out locally at UCSB. The first
+        edition of the UCSB CTF was carried out in December 2003.
+        In that CTF, fourteen teams from around the United States
+        competed in a contest to compromise other teams' network
+        services while trying to protect their own services from
+        attacks. The contest included teams from UCSB, North
+        Carolina State University, the Naval Postgraduate School in
+        Monterey, the West Point Academy, Georgia Tech, University
+        of Texas at Austin, and University of Illinois,
+        Urbana-Champaign.
+      </p>
+      <p>
+        This year we will perform an <i>international</i> CTF
+        exercise, which includes teams from the United States and
+        Europe. This has never be attempted before, and there are
+        substantial technical issues that have to be addressed. We
+        hope in the collaboration (and in the understanding) of
+        everyone involved.
+      </p>
+      <p>
+        The exercise is loosely based on the
+        <a href="http://www.defcon.org">DEFCON</a> Capture the Flag
+        contest. Acknowledgments go to the Ghetto Hackers that did
+        such a wonderful (and inspiring) job in organizing the CTF
+        contest at DEFCON. Many of the ideas of our CTF are derived
+        from the DEFCON CTF and the lessons learned by
+        participating to the DEFCON contest this August.
+      </p>
+      <p>
+        This exercise is different from the DEFCON contest because
+        it involves several educational institutions spread across
+        the nation. The DEFCON contest includes locally connected
+        teams only.
+      </p>
+      <p>
+        In addition, the DEFCON contest has always involved a
+        limited number of teams. We tried to develop a new network
+        solution that allows a large number of teams to
+        participate.
+      </p>
+      <h2>
+        1. Description
+      </h2>
+      <p>
+        The Capture The Flag contest is a multi-site, multi-team
+        hacking contest in which a number of teams compete
+        independently against each other.
+      </p>
+      <p>
+        Each team is given a VMware image containing a Linux server
+        installation. The server provides a number of services. The
+        services have a number of undisclosed vulnerabilities,
+        which have been included by the contest organizers.
+      </p>
+      <p>
+        The goal of each team is to maintain the set of services
+        available and uncompromised throughout the contest phase.
+        Each team can (and should) attempt to compromise other
+        teams' services.
+      </p>
+      <p>
+        During the contest a scoring system keeps track, for each
+        team, of what services are available, and which services
+        have been compromised.
+      </p>
+      <h2>
+        2. Schedule
+      </h2>
+      <p>
+        The CTF will be held on December 3, 2004. The contest will
+        start at 10am, PST, by distributing a VMware image of a
+        Linux system that provides a number of services. The
+        participating teams have one hour to set up their systems
+        and their connections. During this phase no traffic between
+        teams will be allowed.
+      </p>
+      <p>
+        At 11am, PST the teams will start to compete and they will
+        be able to attack each other. During this time the scoring
+        system will provide real-time information about the
+        performance of the participants.
+      </p>
+      <p>
+        At 4pm, PST the competition will end and the winner will be
+        declared.
+      </p>
+      <h2>
+        3. Network setup
+      </h2>
+      <h3>
+        3.1 Topology and IP addresses
+      </h3>
+      <p>
+        The Capture The Flag (CTF) exercise involves a number of
+        <i>sites</i> (e.g., UCSB, UC Davis, Georgia Tech). Each
+        site can have one ore more independent <i>teams</i>.
+      </p>
+      <p>
+        Each site has a dedicated non-routeable set of addresses.
+        Each team at each site has a dedicated class C subnetwork
+        allocated within the address space of the site. For
+        example, UCSB has the 10.10.x.x address space, and two UCSB
+        teams have address spaces 10.10.10.x, 10.10.20.x,
+        respectively.
+      </p>
+      <p>
+        Each site has a dedicated host, called the <i>site box</i>.
+        The site box is connected to each of the site team
+        subnetworks by means of a dedicated interface whose address
+        is the "1" address of the corresponding subnetwork. For
+        example, UCSB's site box is connected to the subnetworks
+        through two interfaces with addresses 10.10.10.1,
+        10.10.20.1, respectively.
+      </p>
+      <p>
+        Each site box is connected to a central host called the
+        <i>main box</i>. The connection between site boxes and the
+        main box is implemented through a VPN tunnel. The figure
+        below shows an example of the topology for four sites
+        (UCSB, A, B, and C), with four, three, two, and one team,
+        respectively.
+      </p><img alt="ctf topology" src="ctf-topology.png" /> 
+      <p>
+        The list of IP addresses assigned to each site and team is
+        available on the <a href="participants.html">participants
+        page</a>. To receive help in setting up your network,
+        please send email to William Robertson at
+        <a href="mailto:wkr@cs.ucsb.edu">wkr@cs.ucsb.edu</a>.
+      </p>
+      <h3>
+        3.2 Routing configuration
+      </h3>
+      <p>
+        The site boxes are configured so that all the traffic out
+        of each team subnetwork is sent to the main box. This is an
+        important difference with respect to a standard
+        configuration. In a "normal" set up, traffic exchanged
+        between two subnetworks connected to the same site box
+        would not be sent to the main box. In this setup, instead,
+        the traffic must always be forwarded to the main box
+        because the box is configured to anonymize the traffic and
+        collect statistics. For example, imagine the two hosts
+        10.10.20.2 and 10.10.40.2 in the figure above want to
+        communicate. In a usual setup the traffic would have been
+        routed through the site box only. In the CTF setup the
+        traffic is routed through the following path: 10.10.20.2
+        -&gt; site box -&gt; main box -&gt; site box -&gt;
+        10.10.40.2.
+      </p>
+      <p>
+        To achieve this, it is necessary to configure a site box
+        properly. Note that if you only have one team at your site,
+        you do not have to perform this step. If you have more than
+        one team at your site, contact us with details about how to
+        set up this routing. You basically have two options. Either
+        run two site boxes with two completely separate VPN
+        connection to us (this is what we recommend), alternatively
+        you can perform routing-voodoo on your site box. The UCSB
+        site box is utilizing the voodoo solution. If you choose to
+        walk down that path you probably have to run OpenBSD on
+        your site box.
+      </p>
+      <h3>
+        3.3 VPN Setup
+      </h3>
+      <p>
+        The VPN setup is a critical step and has to be completed as
+        soon as possible. The detail on the setup are provided
+        <a href="vpn.html">here</a>.
+      </p>
+      <h3>
+        3.4 Team Hosts
+      </h3>
+      <p>
+        Each team can have any number of hosts in their subnetwork.
+        The only requirement is that a PC, called, the <i>team
+        box</i> is part of the subnetwork. The team box should have
+        Fedora Core 2 (FC2) and VMware Workstation 4.5.2 installed.
+        Fedora Core 2 is freely available. A copy of the ISO images
+        for the installation disks is available on the
+        <a href="ftp://ftp.ucsb.edu//pub/mirrors/linux/fedora/linux/core/2/i386/iso/">
+        UCSB FTP site</a> and in other locations. A copy of the RPM
+        for VMware Workstation 4.5.2 is available
+        <a href="VMware-workstation-4.5.2-8848.i386.rpm">here</a>.
+        A 30-day evaluation key for VMware is available at the
+        <a href="http://www.vmare.com/">VMware web site</a>.
+      </p>
+      <p>
+        To configure a team host, first install Linux FC2. Then
+        install VMware and configure it. The VMware host MUST be
+        assigned a the "2" address within the subnetwork address
+        space. The team host MUST be assigned the "3" address (this
+        is mainly to simplify debugging). For example, if the
+        team's subnetwork is 10.10.30.x, then the team box must
+        have address 10.10.30.3 and the VMware host running on it
+        may be assigned the 10.10.30.2 address.
+      </p>
+      <p>
+        You can test your VMware installation by loading a test
+        image that is available
+        <a href="CTF_TestImage.tgz">here</a>.
+      </p>
+      <p>
+        Note that the VMware host is the only host in a team's
+        network that has to be reachable from the outside. All the
+        other hosts can be configured to block traffic coming from
+        the outside. During setup, leaving the team host open to
+        ping would help.
+      </p>
+      <h3>
+        3.5 Connection Testing
+      </h3>
+      <p>
+        If all goes well, you should be able to ping the UCSB CTF
+        VPN. Pinging ONLY works from your team box, NOT your site
+        box. You can ping the IP 10.0.0.1. This is the IP of the
+        scoring system, so you want to have connectivity to this
+        IP. 10.0.0.1 is running a web server. You can also check
+        that you are able connect to that. Sniffing the packets
+        between your VPN host and the UCSB VPN host should reveal
+        traffic somewhat like this example:
+      </p>
+      <pre>
+17:51:41.981677 IP w.x.y.z &gt; a.b.c.d: ESP(spi=0x08029b41,seq=0x2a)
+17:51:41.981891 IP a.b.c.d &gt; w.x.y.z: ESP(spi=0x0077f7cf,seq=0x26)
+17:51:42.982533 IP w.x.y.z &gt; a.b.c.d: ESP(spi=0x08029b41,seq=0x2b)
+</pre>
+<p>
+        In the very likely case that problems arise, do not
+        hesitate to contact the
+        <a href="mailto:wkr@cs.ucsb.edu">UCSB CTF VPN admin</a>
+        with details of the issue. Useful details include error
+        messages from racoon found in your syslog, the output of
+        <code>ifconfig</code>, <code>netstat -rn</code>, and
+        <code>iptables -v -L</code>, and your kernel .config.
+      </p>
+      <h2>
+        4. Participation
+      </h2>
+      <p>
+        To participate to the CTF you have to be an educational
+        institution (e.g., a University or a school). The teams
+        must to be composed of graduate and/or undergraduate
+        students only.
+      </p>
+      <p>
+        Each site has to provide the name of a faculty
+        point-of-contact (POC), who is responsible for the ethical
+        behavior of the teams. In addition, each site has to
+        provide the name of a deployment POC, who is responsible
+        for the setup of the necessary infrastructure.
+      </p>
+      <p>
+        Please send a message to the CTF organizer
+        (<a href="mailto:vigna@cs.ucsb.edu">Giovanni Vigna</a>)
+        with your affiliation, faculty POC, deployment POC, and
+        number of teams. After that, you will be assigned an IP
+        range and you will provided with additional instructions.
+      </p>
+      <p>
+        Participant slots are limited and are filling up fast, so
+        it may be possible that soon no more participants will be
+        included.
+      </p>
+      <p>
+        If you are already listed, please take the time to check
+        that the names, affiliation, and email addresses associated
+        with your site are correctly presented.
+      </p>
+      <p>
+        All the communication regarding the CTF will use the
+        mailing list <tt>ctf-participants</tt>, accessible at
+        <a href="http://lists.cs.ucsb.edu/mailman/listinfo/ctf-participants">
+        http://lists.cs.ucsb.edu/mailman/listinfo/ctf-participants</a>.
+        If you are part of the competition and you are not listed
+        as a member of the ctf-participants mailing list, please
+        subscribe to the list. Mail messages to the organizers of
+        the CTF should be sent to
+        <a href="mailto:ctf-admin@lists.cs.ucsb.edu">ctf-admin@lists.cs.ucsb.edu</a>.
+      </p>
+      <p>
+        The list of current teams is available on the
+        <a href="participants.html">participants page</a>.
+      </p>
+      <h2>
+        5. Preparation
+      </h2>
+      <p>
+        To prepare for the CTF we provide a test image and a VPN
+        server before the competition. Therefore, the deployment
+        POCs will be able to solve their connection/configuration
+        problems early.
+      </p>
+      <p>
+        A test image (with no vulnerable services) is available
+        <a href="CTF_TestImage.tgz">here</a> (~280MB). Note that
+        you must request a VMware Workstation 4.5.2 30-day license
+        from the VMware web site. From the same site you can also
+        download the VMware RPM. A copy of the VMware RPM is
+        available
+        <a href="VMware-workstation-4.5.2-8848.i386.rpm">here</a>.
+      </p>
+      <p>
+        The test image and the VPN setup will allow you to test
+        your setup well in advance. We are also making available
+        the <a href="redhat9-i386-ctf-clean.tar.gz">VMware image
+        from last year's CTF</a>.
+      </p>
+      <p>
+        The VPN instruction are listed above. An actual VPN server
+        will be available soon.
+      </p>
+      <p>
+        During the preparation phase a
+        <a href="faq.html">Frequently Asked Questions</a> page will
+        be updated with answers to the most common questions.
+      </p>
+      <h2>
+        6. Rules
+      </h2>
+      <p>
+        It is not possible/feasible to list all the rules and the
+        exceptions to rules that apply to the CTF competition. When
+        deciding if an attack/protection technique is fair or not,
+        try to think about the fact that the goal of this exercise
+        in not to determine who is <tt>1337</tt> and who is
+        <tt>l4m3r</tt>, but, instead, to learn about
+        protecting/attacking a system in a live situation. Try not
+        to focus on "breaking" the scoring system and instead
+        concentrate on developing/deploying effective (and
+        realistic) defense and attack techniques.
+      </p>
+      <p>
+        Below, you'll find the current list of rules. These may
+        change as more issues are raised by the participants.
+      </p>
+      <ul>
+        <li>
+          It is forbidden to launch denial-of-service (DOS)
+          attacks. This is particularly critical, given the limited
+          duration of the exercise. Please no floods, no DNS
+          poisoning, no obviously destructive behavior.
+        </li>
+        <li>
+          Traffic generation will be penalized, regardless of the
+          fact that the traffic is part of a DOS attack or not.
+          Generating traffic from a host that a team has
+          compromised to penalized the owner team is considered
+          unfair practice. Please don't do it.
+        </li>
+        <li>
+          It is possible to patch the services, provided that the
+          patch does not break the scoring system. If the
+          modification to the service makes the service not
+          accessible, points will be lost.
+        </li>
+        <li>
+          The scoring mechanism will access random pages at random
+          times, in addition to checking for the flag values.
+          Blocking access to the service functionality that is not
+          associated with flag verification is equivalent to make
+          the service not available.
+        </li>
+        <li>
+          It is not possible to perform attacks <b>outside</b> the
+          VPN. For example, attacking a site box using its
+          routeable address is not allowed. All the traffic for the
+          CTF must be contained within the VPN.
+        </li>
+        <li>
+          It is permissible to attack any host of a team's
+          subnetwork. The attacks are not necessarily limited to
+          the OS image. For example, if you compromise the OS image
+          of Team 1 you may try to compromise the host that is
+          running the VMware application.
+        </li>
+      </ul>
+      <h2>
+        7. Scoring
+      </h2>
+      <p>
+        Each team must maintain a number of services active and
+        uncompromised.
+      </p>
+      <p>
+        At the beginning of a scoring period (say time <i>t0</i>),
+        the scoring system connects to a service using a username
+        and password (possibly creating an account on-the-fly) and
+        stores a flag that is unique with respect to the team, the
+        service, and this particular iteration of the scoring
+        process. The flag is stored in a location that, in theory,
+        is accessible only by using the username and password used
+        by the scoring system.
+      </p>
+      <p>
+        After a certain period of time (say at time <i>t1 = t0 +
+        q</i>) the scoring systems tries to log in again with the
+        same username and password. At this point, if the login is
+        not successful, the service is considered as malfunctioning
+        and no defense point are assigned to the team that is
+        running the service. If the scoring system can successfully
+        log in and nobody proved that at time <i>t</i>, with <i>t0
+        &lt; t &lt; t1</i>, the flag has been stolen, then the team
+        hosting the service gets a number of defense points.
+      </p>
+      <p>
+        A team (say A) might compromise the service of another team
+        (say B). In practice this means that team A is able to read
+        the flags stored by the scoring system on team B's server
+        for a specific service (without having to know the
+        username/password combination used by the scoring system).
+        Team A can then submit the flag to a central flag
+        certification system to prove that it was able to
+        compromise B's server security.</p>
+
+      <p>If the flag is correct and "fresh" then, at the end of the scoring
+      period, team A gets a number of attack points. More precisely, the team
+      gets a percentage of the attack points that is proportional to the
+      number of services that the attack team has currently up and
+      running. This is done to penalize "selfish" behavior, where a team keeps
+      its services down and concentrate on attacking only.</p>
+
+      <p>Note that if another team (say C) steals the same flag, then
+      the points are divided between the teams. This means that services that
+      are easy to compromise may give less points, while services that are
+      more difficult to hack may guarantee higher returns.
+      </p>
+      <p>The attack points for compromising a specific service will max out
+      after a certain amount. This means that, after a while, submitting flags
+      for a specific service is not going to give any points to the team. The
+      flag submission page will return an appropriate message when this
+      happens. This measure is to guarantee that the teams work on
+      compromising multiple services.</p>
+
+      <p>
+        Note that the scoring period <i>q</i> is different for each
+        service. Services that are more difficult to compromise may
+        be scored more often, which means that if a team
+        compromises that service it may get points at a higher
+        rate.
+      </p>
+      <p>
+        Now a little example to clarify. Suppose that the server
+        implements a web-based discussion service where
+        authenticated users can post messages. Users can post
+        messages publicly or to a private discussion forum that
+        requires a username and a password to access the forum
+        contents.
+      </p>
+      <p>
+        The scorebot connects to the service of team B and creates
+        a new forum, called "recipes" protected by a password, say
+        "spaghetti". Then it generates the flag and creates a
+        message in the forum that contains the flag (e.g., in the
+        body of a posting to that forum). The flag looks like this:
+        <tt>MTNzEwECA+hWjCb8t8/FgbEg/mSm1hbU231kjg==</tt>
+      </p>
+      <p>
+        After some time, the scoring system attempts to log into
+        the forum (using forum name "recipes" and password
+        "spaghetti") and checks if the flag is still there. If it
+        is, then a new flag is created as the body of another
+        posting. (note that the scoring system might also decide to
+        create a complete different forum to store the new flag.)
+      </p>
+      <p>
+        In order to steal the flag team A has to connect to team
+        B's server and in some way access the contents of the
+        "recipes" forum. Of course team A does not know the
+        password used to create the forum and therefore it has to
+        find some way to bypass security. If successful team A will
+        be able to read the flag. Then, team A will
+        <i>immediately</i> submit the flag using a form on the
+        scoring web site. The fact that team A stole the flag will
+        be recorded and, at the end of the scoring period, some
+        points will be granted to team A.
+      </p>
+      <h2>
+        8. Point of contact
+      </h2>
+      <p>
+        The Capture The Flag (CTF) is organized by Giovanni Vigna,
+        at UCSB.
+      </p>
+      <p>
+        This is the contact information:
+      </p>
+      <ul>
+        <li>
+          <b>Phone:</b>+1 (805) 893-7565
+        </li>
+        <li>
+          <b>Fax:</b>+1 (805) 893-8553
+        </li>
+        <li>
+          <b>E-Mail:</b>
+          <a href="mailto:vigna@cs.ucsb.edu">vigna@cs.ucsb.edu</a>
+        </li>
+        <li>
+          <b>Web:</b>
+          <a href="http://www.cs.ucsb.edu/~vigna">http://www.cs.ucsb.edu/~vigna</a>
+        </li>
+        <li>
+          <b>Office:</b> Engineering I, Room 2109
+        </li>
+        <li>
+          <b>Address:</b> University of California<br />
+           Department of Computer Science CS-66<br />
+           Santa Barbara, CA 93106-5110, USA
+        </li>
+        <li>
+          <b>PGP key:</b> 
+          <pre width="64">
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1.2.1 (GNU/Linux)
+ 
+mQGiBD7mK/MRBAC0LMdSYMw/V1yBa2uPYl6gmTt1ydk35CFM+LaiymvYJ9tcVNX5
++id4YkKeQzRigg7RCTbfgUjw23zXapUpIZgIK3RvXbMVsxdq1otQkZyRf/7VZSMl
+EVnlflNaqy7O3tjVbNCbEEl0GAGp5UwzYfTcix44mYYNdgHcvkbgq5GXFwCgzpsq
+CuNqq0+CyFGhI9S1R+aIya8D/0iNMYyU3M5YDhNyRs5Gtjebhc2eGExCR71QjRww
+qNyWTlr43nsP1A8ckPdeqjd1vrSp/F9eFAIcDUlZmyDYlmFUSYO2X17xZBNqgDAu
+jnrduuuuu4l3owqVILFIhgs8EwNNA0bVSxwgwFCQsGWuJr5cNXTggZVKdsqfRyR5
+reh4A/9wJcXXOulUNpEbUmrDEMVeNvEdEdIh4nQdyxi1pcggAhc2WxiFu1NOSYsL
+daKLDB4kiP3xfdK7Cq+scvvx6NdKsSDWYibQ0uMfvYDzX3LMKpBBvKxDyD0pfJjg
+DLSe9cn7Tp03b7kTKFxRC0FhydT7ECr7cqw6vsNF3cBjaN1YSbQiR2lvdmFubmkg
+VmlnbmEgPHZpZ25hQGNzLnVjc2IuZWR1PohZBBMRAgAZBQI+5ivzBAsHAwIDFQID
+AxYCAQIeAQIXgAAKCRCrju5XfPpVYjO2AKDDsYft/N00g+v2511Laxpzv9Dp0ACd
+FTTMe4I3mCI6zW38v62OECHPR6i4zQQ+5iv0EAMAn8y7knVSp1raHNdGzwUC+i4h
+4TBl5DBxzcBS591K28ef6+o1rBnSJBdP5370vGxvUNczRJwFXnRctoj9et3enraM
+mF0SxD+qadyFdukeFJr5cqdfMWTwwjh9efRsS3JnAAMFAv9KTUYTSUjTFrqjw8+H
+4npDq6VVy7cXo/3hHLGXhO2DGu9x1RbglFyeSoMbq2ALjLhJJs1I1NemhySN8ZfO
+DdC9WITYKDasCcIj4b5dcgkxMg0XSwi7FRToVdyww2jIWKuIRgQYEQIABgUCPuYr
+9AAKCRCrju5XfPpVYt3tAJ9LT1PibtwUEyZPNyrDFWsyvSwkDgCgqOOGkfYzZgQE
+JOLKi4o/eFOM5cs=
+=/UFb
+-----END PGP PUBLIC KEY BLOCK-----
+</pre>
+</li>
+      </ul>
+      <h3>
+        Additional Contact Info
+      </h3>
+      <p>
+        A number of students at UCSB are involved in helping
+        setting up this exercise. You may want to contact them on
+        particular issues or in case the main point of contact is
+        not available.
+      </p>
+      <ul>
+        <li>
+          Davide Balzarotti, (OS, VMware)
+          <a href="mailto:Balzarot@cs.ucsb.edu">balzarot@cs.ucsb.edu</a>
+        </li>
+        <li>
+          Wilson Chen, (Vulnerable Software)
+          <a href="mailto:wilson@cs.ucsb.edu">wilson@cs.ucsb.edu</a>
+        </li>
+        <li>
+          Darren Mutz, (Logistics)
+          <a href="mailto:dhm@cs.ucsb.edu">dhm@cs.ucsb.edu</a>
+        </li>
+        <li>
+          Will Robertson, (Routing)
+          <a href="mailto:wkr@cs.ucsb.edu">wkr@cs.ucsb.edu</a>
+        </li>
+        <li>
+          Gurpreet Sachdev, (Vulnerable Software)
+          <a href="mailto:gurpreet@cs.ucsb.edu">gurpreet@cs.ucsb.edu</a>
+        </li>
+        <li>
+          Fredrik Valuer, (Scoring)
+          <a href="mailto:fredrik@cs.ucsb.edu">fredrik@cs.ucsb.edu</a>
+        </li>
+      </ul>
+      </div>
+    <div class="footer">
+      <hr />
+      Giovanni Vigna -
+      <a href="http://www.cs.ucsb.edu/~vigna">http://www.cs.ucsb.edu/~vigna</a>
+    </div>
+    </body>
+</html>

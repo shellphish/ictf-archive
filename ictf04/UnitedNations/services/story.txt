@@ -1,0 +1,30 @@
+It's the 3rd of December 2014, and after endless debates it's finally the time
+to vote the World President. The peoples of the world have their chance to
+determine who is going to rule the World for the next four years.
+
+The whole atmosphere is tense because the days before the elections have been
+characterized by unconfirmed rumors that the Internet-based voting system of
+these elections is not as safe as everybody thought.
+
+The voting system (and the UN web site as well) are administered by the
+Die-Bald corporation, a company from the nation of Leettonia, famous for
+hosting the worst programmers in the world.
+
+To make things worse, Massimo Zanardi, the shady administrator (and also CEO,
+CTO, CFO, CSO, and CBO) of the Die-Bald corporation has suddenly disappeared,
+leaving the election process in a mess.
+
+A number of teams stepped up to pick up the pieces of the UN web site, creating
+even more confusion. A hacker war among the teams started to demonstrate who
+has the best security skills.
+ 
+Your task is to keep the site up and running so that the election process can
+smoothly proceed. At the same time, you will have to find out if the rumors
+about the thousands of vulnerabilities are true and fix them if needed.  Of
+course, in the meanwhile you have to demonstrate that your team is really l337
+by showing how the security of the other teams' site can be compromised.
+
+May the farce be with you!
+
+
+

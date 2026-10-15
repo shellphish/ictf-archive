@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="HTML Tidy for Mac OS X (vers 1st December 2002), see www.w3.org"
+          name="generator" />
+    <link href="netsec.css" rel="stylesheet" type="text/css" />
+    <title>
+      The 2004 UCSB Capture The Flag - VPN Setup
+    </title>
+  </head>
+  <body>
+    <div class="banner">
+      <h1>
+        VPN Setup
+      </h1>
+    </div>
+    <div class="main">
+      <h2>
+        Quick Installation
+      </h2>
+      <ol>
+        <li>
+          Install Fedora Core 2.
+        </li>
+        <li>
+          Send us your IP address and optionally a GPG public key
+          to protect the authentication key in transit.
+        </li>
+        <li>
+          Install the configuration files we send back to
+          <code>/etc/racoon/racoon.conf</code>,
+          <code>/etc/racoon/psk.txt</code>, and
+          <code>/etc/ipsec.conf</code>.
+        </li>
+        <li>
+          Test racoon with: 
+          <pre>
+# /sbin/setkey -f /etc/ipsec.conf
+# /usr/sbin/racoon -f /etc/racoon/racoon.conf -4
+</pre>
+</li>
+        <li>
+          Ping the scorebot at 10.0.0.1 from a private team address
+          and enjoy the IPSEC goodness.
+        </li>
+        <li>
+          Add previous commands to <code>/etc/rc.local</code>.
+        </li>
+      </ol>
+      <h2>
+        Details
+      </h2>
+      <p>
+        The UCSB CTF VPN machine is tested with the KAME IPSEC
+        implementation as ported to the Linux 2.6 kernel series.
+        These instructions will describe the process of setting up
+        a similar system to create an encrypted, authenticated
+        tunnel between your local network and the rest of the UCSB
+        CTF overlay network. The software stack and configuration
+        described below is the <b>only supported setup</b>; other
+        IPSEC implementations and/or configurations may work, but
+        if you want to go down that route, you are on your own.
+      </p>
+      <p>
+        The required software components for the VPN are:
+      </p>
+      <ul>
+        <li>
+          a <a href="http://www.kernel.org/">Linux 2.6-series
+          kernel</a>
+        </li>
+        <li>
+          <a href="http://www.netfilter.org/">iptables</a>
+        </li>
+        <li>
+          <a href="http://ipsec-tools.sourceforge.net/">ipsec-tools</a>
+        </li>
+      </ul>
+      <p>
+        You will need to install, either from source or the
+        appropriate vendor's packages, each of these components.
+      </p>
+      <p>
+        <b>NOTE: If you install Fedora Core 2, you can skip over
+        the kernel configuration and package installation to the
+        <a href="#netconfig">networking configuration</a>.</b>
+      </p>
+      <h3>
+        Kernel Configuration
+      </h3>
+      <p>
+        If your kernel already has all the IPSEC and firewalling
+        options available, then compiling your own kernel will not
+        be necessary and you can skip to the next section. However,
+        if that is not the case, you can follow the instructions in
+        this section to build a suitable kernel.
+      </p>
+      <p>
+        Aside from the normal configuration options to the kernel
+        build process, you will need to enable the following:
+      </p>
+      <ul>
+        <li>
+          Device Drivers/Networking Support/Networking options
+        </li>
+        <li>
+          <ul>
+            <li>
+              PF_KEY sockets
+            </li>
+            <li>
+              IP: AH transformation
+            </li>
+            <li>
+              IP: ESP transformation
+            </li>
+            <li>
+              IP: IPComp transformation
+            </li>
+            <li>
+              Network packet filtering
+            </li>
+            <li>
+              Network packet filtering/IP Netfilter/* (for good
+              measure)
+            </li>
+            <li>
+              IPsec user configuration interface
+            </li>
+          </ul>
+        </li>
+        <li>
+          Cryptographic options/*
+        </li>
+      </ul>
+      <p>
+        You can then build and install the kernel with the usual
+        commands:
+      </p>
+      <pre>
+# make
+# make modules_install
+# cp arch/i386/boot/bzImage /boot/&lt;kernel-image-name&gt;
+</pre>
+<p>
+        You will also need to modify your LILO or grub
+        configuration to use the new kernel and reboot.
+      </p>
+      <h3>
+        <a name="netconfig" id="netconfig"></a>Networking and
+        Firewall Configuration
+      </h3>
+      <p>
+        Aside from the normal networking and firewall configuration
+        for a host providing NAT for the private CTF network, you
+        will want to enable access for the following in your
+        firewall configuration:
+      </p>
+      <ul>
+        <li>
+          udp port 500 for isakmp on the external interface<br />
+           <code># iptables -A INPUT -i &lt;external-interface&gt;
+          -p udp --dport 500 -j ACCEPT</code>
+        </li>
+        <li>
+          esp on the external interface<br />
+           <code># iptables -A INPUT -i &lt;external-interface&gt;
+          -p esp -j ACCEPT</code>
+        </li>
+      </ul>
+      <p>
+        The example rules above allow traffic in; to allow traffic
+        from the private network out, use something like the
+        following:
+      </p>
+      <pre>
+# iptables -A FORWARD -i &lt;internal-interface&gt; -j ACCEPT
+</pre>
+<h3>
+        Generation of Configuration Files
+      </h3>
+      <p>
+        For the best possible user experience, we will generate the
+        necessary config files for you. In order to do this we need
+        two things from you: the public IP of your site box, and
+        (optionally) a PGP public key to encrypt the config files
+        when we send them back. If you think that it is not likely
+        that someone from one of the other teams would be able to
+        read your email and steal your config files, then don't
+        send us a PGP key. The config files contains a secret
+        password which could be used to impersonate your team box.
+      </p>
+      <h3>
+        IPSEC Configuration
+      </h3>
+      <p>
+        Now that a compatible kernel, firewall access, and config
+        file generation have been taken care of, you are ready to
+        configure IPSEC.
+      </p>
+      <p>
+        The configuration is really just a matter of copying the
+        generated configuration files to the right place and
+        restarting racoon (the key exchange daemon). We supply
+        three different config files. <b>racoon.conf</b> is the
+        main config file for the key exchange daemon. This file
+        goes in /etc/racoon/. <b>psk.txt</b> contains the
+        pre-shared keys. This file also goes in /etc/racoon/, but
+        make sure to make this file readable by root only, it
+        contains secret passwords and racoon will not start up
+        unless it has the proper permissions. The third file
+        <b>ipsec.conf</b> goes in /etc/. This file contains
+        policies (basically tells the kernel which packets should
+        be sent over the VPN, sort of a VPN routing table).
+      </p>
+      <p>
+        At this point, you should be ready to fire up racoon. The
+        commands to do this are:
+      </p>
+      <pre>
+# /sbin/setkey -f /etc/ipsec.conf
+# /usr/sbin/racoon -f /etc/racoon/racoon.conf -4
+</pre>
+<p>
+        Once you have verified that your IPSEC flows are correctly
+        created, you should add these two lines to your
+        /etc/rc.local to ensure that IPSEC is initialized across
+        system reboots.
+      </p>
+    </div>
+    <div class="footer">
+      <hr />
+      Giovanni Vigna -
+      <a href="http://www.cs.ucsb.edu/~vigna">http://www.cs.ucsb.edu/~vigna</a>
+    </div>
+    </body>
+</html>

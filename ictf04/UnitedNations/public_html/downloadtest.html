@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="HTML Tidy for Mac OS X (vers 1st December 2002), see www.w3.org"
+          name="generator" />
+    <link href="netsec.css" rel="stylesheet" type="text/css" />
+    <title>
+      The 2004 UCSB Capture The Flag - The Encryption Test Process
+    </title>
+  </head>
+  <body>
+    <div class="banner">
+      <h1>
+        The Encryption Test Process
+      </h1>
+    </div>
+    <div class="main">
+      <p>Please try to download these files and see if your
+      are able to decrypt them. Downloading the actual image will follow a
+      similar process.</p>.
+
+      <ul>
+	<li><a href="downloadtest.tgz.gpg">downloadtest.tgz.gpg</a></li>
+	<li><a href="downloadtest.tgz.gpg.md5">downloadtest.tgz.gpg.md5</a></li>
+      </ul>
+
+      <p>Please download both files. Then execute:</p>
+<pre>
+% md5sum downloadtest.tgz.gpg
+</pre>
+<p>Compare the output of the MD5 program with the contents of the
+downloadtest.tgz.gpg.md5 file. If they are different, you have a problem. The
+file you downloaded might be corrupted, for example.</p>
+
+<p>If the output of the MD5 checksum and the content of the file match, then
+you can decrypt the file:</p>
+<pre>
+% gpg downloadtest.tgz.gpg
+</pre>
+
+<p>You will be asked for a password. Use "foobar". This will decrypt the
+archive and create a file called downloadtest.tgz.</p>
+
+<p>In the real competition, the password to decrypt the VMWare image will be
+disclosed exactly at 10am, PST. Therefore you will not be able to try the
+image before then.</p>
+
+<p>To check if everything is fine you can also decompress the archive</p>
+<pre>
+% tar xvzf downloadtest.tgz
+</pre>
+<p>You should now have a directory with a couple of test files.</p>
+
+    </div>
+    <div class="footer">
+      <hr />
+      Giovanni Vigna -
+      <a href="http://www.cs.ucsb.edu/~vigna">http://www.cs.ucsb.edu/~vigna</a>
+    </div>
+    </body>
+</html>
+<!--  LocalWords:  VMWare foobar downloadtest tgz xvzf Vigna XHTML lang en css
+ -->
+<!--  LocalWords:  md gpg
+ -->

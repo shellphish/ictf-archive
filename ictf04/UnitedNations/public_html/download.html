@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="HTML Tidy for Mac OS X (vers 1st December 2002), see www.w3.org"
+          name="generator" />
+    <link href="netsec.css" rel="stylesheet" type="text/css" />
+    <title>
+      The 2004 UCSB Capture The Flag - The VMWare Image
+    </title>
+  </head>
+  <body>
+    <div class="banner">
+      <h1>
+        VMWare Image
+      </h1>
+    </div>
+    <div class="main">
+      <p>This page will provide access to the VMWare image of the 
+	competition.</p> 
+
+      <p>These are the files: 
+      <ul>
+	<li><a href="iCTF.tgz.gpg">iCTF.tgz.gpg</a> (~500MB)</li>
+	<li><a href="iCTF.tgz.gpg.md5">iCTF.tgz.gpg.md5</a></li>
+      </ul>
+
+      <p>Please download both files. Then execute:</p>
+<pre>
+% md5sum iCTF.tgz.gpg
+</pre>
+<p>Compare the output with the contents of the iCTF.tgz.gpg.md5 file. If they
+are different, you have a problem. The file you downloaded might be corrupted,
+for example.</p>
+
+<p>If the output of the MD5 program and the content of the file match, then
+you can decrypt the image:</p>
+<pre>
+% gpg iCTF.tgz.gpg
+</pre>
+
+<p>You will be asked for a password. The password to decrypt the VMWare image
+will be disclosed exactly at 10am, PST. Therefore you will not be able to try
+the image before then.</p>
+
+<p>Once you decrypt the image you can also open the archive</p>
+<pre>
+% tar xvzf iCTF.tgz
+</pre>
+<p>You should now have a directory with the VMware test files.</p>
+
+    </div>
+    <div class="footer">
+      <hr />
+      Giovanni Vigna -
+      <a href="http://www.cs.ucsb.edu/~vigna">http://www.cs.ucsb.edu/~vigna</a>
+    </div>
+    </body>
+</html>
+<!--  LocalWords:  VMWare foobar downloadtest tgz xvzf Vigna XHTML lang en css
+ -->
+<!--  LocalWords:  md gpg iCTF VMware
+ -->
