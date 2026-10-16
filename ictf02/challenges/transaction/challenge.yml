@@ -1,0 +1,23 @@
+name: transaction
+author: iCTF Organizers
+description: |
+  The payroll transaction server listens on port 7979.
+  Connect and type HELP to see the available commands.
+  The PAYCHECK command reads the password with gets() and then
+  passes it directly to printf(). The FILE command runs cat on
+  whatever you give it. Three paths to code execution — pick your favorite.
+value: 200
+type: standard
+flags:
+  - FLAG_ICTF2002{gets_printf_and_system_walk_into_a_bar}
+topics:
+  - pwn
+  - buffer-overflow
+  - format-string
+  - command-injection
+hints: []
+files: []
+image: null
+protocol: tcp
+host: null
+port: 7979

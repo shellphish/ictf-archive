@@ -1,0 +1,19 @@
+name: save-message
+author: iCTF Organizers
+description: |
+  The Bass Tard Corporation lets visitors leave feedback.
+  The script saves your message to a file named after you.
+  What could go wrong with an unsanitized filename?
+value: 100
+type: standard
+flags:
+  - FLAG_ICTF2002{path_traversal_is_trivial_when_you_trust_user_input}
+topics:
+  - web
+  - path-traversal
+hints: []
+files: []
+image: null
+protocol: null
+host: null
+port: null

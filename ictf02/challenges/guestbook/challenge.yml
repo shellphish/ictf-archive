@@ -1,0 +1,19 @@
+name: guestbook
+author: iCTF Organizers
+description: |
+  The Bass Tard Corporation runs a guestbook on their web server.
+  The CGI script is a bit too generous with what it shows visitors.
+  Can you read the secret file?
+value: 100
+type: standard
+flags:
+  - FLAG_ICTF2002{all_your_guestbook_are_belong_to_us}
+topics:
+  - web
+  - command-injection
+hints: []
+files: []
+image: null
+protocol: null
+host: null
+port: null
