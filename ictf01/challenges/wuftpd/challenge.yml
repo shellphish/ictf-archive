@@ -1,0 +1,26 @@
+name: wuftpd
+author: iCTF Organizers
+description: |
+  A RedHat 6.2 machine is running wu-ftpd 2.6.0 on port 21/tcp. The FTP
+  daemon passes the PASS (password) argument through a format string to
+  syslog() without sanitization, allowing a remote attacker to overwrite
+  arbitrary memory — including the saved return address — with shellcode.
+  Anonymous FTP is enabled, so no credentials are required to reach the
+  vulnerable code path.
+
+  Exploit the service to read /flag.txt.
+
+  The exploit (wuftpd-god.c) is provided as a reference.
+value: 200
+type: standard
+flags:
+  - FLAG_ICTF2001{wuftpd_format_string_anonymous_ftp_rce}
+topics:
+  - pwn
+  - format-string
+hints: []
+files: []
+image: null
+protocol: tcp
+host: null
+port: 21
