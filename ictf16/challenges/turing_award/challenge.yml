@@ -1,0 +1,28 @@
+name: "iCTF 2016 — turing_award"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2016-2017 — Shell We Play a Game?**
+
+  turing_award was a service running on port 20006. The name was recovered from
+  a forensic analysis of the LC/BC DDoS attack: the smoking-gun payload connected
+  to team 203 (Bushwhackers, 172.31.129.203) on port 20006, with the annotated
+  comment "# EDITOR'S NOTE: turing_award@bushwhackers."
+
+  Competition ran March 3–4, 2017 on AWS (24 hours). 314 teams participated.
+
+  Source not available in archive; exact vulnerability unknown.
+value: 0
+type: standard
+image: null
+flags:
+    - ictf2016{turing_award_pwned}
+tags:
+    - binary
+    - pwn
+    - ictf2016
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

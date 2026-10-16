@@ -1,0 +1,28 @@
+name: "iCTF 2012 — water"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2012-2013 — SCADA Breakdown**
+
+  water was a SCADA/critical infrastructure service in the iCTF 2012-2013
+  competition (March 22, 2013). The theme was "National Cyberdefense Corps":
+  teams attacked infrastructure run by hostile actors, defending their own.
+
+  Water treatment SCADA service. Port 3333 (reused in iCTF 2015). Authored by Gianluca Stringhini.
+
+  Source not available in archive.
+value: 0
+type: standard
+image: null
+flags:
+    - ictf2012{water_pwned}
+tags:
+    - binary
+    - pwn
+    - scada
+    - ictf2012
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

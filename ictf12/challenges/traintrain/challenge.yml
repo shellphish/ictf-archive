@@ -1,0 +1,28 @@
+name: "iCTF 2012 — traintrain"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2012-2013 — SCADA Breakdown**
+
+  traintrain was a SCADA/critical infrastructure service in the iCTF 2012-2013
+  competition (March 22, 2013). The theme was "National Cyberdefense Corps":
+  teams attacked infrastructure run by hostile actors, defending their own.
+
+  Railway/transportation SCADA service. Port 8888 (reused in iCTF 2015). Confirmed from ictf14 service-assignment email (March 3 2015).
+
+  Source not available in archive.
+value: 0
+type: standard
+image: null
+flags:
+    - ictf2012{traintrain_pwned}
+tags:
+    - binary
+    - pwn
+    - scada
+    - ictf2012
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

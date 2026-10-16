@@ -1,0 +1,32 @@
+name: "iCTF 2016 — flasking_unicorns"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: web
+description: |
+  **iCTF 2016-2017 — Shell We Play a Game?**
+
+  flasking_unicorns was a Flask web service with a Server-Side Template Injection
+  (SSTI) vulnerability at the /nice_try endpoint. Using Jinja2 SSTI via Python 2.7,
+  the second-place team LC/BC exploited this service to install a botnet backdoor
+  on team VMs throughout the competition, eventually using it to launch a DDoS
+  attack on the leading Bushwhackers team at 4:15am. LC/BC was disqualified.
+
+  Competition ran March 3–4, 2017 on AWS (24 hours). 314 teams participated.
+  Service port: 20001–20012 range (exact port not documented).
+
+  Source not available in archive.
+value: 0
+type: standard
+image: null
+flags:
+    - ictf2016{flasking_unicorns_pwned}
+tags:
+    - web
+    - ssti
+    - flask
+    - jinja2
+    - ictf2016
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

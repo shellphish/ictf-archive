@@ -97,6 +97,7 @@ ictf24/iCTF?2024?High?School?Track*.zip
 ictf24/iCTF?2024?Undergraduate?Track*.zip
 
 # === PII / credentials — never commit ===
+ictf14/data/ictf_registration_apr_2015-final-final.sql
 # Registration DB with real email addresses and plaintext passwords (two copies)
 attic/misc_stuff/CTF/ictf_registration_apr_2015-final-final.sql
 attic/misc_stuff/iCTF/ictf_registration_apr_2015-final-final.sql
