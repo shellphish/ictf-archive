@@ -1,0 +1,1 @@
+FLAG_ICTF2001{wuftpd_format_string_anonymous_ftp_rce}

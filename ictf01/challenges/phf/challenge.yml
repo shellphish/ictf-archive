@@ -1,0 +1,24 @@
+name: phf
+author: iCTF Organizers
+description: |
+  A classic 1995-era Apache web server is running the CSO/PH lookup CGI script
+  at /cgi-bin/phf. The script calls `unescape_url()` on the query string before
+  passing it to `popen()`, which means a URL-encoded newline (%0a) terminates
+  the ph command and starts a new shell command.
+
+  Read the secret file at /var/log/httpd/secret.txt.
+
+  The attack tool (phf-attack.c) is provided as a reference.
+value: 100
+type: standard
+flags:
+  - FLAG_ICTF2001{phf_newline_injection_1995_classic}
+topics:
+  - web
+  - command-injection
+hints: []
+files: []
+image: null
+protocol: http
+host: null
+port: 80

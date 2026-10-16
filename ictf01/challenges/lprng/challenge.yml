@@ -1,0 +1,24 @@
+name: lprng
+author: iCTF Organizers
+description: |
+  A RedHat 7.0 machine is running LPRng 3.6.24 (the lpd print spooler) on
+  port 515/tcp. LPRng passes attacker-controlled job metadata directly to
+  syslog() without sanitization, enabling a remote format string attack that
+  overwrites the return address with a shellcode pointer.
+
+  Exploit the service to read /flag.txt.
+
+  The exploit (LPRng-3.6.24-1.c) is provided as a reference.
+value: 200
+type: standard
+flags:
+  - FLAG_ICTF2001{lprng_format_string_rh70_remote_root}
+topics:
+  - pwn
+  - format-string
+hints: []
+files: []
+image: null
+protocol: tcp
+host: null
+port: 515
