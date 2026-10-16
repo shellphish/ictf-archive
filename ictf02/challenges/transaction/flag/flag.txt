@@ -1,0 +1,1 @@
+FLAG_ICTF2002{gets_printf_and_system_walk_into_a_bar}

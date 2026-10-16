@@ -1,0 +1,20 @@
+name: query-extension
+author: iCTF Organizers
+description: |
+  The Bass Tard Corporation's HR portal looks up employee phone extensions.
+  The query uses the `cboname` parameter directly in a SQL statement.
+  The database credentials are also hardcoded in the script.
+  Dump the flag from the `corpdb` database.
+value: 150
+type: standard
+flags:
+  - FLAG_ICTF2002{sqli_plus_hardcoded_creds_equals_game_over}
+topics:
+  - web
+  - sql-injection
+hints: []
+files: []
+image: null
+protocol: null
+host: null
+port: null
