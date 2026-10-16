@@ -1,0 +1,28 @@
+name: "iCTF 2012 — powerplan"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2012-2013 — SCADA Breakdown**
+
+  powerplan was a SCADA/critical infrastructure service in the iCTF 2012-2013
+  competition (March 22, 2013). The theme was "National Cyberdefense Corps":
+  teams attacked infrastructure run by hostile actors, defending their own.
+
+  Operation Power Plan — sabotaging the enemy power grid. A player's agent infiltrates enemy power plants and shuts them down without being discovered; the agent is discovered if it revisits a previously-shut-down plant or goes off-grid. Port 9898 (reused in iCTF 2015). Authored by Kyle MacNamara.
+
+  Source not available in archive.
+value: 0
+type: standard
+image: null
+flags:
+    - ictf2012{powerplan_pwned}
+tags:
+    - binary
+    - pwn
+    - scada
+    - ictf2012
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

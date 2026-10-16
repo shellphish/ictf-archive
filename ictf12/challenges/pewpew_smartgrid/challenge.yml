@@ -1,0 +1,28 @@
+name: "iCTF 2012 — pewpew_smartgrid"
+author: "Giovanni Vigna / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2012-2013 — SCADA Breakdown**
+
+  pewpew_smartgrid was a SCADA/critical infrastructure service in the iCTF 2012-2013
+  competition (March 22, 2013). The theme was "National Cyberdefense Corps":
+  teams attacked infrastructure run by hostile actors, defending their own.
+
+  Smart grid SCADA service. The name evokes the visual pew-pew of power grid attack maps. Exact mechanics not preserved.
+
+  Source not available in archive.
+value: 0
+type: standard
+image: null
+flags:
+    - ictf2012{pewpew_smartgrid_pwned}
+tags:
+    - binary
+    - pwn
+    - scada
+    - ictf2012
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"
