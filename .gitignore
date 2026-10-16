@@ -48,6 +48,8 @@ ictf08/**/ucsb-ictf-08-final.tar.gz.gpg
 # === Large binary installers ===
 *.rpm
 *.mpg
+*.tbz
+*.bz2
 
 # === Original competition web sites (1–4 GB each) ===
 site/
