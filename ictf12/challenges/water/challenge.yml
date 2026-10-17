@@ -10,7 +10,7 @@ description: |
 
   Water treatment SCADA service. Port 3333 (reused in iCTF 2015). Authored by Gianluca Stringhini.
 
-  Source not available in archive.
+  Source code available in `src/` (Python 2).
 value: 0
 type: standard
 image: null

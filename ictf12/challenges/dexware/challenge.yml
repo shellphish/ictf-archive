@@ -1,0 +1,32 @@
+name: "iCTF 2012 — dexware"
+author: "Yanick Fratantonio / UCSB Security Lab"
+category: binary
+description: |
+  **iCTF 2012-2013 — SCADA Breakdown**
+
+  dexware was a service in the iCTF 2012-2013 competition (March 22, 2013).
+  The theme was "National Cyberdefense Corps": teams attacked infrastructure
+  run by hostile actors, defending their own.
+
+  DexWare is a Dalvik VM-based service — it runs a Java application (`dexware.jar`)
+  on a bundled Android Dalvik runtime for Linux x86, with JNI native code for
+  file descriptor management. Attackers had to exploit the service through the
+  Dalvik VM layer.
+
+  Source code available in `src/` (Java + JNI C). Write-up by CInsect in `writeup/`.
+value: 0
+type: standard
+image: null
+flags:
+    - ictf2012{dexware_pwned}
+tags:
+    - binary
+    - pwn
+    - java
+    - dalvik
+    - ictf2012
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"

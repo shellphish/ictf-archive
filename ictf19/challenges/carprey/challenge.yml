@@ -1,0 +1,37 @@
+name: "iCTF 2019 — carprey"
+author: "Saagar Jha / UCSB Security Lab"
+category: pwn
+description: |
+  **iCTF 2019 — The Grey Hat Nation**
+
+  carprey (CarPrey) was a jeopardy challenge in iCTF 2019 (March 15-16, 2019).
+
+  CarPrey is a mixed forensics/pwn challenge. Connecting to the service (TCP
+  port 2014) presents a proof-of-work challenge, then accepts hex input, runs
+  it as Z80 machine code on an emulated TI-84+ SE calculator (TilEm), and
+  returns the LCD buffer as a plain PBM image.
+
+  **Vulnerability:** The flag is stored as a TI-84+ string variable (Str1).
+  Input is executed as Z80 shellcode on the calculator. Solve by sending
+  shellcode that prints Str1 or scans the 64KB memory space for "flg{".
+
+  Port: **2014** (TCP)
+
+  Source code available in `src/` (Python 3). Exploit in `src/exploit.py`.
+  Full writeup in `writeup/README.md`. ROM file not included (legal reasons).
+value: 500
+type: standard
+image: null
+flags:
+    - "flg{c6397c55205338533b7b7fdaaee5b236fc8e9e9621edc1b1c3da577785b8d8a9}"
+tags:
+    - pwn
+    - forensics
+    - z80
+    - ti84
+    - jeopardy
+    - ictf2019
+    - historical
+files: []
+state: visible
+version: "0.1"

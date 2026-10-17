@@ -10,7 +10,7 @@ description: |
 
   Railway/transportation SCADA service. Port 8888 (reused in iCTF 2015). Confirmed from ictf14 service-assignment email (March 3 2015).
 
-  Source not available in archive.
+  Only Python 2.7 bytecode (`.pyc`) available; no source.
 value: 0
 type: standard
 image: null

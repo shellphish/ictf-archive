@@ -10,7 +10,7 @@ description: |
 
   Nuclear power plant SCADA service. Confirmed from post-competition writeup (codezen.fr, March 24 2013). Reused in iCTF 2015 as nuclearboom2 on port 4444.
 
-  Source not available in archive.
+  Binary only; no source code in archive.
 value: 0
 type: standard
 image: null

@@ -10,7 +10,7 @@ description: |
 
   Operation Power Plan — sabotaging the enemy power grid. A player's agent infiltrates enemy power plants and shuts them down without being discovered; the agent is discovered if it revisits a previously-shut-down plant or goes off-grid. Port 9898 (reused in iCTF 2015). Authored by Kyle MacNamara.
 
-  Source not available in archive.
+  Only Python 2.7 bytecode (`.pyc`) available; no source.
 value: 0
 type: standard
 image: null
