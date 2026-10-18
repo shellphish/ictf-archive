@@ -102,6 +102,38 @@ ictf14/data/ictf_registration_apr_2015-final-final.sql
 attic/misc_stuff/CTF/ictf_registration_apr_2015-final-final.sql
 attic/misc_stuff/iCTF/ictf_registration_apr_2015-final-final.sql
 
+# ictf23 registration data — real names, emails, demographic survey
+ictf23/data/teams/registration.tsv
+ictf23/data/teams/TeamCaptains-HS.csv
+ictf23/data/teams/TeamCaptains-UG.csv
+ictf23/data/teams/teams-captains.csv
+
+# ictf24 Google Form registration data — real names, emails, demographics
+ictf24/data/teams/ictf2024_registration.csv
+ictf24/data/teams/iCTF 2024 Registration (Responses) - Form Responses 1.csv
+ictf24/data/teams/high_school_teams_for_our_backup.csv
+ictf24/data/teams/undergrad_teams_for_our_backup.csv
+
+# ictf24 CTFd exports — emails, hashed passwords, IP addresses, auth tokens
+ictf24/data/website-archive/ictf24-high.ctfd.io-data/users.csv
+ictf24/data/website-archive/ictf24-high.ctfd.io-data/users+fields.csv
+ictf24/data/website-archive/ictf24-high.ctfd.io-data/teams.csv
+ictf24/data/website-archive/ictf24-high.ctfd.io-data/teams+fields.csv
+ictf24/data/website-archive/ictf24-high.ctfd.io-data/teams+members+fields.csv
+ictf24/data/website-archive/ictf24-high.ctfd.io-data/tokens.csv
+ictf24/data/website-archive/ictf24-high.ctfd.io-data/tracking.csv
+ictf24/data/website-archive/ictf24-high.ctfd.io-data/submissions.csv
+ictf24/data/website-archive/ictf24-high.ctfd.io-data/field_entries.csv
+ictf24/data/website-archive/ictf24-under.ctfd.io-data/users.csv
+ictf24/data/website-archive/ictf24-under.ctfd.io-data/users+fields.csv
+ictf24/data/website-archive/ictf24-under.ctfd.io-data/teams.csv
+ictf24/data/website-archive/ictf24-under.ctfd.io-data/teams+fields.csv
+ictf24/data/website-archive/ictf24-under.ctfd.io-data/teams+members+fields.csv
+ictf24/data/website-archive/ictf24-under.ctfd.io-data/tokens.csv
+ictf24/data/website-archive/ictf24-under.ctfd.io-data/tracking.csv
+ictf24/data/website-archive/ictf24-under.ctfd.io-data/submissions.csv
+ictf24/data/website-archive/ictf24-under.ctfd.io-data/field_entries.csv
+
 # === Claude workspace ===
 .claude/
 
