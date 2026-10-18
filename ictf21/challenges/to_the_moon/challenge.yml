@@ -1,0 +1,20 @@
+name: to_the_moon
+author: "Shellphish / kylebot"
+description: |
+  **iCTF 2021 — Ethalia Market**
+
+  Welcome to iCTF's meme stock trading simulator: To The Moon.
+
+  Source: https://github.com/shellphish/ictf21-challenges
+value: 200
+type: standard
+flags:
+  - FLAG_ICTF2021{placeholder}
+topics:
+  - blockchain
+hints: []
+files: []
+image: "."
+protocol: tcp
+host: null
+port: null

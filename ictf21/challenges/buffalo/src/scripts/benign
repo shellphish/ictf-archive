@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+
+import socket
+# import ssl
+import asyncio
+import argparse
+import os
+import json
+import sys
+
+if not os.environ.get('BUFFALO_HOST'):
+    print('env var BUFFALO_HOST must be set')
+    exit(1)
+
+host = os.environ.get('BUFFALO_HOST')
+
+parser = argparse.ArgumentParser()
+parser.add_argument('IP', type=str)
+parser.add_argument('PORT', type=str)
+parser.add_argument('crap', nargs='*')
+
+args = parser.parse_args()
+
+# context = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+# context.load_verify_locations('cert.pem')
+# context.check_hostname = False
+
+# # UNDOCUMENTED: use at your own risk
+# cert_deets = ssl._ssl._test_decode_cert('cert.pem')
+# sn = cert_deets['serialNumber']
+
+async def main():
+    reader, writer = await asyncio.open_connection(host, 8443)
+    writer.write(b'admin\n4e37ef8e-d04b-4269-ae1f-f7bce36dce02\n')
+    await writer.drain()
+    while True:
+        line = await reader.readline()
+        if line == b'hello\n':
+            break
+        print(line.decode('ascii').strip(), file=sys.stderr)
+    writer.write(f'benign\n{args.IP}\n'.encode('ascii'))
+    await writer.drain()
+    line = await reader.readline()
+    if line.startswith(b'SUCCESS'):
+        print(json.dumps({'error': 0, 'error_msg': '', 'payload': {}}))
+    else:
+        print(json.dumps({'error': 1, 'error_msg': 'benign_fail'}))
+    writer.close()
+    await writer.wait_closed()
+
+asyncio.run(main())

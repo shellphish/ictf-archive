@@ -1,0 +1,44 @@
+#! /usr/bin/env python3
+
+import argparse
+import json
+import random
+import traceback
+
+import common
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument('host')
+parser.add_argument('port', type=int)
+parser.add_argument('flag')
+parser.add_argument('crap', nargs='*')
+args = parser.parse_args()
+
+try:
+    reps = random.randrange(0, 2)
+    common.check_random(args.host, args.port, reps)
+
+    pwd  = common.create_pass()
+    reps = random.randrange(1, 5)
+    chks = random.randrange(reps + 1)
+    fid  = common.check_series(args.host, args.port, reps, chks, pwd, args.flag)
+
+    print(json.dumps({
+        'error': 0,
+        'error_msg': '',
+        'payload': {
+            'flag_id': fid.lower(),
+            'secret_token': pwd
+        }
+    }))
+
+except Exception as e:
+    # print(e)
+    # print(traceback.format_exc())
+    print(json.dumps({
+        'error': 1,
+        'error_msg': str(e),
+        'payload': {}
+    }))
+    exit(1)

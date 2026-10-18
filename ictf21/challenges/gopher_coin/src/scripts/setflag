@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+
+import json
+from common import *
+import sys
+
+MAX_CREATION_ATTEMPTS = 10
+
+def set_flag(ip, port, flag):
+    set_connection(ip, port)
+    all_coins = list_coins()
+
+    for _ in range(MAX_CREATION_ATTEMPTS):
+        flag_id = generate_random_flag_id()
+        if flag_id not in all_coins:
+            break
+    else:
+        return {
+            'error': 1,
+            'error_msg': "Failed to create a new flag. It's likely the team is getting DOSed",
+            'payload': {}
+        }
+
+    resp = create(flag_id, flag, 2**63-1, 1)
+    if "failure" in resp:
+        return {
+            'error': 1,
+            'error_msg': resp["failure"] + f"for {flag_id}",
+            'payload': {}
+        }
+
+    signature = resp["Signature"]
+    return {
+            'error': 0,
+            'error_msg': "",
+            'payload': {
+                'flag_id': flag_id,  # Unique id for each flag
+                'secret_token': signature,  # benign (get_flag) will know this, exploits will not
+                }
+            }
+
+if __name__ == "__main__":
+    print(json.dumps(set_flag(sys.argv[1], int(sys.argv[2]), sys.argv[3])))

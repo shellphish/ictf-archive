@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<header class="masthead bg-primary text-white text-center">
+    <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">Login</h1>
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+    <p class="masthead-subheading font-weight-light mb-0">
+      Just enter your credentials to login!
+    </p>
+</header>
+
+<section class="page-section" id="register">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-xl-7">
+        <form action="/login" method="post">
+          <!-- Username input-->
+          <div class="form-floating mb-3">
+            <input class="form-control" name="username" id="username" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+            <label for="username">Username</label>
+            <div class="invalid-feedback" data-sb-feedback="name:required">A username is required.</div>
+          </div>
+          <!-- Password input-->
+          <div class="form-floating mb-3">
+            <input class="form-control" name="password" id="password" type="password" placeholder="Enter your password..." data-sb-validations="required" />
+            <label for="password">Password</label>
+            <div class="invalid-feedback" data-sb-feedback="password:required">A password is required.</div>
+          </div>
+          <!-- Submit Button-->
+          <button class="btn btn-primary btn-xl" type="submit">Login</button>
+        </form>
+
+        {% include "msg.html" %}
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

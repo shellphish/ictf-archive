@@ -1,0 +1,289 @@
+#!/usr/bin/env python3
+#
+# Things this script really needs to check for:
+# 1. Signatures still work
+# 2. You can still buy things and increase the amount of money you have
+# 3. You can still do things concurrently (test trying to add 2 things at the same time and remove them)
+#
+import time
+import random
+import string 
+import struct
+import json
+import os
+import sys
+import traceback
+
+from common import *
+
+#
+# Utils
+#
+
+def get_random_coin():
+    l = random.randint(3,6)
+    rand_coin = "".join([random.choice(string.ascii_uppercase) for _ in range(l)])   
+    return rand_coin
+
+def get_random_metadata():
+    length = random.randint(1,150)
+    data = "".join([random.choice(string.ascii_letters) for _ in range(length)])
+    return data 
+
+def time_close_enough(first_ts, second_ts):
+    time_range = [first_ts+e for e in range(-2,3)]
+    return second_ts in time_range
+
+def gen_random_user():
+    lu, lp = random.randint(1, 15), random.randint(5, 15)
+    username = "".join([random.choice(string.ascii_letters) for _ in range(lu)])
+    password = "".join([random.choice(string.ascii_letters) for _ in range(lp)])
+    
+    return username, password
+
+
+#
+# Testing Methods
+#
+
+def test_create_and_remove():
+    """
+    Verifies that bug one patch does not destroy the ability to get things back by signature
+    """
+    coin = get_random_coin()
+    metadata = get_random_metadata()
+    timestamp = int(time.time())
+    value = random.randint(1, 1337)
+    amt = random.randint(1, 15)
+    resp = create(coin, metadata, value, amt)
+
+    if "failure" in resp:
+        assert resp["failure"] == "Coin is already in our system! Please use the update feature instead."
+        return 
+
+    c_timestamp, c_metadata, c_coin = resp["Timestamp"], resp["Metadata"], resp["Abrv"]
+    c_signature, c_value, c_amount = resp["Signature"], resp["Value"], resp["Amount"]
+
+    assert coin == c_coin and time_close_enough(timestamp, c_timestamp) and metadata[:100] == c_metadata
+
+
+    # test a bad removal
+    resp = remove(coin, "aaaaaaaaaaaa")
+    assert "failure" in resp
+
+    # test a good one
+    resp = remove(coin, c_signature)
+    assert "failure" not in resp and coin in resp["Abrv"]
+
+def test_update_metadata():
+    coin = get_random_coin()
+    metadata = get_random_metadata()
+    timestamp = int(time.time())
+    value = random.randint(1, 1337)
+    amt = random.randint(1, 15)
+    resp = create(coin, metadata, value, amt)
+
+    if "failure" in resp:
+        assert resp["failure"] == "Coin is already in our system! Please use the update feature instead."
+        return 
+
+    signature = resp["Signature"]
+    
+    new_metadata = metadata
+    while new_metadata == metadata:
+        new_metadata = get_random_metadata()
+    
+    # fake update
+    resp = update(coin, new_metadata, "aaaaaaaaaaaaa")
+    assert "failure" in resp
+
+    # real update 
+    resp = update(coin, new_metadata, signature)
+    c_metadata = resp["Metadata"]
+    assert c_metadata == new_metadata
+    remove(coin, signature)
+
+def test_view_coin():
+    coin = get_random_coin()
+    metadata = get_random_metadata()
+    timestamp = int(time.time())
+    value = random.randint(1, 1337)
+    amt = random.randint(1, 15)
+    resp = create(coin, metadata, value, amt)
+
+    if "failure" in resp:
+        assert resp["failure"] == "Coin is already in our system! Please use the update feature instead."
+        return 
+
+    signature = resp["Signature"]
+
+    # bad 
+    resp = view_coin("FLG", signature)
+    assert "failure" in resp
+
+    # good 
+    resp = view_coin(coin, signature) 
+    c_timestamp, c_metadata, c_coin = resp["Timestamp"], resp["Metadata"], resp["Abrv"]
+    c_signature, c_value, c_amount = resp["Signature"], resp["Value"], resp["Amount"]
+
+    assert coin == c_coin and time_close_enough(timestamp, c_timestamp) and metadata[:100] == c_metadata 
+
+    # bad    
+    resp = view_coin(coin, "aaaaaaaaaaaaaa")
+    assert "failure" in resp
+
+    remove(coin, signature)
+
+def test_list_coins():
+    # simple test
+    coin = get_random_coin()
+    metadata = get_random_metadata()
+    timestamp = int(time.time())
+    value = random.randint(1, 1337)
+    amt = random.randint(1, 15)
+    resp = create(coin, metadata, value, amt)
+
+    if "failure" in resp:
+        assert resp["failure"] == "Coin is already in our system! Please use the update feature instead."
+        return 
+
+    coins = list_coins()
+    resp_coin = coins[coin]
+
+    assert "Metadata" not in resp_coin
+    assert time_close_enough(timestamp, resp_coin["Timestamp"])
+
+    # more complex
+    coins = {}
+    deleted_coin = None
+    for i in range(10):
+        coin = get_random_coin()
+        metadata = get_random_metadata()
+        timestamp = int(time.time())
+        value = random.randint(1, 1337)
+        amt = random.randint(1, 15)
+        resp = create(coin, metadata, value, amt)
+        
+        if "failure" in resp:
+            continue
+        
+        signature = resp["Signature"]
+        coins[coin] = {
+            "signature": signature,
+        }
+
+        if i == 5:
+            remove(coin, signature)
+            deleted_coin = coin
+            del coins[coin]
+    
+    listed_coins = list_coins()
+    
+    assert deleted_coin not in listed_coins
+    for coin in coins:
+        assert coin in listed_coins
+
+    for coin in coins:
+        remove(coin, coins[coin]["signature"])
+
+def test_register():
+    username, password = gen_random_user()
+    resp = register(username, password)    
+
+    if "failure" in resp:
+        assert resp["failure"] == "This user is already registered!"
+        return 
+
+    r_user, r_money = resp["Name"], resp["Money"]
+    
+    assert r_user == username and r_money > 0
+
+def test_buy_and_sell():
+    # register
+    username, password = gen_random_user()
+    resp = register(username, password)    
+
+    if "failure" in resp:
+        assert resp["failure"] == "This user is already registered!"
+        return 
+
+    orig_money = resp["Money"]
+
+    # make a coin 
+    coin = get_random_coin()
+    metadata = get_random_metadata()
+    timestamp = int(time.time())
+    value = 100
+    amt = 10
+    resp = create(coin, metadata, value, amt)
+
+    if "failure" in resp:
+        assert resp["failure"] == "Coin is already in our system! Please use the update feature instead."
+        return 
+
+    signature = resp["Signature"] 
+
+    # buy the coin
+    resp = buy(coin, 1, username, password)
+    r_val, r_amt, = resp["Value"], resp["Amount"]
+    assert r_val > value and r_amt < amt
+    
+    # verify the wallet changed
+    resp = view_wallet(username, password)
+    r_coins, r_money = resp["Coins"], resp["Money"]
+    assert coin in r_coins and r_money < orig_money
+
+    orig_money = r_money 
+    value = r_val
+    amt = r_amt
+
+    # sell the coin
+    resp = sell(coin, 1, username, password)
+    r_val, r_amt, = resp["Value"], resp["Amount"]
+    assert r_val < value and r_amt > amt
+    
+    # verify money went up 
+    resp = view_wallet(username, password)
+    r_coins, r_money = resp["Coins"], resp["Money"]
+    assert r_coins[coin] == 0 and r_money > orig_money
+
+    remove(coin, signature)
+
+
+def test_concurrency():
+    start_time = time.time()
+    if os.fork():
+        for i in range(10):
+            test_create_and_remove()
+        
+        os.wait()
+        end_time = time.time()
+        delta = end_time-start_time
+    else:
+        for i in range(10):
+            test_update_metadata()
+        sys.exit(0)
+        
+def run_benign(ip, port):
+    set_connection(ip, port)
+    func_list = [test_buy_and_sell, test_list_coins, test_view_coin, test_register, test_update_metadata, test_create_and_remove]
+    random.shuffle(func_list)
+    for func in func_list:
+        func()
+
+if __name__ == "__main__":
+    try:
+        run_benign(sys.argv[1], int(sys.argv[2]))
+
+        response = {
+            "error": 0,
+            "error_msg": "",
+            "payload": {},
+        }
+    except Exception as e:
+        response = { 
+            "error": 1,
+            "error_msg": str(e) + "\n" + traceback.format_exc(),
+            "payload": {}
+        }
+    print(json.dumps(response))

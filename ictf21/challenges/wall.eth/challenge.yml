@@ -1,0 +1,20 @@
+name: wall.eth
+author: "Shellphish / saagarjha"
+description: |
+  **iCTF 2021 — Ethalia Market**
+
+  It's a wallet for your Ethereum, but styled all pretentiously so you know to take it seriously. Because it's written without any unsafe code, it's provably secure!
+
+  Source: https://github.com/shellphish/ictf21-challenges
+value: 200
+type: standard
+flags:
+  - FLAG_ICTF2021{placeholder}
+topics:
+  - blockchain
+hints: []
+files: []
+image: "."
+protocol: tcp
+host: null
+port: null

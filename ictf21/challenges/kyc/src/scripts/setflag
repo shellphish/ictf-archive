@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+import json
+import sys
+import requests
+from common import *
+
+
+def set_flag(ip, port, flag):
+    username = gen_username()
+    password = gen_password()
+    session  = requests.Session()
+
+    # Register + Login
+    register(session, ip, port, username, password)
+    login(session, ip, port, username, password)
+
+    # Set Flag 
+    pdf = string_to_pdf(flag)
+    kyc(session, ip, port, 'idcard.pdf', pdf)
+    
+    return {
+        'error': 0,
+        'error_msg': "",
+        'payload': {
+            'flag_id': username,  # Unique id for each flag
+            'secret_token': password,  # benign (get_flag) will know this, exploits will not
+        }
+    }
+
+
+if __name__ == "__main__":
+    print(json.dumps(set_flag(sys.argv[1], int(sys.argv[2]), sys.argv[3])))

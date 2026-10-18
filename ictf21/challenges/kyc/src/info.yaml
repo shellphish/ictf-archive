@@ -1,0 +1,5 @@
+service_name: kyc
+authors:
+  - pagabuc    
+description: You better Know Your Customers before you do business with them!
+flag_id_description: Flags are identified by the username

@@ -1,0 +1,5 @@
+service_name: wall.eth
+authors:
+  - saagarjha
+description: It's a wallet for your Ethereum, but styled all pretentiously so you know to take it seriously. Because it's written without any unsafe code, it's provably secure!
+flag_id_description: Your flag resides on the node with the appropriate flag ID, and goes well with pepper.

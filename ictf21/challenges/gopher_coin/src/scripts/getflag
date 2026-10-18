@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+
+import json
+from common import *
+import sys
+
+def get_flag(ip, port, flag_id, token):
+    set_connection(ip, port)
+    resp = view_coin(flag_id, token)
+    if "failure" in resp:
+        return {
+            'error': 1,
+            'error_msg': resp["failure"] + f"for {flag_id}",
+            'payload': {}
+        }
+
+    flag = resp["Metadata"]    
+    return {
+            'error': 0,
+            'error_msg': "",
+            'payload': {
+                'flag': flag
+                }
+            }
+
+if __name__ == "__main__":
+    print(json.dumps(get_flag(sys.argv[1], int(sys.argv[2]), sys.argv[3], sys.argv[4])))

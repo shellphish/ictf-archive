@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<header class="masthead bg-primary text-white text-center">
+  <div class="container d-flex align-items-center flex-column">
+    <!-- Masthead Avatar Image-->
+    <img class="masthead-avatar mb-5" src="static/assets/img/logo.jpg" alt="..." />
+    <!-- Masthead Heading-->
+    <h1 class="masthead-heading text-uppercase mb-0">Stonks Market</h1>
+    <!-- Icon Divider-->
+    <div class="divider-custom divider-light">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+    <!-- Masthead Subheading-->
+    <p class="masthead-subheading font-weight-light mb-0">
+      Welcome to StonksMarket! Here you will find the best
+      performing crypto, with the highest certified™ ROI on
+      the market!
+
+      What are you waiting for? Join thousands of other
+      traders and start gaining today!!
+    </p>
+  </div>
+</header>
+
+<section class="page-section" id="register">
+  <div class="container">
+    <!-- Contact Section Heading-->
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Register</h2>
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+    <!-- Contact Section Form-->
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-xl-7">
+        <form action="/register" method="post">
+          <!-- Username input-->
+          <div class="form-floating mb-3">
+            <input class="form-control" name="username" id="username" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+            <label for="username">Username</label>
+            <div class="invalid-feedback" data-sb-feedback="name:required">A username is required.</div>
+          </div>
+          <!-- Password input-->
+          <div class="form-floating mb-3">
+            <input class="form-control" name="password" id="password" type="password" placeholder="Enter your password..." data-sb-validations="required" />
+            <label for="password">Password</label>
+            <div class="invalid-feedback" data-sb-feedback="password:required">A password is required.</div>
+          </div>
+          <!-- Submit Button-->
+          <button class="btn btn-primary btn-xl" type="submit">Register</button>
+        </form>
+
+        {% include "msg.html" %}
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

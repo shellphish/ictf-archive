@@ -1,0 +1,17 @@
+result_3 = list();
+func_3 = fn() {
+	for c in "foobar" {
+		yield c ^ 0x20;
+	}
+	yield 0;
+};
+thing_3 = spawn func_3();
+for c_3 in thing_3 {
+	result_3.push(c_3);
+}
+log(result_3);
+if result_3 == list([0x46, 0x4f, 0x4f, 0x42, 0x41, 0x52, 0]) {
+	log("GOOD_STRING");
+} else {
+	log("BAD_STRING");
+}

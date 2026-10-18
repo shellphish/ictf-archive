@@ -1,0 +1,5 @@
+service_name: buffalo
+description: blockchain pwnable NFT
+flag_id_description: Flags are NFTs derived from the contract identified in the flag id.
+authors:
+    - p_nack

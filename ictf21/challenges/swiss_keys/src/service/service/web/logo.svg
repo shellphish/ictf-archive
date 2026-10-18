@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Based on the HTML5 logo  https://www.w3.org/html/logo/ -->
+  <!-- Adapted by Shellphish for iCTF 2021  https://shellphish.net/ -->
+  <!-- Licensed CC BY 3.0  http://creativecommons.org/licenses/by/3.0/ -->
+
+  <title>Swiss Keys Logo</title>
+  <path fill="#CC0000" d="M71,460 L30,0 481,0 440,460 256,512"/>
+  <path fill="#FF0000" d="M256,472 L405,431 440,37 256,37"/>
+  <g transform="translate(256,256) scale(10)">
+    <path fill="#FFFFFF" d="M+0,-10 +3,-10 +3,-3 +10,-3 +10,3 +3,3 +3,10 +0,10 Z"/>
+    <path fill="#EBEBEB" d="M-0,-10 -3,-10 -3,-3 -10,-3 -10,3 -3,3 -3,10 -0,10 Z"/>
+  </g>
+</svg>

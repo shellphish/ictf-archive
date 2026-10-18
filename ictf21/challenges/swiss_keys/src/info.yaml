@@ -1,0 +1,5 @@
+service_name: swiss_keys
+authors:
+  - yuzu
+description: A super-secure Ethereum key store you can access from anywhere!
+flag_id_description: The address and version number of an interesting key.

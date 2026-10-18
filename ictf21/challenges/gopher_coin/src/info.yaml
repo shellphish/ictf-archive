@@ -1,0 +1,5 @@
+service_name: gopher_coin
+authors:
+  - mahaloz
+description: Run your own coin trading service today! Let the market decide what should be traded and whats worth value!
+flag_id_description: The flag_id is the coin name for the coin containing the flag in the metadata. Usually very expensive!

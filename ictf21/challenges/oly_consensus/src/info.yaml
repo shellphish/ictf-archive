@@ -1,0 +1,5 @@
+service_name: oly_consensus
+authors:
+  - rhelmot
+description: '@CoinersTakingLs is taking submissions! Due to overwhelming demand, the popular twitter account "Crypto Bros Taking Ls" has implemented a centralized system for submitting tweets and automatically voting on submissions using "oly", an experimental memory-safe bytecode language designed for virtualization. Do you have what it takes to make the funniest dig at people losing their life savings to pyramid schemes?'
+flag_id_description: 'Flags are stored along with tweet submissions. The flag ID is the ID for the associated tweet submission.'

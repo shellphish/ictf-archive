@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+
+import json
+import sys
+import traceback
+
+arguments = list(sys.argv)
+from pwn import *
+sys.argv = arguments
+
+import generate_response
+
+context.log_level = "error"
+
+def random_string(length):
+	return "".join(random.choice(string.digits + string.ascii_lowercase) for _ in range(length))
+
+if __name__ == "__main__":
+	try:
+		r = remote(sys.argv[1], int(sys.argv[2]))
+
+		flag_id = random_string(20)
+		r.sendlineafter("Enter your node ID: ", flag_id)
+
+		r.sendlineafter("Choice: ", "3")
+		r.readuntil("Challenge: ")
+		challenge = r.readline().decode().strip()
+
+		response = generate_response.generate_response(challenge)
+
+		r.sendline(response)
+		r.sendlineafter("Choice: ", "1")
+		r.sendlineafter("New salt: ", sys.argv[3])
+		r.sendlineafter("Choice: ", "4")
+		r.readall()
+
+		response = {
+			"error": int(False),
+			"error_msg": "",
+			"payload": {
+				"flag_id": flag_id,
+                                "secret_token": flag_id,
+			}
+		}
+	except Exception as exception:
+		response = {
+			"error": int(True),
+			"error_msg": str(exception) + "\n" + traceback.format_exc(),
+			"payload": {},
+		}
+	print(json.dumps(response))

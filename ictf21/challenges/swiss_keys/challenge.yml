@@ -1,0 +1,20 @@
+name: swiss_keys
+author: "Shellphish / yuzu"
+description: |
+  **iCTF 2021 — Ethalia Market**
+
+  A super-secure Ethereum key store you can access from anywhere!
+
+  Source: https://github.com/shellphish/ictf21-challenges
+value: 200
+type: standard
+flags:
+  - FLAG_ICTF2021{placeholder}
+topics:
+  - blockchain
+hints: []
+files: []
+image: "."
+protocol: tcp
+host: null
+port: null

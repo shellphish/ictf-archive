@@ -1,0 +1,20 @@
+name: kyc
+author: "Shellphish / pagabuc"
+description: |
+  **iCTF 2021 — Ethalia Market**
+
+  You better Know Your Customers before you do business with them!
+
+  Source: https://github.com/shellphish/ictf21-challenges
+value: 200
+type: standard
+flags:
+  - FLAG_ICTF2021{placeholder}
+topics:
+  - blockchain
+hints: []
+files: []
+image: "."
+protocol: tcp
+host: null
+port: null

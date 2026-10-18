@@ -1,0 +1,41 @@
+#!/usr/bin/env python
+
+import json
+from pwn import *
+
+context.timeout = 3
+context.log_level = "error"
+
+def gen_str(cnt):
+    return ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase) for _ in range(cnt))
+
+def login(r, passwd):
+    r.sendlineafter(b"Are you a new player? (y/n)", b'y')
+    r.sendlineafter(b"Password?", passwd)
+    r.recvuntil(b"file is at: ")
+    return r.recvline().strip()
+
+def write_diary(r, diary):
+    r.sendlineafter(b'Save the game and quit.', b'2')
+    r.sendlineafter(b'feel like to write today?\n', diary)
+
+def save_quit(r):
+    r.sendlineafter(b'Save the game and quit.', b'127')
+
+def set_flag(ip, port, flag):
+    r = remote(ip, port)
+    passwd = gen_str(32).encode()
+    save_file = login(r, passwd)
+    write_diary(r, flag.encode())
+    save_quit(r)
+    return {
+            'error': 0,
+            'error_msg': "",
+            'payload': {
+                'flag_id': save_file.decode(),  # Unique id for each flag
+                'secret_token': passwd.decode(),  # benign (get_flag) will know this, exploits will not
+                }
+            }
+
+if __name__ == "__main__":
+    print(json.dumps(set_flag(sys.argv[1], int(sys.argv[2]), sys.argv[3])))

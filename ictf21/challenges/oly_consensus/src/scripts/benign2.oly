@@ -1,0 +1,5 @@
+tester = fn(size, depth) { try { a = bytearray(size); return tester(size * 2, depth + 1); } catch e { if type(e) == MemoryError { return depth; } throw e; } };
+
+result_2 = tester(1, 0);
+log(result_2);
+if result_2 == 21 { log("GOOD_STRING"); } else { log("BAD_STRING"); }

@@ -1,0 +1,321 @@
+htons = fn(port) {
+	return chr(port >> 8) + chr(port & 0xff);
+};
+ntohs = fn(port) {
+	return (port[0] << 8) | port[1];
+};
+bind_listen = fn(port) {
+	sock = sys.socket(sys.AF_INET, sys.SOCK_STREAM, 0);
+	sys.setsockopt(sock, sys.SOL_SOCKET, sys.SO_REUSEADDR, '\1\0\0\0');
+	bind_addr = chr(sys.AF_INET) + '\x00' + htons(port) + '\0\0\0\0\0\0\0\0\0\0\0\0';
+	sys.bind(sock, bind_addr);
+	sys.listen(sock, 10);
+	return sock;
+};
+name_exc = fn(ty) {
+	if ty == exception { return "Exception"; }
+	elif ty == MemoryError { return "MemoryError"; }
+	elif ty == RuntimeError { return "RuntimeError"; }
+	elif ty == AttributeError { return "AttributeError"; }
+	elif ty == KeyError { return "KeyError"; }
+	elif ty == IndexError { return "IndexError"; }
+	elif ty == TypeError { return "TypeError"; }
+	elif ty == ValueError { return "ValueError"; }
+	elif ty == ZeroDivisionError { return "ZeroDivisionError"; }
+	elif ty == StopIteration { return "StopIteration"; }
+	elif ty == OSError { return "OSError"; }
+	else { return "Custom Exception"; }
+};
+urandom = sys.open('/dev/urandom', 0, 0);
+make_token = fn() {
+	raw = bytearray(16);
+	sys.read(urandom, raw);
+	result = bytearray(32);
+	i = 0;
+	for ch in raw {
+		hexch = hex(ch)[2:];
+		while hexch.len < 2 {
+			hexch = '0' + hexch;
+		}
+		result[i] = hexch[0];
+		result[i+1] = hexch[1];
+		i += 2;
+	}
+	return bytes(result);
+};
+readline = fn(sock) {
+	result = bytearray(0);
+	while true {
+		ch = bytearray(1);
+		if sys.read(sock, ch) != 1 {
+			break;
+		}
+		if ch[0] == 10 {
+			break;
+		}
+		result.push(ch[0]);
+	}
+	return bytes(result);
+};
+
+Lock = class(object) {
+	__init__ = fn(self) {
+		self._resource = list([none]);
+		self._queue = list();
+	};
+
+	lock = fn(self) {
+		token = object();
+		self._queue.push(token);
+		while self._queue[0] != token {
+			sleep(0.001);
+		}
+		while true {
+			try {
+				self._resource.pop();
+				break;
+			} catch e {}
+		}
+		self._queue.pop(0);
+	};
+
+	unlock = fn(self) {
+		self._resource.push(none);
+	};
+};
+
+RingBuffer = class(object) {
+	__init__ = fn(self, capacity) {
+		self.buf = list();
+		while self.buf.len < capacity { self.buf.push(none); }
+		self.idx = 0;
+		self.lock = Lock();
+	};
+
+	push = fn(self, entry) {
+		self.lock.lock();
+		self.buf[self.idx] = entry;
+		self.idx = (self.idx + 1) % self.buf.len;
+		self.lock.unlock();
+	};
+
+	__iter__ = fn(self) {
+		return RingBufferIter(self);
+	};
+};
+
+RingBufferIter = class(object) {
+	__init__ = fn(self, ring) {
+		self.ring = ring;
+		self.idx = (ring.idx + 1) % ring.buf.len;
+	};
+
+	__next__ = fn(self) {
+		while true {
+			while self.idx == self.ring.idx { sleep(0.001); }
+			item = self.ring.buf[self.idx];
+			self.idx = (self.idx + 1) % self.ring.buf.len;
+			if item != none {
+				return item;
+			}
+		}
+	};
+
+	__iter__ = fn(self) { return self; };
+};
+
+
+Session = class(object) {
+	__init__ = fn(self, sock) {
+		self.sock = sock;
+		self.group = threadgroup(4 * 1024 * 1024, 10);
+		self.comms = object();
+		self.group.donate(self.comms);
+		self.logbuf = RingBuffer(100);
+		self.make_scope();
+	};
+
+	menu = fn(self) {
+		while true {
+			sys.write(self.sock, "0. About\n1. New worker\n2. View logs\n3. Submit tweet\n4. View top tweets\n> ");
+			line = readline(self.sock);
+			if line == "0" {
+				sys.write(self.sock, "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWNNXXXNNWWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMNKkxxxxxkkOOOOO0KNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMMN0ocllodxxkkOOOOkdodONMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMW0o::cloodxkkOOOOOOOkdldXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMNx;,;:cloddxkOO000000OOkdkNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMO,.,:::lodxkO0KKKKKKK000Ox0MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMWk'.,;::coxkO0KKKXXXXXKK00kKMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMO,.';;;cldxO0KK0KKKXXXKKK0XMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMXc..',;:codkO00000KKK0OO0KNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMWk,..';;cloxk00000Okxdxk0KWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMWx'..,;;;::codk00OxodOKKXNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMWk;.';:;;;ll:ckKK0OOKXXKNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMN0:..,:lloddc;dOKXXXXXK0XWMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMN0o;.....,coddd:,cokKK00K0klclodxkOKXNWMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMWX0xl;.     ...,;lol;',;lxxxxkkl'.......',;coxOKXWMMMMMMMMMMMMM\nMMMMMMMMMMMMMMN0dc'..         ...';:,'..',:cloxo,...............';o0WMMMMMMMMMMM\nMMMMMMMMMMWKkl;.....           ...';,'',;:odxOkc...................;kWMMMMMMMMMM\nMMMMMMMWXkl,...........          ...,;:ccoxkkkd:....................;OWMMMMMMMMM\nMMMMMWKo,.................       .....,;:clloooc.....................c0MMMMMMMMM\nMMMWKo'..............................''',,:clllc'....................'oXMMMMMMMM\nMMMO,..............................',,...':;;lll,.....................;OMMMMMMMM\nMMNl.   ............................,;,...,;;clo;.....................'dWMMMMMMM\nMMK:     ...........................';:'...,::loc.....................'oNMMMMMMM\nMMNc.     .....................';cccccc,...,:;;ll,.....................lXMMMMMMM\nMMWd.       .................,cdk0000kd:'..,::;;lc.....................cKMMMMMMM\nMMMk'    ..................,cdkOOO0KK0x:,..,;c:;cl,....................;0MMMMMMM\nMMMXc      ..............,,;lx00OkO0K0Ooc:;:cdxkOx;....................'oNMMMMMM\nMMMNl      .......  ....',':x0XXK0000K0OkOKXNNWNXx;.....................;0MMMMMM\nMMMWx.    .........     ...l0XWWWWWNX0Okk0WMWXkocc;.....................'dWMMMMM\nMMMM0,    .........      ..cxxkO0XWMWWNNNWWMWOc;;::......................cKMMMMM\nMMMMO'    .......        .,clloxOXWMMMMMWMMMWk::cc:,.....................,kWMMMM\nMMMWx.    ...            .,lolcloONWWWWWWWWMWOc::c:,......................lNMMMM\nMMMWo.                    .';,.',dXWWWWWWWWWW0:;:cc,.............. .......,xNMMM\nMMMXc                      ..   .:KMMWMMWWMMMK:',:c;.............    ......,OMMM\nMMM0,                           .:KMMMMMWMMWMXc.';:;.............     .....'kMMM\nMMMk.                            :XMMMMMWWWWMXc..,:;. ...........   ........dNMM\nMMMk.                            :XMMMWWWWWWMNc...,;. ......;loddxl.........cXMM\nMMWo.                            :XMMMWWMMWWWNo  ..,'  .....dNWWWWKc........cXMM\nMMWx.                            cXMMMWWMWWWWWx.   ... .....lXWWWWWx'.......cXMM\nMMMNx'                           cNMMMMWWWWWWW0:...';;;:lodxONWWWWWK:.......cXMM\nMMMMWO:.                        .dNMMMWWWWWWWWWX000KXNNWWWWWWWWNNXX0c.......lNMM\nMMMMMMXx;.                  .okOKNWMMMMMMWWWWWWNNNXK0Okkxxdoolc:,'..........lNMM\nMMMMMMMMNOoc;'.             :XWNXXK0Okxddoolccc::;,'..  ........     .......:KMM\nMMMMMMMMMMMWXKl.            'll:;,'..          ......   .......      .......,OMM\n\n\n");
+				sys.write(self.sock, "Welcome to the Crypto Bros Taking Ls submission service.\nHere you can submit tweets to be posted to @CoinersTakingLs and vote on submissions.\nDue to overwhelming demand, we have implemented a system for automating your votes.\nYou can submit a program which will have access to the tweet submission feed,\nand it can vote on the tweets.\n\n");
+				sys.write(self.sock, "DISCLAIMER: By the nature of this service, it is very easy to consume all its resources for a denial-of-service attack.\nDo not do this. It is against the rules and we are watching the network for the attacks we know about.\nIf you suspect you are being targeted by a DoS attack, please let us know.\nWe have disqualified teams for DoSing before. :)\n");
+			} elif line == "1" {
+				sys.write(self.sock, "Enter your worker as a hex string followed by a newline:\n");
+				bytecode = bytearray(0);
+				while true {
+					line = bytearray(2);
+					sys.read(self.sock, line);
+					if line[0] == 10 or line[1] == 10 {
+						break;
+					}
+					bytecode.push(int(line, 16));
+				}
+				self.launch(bytes(bytecode));
+			} elif line == "2" {
+				sys.write(self.sock, "Press enter to return to menu\n");
+				spool = spawn fn() {
+					for entry in self.logbuf {
+						sys.write(self.sock, entry);
+						sys.write(self.sock, "\n");
+					}
+				}();
+				readline(self.sock);
+				spool.inject(exception());
+				spool.join();
+			} elif line == "3" {
+				sys.write(self.sock, "Enter full body of tweet followed by two blank lines:\n");
+				text = bytearray(0);
+				blank = false;
+				while true {
+					line = readline(self.sock);
+					text.extend(line);
+					text.push(10);
+					if !line {
+						if blank {
+							break;
+						} else {
+							blank = true;
+						}
+					} else {
+						blank = false;
+					}
+				}
+				sys.write(self.sock, "Enter flag associated with tweet:\n");
+				flag = readline(self.sock);
+				tweet = Tweet(text, flag);
+				db[tweet.ident] = tweet;
+				global_feed.push(tweet);
+				sys.write(self.sock, "Here's the id for your submission. Share it with friends! ");
+				sys.write(self.sock, tweet.ident);
+				sys.write(self.sock, "\n");
+				sys.write(self.sock, "Here's the password for your submission. Don't lose it! ");
+				sys.write(self.sock, tweet.password);
+				sys.write(self.sock, "\n\n");
+			} elif line == "4" {
+				sys.write(self.sock, "I'm not implementing this :P\n\n");
+			} else {
+				sys.write(self.sock, "Good bye\n");
+				return none;
+			}
+		}
+	};
+
+	killall = fn(self) {
+		self.group.inject(Cancellation());
+	};
+
+	launch = fn(self, target_bytes) {
+		self.group.spawn_donated(fn() {
+			try {
+				target = closure(target_bytes, self.scope);
+				target();
+				self.log("Worker exited normally");
+			} catch e {
+				msg = "Worker thread terminated with exception " + name_exc(type(e)) + bytes(e.args);
+				self.log(msg);
+			}
+		}, []);
+	};
+
+	make_scope = fn(self) {
+		scope = dict();
+		scope['none'] = none;
+		scope['true'] = true;
+		scope['false'] = false;
+		scope['bool'] = bool;
+		scope['int'] = int;
+		scope['float'] = float;
+		scope['object'] = object;
+		scope['list'] = list;
+		scope['dict'] = dict;
+		scope['tuple'] = tuple;
+		scope['bytes'] = bytes;
+		scope['bytearray'] = bytearray;
+		scope['type'] = type;
+		scope['exception'] = exception;
+		scope['MemoryError'] = MemoryError;
+		scope['RuntimeError'] = RuntimeError;
+		scope['AttributeError'] = AttributeError;
+		scope['KeyError'] = KeyError;
+		scope['IndexError'] = IndexError;
+		scope['TypeError'] = TypeError;
+		scope['ValueError'] = ValueError;
+		scope['ZeroDivisionError'] = ZeroDivisionError;
+		scope['StopIteration'] = StopIteration;
+		scope['Lock'] = Lock;
+		scope['id'] = id;
+		scope['chr'] = chr;
+		scope['isinstance'] = isinstance;
+		scope['hex'] = hex;
+		scope['sleep'] = sleep;
+		scope['comms'] = self.comms;
+		scope['log'] = fn(txt) { self.log(txt); };
+		scope['get'] = fn(ident) { return db[ident].text; };
+		scope['feed'] = self.group.spawn_donated(fn() { for tweet in global_feed { yield tweet.ident; }}, []);
+		scope['vote'] = fn(ident, vote) { return self.vote(ident, vote); };
+		scope['getsecret'] = fn(ident, passwd) { return self.getsecret(ident, passwd); };
+		self.scope = scope;
+	};
+
+	log = fn(self, txt) {
+		txt = bytes(txt);
+		root_threadgroup.spawn_donated(fn() { self.logbuf.push(txt); }, []).wait();
+	};
+
+	vote = fn(self, ident, vote) {
+		delta = -1;
+		if vote {
+			delta = +1;
+		}
+		db[ident].score += delta;
+	};
+
+	getsecret = fn(self, ident, passwd) {
+		if type(passwd) != bytes {
+			throw TypeError("Nice try, loser!");
+		}
+		if passwd == db[ident].password {
+			return db[ident].secret;
+		}
+		return none;
+	};
+};
+
+db = dict();
+global_feed = RingBuffer(100);
+
+Tweet = class(object) {
+	__init__ = fn(self, text, secret) {
+		self.text = text;
+		self.secret = secret;
+		self.ident = make_token();
+		self.password = make_token();
+		self.score = 0;
+	};
+};
+
+main = fn(sock) {
+	try {
+		session = Session(sock);
+		session.menu();
+	} catch e {
+		try {
+			sys.write(sock, "Unhandled exception in client thread: " + name_exc(type(e)) + bytes(e.args) + '\n');
+		} catch f {}
+	}
+	sys.close(sock);
+	session.killall();
+};
+
+sock = bind_listen(6666);
+while true {
+	buf = bytearray(100);
+	client = sys.accept(sock, buf);
+	client_addr = bytes(buf[4]) + '.' + bytes(buf[5]) + '.' + bytes(buf[6]) + '.' + bytes(buf[7]);
+	print('accepted connection from ' + client_addr + ':' + bytes(ntohs(buf[2:4])));
+	spawn main(client);
+}

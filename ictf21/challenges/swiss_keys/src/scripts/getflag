@@ -1,0 +1,49 @@
+#! /usr/bin/env python3
+
+import argparse
+import json
+import random
+import traceback
+
+import common
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument('host')
+parser.add_argument('port', type=int)
+parser.add_argument('flag_id')
+parser.add_argument('token')
+parser.add_argument('crap', nargs='*')
+args = parser.parse_args()
+
+# Allow retries, 'cause this occasionally fails:
+for i in range(1, 5):
+    try:
+        address, version = args.flag_id.split('v')
+        data = common.retrieve_account(args.host, args.port,
+            address  = address,
+            password = args.token,
+            version  = int(version)
+        )
+
+        print(json.dumps({
+            'error': 0,
+            'error_msg': '',
+            'payload': {
+                'flag': data['comment']
+            }
+        }))
+        exit(0)
+
+    except Exception as e:
+        if i == 1:
+            # Failing on the first attempt is okay.
+            continue
+        # print(e)
+        # print(traceback.format_exc())
+        print(json.dumps({
+            'error': 1,
+            'error_msg': str(e),
+            'payload': {}
+        }))
+        exit(1)

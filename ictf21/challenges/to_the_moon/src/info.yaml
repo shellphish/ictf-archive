@@ -1,0 +1,5 @@
+service_name: to_the_moon
+authors:
+  - kylebot
+description: "Welcome to iCTF's meme stock trading simulator: To The Moon."
+flag_id_description: The file name of the game save file

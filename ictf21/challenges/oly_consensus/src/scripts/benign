@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+
+import json
+import sys
+import random
+import nclib
+import compiler
+
+benign1_template = open('benign1.oly').read()
+benign2_template = open('benign2.oly').read()
+benign3_template = open('benign3.oly').read()
+
+def benign(ip, port):
+    benign_template = random.choice([benign1_template, benign2_template, benign3_template])
+    benign = compiler.oly_compile(benign_template)
+
+    nc = nclib.Netcat(ip, port, verbose=False)
+    nc.recvuntil('> ')
+    nc.sendline('1')
+    nc.sendline(benign.hex())
+    nc.recvuntil('> ')
+    nc.sendline('2')
+    nc.recvuntil('return to menu\n')
+    result = nc.recvall(timeout=1)
+
+    if b'GOOD_STRING' in result and b'BAD_STRING' not in result:
+        return {
+            'error': 0,
+            'error_msg': "",
+            'payload': {},
+        }
+    else:
+        return {
+            'error': 1,
+            'error_msg': "Missing expected output or contains unexpected output",
+            'payload': {},
+        }
+
+if __name__ == "__main__":
+    print(json.dumps(benign(sys.argv[1], int(sys.argv[2]))))
