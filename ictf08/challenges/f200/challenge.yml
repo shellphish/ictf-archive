@@ -1,5 +1,5 @@
 name: "iCTF 2008 — Forensics 200: Stereogram"
-author: "Giovanni Vigna / UCSB Security Lab"
+author: "Shellphish"
 category: forensics
 description: |
   A stereogram image hides a secret. Extract the hidden message.

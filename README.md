@@ -1,7 +1,7 @@
 # iCTF Historical Dataset
 
 This repository contains the archives of the **iCTF (International Capture the Flag)** competition,
-organized by the [Security Lab at UC Santa Barbara](https://seclab.cs.ucsb.edu) since 2001.
+organized by [Shellphish](https://shellphish.net) since 2001.
 iCTF is one of the longest-running academic CTF competitions in the world, spanning 23 editions
 over more than two decades.
 

@@ -1,5 +1,5 @@
 name: "iCTF 2008 — Reverse 100: Whitespace Steganography"
-author: "Giovanni Vigna / UCSB Security Lab"
+author: "Shellphish"
 category: binary
 description: |
   Create a version of the Softerror.com `mission.txt` file that has

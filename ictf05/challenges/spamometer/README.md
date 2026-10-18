@@ -1,6 +1,6 @@
 # spamometer — iCTF 2005
 
-**Competition:** iCTF 2005 "The Spam Museum" (December 2005, UCSB)
+**Competition:** iCTF 2005 "The Spam Museum" (December 2005, Shellphish)
 **Category:** pwn
 **Format:** Attack-defense service
 

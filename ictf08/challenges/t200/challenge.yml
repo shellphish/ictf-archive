@@ -1,5 +1,5 @@
 name: "iCTF 2008 — Trivial 200: Password Cracking"
-author: "Giovanni Vigna / UCSB Security Lab"
+author: "Shellphish"
 category: crypto
 description: |
   We have retrieved this password file from a Softerror.com server. They seem

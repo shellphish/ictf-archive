@@ -1,6 +1,6 @@
 # guestbook — iCTF 2003
 
-**Competition:** iCTF 2003 "Windows Goes Open-Source" (November 2003, UCSB)
+**Competition:** iCTF 2003 "Windows Goes Open-Source" (November 2003, Shellphish)
 **Category:** web
 **Format:** Attack-defense service
 

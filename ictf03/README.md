@@ -8,8 +8,8 @@
 
 ## The Story
 
-The 2003 iCTF was the **first edition to involve institutions other than
-UC Santa Barbara**. Fourteen teams from around the United States competed.
+The 2003 iCTF was the **first edition to involve external teams beyond the
+organizing group (Shellphish)**. Fourteen teams from around the United States competed.
 
 The theme was the (fictitious) announcement that **Microsoft Windows was going
 open-source**. Teams had to attack and defend services that played out this

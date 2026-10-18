@@ -2,7 +2,7 @@ edition: ictf18
 year: 2018
 title: "iCTF 2018"
 # Game theme unknown — not documented in official UCSB archive or website.
-# Co-organized by UCSB Shellphish and ASU pwndevils (Adam Doupé).
+# Co-organized by Shellphish (UCSB) and pwndevils (ASU) (Adam Doupé).
 
 format: attack-defense
 

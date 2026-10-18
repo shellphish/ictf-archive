@@ -47,6 +47,6 @@ Primary service: SSH 1.2.27 (an intentionally vulnerable version).
 ## Notes
 
 This exercise predates the public iCTF. It established the red-blue format
-and the UCSB Security Lab's tradition of running hacking competitions as
+and Shellphish's tradition of running hacking competitions as
 educational tools. The next exercise (2002, "Treasure Hunt in Cyberspace")
 would be the first to have the structure more recognizable as a CTF.

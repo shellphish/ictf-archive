@@ -26,7 +26,7 @@ DDoS that brought down the entire game network.
 The organizers terminated the competition. Bushwhackers, who were barely ahead,
 were declared winners. LC/BC was disqualified.
 
-The UCSB Security Lab published a detailed forensic analysis of the incident,
+Shellphish published a detailed forensic analysis of the incident,
 including reverse-engineered binaries, decoded payloads, and network traffic
 analysis — a rare public post-mortem of a CTF DDoS attack.
 
