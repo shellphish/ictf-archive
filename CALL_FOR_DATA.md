@@ -88,14 +88,6 @@ for the main competition.
 
 ---
 
-### ictf21 — Ethalia Market (December 2021)
-
-**No challenges recovered.** Source lives in `shellphish/ictf21-challenges`
-(currently private). If you have access, please help make it public or
-contribute a copy here.
-
----
-
 ## How to Contribute
 
 **Option 1 — Pull request.** Each challenge follows this structure:
