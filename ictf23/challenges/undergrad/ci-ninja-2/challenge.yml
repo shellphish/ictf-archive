@@ -9,7 +9,7 @@ description: |
 value: 499
 type: dynamic
 
-image: null
+image: "."
 protocol: null
 host: null
 connection_info: null

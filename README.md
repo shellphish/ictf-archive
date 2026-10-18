@@ -63,8 +63,8 @@ over more than two decades.
 | [ictf17](ictf17/) | — | — | — | — | — | Minimal; anti-cheating system docs |
 | [ictf19](ictf19/) | — | — | — | — | — | Service spec template only |
 | [ictf20](ictf20/) | 7 + source | ✓ GitHub | — | — | — | Public repo: shellphish/ictf-2020-challs-public |
-| [ictf21](ictf21/) | — | — | — | — | — | Source at shellphish/ictf21-challenges (private) |
-| [ictf23](ictf23/) | 43 (complete) | ✓ | — | — | ✓ CTFd | Full CTFd export; 21 undergrad + 22 HS challenges |
+| [ictf21](ictf21/) | 8 + source | ✓ GitHub | — | — | — | Blockchain/DeFi market mechanic; source from shellphish/ictf21-challenges |
+| [ictf23](ictf23/) | 45 (complete) | ✓ | — | — | ✓ CTFd | Full CTFd export; source+Dockerfiles+writeups for 22 challenges; 2 draft challenges added |
 | [ictf24](ictf24/) | 25+ (complete) | ✓ | — | — | ✓ CTFd | Full CTFd export; 3 tracks (UG + HS + training) |
 | [ictf26](ictf26/) | 42 (complete) | ✓ | — | — | — | 17 Agentish (MCP/LangGraph) + 25 normal; full source |
 

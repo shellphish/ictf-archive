@@ -1,0 +1,7 @@
+Challenge: Is GPT Reliable to Do Homework for Us?
+
+1. The participants are provided with some middle school algebra problems (with the solutions also provided for reference). We want to use GPT to help us solve these problems (assuming the solutions are unknown). The task is to design a general method, for example, to modify the input question, such that GPT is able to solve these problems more effectively.
+
+2. Now assume you are an expert on GPT. Your classmate, struggling with homework, seeks help using GPT by emailing you the problems, requesting assistance in crafting suitable inputs to GPT. Remembering her past gossip about you, you decide it's time for a little payback... The task is to find a way to degrade the performance of GPT in solving these problems.
+
+For both tasks, write a function called prompt engineering in task.py that inputs a question string and outputs a prompt string.

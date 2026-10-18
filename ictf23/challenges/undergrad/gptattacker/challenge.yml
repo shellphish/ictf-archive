@@ -1,0 +1,29 @@
+name: "GPT Attacker"
+author: "Shellphish"
+category: LLM
+description: |
+  Is GPT reliable to do homework for us? Design prompt injections to
+  (1) improve GPT performance on algebra problems, and (2) degrade it.
+  Write a `prompt_engineering` function in task.py.
+  Flag awarded when acc1 > 0.5 AND acc2 < 0.1.
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - "ictf{acc1 > 0.5 and acc2 < 0.1}"
+
+topics:
+    - LLM
+    - prompt injection
+
+tags:
+    - GPT
+    - ml
+
+state: visible
+version: "0.1"

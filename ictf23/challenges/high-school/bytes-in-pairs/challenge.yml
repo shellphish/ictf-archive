@@ -10,7 +10,7 @@ description: |
 value: 500
 type: dynamic
 
-image: null
+image: "."
 protocol: null
 host: null
 connection_info: null

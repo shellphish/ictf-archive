@@ -1,0 +1,25 @@
+name: "max_64"
+author: "Shellphish"
+category: ml
+description: |
+  When Max goes to the pool and he enters the pool with a stride jump
+  from 64 meters high!! Tell me what your array is and I will tell you his secret.
+value: 500
+type: dynamic
+
+image: null
+protocol: null
+host: null
+connection_info: null
+
+flags:
+    - ictf{237237249176161140255255255206213185213223224193212237252255255255255255206239254}
+
+topics:
+    - ml
+
+tags:
+    - ml
+
+state: hidden
+version: "0.1"

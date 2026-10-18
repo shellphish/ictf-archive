@@ -6,7 +6,7 @@ description: |
 value: 498
 type: dynamic
 
-image: null
+image: "."
 protocol: null
 host: null
 connection_info: null
