@@ -14,11 +14,11 @@ RUN chown root:root /home/challenge
 RUN chmod 755 /home/challenge
 
 # Copy files
-# COPY ./src/flag.txt /flag.txt
+# COPY ./flag/flag /flag/flag
 COPY src /home/challenge/src
 
 # Set permissions
-# RUN chmod 644 /flag.txt
+# RUN chmod 644 /flag/flag
 RUN chmod 755 /home/challenge/src/rate_limiter.py
 RUN chmod 755 /home/challenge/src/challenge.py
 RUN chmod 755 /home/challenge/src/service.sh

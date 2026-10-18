@@ -96,7 +96,7 @@ for the main competition.
 ictfXX/challenges/<service-name>/
 ├── challenge.yml      # CTFd/ctfcli metadata
 ├── src/               # Service source code
-├── flag/flag.txt      # The flag (placeholder is fine)
+├── flag/flag      # The flag (placeholder is fine)
 └── writeup/README.md  # Vulnerability description
 ```
 

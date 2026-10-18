@@ -74,7 +74,7 @@ challenges/my-challenge/
 │   └── README.md          # Optional: notes on any extra materials
 ├── src/
 │   ├── <source files>     # Service source code
-│   ├── flag.txt           # The flag
+│   ├── flag               # The flag
 │   └── <service config>   # e.g. xinetd.conf or service.sh
 ├── ro/
 │   └── .gitkeep           # Placeholder; compiled binaries go here at build time
@@ -225,9 +225,9 @@ RUN apt-get update -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Place the flag at /flag.txt, world-readable
-COPY ./src/flag.txt /flag.txt
-RUN chmod 644 /flag.txt
+# Place the flag at /flag/flag, world-readable
+COPY ./flag/flag /flag/flag
+RUN chmod 644 /flag/flag
 
 # Create the unprivileged service user (UID 31337 by convention)
 RUN useradd -u 31337 -ms /bin/bash challenge
@@ -256,7 +256,7 @@ CMD ["/usr/sbin/xinetd", "-dontfork"]
 
 **Key rules:**
 - The service must run as UID 31337 (`challenge` user), never as root.
-- `/flag.txt` must be readable by the `challenge` user (`chmod 644`).
+- `/flag/flag` must be readable by the `challenge` user (`chmod 644`).
 - The home directory (`/home/challenge`) must not be writable by `challenge`.
 - Only `rw/` should be writable at runtime.
 
@@ -316,7 +316,7 @@ name: "my-remote"
 author: "you"
 category: pwn
 description: >
-  Exploit the service and read /flag.txt.
+  Exploit the service and read /flag/flag.
   Source code is provided.
 value: 100
 type: standard
@@ -429,7 +429,7 @@ ictf{descriptive_phrase_here}
 - Must start with `ictf{` and end with `}`.
 - The content should be a meaningful phrase that hints at the exploit or category (e.g., `ictf{AnInjectionOfSecurity}`, `ictf{RedactingIsThisChallengeUndoing}`).
 - No spaces inside the braces; use camelCase or underscores.
-- The flag in `src/flag.txt` (for remote challenges) and the flag in `challenge.yml` under `flags:` must be identical.
+- The flag in `flag/flag` (for remote challenges) and the flag in `challenge.yml` under `flags:` must be identical.
 
 ---
 
@@ -520,7 +520,7 @@ Before submitting your challenge, verify every item below.
 - [ ] `docker build -t test-challenge .` succeeds with no errors
 - [ ] Service starts correctly: `docker run -d -p <port>:<port> test-challenge`
 - [ ] Manual connection works: `nc localhost <port>`
-- [ ] `flag.txt` is at `/flag.txt` inside the container and readable by the `challenge` user
+- [ ] `flag/flag` is at `/flag/flag` inside the container and readable by the `challenge` user
 - [ ] Service runs as UID 31337, not root
 - [ ] `writeup/exploit.py` runs successfully against the local container and prints the flag
 - [ ] The exposed port in `Dockerfile` matches the port in `xinetd.conf` / `socat` command

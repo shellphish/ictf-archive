@@ -2,9 +2,9 @@
 FROM python:3.11-slim
 
 # Copies the flag
-COPY ./src/flag.txt /flag.txt
+COPY ./flag/flag /flag/flag
 
-RUN chmod 644 /flag.txt
+RUN chmod 644 /flag/flag
 
 COPY ./src/serve.sh /serve.sh
 
