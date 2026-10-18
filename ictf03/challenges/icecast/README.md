@@ -1,6 +1,6 @@
 # icecast — iCTF 2003
 
-**Competition:** iCTF 2003 "Windows Goes Open-Source" (November 2003, Shellphish)
+**Competition:** iCTF 2003 "Windows Goes Open-Source" (November 2003, Giovanni Vigna / UCSB)
 **Category:** web / network
 **Format:** Attack-defense service
 

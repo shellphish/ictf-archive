@@ -1,5 +1,5 @@
 name: phf
-author: iCTF Organizers
+author: "Giovanni Vigna, UCSB"
 description: |
   A classic 1995-era Apache web server is running the CSO/PH lookup CGI script
   at /cgi-bin/phf. The script calls `unescape_url()` on the query string before

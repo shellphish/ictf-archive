@@ -1,5 +1,5 @@
 name: query-extension
-author: iCTF Organizers
+author: "Giovanni Vigna, UCSB"
 description: |
   The Bass Tard Corporation's HR portal looks up employee phone extensions.
   The query uses the `cboname` parameter directly in a SQL statement.

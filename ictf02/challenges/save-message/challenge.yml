@@ -1,5 +1,5 @@
 name: save-message
-author: iCTF Organizers
+author: "Giovanni Vigna, UCSB"
 description: |
   The Bass Tard Corporation lets visitors leave feedback.
   The script saves your message to a file named after you.

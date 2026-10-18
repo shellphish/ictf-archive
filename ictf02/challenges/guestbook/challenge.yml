@@ -1,5 +1,5 @@
 name: guestbook
-author: iCTF Organizers
+author: "Giovanni Vigna, UCSB"
 description: |
   The Bass Tard Corporation runs a guestbook on their web server.
   The CGI script is a bit too generous with what it shows visitors.

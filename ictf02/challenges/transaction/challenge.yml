@@ -1,5 +1,5 @@
 name: transaction
-author: iCTF Organizers
+author: "Giovanni Vigna, UCSB"
 description: |
   The payroll transaction server listens on port 7979.
   Connect and type HELP to see the available commands.

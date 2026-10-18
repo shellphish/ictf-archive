@@ -1,5 +1,5 @@
 name: lprng
-author: iCTF Organizers
+author: "Giovanni Vigna, UCSB"
 description: |
   A RedHat 7.0 machine is running LPRng 3.6.24 (the lpd print spooler) on
   port 515/tcp. LPRng passes attacker-controlled job metadata directly to

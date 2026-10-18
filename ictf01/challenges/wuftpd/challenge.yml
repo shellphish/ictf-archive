@@ -1,5 +1,5 @@
 name: wuftpd
-author: iCTF Organizers
+author: "Giovanni Vigna, UCSB"
 description: |
   A RedHat 6.2 machine is running wu-ftpd 2.6.0 on port 21/tcp. The FTP
   daemon passes the PASS (password) argument through a format string to

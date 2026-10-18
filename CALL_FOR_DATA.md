@@ -1,7 +1,8 @@
 # iCTF Archive — Call for Data
 
 This repository is a public archive of the International Capture the Flag (iCTF)
-competition, organized by [Shellphish](https://shellphish.net) from 2001 to the present.
+competition, founded by Giovanni Vigna at UC Santa Barbara in 2001 and organized by
+[Shellphish](https://shellphish.net) from 2005 to the present.
 
 We have recovered challenge source code and metadata for most editions, but several
 years have gaps. **If you organized, played in, or wrote services for any of the

@@ -1,7 +1,8 @@
 # iCTF Historical Dataset
 
 This repository contains the archives of the **iCTF (International Capture the Flag)** competition,
-organized by [Shellphish](https://shellphish.net) since 2001.
+founded by Giovanni Vigna at UC Santa Barbara in 2001 and organized by
+[Shellphish](https://shellphish.net) since 2005.
 iCTF is one of the longest-running academic CTF competitions in the world, spanning 23 editions
 over more than two decades.
 
