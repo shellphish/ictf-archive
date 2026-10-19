@@ -1,0 +1,29 @@
+{
+    "authors": [
+        "Jacopo Corbetta <jacopo@cs.ucsb.edu>",
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign1.py",
+        "benign2.py"
+    ],
+    "build_dependencies": [
+        "libc6-dev-i386"
+    ],
+    "debian_dependencies": [],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the name of the file you have to read. It will contain the flag.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "sillybox",
+    "origin": "ictf-2013",
+    "port": 4669,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_binary": "sillybox_spawner",
+    "service_description": "You enrich uranium. You need centrifuges. You need computers. Your computers need fans. Obvious solution is obvious. But now code runs on top of centrifuges, that's dangerous! So you put up this little silly sandbox that runs arbitrary code BUT allows reading files only if you know their password. But maybe some files are interesting... See the README for more info.",
+    "setflag": "setflag.py",
+    "start_type": "binary"
+}

@@ -9,7 +9,7 @@ description: |
 
   Exploiting sillybox required bypassing sandbox restrictions to read flag files.
 
-  Source not available in archive.
+  Original C source and gamebot scripts recovered.
 value: 0
 type: standard
 image: null

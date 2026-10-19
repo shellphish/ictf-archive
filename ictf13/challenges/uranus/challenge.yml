@@ -7,7 +7,8 @@ description: |
   uranus was a Level 4 service (highest difficulty) in the 2013 competition.
   Teams needed advanced binary exploitation skills to compromise it.
 
-  Source not available in archive. Original deb package: uranus_12_i386.deb
+  Original Node.js source and gamebot scripts recovered. Original deb package:
+  uranus_12_i386.deb.
   (32-bit Ubuntu VM, no root, no ASLR).
 value: 0
 type: standard

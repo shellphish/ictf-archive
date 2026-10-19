@@ -7,7 +7,7 @@ description: |
   dexware was a Level 3 service — one of the hardest in the competition.
   Teams needed advanced binary exploitation skills to compromise it.
 
-  Source not available in archive.
+  Original Java/JNI source and gamebot scripts recovered.
 value: 0
 type: standard
 image: null

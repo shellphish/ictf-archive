@@ -1,0 +1,17 @@
+{
+	"name" 			: "poipoi",
+        "origin"                : "ictf-2013",
+	"authors" 		: ["Alberto Geniola", "Matteo Lancellotti", "Nilo Redini","UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"],
+	"port" 			: 3335,
+	"flag_id_description" 	: "the flag_id is the user_id returned by the server after successful registration.",
+	"service_description" 	: "Uranium mining is the process of extracting uranium ore from the ground. A prominent use of uranium from mining is as fuel for building your nuclear weapons and then terrifying your enemies. The POIPOI service collects information of all uranium mines in the world, so if you know of some new mines please insert related locations as soon as you can and help your country to dominate the world!",
+	"start_type"		: "scripted",
+  	"getflag" 		: "getflag.py",
+  	"setflag" 		: "setflag.py",
+	"is_working": 1,
+  	"benign" 		: ["benign.py"],
+  	"exploit" 		: ["exploit.py"],
+	"debian_dependencies" 	: ["libc6:i386"],
+    "scripts-virtualenv" : [],
+    "scripts-packages" : []
+}

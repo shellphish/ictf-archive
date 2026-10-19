@@ -1,0 +1,27 @@
+{
+    "authors": [
+        "gianluca",
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "debian_dependencies": [],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "Date in the format YYYY/MM/DD",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "temperature",
+    "origin": "ictf-2013",
+    "port": 56098,
+    "scripts-packages": [],
+    "scripts-virtualenv": [
+        "pexpect"
+    ],
+    "service_binary": "temperature",
+    "service_description": "Temperature service. Logs temperatures detected in various parts of the world. These recordings will then be used for amazingly secret intelligence actions",
+    "setflag": "setflag.py",
+    "start_type": "binary"
+}

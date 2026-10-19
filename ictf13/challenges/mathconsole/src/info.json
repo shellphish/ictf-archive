@@ -1,0 +1,42 @@
+{
+    "authors": [
+        "antoniob",
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign1.py",
+        "benign2.py",
+        "benign3.py",
+        "benign4.py",
+        "benign5.py",
+        "benign6.py",
+        "benign7.py",
+        "benign8.py"
+    ],
+    "build_dependencies": [
+        "python-ecdsa"
+    ],
+    "debian_dependencies": [
+        "python-crypto",
+        "python-ecdsa"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "the flag_id is the name of a file in the folder service_files",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "mathconsole",
+    "origin": "ictf-2013",
+    "port": 9899,
+    "scripts-packages": [
+        "python-dev"
+    ],
+    "scripts-virtualenv": [
+        "pycrypto",
+        "ecdsa"
+    ],
+    "service_description": "A powerful calculator with an on-the-cloud file storage service",
+    "setflag": "setflag.py",
+    "start_type": "scripted"
+}
