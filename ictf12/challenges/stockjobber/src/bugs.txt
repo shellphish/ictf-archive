@@ -1,0 +1,7 @@
+1. working section is not cleared between calls, so you can reauthenticate with the prior user's authlevel
+2. authlevel is written as signed and read as unsigned, allowing user to set high authlevels
+3. the BLANK user is usable due to the login logic
+4. indentation issue means that usernames of size 3 are omnipotent
+5. incorrect check means that usernames of size 0 are omnipotent
+
+soooo many more

@@ -1,0 +1,9 @@
+{
+  "name":"stockjobber",
+  "port":2583,
+  "getflag":"interact.py",
+  "setflag":"interact.py",
+  "benign":["interact.py"],
+  "exploit":["interact.py"],
+  "is_working":1
+}

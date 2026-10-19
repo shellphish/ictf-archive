@@ -1,0 +1,9 @@
+{
+    "name" : "pewpew_smartgrid",
+    "port" : 14389,
+    "getflag" : "getflag.py",
+    "setflag" : "setflag.py",
+    "benign" : ["benign.py"],
+    "exploit" : [], 
+    "is_working" : 1
+}

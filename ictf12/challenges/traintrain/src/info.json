@@ -1,0 +1,9 @@
+{
+  "name" : "traintrain",
+  "port" : 8888,
+  "getflag" : "getflag.py",
+  "setflag" : "setflag.py",
+  "benign" : ["benign.py"],
+  "exploit" : ["exploit.py"],
+  "is_working" : 1
+}
