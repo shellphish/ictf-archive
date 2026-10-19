@@ -18,7 +18,7 @@ description: |
   handling. The service takes a port argument at startup.
 
   32-bit ELF, not stripped, compiled on Ubuntu 10.10.
-  Source code not recovered (binary-only from competition VM).
+  Original C source and gamebot scripts recovered.
 value: 0
 type: standard
 image: null
@@ -37,9 +37,10 @@ tags:
     - ictf2011
     - historical
     - attack-defense
-    - binary-only
+    - source-recovered
 files:
     - src/smsgw
+    - src/smsgateway.c
     - src/init_smsgateway
 state: visible
 version: "0.1"

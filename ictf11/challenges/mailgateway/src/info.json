@@ -1,0 +1,29 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "build_dependencies": [
+        "libc6-dev-i386"
+    ],
+    "debian_dependencies": [
+        "libc6:i386"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the account name.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "mailgateway",
+    "origin": "ictf-2011",
+    "port": 9119,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_binary": "mailgateway",
+    "service_description": "This is a mail gateway service!",
+    "setflag": "setflag.py",
+    "start_type": "binary"
+}

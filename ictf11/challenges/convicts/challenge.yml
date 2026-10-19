@@ -51,9 +51,9 @@ description: |
 
   ## Source
 
-  `toilet.c` reconstructed from vim swap file (`toilet.c.swp`). The binary
-  compiled with `-lssl` for MD5 operations. The binary itself (`toilet`) is
-  included as a 32-bit ELF for reference.
+  Original `toilet.c` and gamebot scripts recovered. The earlier reconstruction
+  from a vim swap file is retained for comparison. The binary compiled with
+  `-lssl` for MD5 operations and is included as a 32-bit ELF for reference.
 value: 0
 type: standard
 image: null
@@ -74,9 +74,10 @@ tags:
     - ictf2011
     - historical
     - attack-defense
-    - source-partial
+    - source-recovered
 files:
     - src/toilet
+    - src/toilet.c
     - src/toilet.c.reconstructed.txt
     - src/toilet.c.swp
 state: visible

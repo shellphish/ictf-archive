@@ -1,0 +1,47 @@
+#!/usr/bin/php-cgi
+
+<?php
+require_once("../library.php");
+
+/* Checks that the user is logged in */
+if ($username == "") {
+  header("Location: http://$server_name:$server_port/login.php"); 
+  die();
+}
+
+$msg = sanitize_r_data('msg', $_GET);	
+
+myheader("View Message");
+if ($msg == "") {
+  diefooter("Missing message file name.");
+}
+
+/* Msg is XML: need to profile browser (Safari does not work). TODO: Fix this. */
+$browser = get_browser_name($_SERVER['HTTP_USER_AGENT']);
+
+if ($browser != "") {
+  $filename = "./browsers/" . $browser . ".php";
+  if (file_exists($filename)) {
+    require_once($filename);
+  }
+}
+
+$fname = "./messages/" . basename($msg);
+$fh = fopen($fname, "r");
+if ($fh == false) {
+  diefooter("Cannot open file name $fname.");
+}
+$contents = fread($fh, filesize($fname));
+$contents = htmlentities($contents);
+print '
+<div id="msg_display">
+<pre>
+';
+print $contents;
+print '
+</pre>
+</div>
+';
+
+myfooter("View Message");
+?>
