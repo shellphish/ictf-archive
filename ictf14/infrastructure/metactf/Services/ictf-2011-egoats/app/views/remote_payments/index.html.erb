@@ -1,0 +1,21 @@
+<h1>Listing remote_payments</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @remote_payments.each do |remote_payment| %>
+  <tr>
+    <td><%= link_to 'Show', remote_payment %></td>
+    <td><%= link_to 'Edit', edit_remote_payment_path(remote_payment) %></td>
+    <td><%= link_to 'Destroy', remote_payment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Remote payment', new_remote_payment_path %>

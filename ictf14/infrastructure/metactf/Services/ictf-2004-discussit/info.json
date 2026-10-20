@@ -1,0 +1,28 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "debian_dependencies": [
+        "libc6",
+        "apache2",
+        "apache2-mpm-itk"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "First part of the username when splitted on '_'",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "discussit",
+    "origin": "ictf-2004",
+    "port": 7413,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_binary": "discussit",
+    "service_description": "This is a chatting service!",
+    "setflag": "setflag.py",
+    "start_type": "binary"
+}

@@ -38,12 +38,16 @@ Four components contributed to a team's final score:
 | Path | Contents |
 |------|----------|
 | `2014-2015.mysql.gz` | MySQL dump with scoring/team data |
+| `infrastructure/metactf/` | Recovered reused-service source, gamebot scripts, and Debian deployment tooling |
 | `ictf scoreboard/` | Scoreboard screenshots |
 | `ictf20145_announcement.txt` | Competition instructions to teams |
 | `ictf2014-5-press_release.txt` | Press release |
 | `ictf2014_scoreboard_screenshot.png` | Final scoreboard |
 
-Note: ~888 KB total. Service source code and traffic dumps not preserved locally.
+The `metactf` snapshot contains 54 package-ready services from earlier iCTF
+editions. It is the candidate pool used while preparing this event; the exact
+41-service final selection is not established by the repository alone.
+Traffic dumps have not been recovered.
 
 ## References
 

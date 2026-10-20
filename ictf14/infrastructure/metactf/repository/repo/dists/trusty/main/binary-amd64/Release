@@ -1,0 +1,7 @@
+Archive: trusty
+Version: 3.0
+Component: main
+Origin: iCTF
+Label: iCTF
+Architecture: amd64
+Description: Service packages for the iCTF - Hacking at Scale

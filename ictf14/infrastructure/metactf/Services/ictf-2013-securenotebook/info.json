@@ -1,0 +1,35 @@
+{
+    "authors": [
+        "Ali",
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "build_dependencies": [
+        "cx-freeze",
+        "python-crypto"
+    ],
+    "debian_dependencies": [
+        "cx-freeze",
+        "python-crypto"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "the flag_id for this service is the username",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "securenotebook",
+    "origin": "ictf-2013",
+    "port": 2190,
+    "scripts-packages": [],
+    "scripts-virtualenv": [
+        "pycrypto",
+        "pexpect"
+    ],
+    "service_binary": "securenotebook",
+    "service_description": "The rogue nation has a complicated network of technology spies to acquire required knowledge about the process of Uranium enrichment. This network use anonymus networks for transferring the information. This service provides secure anonymus filesharing between users.",
+    "setflag": "setflag.py",
+    "start_type": "scripted"
+}

@@ -1,0 +1,29 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "debian_dependencies": [
+        "apache2",
+        "wamerican"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the username.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "spammer",
+    "origin": "ictf-2005",
+    "port": 4570,
+    "scripts-packages": [
+        "wamerican"
+    ],
+    "scripts-virtualenv": [],
+    "service_binary": "spammerd.py",
+    "service_description": "This is a SPAM Delivery Protocol!  More information on http://<your_IP>:8123/",
+    "setflag": "setflag.py",
+    "start_type": "binary"
+}

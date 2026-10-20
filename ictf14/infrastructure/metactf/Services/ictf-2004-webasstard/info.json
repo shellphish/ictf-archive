@@ -1,0 +1,31 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign1.py"
+    ],
+    "build_dependencies": [
+        "libc6-dev-i386",
+        "libssl0.9.8:i386"
+    ],
+    "debian_dependencies": [
+        "libc6:i386",
+        "libssl0.9.8:i386",
+        "libssl1.0.0:i386"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id are the first 8 characters of the names of the files saved in the webdocs folder",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "webasstard",
+    "origin": "ictf-2004",
+    "port": 4443,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_description": "This is a website used for File Sharing!",
+    "setflag": "setflag.py",
+    "start_type": "scripted"
+}

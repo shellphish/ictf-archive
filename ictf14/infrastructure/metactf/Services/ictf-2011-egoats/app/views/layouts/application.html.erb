@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Egoats</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<style>
+ul.hmenu {
+	list-style: none;	
+	margin: 0 0 2em;
+	padding: 0;
+	background-color: orange;
+}
+
+ul.hmenu li {
+	display: inline;  
+}
+
+
+.notice{
+	background:#008000;
+	color:#FFFFFF;
+	font-weight:bold;
+	padding:4px;
+	text-align:center;
+	width: 50%;
+	margin: auto;
+}
+
+.alert{
+	background:#800000;
+	color:#FFFFFF;
+	font-weight:bold;
+	padding:4px;
+	text-align:center;
+	width: 50%;
+	margin: auto;
+}
+</style>
+
+<ul class="hmenu">
+  <%= render 'devise/menu/registration_items' %>
+  <%= render 'devise/menu/login_items' %>
+</ul>
+<div style='width: 100%;'>
+  <div style='width:500px; margin: auto;'>
+
+  <% unless notice.nil? %>
+    <div class="notice"><%= notice %></div>
+  <% end %>
+  <% unless alert.nil? %>
+    <div class="alert"><%= alert %></div>
+  <% end %>
+
+  <%= yield %>
+  </div>
+</div>
+</body>
+</html>

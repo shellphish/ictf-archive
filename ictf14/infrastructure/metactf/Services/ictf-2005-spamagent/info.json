@@ -1,0 +1,32 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "build_dependencies": [
+        "tcl-dev",
+        "libxml2-dev",
+        "libapache2-mpm-itk",
+        "apache2-mpm-itk"
+    ],
+    "debian_dependencies": [
+        "apache2",
+        "tcl"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the name.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "spamagent",
+    "origin": "ictf-2005",
+    "port": 8185,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_description": "This is a website for submitting SPAM agents!",
+    "setflag": "setflag.py",
+    "start_type": "none"
+}

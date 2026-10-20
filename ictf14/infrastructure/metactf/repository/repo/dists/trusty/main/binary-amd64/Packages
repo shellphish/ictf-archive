@@ -1,0 +1,266 @@
+Package: acquire
+Version: 0.1
+Architecture: amd64
+Maintainer: UCSB iCTF Team <ctf-admin@lists.cs.ucsb.edu>
+Installed-Size: 352
+Depends: ubuntu-minimal, adduser, apache2, libapache2-mod-php5, apache2-mpm-itk, libapache2-mpm-itk
+Homepage: http://ictf.cs.ucsb.edu
+Priority: extra
+Section: unknown
+Filename: pool/main/a/acquire/acquire_0.1_amd64.deb
+Size: 90608
+SHA256: 9f6992e3e1fd3d55d137e8fb0bb9a27597aad57847257f1b8def65c6c172641d
+SHA1: 62ca7e5e7164ec533b253f9ae2c57769fc31a6e6
+MD5sum: e190b06f817c3171b941a63a45b4f5c2
+Description: acquire CTF service
+ NOTE: this service is initially vulnerable - other teams can steal your flags!
+ .
+ You will need to patch it and keep it working for benign users.
+
+Package: bassretard
+Version: 0.1
+Architecture: amd64
+Maintainer: UCSB iCTF Team <ctf-admin@lists.cs.ucsb.edu>
+Installed-Size: 88
+Depends: ubuntu-minimal, libc6 (>= 2.4), adduser
+Homepage: http://ictf.cs.ucsb.edu
+Priority: extra
+Section: unknown
+Filename: pool/main/b/bassretard/bassretard_0.1_amd64.deb
+Size: 11434
+SHA256: fd489b78dc287a023d11f3afbf09edddfe638e6cb80f4bbf57ac2fc8dcf1dc80
+SHA1: ec768a0156c21751d4ce55bb926cbd434d7fa5a3
+MD5sum: 8823458232cd48703f130998e2e013c4
+Description: bassretard CTF service
+ NOTE: this service is initially vulnerable - other teams can steal your flags!
+ .
+ You will need to patch it and keep it working for benign users.
+
+Package: contributions
+Version: 0.1
+Architecture: amd64
+Maintainer: UCSB iCTF Team <ctf-admin@lists.cs.ucsb.edu>
+Installed-Size: 82
+Depends: ubuntu-minimal, adduser, apache2, python-mysqldb, mysql-server, apache2-mpm-itk
+Homepage: http://ictf.cs.ucsb.edu
+Priority: extra
+Section: unknown
+Filename: pool/main/c/contributions/contributions_0.1_amd64.deb
+Size: 7000
+SHA256: f74749bbba58a6b26d2ff267aa7b0b4f86e16fd25011036399f8ffaf781dbffc
+SHA1: 6af44099d002fb58b191921a6559cff9a6020ee7
+MD5sum: f2e2d775d97454f08292c44579c3feb9
+Description: contributions CTF service
+ NOTE: this service is initially vulnerable - other teams can steal your flags!
+ .
+ You will need to patch it and keep it working for benign users.
+
+Package: convicts
+Version: 0.1
+Architecture: amd64
+Maintainer: UCSB iCTF Team <ctf-admin@lists.cs.ucsb.edu>
+Installed-Size: 199
+Depends: ubuntu-minimal, libc6 (>= 2.2.5), libssl1.0.0 (>= 1.0.0), adduser, xinetd
+Homepage: http://ictf.cs.ucsb.edu
+Priority: extra
+Section: unknown
+Filename: pool/main/c/convicts/convicts_0.1_amd64.deb
+Size: 19480
+SHA256: e9e172e0e8c4e63821cf3a46cf2b9ff6684e4c52eb2a76606365824970c4e444
+SHA1: 9babbd9d4edfd50e6db4d29ef25ba6f5464d36f5
+MD5sum: 18d234e88ce6900061a9e672961fb76e
+Description: convicts CTF service
+ NOTE: this service is initially vulnerable - other teams can steal your flags!
+ .
+ You will need to patch it and keep it working for benign users.
+
+Package: mailgateway
+Version: 0.1
+Architecture: amd64
+Maintainer: UCSB iCTF Team <ctf-admin@lists.cs.ucsb.edu>
+Installed-Size: 77
+Depends: ubuntu-minimal, libc6-i386 (>= 2.1), adduser, libc6:i386
+Homepage: http://ictf.cs.ucsb.edu
+Priority: extra
+Section: unknown
+Filename: pool/main/m/mailgateway/mailgateway_0.1_amd64.deb
+Size: 8638
+SHA256: f3111ab525197e64ec7e696583e78f8a970f6fbefffcae9164dbe9a9e9bea8bf
+SHA1: 8619480d6278d6eaa59bd201dc3ec39babb47056
+MD5sum: e6493ae44732d4bf3857bca91020f2c1
+Description: mailgateway CTF service
+ NOTE: this service is initially vulnerable - other teams can steal your flags!
+ .
+ You will need to patch it and keep it working for benign users.
+
+Package: mathconsole
+Version: 0.1
+Architecture: amd64
+Maintainer: UCSB iCTF Team <ctf-admin@lists.cs.ucsb.edu>
+Installed-Size: 73
+Depends: ubuntu-minimal, adduser, python-crypto, python-ecdsa
+Homepage: http://ictf.cs.ucsb.edu
+Priority: extra
+Section: unknown
+Filename: pool/main/m/mathconsole/mathconsole_0.1_amd64.deb
+Size: 8928
+SHA256: aa15ba2ce1c4c3bceec01967dfa4e85415b61c93a8f31b3f8ca5b1fe53d6e337
+SHA1: 02d9b9aed0f9dfcbca1a827949036f773330f27b
+MD5sum: 5082a67ae4fc6046bdd95cfa8f3c2d97
+Description: mathconsole CTF service
+ NOTE: this service is initially vulnerable - other teams can steal your flags!
+ .
+ You will need to patch it and keep it working for benign users.
+
+Package: petition
+Version: 0.1
+Architecture: amd64
+Maintainer: UCSB iCTF Team <ctf-admin@lists.cs.ucsb.edu>
+Installed-Size: 2766
+Depends: ubuntu-minimal, adduser, apache2, apache2-mpm-itk
+Homepage: http://ictf.cs.ucsb.edu
+Priority: extra
+Section: unknown
+Filename: pool/main/p/petition/petition_0.1_amd64.deb
+Size: 1242214
+SHA256: 231396e33694cc11908194309efdb60f0449ce35e43648bc2b211072e5d6ad98
+SHA1: a7813c97d0de2ab74187e3996149ac95ec17b937
+MD5sum: 45f16d373bdc174950807d665357f7e1
+Description: petition CTF service
+ NOTE: this service is initially vulnerable - other teams can steal your flags!
+ .
+ You will need to patch it and keep it working for benign users.
+
+Package: powerplan
+Version: 0.1
+Architecture: amd64
+Maintainer: UCSB iCTF Team <ctf-admin@lists.cs.ucsb.edu>
+Installed-Size: 73
+Depends: ubuntu-minimal, adduser
+Homepage: http://ictf.cs.ucsb.edu
+Priority: extra
+Section: unknown
+Filename: pool/main/p/powerplan/powerplan_0.1_amd64.deb
+Size: 9146
+SHA256: f45027b1695c8e63bba070a1f75d1e835d933f90b75097fa83ba2b9b980eac2f
+SHA1: 95177c657fa866099f9d67a4e50208d659d025eb
+MD5sum: 8f7e01dfad7c1661c88bb8a16452581c
+Description: powerplan CTF service
+ NOTE: this service is initially vulnerable - other teams can steal your flags!
+ .
+ You will need to patch it and keep it working for benign users.
+
+Package: reportd
+Version: 0.1
+Architecture: amd64
+Maintainer: UCSB iCTF Team <ctf-admin@lists.cs.ucsb.edu>
+Installed-Size: 80
+Depends: ubuntu-minimal, libc6-i386 (>= 2.1), adduser, libc6
+Homepage: http://ictf.cs.ucsb.edu
+Priority: extra
+Section: unknown
+Filename: pool/main/r/reportd/reportd_0.1_amd64.deb
+Size: 11282
+SHA256: 4e714e6f6033b9a15d286663c096a1850827bea65aaa59b735d66377553b3e3b
+SHA1: 4434153b3227f9f918c19282e3442ec4dba1ec8e
+MD5sum: 495510c0d4a6cc9900d32419ce303659
+Description: reportd CTF service
+ NOTE: this service is initially vulnerable - other teams can steal your flags!
+ .
+ You will need to patch it and keep it working for benign users.
+
+Package: sendalert
+Version: 0.1
+Architecture: amd64
+Maintainer: UCSB iCTF Team <ctf-admin@lists.cs.ucsb.edu>
+Installed-Size: 93
+Depends: ubuntu-minimal, adduser
+Homepage: http://ictf.cs.ucsb.edu
+Priority: extra
+Section: unknown
+Filename: pool/main/s/sendalert/sendalert_0.1_amd64.deb
+Size: 9652
+SHA256: 769890a4a3296ecf64abc1a5a6f7d0e9efdc45b3fd1a465902a7c15253fdecd1
+SHA1: c87df48c65f9158a7d967b13c1eb6f0c8bb0b002
+MD5sum: a1effe29474615534d3aaa03dc463a86
+Description: sendalert CTF service
+ NOTE: this service is initially vulnerable - other teams can steal your flags!
+ .
+ You will need to patch it and keep it working for benign users.
+
+Package: sillybox
+Version: 0.1
+Architecture: amd64
+Maintainer: UCSB iCTF Team <ctf-admin@lists.cs.ucsb.edu>
+Installed-Size: 91
+Depends: ubuntu-minimal, libc6-i386 (>= 2.15), adduser, libc6:i386
+Homepage: http://ictf.cs.ucsb.edu
+Priority: extra
+Section: unknown
+Filename: pool/main/s/sillybox/sillybox_0.1_amd64.deb
+Size: 11904
+SHA256: a66e74bd03e514a58a76fd9e769193159388b6618a1afd6113920b5750230793
+SHA1: 7489dbef862b9bf8e5b838c13270dea144cc70e0
+MD5sum: b56752b160e4534ff73a42a057aab574
+Description: sillybox CTF service
+ NOTE: this service is initially vulnerable - other teams can steal your flags!
+ .
+ You will need to patch it and keep it working for benign users.
+
+Package: tattletale
+Version: 0.1
+Architecture: amd64
+Maintainer: UCSB iCTF Team <ctf-admin@lists.cs.ucsb.edu>
+Installed-Size: 202
+Depends: ubuntu-minimal, libc6 (>= 2.3), libgcc1 (>= 1:4.1.1), libgo5, adduser
+Homepage: http://ictf.cs.ucsb.edu
+Priority: extra
+Section: unknown
+Filename: pool/main/t/tattletale/tattletale_0.1_amd64.deb
+Size: 43132
+SHA256: d6ce23c7c10b76d2abf1ea51606c7df54c1f910c3c70b7d4f20422a906fd4b76
+SHA1: 38c884e86d64872003c8d4cb1ff5c453b3c8a639
+MD5sum: f3041913c0a46a325177a3b109fbd2b4
+Description: tattletale CTF service
+ NOTE: this service is initially vulnerable - other teams can steal your flags!
+ .
+ You will need to patch it and keep it working for benign users.
+
+Package: temperature
+Version: 0.1
+Architecture: amd64
+Maintainer: UCSB iCTF Team <ctf-admin@lists.cs.ucsb.edu>
+Installed-Size: 63
+Depends: ubuntu-minimal, adduser
+Homepage: http://ictf.cs.ucsb.edu
+Priority: extra
+Section: unknown
+Filename: pool/main/t/temperature/temperature_0.1_amd64.deb
+Size: 4692
+SHA256: 87f6cbce733e978e8f6e435d7ff05708263860ad5fd6b422290faf5149bd5762
+SHA1: 1c2e6f4ea1edb6d89eb2a061dd9e14463b2c5e29
+MD5sum: 817c5dbb70ce0c0ff07e67f7a9bbbfee
+Description: temperature CTF service
+ NOTE: this service is initially vulnerable - other teams can steal your flags!
+ .
+ You will need to patch it and keep it working for benign users.
+
+Package: water
+Version: 0.1
+Architecture: amd64
+Maintainer: UCSB iCTF Team <ctf-admin@lists.cs.ucsb.edu>
+Installed-Size: 62
+Depends: ubuntu-minimal, adduser
+Homepage: http://ictf.cs.ucsb.edu
+Priority: extra
+Section: unknown
+Filename: pool/main/w/water/water_0.1_amd64.deb
+Size: 4824
+SHA256: 5839b20539f3f55fcd65a08b87e8950b07ee0fcee006364e9513d165d6df79bf
+SHA1: 477496f64c1b9d204221c1db0f671b525e985c02
+MD5sum: 90b00ec9aaa4d217f6557e49317bcaa7
+Description: water CTF service
+ NOTE: this service is initially vulnerable - other teams can steal your flags!
+ .
+ You will need to patch it and keep it working for benign users.
+

@@ -1,0 +1,12 @@
+Building this service is problematic.
+
+Long story short:
+before using autopackage, run (in this order):
+sudo apt-get install libc6-dev-i386 libssl0.9.8:i386 libssl-dev:i386
+sudo apt-get install devscripts debhelper
+sudo apt-get install gcc-multilib 
+
+The problem is that libssl-dev:i386 removes devscripts, debhelper, gcc, binutils, and other things...
+
+For your convenience I pushed a working and tested .deb to the main repository.
+

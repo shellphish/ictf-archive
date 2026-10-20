@@ -1,0 +1,26 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "debian_dependencies": [
+        "apache2",
+        "apache2-mpm-itk"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the first name.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "museum",
+    "origin": "ictf-2005",
+    "port": 8001,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_description": "This is a website for submitting and searching for ways to SPAM!",
+    "setflag": "setflag.py",
+    "start_type": "none"
+}

@@ -1,0 +1,29 @@
+{
+    "authors": [
+        "giovanni",
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "debian_dependencies": [
+        "python-pip",
+        "default-jre"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the user account name.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "noradioactive",
+    "origin": "ictf-2013",
+    "port": 9292,
+    "scripts-packages": [],
+    "scripts-virtualenv": [
+        "mechanize"
+    ],
+    "service_description": "The service allows workers to store radioactivity readings in a large-scale, distributed nosql database.",
+    "setflag": "setflag.py",
+    "start_type": "scripted"
+}

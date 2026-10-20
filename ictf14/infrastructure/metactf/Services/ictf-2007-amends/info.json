@@ -1,0 +1,16 @@
+{
+	"name" 			: "amends",
+	"origin" 			: "ictf-2007",
+	"authors" 		: ["UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"],
+	"port" 			: 8016,
+	"flag_id_description" 	: "The flag_id is the email address.",
+	"service_description" 	: "This is a website for making amends for piracy!",
+	"start_type"		: "none",
+	"debian_dependencies" 	: ["apache2","libapache2-mod-php5","mysql-server","php5-mysql","apache2-mpm-itk"],
+	"setflag"		: "setflag.py",
+	"getflag"		: "getflag.py",
+	"benign"		: ["benign.py"],
+	"exploit"		: ["exploit.py"],
+        "scripts-virtualenv"    : [],
+        "scripts-packages"      : []
+}

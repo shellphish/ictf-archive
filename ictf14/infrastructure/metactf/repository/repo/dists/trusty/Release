@@ -1,0 +1,21 @@
+Origin: iCTF
+Label: iCTF
+Suite: trusty
+Codename: trusty
+Version: 3.0
+Date: Tue, 07 Apr 2015 12:19:12 UTC
+Architectures: amd64
+Components: main
+Description: Service packages for the iCTF - Hacking at Scale
+MD5Sum:
+ c8c0350341d20b63d72a68279f6f8b0d 9363 main/binary-amd64/Packages
+ 98261c799ce640a14f71d1da79f8d204 2248 main/binary-amd64/Packages.gz
+ 0ef4f71f8f3b5ee8a17d105049279ffb 152 main/binary-amd64/Release
+SHA1:
+ 2a4d56bfba59e53f53545debe47ae7d654a2efa1 9363 main/binary-amd64/Packages
+ d43dde363e609f4580bf32eda43f2a3c11addb3c 2248 main/binary-amd64/Packages.gz
+ e4521ddf5729dd828844ec918363d999089272ee 152 main/binary-amd64/Release
+SHA256:
+ fb9c779510976d4ec641b91b0c27c82edb89c8551b3cde9a51a6c2654c9504ec 9363 main/binary-amd64/Packages
+ f6a9074649214933d55f887cb2835222c066c5d9e02df17e04dfadac1962c933 2248 main/binary-amd64/Packages.gz
+ 04e26ba4d66a0ad958b58568cb33f804ee3581259ceb9e31e739be170fed5a99 152 main/binary-amd64/Release

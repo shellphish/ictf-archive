@@ -1,0 +1,28 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "debian_dependencies": [
+        "apache2",
+        "python-mysqldb",
+        "mysql-server",
+        "apache2-mpm-itk"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the contribution amount.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "contributions",
+    "origin": "ictf-2005",
+    "port": 8018,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_description": "This is a website for contributing to the cause of SPAM!",
+    "setflag": "setflag.py",
+    "start_type": "none"
+}

@@ -1,0 +1,16 @@
+{
+	"name" 			: "contact",
+        "origin"                : "ictf-2004",
+	"authors" 		: ["UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"],
+	"port" 			: 8021,
+	"flag_id_description" 	: "The flag_id is the firstname.",
+	"service_description" 	: "This is a website used to hold contact informantion!",
+	"start_type"		: "none",
+	"debian_dependencies" 	: ["apache2", "libdbi-perl", "libdbd-mysql-perl", "mysql-server","apache2-mpm-itk"],
+	"setflag"		: "setflag.py",
+	"getflag"		: "getflag.py",
+	"benign"		: ["benign.py"],
+	"exploit"		: ["exploit.py"],
+        "scripts-virtualenv"    : [],
+        "scripts-packages"      : []
+}

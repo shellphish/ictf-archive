@@ -1,0 +1,32 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "debian_dependencies": [],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the username.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "sendalert",
+    "origin": "ictf-2011",
+    "port": 12111,
+    "scripts-packages": [
+        "libxslt1-dev",
+        "libxml2-dev",
+	"libz-dev"
+    ],
+    "scripts-virtualenv": [
+        "mechanize",
+        "html5lib",
+        "lxml"
+    ],
+    "service_binary": "sendalert_main",
+    "service_description": "This is a service for sending alerts!",
+    "setflag": "setflag.py",
+    "start_type": "binary"
+}

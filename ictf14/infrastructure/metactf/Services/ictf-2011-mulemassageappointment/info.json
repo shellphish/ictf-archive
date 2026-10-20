@@ -1,0 +1,18 @@
+{
+	"name" 			: "mulemassageappointment",
+        "origin"                : "ictf-2011",
+	"authors" 		: ["UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"],
+	"port" 			: 8042,
+	"flag_id_description" 	: "The flag_id is the tracking ID",
+	"service_description" 	: "This is a service for making massage appointments!",
+	"start_type"		: "scripted",
+	"debian_dependencies" 	: ["python-rsa"],
+	"build_dependencies" 	: ["python-beautifulsoup"],
+	"getflag"		: "getflag.py",
+	"setflag"		: "setflag.py",
+	"benign"		: ["benign.py"],
+	"exploit"		: ["exploit.py"],
+        "scripts-virtualenv"    : ["rsa", "requests", "BeautifulSoup"],
+        "scripts-packages"      : [],
+    "rw_dir"        : ["messages"]
+}

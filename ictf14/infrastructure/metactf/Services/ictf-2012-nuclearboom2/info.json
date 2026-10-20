@@ -1,0 +1,27 @@
+{
+    "authors": [
+        "Yanick",
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign2.py"
+    ],
+    "debian_dependencies": [
+        "libc6:i386"
+    ],
+    "exploit": [
+        "newexploit.py"
+    ],
+    "flag_id_description": "The flag_id is the plant name.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "nuclearboom2",
+    "origin": "ictf-2012",
+    "port": 4444,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_binary": "nuclearboom2",
+    "service_description": "This is a service for accessing and editing info about nuclear plants!",
+    "setflag": "setflag.py",
+    "start_type": "binary"
+}

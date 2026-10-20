@@ -1,0 +1,26 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "debian_dependencies": [
+        "apache2",
+        "apache2-mpm-itk"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the email address",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "petition",
+    "origin": "ictf-2007",
+    "port": 8017,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_description": "This is a website for petitioning to remove cp from unix!",
+    "setflag": "setflag.py",
+    "start_type": "none"
+}

@@ -1,0 +1,25 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign1.py",
+        "benign2.py",
+        "benign3.py",
+        "benign4.py"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the username.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "powerplan",
+    "origin": "ictf-2012",
+    "port": 9898,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_description": "This is a game service!",
+    "setflag": "setflag.py",
+    "start_type": "scripted"
+}

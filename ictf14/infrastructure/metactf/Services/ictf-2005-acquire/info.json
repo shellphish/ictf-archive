@@ -1,0 +1,28 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "debian_dependencies": [
+        "apache2",
+        "libapache2-mod-php5",
+        "apache2-mpm-itk",
+        "libapache2-mpm-itk"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the ip.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "acquire",
+    "origin": "ictf-2005",
+    "port": 8184,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_description": "This is a website that lists FREE open relays that you can use for spamming!",
+    "setflag": "setflag.py",
+    "start_type": "none"
+}

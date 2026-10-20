@@ -1,0 +1,31 @@
+{
+    "authors": [
+        "patch",
+        "kmac",
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "build_dependencies": [
+        "gccgo-go"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "the flag_id for this service is the room you work",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "tattletale",
+    "origin": "ictf-2013",
+    "port": 13007,
+    "scripts-packages": [],
+    "scripts-virtualenv": [
+        "pexpect",
+        "Twisted"
+    ],
+    "service_binary": "tattletale",
+    "service_description": "You scored a couple contracting jobs at another team's intelligence agency. They have many secrets. You and your team must leak data to the public to achieve enough political impact to hinder their operations. You and your team must rendevous with one of our agents on the inside. Show up for work and see if you can find a way to exfiltrate data!",
+    "setflag": "setflag.py",
+    "start_type": "binary"
+}

@@ -1,0 +1,16 @@
+{
+	"name" 			: "therapy",
+        "origin"                : ["ictf-2007"],
+	"authors" 		: ["UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"],
+	"port" 			: 8080,
+	"flag_id_description" 	: "The flag_id is the email address.",
+	"service_description" 	: "This is a website for Therapy!",
+	"start_type"		: "none",
+	"debian_dependencies" 	: ["tomcat6","libmysql-java","mysql-server"],
+	"setflag"		: "setflag.py",
+	"getflag"		: "getflag.py",
+	"benign"		: ["benign.py"],
+	"exploit"		: ["exploit.py"],
+        "scripts-virtualenv"    : [],
+        "scripts-packages"      : []
+}

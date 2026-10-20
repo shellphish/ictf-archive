@@ -1,0 +1,31 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "build_dependencies": [
+        "libc6-dev-i386"
+    ],
+    "debian_dependencies": [
+        "libc6:i386"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the first part of the user name, which is separated from the second part by an underscore.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "aqs",
+    "origin": "ictf-2005-aqs",
+    "port": 8014,
+    "scripts-packages": [],
+    "scripts-virtualenv": [
+        "requests"
+    ],
+    "service_binary": "httpserver.py",
+    "service_description": "This is a website that has a guestbook for The Association for Quality SPAM!",
+    "setflag": "setflag.py",
+    "start_type": "binary"
+}

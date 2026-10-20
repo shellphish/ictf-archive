@@ -1,0 +1,32 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "build_dependencies": [
+        "libc6-dev-i386"
+    ],
+    "debian_dependencies": [
+        "apache2",
+        "libc6:i386",
+        "apache2-mpm-itk",
+        "libapache2-mpm-itk"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "There is the username.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "passwordverify",
+    "origin": "ictf-2004",
+    "port": 11111,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_binary": "passwordverify",
+    "service_description": "This is a password storing service! (telnet on port 11111 and webpage on 8183)",
+    "setflag": "setflag.py",
+    "start_type": "binary"
+}

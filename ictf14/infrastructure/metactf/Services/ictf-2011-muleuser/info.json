@@ -1,0 +1,15 @@
+{
+	"name" 			: "ictf-2011-muleuser",
+	"authors" 		: ["UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"],
+	"port" 			: 80,
+	"flag_id_description" 	: "The flag_id is the username.",
+	"service_description" 	: "This is a website for using a database!",
+	"start_type"		: "none",
+	"debian_dependencies" 	: ["apache2","libapache2-mod-php5","php5-mysql","mysql-server","apache2-mpm-itk"],
+	"getflag"		: "getflag.py",
+	"setflag"		: "setflag.py",
+	"benign"		: [],
+	"exploit"		: ["exploit.py"],
+    "scripts-virtualenv": [],
+    "scripts-packages" : []
+}
