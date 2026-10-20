@@ -1,0 +1,30 @@
+{
+    "authors": [
+        "Zanardi",
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "debian_dependencies": [
+        "apache2",
+        "apache2-mpm-itk",
+        "libapache2-mod-php5"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The comment in a donation.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "contribute",
+    "origin": "ictf-2004",
+    "port": 8112,
+    "scripts-packages": [],
+    "scripts-virtualenv": [
+        "requests"
+    ],
+    "service_description": "This is a website used for donations!",
+    "setflag": "setflag.py",
+    "start_type": "none"
+}

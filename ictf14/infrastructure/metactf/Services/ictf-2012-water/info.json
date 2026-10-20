@@ -1,0 +1,23 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the flag_id.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "water",
+    "origin": "ictf-2012",
+    "port": 3333,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_binary": "water.py",
+    "service_description": "This is a Water Measurement service!",
+    "setflag": "setflag.py",
+    "start_type": "binary"
+}

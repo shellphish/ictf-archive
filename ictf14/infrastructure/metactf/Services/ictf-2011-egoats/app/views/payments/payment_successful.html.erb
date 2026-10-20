@@ -1,0 +1,58 @@
+<style>
+b { color: red;
+    font-size:200%;
+}
+</style>
+</style>
+</style>
+<div>
+<%= @payment.credit_card.first_name %>, you are now the proud owner of an eGoat!
+<br/>
+<b class='rainbow'>Yay!</b>
+<br/>
+
+It costed to you the mere amount of <%= @payment.amount %> bucks, and, hey
+it will bring you <b class='rainbow'>JOY AND HAPPYNESS</b> through your entire life of <b class='rainbow'>AWESOMENESS</b>!
+<br/>
+
+<%= image_tag 'rainbow.jpg' %>
+
+
+<br/>
+Just in case you go insane and you want to revert this transaction, PayBro wants you to have
+this token: <b class='rainbow' id='token'><%= @payment.remote_payment.token || 'TOKEN NOT FOUND. YAY!' %></b>.
+</div>
+<div style='font-size: 20%;'>
+Beware!! You should not share this token with anyone. If somebody were to steal this from
+you, he could claim your money from PayBro.
+<br/>
+
+This wouldn't be that bad per se, but we would be forced to refund PayBro and take away you eGoat,
+with whom you'll surely formed an inscindible bond, like a kidney.
+<br/>
+
+Let us rephrase that: You don't want to lose this token, or you'll lose a kidney.
+<br/>
+
+</div>
+Your eGoat is probably already waiting in your living room by now, watching tv!
+Yay!
+
+<div class='rainbow'>
+<p>
+Your awesome
+</p>
+<p>
+  eGoat Rainbow Carebear Team
+</p>
+</div>
+
+
+<script type="text/javascript">
+rainbows =document.getElementsByClassName("rainbow");
+for (el_id in rainbows) {
+   var myRainbowSpan=new RainbowSpan(rainbows[el_id], 0, 360, 255, 50, 18);
+   myRainbowSpan.timer=window.setInterval("myRainbowSpan.moveRainbow()", myRainbowSpan.speed);
+}
+</script>
+

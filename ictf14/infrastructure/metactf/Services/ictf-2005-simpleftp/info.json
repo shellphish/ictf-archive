@@ -1,0 +1,27 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "debian_dependencies": [
+        "libcap2-bin"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the content of a file (whose name is the actual flag)",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "simpleftp",
+    "origin": "ictf-2005",
+    "port": 2025,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_binary": "simpleftp",
+    "service_description": "This is a file storing service!",
+    "service_source": "simpleftp.c",
+    "setflag": "setflag.py",
+    "start_type": "binary"
+}

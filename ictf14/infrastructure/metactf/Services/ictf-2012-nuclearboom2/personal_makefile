@@ -1,0 +1,3 @@
+all:
+	gcc -m32 -o nuclearboom2 -fno-stack-protector nuclearboom2.c
+	strip nuclearboom2

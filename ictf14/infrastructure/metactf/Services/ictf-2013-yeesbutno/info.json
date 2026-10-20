@@ -1,0 +1,28 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "build_dependencies": [
+        "libssl-dev"
+    ],
+    "debian_dependencies": [
+        "libssl1.0.0"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "the flag_id is the user_id of a registered user.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "yeesbutno",
+    "origin": "ictf-2013",
+    "port": 3336,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_description": "Spawn your drones and explore every map. Hurry up and find uranium before your enemies!",
+    "setflag": "setflag.py",
+    "start_type": "scripted"
+}

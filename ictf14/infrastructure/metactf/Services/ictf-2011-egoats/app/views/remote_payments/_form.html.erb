@@ -1,0 +1,22 @@
+<%= form_for(@remote_payment) do |f| %>
+  <% if @remote_payment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@remote_payment.errors.count, "error") %> prohibited this remote_payment from being saved:</h2>
+
+      <ul>
+      <% @remote_payment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <div class="field">
+      <%= f.label 'token' %><br />
+      <%= f.text_field :token %>
+    </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

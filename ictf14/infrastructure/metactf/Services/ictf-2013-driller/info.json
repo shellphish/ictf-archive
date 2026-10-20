@@ -1,0 +1,36 @@
+{
+    "authors": [
+        "Fish",
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "build_dependencies": [
+        "libc6-dev-i386",
+        "libsqlite3-dev",
+        "lib32stdc++-4.8-dev",
+        "lib32stdc++6",
+        "libcrypto++-dev",
+        "libsqlite3-0:i386"
+    ],
+    "debian_dependencies": [
+        "lib32stdc++6",
+        "libsqlite3-0:i386"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "Please use name of the spot as flag ID.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "driller",
+    "origin": "ictf-2013-driller",
+    "port": 9091,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_binary": "ude",
+    "service_description": "In the awesome old days, everyone could freely setup their own uranium mine around the globe -- as long as they have enough money to bribe those governments. However, some great guys saw the great opportunity beneath, and they set up their own evil enterprise! Here it is, Global Drillers Enterprise Ltd. Their sweet dream, and your nightmare! With seamless cooperation with most countries, now you have to buy their service, select a spot and choose a driller, before you make any penny from uranium mines. Anyways, you have no other choice. Get prepared, crack the service, and get their flags!",
+    "setflag": "setflag.py",
+    "start_type": "binary"
+}

@@ -1,0 +1,26 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "debian_dependencies": [
+        "libc6"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is prefix of the flag. Actual prefix is flag_id:",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "reportd",
+    "origin": "ictf-2004",
+    "port": 6666,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_binary": "reportd",
+    "service_description": "This is a employee reporting service!",
+    "setflag": "setflag.py",
+    "start_type": "binary"
+}

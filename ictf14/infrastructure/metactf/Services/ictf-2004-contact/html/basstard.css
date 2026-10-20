@@ -1,0 +1,98 @@
+A:link {color: #660000}
+A:visited {color: #AA0000}
+A:active {color: darkblue}
+
+H1 {text-align: right; 
+color: #660000; 
+font-family: verdana, sans-serif; 
+font-size: 18pt;
+font-weight: 2000}
+
+H2 {text-align: left; 
+color: darkgrey;
+font-family: arial; 
+font-size: 16pt;
+font-weight: 1500}
+
+H3 {text-align: left; 
+color: black; 
+font-family: arial; 
+font-size: 15pt;
+font-weight: 900}
+
+H4 {text-align: left; 
+color: black; 
+font-family: arial; 
+font-size: 14pt;
+font-weight: 900}
+
+td { valign: top; }
+tr { valign: top; }
+
+body
+{
+	background-color: #dfdfdf;
+	margin: 0px;
+}
+
+.main 
+{
+}
+
+.header
+{
+	background-color: #c8c8c8;	
+	position: relative;
+	border-bottom: 1px solid #666666;
+	padding-right: 8%;
+	padding-top: 5px;
+	width: 92%;
+	z-index: 1;
+}
+
+.footer
+{
+	color: #990000;
+        font-family: verdana, sans-serif;
+	font-size: 8pt;
+	border-top: 1px solid #666666;
+	padding-left: 10px;
+	padding-top: 5px;
+}
+
+.menu
+{
+	float: right;
+	background-color: #c8c8c8;
+	padding-top: 15px;
+	padding-bottom: 35px;
+	padding-right: 15px;
+        font-family: verdana
+
+}
+
+.menu_top
+{
+#        background-color: #a8a8a8;
+	font-size: 13pt;
+	padding-top: 10px;
+	padding-left: 12px;
+}
+
+.menu_sub
+{
+	padding-left: 20px;
+	font-size: 10pt;
+}
+
+
+.content
+{
+        font-family: arial, sans-serif;
+        font-size: 11pt;
+	padding-top: 5px;
+	padding-left: 30px;
+	padding-right: 10px;
+	padding-bottom: 35px;
+}
+

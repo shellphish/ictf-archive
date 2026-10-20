@@ -1,0 +1,23 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the username.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "bassretard",
+    "origin": "ictf-2004",
+    "port": 10080,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_binary": "bassretard",
+    "service_description": "This is a website for users to store notes!",
+    "setflag": "setflag.py",
+    "start_type": "binary"
+}

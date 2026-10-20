@@ -1,0 +1,37 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "debian_dependencies": [
+        "apache2",
+        "libapache2-mod-php5",
+        "php5-mysql",
+        "mysql-server",
+        "apache2-mpm-itk"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the username.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "mulemanager",
+    "origin": "ictf-2011-mulemanager",
+    "port": 7899,
+    "scripts-packages": [
+        "libxslt1-dev",
+        "libxml2-dev",
+	"libz-dev"
+    ],
+    "scripts-virtualenv": [
+        "html5lib",
+        "mechanize",
+        "lxml"
+    ],
+    "service_description": "This is a website for managing a database!",
+    "setflag": "setflag.py",
+    "start_type": "none"
+}

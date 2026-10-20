@@ -1,0 +1,30 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "debian_dependencies": [
+        "nodejs",
+        "npm"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the username.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "curiosityblogging",
+    "origin": "ictf-2012",
+    "port": 8089,
+    "scripts-packages": [],
+    "scripts-virtualenv": [
+        "BeautifulSoup",
+        "requests"
+    ],
+    "service_binary": "run.sh",
+    "service_description": "This is a service for blogging!",
+    "setflag": "setflag.py",
+    "start_type": "scripted"
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta name="Author" content="Z4n4rd1" />
+  <meta name="keywords" content="Contribute!" />
+  <link href="un.css" rel="stylesheet" type="text/css" />
+  <title>Support Your Candidate!</title>
+</head>
+
+<body>
+
+  <div class="banner">
+      <table width="100%" border="0" summary="table">
+        <tr>
+          <td width="10%"><a href="diebald.html"><img alt = "UN" src="unlogo.gif" border="0"/></a></td>
+
+          <td width="100%"><h1>Support Your Candidate!</h1></td>
+
+          <td width="10%"><a href="diebald.html"><img alt="UN" src="unlogo.gif" border="0"/></a></td>
+
+	</tr>
+      </table>
+  </div>
+
+  <div class="main">
+    <p>Your Candidate needs you! More precisely, he needs your money!</p>
+
+      <p>You can contribute to a Candidate's campain by sending food and
+      drinks or by contributing ridiculously-high amounts of money.</p>
+
+      <p>If you choose the second option, you can use the secure credit card
+      payment application provided by the <a href="diebald.html">Die-Bald
+      Corporation</a>.</p>
+
+      <p>The application is so secure that no detail about its working have
+      been disclosed to the public.</p>
+  </div>
+
+  <form action="/cgi-bin/donate.py" method="post">
+  <table>
+  <tr>
+  <td>Candidate:</td>
+  <td><SELECT name="candidate">
+      <OPTION>Blitzkrieg</OPTION>
+      <OPTION>Stallone</OPTION>
+      <OPTION>Schtrappe</OPTION>
+      <OPTION>Schmidt</OPTION>
+      <OPTION>Blix</OPTION>
+   </SELECT>
+   </td>
+   </tr>
+   <tr> 
+	<td>Credit Card Number:</td>
+    <td><input type="text" name="cc"></td>
+   </tr>
+   <tr>
+    <td>Amount (in $):</td>
+	<td><input type="text" name="amount"></td>
+   </tr>
+   <tr>
+    <td>Comment:</td>
+	<td><input type="text" name="comment"></td>
+   </tr>
+   </table>
+	<br>
+	<INPUT type="submit" value="Send">
+</FORM>
+
+  <div class="footer">
+    <hr />
+    Administered by <a href="diebald.html">The Die-Bald Corporation</a>
+  </div>
+</body>
+</html>

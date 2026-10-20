@@ -1,0 +1,31 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "build_dependencies": [
+        "python-mysqldb"
+    ],
+    "debian_dependencies": [
+        "python2.7",
+        "python-mysqldb",
+        "mysql-server"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the name of the message.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "msgdispatcher",
+    "origin": "ictf-2011-msgdispatcher",
+    "port": 31337,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_binary": "msgdispatcher_main",
+    "service_description": "This is a message passing service!",
+    "setflag": "setflag.py",
+    "start_type": "binary"
+}

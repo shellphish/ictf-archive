@@ -1,0 +1,28 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "debian_dependencies": [
+        "apache2",
+        "libdbi-perl",
+        "libapache2-mpm-itk",
+        "apache2-mpm-itk"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the username.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "guestbook",
+    "origin": "ictf-2004",
+    "port": 8182,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_description": "This is a website used for leaving public or private posts for your candidates!",
+    "setflag": "setflag.py",
+    "start_type": "none"
+}

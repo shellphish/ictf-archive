@@ -1,0 +1,30 @@
+{
+    "authors": [
+        "Yan Shoshitaishvili <yans@cs.ucsb.edu>"
+    ],
+    "benign": [
+        "interact.py"
+    ],
+    "build_dependencies": [
+        "open-cobol"
+    ],
+    "debian_dependencies": [
+        "xinetd"
+    ],
+    "exploit": [
+        "interact.py"
+    ],
+    "flag_id_description": "The flag_id is the username of the user whose mother's maiden name you must steal.",
+    "getflag": "interact.py",
+    "is_working": 1,
+    "name": "stockjobber",
+    "origin": "iCTF 2012",
+    "port": 2583,
+    "scripts-packages": [
+        "wamerican"
+    ],
+    "scripts-virtualenv": [],
+    "service_description": "This is a Identity Management service!",
+    "setflag": "interact.py",
+    "start_type": "none"
+}

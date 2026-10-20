@@ -1,0 +1,26 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "debian_dependencies": [
+        "libssl-dev"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the first half of the username.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "talkun",
+    "origin": "ictf-2004",
+    "port": 8081,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_binary": "talkun",
+    "service_description": "This is a website used for storing notes!",
+    "setflag": "setflag.py",
+    "start_type": "binary"
+}

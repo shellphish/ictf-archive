@@ -1,0 +1,2 @@
+module RemotePaymentsHelper
+end

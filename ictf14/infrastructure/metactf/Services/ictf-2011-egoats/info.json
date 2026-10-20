@@ -1,0 +1,17 @@
+{
+	"name" 			: "egoats",
+        "origin"                : "ictf-2011",
+	"authors" 		: ["UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"],
+	"port" 			: 53550,
+	"flag_id_description" 	: "The flag_id is the email.",
+	"service_description" 	: "This is a service for a legitimate goat-selling web app!",
+	"start_type"		: "scripted",
+	"debian_dependencies" 	: ["ruby","ruby-bundler","libsqlite3-dev","nodejs","libreadline-dev","libmysqlclient-dev","mysql-server","ircd-irc2"],
+	"build_dependencies" 	: ["python-mechanize","python-irclib","python-html5lib"],
+	"getflag"		: "getflag.py",
+	"setflag"		: "setflag.py",
+	"benign"		: ["benign.py"],
+	"exploit"		: ["exploit.py"],
+        "scripts-packages"      : [],
+        "scripts-virtualenv"    : []
+}

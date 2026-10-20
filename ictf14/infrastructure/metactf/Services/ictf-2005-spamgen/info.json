@@ -1,0 +1,15 @@
+{
+	"name" 			: "ictf-2005-spamgen",
+	"authors" 		: ["UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"],
+	"port" 			: 80,
+	"flag_id_description" 	: "The flag_id is the username.",
+	"service_description" 	: "This is a website for Automatic Spam Generation!",
+	"start_type"		: "none",
+	"debian_dependencies" 	: ["apache2"],
+	"setflag"		: "setflag.py",
+	"getflag"		: "getflag.py",
+	"benign"		: [],
+	"exploit"		: ["exploit.py"],
+    "scripts-virtualenv": [],
+    "scripts-packages": []
+}

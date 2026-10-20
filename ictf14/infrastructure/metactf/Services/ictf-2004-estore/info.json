@@ -1,0 +1,16 @@
+{
+	"name" 			: "estore",
+        "origin"                : "ictf-2004",
+	"authors" 		: ["UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"],
+	"port" 			: 8011,
+	"flag_id_description" 	: "The flag_id is the username.",
+	"service_description" 	: "This is a website used for buying things online!",
+	"start_type"		: "none",
+	"debian_dependencies" 	: ["apache2","libapache2-mod-php5","php-pear","mysql-server","php5-mysql"],
+	"setflag"		: "setflag.py",
+	"getflag"		: "getflag.py",
+	"benign"		: ["benign.py"],
+	"exploit"		: ["exploit.py"],
+        "scripts-virtualenv"    : [],
+        "scripts-packages"      : []
+}

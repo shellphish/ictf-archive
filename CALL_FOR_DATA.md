@@ -30,10 +30,12 @@ please reach out.
 
 ### ictf14 — Large-scale Hacking (April 2015)
 
-Source for the one new service (`echo`, port 9148) has been recovered. This
-edition reused 41 services from prior years; **service names for the recycled
-pool are still unknown.** VM images or a list of which services were reused
-from which years would help.
+Source for the one new service (`echo`, port 9148) and the 2015 `metactf`
+preparation repository have been recovered. The latter contains source and
+deployment tooling for 54 package-ready candidates from prior years. This
+edition ultimately reused 41 services; **the exact final selection is still
+unknown.** VM images or a list of which services were reused from which years
+would help.
 
 ---
 

@@ -1,0 +1,31 @@
+{
+    "authors": [
+        "Giovanni Vigna <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "build_dependencies": [
+        "python-networkx"
+    ],
+    "debian_dependencies": [
+        "python-networkx"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the username.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "traintrain",
+    "origin": "ictf-2012-traintrain",
+    "port": 8888,
+    "scripts-packages": [],
+    "scripts-virtualenv": [
+        "mechanize",
+        "networkx"
+    ],
+    "service_description": "This is a Train Transportation Training service!",
+    "setflag": "setflag.py",
+    "start_type": "scripted"
+}

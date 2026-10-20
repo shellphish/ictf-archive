@@ -1,0 +1,27 @@
+{
+    "authors": [
+        "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "debian_dependencies": [
+        "apache2",
+        "libdbi-perl",
+        "mysql-server"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the wwid, flag is corresponding password",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "register",
+    "origin": "ictf-2004",
+    "port": 6789,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_description": "This is a website used for registering!",
+    "setflag": "setflag.py",
+    "start_type": "none"
+}
