@@ -1,0 +1,18 @@
+{
+	"name" 			: "dexware",
+        "origin"                : "ictf-2013",
+	"authors" 		: ["Yanick Fratantonio <yanick@cs.ucsb.edu>","UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"],
+	"port" 			: 8085,
+	"flag_id_description" : "The flag_id is the formula ID.",
+	"service_description" : "This is a Dalvik-based firmware that handles secret chemical formulas. It's not like other firmwares, no backdoors here.",
+	"start_type"		: "binary",
+	"service_binary"	: "run.sh",
+	"debian_dependencies" 	: ["lib32stdc++6","default-jdk"],
+	"build_dependencies" 	: ["ipython","libc6-dev-i386","libx32gcc-4.8-dev"],
+	"benign" 		: ["benign.py"],
+	"exploit" 		: ["exploit.py"],
+	"setflag"		: "setflag.py",
+	"getflag"		: "getflag.py",
+        "scripts-virtualenv"    : [],
+        "scripts-packages"      : []
+}

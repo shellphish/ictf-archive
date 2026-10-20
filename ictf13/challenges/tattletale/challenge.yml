@@ -8,7 +8,7 @@ description: |
   Teams leaked classified intel from rivals' tattletale services to gain
   advantage in the nuclear arms race. Reused in iCTF 2015 (port 13007).
 
-  Source not available in archive.
+  Original Go source and gamebot scripts recovered.
 value: 0
 type: standard
 image: null

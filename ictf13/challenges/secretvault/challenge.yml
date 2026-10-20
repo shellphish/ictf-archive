@@ -7,7 +7,7 @@ description: |
   secretvault was a Level 2 service storing classified nuclear program secrets.
   Flags were hidden in vault entries protected by authentication or crypto.
 
-  Source not available in archive.
+  Original Python source and gamebot scripts recovered.
 value: 0
 type: standard
 image: null

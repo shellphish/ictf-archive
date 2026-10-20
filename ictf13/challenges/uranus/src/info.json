@@ -1,0 +1,9 @@
+{
+	"name" 			: "ictf-2013-uranus",
+	"authors" 		: "UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>",
+	"port" 			: 1337,
+	"flag_id_description" 	: "The flag_id is part of the JSON object submitted for recognizing users in the code review.",
+	"service_description" 	: "JavaScript is now supported with the last update on the nuclear reactor. This service is for proof-checking the code before deploy.",
+	"start_type"		: "scripted",
+	"debian_dependencies" 	: ["nodejs"]
+}

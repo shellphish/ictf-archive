@@ -1,0 +1,26 @@
+name: "iCTF 2013 — yeesbutno"
+author: "Shellphish"
+category: binary
+description: |
+  **iCTF 2013 — Nuke 'em (or duck and cover!)**
+
+  yeesbutno was created for the iCTF 2013 service pool. Players spawned drones
+  to explore a map and find uranium before their opponents. It was reused in
+  iCTF 2015 on port 3336; whether it ran in the December 2013 game is unclear.
+
+  Original C++ source and gamebot scripts recovered.
+value: 0
+type: standard
+image: null
+flags:
+    - ictf2013{yeesbutno_pwned}
+tags:
+    - binary
+    - pwn
+    - nuclear
+    - ictf2013
+    - historical
+    - attack-defense
+files: []
+state: visible
+version: "0.1"
