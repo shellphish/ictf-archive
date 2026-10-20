@@ -1,0 +1,29 @@
+{
+    "authors": [
+        "Yan Shoshitaishvili <yans@cs.ucsb.edu>"
+    ],
+    "benign": [
+        "benign.py"
+    ],
+    "build_dependencies": [
+        "libssl-dev"
+    ],
+    "debian_dependencies": [
+        "xinetd",
+        "libssl1.0.0"
+    ],
+    "exploit": [
+        "exploit.py"
+    ],
+    "flag_id_description": "The flag_id is the ID of the crap you flushed.",
+    "getflag": "getflag.py",
+    "is_working": 1,
+    "name": "convicts",
+    "origin": "iCTF 2011",
+    "port": 911,
+    "scripts-packages": [],
+    "scripts-virtualenv": [],
+    "service_description": "This is a service for communicating as convicts!",
+    "setflag": "setflag.py",
+    "start_type": "none"
+}

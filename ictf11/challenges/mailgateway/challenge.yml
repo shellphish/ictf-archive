@@ -23,7 +23,7 @@ description: |
   Uses `fork()`/`wait3()` pattern, `dup2(stdout)` for connection handling.
   No stack canary or PIE detected.
 
-  Source code not recovered (binary-only from competition VM).
+  Original C source and gamebot scripts recovered.
 value: 0
 type: standard
 image: null
@@ -42,9 +42,10 @@ tags:
     - ictf2011
     - historical
     - attack-defense
-    - binary-only
+    - source-recovered
 files:
     - src/mailgw
+    - src/mailgateway.c
     - src/init_mailgateway
 state: visible
 version: "0.1"

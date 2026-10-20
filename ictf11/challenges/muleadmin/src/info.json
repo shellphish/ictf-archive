@@ -1,0 +1,16 @@
+{
+	"name" 			: "muleadmin",
+    "origin" : "ictf-2011",
+	"authors" 		: ["UCSB Seclab <ctf-admin@lists.cs.ucsb.edu>"],
+	"port" 			: 80,
+	"flag_id_description" 	: "The flag_id is the username.",
+	"service_description" 	: "This is a website for managing a database!",
+	"start_type"		: "none",
+	"debian_dependencies" 	: ["apache2","libapache2-mod-php5","mysql-server","php5-mysql"],
+	"getflag"		: "getflag.py",
+	"setflag"		: "setflag.py",
+	"benign"		: [],
+	"exploit"		: ["exploit.py"],
+	"scripts-virtualenv"		: [],
+    "scripts-packages": []
+}
