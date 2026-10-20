@@ -28,29 +28,12 @@ please reach out.
 
 ---
 
-### ictf12 — SCADA Breakdown (March 2013)
-
-Source needed for 5 services (others already recovered):
-- `nuclearboom` — nuclear plant control (binary only)
-- `pewpew_smartgrid` — smart grid service (binary only)
-- `stockjobber` — stock trading service (binary only)
-- `powerplan` — power plant service (Python `.pyc` bytecode only)
-- `traintrain` — train scheduling service (binary only)
-
----
-
-### ictf13 — Nuke 'em (December 2013)
-
-All 9 service names are known but **no source is available**. Services were
-written by student teams as course projects. If you wrote one, please share.
-
----
-
 ### ictf14 — Large-scale Hacking (April 2015)
 
-**No service source available** (88 teams, winner SpamAndHex). This edition
-reused 41 services from prior years plus one new service (`echo`, port 9148,
-by Fish Wang). VM images or service source from any year it reused would help.
+Source for the one new service (`echo`, port 9148) has been recovered. This
+edition reused 41 services from prior years; **service names for the recycled
+pool are still unknown.** VM images or a list of which services were reused
+from which years would help.
 
 ---
 
