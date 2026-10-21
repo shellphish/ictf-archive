@@ -17,23 +17,11 @@ Contact: Giovanni Vigna \<vigna@cs.ucsb.edu\> or open a pull request against
 
 ### ictf05 — Spam Museum (December 2005)
 
-Source needed for 3 services (binaries are in the archive):
-- `spamometer` — spam volume measurement service
-- `spaminout` — spam tracking service
-- `spamback` — spam response service
+Source needed for 2 services whose GPG archives remain encrypted:
+- `spamometer` — spam volume measurement service (binary preserved; source in `spamometer-1.0.tar.gz.gpg`)
+- `spamback` — spam response service (no binary or source recovered; source in `spamback.tgz.gpg`)
 
-The source was GPG-encrypted and the password has not been found. If you wrote
-these services or know the decryption password for `ctf05-final.tar.gz.gpg`,
-please reach out.
-
----
-
-### ictf14 — Large-scale Hacking (April 2015)
-
-Source for the one new service (`echo`, port 9148) has been recovered. This
-edition reused 41 services from prior years; **service names for the recycled
-pool are still unknown.** VM images or a list of which services were reused
-from which years would help.
+If you wrote these services or know the GPG decryption password, please reach out.
 
 ---
 

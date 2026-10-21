@@ -1,0 +1,27 @@
+name: "iCTF 2005 — Spam Museum: Spamback"
+author: "Shellphish"
+category: binary
+description: |
+  **iCTF 2005 — The Spam Museum: Spamback**
+
+  A service from the 2005 Spam Museum competition. Source code not recovered —
+  the source archive `spamback.tgz.gpg` is GPG-encrypted with an unknown key.
+  No binary has been recovered either.
+value: 0
+type: standard
+
+image: null
+flags:
+    - ictf2005{spamback_pwned}
+
+topics:
+    - binary exploitation
+
+tags:
+    - binary
+    - ictf2005
+    - historical
+    - attack-defense
+
+state: visible
+version: "0.1"

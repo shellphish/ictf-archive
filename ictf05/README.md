@@ -31,7 +31,8 @@ sabotaging rival spam operations.
 | [`spamagent`](challenges/spamagent/) | pwn | Code injection in XML+Tcl agent scripting engine | ✓ C |
 | [`spaminout`](challenges/spaminout/) | pwn | C spam relay (spamin/spamout pair) | ✓ C |
 | [`syscalld`](challenges/syscalld/) | pwn | Remote x86 assembly exec; arbitrary syscalls via `sysenter` | binary only |
-| [`spamometer`](challenges/spamometer/) | pwn | Spam metrics service (binary only) | ✗ encrypted |
+| [`spamometer`](challenges/spamometer/) | pwn | Spam metrics service (binary only) | ✗ encrypted (`spamometer-1.0.tar.gz.gpg`) |
+| [`spamback`](challenges/spamback/) | unknown | Spam response service — no binary or source recovered | ✗ encrypted (`spamback.tgz.gpg`) |
 
 ## Network Architecture
 
