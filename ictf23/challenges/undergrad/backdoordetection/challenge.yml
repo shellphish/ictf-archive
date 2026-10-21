@@ -1,0 +1,28 @@
+name: "Backdoor Detection"
+author: "iCTF 2023 organizers"
+category: machine learning
+description: |
+  A neural network (ResNet) has been trained with a backdoor. Your task is to
+  detect which class(es) contain the backdoor trigger.
+
+  See `resnet.py` for the model architecture and `test.py` for the evaluation script.
+  The description is in `description.odt`.
+value: 500
+type: standard
+
+image: null
+
+flags:
+    - ictf{2}
+
+topics:
+    - backdoor attacks
+    - neural networks
+
+tags:
+    - ml security
+    - ictf2023
+    - historical
+
+state: visible
+version: "0.1"

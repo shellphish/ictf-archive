@@ -1,0 +1,33 @@
+[project]
+name = "espresso"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "yype", email = "yype@foxmail.com" }
+]
+dependencies = [
+    "torch>=2.4.1",
+    "torchvision>=0.19.1",
+    "scipy>=1.14.1",
+    "pwntools>=4.13.1",
+    "gmpy2>=2.2.1",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.scripts]
+"espresso" = "espresso:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/espresso"]

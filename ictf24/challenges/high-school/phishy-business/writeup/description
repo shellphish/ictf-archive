@@ -1,0 +1,16 @@
+Name: Phishy Business
+Level: High School
+Difficulty: Easy
+Topic: Social Engineering
+Software Required: None
+
+This challenge involved looking at a series of emails and the player must be able to know if
+it's suspicious or not. If said email is suspicious, you must choose the correct social 
+engineering technique being used. This will involve using provided sources to detect social engineering 
+such as ChatGPT or the sources provided in this python game. Run the application file and if you 
+get all the answers correct, then you will recieve the flag. The flag is the 
+ID number of each of the suspicous all combined into one string, so keep up with you 
+answers. Hopefully, you walk away from this challenge with more knowledge of social engineering. Go Phish!
+
+Flag Example: ictf{12345678910111213}
+

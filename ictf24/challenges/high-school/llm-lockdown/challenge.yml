@@ -1,0 +1,30 @@
+name: "LLM Lockdown"
+author: "iCTF 2024 organizers"
+category: ai
+description: |
+  Interact with an LLM that has been instructed to keep a secret phrase.
+  Three difficulty levels with different defenses (output filtering, input filtering, both).
+  Extract the secret phrase from each level and combine them to form the flag.
+
+  Run `challenge.py` and follow the printed instructions.
+value: 500
+type: standard
+
+image: null
+
+flags:
+    - ictf{keep_moving_forward}
+
+topics:
+    - prompt injection
+    - LLM security
+    - jailbreaking
+
+tags:
+    - ai
+    - llm
+    - ictf2024
+    - historical
+
+state: visible
+version: "0.1"

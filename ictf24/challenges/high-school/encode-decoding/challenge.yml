@@ -1,0 +1,29 @@
+name: "Encode/Decoding"
+author: "iCTF 2024 organizers"
+category: cryptography
+description: |
+  Classical cipher decryption challenge. Decrypt messages encoded with:
+  1. A Caesar (shift) cipher — find the shift and decrypt the plaintext.
+  2. A monoalphabetic substitution cipher — deduce the permutation mapping.
+
+  See `README.md` for the full challenge description and encrypted messages.
+value: 500
+type: standard
+
+image: null
+
+flags:
+    - ictf{placeholder}
+
+topics:
+    - classical cryptography
+    - caesar cipher
+    - substitution cipher
+
+tags:
+    - crypto
+    - ictf2024
+    - historical
+
+state: visible
+version: "0.1"
