@@ -1,0 +1,42 @@
+id,challenge_id,value
+2,2,Computer vision
+4,4,remote applications
+5,5,misc
+6,5,ai
+7,5,medium
+8,6,web
+9,6,security
+10,6,chatbot
+12,8,remote applications
+13,9,osint
+14,9,overpassql
+15,1,remote applications
+16,10,remote applications
+17,11,llvm
+18,12,cryptography
+19,12,xor
+20,12,pytorch
+21,12,forensics
+22,13,LLM
+23,13,security
+24,13,chatbot
+25,14,remote applications
+26,15,ml security
+27,15,model inversion
+28,16,ml security
+29,16,backdoor attacks
+30,17,cryptography
+31,17,pytorch
+32,18,remote applications
+33,19,network
+34,20,forensics
+35,21,forensics
+36,21,carving
+37,21,file system
+38,22,cryptography
+39,22,ai-supported programming
+40,23,web
+41,24,miscellaneous
+42,25,misc
+43,26,remote applications
+44,27,remote applications
