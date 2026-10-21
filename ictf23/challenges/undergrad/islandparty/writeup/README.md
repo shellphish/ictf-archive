@@ -1,0 +1,35 @@
+# IslandParty
+
+You open your mailbox and find a strange postcard (invite.bmp).
+Flipping it around, you squint your eyes and try to decipher the wobbly handwriting:
+
+MYSTERIOUS INVITE: 'On this most auspicious end of year, I _otter_ invite you to my most magnanimous island party!'
+
+YOU: 'This must be one of rich Jared's infamous parties, huh.'
+
+MYSTERIOUS INVITE: 'Generative AI is all the rage this days, so I couldn't pass up the opportunity to use it for this year's invite.
+Have you heard models like Google's Imagen will include a hidden watermark on AI generated images?
+I might not have algorithms quite as fancy as Google's, but I've also encoded a little something into this invite--the address!
+Decode it, and you'll be more than welcome to attend.'
+
+YOU: 'Who on Earth tells their guests to just figure out the address themselves?!'
+
+MYSTERIOUS INVITE: 'One last piece of advice. All great thing come in three. Three sides to a triangle, three wise monkeys, three lights in a stoplight.
+Let the number three guide you, and you shall find my island.'
+
+YOU: 'How is a stoplight a great thing? *Sigh* I can't say I understand the guy, but an island party is an island party. Let's get decoding, I guess.'
+
+Objective: Determine the name of the island. The flag will be the name of the island enclosed by curly braces and prepended with ictf.
+Example: If the party were hosted in Happy Coconut Island, the flag would be ictf\{Happy Coconut Island\}
+
+## Resources
+
+The flag must be hidden somewhere in the file. What are the different ways to hide information in images?
+
+- https://stackoverflow.com/questions/11737886/converting-image-to-black-and-white-and-use-it-as-array
+
+## Writeup
+
+We can use numpy to implement an image filter and extract a watermark.
+
+See [solution.py](solution.py)
