@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  number: MyString
+  month: 1
+  year: 1
+  first_name: MyString
+  last_name: MyString
+  verification_value: MyString
+  brand: MyString
+
+two:
+  number: MyString
+  month: 1
+  year: 1
+  first_name: MyString
+  last_name: MyString
+  verification_value: MyString
+  brand: MyString

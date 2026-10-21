@@ -56,6 +56,8 @@ vulnbox on **port 55555 TCP** as JSON every scoring tick.
 
 | Path | Contents |
 |------|----------|
+| `challenges/*/src/` | Package-ready source for all ten services |
+| `challenges/*/original-2011/` | Missing helpers, tests, and differing event-time source revisions recovered from the original service tree |
 | `site/` | Competition website, game documentation, scripts |
 | `site/iC7F11-n37.ova` | Network infrastructure VM (334 MB) |
 | `site/iC7F-l337-vu1n.7z` | Service VM — `iCTF 2011 Server.ova` (772 MB, AES-encrypted) |
